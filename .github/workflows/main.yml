@@ -1,9 +1,9 @@
 name: blog deploy pipline
 on:
   push:
-  tags:
-    - "*"
-  branches: [main]
+    tags:
+      - "*"
+    branches: [main]
 
 env:
   REGISTRY: ghcr.io
