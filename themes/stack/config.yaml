@@ -8,7 +8,7 @@ params:
         - articles
     featuredImageField: banner
     rssFullContent: true
-    favicon: icons/favicon.jpg
+    favicon: https://cdn.jsongo.top/mc/favicon.jpg
 
     footer:
         since:
