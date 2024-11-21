@@ -118,7 +118,7 @@ params:
             id:
 
     widgets:
-        homepage: []
+        homepage: [tag-cloud]
         page: []
 
     opengraph:
