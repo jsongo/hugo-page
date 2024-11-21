@@ -162,7 +162,14 @@ params:
 
 ### Custom menu
 menu:
-    main: []
+    main:
+        - identifier: about
+          name: About Me
+          url: /about
+          weight: 600
+          params:
+            icon: user
+            newTab: true
     # social:
     #     - identifier: github
     #       name: GitHub
