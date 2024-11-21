@@ -6,7 +6,7 @@ module:
 params:
     mainSections:
         - articles
-    featuredImageField: image
+    featuredImageField: banner
     rssFullContent: true
     favicon:
 
