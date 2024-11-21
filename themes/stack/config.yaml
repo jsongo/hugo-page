@@ -11,8 +11,8 @@ params:
     favicon: https://cdn.jsongo.top/mc/favicon.jpg
 
     footer:
-        since:
-        customText:
+        since: 2024
+        customText: 
 
     dateFormat:
         published: Jan 02, 2006
@@ -21,7 +21,7 @@ params:
     sidebar:
         compact: false
         emoji:
-        subtitle:
+        subtitle: Keeping Grit!
         avatar:
             enabled: true
             local: true
@@ -31,7 +31,7 @@ params:
         headingAnchor: false
         math: false
         toc: true
-        readingTime: true
+        readingTime: false
         license:
             enabled: false
             default: Licensed under CC BY-NC-SA 4.0
