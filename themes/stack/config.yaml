@@ -159,3 +159,13 @@ params:
             enabled: true
         content:
             enabled: true
+
+### Custom menu
+menu:
+    main: []
+    # social:
+    #     - identifier: github
+    #       name: GitHub
+    #       url: https://github.com/jsongo
+    #       params:
+    #           icon: brand-github
