@@ -8,7 +8,7 @@ params:
         - articles
     featuredImageField: banner
     rssFullContent: true
-    favicon:
+    favicon: icons/favicon.jpg
 
     footer:
         since:
