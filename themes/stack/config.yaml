@@ -37,8 +37,8 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: false
-        provider: disqus
+        enabled: true
+        provider: giscus
 
         disqusjs:
             shortname:
@@ -93,18 +93,19 @@ params:
             lang:
 
         giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            strict:
-            lightTheme:
+            repo: jsongo/hugo-page
+            repoID: R_kgDONQf4yA
+            category: Announcements
+            categoryID: DIC_kwDONQf4yM4CkfAr
+            mapping: title
+            strict: 0
+            lightTheme: preferred_color_scheme
             darkTheme:
             reactionsEnabled: 1
             emitMetadata: 0
-            inputPosition:
-            lang:
+            inputPosition: top
+            lang: zh-CN
+            loading: lazy
 
         gitalk:
             owner:
