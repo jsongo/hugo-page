@@ -5,13 +5,17 @@ tags:
   - AI/Diffusion
 created_at: Sun, Nov 24th, 2024 - 11:26:10
 banner_icon: 🌹
-banner: "https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg"
+banner: https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg
 draft: false
 slug: diffusion-101
 title: 初识 Diffusion（概念）
 description: Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
 ---
 Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
+# Model & Checkpoint
+开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。
+- Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）
+- Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。
 # CLIP
 ## 概念
  - **CLIP 模型**：CLIP 是 Contrastive Language-Image Pre-training 的缩写，由 OpenAI 在 2021 年 1 月 5 日发布，是一种将计算机视觉与自然语言处理相结合的神经网络模型。
