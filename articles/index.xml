@@ -202,7 +202,37 @@
 &lt;/ul>
 &lt;blockquote>
 &lt;p>from：五道口老实人&lt;/p>
-&lt;/blockquote></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
+&lt;/blockquote></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
+&lt;/h1>&lt;blockquote>
+&lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
+性能和效果可以与 Midjourney V6 媲美。&lt;br>
+Flux 一般通过 ComfyUI 来调用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="黑森林实验室与团队背景">黑森林实验室与团队背景
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>核心成员&lt;/strong>：黑森林实验室由 Stable Diffusion 的核心开发者 Robin Rombach 领衔创立，团队成员大多来自 Stability AI，如 Andreas Blattmann、Axel Sauer 等多位原 Stable Diffusion 项目的关键人物，他们在生成式模型开发领域经验丰富，为 Flux 的诞生奠定了坚实基础。大家可能听说过 Stability AI 团队内部不和，各种破事把公司折腾得够呛，所以由原班核心人马出来创业做的 Flux 受到很大的关注。&lt;/li>
+&lt;li>&lt;strong>融资情况&lt;/strong>：这个实验室已获得 3200 万美元的种子轮融资，由著名风投机构 Andreessen Horowitz (a16z) 领投，多位业内知名人士参与投资，充足的资金支持使其能够大力推进模型的研发与优化等工作。主要还是因为它的背景实在太好了。&lt;/li>
+&lt;/ul>
+&lt;h2 id="flux-模型特点">Flux 模型特点
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>架构与参数&lt;/strong>：Flux 基于多模态和并行扩散 Transformer 块的混合架构，拥有 &lt;!-- raw HTML omitted -->120 亿参数&lt;!-- raw HTML omitted -->，是目前最大的开源文本到图像模型之一。这种架构和庞大的参数规模使其能够学习到更丰富的图像特征和语义信息，从而生成高质量的图像。&lt;/li>
+&lt;li>&lt;strong>性能优势&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>图像质量&lt;/strong>：在视觉质量、图像细节和输出多样性等方面达到了新高度，生成的图像更加逼真、细腻，细节丰富度高，风格多样，能与闭源的 Midjourney v6.1 模型不相上下，甚至在一些方面表现更优，如复杂场景生成、人物细节处理等。&lt;/li>
+&lt;li>&lt;strong>提示词遵循能力&lt;/strong>：对提示词的理解和遵循能力很强，能够准确地根据输入的文本描述生成符合要求的图像，包括对复杂指令、长文本描述以及特定场景和细节要求的准确呈现，减少了因提示词理解不准确而导致的图像与预期不符的问题。&lt;/li>
+&lt;li>&lt;strong>文字生成能力&lt;/strong>：在图像中生成文字的效果出色，可以处理重复字母等棘手情况，生成的文字内容准确、排版合理，这在一些需要在图像中呈现文字信息的场景中具有很大优势，如生成带有文字标识的产品图片、包含文字说明的场景图片等。&lt;/li>
+&lt;li>&lt;strong>手部细节处理&lt;/strong>：相较于之前的一些模型，Flux 在手部细节生成上有了显著改进，减少了手指等部位的畸形或错误，使生成的人物图像更加自然、真实。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>不同版本特点&lt;/strong>：&lt;br>
+有 3 个核心版本，Pro/dev/schnell
+&lt;ul>
+&lt;li>&lt;strong>FLUX (pro)&lt;/strong>：闭源模型，自家压箱底的货。具备最佳性能，包括最先进的提示跟随能力、视觉质量、图像细节和输出多样性，适用于专业用户和对图像质量要求极高的场景，可通过注册官方 API 申请访问权限，同时支持企业定制。&lt;/li>
+&lt;li>&lt;strong>FLUX (dev)&lt;/strong>：开源模型，不可商用，直接从 FLUX (pro) 蒸馏而来，具备相似的图像质量和提示词遵循能力，但更高效，适合开发者进行研究和实验等非商业用途的使用。&lt;/li>
+&lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
 &lt;h1 id="clip">CLIP
 &lt;/h1>&lt;h2 id="概念">概念
 &lt;/h2>&lt;ul>
