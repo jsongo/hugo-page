@@ -82,26 +82,24 @@ alt="736deaffc1c02497df089d14539fba5d_MD5|700"
 &lt;h3 id="从参数规模与训练成本来看">从参数规模与训练成本来看
 &lt;/h3>&lt;ul>
 &lt;li>&lt;strong>UNet&lt;/strong>：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。&lt;/li>
-&lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;/li>
+&lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;br>
+UNet 的模型一般都比较大：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
+loading="lazy"
+alt="|475"
+>&lt;br>
+LoRA 则小很多&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
+loading="lazy"
+alt="|475"
+>&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code class="language-col" data-lang="col">```col-md
-flexGrow=1
-===
-UNet 的模型一般都比较大：
-![](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)
-```
-```col-md
-flexGrow=1
-===
-LoRA 则小很多
-![](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
-```
-&lt;/code>&lt;/pre>&lt;h2 id="使用">使用
+&lt;h2 id="使用">使用
 &lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
 ComfyUI 中的使用非常简单：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
 loading="lazy"
-alt="|700"
+alt="|675"
 >&lt;br>
 如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
 >SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
