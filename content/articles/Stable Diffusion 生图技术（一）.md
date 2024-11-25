@@ -16,7 +16,7 @@ Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性�
 - **前向扩散**：在前向阶段，通过向原始图像数据（如真实的照片或绘画）添加噪声，逐步将图像转换为纯噪声。这个过程是在多个时间步（time - steps）中完成的，每一步都按照一定的规则（通常是基于高斯分布）添加噪声，使得图像信息逐渐被噪声掩盖。例如，开始时图像可能还比较清晰，随着时间步的增加，图像越来越模糊，最终变成完全的噪声。
 - **反向扩散**：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。
 # 生图过程
-![|700](Pasted%20image%2020241125153323.webp)  
+![|700](https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp)  
 ## 模型 （Checkpoint）跟采样的关系
 Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。
 ## CLIP Text Encode
@@ -35,7 +35,7 @@ Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优
  Stable Diffusion 的官方可用的模型，可以从 API 文档中看到： [Stability AI - Developer Platform](https://platform.stability.ai/pricing)。最新的是 SD 3.5（2024 年 11 月）。
 - 1 credit = $0.01
 - 这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。  
- ![[736deaffc1c02497df089d14539fba5d_MD5.webp|700]]
+ ![736deaffc1c02497df089d14539fba5d_MD5|700](https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp)
 ## 体验
 [Free AI Image Generator - Turn Text to Image Online | Stable Diffusion Online](https://stabledifffusion.com/tools/ai-image-generator)
 
@@ -55,19 +55,19 @@ Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优
 flexGrow=1
 ===
 UNet 的模型一般都比较大：
-![](Pasted%20image%2020241125150652.webp)
+![](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)
 ```
 ```col-md
 flexGrow=1
 ===
 LoRA 则小很多
-![](Pasted%20image%2020241125150752.webp)
+![](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
 ```
 ````
 
 ## 使用
 它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。  
 ComfyUI 中的使用非常简单：  
-![|700](Pasted%20image%2020241125145257.webp)  
+![|700](https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp)  
 如果只是想玩玩，可以直接在 huggingface 上试试：[SDXL-Lightning spaces](https://huggingface.co/spaces/ByteDance/SDXL-Lightning) ，效果还是不错的：  
-![|700](Pasted%20image%2020241125145528.webp)
+![|700](https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp)
