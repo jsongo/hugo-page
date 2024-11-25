@@ -49,25 +49,15 @@ Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优
 - LoRA 不是一种独立的网络架构，而是一种模型微调策略，可以应用于各种现有的预训练模型（包括但不限于基于 UNet 架构的模型），用于在不大量修改原始模型结构的情况下进行任务适配。
 ### 从参数规模与训练成本来看
 - **UNet**：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。
-- **LoRA**：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。
-````col
-```col-md
-flexGrow=1
-===
-UNet 的模型一般都比较大：
-![](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)
-```
-```col-md
-flexGrow=1
-===
-LoRA 则小很多
-![](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
-```
-````
+- **LoRA**：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。  
+UNet 的模型一般都比较大：  
+![|475](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)  
+LoRA 则小很多  
+![|475](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
 
 ## 使用
 它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。  
 ComfyUI 中的使用非常简单：  
-![|700](https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp)  
+![|675](https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp)  
 如果只是想玩玩，可以直接在 huggingface 上试试：[SDXL-Lightning spaces](https://huggingface.co/spaces/ByteDance/SDXL-Lightning) ，效果还是不错的：  
 ![|700](https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp)
