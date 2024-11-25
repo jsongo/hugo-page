@@ -35,7 +35,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
 &lt;/ul>
 &lt;h1 id="生图过程">生图过程
-&lt;/h1>&lt;p>&lt;img src="https://www.jsongo.top/Pasted%20image%2020241125153323.webp"
+&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
 loading="lazy"
 alt="|700"
 >&lt;/p>
@@ -58,7 +58,10 @@ alt="|700"
 &lt;ul>
 &lt;li>1 credit = $0.01&lt;/li>
 &lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
-![[736deaffc1c02497df089d14539fba5d_MD5.webp|700]]&lt;/li>
+&lt;img src="https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
+loading="lazy"
+alt="736deaffc1c02497df089d14539fba5d_MD5|700"
+>&lt;/li>
 &lt;/ul>
 &lt;h2 id="体验">体验
 &lt;/h2>&lt;p>&lt;a class="link" href="https://stabledifffusion.com/tools/ai-image-generator" target="_blank" rel="noopener"
@@ -85,24 +88,24 @@ alt="|700"
 flexGrow=1
 ===
 UNet 的模型一般都比较大：
-![](Pasted%20image%2020241125150652.webp)
+![](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)
 ```
 ```col-md
 flexGrow=1
 ===
 LoRA 则小很多
-![](Pasted%20image%2020241125150752.webp)
+![](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
 ```
 &lt;/code>&lt;/pre>&lt;h2 id="使用">使用
 &lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
 ComfyUI 中的使用非常简单：&lt;br>
-&lt;img src="https://www.jsongo.top/Pasted%20image%2020241125145257.webp"
+&lt;img src="https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
 loading="lazy"
 alt="|700"
 >&lt;br>
 如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
 >SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
-&lt;img src="https://www.jsongo.top/Pasted%20image%2020241125145528.webp"
+&lt;img src="https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
 loading="lazy"
 alt="|700"
 >&lt;/p></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
