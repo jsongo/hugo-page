@@ -28,7 +28,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://www.jsongo.top/assets/banners/mmexport5056eed52818943e9b6a551a61bd75ef_1730598091786.jpeg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
+&lt;/ul></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
 它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>前向扩散&lt;/strong>：在前向阶段，通过向原始图像数据（如真实的照片或绘画）添加噪声，逐步将图像转换为纯噪声。这个过程是在多个时间步（time - steps）中完成的，每一步都按照一定的规则（通常是基于高斯分布）添加噪声，使得图像信息逐渐被噪声掩盖。例如，开始时图像可能还比较清晰，随着时间步的增加，图像越来越模糊，最终变成完全的噪声。&lt;/li>
@@ -38,8 +38,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;/h1>&lt;p>&lt;img src="https://www.jsongo.top/Pasted%20image%2020241125153323.webp"
 loading="lazy"
 alt="|700"
->&lt;br>
-![[diffusion 生图过程|700]]&lt;/p>
+>&lt;/p>
 &lt;h2 id="模型-checkpoint跟采样的关系">模型 （Checkpoint）跟采样的关系
 &lt;/h2>&lt;p>Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。&lt;/p>
 &lt;h2 id="clip-text-encode">CLIP Text Encode
