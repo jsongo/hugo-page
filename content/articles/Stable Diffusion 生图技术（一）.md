@@ -5,10 +5,10 @@ tags:
   - AI/工具
 created_at: Tue, Nov 19th, 2024 - 16:36:27
 banner_icon: ⛈
-banner: "assets/banners/mmexport5056eed52818943e9b6a551a61bd75ef_1730598091786.jpeg"
+banner: https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg
 title: Stable Diffusion 生图技术（一）
 slug: stable-diffusion-gen-image-1
-description: Stable Diffusion 是一种先进的生成式人工智能技术，是目前比较流行的一种用于生成高质量的图像的技术之一
+description: Stable Diffusion 是一种先进的生成式人工智能技术，是目前比较流行的一种用于生成高质量的图像的技术之一。它在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片
 draft: false
 ---
 Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。  
@@ -17,7 +17,6 @@ Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性�
 - **反向扩散**：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。
 # 生图过程
 ![|700](Pasted%20image%2020241125153323.webp)  
-![[diffusion 生图过程|700]]
 ## 模型 （Checkpoint）跟采样的关系
 Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。
 ## CLIP Text Encode
