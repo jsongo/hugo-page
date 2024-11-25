@@ -63,6 +63,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;/h2>&lt;p>经过某种变换或编码后隐藏在数据中的图像信息。例如，在使用变分自编码器（VAE）进行图像生成或处理时，图像数据会被压缩到一个潜在空间（latent space），这个潜在空间中的向量可以被看作是潜像的一种表示形式。这些潜像向量包含了图像的关键特征，如形状、颜色、纹理等信息，通过解码器可以将这些潜像向量转换回可见的图像。&lt;/p>
 &lt;h1 id="lora">Lora
 &lt;/h1>&lt;p>LoRA 是一种用于微调预训练模型的技术，通过在原始模型的基础上添加少量可训练的参数来实现对模型的微调。&lt;/p>
+&lt;hr>
 &lt;h1 id="footnotes">Footnotes
 &lt;/h1>&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
