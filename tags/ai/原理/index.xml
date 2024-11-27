@@ -6,7 +6,7 @@
 &lt;/h1>&lt;h2 id="介绍">介绍
 &lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
 loading="lazy"
-alt="图片来自 x"
+alt="图片来自 x|850"
 >&lt;/p>
 &lt;blockquote>
 &lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
@@ -84,6 +84,7 @@ Prompt Demo:&lt;br>
 &lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
 loading="lazy"
+alt="|725"
 >&lt;br>
 MCP 是一个开放协议：&lt;/p>
 &lt;ul>
