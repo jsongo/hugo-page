@@ -13,7 +13,7 @@ MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外�
 
 # 功能
 ## 介绍
-![图片来自 x](https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp)
+![图片来自 x|850](https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp)
 >  参考：[Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测](https://x.com/nicekate8888/status/1861323082969030978)
 - 官方文档：[Introducing the Model Context Protocol - Anthropic](https://www.anthropic.com/news/model-context-protocol)
 ## 使用
@@ -80,7 +80,7 @@ Prompt Demo:
 
 # 原理
 其实就是加了一个 MCP server 作为本地代理，架构如下：  
-![](https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp)  
+![|725](https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp)  
 MCP 是一个开放协议：
 - 首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。
 - 另一方面 MCP 也类似 Prompt 模板一样，提供了**动态上下文构建**的能力：
