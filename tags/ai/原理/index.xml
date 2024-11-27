@@ -4,7 +4,7 @@
 >村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
 &lt;h1 id="功能">功能
 &lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://www.jsongo.top/%7bMD5%7d-1.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
 loading="lazy"
 alt="图片来自 x"
 >&lt;/p>
@@ -82,7 +82,7 @@ Prompt Demo:&lt;br>
 &lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
 &lt;h1 id="原理">原理
 &lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
-&lt;img src="https://www.jsongo.top/%7bMD5%7d-2.webp"
+&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
 loading="lazy"
 >&lt;br>
 MCP 是一个开放协议：&lt;/p>
