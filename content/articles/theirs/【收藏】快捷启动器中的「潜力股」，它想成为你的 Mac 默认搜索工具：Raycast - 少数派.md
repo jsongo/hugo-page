@@ -16,7 +16,7 @@ banner: "https://img.qikepai.cn/blog/2020/11/ptPrKc.jpg"
 关于如何提升生产力，这是个可以无限探索下去的话题。所有帮助提升生产力或者改善效率的工具，都是在尽可能压缩核心工作之外的时间，包括 macOS 的「聚焦（Spotlight）」、Alfred 以及接下来要提到的 Raycast。
 一开始在 Product Hunt 上看到 Raycast 介绍，觉得其不过是又一个「Alfred」而已。老实说，我并不是 Alfred 的忠实用户，曾因为看到很多人推荐而去安装使用，但略显陈旧的 UI 和繁杂的设置菜单让我觉得「聚焦（Spotlight）」好像也能凑合用着。
 如果以 macOS 系统版本风格来比喻的话，Alfred 的 UI 风格应该能匹配几年前的 macOS 吧，而 Raycast 却是能够驾驭 macOS Big Sur 全新的视觉风格。
-![[assets/local_image_plus/7e599d87ffaa3e6413a3b56a3ca152da_MD5.webp]]
+![7e599d87ffaa3e6413a3b56a3ca152da_MD5](https://cdn.jsongo.top/2024/11/f97c9a5832fb6f27de819010b02936b1.webp)
 为了避免造成误解，我这里就不进行两者的比较，开发者针对 Raycast、聚焦（Spotlight）以及 Alfred 的区别也做了简单的[说明](https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Ffaq)，有兴趣可以跳转查看，当然也欢迎有心得的朋友补充在评论区一起交流。
 ## **为开发人员定制的生产力工具**
 Raycast 是直到 10 月 29 日才放出这第一个公测版本，对外宣布种子轮已筹集 270 万美元。根据开发者介绍，Raycast 正是受命令行的启发，作为软件工程师，他们注意到自己真正写代码的时间越来越少，反而需要更多的时间来管理软件开发，例如跟踪 bug 反馈、管理 sprint、发布新版本等等，这些都需要借助网页端或者其它的不同工具来完成。
@@ -32,55 +32,55 @@ Raycast 是直到 10 月 29 日才放出这第一个公测版本，对外宣布�
 ## 功能体验
 ### 可完全取代聚焦（Spotlight）
 既然 Raycast 包含了聚焦（Spotlight）的功能，意味着你完全可以用 Raycast 替换掉它。单从 UI 上来说，Raycast 比 Alfred 更有 macOS 原生应用的感觉，替代聚焦（Spotlight）完全不会产生违和感。
-![[assets/local_image_plus/cca44ef1688283563e27b4f55f2e2a41_MD5.webp]]
+![cca44ef1688283563e27b4f55f2e2a41_MD5](https://cdn.jsongo.top/2024/11/c70e4cb6b84456b0bf0d72939d4501d7.webp)
 Raycast 开启后，菜单栏会有常驻图标，当然也可以通过快捷键呼出 Raycast，默认快捷键为「option + 空格」，设置菜单里还「贴心」地给出了替换聚焦（Spotlight）的方法——其实就是在系统设置中关闭聚焦（Spotlight）的快捷键，然后把 Raycast 快捷键改为「command + 空格」。
-![[assets/local_image_plus/ffbb89e250565e9292b77d55f5c84e04_MD5.webp]]
+![ffbb89e250565e9292b77d55f5c84e04_MD5](https://cdn.jsongo.top/2024/11/2e0e1fe807909f21e8a33f3fa64af2a5.webp)
 与聚焦（Spotlight）、Alfred 不一样，呼出 Raycast 之后并非只显示一个搜索框，还包含一些推荐项目（根据使用频率推荐）、手动收藏项目以及快捷操作，下滑则能看到所有的项目。
-![[assets/local_image_plus/e917063c8f850dbfe89b16465c713d78_MD5.webp]]
+![e917063c8f850dbfe89b16465c713d78_MD5](https://cdn.jsongo.top/2024/11/f2446c160ce889dddecd375b67de7491.webp)
 你可以在搜索框中任意输入内容，优先会展示本地已有的应用或者快捷命令，其次可选搜索文件或者直接在搜索引擎中搜素。Raycast 默认只有 Google、DuckDuckGo 两种搜索引擎且无法修改。
 软件右下角有快捷菜单，除了打开应用/文件之外，还可以快速定位文件位置或者执行其它操作，而且这些所有的一系列操作都可以使用快捷键完成。
-![[assets/local_image_plus/40feea250a33ef646fa0da55115489ca_MD5.webp]]
+![40feea250a33ef646fa0da55115489ca_MD5](https://cdn.jsongo.top/2024/11/ddd7711e9de3a7a1d5ef89857a34b868.webp)
 文件搜索功能支持部分图片、文档预览，且能显示文件详细信息，这个比聚焦（Spotlight）实用性更高。
 关于应用快捷启动以及文件搜索与聚焦（Spotlight）还是比较类似的，只是在一些功能上做得更加细致，这里就不花费更多篇幅介绍了，毕竟这个并不算核心亮点。
 ### 支持管理日程、待办事项、剪贴板历史等
 Raycast 对接了不少第三方应用的功能服务，也包括 macOS 系统自带的日程查看以及待办事项管理，这些所能实现的操作在设置中都可以直接看到，可手动选择关闭。
-![[assets/local_image_plus/81647e1ec6ef1eba8c56f87bff95644e_MD5.webp]]
+![81647e1ec6ef1eba8c56f87bff95644e_MD5](https://cdn.jsongo.top/2024/11/efb835e32bea06295738bcb56e03243e.webp)
 不过同样是系统应用，通过 Raycast 可以查看、创建待办事项，而日历日程却只能查看，无法通过 Raycast 新建。
-![[assets/local_image_plus/3ed69cca35ce68b2bbb901cb3fa515d3_MD5.webp]]
-![[assets/local_image_plus/5b44b9fdb488781110f9a1648f5656a8_MD5.webp]]
+![3ed69cca35ce68b2bbb901cb3fa515d3_MD5](https://cdn.jsongo.top/2024/11/d877256a9cde5bc60b0c7002c0387c06.webp)
+![5b44b9fdb488781110f9a1648f5656a8_MD5](https://cdn.jsongo.top/2024/11/1579db6597c7421acaf7d7f4a398474e.webp)
 待办事项同步 macOS 的提醒事项，可以查看、勾选已完成的目标事项，也可以自由创建。直接可以在 Raycast 中完成，无需单独打开提醒事项，效率明显提升了不少。
 剪贴板历史记录算是 Raycast 给我的一个小小惊喜，这是 Raycast 本身自带的小功能。关于剪贴板管理器，我之前也用过一段时间的 Paste，但发现自己其实用到的并不多，没必要单独开一个软件持续后台，另外考虑到云端同步的隐私安全，Paste 我就并没有用很久。而通过 Raycast 搜索「Clipboard History」，能够直接查看近期的剪贴板记录。
-![[assets/local_image_plus/e756a76fbc39ab7636eea3a31024ad1e_MD5.jpg]]
+![e756a76fbc39ab7636eea3a31024ad1e_MD5](https://cdn.jsongo.top/2024/11/14651579cb75cb98cc01af5ad7cde863.webp)
 手动数了一下，Raycast 能够保存 50 条最近的历史记录，而且还可以选中部分历史复制内容置顶。至于隐私问题应该不用担心，Raycast 本身所有的数据都加密保存在本地，即便对接一些第三方 API 服务也是直接传送到对应云端，并不存在「中间商」。
 ### 接入第三方服务高效协作
 如之前所言，Raycast 主要面向开发人员。目前 Raycast 已经接入了 GitHub、Jira、G Suite、Linear、Asana、Zoom 等服务，能够快速完成特定操作。
-![[assets/local_image_plus/60d456e3c2effe546ef557e18829bae5_MD5.jpg]]
+![60d456e3c2effe546ef557e18829bae5_MD5](https://cdn.jsongo.top/2024/11/0a46b6cda9f5438644431d66017fa5f9.webp)
 用户需要通过 OAuth 协议登录指定服务，已完成自有账号内容的双向同步。
 不过很遗憾，我并不是程序员，不在 GitHub 中处理开发任务，所以没办法展示，你可以查看[官方演示视频](https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Fextensions%2Fgithub) 查看具体用法，功能上还是表现地很直观的，几乎无需打开浏览器网页。
-![[assets/local_image_plus/0a193ba829407c9b0e15d160a1284751_MD5.jpg]]
-![[assets/local_image_plus/04cc0079cb45501e3fa8fad77113c3b8_MD5.jpg]]
+![0a193ba829407c9b0e15d160a1284751_MD5](https://cdn.jsongo.top/2024/11/02892bbca5bb5a43e6ffe1b541c693cf.webp)
+![04cc0079cb45501e3fa8fad77113c3b8_MD5](https://cdn.jsongo.top/2024/11/c8a4505782e33913154dc1b439c85da8.webp)
 同样，Zoom 也需要完成登录，才能在 Raycast 中创建会议、查看待参加会议等，只是加入会议时需要调用本地 Zoom 客户端接入。
 目前看来，Raycast 对目前已有的第三方协作服务的整合还是比较深入的，能够直接在 Raycast 上完成操作，而省去了来回切换网页或者工具软件的繁琐。
 ### 系统快捷设置，支持脚本命令
 日常使用电脑，可能经常会需要调整一些系统设置项，例如音量调节、休眠、锁屏或者深色模式切换等等，有快捷按键的还好，更多的是需要进入设置中去找，这个过程本身就会比较浪费时间。所以不少用户会通过第三方工具来完成，例如 [One Switch](https://sspai.com/item/77) 等。
-![[assets/local_image_plus/96aae5579730e397004b0483ff38b17e_MD5.jpg]]
+![96aae5579730e397004b0483ff38b17e_MD5](https://cdn.jsongo.top/2024/11/147f9d240e88a56e00893b1b0824608c.webp)
 Raycast 本身内置了一些系统功能调节，同时支持加载命令脚本，意味着能够将很多较为隐秘的系统设置融入 Raycast 实现快捷操作。
-![[assets/local_image_plus/5ce0fea00621f9d3be2fe4ae114c0d83_MD5.jpg]]
-![[assets/local_image_plus/7eed9b35348e21c9aff721666966dd2c_MD5.jpg]]
+![5ce0fea00621f9d3be2fe4ae114c0d83_MD5](https://cdn.jsongo.top/2024/11/e1a2f8d3ba22cc89a0fc9577afbf3bcb.webp)
+![7eed9b35348e21c9aff721666966dd2c_MD5](https://cdn.jsongo.top/2024/11/ea35594ade68ff40697a9bc74853d258.webp)
 而通过脚本命令还能实现 Raycast 没有内置的一些系统功能，添加其它一些快捷操作。由于我使用时间并不长，所添加的第三方脚本命令并不多，唯一用得最多的就是「深色模式快捷切换」。
-![[assets/local_image_plus/d59bb11333dba80d554da3a9aed46699_MD5.jpg]]
+![d59bb11333dba80d554da3a9aed46699_MD5](https://cdn.jsongo.top/2024/11/d40fc6b2343314c58359ed6d52fd8510.webp)
 如果你觉得用搜索的方式还不够快，你可以单独设置快捷键，真正实现一键切换。
 Raycast [提供](https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands%2Fblob%2Fmaster%2Fextensions.md) 了大量的脚本命令可供直接安装，大家可以根据需要自行添加，有能力的也可以自己[参考规范](https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands) 编写。
 ### 小功能：资讯浏览、计算器、汇率转换、时间查询等
 Raycast 还集成了一些小功能，这些在设置中并不能直接看到，所以阅读[手册](https://sspai.com/link?target=https%3A%2F%2Fwww.notion.so%2FRaycast-Manual-d5c85a7694dc4e4088b8b93557ea6d2d) 彻底了解 Raycast 还是很有必要的。
 资讯浏览功能算是隐藏的小彩蛋，不过 Raycast 目前只内置有 Hacker News 的资讯源，能够查看最新的三十条资讯标题，如果看到有兴趣的再点击跳转网页查看。
-![[assets/local_image_plus/0678a3f0f9bf7b8c5a690683c6366674_MD5.jpg]]
+![0678a3f0f9bf7b8c5a690683c6366674_MD5](https://cdn.jsongo.top/2024/11/674eab3a9033a4ff14a72a6b597141c3.webp)
 类似的资讯浏览方式，在之前使用的 Here 应用中见到过，类似 RSS 订阅。如果 Raycast 这个功能能够支持自定义，就能够自由添加更多新闻源，对于我这种经常关注资讯的还是挺有用的，毕竟大部分的快资讯看看标题就能知道有没有价值了。
-![[assets/local_image_plus/59fff109d6637be52027194ed565efea_MD5.jpg]]
+![59fff109d6637be52027194ed565efea_MD5](https://cdn.jsongo.top/2024/11/9bbc93c83b32264169eac763abab742e.webp)
 计算器、汇率转换、时间查询……Raycast 似乎还在继续增加很多小功能，不知道这些有没有能吸引你。
-![[assets/local_image_plus/2070324e7175af917c95e87d3b33050c_MD5.jpg]]
-![[assets/local_image_plus/16d9ec5c3f131bba277624c3967f0c16_MD5.jpg]]
-![[assets/local_image_plus/68e262fea68a8a54165336085ac22289_MD5.jpg]]
+![2070324e7175af917c95e87d3b33050c_MD5](https://cdn.jsongo.top/2024/11/f89367e7b2a5b33b29620a9fad0e74f7.webp)
+![16d9ec5c3f131bba277624c3967f0c16_MD5](https://cdn.jsongo.top/2024/11/50cfb72914950e80c8de1d87fea892fb.webp)
+![68e262fea68a8a54165336085ac22289_MD5](https://cdn.jsongo.top/2024/11/33eec15cac005e571a16edf4cf363b55.webp)
 使用 Raycast 不到一个星期，显然觉得还有很多东西我并没有能深刻体验到，但现在仅有的一些已经足够让我惊喜。
 Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服务的整合更加深入，包括操作视图、信息展示更详细，除了本身涵盖的一些系统快捷设置之外，还可以通过命令脚本扩展，可玩性大大增强。想到这里，我觉得聚焦（Spotlight）要在系统设置里长眠了。
 关于 Raycast 得收费计划，开发团队也已经声明了，目前公测阶段会保持免费，后期会有针对高级用户和团队的付费模式，核心功能仍然保持免费。在 macOS 版本正式上线之后，Raycast 也会逐渐支持 Windows 和 Linux 端，这对广大开发人员来说算是大好消息。
