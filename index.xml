@@ -236,20 +236,36 @@ loading="lazy"
 &lt;li>&lt;strong>seed&lt;/strong>，种子值，用于初始化随机数生成器。相同的种子值在相同的模型和参数设置下会生成相同的图像，这有助于复现结果。&lt;/li>
 &lt;li>&lt;strong>control_after_generate&lt;/strong>：这个参数可能与生成后的控制操作有关，例如对生成的图像进行随机化处理&lt;/li>
 &lt;li>&lt;strong>steps&lt;/strong>：指生成过程中的迭代步数。步数越多，生成的图像通常会越精细，但也会增加计算时间。&lt;/li>
-&lt;li>&lt;strong>cfg&lt;/strong>（Classifier-Free Guidance）：无分类器引导的强度。较高的 CFG 值会使生成的图像更紧密地遵循正向提示，但也可能导致图像过度拟合。&lt;/li>
-&lt;li>&lt;strong>sampler_name&lt;/strong>：这是指采样器的名称。不同的采样器（如 Euler、Langevin 等）有不同的特性，会影响图像生成的速度和质量。&lt;/li>
-&lt;li>&lt;strong>scheduler&lt;/strong>：调度器，用于控制生成过程中的步长和其他参数。不同的调度器会影响生成的效率和结果。&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>denoise&lt;/strong>：&lt;/p>
+&lt;li>&lt;strong>cfg&lt;/strong>（Classifier-Free Guidance）：无分类器引导的强度，它是一种在生成式模型（如 Stable Diffusion）中用于引导图像生成方向的技术，决定了模型在生成图像时对正向提示（你希望在图像中出现的内容）的遵循程度。较高的 CFG 值会使生成的图像更紧密地遵循正向 Prompt，但也有可能导致图像过度拟合。
 &lt;ul>
-&lt;li>值为 0.30，去噪参数控制生成过程中对噪声的去除程度。较低的去噪值会使生成的图像更具随机性，而较高的值会使图像更平滑和可预测。&lt;/li>
+&lt;li>取值范围：
+&lt;ul>
+&lt;li>CFG 的值通常在 1 到 20 之间，理论上可以取更高的值，但在实际应用中，过高的值往往会导致图像质量下降。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol>
+&lt;li>较低值（1 - 4）：
+&lt;ul>
+&lt;li>当 CFG 值较低时，生成的图像会更具随机性和创造性。模型对正向提示的遵循程度较弱，因此可能会生成一些与提示不太相关但具有独特创意的图像。这种情况下，图像可能会包含一些意外的元素或风格。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>中等值（4 - 10）：
+&lt;ul>
+&lt;li>在这个范围内，是比较常用的取值。模型会在遵循正向提示和保持一定的创造性之间取得较好的平衡。能够生成与提示较为符合的图像，同时也不会显得过于刻板。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>较高值（10 - 20）：
+&lt;ul>
+&lt;li>当 CFG 值较高时，生成的图像会非常紧密地遵循正向提示。这可能会导致图像过于 “完美” 地符合提示，但也可能会出现一些问题，比如图像的细节可能会显得不自然，色彩可能会过于饱和，或者图像可能会失去一些自然的随机性和美感&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>sampler_name&lt;/strong>：这是指采样器的名称。不同的采样器（如 Euler、Langevin 等）有不同的特性，会影响图像生成的速度和质量。&lt;/li>
+&lt;li>&lt;strong>scheduler&lt;/strong>：调度器，用于控制生成过程中的步长和其他参数。不同的调度器会影响生成的效率和结果。&lt;/li>
+&lt;li>&lt;strong>denoise&lt;/strong>：去噪参数控制生成过程中对噪声的去除程度。较低的去噪值会使生成的图像更具随机性，而较高的值会使图像更平滑和可预测。&lt;/li>
+&lt;/ul>
 &lt;h2 id="vae-decoder变分自解码器">VAE Decoder（变分自解码器）
-&lt;/h2>&lt;p>图像数据往往是高维的，包含大量的像素信息，所以一般训练和计算时，往往要压缩到低维来处理，用更紧凑的方式表示图像的关键特征，就像文本模型中的 Embedding 处理，变成稠密的数据，在图像处理领域叫潜在空间（Latent Space）。而解码器则是将潜在空间中的表示再转换回图像数据空间，尽可能地重建原始图像。
+&lt;/h2>&lt;p>图像数据往往是高维的，包含大量的像素信息，所以一般训练和计算时，往往要压缩到低维来处理，用更紧凑的方式表示图像的关键特征，就像文本模型中的 Embedding 处理，变成稠密的数据，在图像处理领域叫潜在空间（Latent Space）。而解码器则是将潜在空间中的表示再转换回图像数据空间，尽可能地重建原始图像。&lt;br>
 生成新图的过程，由于潜在空间是连续的，稍微改变潜在空间中的向量值，就可以生成与原始图像在某些特征上有所变化的新图像。例如，在生成人脸图像的 VAE 模型中，在潜在空间中沿着某个方向移动向量可能会改变人脸的表情、发型或者年龄等特征。&lt;/p>
 &lt;h2 id="latent-image">Latent Image
 &lt;/h2>&lt;p>一般在整个 ComfyUI 流程中，会插入一张空的（Empty） Lantent Image，它提供了一个初始的 “画布”，让模型在这个基础上进行生成或转换操作。&lt;br>
