@@ -211,7 +211,11 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
+&lt;/ul></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
+&lt;/h1>&lt;h2 id="背景">背景
+&lt;/h2>&lt;p>Stable Diffusion 的发展历程如下。&lt;/p>
+&lt;h2 id="技术简介">技术简介
+&lt;/h2>&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
 它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>前向扩散&lt;/strong>：在前向阶段，通过向原始图像数据（如真实的照片或绘画）添加噪声，逐步将图像转换为纯噪声。这个过程是在多个时间步（time - steps）中完成的，每一步都按照一定的规则（通常是基于高斯分布）添加噪声，使得图像信息逐渐被噪声掩盖。例如，开始时图像可能还比较清晰，随着时间步的增加，图像越来越模糊，最终变成完全的噪声。&lt;/li>
