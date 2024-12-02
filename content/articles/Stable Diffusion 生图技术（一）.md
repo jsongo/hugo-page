@@ -15,7 +15,7 @@ draft: false
 ## 背景
 Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。  
 Stable Diffusion 的发展历程如下：  
-![|900](Pasted%20image%2020241202164101.webp)
+![|900](https://cdn.jsongo.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp)
 ## 技术简介
 Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。  
 它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。
