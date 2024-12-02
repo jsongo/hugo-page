@@ -13,6 +13,7 @@ draft: false
 ---
 # 概述
 ## 背景
+Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。
 Stable Diffusion 的发展历程如下。
 
 ## 技术简介
