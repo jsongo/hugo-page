@@ -12,7 +12,7 @@ draft: false
 description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Office 应用程序（如 Word、Excel、PowerPoint 等）功能的小程序，能增强 Office 应用程序的能力，能与 Office 文档中的内容进行交互。从技术栈来说，它是基于 Web 技术
 ---
 # 介绍
-![b453b1cce3c6e66c8f7ee107a10961d5_MD5](https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp)
+![[assets/local_image_plus/b453b1cce3c6e66c8f7ee107a10961d5_MD5.webp]]
 >  Office Add-ins，中文 “加载项”。  
 >  下文中，讲到 Add-ins 主要是指这个技术，提到具体应用时，会用“加载项”概念，主要是指 Office 应用中、下图所示的功能。
 ## 概念
@@ -28,7 +28,7 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 - **内容生成与自动化**：帮助用户自动生成文档内容或进行格式设置。以 PowerPoint 为例，一个加载项可以根据用户输入的主题和要点自动生成一套完整的幻灯片，包括添加合适的图表、图片和布局等
 ## Why Add-ins
 官网给了一张图：  
-	![09c7cc8c5fb5ab19a79d21aac9c36d04_MD5](https://cdn.jsongo.top/2024/12/ff7e6c77ddcf6130227a8ba4b47e6875.webp)
+	![[assets/local_image_plus/09c7cc8c5fb5ab19a79d21aac9c36d04_MD5.webp]]
 - 可以跨端，不同端上都有 Office，你写的功能在不同平台上都可以跑起来
 - 中心化的分发，不用你自己到处去做上线（如 app Store）
 - 很容易下载安装
@@ -36,9 +36,9 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 
 # 市场（AppSource）
 [业务应用 - Microsoft AppSource](https://appsource.microsoft.com/zh-cn/marketplace/apps?product=office%3Bword&page=1&src=office&corrid=1f1d6156-7354-6d5f-d739-b9841f6e1c48&omexanonuid=&referralurl=&ClientSessionId=e4728826-ce48-4ae1-83a3-f11b7f195f63)  
-	![31a5772abd77fa083a40bbabf855bf21_MD5](https://cdn.jsongo.top/2024/12/f4e96ef3446b8a5867243039bbea65ee.webp)  
+	![[assets/local_image_plus/31a5772abd77fa083a40bbabf855bf21_MD5.webp]]  
 可以看到已经有很多 AI 应用了，这个截图还只是首页的前几个应用。有不少官方也都上线了 Office Add-ins 应用，比如 Grammarly、Draw.io、Adobe、Wekipedia、Mermaid 等。生态已经比较成熟了。  
-![d9eb88a665c0acd52243e001fb941aa8_MD5](https://cdn.jsongo.top/2024/12/4bf99f0f5b0dbfe9c178f6a779071743.webp)  
+![[assets/local_image_plus/d9eb88a665c0acd52243e001fb941aa8_MD5.webp]]  
 过滤了下 Microsoft 365 相关的（如 Excel/Word/OneNote/Outlook/PPT 等）就有 7000+ 个。
 
 # 交互形态
@@ -63,15 +63,15 @@ pnpm install -g mem-fs
 ```bash
 yo office
 ```
-![091737356a84529f6186ece9c4b25f10_MD5](https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp)  
-![8fc4fc480f6fddbdf826d2095a18622c_MD5](https://cdn.jsongo.top/2024/12/41cedbbf9a12160ae1f0e4368a4dc876.webp)  
+![[assets/local_image_plus/091737356a84529f6186ece9c4b25f10_MD5.webp]]  
+![[assets/local_image_plus/8fc4fc480f6fddbdf826d2095a18622c_MD5.webp]]  
 生成后它默认用 npm 来 install，觉得慢的话直接把进程杀掉，然后重新跑 `pnpm install`。  
 后面就是熟悉的 `npm run start` 了，写真正的代码逻辑了。  
 ## 辅助开发工具
 Office Addin 项目创建和基架工具是 Office 加载项的 Yeoman 生成器，简称为 `yo`：[GitHub - yeoman/yo: CLI tool for running Yeoman generators](https://github.com/yeoman/yo)。  
 ### Vs code/cursor 开发插件
 可以安装下这个：[Microsoft Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger)  
-	![06ed2b1e5c337d53818b449c6a6ead71_MD5](https://cdn.jsongo.top/2024/12/94b2a20f155e46bba502cec36e009b1f.webp)  
+	![[assets/local_image_plus/06ed2b1e5c337d53818b449c6a6ead71_MD5.webp]]  
 当然也可以用 npm start，不过运行前一定要记得先运行 `npm run dev-server`，要不然只是 start 个客户端、背后没服务是跑不起来的。如果一直失败，那直接把所有在 run 的都关掉，word 也退出，运行几次 `npm stop` （因为我也遇到了，当时运行了好几次 start，它起了多个背后的进程）。所以其实用插件还是比较方便些，命令行可能会遇到一些想不通的问题。
 >  用命令行如果遇到问题，可以参考这里：[Build your first Word task pane add-in - Office Add-ins | Microsoft Learn](https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart-yo)
 
@@ -79,22 +79,22 @@ Office Addin 项目创建和基架工具是 Office 加载项的 Yeoman 生成器
 Script Lab 是一种用于快速创建调用 Office JavaScript 库 API 的“原型代码”。
 >  Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs.
 - 安装时，公司账号可能会用不了，可能跟公司的安全策略有关。最好切换个人账号。  
-	![481f65c8228eb4e2a18b297bba34e058_MD5](https://cdn.jsongo.top/2024/12/766add3fe8dd77c7b29ce094a1f8b986.webp)  
+	![[assets/local_image_plus/481f65c8228eb4e2a18b297bba34e058_MD5.webp]]  
 可以到 [这里](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/explore-with-script-lab) 或 [这里](https://appsource.microsoft.com/en-us/product/office/WA104380862) 来直接下载安装，需要登录，这里如果用公司的账号可能会失败，可以尝试下个人的账号。如果是走的公司内部的采购，有个小技巧：公司内部申请下来之后，用它激活，然后退出登录自己的账号，我这么测试了下，用自己账号依然保持着激活状态，看来它激活的是软件本身，跟账号没关系。  
 第一次登录 AppSource 的话，会有一堆流程，一会儿要认证，一会儿要补充信息……  
-	![a5222986bf0607d4b24cef11d34a7e99_MD5](https://cdn.jsongo.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp)  
-	![6ce02359d39da2d74996140ea160c735_MD5](https://cdn.jsongo.top/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp)  
+	![[assets/local_image_plus/a5222986bf0607d4b24cef11d34a7e99_MD5.webp]]  
+	![[assets/local_image_plus/6ce02359d39da2d74996140ea160c735_MD5.webp]]  
 装完之后，打开 word 就可以看到了：  
-	![02913cb0e00b47cca7a08800297d3910_MD5](https://cdn.jsongo.top/2024/12/8889f62079f35926fb5ab63fe45b0d05.webp)
+	![[assets/local_image_plus/02913cb0e00b47cca7a08800297d3910_MD5.webp]]
 
 ## 运行
 运行起来后，如图所示：  
-	![b71eb2e0a6e37ecb7264538e8b0e8e3c_MD5](https://cdn.jsongo.top/2024/12/5020607f6dca911463819e1884f959f0.webp)  
+	![[assets/local_image_plus/b71eb2e0a6e37ecb7264538e8b0e8e3c_MD5.webp]]  
 Word 是自己弹出来的，vscode 插件背后是起了一个 server （默认在 3000 端口），为侧边这个“页面”提供调试服务。
 
 # 限制
 从生成的代码中可以看出，微软对 Add-ins 其实做了一些环境限制：  
-	![8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5](https://cdn.jsongo.top/2024/12/779ca230a5c6deef84980df0246a0c51.webp)  
+	![[assets/local_image_plus/8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5.webp]]  
 只有 IE 和 Edge 浏览器内核才能跑，当然 Office 版本也有限制，这个倒还好。
 
 # 相关资源
