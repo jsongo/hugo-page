@@ -9,7 +9,7 @@ banner: https://cdn.jsongo.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg
 title: 开发 Office Add-ins 应用（一）：在 word 里使用大模型
 slug: office-add-ins-1
 draft: false
-description:
+description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Office 应用程序（如 Word、Excel、PowerPoint 等）功能的小程序，能增强 Office 应用程序的能力，能与 Office 文档中的内容进行交互。从技术栈来说，它是基于 Web 技术
 ---
 # 介绍
 ![](https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp)
