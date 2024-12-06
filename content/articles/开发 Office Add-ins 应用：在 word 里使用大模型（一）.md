@@ -12,6 +12,7 @@ draft: false
 description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Office 应用程序（如 Word、Excel、PowerPoint 等）功能的小程序，能增强 Office 应用程序的能力，能与 Office 文档中的内容进行交互。从技术栈来说，它是基于 Web 技术
 ---
 # 介绍
+借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。  
 ![b453b1cce3c6e66c8f7ee107a10961d5_MD5](https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp)
 >  Office Add-ins，中文 “加载项”。  
 >  下文中，讲到 Add-ins 主要是指这个技术，提到具体应用时，会用“加载项”概念，主要是指 Office 应用中、下图所示的功能。
@@ -44,13 +45,13 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 # 交互形态
 目前看到的主要交互形态有：  
 1、Excel 等里作为一个嵌入内容显示在表格中。  
-![](https://cdn.jsongo.top/2024/12/0718a4c5c68f59a0dac54be3613db317.webp)
-![|500](https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp)  
+	![](https://cdn.jsongo.top/2024/12/0718a4c5c68f59a0dac54be3613db317.webp)  
+	![|500](https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp)  
 2、Excel/Word/PPT 中作为侧边窗格可以单独进行交互。
 - 这种交互其中有两个操作点，一个是顶部，它也可以触发一个事件；另一个是侧边，本质上它是在侧边开一个类似 Webview 的容器，里面跑 Web 页面。  
-	![|500](https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp)
-	![|500](https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp)
-	![|500](https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp)
+	![|500](https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp)  
+	![|500](https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp)  
+	![|500](https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp)  
 	![|500](https://cdn.jsongo.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp)
 
 # 开发
@@ -86,7 +87,7 @@ Script Lab 是一种用于快速创建调用 Office JavaScript 库 API 的“原
 	![481f65c8228eb4e2a18b297bba34e058_MD5](https://cdn.jsongo.top/2024/12/766add3fe8dd77c7b29ce094a1f8b986.webp)  
 可以到 [这里](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/explore-with-script-lab) 或 [这里](https://appsource.microsoft.com/en-us/product/office/WA104380862) 来直接下载安装，需要登录，这里如果用公司的账号可能会失败，可以尝试下个人的账号。如果是走的公司内部的采购，有个小技巧：公司内部申请下来之后，用它激活，然后退出登录自己的账号，我这么测试了下，用自己账号依然保持着激活状态，看来它激活的是软件本身，跟账号没关系。  
 第一次登录 AppSource 的话，会有一堆流程，一会儿要认证，一会儿要补充信息……  
-	![a5222986bf0607d4b24cef11d34a7e99_MD5](https://cdn.jsongo.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp)
+	![a5222986bf0607d4b24cef11d34a7e99_MD5](https://cdn.jsongo.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp)  
 	![6ce02359d39da2d74996140ea160c735_MD5](https://cdn.jsongo.top/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp)  
 装完之后，打开 word 就可以看到了：  
 	![02913cb0e00b47cca7a08800297d3910_MD5](https://cdn.jsongo.top/2024/12/8889f62079f35926fb5ab63fe45b0d05.webp)
