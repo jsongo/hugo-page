@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/Office on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/office/</link><description>Recent content in IT/Office on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://www.jsongo.top/tags/it/office/index.xml" rel="self" type="application/rss+xml"/><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
-&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
+&lt;/h1>&lt;p>借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
 loading="lazy"
 alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5"
 >&lt;/p>
@@ -52,7 +53,7 @@ alt="d9eb88a665c0acd52243e001fb941aa8_MD5"
 1、Excel 等里作为一个嵌入内容显示在表格中。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0718a4c5c68f59a0dac54be3613db317.webp"
 loading="lazy"
->
+>&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
 loading="lazy"
 alt="|500"
@@ -63,15 +64,15 @@ alt="|500"
 &lt;img src="https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
 loading="lazy"
 alt="|500"
->
+>&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
 loading="lazy"
 alt="|500"
->
+>&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
 loading="lazy"
 alt="|500"
->
+>&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
 loading="lazy"
 alt="|500"
@@ -128,7 +129,7 @@ alt="481f65c8228eb4e2a18b297bba34e058_MD5"
 &lt;img src="https://cdn.jsongo.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp"
 loading="lazy"
 alt="a5222986bf0607d4b24cef11d34a7e99_MD5"
->
+>&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp"
 loading="lazy"
 alt="6ce02359d39da2d74996140ea160c735_MD5"
