@@ -440,7 +440,10 @@ alt="|700"
 &lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
 &lt;h1 id="方案选择">方案选择
 &lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
-&lt;/h1>&lt;p>![[assets/local_image_plus/b453b1cce3c6e66c8f7ee107a10961d5_MD5.webp]]&lt;/p>
+&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
+loading="lazy"
+alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5"
+>&lt;/p>
 &lt;blockquote>
 &lt;p>Office Add-ins，中文 “加载项”。&lt;br>
 下文中，讲到 Add-ins 主要是指这个技术，提到具体应用时，会用“加载项”概念，主要是指 Office 应用中、下图所示的功能。&lt;/p>
@@ -462,7 +465,10 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 &lt;/ul>
 &lt;h2 id="why-add-ins">Why Add-ins
 &lt;/h2>&lt;p>官网给了一张图：&lt;br>
-![[assets/local_image_plus/09c7cc8c5fb5ab19a79d21aac9c36d04_MD5.webp]]&lt;/p>
+&lt;img src="https://cdn.jsongo.top/2024/12/ff7e6c77ddcf6130227a8ba4b47e6875.webp"
+loading="lazy"
+alt="09c7cc8c5fb5ab19a79d21aac9c36d04_MD5"
+>&lt;/p>
 &lt;ul>
 &lt;li>可以跨端，不同端上都有 Office，你写的功能在不同平台上都可以跑起来&lt;/li>
 &lt;li>中心化的分发，不用你自己到处去做上线（如 app Store）&lt;/li>
@@ -472,34 +478,42 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 &lt;h1 id="市场appsource">市场（AppSource）
 &lt;/h1>&lt;p>&lt;a class="link" href="https://appsource.microsoft.com/zh-cn/marketplace/apps?product=office%3Bword&amp;amp;page=1&amp;amp;src=office&amp;amp;corrid=1f1d6156-7354-6d5f-d739-b9841f6e1c48&amp;amp;omexanonuid=&amp;amp;referralurl=&amp;amp;ClientSessionId=e4728826-ce48-4ae1-83a3-f11b7f195f63" target="_blank" rel="noopener"
 >业务应用 - Microsoft AppSource&lt;/a>&lt;br>
-![[assets/local_image_plus/31a5772abd77fa083a40bbabf855bf21_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/f4e96ef3446b8a5867243039bbea65ee.webp"
+loading="lazy"
+alt="31a5772abd77fa083a40bbabf855bf21_MD5"
+>&lt;br>
 可以看到已经有很多 AI 应用了，这个截图还只是首页的前几个应用。有不少官方也都上线了 Office Add-ins 应用，比如 Grammarly、Draw.io、Adobe、Wekipedia、Mermaid 等。生态已经比较成熟了。&lt;br>
-![[assets/local_image_plus/d9eb88a665c0acd52243e001fb941aa8_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/4bf99f0f5b0dbfe9c178f6a779071743.webp"
+loading="lazy"
+alt="d9eb88a665c0acd52243e001fb941aa8_MD5"
+>&lt;br>
 过滤了下 Microsoft 365 相关的（如 Excel/Word/OneNote/Outlook/PPT 等）就有 7000+ 个。&lt;/p>
 &lt;h1 id="交互形态">交互形态
 &lt;/h1>&lt;p>目前看到的主要交互形态有：&lt;br>
 1、Excel 等里作为一个嵌入内容显示在表格中。&lt;br>
-&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206183958.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/0718a4c5c68f59a0dac54be3613db317.webp"
 loading="lazy"
 >
-还有：
-&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206141826.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
 loading="lazy"
 alt="|500"
 >&lt;br>
 2、Excel/Word/PPT 中作为侧边窗格可以单独进行交互。&lt;/p>
 &lt;ul>
 &lt;li>这种交互其中有两个操作点，一个是顶部，它也可以触发一个事件；另一个是侧边，本质上它是在侧边开一个类似 Webview 的容器，里面跑 Web 页面。&lt;br>
-&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206141631.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
 loading="lazy"
 alt="|500"
->&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206141748.webp"
+>
+&lt;img src="https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
 loading="lazy"
 alt="|500"
->&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206142055.webp"
+>
+&lt;img src="https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
 loading="lazy"
 alt="|500"
->&lt;img src="https://www.jsongo.top/Pasted%20image%2020241206142315.webp"
+>
+&lt;img src="https://cdn.jsongo.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
 loading="lazy"
 alt="|500"
 >&lt;/li>
@@ -512,8 +526,14 @@ alt="|500"
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pnpm install -g mem-fs
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="生成代码">生成代码
 &lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yo office
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>![[assets/local_image_plus/091737356a84529f6186ece9c4b25f10_MD5.webp]]&lt;br>
-![[assets/local_image_plus/8fc4fc480f6fddbdf826d2095a18622c_MD5.webp]]&lt;br>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
+loading="lazy"
+alt="091737356a84529f6186ece9c4b25f10_MD5"
+>&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/41cedbbf9a12160ae1f0e4368a4dc876.webp"
+loading="lazy"
+alt="8fc4fc480f6fddbdf826d2095a18622c_MD5"
+>&lt;br>
 生成后它默认用 npm 来 install，觉得慢的话直接把进程杀掉，然后重新跑 &lt;code>pnpm install&lt;/code>。&lt;br>
 后面就是熟悉的 &lt;code>npm run start&lt;/code> 了，写真正的代码逻辑了。&lt;/p>
 &lt;h2 id="辅助开发工具">辅助开发工具
@@ -522,7 +542,10 @@ alt="|500"
 &lt;h3 id="vs-codecursor-开发插件">Vs code/cursor 开发插件
 &lt;/h3>&lt;p>可以安装下这个：&lt;a class="link" href="https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger" target="_blank" rel="noopener"
 >Microsoft Office Add-ins Development Kit&lt;/a>&lt;br>
-![[assets/local_image_plus/06ed2b1e5c337d53818b449c6a6ead71_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/94b2a20f155e46bba502cec36e009b1f.webp"
+loading="lazy"
+alt="06ed2b1e5c337d53818b449c6a6ead71_MD5"
+>&lt;br>
 当然也可以用 npm start，不过运行前一定要记得先运行 &lt;code>npm run dev-server&lt;/code>，要不然只是 start 个客户端、背后没服务是跑不起来的。如果一直失败，那直接把所有在 run 的都关掉，word 也退出，运行几次 &lt;code>npm stop&lt;/code> （因为我也遇到了，当时运行了好几次 start，它起了多个背后的进程）。所以其实用插件还是比较方便些，命令行可能会遇到一些想不通的问题。&lt;/p>
 &lt;blockquote>
 &lt;p>用命令行如果遇到问题，可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart-yo" target="_blank" rel="noopener"
@@ -535,23 +558,41 @@ alt="|500"
 &lt;/blockquote>
 &lt;ul>
 &lt;li>安装时，公司账号可能会用不了，可能跟公司的安全策略有关。最好切换个人账号。&lt;br>
-![[assets/local_image_plus/481f65c8228eb4e2a18b297bba34e058_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/766add3fe8dd77c7b29ce094a1f8b986.webp"
+loading="lazy"
+alt="481f65c8228eb4e2a18b297bba34e058_MD5"
+>&lt;br>
 可以到 &lt;a class="link" href="https://learn.microsoft.com/en-us/office/dev/add-ins/overview/explore-with-script-lab" target="_blank" rel="noopener"
 >这里&lt;/a> 或 &lt;a class="link" href="https://appsource.microsoft.com/en-us/product/office/WA104380862" target="_blank" rel="noopener"
 >这里&lt;/a> 来直接下载安装，需要登录，这里如果用公司的账号可能会失败，可以尝试下个人的账号。如果是走的公司内部的采购，有个小技巧：公司内部申请下来之后，用它激活，然后退出登录自己的账号，我这么测试了下，用自己账号依然保持着激活状态，看来它激活的是软件本身，跟账号没关系。&lt;br>
 第一次登录 AppSource 的话，会有一堆流程，一会儿要认证，一会儿要补充信息……&lt;br>
-![[assets/local_image_plus/a5222986bf0607d4b24cef11d34a7e99_MD5.webp]]&lt;br>
-![[assets/local_image_plus/6ce02359d39da2d74996140ea160c735_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp"
+loading="lazy"
+alt="a5222986bf0607d4b24cef11d34a7e99_MD5"
+>
+&lt;img src="https://cdn.jsongo.top/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp"
+loading="lazy"
+alt="6ce02359d39da2d74996140ea160c735_MD5"
+>&lt;br>
 装完之后，打开 word 就可以看到了：&lt;br>
-![[assets/local_image_plus/02913cb0e00b47cca7a08800297d3910_MD5.webp]]&lt;/li>
+&lt;img src="https://cdn.jsongo.top/2024/12/8889f62079f35926fb5ab63fe45b0d05.webp"
+loading="lazy"
+alt="02913cb0e00b47cca7a08800297d3910_MD5"
+>&lt;/li>
 &lt;/ul>
 &lt;h2 id="运行">运行
 &lt;/h2>&lt;p>运行起来后，如图所示：&lt;br>
-![[assets/local_image_plus/b71eb2e0a6e37ecb7264538e8b0e8e3c_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/5020607f6dca911463819e1884f959f0.webp"
+loading="lazy"
+alt="b71eb2e0a6e37ecb7264538e8b0e8e3c_MD5"
+>&lt;br>
 Word 是自己弹出来的，vscode 插件背后是起了一个 server （默认在 3000 端口），为侧边这个“页面”提供调试服务。&lt;/p>
 &lt;h1 id="限制">限制
 &lt;/h1>&lt;p>从生成的代码中可以看出，微软对 Add-ins 其实做了一些环境限制：&lt;br>
-![[assets/local_image_plus/8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/779ca230a5c6deef84980df0246a0c51.webp"
+loading="lazy"
+alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
+>&lt;br>
 只有 IE 和 Edge 浏览器内核才能跑，当然 Office 版本也有限制，这个倒还好。&lt;/p>
 &lt;h1 id="相关资源">相关资源
 &lt;/h1>&lt;ul>
