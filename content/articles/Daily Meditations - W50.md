@@ -2,9 +2,7 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - area/life/2022/July-2022
-  - area/life/daily
-  - import/yinxiang
+  - area/thinking
 created_at: Mon, Dec 9th, 2024 - 13:34:29
 banner_icon: 🥢
 banner: https://cdn.jsongo.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg
