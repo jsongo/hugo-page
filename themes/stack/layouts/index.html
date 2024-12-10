@@ -6,7 +6,7 @@
 
     <section class="article-list">
         {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/tile" . }}
+            {{ partial "article-list/default" . }}
         {{ end }}
     </section>
 
