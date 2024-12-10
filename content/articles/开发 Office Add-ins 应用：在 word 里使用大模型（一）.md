@@ -13,7 +13,7 @@ description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Offic
 ---
 # 介绍
 借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。  
-![b453b1cce3c6e66c8f7ee107a10961d5_MD5](https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp)
+![b453b1cce3c6e66c8f7ee107a10961d5_MD5|500](https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp)
 >  Office Add-ins，中文 “加载项”。  
 >  下文中，讲到 Add-ins 主要是指这个技术，提到具体应用时，会用“加载项”概念，主要是指 Office 应用中、下图所示的功能。
 ## 概念
