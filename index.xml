@@ -874,4 +874,24 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item></channel></rss>
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
+&lt;img src="https://cdn.jsongo.top/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
+loading="lazy"
+alt="|250"
+>
+EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，内部建立的容器集群。Tax 这个就不用说了，10%的税
+刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
+&lt;ul>
+&lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
+&lt;img src="https://cdn.jsongo.top/2024/12/5f2935beac626250341b78204dba3aaa.webp"
+loading="lazy"
+alt="|625"
+>
+看起来很正常，也没有实例在跑&lt;/li>
+&lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
+&lt;img src="https://cdn.jsongo.top/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
+loading="lazy"
+>
+&lt;a class="link" href="https://us-east-1.console.aws.amazon.com/ec2globalview/home" target="_blank" rel="noopener"
+>这里找 global 使用中的实例&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
