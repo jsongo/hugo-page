@@ -48,8 +48,13 @@ func host start --verbose
 func init --python
 ```
 它会生成一些基础的配置文件，包括 [_local.settings.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file) 和 [_host.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json)。
-
-
+创建一个 api 入口：
+```base
+func new --name combine_videos --template "HTTP trigger" --authlevel "anonymous"
+```
+Authlevel 有三个值：
+- Anonymous 即任何人都可以访问，不需要带什么认证，相当于公开了。
+- Function 函数级别的认证，创建的每个函数都有一个 token
 # 部署
 ## 平台创建应用
 先打开 [Microsoft Azure](https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp) 这个 portal 地址，创建一个 `Function App` （或者中文叫“函数应用”）。  
