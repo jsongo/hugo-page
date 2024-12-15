@@ -66,9 +66,9 @@ services:
 	[DNS records · Cloudflare Zero Trust docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/) 这条 CNAME 的规则是：`<Tunnel ID>.cfargotunnel.com` ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。
 	
 现在你可以用刚配置的域名来访问你的内网服务了。网速很快。  
-	![|750](308123784741719ac026d121b5160b7c.webp)
+	![|750](https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp)
 ## 优化网络连接
 如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。  
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：  
-	![|725](845476711784ab73f57161c0bc43bfac.webp)  
+	![|725](https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp)  
 	调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。
