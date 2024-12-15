@@ -105,7 +105,7 @@ alt="|425"
 切到这个插件去点击添加一个函数，一步步往下都有说明，比较简单。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/ea7349816d01aa7f064eebb26475e767.webp"
 loading="lazy"
-alt="|225"
+alt="|300"
 >&lt;br>
 我选了 HTTP 触发器的模板，最后给我生成了这个文件：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp"
@@ -116,6 +116,7 @@ alt="|500"
 &lt;/h2>&lt;p>简单的运行，可以用插件面板上，下半部分中的 Project 展开，里面有个调试相关的操作（它可点击）。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp"
 loading="lazy"
+alt="|850"
 >&lt;br>
 它会先做一些安装，然后启动 function，IDE 进入 debug 模式。这时主要运行的命令是：&lt;code>func host start&lt;/code>，直接在命令行里运行这个命令也可以启动本地调试运行。但如果你想查询代码中打的日志，一定要记得加上 &amp;ndash;verbose 的参数，所以正确的使用姿势是：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>func host start --verbose
@@ -192,10 +193,12 @@ alt="|650"
 选择 Deploy to Function App，直接进行部署。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/bda580eaff46be66e6353ae23f839da6.webp"
 loading="lazy"
+alt="|700"
 >&lt;br>
 我在使用的时候，经常遇到网络问题，因为某些你懂的原因，所以挺难的，得给 vscode 设置 Proxy (具体就不介绍了)&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp"
 loading="lazy"
+alt="|700"
 >&lt;/p>
 &lt;h2 id="cli-发布">CLI 发布
 &lt;/h2>&lt;h3 id="登录">登录
@@ -204,10 +207,12 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
 loading="lazy"
+alt="|750"
 >&lt;br>
 命令行也会有一堆打印，有如下关键信息就说明已经登录成功了。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp"
 loading="lazy"
+alt="|900"
 >&lt;/p>
 &lt;h3 id="发布操作">发布操作
 &lt;/h3>&lt;p>当然我们也可以选择用 CLI 来做发布：&lt;/p>
@@ -217,6 +222,7 @@ loading="lazy"
 这里的 &lt;code>project_name&lt;/code> 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
 loading="lazy"
+alt="|775"
 >&lt;br>
 另外还有一点要注意的是，本地的 python 环境需要跟平台上的一致，避免本地跑的好好的、部署上去就缺一些模块：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d4c8cfd171f834123918d1a99265533f.webp"
@@ -226,15 +232,18 @@ alt="|675"
 部署完会生成一个地址可供访问：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp"
 loading="lazy"
+alt="|800"
 >&lt;br>
 部署的过程是会比较慢，我们从平台的部署日志中可以看到它部署完后，会等待 1 分钟：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp"
 loading="lazy"
->
-在线上运行后，可以访问试试。
-线上日志可以在这里看到：
+alt="|750"
+>&lt;br>
+在线上运行后，可以访问试试。&lt;br>
+线上日志可以在这里看到：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
 loading="lazy"
+alt="|725"
 >&lt;/p></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
 &lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
 这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
@@ -586,14 +595,14 @@ alt="|875"
 &lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
 >DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
 &lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
-&lt;img src="https://www.jsongo.top/308123784741719ac026d121b5160b7c.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
 loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h2 id="优化网络连接">优化网络连接
 &lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
-&lt;img src="https://www.jsongo.top/845476711784ab73f57161c0bc43bfac.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
 loading="lazy"
 alt="|725"
 >&lt;br>
