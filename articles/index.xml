@@ -128,18 +128,19 @@ loading="lazy"
 alt="|525"
 >&lt;/p>
 &lt;h1 id="创建">创建
-&lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。
+&lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。&lt;br>
 先初始化目录：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>func init --python
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file" target="_blank" rel="noopener"
 >&lt;em>local.settings.json&lt;/em>&lt;/a> 和 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json" target="_blank" rel="noopener"
->&lt;em>host.json&lt;/em>&lt;/a>。
+>&lt;em>host.json&lt;/em>&lt;/a>。&lt;br>
 创建一个 api 入口：&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-base" data-lang="base">func new --name combine_videos --template &amp;#34;HTTP trigger&amp;#34; --authlevel &amp;#34;anonymous&amp;#34;
+&lt;pre tabindex="0">&lt;code class="language-base" data-lang="base">func new --name combine_videos --template &amp;#34;HTTP trigger&amp;#34; --authlevel &amp;#34;function&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>Authlevel 有三个值：&lt;/p>
 &lt;ul>
 &lt;li>Anonymous 即任何人都可以访问，不需要带什么认证，相当于公开了。&lt;/li>
-&lt;li>Function 函数级别的认证，创建的每个函数都有一个 token&lt;/li>
+&lt;li>Function 函数级别的认证，创建的每个函数都得在 URL 上带一个 token 进行认证，参数是 &lt;code>?code=&amp;lt;token&amp;gt;&lt;/code>。&lt;/li>
+&lt;li>Admin，最高级别的认证，只有具有管理员权限的用户才能访问函数，适用于包含敏感操作或数据的函数，如修改系统关键配置、访问敏感的业务数据等。这种模式依赖于复杂的身份管理系统（如 AAD）。&lt;/li>
 &lt;/ul>
 &lt;h1 id="部署">部署
 &lt;/h1>&lt;h2 id="平台创建应用">平台创建应用
