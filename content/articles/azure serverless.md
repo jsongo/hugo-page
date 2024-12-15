@@ -102,3 +102,4 @@ func azure functionapp publish <project_name>
 在线上运行后，可以访问试试。  
 线上日志可以在这里看到：  
 	![|725](https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp)
+不过经常连接不稳定，所以其实可以到另一个一方看
