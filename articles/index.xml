@@ -244,7 +244,8 @@ alt="|750"
 &lt;img src="https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
 loading="lazy"
 alt="|725"
->&lt;/p></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
+>
+不过经常连接不稳定，所以其实可以到另一个一方看&lt;/p></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
 &lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
 这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
 >村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
