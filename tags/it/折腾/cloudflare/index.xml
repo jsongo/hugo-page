@@ -73,6 +73,11 @@ loading="lazy"
 alt="|875"
 >&lt;br>
 &lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
->DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&amp;lt;UUID&amp;gt;.cfargotunnel.com，&lt;/p>
-&lt;p>现在你可以用刚配置的域名来访问你的内网服务了。
-但其实，还没完，目前是能访问你的域名了，但子路径是不行的，&lt;/p></description></item></channel></rss>
+>DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
+&lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
+&lt;img src="https://www.jsongo.top/308123784741719ac026d121b5160b7c.webp"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h2 id="优化网络连接">优化网络连接
+&lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如&lt;/p></description></item></channel></rss>
