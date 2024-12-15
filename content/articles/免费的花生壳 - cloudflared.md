@@ -63,8 +63,9 @@ services:
 	![|850](https://cdn.jsongo.top/2024/12/f39e1282f64410a6862142f136b7108b.webp)  
 回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了  
 	![|875](https://cdn.jsongo.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp)  
-	[DNS records · Cloudflare Zero Trust docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/) 这条 CNAME 的规则是：\<UUID>.cfargotunnel.com，
+	[DNS records · Cloudflare Zero Trust docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/) 这条 CNAME 的规则是：`<Tunnel ID>.cfargotunnel.com` ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。
 	
-现在你可以用刚配置的域名来访问你的内网服务了。
-但其实，还没完，目前是能访问你的域名了，但子路径是不行的，
-
+现在你可以用刚配置的域名来访问你的内网服务了。网速很快。  
+	![|750](308123784741719ac026d121b5160b7c.webp)
+## 优化网络连接
+如果你的服务需要耗时比较久，比如
