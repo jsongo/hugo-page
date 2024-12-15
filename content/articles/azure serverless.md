@@ -42,19 +42,20 @@ func host start --verbose
 它同时生成一个链接可以直接点击，它会触发函数执行：  
 	![|525](https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp)
 # 创建
-用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。
+用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。  
 先初始化目录：
 ```bash
 func init --python
 ```
-它会生成一些基础的配置文件，包括 [_local.settings.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file) 和 [_host.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json)。
+它会生成一些基础的配置文件，包括 [_local.settings.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file) 和 [_host.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json)。  
 创建一个 api 入口：
 ```base
-func new --name combine_videos --template "HTTP trigger" --authlevel "anonymous"
+func new --name combine_videos --template "HTTP trigger" --authlevel "function"
 ```
 Authlevel 有三个值：
 - Anonymous 即任何人都可以访问，不需要带什么认证，相当于公开了。
-- Function 函数级别的认证，创建的每个函数都有一个 token
+- Function 函数级别的认证，创建的每个函数都得在 URL 上带一个 token 进行认证，参数是 `?code=<token>`。
+- Admin，最高级别的认证，只有具有管理员权限的用户才能访问函数，适用于包含敏感操作或数据的函数，如修改系统关键配置、访问敏感的业务数据等。这种模式依赖于复杂的身份管理系统（如 AAD）。
 # 部署
 ## 平台创建应用
 先打开 [Microsoft Azure](https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp) 这个 portal 地址，创建一个 `Function App` （或者中文叫“函数应用”）。  
