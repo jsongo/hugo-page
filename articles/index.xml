@@ -591,7 +591,13 @@ loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h2 id="优化网络连接">优化网络连接
-&lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如&lt;/p></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
+&lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
+在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
+&lt;img src="https://www.jsongo.top/845476711784ab73f57161c0bc43bfac.webp"
+loading="lazy"
+alt="|725"
+>&lt;br>
+调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
 &lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
 &lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
 &lt;ul>
