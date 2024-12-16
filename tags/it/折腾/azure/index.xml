@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Import/Yinxiang on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/import/yinxiang/</link><description>Recent content in Import/Yinxiang on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://www.jsongo.top/tags/import/yinxiang/index.xml" rel="self" type="application/rss+xml"/><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/折腾/Azure on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/</link><description>Recent content in IT/折腾/Azure on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap azure/functions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install azure-cli
@@ -128,7 +128,7 @@ alt="|750"
 loading="lazy"
 alt="|725"
 >&lt;br>
-不过经常连接不稳定，所以其实可以到另一个一方看&lt;br>
+不过经常连接不稳定，所以其实可以到另一个地方查看 ：&lt;br>
 &lt;img src="https://www.jsongo.top/49412af97e5b5cc967dac50b8c5b558f.webp"
 loading="lazy"
 >&lt;/p>
