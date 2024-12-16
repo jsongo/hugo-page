@@ -2,12 +2,10 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - area/life/2022/July-2022
-  - area/life/daily
-  - import/yinxiang
+  - IT/折腾/azure
 created_at: Sat, Dec 14th, 2024 - 01:33:06
 banner_icon: 🚇
-banner: "https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg"
+banner: https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg
 slug: azure-serverless
 title: azure serverless 使用
 description: azure serverless 支持 python、node 等多种语言，本地 CLI 和 VsCode 插件可以很方便辅助开发者进行开发、调试以及部署。本文主要介绍 azure serverless 的入门操作。
@@ -96,7 +94,7 @@ func azure functionapp publish <project_name>
 在线上运行后，可以访问试试。  
 线上日志可以在这里看到：  
 	![|725](https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp)  
-不过经常连接不稳定，所以其实可以到另一个一方看  
+不过经常连接不稳定，所以其实可以到另一个地方查看 ：  
 	![](49412af97e5b5cc967dac50b8c5b558f.webp)
 
 # 其它：三方插件 Azurite
