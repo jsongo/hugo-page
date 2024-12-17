@@ -20,7 +20,7 @@ brew install azure-cli
 brew install azure-functions-core-tools@4
 ```
 >  具体可以参考这里：[Develop Azure Functions locally using Core Tools \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&pivots=programming-language-csharp)
->  - 另外，这链接里也有怎么用命令行来创建的方法。下文主要讲 vscode 插件。
+>  - 另外，这链接里也有怎么用命令行来创建的方法。下文 vscode 插件和 CLI 都会涉及。
 # Vscode 插件
 参考这个：[Create a Python function using Visual Studio Code - Azure Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?toc=/azure/developer/python/toc.json&bc=/azure/developer/python/breadcrumb/toc.json)  
 ## 简介
@@ -39,7 +39,7 @@ func host start --verbose
 ```
 本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 `Development` 了，如果你修改代码，它会触发服务的重启，非常方便。  
 它同时生成一个链接可以直接点击，它会触发函数执行：  
-	![|525](https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp)
+	![|650](https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp)
 # 创建
 用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。  
 先初始化目录：
@@ -61,7 +61,7 @@ Authlevel 有三个值：
 	![|575](https://cdn.jsongo.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp)
 ## Plugin
 正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：  
-	![|650](https://cdn.jsongo.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp)  
+	![|500](https://cdn.jsongo.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp)  
 	如果不成功，可以用下文 CLI 的方法来登录。  
 选择 Deploy to Function App，直接进行部署。  
 	![|700](https://cdn.jsongo.top/2024/12/bda580eaff46be66e6353ae23f839da6.webp)  
@@ -96,10 +96,10 @@ func azure functionapp publish <project_name>
 线上日志可以在这里看到：  
 	![|725](https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp)  
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：  
-	![](49412af97e5b5cc967dac50b8c5b558f.webp)
+	![|775](https://cdn.jsongo.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp)
 
 # 其它：三方插件 Azurite
-安装另一个三方的 server 运行插件 Azurite  
+安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。  
 	![|550](https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp)  
 修改下 `local.settings.json` 的配置，把 `AzureWebJobsStorage` 设置成 `"UseDevelopmentStorage=true"`。  
 	![|550](https://cdn.jsongo.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp)  
