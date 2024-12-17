@@ -34,4 +34,15 @@ git show 5b12e80a540539b0da2ac75cf4d5e7221f2b7342 -- 74a006c91c5150f0d9d9dd25d5c
 git co c171a4c169470455fa8ac62fd8d4164ea677c8ec -- 2c579673c6b2f0793f2e423523cc6fe3.webp
 ```
 # 扩展
-上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 `--util` 参数，用法跟 since 一样，这两个c
+## 时间范围
+上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 `--util` 参数，用法跟 since 一样，这两个参数可以办公室一个范围，比如大前天的文件变更情况，可以用：
+```bash
+git log --since="3 days ago" --until="2 days ago" -- <filename>
+```
+此外还有两个类似的参数：after（=since）、before（=until），记住一组就行。
+## 时间写法
+上文涉及到：`midnight`、`3 days ago` 这两种，都是直接用英文表达的。做个汇总：
+- 相对日期：`--since="3 days ago"`
+- 绝对日期：`--since="2023-10-01"`
+- 时间戳（秒）：`--since=1633046400`
+这些应该
