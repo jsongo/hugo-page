@@ -25,10 +25,10 @@
         {{ else }}
             {{ or (i18n .AlertType) (title .AlertType) }}
         {{ end }}
-    </div>
+    </div></div>
     <div class="details-content">
         <div class="admonition-content">
             {{ .Text | safeHTML -}}
         </div>
     </div>
-</div></div>
+</div>
