@@ -61,8 +61,7 @@
 &lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
 &lt;h1 id="方案选择">方案选择
 &lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
-&lt;/h1>
-&lt;blockquote>
+&lt;/h1>&lt;blockquote>
 &lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
 性能和效果可以与 Midjourney V6 媲美。&lt;br>
 Flux 一般通过 ComfyUI 来调用。&lt;/p>

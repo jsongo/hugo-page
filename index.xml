@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 13:39:37 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />
-&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 13:39:37 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
 &lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
 >Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
 &lt;/blockquote>
@@ -62,9 +61,9 @@ loading="lazy"
 &lt;h2 id="mac-上连接">Mac 上连接
 &lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
 >Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />
-&lt;blockquote class="alert alert-note">
+&lt;blockquote class="alert alert-success">
 &lt;p class="alert-heading">
-💡
+:check:
 花生壳&lt;br
 &lt;/p>
 &lt;p>一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;/p>
@@ -201,8 +200,7 @@ alt="|725"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew install azure-functions-core-tools@4
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>
-&lt;blockquote>
+&lt;/div>&lt;blockquote>
 &lt;p>具体可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
 >Develop Azure Functions locally using Core Tools | Microsoft Learn&lt;/a>&lt;/p>
 &lt;ul>
@@ -414,8 +412,7 @@ alt="|450"
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Fri, 13 Dec 2024 17:29:08 +0800</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />
-&lt;blockquote>
+&lt;/ul></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Fri, 13 Dec 2024 17:29:08 +0800</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />&lt;blockquote>
 &lt;p>这是这几天在看的一本很有趣的书，有感而发这篇读书笔记&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="概述">概述
@@ -1030,8 +1027,7 @@ Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服�
 &lt;blockquote>
 &lt;p>原文：https://sspai.com/post/63521&lt;/p>
 &lt;/blockquote></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
-&lt;/h1>
-&lt;blockquote>
+&lt;/h1>&lt;blockquote>
 &lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
 性能和效果可以与 Midjourney V6 媲美。&lt;br>
 Flux 一般通过 ComfyUI 来调用。&lt;/p>
