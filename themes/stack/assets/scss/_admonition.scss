@@ -13,12 +13,13 @@
     background-color: map-get($admonition-background-color-map, 'note');
     border: 0.05rem solid #448aff;
     border-radius: 0.2rem;
-    box-shadow: var(--md-shadow-z2);
+    box-shadow: 5px 1px 8px;
   //  color: var(--md-admonition-fg-color);
     display: flow-root;
-    font-size: .87rem;
-    margin: 1.5625em 0;
-    padding: 0 0.8rem 0.8rem;
+    font-size: 1.5rem;
+    // margin: 1.5625em 0;
+    // padding: 0 0.8rem 0.8rem;
+    padding: 0 .8rem 0;
     page-break-inside: avoid;
   
   
