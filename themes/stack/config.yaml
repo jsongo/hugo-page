@@ -135,6 +135,9 @@ params:
                   limit: 10
         page:
             - type: toc
+            - type: tag-cloud
+              params:
+                  limit: 10
 
     opengraph:
         twitter:
@@ -179,7 +182,16 @@ menu:
     #       url: https://github.com/jsongo
     #       params:
     #           icon: brand-github
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
 
+        - name: categories
+          weight: 200
 markup:
     tableOfContents:
         endLevel: 4
