@@ -42,7 +42,7 @@ Also includes examples of Hugo Features or Functions:
 - `len`
 - Conditionals
 - `ge` (greater than or equal to)
-- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/gohugoio/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
+- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[https://github.com/gohugoio/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements]]]
 
 This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](https://tachyons.io/).
 
@@ -50,7 +50,7 @@ This theme uses the "Tachyons" CSS library. This will allow you to manipulate th
 
 ### As a Hugo Module (recommended)
 
-> ⚠️ If you installed a [Hugo binary](https://gohugo.io/getting-started/installing/#binary-cross-platform), you may not have Go installed on your machine. To check if Go is installed:
+> ⚠️ If you installed a [[https://gohugo.io/getting-started/installing/#binary-cross-platform]], you may not have Go installed on your machine. To check if Go is installed:
 >
 > ```bash
 > go version
@@ -78,7 +78,7 @@ Inside the folder of your Hugo site run:
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
 
-For more information read the official [setup guide](//gohugo.io/getting-started/quick-start/) of Hugo.
+For more information read the official [[//gohugo.io/getting-started/quick-start/|setup guide]] of Hugo.
 
 ## Getting started
 
@@ -132,7 +132,7 @@ example: `cover_dimming_class = "bg-black-20"` or `cover_dimming_class = "bg-whi
 
 ### Activate the contact form
 
-This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to fifty emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
+This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [[//formspree.io/|formspree.io]] as proxy to send the actual email. Each month, visitors can send you up to fifty emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
 
 ```go
 {{< form-contact action="https://formspree.io/your@email.com" >}}
@@ -167,9 +167,9 @@ Using front matter and cascade, this can be customized for a whole section, or j
 
 ### Social Follow + Share
 
-Read the documentation for [social follow](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-follow-links) and [social share](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-share-links) in our wiki.
+Read the documentation for [[https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-follow-links]] and [[https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-share-links]] in our wiki.
 
-> This project uses Font Awesome brand icons, which are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt). For more information, visit [Font Awesome](https://fontawesome.com/).
+> This project uses Font Awesome brand icons, which are licensed under the [[CC BY 4.0)](https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt|Creative Commons Attribution 4.0 International License (CC BY 4.0)]]. For more information, visit [Font Awesome](https://fontawesome.com/).
 
 ### Content indexing
 
@@ -194,19 +194,19 @@ note: The `body_classes` parameter will not change the font used in post content
 
 You can find a list of available typefaces [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_font-family.css).
 
-And a list of background colors [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_skins.css#L96).
+And a list of background colors [[https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_skins.css#L96]].
 
 _n.b. in future versions we will likely separate the typeface and other body classes._
 
 ### CSS
 
-Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibility. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
+Ananke stylesheet is built with Hugo Pipes's [[https://gohugo.io/hugo-pipes/bundling/#readout]] alone to maximize compatibility. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
 
 Ananke uses [Tachyons.io](https://tachyons.io/) utility class library.
 
 #### Custom CSS
 
-WARNING: Pending resolution of this [discussion](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/452#discussioncomment-1865301), Custom CSS only works with Hugo Extended
+WARNING: Pending resolution of this [[https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/452#discussioncomment-1865301]], Custom CSS only works with Hugo Extended
 
 In order to complement the default CSS with your own, you can add custom css files to the project.
 

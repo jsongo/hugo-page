@@ -20,7 +20,7 @@ date: 2024-12-16T13:39:37+08:00
 	详细可以阅读：[Try Out With an Azure Free Account - Azure Database for MySQL - Flexible Server \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account)
 - 简单说，可以支持 B1MS 实例一直在线上跑，有 32G 的存储空间。B1MS 有 1~2 个 CPU 微核
 ## 添加一个实例
-- 打开：[Microsoft Azure DB for MySQL Server](https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers)，点 `Quick Create`。  
+- 打开：[[https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers]]，点 `Quick Create`。  
 	![](https://cdn.jsongo.top/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp)
 - 简单填写下信息就行：  
 	![](https://cdn.jsongo.top/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp)
@@ -34,7 +34,7 @@ date: 2024-12-16T13:39:37+08:00
 不过其实还有更简单的方式，直接在页面上打开连接：  
 	![](https://cdn.jsongo.top/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp)  
 	连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。  
-	证书可以从这里下载：[使用 TLS/SSL 加密的连接](https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate) ，或者直接用我下图中的 wget 命令即可。  
+	证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。  
 	![](https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp)  
 需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。
 ## 操作

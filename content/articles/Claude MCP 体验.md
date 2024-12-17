@@ -25,7 +25,7 @@ MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外�
 	```
 	- 然后下载 Claude [桌面端](https://claude.ai/download)，
 - 开启
-	- 如何启用具体可以参考：[Quickstart - Model Context Protocol](https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos)
+	- 如何启用具体可以参考：[[https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos]]
 	- 简单说，这个功能桌面端才有，Mac 上可以打开 `~/Library/Application Support/Claude/claude_desktop_config.json` 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：
 ```json
 {

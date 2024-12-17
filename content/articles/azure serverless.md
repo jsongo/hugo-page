@@ -46,7 +46,7 @@ func host start --verbose
 ```bash
 func init --python
 ```
-它会生成一些基础的配置文件，包括 [_local.settings.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file) 和 [_host.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json)。  
+它会生成一些基础的配置文件，包括 [[https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file]] 和 [_host.json_](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json)。  
 创建一个 api 入口：
 ```base
 func new --name combine_videos --template "HTTP trigger" --authlevel "function"
@@ -57,7 +57,7 @@ Authlevel 有三个值：
 - Admin，最高级别的认证，只有具有管理员权限的用户才能访问函数，适用于包含敏感操作或数据的函数，如修改系统关键配置、访问敏感的业务数据等。这种模式依赖于复杂的身份管理系统（如 AAD）。
 # 部署
 ## 平台创建应用
-先打开 [Microsoft Azure](https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp) 这个 portal 地址，创建一个 `Function App` （或者中文叫“函数应用”）。  
+先打开 [[https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp]] 这个 portal 地址，创建一个 `Function App` （或者中文叫“函数应用”）。  
 	![|575](https://cdn.jsongo.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp)
 ## Plugin
 正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：  
