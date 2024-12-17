@@ -37,8 +37,13 @@
                 font-family: var(--base-font-family);
             }
 
+            p {
+                br + img {
+                    margin-left: 3%;  // 图片的缩进距离
+                }
+            }
             img {
-                max-width: 100%;
+                max-width: 97%;
                 height: auto;
             }
         }
@@ -458,4 +463,5 @@
         border-radius: 4px;
         display: inline-block;
     }
+
 }
