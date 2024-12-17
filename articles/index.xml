@@ -1,88 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 29 Nov 2024 17:22:19 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>【收藏】快捷启动器中的「潜力股」，它想成为你的 Mac 默认搜索工具：Raycast - 少数派</title><link>https://www.jsongo.top/articles/theirs/raycast-potential/</link><pubDate>Fri, 29 Nov 2024 17:22:19 +0800</pubDate><guid>https://www.jsongo.top/articles/theirs/raycast-potential/</guid><description>&lt;img src="https://img.qikepai.cn/blog/2020/11/ptPrKc.jpg" alt="Featured image of post 【收藏】快捷启动器中的「潜力股」，它想成为你的 Mac 默认搜索工具：Raycast - 少数派" />&lt;hr>
-&lt;p>关于如何提升生产力，这是个可以无限探索下去的话题。所有帮助提升生产力或者改善效率的工具，都是在尽可能压缩核心工作之外的时间，包括 macOS 的「聚焦（Spotlight）」、Alfred 以及接下来要提到的 Raycast。&lt;br>
-一开始在 Product Hunt 上看到 Raycast 介绍，觉得其不过是又一个「Alfred」而已。老实说，我并不是 Alfred 的忠实用户，曾因为看到很多人推荐而去安装使用，但略显陈旧的 UI 和繁杂的设置菜单让我觉得「聚焦（Spotlight）」好像也能凑合用着。&lt;br>
-如果以 macOS 系统版本风格来比喻的话，Alfred 的 UI 风格应该能匹配几年前的 macOS 吧，而 Raycast 却是能够驾驭 macOS Big Sur 全新的视觉风格。&lt;br>
-![[assets/local_image_plus/7e599d87ffaa3e6413a3b56a3ca152da_MD5.webp]]&lt;br>
-为了避免造成误解，我这里就不进行两者的比较，开发者针对 Raycast、聚焦（Spotlight）以及 Alfred 的区别也做了简单的 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Ffaq" target="_blank" rel="noopener"
->说明&lt;/a>，有兴趣可以跳转查看，当然也欢迎有心得的朋友补充在评论区一起交流。&lt;/p>
-&lt;h1 id="为开发人员定制的生产力工具">&lt;strong>为开发人员定制的生产力工具&lt;/strong>
-&lt;/h1>&lt;p>Raycast 是直到 10 月 29 日才放出这第一个公测版本，对外宣布种子轮已筹集 270 万美元。根据开发者介绍，Raycast 正是受命令行的启发，作为软件工程师，他们注意到自己真正写代码的时间越来越少，反而需要更多的时间来管理软件开发，例如跟踪 bug 反馈、管理 sprint、发布新版本等等，这些都需要借助网页端或者其它的不同工具来完成。&lt;br>
-于是，Raycast 正是为了解决他们的困扰而创建，尽可能将常用的管理开发、内部会议、任务规划等内容集成在一起，腾出更多地时间放在编写代码上。简单过一下 Raycast 目前所能实现的核心功能：&lt;/p>
-&lt;ul>
-&lt;li>在 macOS 上启动程序或者搜索文件，相当于聚焦（Spotlight）；&lt;/li>
-&lt;li>在 Asana、GitHub、Jira 或 Linear 中创建、搜索和关闭 issues；&lt;/li>
-&lt;li>批准、合并和关闭 GitHub 的拉取请求；&lt;/li>
-&lt;li>调用 Zoom 管理日常会议；&lt;/li>
-&lt;li>支持快捷设置日程、待办事项以及其它诸多系统设置；&lt;/li>
-&lt;li>支持脚本扩展；&lt;/li>
-&lt;li>……&lt;br>
-虽然我可能并不是 Raycast 的精准目标用户，但这段时间体验下来确实发现了不少惊喜，让我开始习惯用 Raycast 取代聚焦（Spotlight）。&lt;/li>
-&lt;/ul>
-&lt;h1 id="功能体验">功能体验
-&lt;/h1>&lt;h2 id="可完全取代聚焦spotlight">可完全取代聚焦（Spotlight）
-&lt;/h2>&lt;p>既然 Raycast 包含了聚焦（Spotlight）的功能，意味着你完全可以用 Raycast 替换掉它。单从 UI 上来说，Raycast 比 Alfred 更有 macOS 原生应用的感觉，替代聚焦（Spotlight）完全不会产生违和感。&lt;br>
-![[assets/local_image_plus/cca44ef1688283563e27b4f55f2e2a41_MD5.webp]]&lt;br>
-Raycast 开启后，菜单栏会有常驻图标，当然也可以通过快捷键呼出 Raycast，默认快捷键为「option + 空格」，设置菜单里还「贴心」地给出了替换聚焦（Spotlight）的方法——其实就是在系统设置中关闭聚焦（Spotlight）的快捷键，然后把 Raycast 快捷键改为「command + 空格」。&lt;br>
-![[assets/local_image_plus/ffbb89e250565e9292b77d55f5c84e04_MD5.webp]]&lt;br>
-与聚焦（Spotlight）、Alfred 不一样，呼出 Raycast 之后并非只显示一个搜索框，还包含一些推荐项目（根据使用频率推荐）、手动收藏项目以及快捷操作，下滑则能看到所有的项目。&lt;br>
-![[assets/local_image_plus/e917063c8f850dbfe89b16465c713d78_MD5.webp]]&lt;br>
-你可以在搜索框中任意输入内容，优先会展示本地已有的应用或者快捷命令，其次可选搜索文件或者直接在搜索引擎中搜素。Raycast 默认只有 Google、DuckDuckGo 两种搜索引擎且无法修改。&lt;br>
-软件右下角有快捷菜单，除了打开应用/文件之外，还可以快速定位文件位置或者执行其它操作，而且这些所有的一系列操作都可以使用快捷键完成。&lt;br>
-![[assets/local_image_plus/40feea250a33ef646fa0da55115489ca_MD5.webp]]&lt;br>
-文件搜索功能支持部分图片、文档预览，且能显示文件详细信息，这个比聚焦（Spotlight）实用性更高。&lt;br>
-关于应用快捷启动以及文件搜索与聚焦（Spotlight）还是比较类似的，只是在一些功能上做得更加细致，这里就不花费更多篇幅介绍了，毕竟这个并不算核心亮点。&lt;/p>
-&lt;h2 id="支持管理日程待办事项剪贴板历史等">支持管理日程、待办事项、剪贴板历史等
-&lt;/h2>&lt;p>Raycast 对接了不少第三方应用的功能服务，也包括 macOS 系统自带的日程查看以及待办事项管理，这些所能实现的操作在设置中都可以直接看到，可手动选择关闭。&lt;br>
-![[assets/local_image_plus/81647e1ec6ef1eba8c56f87bff95644e_MD5.webp]]&lt;br>
-不过同样是系统应用，通过 Raycast 可以查看、创建待办事项，而日历日程却只能查看，无法通过 Raycast 新建。&lt;br>
-![[assets/local_image_plus/3ed69cca35ce68b2bbb901cb3fa515d3_MD5.webp]]&lt;br>
-![[assets/local_image_plus/5b44b9fdb488781110f9a1648f5656a8_MD5.webp]]&lt;br>
-待办事项同步 macOS 的提醒事项，可以查看、勾选已完成的目标事项，也可以自由创建。直接可以在 Raycast 中完成，无需单独打开提醒事项，效率明显提升了不少。&lt;br>
-剪贴板历史记录算是 Raycast 给我的一个小小惊喜，这是 Raycast 本身自带的小功能。关于剪贴板管理器，我之前也用过一段时间的 Paste，但发现自己其实用到的并不多，没必要单独开一个软件持续后台，另外考虑到云端同步的隐私安全，Paste 我就并没有用很久。而通过 Raycast 搜索「Clipboard History」，能够直接查看近期的剪贴板记录。&lt;br>
-![[assets/local_image_plus/b0a9e60d386dd1d341addb66f93a28d4_MD5.webp]]&lt;br>
-手动数了一下，Raycast 能够保存 50 条最近的历史记录，而且还可以选中部分历史复制内容置顶。至于隐私问题应该不用担心，Raycast 本身所有的数据都加密保存在本地，即便对接一些第三方 API 服务也是直接传送到对应云端，并不存在「中间商」。&lt;/p>
-&lt;h2 id="接入第三方服务高效协作">接入第三方服务高效协作
-&lt;/h2>&lt;p>如之前所言，Raycast 主要面向开发人员。目前 Raycast 已经接入了 GitHub、Jira、G Suite、Linear、Asana、Zoom 等服务，能够快速完成特定操作。&lt;br>
-![[assets/local_image_plus/0948da7275ce8eb6784de0e18589f790_MD5.webp]]&lt;br>
-用户需要通过 OAuth 协议登录指定服务，已完成自有账号内容的双向同步。&lt;br>
-不过很遗憾，我并不是程序员，不在 GitHub 中处理开发任务，所以没办法展示，你可以查看 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Fextensions%2Fgithub" target="_blank" rel="noopener"
->官方演示视频&lt;/a> 查看具体用法，功能上还是表现地很直观的，几乎无需打开浏览器网页。&lt;br>
-![[assets/local_image_plus/ee2e70a74b7998a33b514b83cf4e871e_MD5.webp]]&lt;br>
-![[assets/local_image_plus/b844a60a757e60bbbd27544e667ccce6_MD5.webp]]&lt;br>
-同样，Zoom 也需要完成登录，才能在 Raycast 中创建会议、查看待参加会议等，只是加入会议时需要调用本地 Zoom 客户端接入。&lt;br>
-目前看来，Raycast 对目前已有的第三方协作服务的整合还是比较深入的，能够直接在 Raycast 上完成操作，而省去了来回切换网页或者工具软件的繁琐。&lt;/p>
-&lt;h2 id="系统快捷设置支持脚本命令">系统快捷设置，支持脚本命令
-&lt;/h2>&lt;p>日常使用电脑，可能经常会需要调整一些系统设置项，例如音量调节、休眠、锁屏或者深色模式切换等等，有快捷按键的还好，更多的是需要进入设置中去找，这个过程本身就会比较浪费时间。所以不少用户会通过第三方工具来完成，例如 &lt;a class="link" href="https://sspai.com/item/77" target="_blank" rel="noopener"
->One Switch&lt;/a> 等。&lt;br>
-![[assets/local_image_plus/f5d7b696a128d6d79af787605b657ba7_MD5.webp]]&lt;br>
-Raycast 本身内置了一些系统功能调节，同时支持加载命令脚本，意味着能够将很多较为隐秘的系统设置融入 Raycast 实现快捷操作。&lt;br>
-![[assets/local_image_plus/21b8b56d457d8dfca768e138d7dd0f24_MD5.webp]]&lt;br>
-![[assets/local_image_plus/d8ddddfd15b5404e344f6079cf759e9c_MD5.webp]]&lt;br>
-而通过脚本命令还能实现 Raycast 没有内置的一些系统功能，添加其它一些快捷操作。由于我使用时间并不长，所添加的第三方脚本命令并不多，唯一用得最多的就是「深色模式快捷切换」。&lt;br>
-![[assets/local_image_plus/8deca7e6cd47736614a3d09ddc2eabae_MD5.webp]]&lt;br>
-如果你觉得用搜索的方式还不够快，你可以单独设置快捷键，真正实现一键切换。&lt;br>
-Raycast &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands%2Fblob%2Fmaster%2Fextensions.md" target="_blank" rel="noopener"
->提供&lt;/a> 了大量的脚本命令可供直接安装，大家可以根据需要自行添加，有能力的也可以自己 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands" target="_blank" rel="noopener"
->参考规范&lt;/a> 编写。&lt;/p>
-&lt;h2 id="小功能资讯浏览计算器汇率转换时间查询等">小功能：资讯浏览、计算器、汇率转换、时间查询等
-&lt;/h2>&lt;p>Raycast 还集成了一些小功能，这些在设置中并不能直接看到，所以阅读 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fwww.notion.so%2FRaycast-Manual-d5c85a7694dc4e4088b8b93557ea6d2d" target="_blank" rel="noopener"
->手册&lt;/a> 彻底了解 Raycast 还是很有必要的。&lt;br>
-资讯浏览功能算是隐藏的小彩蛋，不过 Raycast 目前只内置有 Hacker News 的资讯源，能够查看最新的三十条资讯标题，如果看到有兴趣的再点击跳转网页查看。&lt;br>
-![[assets/local_image_plus/807fa929e9ec7284167cf35dbbaf0cd7_MD5.webp]]&lt;br>
-类似的资讯浏览方式，在之前使用的 Here 应用中见到过，类似 RSS 订阅。如果 Raycast 这个功能能够支持自定义，就能够自由添加更多新闻源，对于我这种经常关注资讯的还是挺有用的，毕竟大部分的快资讯看看标题就能知道有没有价值了。&lt;br>
-![[assets/local_image_plus/10fc7ae595f2ce51e1e03cd67337ba3f_MD5.webp]]&lt;br>
-计算器、汇率转换、时间查询……Raycast 似乎还在继续增加很多小功能，不知道这些有没有能吸引你。&lt;br>
-![[assets/local_image_plus/80e0472e1af4038091144c5123a7f13e_MD5.webp]]&lt;br>
-![[assets/local_image_plus/57070ed817deb73bdb5202e2725ac695_MD5.webp]]&lt;br>
-![[assets/local_image_plus/2b91d79d98b91dfdf9df2f6d1e17428c_MD5.webp]]&lt;br>
-使用 Raycast 不到一个星期，显然觉得还有很多东西我并没有能深刻体验到，但现在仅有的一些已经足够让我惊喜。&lt;br>
-Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服务的整合更加深入，包括操作视图、信息展示更详细，除了本身涵盖的一些系统快捷设置之外，还可以通过命令脚本扩展，可玩性大大增强。想到这里，我觉得聚焦（Spotlight）要在系统设置里长眠了。&lt;br>
-关于 Raycast 得收费计划，开发团队也已经声明了，目前公测阶段会保持免费，后期会有针对高级用户和团队的付费模式，核心功能仍然保持免费。在 macOS 版本正式上线之后，Raycast 也会逐渐支持 Windows 和 Linux 端，这对广大开发人员来说算是大好消息。&lt;br>
-目前来看，Raycast 有足够的潜力成为下一款效率神器。但对于国内用户而言，如果不加入中文支持便捷性会大打折扣，单纯通过英文搜索（不支持拼音）对于国内用户着实不够友好。被许多人称道的 Notion 至今还没实现中文化，Raycast 目测也还有很长的路要走。&lt;/p>
-&lt;hr>
-&lt;blockquote>
-&lt;p>原文：https://sspai.com/post/63521&lt;/p>
-&lt;/blockquote></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 13:39:37 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
 &lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
 >Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
 &lt;/blockquote>
@@ -137,7 +53,95 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
 &lt;h2 id="mac-上连接">Mac 上连接
 &lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
->Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+>Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;p>一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;br>
+其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
+>hub.docker.com/r/cloudflare/cloudflared&lt;/a> 里面也有一些简单的指引。&lt;/p>
+&lt;h1 id="简单使用">简单使用
+&lt;/h1>&lt;p>一条命令就可以搞定：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cloudflared tunnel --no-autoupdate --hello-world
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>不过这么跑，比较依赖于不需要 Cloudflare 帐户的公共 trycloudflare.com，很不稳定，我之前试用过，经常断，网速也不稳定。要实际上线使用的话，还是得自己注册一个 cloudflare 账号，下面介绍。&lt;/p>
+&lt;h1 id="搭建个人-tunnel-网络">搭建个人 Tunnel 网络
+&lt;/h1>&lt;h2 id="注册一个-tunnel">注册一个 Tunnel
+&lt;/h2>&lt;p>到 &lt;a class="link" href="https://dash.teams.cloudflare.com/%e2%81%a0" target="_blank" rel="noopener"
+>Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp"
+loading="lazy"
+alt="|875"
+>&lt;br>
+接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。&lt;br>
+注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。&lt;/p>
+&lt;blockquote>
+&lt;p>这些是一步步摸索出来的，没有参考其它外部的指引，所以可能会有更好的办法。希望有读者找到更好的方法时，能给我留个评论，感激不尽。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="创建-tunnel">创建 Tunnel
+&lt;/h2>&lt;p>在下图中的菜单里找到创建的地方，选 Cloudflared。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
+loading="lazy"
+alt="|875"
+>&lt;br>
+自己取一个名字（不跟别人重复就行）&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
+loading="lazy"
+alt="|900"
+>&lt;br>
+下一步，取得 token：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
+loading="lazy"
+alt="|925"
+>&lt;br>
+如上图，划线处就是你的 token，先记下来，下面用。&lt;/p>
+&lt;h2 id="启动接入">启动、接入
+&lt;/h2>&lt;p>创建完之后，在本地运行 cloudflared 的命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cloudflare tunnel --no-autoupdate run --token xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果使用 docker 的话，可以用这个 compose yml&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.8&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudflared&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">cloudflare/cloudflared:latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">cloudflared&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">tunnel --no-autoupdate run --token xxxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">network_mode&lt;/span>: &lt;span style="color:#ae81ff">host&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">dns&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">1.1.1.1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中，xxx 换成你自己的 token。&lt;br>
+如果你家里有个服务器或 NAS，其实 docker 是比较合适的，它可以一直在线跑。&lt;br>
+创建完之后，在同一个界面里可以看到已经有一个设备连接上来了：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
+loading="lazy"
+alt="|725"
+>&lt;br>
+再下一步，public hostnames 里添加一个你转到 cloudflare 来解析的域名，加一个子域名。同时 Service 填写你内网的某个服务的地址，如你的 nginx 网关等。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
+loading="lazy"
+alt="|875"
+>&lt;br>
+再下一步就回到了列表页，可以看到你的 tunnel 已经在跑了：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/f39e1282f64410a6862142f136b7108b.webp"
+loading="lazy"
+alt="|850"
+>&lt;br>
+回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
+loading="lazy"
+alt="|875"
+>&lt;br>
+&lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
+>DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
+&lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h2 id="优化网络连接">优化网络连接
+&lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
+在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
+loading="lazy"
+alt="|725"
+>&lt;br>
+调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap azure/functions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install azure-cli
@@ -319,106 +323,108 @@ alt="|450"
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
-&lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
-这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
->村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
-&lt;h1 id="功能">功能
-&lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
-loading="lazy"
-alt="图片来自 x|850"
->&lt;/p>
-&lt;blockquote>
-&lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
->Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测&lt;/a>&lt;/p>
+&lt;/ul></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Fri, 13 Dec 2024 17:29:08 +0800</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />&lt;blockquote>
+&lt;p>这是这几天在看的一本很有趣的书，有感而发这篇读书笔记&lt;/p>
 &lt;/blockquote>
+&lt;h1 id="概述">概述
+&lt;/h1>&lt;p>买这本书主要是冲着古典老师去的，之前对他的《跃迁》印象深刻，受益匪浅。刚看到书名我就想起了《世界尽头的咖啡馆》前两年还出了续集，我都看了。后来在读本书的时候，感觉就是在看国产的《世界尽头的咖啡馆》，叙述方式很像，内容上也是讲职场和生活，所以阅读起来我有种熟悉的感觉。&lt;br>
+这几年经济不好，大家都在职场和创业的路上挣扎，都过得很不容易。随着越来越多人“毕业”，讲人生规划类的书籍或课程必定会大受欢迎。因为大量的城市精英突然就遇到了 10 几年一个周期的经济萧条，上一轮大概率没经历过，这么一来就有点措手不及，人生突然陷入迷茫。&lt;br>
+有缘看到这篇文章的人，如果正好自在这个阶段，可以读读上面提到的这 3 本书（《世界尽头的咖啡馆》有两本），相信会有不错的启发。&lt;br>
+本文主要摘录我在阅读过程中受到触动，结合自己思考写下来的一些笔记，希望能引发读者一些思考。&lt;/p>
+&lt;hr>
+&lt;h1 id="思考清楚自己的赛道">思考清楚自己的赛道
+&lt;/h1>&lt;h2 id="下班后才是一个打工人最清醒的时刻">下班后才是一个打工人最清醒的时刻
+&lt;/h2>&lt;p>全书多次提到这句话，故事中的那个咖啡馆也只有在晚上 9 点后才开门，因为打工人下班了。古典在书中说的这句话，主要想表达，在上班的时候，人容易迷失自己，沉浸在为做好工作而对其它事情浑然不觉的状态中，更不会抽时间去思考自己的现在、做事方式、未来的发展等，一心在做好当下的事。&lt;br>
+不过在下班后，就有更多的时间回去“做自己”，这时就换了一个完全不一样的思维，可以思考更多的可能性，而不是工作干不好整个世界就完了的状态。&lt;/p>
+&lt;h2 id="换赛道">换赛道
+&lt;/h2>&lt;p>如果打算换赛道，尽可能地一步步切换，就像攀岩，不要一步就跳过去，容易失去抓手、然后掉下去。&lt;br>
+即使是“毕业”，离开岗位时，也要留住人脉和技能，然后在这些基础上慢慢探索、切入适合自己的赛道。&lt;br>
+书中古典老师化身的胖子，是一个耐心的人生导师。他针对职场，提出了一个公式：&lt;br>
+&lt;strong>定位=行业 x 企业 x 职位&lt;/strong>&lt;br>
+可以尝试先切换其中的一个变量。比如现在是在互联网行业，这个大前提可以不用换。之前一直在走“职位”这条路，一路往上爬。实际上还有其它思路，只是我们平时很少思路，一心盯着职位职级。公式中没有讲的很具体，没提职位怎么切，但这个变量给了我们一个思考的起点，即可以挪挪屁股，换一个部门或团队，如果一个产品 (业务) 自己不喜欢、不适合、或识别出不是自己未来发展方向的话，及时果断地换。比如想往 AI 技术方向发展，可以切换到 AI 相关的团队中去，找到一个让自己有更多学习的机会的环境中去。&lt;br>
+大概的步骤可能是这样：&lt;/p>
 &lt;ul>
-&lt;li>官方文档：&lt;a class="link" href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener"
->Introducing the Model Context Protocol - Anthropic&lt;/a>&lt;/li>
+&lt;li>先认真收尾手头的事，边观察机会、切换赛道；&lt;/li>
+&lt;li>然后在新赛道中认真的学习、快速积累，不计得失，努力去做成一些事，有一些自己的创造或产出；&lt;/li>
+&lt;li>在上一条的持续迭代中，不断地精进到某个高度，同时积累更多的技术和人脉；&lt;/li>
+&lt;li>如果条件成熟，可以再考虑切换企业，继续创造，验证这套模式可行性，并不断完善相应框架，同时继续积累更多的技术经验和人脉；&lt;/li>
+&lt;li>最后如果还有激情和条件，可以再切换到创业的赛道，有一份真正属于自己的事业。&lt;/li>
 &lt;/ul>
-&lt;h2 id="使用">使用
+&lt;h1 id="职场">职场
+&lt;/h1>&lt;h2 id="职业的本质是什么">职业的本质是什么？
+&lt;/h2>&lt;p>通过帮别人解决问题来获利。&lt;br>
+&lt;strong>该给你多少钱，不是看你有多厉害，而是看别人的问题有多大&lt;/strong>。&lt;br>
+我们一直以为只有把专业技能练到炉火纯青的地步才能赚大钱，其实不太对。赚钱的是那些，找对了痛点和问题、然后培养自己能力，最终能解决这类问题的人。&lt;br>
+简单说，是&lt;strong>需求决定价格，而不是供给决定价格&lt;/strong>。&lt;br>
+同样是销售，卖房子的就是比卖汽水的赚钱。虽然他们的本质都是跟人打交道，找到别人的痛点，把自己的东西包装下卖给别人。最关键的点，在于找对行业。怎么把一瓶水卖出天价，也许能做到这个的人你会觉得他很厉害，不过很可能他只是把水运到了沙漠中去卖而已。&lt;br>
+当然这点可能不只一个人发现，那么随着加入的人越来越多，就成了红海。时机很重要，但如果已经晚了的话呢？这时我们只能去发现更多的新机会。新机会往往出现在新行业，这有点像废话，不过更多时候，我们只是看着新行业到来，也没什么行动。&lt;/p>
+&lt;h2 id="宁当鸡头不做凤尾">宁当鸡头，不做凤尾
+&lt;/h2>&lt;p>在一个不怎么重要的部门当尾部，还不如去一个新部门（缺人才的部门）承担非常重要的岗位，给自己更多的历练，最重要的是成长和突破过去的自我，往未来趋势的方向不断的前进，这才是最有意义的。&lt;br>
+很多人一直盯着职级、地位看，干嘛要一直去跟别人做比较呢？要知道职级就是公司设置的游戏规则，把人牢牢地套在规则里面、认真的奉献，不过很多人即使知道这一点，还是会很执著地追求这些。可能是因为不甘心，也可能是因为自尊心太重…… 但不是正确的方向还要坚持，就很难过得好。&lt;/p>
+&lt;h1 id="提升自我">提升自我
+&lt;/h1>&lt;h2 id="打磨优势">打磨优势
+&lt;/h2>&lt;p>没有人是完美的，要充分亮出自己的优势，像一把沙子中只有一点点金子，经常容易被埋没，如果你经常去擦亮你找到的金子，它就会在沙子中闪闪发光。&lt;br>
+重要的是把优势放大，同时规避劣势。&lt;br>
+找优势可以用排除法，看看失去什么会让我活不下去。每个人都有优势，只是说怎么在沙子中找到金子，以及怎么让别人看到。&lt;br>
+风口没了，猪会不会摔死？&lt;br>
+你进入了风口之后，要不断地学习、站稳，让自己长出翅膀来，趁着红利在这个领域站稳脚跟。翅膀就是这个培养出来的优势，如果没及时长出来、亮出来，风口过后就会摔得很惨。&lt;/p>
+&lt;h2 id="多关注自己跟过去比">多关注自己、跟过去比
+&lt;/h2>&lt;p>不用总盯着别人的优势、跟别人比，要多跟现在自己比，只要让自己过得更舒适、更充实就行。&lt;br>
+不一定要超越别人才算成功，大家的起点或运气不一样，世界本就不公，抱怨改变不了一切，接受现实往往是很难的，总会有不满。但我们注意力不应该在这，而应该放在&lt;strong>怎么不断地去突破自我&lt;/strong>，要比之前的自己活得更好、变得更强。以前觉得自己不太行的地方，突然自己变得非常行了，这就是最有意义的事。&lt;/p>
+&lt;h2 id="只要坚持着慢慢地跑就能赢过很多人">只要坚持着慢慢地跑，就能赢过很多人
+&lt;/h2>&lt;p>人生就像一场马拉松。这点感受很深，平时我也经常去跑步，坚持很累，特别是突破之前跑过的距离，很多人都会在途中停下休息，如果能一直坚持，就能赢过大部分人。&lt;br>
+人生更像是在操场上跑圈，时不时有人加入，不用羡慕刚加入的人的体力，他们刚下场体力就是好，开始时就是跑得快，也可能是基因好、祖上都是运动员。但你一直坚持下来了，总能超过大部分人，毕竟有先天优势的只是非常少数，干嘛一定要跟他们比呢。&lt;/p>
+&lt;h2 id="读书的方法">读书的方法
+&lt;/h2>&lt;p>读书就是&lt;strong>以自己为中心，以问题为导向，以改变为终点&lt;/strong>。&lt;/p>
+&lt;h2 id="想不是办法干才有答案">想不是办法，干才有答案
+&lt;/h2>&lt;p>路是走出来的，不是设计出来的。&lt;br>
+人们总是喜欢提前规划路线，其实路不是想出来的，而是走出来的。没真走到那路口，也不一定了解那边的路况，只是听人说、或看地图知道的。这些都不一定准确，或者偏离的很多。&lt;/p>
+&lt;h2 id="初心">初心
+&lt;/h2>&lt;p>“如果当时……” 是人生最大的谎言。&lt;br>
+或许当时的选择，已经是那会能找到了最好的选项之一。不用去想走了另一条路会怎么样，因为我们经常会去美化那些得不到的东西，这样它就变得不真实，而且会很后悔、搞坏了尽情…… 没必要，这些都是自己在找罪受。&lt;br>
+认识到这一点后，怎么正确地去看待这些选择呢？重点还是“初心”，了解自己来自哪、有什么目标或使命要去完成。这样再去做选择的时候，至少知道方向。&lt;br>
+每个苦苦坚持的不得不，都藏着巨大的初心。&lt;br>
+我们可能都有一些比较初期的出发点，或许我们已经忘了，但它带来的动力和惯性，让我们一直往前走，只不过后来我们以&lt;strong>最近的幻想&lt;/strong>来衡量自己的行为和成果，忘了这个初心。&lt;br>
+或许当时的初心只是不想在小城市一眼看到头，而是想探索更多的可能性，想不断地超越儿时玩伴或亲戚朋友，只不过慢慢地，买了房，有了房贷，想自由，想赚钱，然后迷失了最初的初心，变得浮躁，一切心赚钱为目标，但又碰到各种障碍，终日郁郁寡欢。&lt;br>
+当一个人知道最初的“为何”，就能承受一切“如何”。&lt;br>
+我们不是害怕苦难，而是怕苦得没有意义，白白花费了很多精力、最终没得到任何收获。&lt;/p>
+&lt;h1 id="管理">管理
+&lt;/h1>&lt;h2 id="项目管理中的-1-10-100-定律">项目管理中的 1-10-100 定律
+&lt;/h2>&lt;p>解决一个问题：&lt;/p>
+&lt;ul>
+&lt;li>事前计划，只需要 1 的成本。&lt;/li>
+&lt;li>事中改进，就需要 10 的成本。&lt;/li>
+&lt;li>事后修正，那需要 100 的成本。&lt;br>
+所以为什么要做重要但不紧急的事。因为这是最省成本的方法，如果每天都在做紧急的事，那基本都要付出 10 或 100 的成本。&lt;br>
+如果大部分能预期的事，都提前做好事前的计划，并及时地执行，那你完成它们的成本就只有 1 x N，而不是 100xN。这时你就可以比别人省出更多的时间。&lt;/li>
+&lt;/ul>
+&lt;h2 id="做团队管理的两个重要的事">做团队管理的两个重要的事
 &lt;/h2>&lt;ul>
-&lt;li>安装（以 Mac 来讲）
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install uv git sqlite3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>然后下载 Claude &lt;a class="link" href="https://claude.ai/download" target="_blank" rel="noopener"
->桌面端&lt;/a>，&lt;/li>
+&lt;li>1 是帮别人拿成果，要为他争取机会，且争取时间，及时、适当地推他一把。&lt;/li>
+&lt;li>2 是保护大家，一方面不让一些杂事、不重要的投诉分心，另一方面 pk 掉不合适的需求直接找到他们，不要当一个传话筒或需求传送带。&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>开启
+&lt;h2 id="成为专家之路的几个阶段">成为专家之路的几个阶段
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>求助者&lt;/strong>，这是最开始的时候，什么都不太懂，开始入门&lt;/li>
+&lt;li>&lt;strong>探索家&lt;/strong>，有了兴趣或任务，不断地深挖、学习更多这方面的知识&lt;/li>
+&lt;li>&lt;strong>建筑师&lt;/strong>，把自己在这里面学到的一些有一定难度的东西沉淀下来，形成框架&lt;/li>
+&lt;li>&lt;strong>助人者&lt;/strong>，在平时帮助别人解决问题的过程中，不断的完善自己的框架，补齐知识点&lt;/li>
+&lt;li>&lt;strong>专家&lt;/strong>，最终自己的框架已经比大多数人认知更深了，在别人眼里就是半个专家了。&lt;br>
+其实不一定要到了助人者或专家再开始发声，从探索时就可以开始，动手去慢慢打磨、创造一个产品，然后跟着它一起成长。同时也把这个成长的过程分享出来，让初学者都能从中受益。&lt;br>
+这个世界其实初学者（求助者）远远多于其它阶段的人。这就是一个金字塔，越塔尖的人越专业、而大部分人都是在中等以下。所以市场及需求最大的往往都是上面说的“探索家”和“求助者”。&lt;/li>
+&lt;/ul></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
+![[assets/local_image_plus/a0ca56c580cb92b784f7a891d694a46c_MD5.webp]]
+EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，内部建立的容器集群。Tax 这个就不用说了，10%的税
+刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
 &lt;ul>
-&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
->Quickstart - Model Context Protocol&lt;/a>&lt;/li>
-&lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcpServers&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;sqlite&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;uvx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;mcp-server-sqlite&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--db-path&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/Users/&amp;lt;my-user-name&amp;gt;/claude.db&amp;#34;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="示例">示例
-&lt;/h2>&lt;p>官方给的例子：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create a new SQLite database&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sqlite3 ~/claude.db &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">CREATE TABLE products (
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> id INTEGER PRIMARY KEY,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> name TEXT,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> price REAL
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">);
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO products (name, price) VALUES
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Widget&amp;#39;, 19.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gadget&amp;#39;, 29.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gizmo&amp;#39;, 39.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Smart Watch&amp;#39;, 199.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Wireless Earbuds&amp;#39;, 89.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable Charger&amp;#39;, 24.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Bluetooth Speaker&amp;#39;, 79.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Phone Stand&amp;#39;, 15.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Laptop Sleeve&amp;#39;, 34.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mini Drone&amp;#39;, 299.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;LED Desk Lamp&amp;#39;, 45.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Keyboard&amp;#39;, 129.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mouse Pad&amp;#39;, 12.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;USB Hub&amp;#39;, 49.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Webcam&amp;#39;, 69.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Screen Protector&amp;#39;, 9.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Travel Adapter&amp;#39;, 27.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gaming Headset&amp;#39;, 159.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Fitness Tracker&amp;#39;, 119.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable SSD&amp;#39;, 179.99);
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建一个表，然后往里面写一些数据。&lt;/p>
-&lt;h2 id="运行">运行
-&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>uvx mcp-server-sqlite
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会用 &lt;a class="link" href="https://docs.astral.sh/uv/guides/tools/" target="_blank" rel="noopener"
->uvx&lt;/a> 来运行 mcp 服务。&lt;br>
-Prompt Demo:&lt;br>
-&lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
-&lt;h1 id="原理">原理
-&lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
-loading="lazy"
-alt="|725"
->&lt;br>
-MCP 是一个开放协议：&lt;/p>
-&lt;ul>
-&lt;li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。&lt;/li>
-&lt;li>另一方面 MCP 也类似 Prompt 模板一样，提供了&lt;strong>动态上下文构建&lt;/strong>的能力：
-&lt;ul>
-&lt;li>MCP 能够留空的方式，动态地构建上下文。&lt;/li>
-&lt;li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。&lt;/li>
-&lt;li>还可以根据用户的交互历史来调整上下文。&lt;br>
-它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>Daily Meditations - W50</title><link>https://www.jsongo.top/articles/meditations-w50/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/meditations-w50/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Daily Meditations - W50" />&lt;h1 id="职业的本质是什么">职业的本质是什么？
+&lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
+![[assets/local_image_plus/dc4d2f7b2f6541fdf855791c014cd6bc_MD5.webp]]
+看起来很正常，也没有实例在跑&lt;/li>
+&lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
+![[assets/local_image_plus/07fe0255dd659d8be840fad26fa1025a_MD5.webp]]
+&lt;a class="link" href="https://us-east-1.console.aws.amazon.com/ec2globalview/home" target="_blank" rel="noopener"
+>这里找 global 使用中的实例&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Daily Meditations - W50</title><link>https://www.jsongo.top/articles/meditations-w50/</link><pubDate>Mon, 09 Dec 2024 13:34:29 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w50/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Daily Meditations - W50" />&lt;h1 id="职业的本质是什么">职业的本质是什么？
 &lt;/h1>&lt;p>&lt;!-- raw HTML omitted -->通过帮别人解决问题来获利。&lt;!-- raw HTML omitted -->&lt;br>
 该给你多少钱，不是你有多厉害，而是别人的问题有多大。&lt;br>
 我们一直以为只有把专业技能，练到炉火纯青的地步才能赚大钱，其实不一定对。不排除这种可能性，那些真正赚钱的是找对了目标问题，然后培养自己能力，最终能越来越好地解决这类问题的人。&lt;br>
@@ -441,353 +447,7 @@ MCP 是一个开放协议：&lt;/p>
 &lt;li>刚毕业时，主要的时间都是在学习，边学习还能边赚钱养活自己，这样就够了。&lt;/li>
 &lt;li>等积累多了，成了这方面的资源员工、或团队负责人、或专家，这时你就是在不断运营自己的影响力，让自己被更多人认可，能得到更多的好处。&lt;/li>
 &lt;li>之后离开公司了，你留下来的技能、人脉，这些才是你自己的东西，是真正有价值的。&lt;/li>
-&lt;/ul></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
-&lt;/h1>&lt;blockquote>
-&lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
-性能和效果可以与 Midjourney V6 媲美。&lt;br>
-Flux 一般通过 ComfyUI 来调用。&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="黑森林实验室与团队背景">黑森林实验室与团队背景
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>核心成员&lt;/strong>：黑森林实验室由 Stable Diffusion 的核心开发者 Robin Rombach 领衔创立，团队成员大多来自 Stability AI，如 Andreas Blattmann、Axel Sauer 等多位原 Stable Diffusion 项目的关键人物，他们在生成式模型开发领域经验丰富，为 Flux 的诞生奠定了坚实基础。大家可能听说过 Stability AI 团队内部不和，各种破事把公司折腾得够呛，所以由原班核心人马出来创业做的 Flux 受到很大的关注。&lt;/li>
-&lt;li>&lt;strong>融资情况&lt;/strong>：这个实验室已获得 3200 万美元的种子轮融资，由著名风投机构 Andreessen Horowitz (a16z) 领投，多位业内知名人士参与投资，充足的资金支持使其能够大力推进模型的研发与优化等工作。主要还是因为它的背景实在太好了。&lt;/li>
-&lt;/ul>
-&lt;h2 id="flux-模型特点">Flux 模型特点
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>架构与参数&lt;/strong>：Flux 基于多模态和并行扩散 Transformer 块的混合架构，拥有 &lt;!-- raw HTML omitted -->120 亿参数&lt;!-- raw HTML omitted -->，是目前最大的开源文本到图像模型之一。这种架构和庞大的参数规模使其能够学习到更丰富的图像特征和语义信息，从而生成高质量的图像。&lt;/li>
-&lt;li>&lt;strong>性能优势&lt;/strong>：
-&lt;ul>
-&lt;li>&lt;strong>图像质量&lt;/strong>：在视觉质量、图像细节和输出多样性等方面达到了新高度，生成的图像更加逼真、细腻，细节丰富度高，风格多样，能与闭源的 Midjourney v6.1 模型不相上下，甚至在一些方面表现更优，如复杂场景生成、人物细节处理等。&lt;/li>
-&lt;li>&lt;strong>提示词遵循能力&lt;/strong>：对提示词的理解和遵循能力很强，能够准确地根据输入的文本描述生成符合要求的图像，包括对复杂指令、长文本描述以及特定场景和细节要求的准确呈现，减少了因提示词理解不准确而导致的图像与预期不符的问题。&lt;/li>
-&lt;li>&lt;strong>文字生成能力&lt;/strong>：在图像中生成文字的效果出色，可以处理重复字母等棘手情况，生成的文字内容准确、排版合理，这在一些需要在图像中呈现文字信息的场景中具有很大优势，如生成带有文字标识的产品图片、包含文字说明的场景图片等。&lt;/li>
-&lt;li>&lt;strong>手部细节处理&lt;/strong>：相较于之前的一些模型，Flux 在手部细节生成上有了显著改进，减少了手指等部位的畸形或错误，使生成的人物图像更加自然、真实。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>不同版本特点&lt;/strong>：&lt;br>
-有 3 个核心版本，Pro/dev/schnell
-&lt;ul>
-&lt;li>&lt;strong>FLUX (pro)&lt;/strong>：闭源模型，自家压箱底的货。具备最佳性能，包括最先进的提示跟随能力、视觉质量、图像细节和输出多样性，适用于专业用户和对图像质量要求极高的场景，可通过注册官方 API 申请访问权限，同时支持企业定制。&lt;/li>
-&lt;li>&lt;strong>FLUX (dev)&lt;/strong>：开源模型，不可商用，直接从 FLUX (pro) 蒸馏而来，具备相似的图像质量和提示词遵循能力，但更高效，适合开发者进行研究和实验等非商业用途的使用。&lt;/li>
-&lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
-&lt;/h1>&lt;h2 id="背景">背景
-&lt;/h2>&lt;p>Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。&lt;br>
-Stable Diffusion 的发展历程如下：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
-loading="lazy"
-alt="|900"
->&lt;/p>
-&lt;h2 id="技术简介">技术简介
-&lt;/h2>&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
-它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>前向扩散&lt;/strong>：在前向阶段，通过向原始图像数据（如真实的照片或绘画）添加噪声，逐步将图像转换为纯噪声。这个过程是在多个时间步（time - steps）中完成的，每一步都按照一定的规则（通常是基于高斯分布）添加噪声，使得图像信息逐渐被噪声掩盖。例如，开始时图像可能还比较清晰，随着时间步的增加，图像越来越模糊，最终变成完全的噪声。&lt;/li>
-&lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
-&lt;/ul>
-&lt;h1 id="生图过程">生图过程
-&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
-loading="lazy"
-alt="|700"
->&lt;/p>
-&lt;h2 id="模型-checkpoint跟采样的关系">模型 （Checkpoint）跟采样的关系
-&lt;/h2>&lt;p>Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。&lt;/p>
-&lt;h2 id="clip-text-encode">CLIP Text Encode
-&lt;/h2>&lt;p>属于 Condition 节点，它用 CLIP 模型对文本 Prompt 进行编码，对模型生成的结果进行方向上的引导，其实可能理解为文本模型中的 embedding。&lt;/p>
-&lt;h2 id="采样">采样
-&lt;/h2>&lt;p>生图其实就是一个反向扩散的过程，从一个完全是噪声的图像开始，通过模型逐步去除噪声来生成图像。这个过程通过一个采样函数来实现，它基于模型预测的噪声来更新噪声图像。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
-loading="lazy"
->&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Steps&lt;/strong>，迭代生图，每次更新噪声图像，需要经过多个 Step 的迭代。随着 Step 反复执行，图像中的噪声逐渐减少，最终生成一个近似原始图像分布的图像。不过生成的图像质量可能会受到多种因素的影响，如模型的性能、采样方法、时间步数等。在实际应用中，可能需要对生成的图像进行后处理（如调整颜色、对比度等）来提高图像质量。&lt;/li>
-&lt;li>&lt;strong>seed&lt;/strong>，种子值，用于初始化随机数生成器。相同的种子值在相同的模型和参数设置下会生成相同的图像，这有助于复现结果。&lt;/li>
-&lt;li>&lt;strong>control_after_generate&lt;/strong>：这个参数可能与生成后的控制操作有关，例如对生成的图像进行随机化处理&lt;/li>
-&lt;li>&lt;strong>steps&lt;/strong>：指生成过程中的迭代步数。步数越多，生成的图像通常会越精细，但也会增加计算时间。&lt;/li>
-&lt;li>&lt;strong>cfg&lt;/strong>（Classifier-Free Guidance）：无分类器引导的强度，它是一种在生成式模型（如 Stable Diffusion）中用于引导图像生成方向的技术，决定了模型在生成图像时对正向提示（你希望在图像中出现的内容）的遵循程度。较高的 CFG 值会使生成的图像更紧密地遵循正向 Prompt，但也有可能导致图像过度拟合。
-&lt;ul>
-&lt;li>取值范围：
-&lt;ul>
-&lt;li>CFG 的值通常在 1 到 20 之间，理论上可以取更高的值，但在实际应用中，过高的值往往会导致图像质量下降。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>较低值（1 - 4）：
-&lt;ul>
-&lt;li>当 CFG 值较低时，生成的图像会更具随机性和创造性。模型对正向提示的遵循程度较弱，因此可能会生成一些与提示不太相关但具有独特创意的图像。这种情况下，图像可能会包含一些意外的元素或风格。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>中等值（4 - 10）：
-&lt;ul>
-&lt;li>在这个范围内，是比较常用的取值。模型会在遵循正向提示和保持一定的创造性之间取得较好的平衡。能够生成与提示较为符合的图像，同时也不会显得过于刻板。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>较高值（10 - 20）：
-&lt;ul>
-&lt;li>当 CFG 值较高时，生成的图像会非常紧密地遵循正向提示。这可能会导致图像过于 “完美” 地符合提示，但也可能会出现一些问题，比如图像的细节可能会显得不自然，色彩可能会过于饱和，或者图像可能会失去一些自然的随机性和美感&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>sampler_name&lt;/strong>：这是指采样器的名称。不同的采样器（如 Euler、Langevin 等）有不同的特性，会影响图像生成的速度和质量。&lt;/li>
-&lt;li>&lt;strong>scheduler&lt;/strong>：调度器，用于控制生成过程中的步长和其他参数。不同的调度器会影响生成的效率和结果。&lt;/li>
-&lt;li>&lt;strong>denoise&lt;/strong>：去噪参数控制生成过程中对噪声的去除程度。较低的去噪值会使生成的图像更具随机性，而较高的值会使图像更平滑和可预测。&lt;/li>
-&lt;/ul>
-&lt;h2 id="vae-decoder变分自解码器">VAE Decoder（变分自解码器）
-&lt;/h2>&lt;p>图像数据往往是高维的，包含大量的像素信息，所以一般训练和计算时，往往要压缩到低维来处理，用更紧凑的方式表示图像的关键特征，就像文本模型中的 Embedding 处理，变成稠密的数据，在图像处理领域叫潜在空间（Latent Space）。而解码器则是将潜在空间中的表示再转换回图像数据空间，尽可能地重建原始图像。&lt;br>
-生成新图的过程，由于潜在空间是连续的，稍微改变潜在空间中的向量值，就可以生成与原始图像在某些特征上有所变化的新图像。例如，在生成人脸图像的 VAE 模型中，在潜在空间中沿着某个方向移动向量可能会改变人脸的表情、发型或者年龄等特征。&lt;/p>
-&lt;h2 id="latent-image">Latent Image
-&lt;/h2>&lt;p>一般在整个 ComfyUI 流程中，会插入一张空的（Empty） Lantent Image，它提供了一个初始的 “画布”，让模型在这个基础上进行生成或转换操作。&lt;br>
-当然如果是对已有的图片进行调整、修复或优化，则可以把空的图换成一张现成的图片，这时就要把它加载并转换为合适的潜在表示形式后，可以作为生成过程的起点。在 ComfyUI 中，可能涉及到将图片通过适当的预处理步骤，如调整大小、归一化等操作后，然后将其编码为潜在空间中的表示，这样就可以基于已有的图像内容进行修改、风格转换或者其他生成操作。&lt;/p>
-&lt;h1 id="stability-ai-官方">Stability AI 官方
-&lt;/h1>&lt;p>Stable Diffusion 的官方可用的模型，可以从 API 文档中看到： &lt;a class="link" href="https://platform.stability.ai/pricing" target="_blank" rel="noopener"
->Stability AI - Developer Platform&lt;/a>。最新的是 SD 3.5（2024 年 11 月）。&lt;/p>
-&lt;ul>
-&lt;li>1 credit = $0.01&lt;/li>
-&lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
-loading="lazy"
-alt="736deaffc1c02497df089d14539fba5d_MD5|700"
->&lt;/li>
-&lt;/ul>
-&lt;h2 id="体验">体验
-&lt;/h2>&lt;p>&lt;a class="link" href="https://stabledifffusion.com/tools/ai-image-generator" target="_blank" rel="noopener"
->Free AI Image Generator - Turn Text to Image Online | Stable Diffusion Online&lt;/a>&lt;/p>
-&lt;h1 id="字节的-lighting-模型">字节的 Lighting 模型
-&lt;/h1>&lt;p>&lt;a class="link" href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
->ByteDance/SDXL-Lightning at main&lt;/a> 字节的这个模型生成效果相当不错。&lt;br>
-它同时提供了 Full UNet 和 LoRA 版本，都是相对比较小的蒸馏模型（虽然 UNet 也有几个 G）。&lt;/p>
-&lt;blockquote>
-&lt;p>We provide both full UNet and LoRA checkpoints. The full UNet models have the best quality while the LoRA models can be applied to other base models.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="小科普可跳过">小科普（可跳过）
-&lt;/h2>&lt;h3 id="概念">概念
-&lt;/h3>&lt;ul>
-&lt;li>UNet 是卷积神经网络（CNN）的一种特殊架构，在生成对抗网络 (GANs) 和扩散模型中广泛使用。它是一种完整的网络架构，专门用于图像分割任务，从输入图像到输出分割结果，有自己独立的结构和训练流程。&lt;/li>
-&lt;li>LoRA 不是一种独立的网络架构，而是一种模型微调策略，可以应用于各种现有的预训练模型（包括但不限于基于 UNet 架构的模型），用于在不大量修改原始模型结构的情况下进行任务适配。&lt;/li>
-&lt;/ul>
-&lt;h3 id="从参数规模与训练成本来看">从参数规模与训练成本来看
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>UNet&lt;/strong>：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。&lt;/li>
-&lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;br>
-UNet 的模型一般都比较大：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
-loading="lazy"
-alt="|475"
->&lt;br>
-LoRA 则小很多&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
-loading="lazy"
-alt="|475"
->&lt;/li>
-&lt;/ul>
-&lt;h2 id="使用">使用
-&lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
-ComfyUI 中的使用非常简单：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
-loading="lazy"
-alt="|675"
->&lt;br>
-如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
->SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
-loading="lazy"
-alt="|700"
->&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;p>一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;br>
-其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
->hub.docker.com/r/cloudflare/cloudflared&lt;/a> 里面也有一些简单的指引。&lt;/p>
-&lt;h1 id="简单使用">简单使用
-&lt;/h1>&lt;p>一条命令就可以搞定：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cloudflared tunnel --no-autoupdate --hello-world
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>不过这么跑，比较依赖于不需要 Cloudflare 帐户的公共 trycloudflare.com，很不稳定，我之前试用过，经常断，网速也不稳定。要实际上线使用的话，还是得自己注册一个 cloudflare 账号，下面介绍。&lt;/p>
-&lt;h1 id="搭建个人-tunnel-网络">搭建个人 Tunnel 网络
-&lt;/h1>&lt;h2 id="注册一个-tunnel">注册一个 Tunnel
-&lt;/h2>&lt;p>到 &lt;a class="link" href="https://dash.teams.cloudflare.com/%e2%81%a0" target="_blank" rel="noopener"
->Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp"
-loading="lazy"
-alt="|875"
->&lt;br>
-接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。&lt;br>
-注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。&lt;/p>
-&lt;blockquote>
-&lt;p>这些是一步步摸索出来的，没有参考其它外部的指引，所以可能会有更好的办法。希望有读者找到更好的方法时，能给我留个评论，感激不尽。&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="创建-tunnel">创建 Tunnel
-&lt;/h2>&lt;p>在下图中的菜单里找到创建的地方，选 Cloudflared。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
-loading="lazy"
-alt="|875"
->&lt;br>
-自己取一个名字（不跟别人重复就行）&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
-loading="lazy"
-alt="|900"
->&lt;br>
-下一步，取得 token：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
-loading="lazy"
-alt="|925"
->&lt;br>
-如上图，划线处就是你的 token，先记下来，下面用。&lt;/p>
-&lt;h2 id="启动接入">启动、接入
-&lt;/h2>&lt;p>创建完之后，在本地运行 cloudflared 的命令：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cloudflare tunnel --no-autoupdate run --token xxx
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果使用 docker 的话，可以用这个 compose yml&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.8&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudflared&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">cloudflare/cloudflared:latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">cloudflared&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#ae81ff">tunnel --no-autoupdate run --token xxxx&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">network_mode&lt;/span>: &lt;span style="color:#ae81ff">host&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">dns&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">1.1.1.1&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中，xxx 换成你自己的 token。&lt;br>
-如果你家里有个服务器或 NAS，其实 docker 是比较合适的，它可以一直在线跑。&lt;br>
-创建完之后，在同一个界面里可以看到已经有一个设备连接上来了：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
-loading="lazy"
-alt="|725"
->&lt;br>
-再下一步，public hostnames 里添加一个你转到 cloudflare 来解析的域名，加一个子域名。同时 Service 填写你内网的某个服务的地址，如你的 nginx 网关等。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
-loading="lazy"
-alt="|875"
->&lt;br>
-再下一步就回到了列表页，可以看到你的 tunnel 已经在跑了：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/f39e1282f64410a6862142f136b7108b.webp"
-loading="lazy"
-alt="|850"
->&lt;br>
-回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
-loading="lazy"
-alt="|875"
->&lt;br>
-&lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
->DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
-&lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
-loading="lazy"
-alt="|750"
->&lt;/p>
-&lt;h2 id="优化网络连接">优化网络连接
-&lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
-在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
-loading="lazy"
-alt="|725"
->&lt;br>
-调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
-&lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
-&lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
-&lt;ul>
-&lt;li>Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）&lt;/li>
-&lt;li>Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。&lt;/li>
-&lt;/ul>
-&lt;h1 id="clip">CLIP
-&lt;/h1>&lt;h2 id="概念">概念
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>CLIP 模型&lt;/strong>：CLIP 是 Contrastive Language-Image Pre-training 的缩写，由 OpenAI 在 2021 年 1 月 5 日发布，是一种将计算机视觉与自然语言处理相结合的神经网络模型。
-&lt;ul>
-&lt;li>它通过对 400,000,000 组（图像，文本）对数据进行预训练，从而能够在给定图像的情况下，根据自然语言指令预测出最相关的文本片段，展现出了类似 GPT-2 和 GPT-3 的 zero-shot 学习能力，即模型可以在未针对特定任务进行直接优化训练的情况下，对未曾见过的数据类别进行较好地预测&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>CLIP Vision&lt;/strong>：CLIP Vision 主要负责处理视觉信息，也就是对输入的图像数据进行特征提取和编码等操作，将图像转化为模型能够理解和处理的向量表示，以便与文本信息进行对比学习和关联。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>
-&lt;ul>
-&lt;li>例如，在图像生成领域，CLIP Vision 可以帮助模型理解图像的内容和特征，从而生成更符合语义描述的图像。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>CLIP Text&lt;/strong>：我们常看到的这个 CLIP Text 概念，主要是指作为参考文本来对图像进行调整的文本描述。&lt;/li>
-&lt;/ul>
-&lt;h2 id="应用">应用
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间帧.&lt;/li>
-&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，比如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
-&lt;li>&lt;strong>图像检索&lt;/strong>：基于 CLIP Vision 对图像特征的提取和与文本的关联能力，可以实现根据文本描述来检索相关的图像，或者根据图像来查找与之语义相关的文本信息，提高图像检索的准确性和效率。&lt;/li>
-&lt;li>&lt;strong>视觉问答系统&lt;/strong>：帮助系统理解图像中的视觉内容，结合对自然语言问题的理解，生成准确的文本答案，例如回答关于图像中物体的位置、颜色、数量等问题 。&lt;/li>
-&lt;/ul>
-&lt;h1 id="vae">VAE
-&lt;/h1>&lt;p>VAE 主要用于将图像数据压缩到一个潜在空间，然后再从这个潜在空间中生成新的图像，侧重于图像的生成和重建。&lt;/p>
-&lt;h2 id="latent-image">Latent Image
-&lt;/h2>&lt;p>经过某种变换或编码后隐藏在数据中的图像信息。例如，在使用变分自编码器（VAE）进行图像生成或处理时，图像数据会被压缩到一个潜在空间（latent space），这个潜在空间中的向量可以被看作是潜像的一种表示形式。这些潜像向量包含了图像的关键特征，如形状、颜色、纹理等信息，通过解码器可以将这些潜像向量转换回可见的图像。&lt;/p>
-&lt;h1 id="lora">Lora
-&lt;/h1>&lt;p>LoRA 是一种用于微调预训练模型的技术，通过在原始模型的基础上添加少量可训练的参数来实现对模型的微调。&lt;/p>
-&lt;hr>
-&lt;h1 id="footnotes">Footnotes
-&lt;/h1>&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>简单说就是，主要用于处理和理解图像信息，能够提取图像的特征表示，进而与文本特征进行对比和匹配等操作，以实现如根据文本描述生成相应图像、图像分类、图像检索等多种与图像和文本相关的任务&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
-&lt;h1 id="几种方案">几种方案
-&lt;/h1>&lt;h2 id="ip-adapter">IP-Adapter
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>原理&lt;/strong>：IP-Adapter 的核心是其 “解耦交叉注意力机制”，它将文本特征和图像特征的处理分开，为每种输入类型创建了不同的路径，从而能够更好地将视觉提示信息整合到模型中，同时不影响模型对文本指令的理解和执行能力。通过这种机制，IP-Adapter 可以识别参考图的艺术风格、内容以及特定的角色形象等信息，并生成与之相似的作品。&lt;/li>
-&lt;li>&lt;strong>使用方式&lt;/strong>：以 Stable Diffusion 为例，需先下载对应版本的 IP-Adapter 预处理器和模型，如 sd1.5 版本的 “ip-adapter_clip_sd15” 预处理器及相关模型。在使用时，将打斗场景图作为输入图像，将角色形象图作为参考图，通过调整相关参数和权重，IP-Adapter 就能根据角色形象图的特征对打斗场景图中的角色进行适配和修改，生成符合预期的新图像。&lt;/li>
-&lt;/ul>
-&lt;h2 id="dreambooth">DreamBooth
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>原理&lt;/strong>：DreamBooth 是一种基于扩散模型的微调技术，它允许用户使用少量的特定主题图像（如你的角色形象图）对预训练的文本到图像生成模型进行微调，使模型能够学习到与该主题相关的特定特征和细节，从而在生成图像时能够更准确地生成符合该主题的内容。&lt;/li>
-&lt;li>&lt;strong>使用方式&lt;/strong>：首先收集包含角色形象的高质量图像数据集，然后选择一个预训练的基础模型，如 Stable Diffusion 等。使用 DreamBooth 技术对基础模型进行微调，将角色形象与特定的唯一标识符绑定，让模型学习到角色的特征。最后，将微调后的模型应用于打斗场景图，通过输入相关的文本提示，模型会根据学习到的角色特征对场景图中的角色进行适配和生成。&lt;/li>
-&lt;/ul>
-&lt;h2 id="lora-low-rank-adaptation-of-large-language-models">LoRA (Low-Rank Adaptation of Large Language Models)
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>原理&lt;/strong>：LoRA 的基本思想是通过在大型语言模型的基础上，添加少量的可训练参数来实现对模型的微调，从而在保持模型原有性能的基础上，快速适应特定的任务或领域。对于图像生成任务，同样可以利用类似的原理，通过对预训练的图像生成模型添加 LoRA 模块，使其能够根据特定的角色形象图进行微调，学习到角色的特征表示，进而在生成图像时能够更好地适配这些角色形象。&lt;/li>
-&lt;li>&lt;strong>使用方式&lt;/strong>：先确定预训练的图像生成模型，然后针对你的角色形象图准备相应的数据集。接着，设计并训练适合该模型的 LoRA 模块，使其能够捕捉到角色形象的关键特征。在实际应用中，将训练好的 LoRA 模块与预训练模型结合，输入包含打斗场景和角色相关的文本提示，模型就会根据 LoRA 模块中学习到的角色特征，对场景图中的角色进行相应的适配和生成。&lt;/li>
-&lt;/ul>
-&lt;h2 id="controlnet">ControlNet
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>原理&lt;/strong>：ControlNet 是一种用于控制图像生成过程的神经网络架构，它可以通过添加额外的条件控制信息来引导图像生成模型生成符合特定要求的图像。在你的需求中，可以将角色形象图作为 ControlNet 的输入条件，通过网络中的特定模块对生成过程进行约束和引导，使生成的打斗场景图中的角色能够更好地适配给定的角色形象.&lt;/li>
-&lt;li>&lt;strong>使用方式&lt;/strong>：选择合适的 ControlNet 预训练模型，并将其与基础的图像生成模型结合，如 Stable Diffusion。将打斗场景图作为基础图像输入，同时将角色形象图作为 ControlNet 的条件输入，通过调整 ControlNet 中的各种参数和权重，如控制线条、色彩、形状等方面的参数，来精确控制生成的图像中角色的外观和姿态，使其与给定的角色形象相匹配。&lt;/li>
-&lt;/ul>
-&lt;h1 id="成本分析">成本分析
-&lt;/h1>&lt;ul>
-&lt;li>&lt;strong>IP-Adapter&lt;/strong>：IP-Adapter 无需进行模型训练，主要成本在于寻找符合预期的参考图，其成本相对较低，能在几分钟内看到结果，大大节省了时间。&lt;/li>
-&lt;li>&lt;strong>DreamBooth&lt;/strong>：训练成本相对较高，需要至少 20 张不同角度的人物图像，并且对硬件要求较高，至少需要 24GB 的显存以及性能较好的 GPU，若使用云服务训练则还需额外产生费用。&lt;/li>
-&lt;li>&lt;strong>LoRA&lt;/strong>：LoRA 可以冻结预训练模型的全部参数权重，然后只在新增的网络层去做训练，训练数据量可根据具体需求而定，因此成本相对较低。&lt;/li>
-&lt;li>&lt;strong>ControlNet&lt;/strong>：ControlNet 的训练成本相对较高。例如，其 canny edge detector 模型的训练需要 300 万张边缘 - 图像 - 标注对的语料，在 A100 80g 的环境下要花费 600 个 gpu 小时；human pose 模型则需 8 万张姿态 - 图像 - 标注对的语料及 400 个 gpu 时。&lt;/li>
-&lt;/ul>
-&lt;h1 id="思路">思路
-&lt;/h1>&lt;h2 id="lora">LoRA
-&lt;/h2>&lt;h3 id="过拟合问题">过拟合问题
-&lt;/h3>&lt;p>需要准备多张形象比较一致的图片，要不然只有一张图会有&lt;strong>过拟合问题&lt;/strong>，以及&lt;strong>特征不全面&lt;/strong>的问题。简单说，仅靠一张图片，LoRA 可能无法学习到角色的完整特征，导致在生成场景图中角色的其他角度或状态时出现不匹配的情况。例如，角色在训练图片中是正面微笑的形象，在生成侧面打斗场景时，可能会出现面部结构变形或者表情不自然的问题。&lt;br>
-这个方法可以作为后续优化的方向，当可以生成多张形象一致的图片时，再来试试这个思路。&lt;/p>
-&lt;h3 id="猫箱类软件">猫箱类软件
-&lt;/h3>&lt;p>这些软件会让使用者先上传几张自己的图片，之后它其实会拿这些去做 LoRA 训练（也可能是其它方式的微调， 如 DreamBooth），之后再用这个用户专属的模型去生成他后续的各场景图。这类软件使用方式上，稍微有些麻烦，因为上传图片用户得好好挑挑，都上传同一时间或穿着、光线下的图片时，其实效果也一般也容易过拟合。不过训练完后，就可以非常自由的生成非常丰富、多样的场景下的个人图片，弄得好的话非常逼真，真假难辨。&lt;/p>
-&lt;h2 id="controlnet-1">ControlNet
-&lt;/h2>&lt;h3 id="硬件要求">硬件要求
-&lt;/h3>&lt;p>ControlNet 需要一定的硬件支持来运行，由于它在原始扩散模型基础上增加了控制模块，对 GPU 等硬件资源的需求相对较高，特别是在处理复杂的控制条件和高分辨率图像生成时，可能需要更强大的 GPU 来保证生成速度和质量。&lt;/p>
-&lt;h3 id="时间成本">时间成本
-&lt;/h3>&lt;p>训练 ControlNet 所需的时间较长，从数据收集、标注到模型训练完成，整个过程可能需要数天甚至数周，这取决于训练数据的规模和硬件设备的性能。&lt;/p>
-&lt;blockquote>
-&lt;p>总体看，成本上不一定划得来。相比之下，IP-Adapter 不需要训练模型，只需找到符合预期的参考图即可开始生成，大大节省了时间和资源，能够在几分钟内看到结果，其模型参数只有 22m，存储占用小，对硬件资源的要求相对较低，下面展开讲下&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="ip-adapter-1">IP-Adapter
-&lt;/h2>&lt;p>IP-Adapter 确实有其独特的优势，使其成为一种很有吸引力的图像生成辅助方法，以下是对其优点的详细介绍。&lt;/p>
-&lt;h3 id="无需训练模型">无需训练模型
-&lt;/h3>&lt;p>与需要收集大量数据并进行长时间训练的 LoRA 等方法不同，IP-Adapter 不需要训练模型，大大节省了时间和资源，仅需找到符合预期的参考图即可开始生成，能在几分钟内看到结果，效率极高。&lt;/p>
-&lt;h3 id="单图即可实现风格迁移">单图即可实现风格迁移
-&lt;/h3>&lt;p>只需一张图片就能实现风格迁移，将该图片的风格特征融入到生成的图像中。例如，如果有一张具有独特画风的角色图片，IP-Adapter 可以把这种画风应用到新生成的打斗场景图中，让场景图中的角色呈现出与参考图一致的风格，为生成特定风格的图像提供了极大的便利。&lt;/p>
-&lt;h3 id="支持多图多特征提取">支持多图多特征提取
-&lt;/h3>&lt;p>可以同时读取多张参考图，并提取它们的特征，从而使生成的结果拥有更丰富的多样性和随机性。比如，你有几张同一角色在不同状态下的图片，IP-Adapter 能够综合这些图片的特征，生成更全面、更具变化的角色形象，使其在打斗场景中的表现更加自然和丰富。&lt;/p>
-&lt;h3 id="与-prompt-配合度高">与 Prompt 配合度高
-&lt;/h3>&lt;p>对 Prompt 有强注意力，能使 Prompt 中的信息更直观地反映在生成结果中。用户可以通过替换 Prompt 里的关键词，在继承参考图风格的同时，指向不同的结果，形成 Prompt 的组合矩阵，进一步拓展生成结果的多样性。例如，在生成打斗场景图时，通过修改 Prompt 中的关键词，如 “激烈打斗”“轻松打斗” 等，可以生成不同氛围和情节的场景图，且都带有参考图的风格特征。&lt;/p>
-&lt;h3 id="兼容性强">兼容性强
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>适配多种基础模型&lt;/strong>：IP-Adapter 基于预训练的文本到图像扩散模型开发，具有很强的通用性和兼容性，可以适配 Stable Diffusion 等多种基础模型，而无需针对不同的基础模型进行重新训练或调整.&lt;/li>
-&lt;li>&lt;strong>可与 ControlNet 等结合&lt;/strong>：能够与 ControlNet 等其他可控生成工具结合使用，实现更强大的图像生成控制能力。比如，通过 ControlNet 可以对生成图像的线条、边缘等细节进行控制，再结合 IP-Adapter 的风格迁移和内容引导，能够生成更加精细、准确且符合风格要求的图像。&lt;/li>
-&lt;/ul>
-&lt;h3 id="模型参数小">模型参数小
-&lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
-&lt;h1 id="方案选择">方案选择
-&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
+&lt;/ul></description></item><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Fri, 06 Dec 2024 13:08:16 +0800</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
 &lt;/h1>&lt;p>借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
 loading="lazy"
@@ -947,7 +607,349 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 &lt;/h1>&lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial" target="_blank" rel="noopener"
 >Word add-in tutorial - Office Add-ins | Microsoft Learn&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
+&lt;/ul></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Sun, 01 Dec 2024 11:29:47 +0800</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
+&lt;h1 id="几种方案">几种方案
+&lt;/h1>&lt;h2 id="ip-adapter">IP-Adapter
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>原理&lt;/strong>：IP-Adapter 的核心是其 “解耦交叉注意力机制”，它将文本特征和图像特征的处理分开，为每种输入类型创建了不同的路径，从而能够更好地将视觉提示信息整合到模型中，同时不影响模型对文本指令的理解和执行能力。通过这种机制，IP-Adapter 可以识别参考图的艺术风格、内容以及特定的角色形象等信息，并生成与之相似的作品。&lt;/li>
+&lt;li>&lt;strong>使用方式&lt;/strong>：以 Stable Diffusion 为例，需先下载对应版本的 IP-Adapter 预处理器和模型，如 sd1.5 版本的 “ip-adapter_clip_sd15” 预处理器及相关模型。在使用时，将打斗场景图作为输入图像，将角色形象图作为参考图，通过调整相关参数和权重，IP-Adapter 就能根据角色形象图的特征对打斗场景图中的角色进行适配和修改，生成符合预期的新图像。&lt;/li>
+&lt;/ul>
+&lt;h2 id="dreambooth">DreamBooth
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>原理&lt;/strong>：DreamBooth 是一种基于扩散模型的微调技术，它允许用户使用少量的特定主题图像（如你的角色形象图）对预训练的文本到图像生成模型进行微调，使模型能够学习到与该主题相关的特定特征和细节，从而在生成图像时能够更准确地生成符合该主题的内容。&lt;/li>
+&lt;li>&lt;strong>使用方式&lt;/strong>：首先收集包含角色形象的高质量图像数据集，然后选择一个预训练的基础模型，如 Stable Diffusion 等。使用 DreamBooth 技术对基础模型进行微调，将角色形象与特定的唯一标识符绑定，让模型学习到角色的特征。最后，将微调后的模型应用于打斗场景图，通过输入相关的文本提示，模型会根据学习到的角色特征对场景图中的角色进行适配和生成。&lt;/li>
+&lt;/ul>
+&lt;h2 id="lora-low-rank-adaptation-of-large-language-models">LoRA (Low-Rank Adaptation of Large Language Models)
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>原理&lt;/strong>：LoRA 的基本思想是通过在大型语言模型的基础上，添加少量的可训练参数来实现对模型的微调，从而在保持模型原有性能的基础上，快速适应特定的任务或领域。对于图像生成任务，同样可以利用类似的原理，通过对预训练的图像生成模型添加 LoRA 模块，使其能够根据特定的角色形象图进行微调，学习到角色的特征表示，进而在生成图像时能够更好地适配这些角色形象。&lt;/li>
+&lt;li>&lt;strong>使用方式&lt;/strong>：先确定预训练的图像生成模型，然后针对你的角色形象图准备相应的数据集。接着，设计并训练适合该模型的 LoRA 模块，使其能够捕捉到角色形象的关键特征。在实际应用中，将训练好的 LoRA 模块与预训练模型结合，输入包含打斗场景和角色相关的文本提示，模型就会根据 LoRA 模块中学习到的角色特征，对场景图中的角色进行相应的适配和生成。&lt;/li>
+&lt;/ul>
+&lt;h2 id="controlnet">ControlNet
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>原理&lt;/strong>：ControlNet 是一种用于控制图像生成过程的神经网络架构，它可以通过添加额外的条件控制信息来引导图像生成模型生成符合特定要求的图像。在你的需求中，可以将角色形象图作为 ControlNet 的输入条件，通过网络中的特定模块对生成过程进行约束和引导，使生成的打斗场景图中的角色能够更好地适配给定的角色形象.&lt;/li>
+&lt;li>&lt;strong>使用方式&lt;/strong>：选择合适的 ControlNet 预训练模型，并将其与基础的图像生成模型结合，如 Stable Diffusion。将打斗场景图作为基础图像输入，同时将角色形象图作为 ControlNet 的条件输入，通过调整 ControlNet 中的各种参数和权重，如控制线条、色彩、形状等方面的参数，来精确控制生成的图像中角色的外观和姿态，使其与给定的角色形象相匹配。&lt;/li>
+&lt;/ul>
+&lt;h1 id="成本分析">成本分析
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>IP-Adapter&lt;/strong>：IP-Adapter 无需进行模型训练，主要成本在于寻找符合预期的参考图，其成本相对较低，能在几分钟内看到结果，大大节省了时间。&lt;/li>
+&lt;li>&lt;strong>DreamBooth&lt;/strong>：训练成本相对较高，需要至少 20 张不同角度的人物图像，并且对硬件要求较高，至少需要 24GB 的显存以及性能较好的 GPU，若使用云服务训练则还需额外产生费用。&lt;/li>
+&lt;li>&lt;strong>LoRA&lt;/strong>：LoRA 可以冻结预训练模型的全部参数权重，然后只在新增的网络层去做训练，训练数据量可根据具体需求而定，因此成本相对较低。&lt;/li>
+&lt;li>&lt;strong>ControlNet&lt;/strong>：ControlNet 的训练成本相对较高。例如，其 canny edge detector 模型的训练需要 300 万张边缘 - 图像 - 标注对的语料，在 A100 80g 的环境下要花费 600 个 gpu 小时；human pose 模型则需 8 万张姿态 - 图像 - 标注对的语料及 400 个 gpu 时。&lt;/li>
+&lt;/ul>
+&lt;h1 id="思路">思路
+&lt;/h1>&lt;h2 id="lora">LoRA
+&lt;/h2>&lt;h3 id="过拟合问题">过拟合问题
+&lt;/h3>&lt;p>需要准备多张形象比较一致的图片，要不然只有一张图会有&lt;strong>过拟合问题&lt;/strong>，以及&lt;strong>特征不全面&lt;/strong>的问题。简单说，仅靠一张图片，LoRA 可能无法学习到角色的完整特征，导致在生成场景图中角色的其他角度或状态时出现不匹配的情况。例如，角色在训练图片中是正面微笑的形象，在生成侧面打斗场景时，可能会出现面部结构变形或者表情不自然的问题。&lt;br>
+这个方法可以作为后续优化的方向，当可以生成多张形象一致的图片时，再来试试这个思路。&lt;/p>
+&lt;h3 id="猫箱类软件">猫箱类软件
+&lt;/h3>&lt;p>这些软件会让使用者先上传几张自己的图片，之后它其实会拿这些去做 LoRA 训练（也可能是其它方式的微调， 如 DreamBooth），之后再用这个用户专属的模型去生成他后续的各场景图。这类软件使用方式上，稍微有些麻烦，因为上传图片用户得好好挑挑，都上传同一时间或穿着、光线下的图片时，其实效果也一般也容易过拟合。不过训练完后，就可以非常自由的生成非常丰富、多样的场景下的个人图片，弄得好的话非常逼真，真假难辨。&lt;/p>
+&lt;h2 id="controlnet-1">ControlNet
+&lt;/h2>&lt;h3 id="硬件要求">硬件要求
+&lt;/h3>&lt;p>ControlNet 需要一定的硬件支持来运行，由于它在原始扩散模型基础上增加了控制模块，对 GPU 等硬件资源的需求相对较高，特别是在处理复杂的控制条件和高分辨率图像生成时，可能需要更强大的 GPU 来保证生成速度和质量。&lt;/p>
+&lt;h3 id="时间成本">时间成本
+&lt;/h3>&lt;p>训练 ControlNet 所需的时间较长，从数据收集、标注到模型训练完成，整个过程可能需要数天甚至数周，这取决于训练数据的规模和硬件设备的性能。&lt;/p>
+&lt;blockquote>
+&lt;p>总体看，成本上不一定划得来。相比之下，IP-Adapter 不需要训练模型，只需找到符合预期的参考图即可开始生成，大大节省了时间和资源，能够在几分钟内看到结果，其模型参数只有 22m，存储占用小，对硬件资源的要求相对较低，下面展开讲下&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="ip-adapter-1">IP-Adapter
+&lt;/h2>&lt;p>IP-Adapter 确实有其独特的优势，使其成为一种很有吸引力的图像生成辅助方法，以下是对其优点的详细介绍。&lt;/p>
+&lt;h3 id="无需训练模型">无需训练模型
+&lt;/h3>&lt;p>与需要收集大量数据并进行长时间训练的 LoRA 等方法不同，IP-Adapter 不需要训练模型，大大节省了时间和资源，仅需找到符合预期的参考图即可开始生成，能在几分钟内看到结果，效率极高。&lt;/p>
+&lt;h3 id="单图即可实现风格迁移">单图即可实现风格迁移
+&lt;/h3>&lt;p>只需一张图片就能实现风格迁移，将该图片的风格特征融入到生成的图像中。例如，如果有一张具有独特画风的角色图片，IP-Adapter 可以把这种画风应用到新生成的打斗场景图中，让场景图中的角色呈现出与参考图一致的风格，为生成特定风格的图像提供了极大的便利。&lt;/p>
+&lt;h3 id="支持多图多特征提取">支持多图多特征提取
+&lt;/h3>&lt;p>可以同时读取多张参考图，并提取它们的特征，从而使生成的结果拥有更丰富的多样性和随机性。比如，你有几张同一角色在不同状态下的图片，IP-Adapter 能够综合这些图片的特征，生成更全面、更具变化的角色形象，使其在打斗场景中的表现更加自然和丰富。&lt;/p>
+&lt;h3 id="与-prompt-配合度高">与 Prompt 配合度高
+&lt;/h3>&lt;p>对 Prompt 有强注意力，能使 Prompt 中的信息更直观地反映在生成结果中。用户可以通过替换 Prompt 里的关键词，在继承参考图风格的同时，指向不同的结果，形成 Prompt 的组合矩阵，进一步拓展生成结果的多样性。例如，在生成打斗场景图时，通过修改 Prompt 中的关键词，如 “激烈打斗”“轻松打斗” 等，可以生成不同氛围和情节的场景图，且都带有参考图的风格特征。&lt;/p>
+&lt;h3 id="兼容性强">兼容性强
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>适配多种基础模型&lt;/strong>：IP-Adapter 基于预训练的文本到图像扩散模型开发，具有很强的通用性和兼容性，可以适配 Stable Diffusion 等多种基础模型，而无需针对不同的基础模型进行重新训练或调整.&lt;/li>
+&lt;li>&lt;strong>可与 ControlNet 等结合&lt;/strong>：能够与 ControlNet 等其他可控生成工具结合使用，实现更强大的图像生成控制能力。比如，通过 ControlNet 可以对生成图像的线条、边缘等细节进行控制，再结合 IP-Adapter 的风格迁移和内容引导，能够生成更加精细、准确且符合风格要求的图像。&lt;/li>
+&lt;/ul>
+&lt;h3 id="模型参数小">模型参数小
+&lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
+&lt;h1 id="方案选择">方案选择
+&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>【收藏】快捷启动器中的「潜力股」，它想成为你的 Mac 默认搜索工具：Raycast - 少数派</title><link>https://www.jsongo.top/articles/theirs/raycast-potential/</link><pubDate>Fri, 29 Nov 2024 17:22:19 +0800</pubDate><guid>https://www.jsongo.top/articles/theirs/raycast-potential/</guid><description>&lt;img src="https://img.qikepai.cn/blog/2020/11/ptPrKc.jpg" alt="Featured image of post 【收藏】快捷启动器中的「潜力股」，它想成为你的 Mac 默认搜索工具：Raycast - 少数派" />&lt;hr>
+&lt;p>关于如何提升生产力，这是个可以无限探索下去的话题。所有帮助提升生产力或者改善效率的工具，都是在尽可能压缩核心工作之外的时间，包括 macOS 的「聚焦（Spotlight）」、Alfred 以及接下来要提到的 Raycast。&lt;br>
+一开始在 Product Hunt 上看到 Raycast 介绍，觉得其不过是又一个「Alfred」而已。老实说，我并不是 Alfred 的忠实用户，曾因为看到很多人推荐而去安装使用，但略显陈旧的 UI 和繁杂的设置菜单让我觉得「聚焦（Spotlight）」好像也能凑合用着。&lt;br>
+如果以 macOS 系统版本风格来比喻的话，Alfred 的 UI 风格应该能匹配几年前的 macOS 吧，而 Raycast 却是能够驾驭 macOS Big Sur 全新的视觉风格。&lt;br>
+![[assets/local_image_plus/7e599d87ffaa3e6413a3b56a3ca152da_MD5.webp]]&lt;br>
+为了避免造成误解，我这里就不进行两者的比较，开发者针对 Raycast、聚焦（Spotlight）以及 Alfred 的区别也做了简单的 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Ffaq" target="_blank" rel="noopener"
+>说明&lt;/a>，有兴趣可以跳转查看，当然也欢迎有心得的朋友补充在评论区一起交流。&lt;/p>
+&lt;h1 id="为开发人员定制的生产力工具">&lt;strong>为开发人员定制的生产力工具&lt;/strong>
+&lt;/h1>&lt;p>Raycast 是直到 10 月 29 日才放出这第一个公测版本，对外宣布种子轮已筹集 270 万美元。根据开发者介绍，Raycast 正是受命令行的启发，作为软件工程师，他们注意到自己真正写代码的时间越来越少，反而需要更多的时间来管理软件开发，例如跟踪 bug 反馈、管理 sprint、发布新版本等等，这些都需要借助网页端或者其它的不同工具来完成。&lt;br>
+于是，Raycast 正是为了解决他们的困扰而创建，尽可能将常用的管理开发、内部会议、任务规划等内容集成在一起，腾出更多地时间放在编写代码上。简单过一下 Raycast 目前所能实现的核心功能：&lt;/p>
+&lt;ul>
+&lt;li>在 macOS 上启动程序或者搜索文件，相当于聚焦（Spotlight）；&lt;/li>
+&lt;li>在 Asana、GitHub、Jira 或 Linear 中创建、搜索和关闭 issues；&lt;/li>
+&lt;li>批准、合并和关闭 GitHub 的拉取请求；&lt;/li>
+&lt;li>调用 Zoom 管理日常会议；&lt;/li>
+&lt;li>支持快捷设置日程、待办事项以及其它诸多系统设置；&lt;/li>
+&lt;li>支持脚本扩展；&lt;/li>
+&lt;li>……&lt;br>
+虽然我可能并不是 Raycast 的精准目标用户，但这段时间体验下来确实发现了不少惊喜，让我开始习惯用 Raycast 取代聚焦（Spotlight）。&lt;/li>
+&lt;/ul>
+&lt;h1 id="功能体验">功能体验
+&lt;/h1>&lt;h2 id="可完全取代聚焦spotlight">可完全取代聚焦（Spotlight）
+&lt;/h2>&lt;p>既然 Raycast 包含了聚焦（Spotlight）的功能，意味着你完全可以用 Raycast 替换掉它。单从 UI 上来说，Raycast 比 Alfred 更有 macOS 原生应用的感觉，替代聚焦（Spotlight）完全不会产生违和感。&lt;br>
+![[assets/local_image_plus/cca44ef1688283563e27b4f55f2e2a41_MD5.webp]]&lt;br>
+Raycast 开启后，菜单栏会有常驻图标，当然也可以通过快捷键呼出 Raycast，默认快捷键为「option + 空格」，设置菜单里还「贴心」地给出了替换聚焦（Spotlight）的方法——其实就是在系统设置中关闭聚焦（Spotlight）的快捷键，然后把 Raycast 快捷键改为「command + 空格」。&lt;br>
+![[assets/local_image_plus/ffbb89e250565e9292b77d55f5c84e04_MD5.webp]]&lt;br>
+与聚焦（Spotlight）、Alfred 不一样，呼出 Raycast 之后并非只显示一个搜索框，还包含一些推荐项目（根据使用频率推荐）、手动收藏项目以及快捷操作，下滑则能看到所有的项目。&lt;br>
+![[assets/local_image_plus/e917063c8f850dbfe89b16465c713d78_MD5.webp]]&lt;br>
+你可以在搜索框中任意输入内容，优先会展示本地已有的应用或者快捷命令，其次可选搜索文件或者直接在搜索引擎中搜素。Raycast 默认只有 Google、DuckDuckGo 两种搜索引擎且无法修改。&lt;br>
+软件右下角有快捷菜单，除了打开应用/文件之外，还可以快速定位文件位置或者执行其它操作，而且这些所有的一系列操作都可以使用快捷键完成。&lt;br>
+![[assets/local_image_plus/40feea250a33ef646fa0da55115489ca_MD5.webp]]&lt;br>
+文件搜索功能支持部分图片、文档预览，且能显示文件详细信息，这个比聚焦（Spotlight）实用性更高。&lt;br>
+关于应用快捷启动以及文件搜索与聚焦（Spotlight）还是比较类似的，只是在一些功能上做得更加细致，这里就不花费更多篇幅介绍了，毕竟这个并不算核心亮点。&lt;/p>
+&lt;h2 id="支持管理日程待办事项剪贴板历史等">支持管理日程、待办事项、剪贴板历史等
+&lt;/h2>&lt;p>Raycast 对接了不少第三方应用的功能服务，也包括 macOS 系统自带的日程查看以及待办事项管理，这些所能实现的操作在设置中都可以直接看到，可手动选择关闭。&lt;br>
+![[assets/local_image_plus/81647e1ec6ef1eba8c56f87bff95644e_MD5.webp]]&lt;br>
+不过同样是系统应用，通过 Raycast 可以查看、创建待办事项，而日历日程却只能查看，无法通过 Raycast 新建。&lt;br>
+![[assets/local_image_plus/3ed69cca35ce68b2bbb901cb3fa515d3_MD5.webp]]&lt;br>
+![[assets/local_image_plus/5b44b9fdb488781110f9a1648f5656a8_MD5.webp]]&lt;br>
+待办事项同步 macOS 的提醒事项，可以查看、勾选已完成的目标事项，也可以自由创建。直接可以在 Raycast 中完成，无需单独打开提醒事项，效率明显提升了不少。&lt;br>
+剪贴板历史记录算是 Raycast 给我的一个小小惊喜，这是 Raycast 本身自带的小功能。关于剪贴板管理器，我之前也用过一段时间的 Paste，但发现自己其实用到的并不多，没必要单独开一个软件持续后台，另外考虑到云端同步的隐私安全，Paste 我就并没有用很久。而通过 Raycast 搜索「Clipboard History」，能够直接查看近期的剪贴板记录。&lt;br>
+![[assets/local_image_plus/b0a9e60d386dd1d341addb66f93a28d4_MD5.webp]]&lt;br>
+手动数了一下，Raycast 能够保存 50 条最近的历史记录，而且还可以选中部分历史复制内容置顶。至于隐私问题应该不用担心，Raycast 本身所有的数据都加密保存在本地，即便对接一些第三方 API 服务也是直接传送到对应云端，并不存在「中间商」。&lt;/p>
+&lt;h2 id="接入第三方服务高效协作">接入第三方服务高效协作
+&lt;/h2>&lt;p>如之前所言，Raycast 主要面向开发人员。目前 Raycast 已经接入了 GitHub、Jira、G Suite、Linear、Asana、Zoom 等服务，能够快速完成特定操作。&lt;br>
+![[assets/local_image_plus/0948da7275ce8eb6784de0e18589f790_MD5.webp]]&lt;br>
+用户需要通过 OAuth 协议登录指定服务，已完成自有账号内容的双向同步。&lt;br>
+不过很遗憾，我并不是程序员，不在 GitHub 中处理开发任务，所以没办法展示，你可以查看 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fraycast.com%2Fextensions%2Fgithub" target="_blank" rel="noopener"
+>官方演示视频&lt;/a> 查看具体用法，功能上还是表现地很直观的，几乎无需打开浏览器网页。&lt;br>
+![[assets/local_image_plus/ee2e70a74b7998a33b514b83cf4e871e_MD5.webp]]&lt;br>
+![[assets/local_image_plus/b844a60a757e60bbbd27544e667ccce6_MD5.webp]]&lt;br>
+同样，Zoom 也需要完成登录，才能在 Raycast 中创建会议、查看待参加会议等，只是加入会议时需要调用本地 Zoom 客户端接入。&lt;br>
+目前看来，Raycast 对目前已有的第三方协作服务的整合还是比较深入的，能够直接在 Raycast 上完成操作，而省去了来回切换网页或者工具软件的繁琐。&lt;/p>
+&lt;h2 id="系统快捷设置支持脚本命令">系统快捷设置，支持脚本命令
+&lt;/h2>&lt;p>日常使用电脑，可能经常会需要调整一些系统设置项，例如音量调节、休眠、锁屏或者深色模式切换等等，有快捷按键的还好，更多的是需要进入设置中去找，这个过程本身就会比较浪费时间。所以不少用户会通过第三方工具来完成，例如 &lt;a class="link" href="https://sspai.com/item/77" target="_blank" rel="noopener"
+>One Switch&lt;/a> 等。&lt;br>
+![[assets/local_image_plus/f5d7b696a128d6d79af787605b657ba7_MD5.webp]]&lt;br>
+Raycast 本身内置了一些系统功能调节，同时支持加载命令脚本，意味着能够将很多较为隐秘的系统设置融入 Raycast 实现快捷操作。&lt;br>
+![[assets/local_image_plus/21b8b56d457d8dfca768e138d7dd0f24_MD5.webp]]&lt;br>
+![[assets/local_image_plus/d8ddddfd15b5404e344f6079cf759e9c_MD5.webp]]&lt;br>
+而通过脚本命令还能实现 Raycast 没有内置的一些系统功能，添加其它一些快捷操作。由于我使用时间并不长，所添加的第三方脚本命令并不多，唯一用得最多的就是「深色模式快捷切换」。&lt;br>
+![[assets/local_image_plus/8deca7e6cd47736614a3d09ddc2eabae_MD5.webp]]&lt;br>
+如果你觉得用搜索的方式还不够快，你可以单独设置快捷键，真正实现一键切换。&lt;br>
+Raycast &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands%2Fblob%2Fmaster%2Fextensions.md" target="_blank" rel="noopener"
+>提供&lt;/a> 了大量的脚本命令可供直接安装，大家可以根据需要自行添加，有能力的也可以自己 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fraycast%2Fscript-commands" target="_blank" rel="noopener"
+>参考规范&lt;/a> 编写。&lt;/p>
+&lt;h2 id="小功能资讯浏览计算器汇率转换时间查询等">小功能：资讯浏览、计算器、汇率转换、时间查询等
+&lt;/h2>&lt;p>Raycast 还集成了一些小功能，这些在设置中并不能直接看到，所以阅读 &lt;a class="link" href="https://sspai.com/link?target=https%3A%2F%2Fwww.notion.so%2FRaycast-Manual-d5c85a7694dc4e4088b8b93557ea6d2d" target="_blank" rel="noopener"
+>手册&lt;/a> 彻底了解 Raycast 还是很有必要的。&lt;br>
+资讯浏览功能算是隐藏的小彩蛋，不过 Raycast 目前只内置有 Hacker News 的资讯源，能够查看最新的三十条资讯标题，如果看到有兴趣的再点击跳转网页查看。&lt;br>
+![[assets/local_image_plus/807fa929e9ec7284167cf35dbbaf0cd7_MD5.webp]]&lt;br>
+类似的资讯浏览方式，在之前使用的 Here 应用中见到过，类似 RSS 订阅。如果 Raycast 这个功能能够支持自定义，就能够自由添加更多新闻源，对于我这种经常关注资讯的还是挺有用的，毕竟大部分的快资讯看看标题就能知道有没有价值了。&lt;br>
+![[assets/local_image_plus/10fc7ae595f2ce51e1e03cd67337ba3f_MD5.webp]]&lt;br>
+计算器、汇率转换、时间查询……Raycast 似乎还在继续增加很多小功能，不知道这些有没有能吸引你。&lt;br>
+![[assets/local_image_plus/80e0472e1af4038091144c5123a7f13e_MD5.webp]]&lt;br>
+![[assets/local_image_plus/57070ed817deb73bdb5202e2725ac695_MD5.webp]]&lt;br>
+![[assets/local_image_plus/2b91d79d98b91dfdf9df2f6d1e17428c_MD5.webp]]&lt;br>
+使用 Raycast 不到一个星期，显然觉得还有很多东西我并没有能深刻体验到，但现在仅有的一些已经足够让我惊喜。&lt;br>
+Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服务的整合更加深入，包括操作视图、信息展示更详细，除了本身涵盖的一些系统快捷设置之外，还可以通过命令脚本扩展，可玩性大大增强。想到这里，我觉得聚焦（Spotlight）要在系统设置里长眠了。&lt;br>
+关于 Raycast 得收费计划，开发团队也已经声明了，目前公测阶段会保持免费，后期会有针对高级用户和团队的付费模式，核心功能仍然保持免费。在 macOS 版本正式上线之后，Raycast 也会逐渐支持 Windows 和 Linux 端，这对广大开发人员来说算是大好消息。&lt;br>
+目前来看，Raycast 有足够的潜力成为下一款效率神器。但对于国内用户而言，如果不加入中文支持便捷性会大打折扣，单纯通过英文搜索（不支持拼音）对于国内用户着实不够友好。被许多人称道的 Notion 至今还没实现中文化，Raycast 目测也还有很长的路要走。&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>原文：https://sspai.com/post/63521&lt;/p>
+&lt;/blockquote></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
+&lt;/h1>&lt;blockquote>
+&lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
+性能和效果可以与 Midjourney V6 媲美。&lt;br>
+Flux 一般通过 ComfyUI 来调用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="黑森林实验室与团队背景">黑森林实验室与团队背景
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>核心成员&lt;/strong>：黑森林实验室由 Stable Diffusion 的核心开发者 Robin Rombach 领衔创立，团队成员大多来自 Stability AI，如 Andreas Blattmann、Axel Sauer 等多位原 Stable Diffusion 项目的关键人物，他们在生成式模型开发领域经验丰富，为 Flux 的诞生奠定了坚实基础。大家可能听说过 Stability AI 团队内部不和，各种破事把公司折腾得够呛，所以由原班核心人马出来创业做的 Flux 受到很大的关注。&lt;/li>
+&lt;li>&lt;strong>融资情况&lt;/strong>：这个实验室已获得 3200 万美元的种子轮融资，由著名风投机构 Andreessen Horowitz (a16z) 领投，多位业内知名人士参与投资，充足的资金支持使其能够大力推进模型的研发与优化等工作。主要还是因为它的背景实在太好了。&lt;/li>
+&lt;/ul>
+&lt;h2 id="flux-模型特点">Flux 模型特点
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>架构与参数&lt;/strong>：Flux 基于多模态和并行扩散 Transformer 块的混合架构，拥有 &lt;!-- raw HTML omitted -->120 亿参数&lt;!-- raw HTML omitted -->，是目前最大的开源文本到图像模型之一。这种架构和庞大的参数规模使其能够学习到更丰富的图像特征和语义信息，从而生成高质量的图像。&lt;/li>
+&lt;li>&lt;strong>性能优势&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>图像质量&lt;/strong>：在视觉质量、图像细节和输出多样性等方面达到了新高度，生成的图像更加逼真、细腻，细节丰富度高，风格多样，能与闭源的 Midjourney v6.1 模型不相上下，甚至在一些方面表现更优，如复杂场景生成、人物细节处理等。&lt;/li>
+&lt;li>&lt;strong>提示词遵循能力&lt;/strong>：对提示词的理解和遵循能力很强，能够准确地根据输入的文本描述生成符合要求的图像，包括对复杂指令、长文本描述以及特定场景和细节要求的准确呈现，减少了因提示词理解不准确而导致的图像与预期不符的问题。&lt;/li>
+&lt;li>&lt;strong>文字生成能力&lt;/strong>：在图像中生成文字的效果出色，可以处理重复字母等棘手情况，生成的文字内容准确、排版合理，这在一些需要在图像中呈现文字信息的场景中具有很大优势，如生成带有文字标识的产品图片、包含文字说明的场景图片等。&lt;/li>
+&lt;li>&lt;strong>手部细节处理&lt;/strong>：相较于之前的一些模型，Flux 在手部细节生成上有了显著改进，减少了手指等部位的畸形或错误，使生成的人物图像更加自然、真实。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>不同版本特点&lt;/strong>：&lt;br>
+有 3 个核心版本，Pro/dev/schnell
+&lt;ul>
+&lt;li>&lt;strong>FLUX (pro)&lt;/strong>：闭源模型，自家压箱底的货。具备最佳性能，包括最先进的提示跟随能力、视觉质量、图像细节和输出多样性，适用于专业用户和对图像质量要求极高的场景，可通过注册官方 API 申请访问权限，同时支持企业定制。&lt;/li>
+&lt;li>&lt;strong>FLUX (dev)&lt;/strong>：开源模型，不可商用，直接从 FLUX (pro) 蒸馏而来，具备相似的图像质量和提示词遵循能力，但更高效，适合开发者进行研究和实验等非商业用途的使用。&lt;/li>
+&lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Sun, 24 Nov 2024 11:26:10 +0800</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
+&lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
+&lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
+&lt;ul>
+&lt;li>Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）&lt;/li>
+&lt;li>Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。&lt;/li>
+&lt;/ul>
+&lt;h1 id="clip">CLIP
+&lt;/h1>&lt;h2 id="概念">概念
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>CLIP 模型&lt;/strong>：CLIP 是 Contrastive Language-Image Pre-training 的缩写，由 OpenAI 在 2021 年 1 月 5 日发布，是一种将计算机视觉与自然语言处理相结合的神经网络模型。
+&lt;ul>
+&lt;li>它通过对 400,000,000 组（图像，文本）对数据进行预训练，从而能够在给定图像的情况下，根据自然语言指令预测出最相关的文本片段，展现出了类似 GPT-2 和 GPT-3 的 zero-shot 学习能力，即模型可以在未针对特定任务进行直接优化训练的情况下，对未曾见过的数据类别进行较好地预测&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLIP Vision&lt;/strong>：CLIP Vision 主要负责处理视觉信息，也就是对输入的图像数据进行特征提取和编码等操作，将图像转化为模型能够理解和处理的向量表示，以便与文本信息进行对比学习和关联。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>
+&lt;ul>
+&lt;li>例如，在图像生成领域，CLIP Vision 可以帮助模型理解图像的内容和特征，从而生成更符合语义描述的图像。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLIP Text&lt;/strong>：我们常看到的这个 CLIP Text 概念，主要是指作为参考文本来对图像进行调整的文本描述。&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用">应用
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间帧.&lt;/li>
+&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，比如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
+&lt;li>&lt;strong>图像检索&lt;/strong>：基于 CLIP Vision 对图像特征的提取和与文本的关联能力，可以实现根据文本描述来检索相关的图像，或者根据图像来查找与之语义相关的文本信息，提高图像检索的准确性和效率。&lt;/li>
+&lt;li>&lt;strong>视觉问答系统&lt;/strong>：帮助系统理解图像中的视觉内容，结合对自然语言问题的理解，生成准确的文本答案，例如回答关于图像中物体的位置、颜色、数量等问题 。&lt;/li>
+&lt;/ul>
+&lt;h1 id="vae">VAE
+&lt;/h1>&lt;p>VAE 主要用于将图像数据压缩到一个潜在空间，然后再从这个潜在空间中生成新的图像，侧重于图像的生成和重建。&lt;/p>
+&lt;h2 id="latent-image">Latent Image
+&lt;/h2>&lt;p>经过某种变换或编码后隐藏在数据中的图像信息。例如，在使用变分自编码器（VAE）进行图像生成或处理时，图像数据会被压缩到一个潜在空间（latent space），这个潜在空间中的向量可以被看作是潜像的一种表示形式。这些潜像向量包含了图像的关键特征，如形状、颜色、纹理等信息，通过解码器可以将这些潜像向量转换回可见的图像。&lt;/p>
+&lt;h1 id="lora">Lora
+&lt;/h1>&lt;p>LoRA 是一种用于微调预训练模型的技术，通过在原始模型的基础上添加少量可训练的参数来实现对模型的微调。&lt;/p>
+&lt;hr>
+&lt;h1 id="footnotes">Footnotes
+&lt;/h1>&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>简单说就是，主要用于处理和理解图像信息，能够提取图像的特征表示，进而与文本特征进行对比和匹配等操作，以实现如根据文本描述生成相应图像、图像分类、图像检索等多种与图像和文本相关的任务&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Fri, 22 Nov 2024 00:48:28 +0800</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Tue, 19 Nov 2024 16:36:27 +0800</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
+&lt;/h1>&lt;h2 id="背景">背景
+&lt;/h2>&lt;p>Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。&lt;br>
+Stable Diffusion 的发展历程如下：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
+loading="lazy"
+alt="|900"
+>&lt;/p>
+&lt;h2 id="技术简介">技术简介
+&lt;/h2>&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
+它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>前向扩散&lt;/strong>：在前向阶段，通过向原始图像数据（如真实的照片或绘画）添加噪声，逐步将图像转换为纯噪声。这个过程是在多个时间步（time - steps）中完成的，每一步都按照一定的规则（通常是基于高斯分布）添加噪声，使得图像信息逐渐被噪声掩盖。例如，开始时图像可能还比较清晰，随着时间步的增加，图像越来越模糊，最终变成完全的噪声。&lt;/li>
+&lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
+&lt;/ul>
+&lt;h1 id="生图过程">生图过程
+&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
+loading="lazy"
+alt="|700"
+>&lt;/p>
+&lt;h2 id="模型-checkpoint跟采样的关系">模型 （Checkpoint）跟采样的关系
+&lt;/h2>&lt;p>Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。&lt;/p>
+&lt;h2 id="clip-text-encode">CLIP Text Encode
+&lt;/h2>&lt;p>属于 Condition 节点，它用 CLIP 模型对文本 Prompt 进行编码，对模型生成的结果进行方向上的引导，其实可能理解为文本模型中的 embedding。&lt;/p>
+&lt;h2 id="采样">采样
+&lt;/h2>&lt;p>生图其实就是一个反向扩散的过程，从一个完全是噪声的图像开始，通过模型逐步去除噪声来生成图像。这个过程通过一个采样函数来实现，它基于模型预测的噪声来更新噪声图像。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
+loading="lazy"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Steps&lt;/strong>，迭代生图，每次更新噪声图像，需要经过多个 Step 的迭代。随着 Step 反复执行，图像中的噪声逐渐减少，最终生成一个近似原始图像分布的图像。不过生成的图像质量可能会受到多种因素的影响，如模型的性能、采样方法、时间步数等。在实际应用中，可能需要对生成的图像进行后处理（如调整颜色、对比度等）来提高图像质量。&lt;/li>
+&lt;li>&lt;strong>seed&lt;/strong>，种子值，用于初始化随机数生成器。相同的种子值在相同的模型和参数设置下会生成相同的图像，这有助于复现结果。&lt;/li>
+&lt;li>&lt;strong>control_after_generate&lt;/strong>：这个参数可能与生成后的控制操作有关，例如对生成的图像进行随机化处理&lt;/li>
+&lt;li>&lt;strong>steps&lt;/strong>：指生成过程中的迭代步数。步数越多，生成的图像通常会越精细，但也会增加计算时间。&lt;/li>
+&lt;li>&lt;strong>cfg&lt;/strong>（Classifier-Free Guidance）：无分类器引导的强度，它是一种在生成式模型（如 Stable Diffusion）中用于引导图像生成方向的技术，决定了模型在生成图像时对正向提示（你希望在图像中出现的内容）的遵循程度。较高的 CFG 值会使生成的图像更紧密地遵循正向 Prompt，但也有可能导致图像过度拟合。
+&lt;ul>
+&lt;li>取值范围：
+&lt;ul>
+&lt;li>CFG 的值通常在 1 到 20 之间，理论上可以取更高的值，但在实际应用中，过高的值往往会导致图像质量下降。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>较低值（1 - 4）：
+&lt;ul>
+&lt;li>当 CFG 值较低时，生成的图像会更具随机性和创造性。模型对正向提示的遵循程度较弱，因此可能会生成一些与提示不太相关但具有独特创意的图像。这种情况下，图像可能会包含一些意外的元素或风格。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>中等值（4 - 10）：
+&lt;ul>
+&lt;li>在这个范围内，是比较常用的取值。模型会在遵循正向提示和保持一定的创造性之间取得较好的平衡。能够生成与提示较为符合的图像，同时也不会显得过于刻板。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>较高值（10 - 20）：
+&lt;ul>
+&lt;li>当 CFG 值较高时，生成的图像会非常紧密地遵循正向提示。这可能会导致图像过于 “完美” 地符合提示，但也可能会出现一些问题，比如图像的细节可能会显得不自然，色彩可能会过于饱和，或者图像可能会失去一些自然的随机性和美感&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>sampler_name&lt;/strong>：这是指采样器的名称。不同的采样器（如 Euler、Langevin 等）有不同的特性，会影响图像生成的速度和质量。&lt;/li>
+&lt;li>&lt;strong>scheduler&lt;/strong>：调度器，用于控制生成过程中的步长和其他参数。不同的调度器会影响生成的效率和结果。&lt;/li>
+&lt;li>&lt;strong>denoise&lt;/strong>：去噪参数控制生成过程中对噪声的去除程度。较低的去噪值会使生成的图像更具随机性，而较高的值会使图像更平滑和可预测。&lt;/li>
+&lt;/ul>
+&lt;h2 id="vae-decoder变分自解码器">VAE Decoder（变分自解码器）
+&lt;/h2>&lt;p>图像数据往往是高维的，包含大量的像素信息，所以一般训练和计算时，往往要压缩到低维来处理，用更紧凑的方式表示图像的关键特征，就像文本模型中的 Embedding 处理，变成稠密的数据，在图像处理领域叫潜在空间（Latent Space）。而解码器则是将潜在空间中的表示再转换回图像数据空间，尽可能地重建原始图像。&lt;br>
+生成新图的过程，由于潜在空间是连续的，稍微改变潜在空间中的向量值，就可以生成与原始图像在某些特征上有所变化的新图像。例如，在生成人脸图像的 VAE 模型中，在潜在空间中沿着某个方向移动向量可能会改变人脸的表情、发型或者年龄等特征。&lt;/p>
+&lt;h2 id="latent-image">Latent Image
+&lt;/h2>&lt;p>一般在整个 ComfyUI 流程中，会插入一张空的（Empty） Lantent Image，它提供了一个初始的 “画布”，让模型在这个基础上进行生成或转换操作。&lt;br>
+当然如果是对已有的图片进行调整、修复或优化，则可以把空的图换成一张现成的图片，这时就要把它加载并转换为合适的潜在表示形式后，可以作为生成过程的起点。在 ComfyUI 中，可能涉及到将图片通过适当的预处理步骤，如调整大小、归一化等操作后，然后将其编码为潜在空间中的表示，这样就可以基于已有的图像内容进行修改、风格转换或者其他生成操作。&lt;/p>
+&lt;h1 id="stability-ai-官方">Stability AI 官方
+&lt;/h1>&lt;p>Stable Diffusion 的官方可用的模型，可以从 API 文档中看到： &lt;a class="link" href="https://platform.stability.ai/pricing" target="_blank" rel="noopener"
+>Stability AI - Developer Platform&lt;/a>。最新的是 SD 3.5（2024 年 11 月）。&lt;/p>
+&lt;ul>
+&lt;li>1 credit = $0.01&lt;/li>
+&lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
+loading="lazy"
+alt="736deaffc1c02497df089d14539fba5d_MD5|700"
+>&lt;/li>
+&lt;/ul>
+&lt;h2 id="体验">体验
+&lt;/h2>&lt;p>&lt;a class="link" href="https://stabledifffusion.com/tools/ai-image-generator" target="_blank" rel="noopener"
+>Free AI Image Generator - Turn Text to Image Online | Stable Diffusion Online&lt;/a>&lt;/p>
+&lt;h1 id="字节的-lighting-模型">字节的 Lighting 模型
+&lt;/h1>&lt;p>&lt;a class="link" href="https://huggingface.co/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
+>ByteDance/SDXL-Lightning at main&lt;/a> 字节的这个模型生成效果相当不错。&lt;br>
+它同时提供了 Full UNet 和 LoRA 版本，都是相对比较小的蒸馏模型（虽然 UNet 也有几个 G）。&lt;/p>
+&lt;blockquote>
+&lt;p>We provide both full UNet and LoRA checkpoints. The full UNet models have the best quality while the LoRA models can be applied to other base models.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="小科普可跳过">小科普（可跳过）
+&lt;/h2>&lt;h3 id="概念">概念
+&lt;/h3>&lt;ul>
+&lt;li>UNet 是卷积神经网络（CNN）的一种特殊架构，在生成对抗网络 (GANs) 和扩散模型中广泛使用。它是一种完整的网络架构，专门用于图像分割任务，从输入图像到输出分割结果，有自己独立的结构和训练流程。&lt;/li>
+&lt;li>LoRA 不是一种独立的网络架构，而是一种模型微调策略，可以应用于各种现有的预训练模型（包括但不限于基于 UNet 架构的模型），用于在不大量修改原始模型结构的情况下进行任务适配。&lt;/li>
+&lt;/ul>
+&lt;h3 id="从参数规模与训练成本来看">从参数规模与训练成本来看
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>UNet&lt;/strong>：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。&lt;/li>
+&lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;br>
+UNet 的模型一般都比较大：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
+loading="lazy"
+alt="|475"
+>&lt;br>
+LoRA 则小很多&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
+loading="lazy"
+alt="|475"
+>&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用">使用
+&lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
+ComfyUI 中的使用非常简单：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
+loading="lazy"
+alt="|675"
+>&lt;br>
+如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
+>SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
+loading="lazy"
+alt="|700"
+>&lt;/p></description></item><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
 &lt;/h1>&lt;p>大多数看起来有所利益的事情，肯定有成本，而且有风险。风险本质上也是一种成本。&lt;br>
 用成本 + 风险的思维来看问题，不要只想着好处。成本和风险往往是在巨大的利益面前，特别容易被忽视的东西。&lt;br>
 塔勒布在《非对称风险》中表达了一个观点，他反复提到在真实的世界里，一定要风险共担，如果有人不愿意承担风险，却要享受好处，这样的人是有问题的。&lt;/p>
@@ -1002,7 +1004,7 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 不过不管怎么样，保住本金还是第一要务，不要乱投，耐心地蹲守、观察，找准时机再动手。&lt;/p>
 &lt;blockquote>
 &lt;p>投资的第一条原则 ，永远不要失去本金；第二条原则，牢牢记住第一条。—— 巴菲特&lt;/p>
-&lt;/blockquote></description></item><item><title>打开心智 - 读书笔记</title><link>https://www.jsongo.top/articles/unlock-the-mind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/unlock-the-mind/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/82c4155b2681df9665519ffb08d4e346.jpeg" alt="Featured image of post 打开心智 - 读书笔记" />&lt;h1 id="一如何阅读">一、如何阅读
+&lt;/blockquote></description></item><item><title>打开心智 - 读书笔记</title><link>https://www.jsongo.top/articles/unlock-the-mind/</link><pubDate>Tue, 29 Oct 2024 00:08:41 +0800</pubDate><guid>https://www.jsongo.top/articles/unlock-the-mind/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/82c4155b2681df9665519ffb08d4e346.jpeg" alt="Featured image of post 打开心智 - 读书笔记" />&lt;h1 id="一如何阅读">一、如何阅读
 &lt;/h1>&lt;h2 id="避免做题式的阅读那到底要怎么读怎么用这个方法来改变我的阅读习惯">避免做题式的阅读，那到底要怎么读，怎么用这个方法来改变我的阅读习惯？
 &lt;/h2>&lt;h3 id="避免备考式的阅读">避免备考式的阅读
 &lt;/h3>&lt;p>之前看书，大都是从头看到尾，没意识地想去把整本书的结构都理清楚，最后还会把所有的重点都整理出来、形成一个比较大的笔记。&lt;br>
@@ -1199,105 +1201,103 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />&lt;blockquote>
-&lt;p>这是这几天在看的一本很有趣的书，有感而发这篇读书笔记&lt;/p>
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
+&lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
+这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
+>村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
+&lt;h1 id="功能">功能
+&lt;/h1>&lt;h2 id="介绍">介绍
+&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
+loading="lazy"
+alt="图片来自 x|850"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
+>Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测&lt;/a>&lt;/p>
 &lt;/blockquote>
-&lt;h1 id="概述">概述
-&lt;/h1>&lt;p>买这本书主要是冲着古典老师去的，之前对他的《跃迁》印象深刻，受益匪浅。刚看到书名我就想起了《世界尽头的咖啡馆》前两年还出了续集，我都看了。后来在读本书的时候，感觉就是在看国产的《世界尽头的咖啡馆》，叙述方式很像，内容上也是讲职场和生活，所以阅读起来我有种熟悉的感觉。&lt;br>
-这几年经济不好，大家都在职场和创业的路上挣扎，都过得很不容易。随着越来越多人“毕业”，讲人生规划类的书籍或课程必定会大受欢迎。因为大量的城市精英突然就遇到了 10 几年一个周期的经济萧条，上一轮大概率没经历过，这么一来就有点措手不及，人生突然陷入迷茫。&lt;br>
-有缘看到这篇文章的人，如果正好自在这个阶段，可以读读上面提到的这 3 本书（《世界尽头的咖啡馆》有两本），相信会有不错的启发。&lt;br>
-本文主要摘录我在阅读过程中受到触动，结合自己思考写下来的一些笔记，希望能引发读者一些思考。&lt;/p>
-&lt;hr>
-&lt;h1 id="思考清楚自己的赛道">思考清楚自己的赛道
-&lt;/h1>&lt;h2 id="下班后才是一个打工人最清醒的时刻">下班后才是一个打工人最清醒的时刻
-&lt;/h2>&lt;p>全书多次提到这句话，故事中的那个咖啡馆也只有在晚上 9 点后才开门，因为打工人下班了。古典在书中说的这句话，主要想表达，在上班的时候，人容易迷失自己，沉浸在为做好工作而对其它事情浑然不觉的状态中，更不会抽时间去思考自己的现在、做事方式、未来的发展等，一心在做好当下的事。&lt;br>
-不过在下班后，就有更多的时间回去“做自己”，这时就换了一个完全不一样的思维，可以思考更多的可能性，而不是工作干不好整个世界就完了的状态。&lt;/p>
-&lt;h2 id="换赛道">换赛道
-&lt;/h2>&lt;p>如果打算换赛道，尽可能地一步步切换，就像攀岩，不要一步就跳过去，容易失去抓手、然后掉下去。&lt;br>
-即使是“毕业”，离开岗位时，也要留住人脉和技能，然后在这些基础上慢慢探索、切入适合自己的赛道。&lt;br>
-书中古典老师化身的胖子，是一个耐心的人生导师。他针对职场，提出了一个公式：&lt;br>
-&lt;strong>定位=行业 x 企业 x 职位&lt;/strong>&lt;br>
-可以尝试先切换其中的一个变量。比如现在是在互联网行业，这个大前提可以不用换。之前一直在走“职位”这条路，一路往上爬。实际上还有其它思路，只是我们平时很少思路，一心盯着职位职级。公式中没有讲的很具体，没提职位怎么切，但这个变量给了我们一个思考的起点，即可以挪挪屁股，换一个部门或团队，如果一个产品 (业务) 自己不喜欢、不适合、或识别出不是自己未来发展方向的话，及时果断地换。比如想往 AI 技术方向发展，可以切换到 AI 相关的团队中去，找到一个让自己有更多学习的机会的环境中去。&lt;br>
-大概的步骤可能是这样：&lt;/p>
 &lt;ul>
-&lt;li>先认真收尾手头的事，边观察机会、切换赛道；&lt;/li>
-&lt;li>然后在新赛道中认真的学习、快速积累，不计得失，努力去做成一些事，有一些自己的创造或产出；&lt;/li>
-&lt;li>在上一条的持续迭代中，不断地精进到某个高度，同时积累更多的技术和人脉；&lt;/li>
-&lt;li>如果条件成熟，可以再考虑切换企业，继续创造，验证这套模式可行性，并不断完善相应框架，同时继续积累更多的技术经验和人脉；&lt;/li>
-&lt;li>最后如果还有激情和条件，可以再切换到创业的赛道，有一份真正属于自己的事业。&lt;/li>
+&lt;li>官方文档：&lt;a class="link" href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener"
+>Introducing the Model Context Protocol - Anthropic&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h1 id="职场">职场
-&lt;/h1>&lt;h2 id="职业的本质是什么">职业的本质是什么？
-&lt;/h2>&lt;p>通过帮别人解决问题来获利。&lt;br>
-&lt;strong>该给你多少钱，不是看你有多厉害，而是看别人的问题有多大&lt;/strong>。&lt;br>
-我们一直以为只有把专业技能练到炉火纯青的地步才能赚大钱，其实不太对。赚钱的是那些，找对了痛点和问题、然后培养自己能力，最终能解决这类问题的人。&lt;br>
-简单说，是&lt;strong>需求决定价格，而不是供给决定价格&lt;/strong>。&lt;br>
-同样是销售，卖房子的就是比卖汽水的赚钱。虽然他们的本质都是跟人打交道，找到别人的痛点，把自己的东西包装下卖给别人。最关键的点，在于找对行业。怎么把一瓶水卖出天价，也许能做到这个的人你会觉得他很厉害，不过很可能他只是把水运到了沙漠中去卖而已。&lt;br>
-当然这点可能不只一个人发现，那么随着加入的人越来越多，就成了红海。时机很重要，但如果已经晚了的话呢？这时我们只能去发现更多的新机会。新机会往往出现在新行业，这有点像废话，不过更多时候，我们只是看着新行业到来，也没什么行动。&lt;/p>
-&lt;h2 id="宁当鸡头不做凤尾">宁当鸡头，不做凤尾
-&lt;/h2>&lt;p>在一个不怎么重要的部门当尾部，还不如去一个新部门（缺人才的部门）承担非常重要的岗位，给自己更多的历练，最重要的是成长和突破过去的自我，往未来趋势的方向不断的前进，这才是最有意义的。&lt;br>
-很多人一直盯着职级、地位看，干嘛要一直去跟别人做比较呢？要知道职级就是公司设置的游戏规则，把人牢牢地套在规则里面、认真的奉献，不过很多人即使知道这一点，还是会很执著地追求这些。可能是因为不甘心，也可能是因为自尊心太重…… 但不是正确的方向还要坚持，就很难过得好。&lt;/p>
-&lt;h1 id="提升自我">提升自我
-&lt;/h1>&lt;h2 id="打磨优势">打磨优势
-&lt;/h2>&lt;p>没有人是完美的，要充分亮出自己的优势，像一把沙子中只有一点点金子，经常容易被埋没，如果你经常去擦亮你找到的金子，它就会在沙子中闪闪发光。&lt;br>
-重要的是把优势放大，同时规避劣势。&lt;br>
-找优势可以用排除法，看看失去什么会让我活不下去。每个人都有优势，只是说怎么在沙子中找到金子，以及怎么让别人看到。&lt;br>
-风口没了，猪会不会摔死？&lt;br>
-你进入了风口之后，要不断地学习、站稳，让自己长出翅膀来，趁着红利在这个领域站稳脚跟。翅膀就是这个培养出来的优势，如果没及时长出来、亮出来，风口过后就会摔得很惨。&lt;/p>
-&lt;h2 id="多关注自己跟过去比">多关注自己、跟过去比
-&lt;/h2>&lt;p>不用总盯着别人的优势、跟别人比，要多跟现在自己比，只要让自己过得更舒适、更充实就行。&lt;br>
-不一定要超越别人才算成功，大家的起点或运气不一样，世界本就不公，抱怨改变不了一切，接受现实往往是很难的，总会有不满。但我们注意力不应该在这，而应该放在&lt;strong>怎么不断地去突破自我&lt;/strong>，要比之前的自己活得更好、变得更强。以前觉得自己不太行的地方，突然自己变得非常行了，这就是最有意义的事。&lt;/p>
-&lt;h2 id="只要坚持着慢慢地跑就能赢过很多人">只要坚持着慢慢地跑，就能赢过很多人
-&lt;/h2>&lt;p>人生就像一场马拉松。这点感受很深，平时我也经常去跑步，坚持很累，特别是突破之前跑过的距离，很多人都会在途中停下休息，如果能一直坚持，就能赢过大部分人。&lt;br>
-人生更像是在操场上跑圈，时不时有人加入，不用羡慕刚加入的人的体力，他们刚下场体力就是好，开始时就是跑得快，也可能是基因好、祖上都是运动员。但你一直坚持下来了，总能超过大部分人，毕竟有先天优势的只是非常少数，干嘛一定要跟他们比呢。&lt;/p>
-&lt;h2 id="读书的方法">读书的方法
-&lt;/h2>&lt;p>读书就是&lt;strong>以自己为中心，以问题为导向，以改变为终点&lt;/strong>。&lt;/p>
-&lt;h2 id="想不是办法干才有答案">想不是办法，干才有答案
-&lt;/h2>&lt;p>路是走出来的，不是设计出来的。&lt;br>
-人们总是喜欢提前规划路线，其实路不是想出来的，而是走出来的。没真走到那路口，也不一定了解那边的路况，只是听人说、或看地图知道的。这些都不一定准确，或者偏离的很多。&lt;/p>
-&lt;h2 id="初心">初心
-&lt;/h2>&lt;p>“如果当时……” 是人生最大的谎言。&lt;br>
-或许当时的选择，已经是那会能找到了最好的选项之一。不用去想走了另一条路会怎么样，因为我们经常会去美化那些得不到的东西，这样它就变得不真实，而且会很后悔、搞坏了尽情…… 没必要，这些都是自己在找罪受。&lt;br>
-认识到这一点后，怎么正确地去看待这些选择呢？重点还是“初心”，了解自己来自哪、有什么目标或使命要去完成。这样再去做选择的时候，至少知道方向。&lt;br>
-每个苦苦坚持的不得不，都藏着巨大的初心。&lt;br>
-我们可能都有一些比较初期的出发点，或许我们已经忘了，但它带来的动力和惯性，让我们一直往前走，只不过后来我们以&lt;strong>最近的幻想&lt;/strong>来衡量自己的行为和成果，忘了这个初心。&lt;br>
-或许当时的初心只是不想在小城市一眼看到头，而是想探索更多的可能性，想不断地超越儿时玩伴或亲戚朋友，只不过慢慢地，买了房，有了房贷，想自由，想赚钱，然后迷失了最初的初心，变得浮躁，一切心赚钱为目标，但又碰到各种障碍，终日郁郁寡欢。&lt;br>
-当一个人知道最初的“为何”，就能承受一切“如何”。&lt;br>
-我们不是害怕苦难，而是怕苦得没有意义，白白花费了很多精力、最终没得到任何收获。&lt;/p>
-&lt;h1 id="管理">管理
-&lt;/h1>&lt;h2 id="项目管理中的-1-10-100-定律">项目管理中的 1-10-100 定律
-&lt;/h2>&lt;p>解决一个问题：&lt;/p>
-&lt;ul>
-&lt;li>事前计划，只需要 1 的成本。&lt;/li>
-&lt;li>事中改进，就需要 10 的成本。&lt;/li>
-&lt;li>事后修正，那需要 100 的成本。&lt;br>
-所以为什么要做重要但不紧急的事。因为这是最省成本的方法，如果每天都在做紧急的事，那基本都要付出 10 或 100 的成本。&lt;br>
-如果大部分能预期的事，都提前做好事前的计划，并及时地执行，那你完成它们的成本就只有 1 x N，而不是 100xN。这时你就可以比别人省出更多的时间。&lt;/li>
-&lt;/ul>
-&lt;h2 id="做团队管理的两个重要的事">做团队管理的两个重要的事
+&lt;h2 id="使用">使用
 &lt;/h2>&lt;ul>
-&lt;li>1 是帮别人拿成果，要为他争取机会，且争取时间，及时、适当地推他一把。&lt;/li>
-&lt;li>2 是保护大家，一方面不让一些杂事、不重要的投诉分心，另一方面 pk 掉不合适的需求直接找到他们，不要当一个传话筒或需求传送带。&lt;/li>
+&lt;li>安装（以 Mac 来讲）
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install uv git sqlite3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>然后下载 Claude &lt;a class="link" href="https://claude.ai/download" target="_blank" rel="noopener"
+>桌面端&lt;/a>，&lt;/li>
 &lt;/ul>
-&lt;h2 id="成为专家之路的几个阶段">成为专家之路的几个阶段
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>求助者&lt;/strong>，这是最开始的时候，什么都不太懂，开始入门&lt;/li>
-&lt;li>&lt;strong>探索家&lt;/strong>，有了兴趣或任务，不断地深挖、学习更多这方面的知识&lt;/li>
-&lt;li>&lt;strong>建筑师&lt;/strong>，把自己在这里面学到的一些有一定难度的东西沉淀下来，形成框架&lt;/li>
-&lt;li>&lt;strong>助人者&lt;/strong>，在平时帮助别人解决问题的过程中，不断的完善自己的框架，补齐知识点&lt;/li>
-&lt;li>&lt;strong>专家&lt;/strong>，最终自己的框架已经比大多数人认知更深了，在别人眼里就是半个专家了。&lt;br>
-其实不一定要到了助人者或专家再开始发声，从探索时就可以开始，动手去慢慢打磨、创造一个产品，然后跟着它一起成长。同时也把这个成长的过程分享出来，让初学者都能从中受益。&lt;br>
-这个世界其实初学者（求助者）远远多于其它阶段的人。这就是一个金字塔，越塔尖的人越专业、而大部分人都是在中等以下。所以市场及需求最大的往往都是上面说的“探索家”和“求助者”。&lt;/li>
-&lt;/ul></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
-![[assets/local_image_plus/a0ca56c580cb92b784f7a891d694a46c_MD5.webp]]
-EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，内部建立的容器集群。Tax 这个就不用说了，10%的税
-刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
+&lt;/li>
+&lt;li>开启
 &lt;ul>
-&lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
-![[assets/local_image_plus/dc4d2f7b2f6541fdf855791c014cd6bc_MD5.webp]]
-看起来很正常，也没有实例在跑&lt;/li>
-&lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
-![[assets/local_image_plus/07fe0255dd659d8be840fad26fa1025a_MD5.webp]]
-&lt;a class="link" href="https://us-east-1.console.aws.amazon.com/ec2globalview/home" target="_blank" rel="noopener"
->这里找 global 使用中的实例&lt;/a>&lt;/li>
+&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
+>Quickstart - Model Context Protocol&lt;/a>&lt;/li>
+&lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcpServers&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;sqlite&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;uvx&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;mcp-server-sqlite&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--db-path&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/Users/&amp;lt;my-user-name&amp;gt;/claude.db&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="示例">示例
+&lt;/h2>&lt;p>官方给的例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create a new SQLite database&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sqlite3 ~/claude.db &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">CREATE TABLE products (
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> id INTEGER PRIMARY KEY,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> name TEXT,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> price REAL
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO products (name, price) VALUES
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Widget&amp;#39;, 19.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gadget&amp;#39;, 29.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gizmo&amp;#39;, 39.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Smart Watch&amp;#39;, 199.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Wireless Earbuds&amp;#39;, 89.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable Charger&amp;#39;, 24.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Bluetooth Speaker&amp;#39;, 79.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Phone Stand&amp;#39;, 15.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Laptop Sleeve&amp;#39;, 34.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mini Drone&amp;#39;, 299.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;LED Desk Lamp&amp;#39;, 45.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Keyboard&amp;#39;, 129.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mouse Pad&amp;#39;, 12.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;USB Hub&amp;#39;, 49.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Webcam&amp;#39;, 69.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Screen Protector&amp;#39;, 9.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Travel Adapter&amp;#39;, 27.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gaming Headset&amp;#39;, 159.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Fitness Tracker&amp;#39;, 119.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable SSD&amp;#39;, 179.99);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建一个表，然后往里面写一些数据。&lt;/p>
+&lt;h2 id="运行">运行
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>uvx mcp-server-sqlite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会用 &lt;a class="link" href="https://docs.astral.sh/uv/guides/tools/" target="_blank" rel="noopener"
+>uvx&lt;/a> 来运行 mcp 服务。&lt;br>
+Prompt Demo:&lt;br>
+&lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
+&lt;h1 id="原理">原理
+&lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
+loading="lazy"
+alt="|725"
+>&lt;br>
+MCP 是一个开放协议：&lt;/p>
+&lt;ul>
+&lt;li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。&lt;/li>
+&lt;li>另一方面 MCP 也类似 Prompt 模板一样，提供了&lt;strong>动态上下文构建&lt;/strong>的能力：
+&lt;ul>
+&lt;li>MCP 能够留空的方式，动态地构建上下文。&lt;/li>
+&lt;li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。&lt;/li>
+&lt;li>还可以根据用户的交互历史来调整上下文。&lt;br>
+它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item></channel></rss>

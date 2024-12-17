@@ -1,78 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/Diffusion on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/diffusion/</link><description>Recent content in AI/Diffusion on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://www.jsongo.top/tags/ai/diffusion/index.xml" rel="self" type="application/rss+xml"/><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
-&lt;/h1>&lt;blockquote>
-&lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
-性能和效果可以与 Midjourney V6 媲美。&lt;br>
-Flux 一般通过 ComfyUI 来调用。&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="黑森林实验室与团队背景">黑森林实验室与团队背景
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>核心成员&lt;/strong>：黑森林实验室由 Stable Diffusion 的核心开发者 Robin Rombach 领衔创立，团队成员大多来自 Stability AI，如 Andreas Blattmann、Axel Sauer 等多位原 Stable Diffusion 项目的关键人物，他们在生成式模型开发领域经验丰富，为 Flux 的诞生奠定了坚实基础。大家可能听说过 Stability AI 团队内部不和，各种破事把公司折腾得够呛，所以由原班核心人马出来创业做的 Flux 受到很大的关注。&lt;/li>
-&lt;li>&lt;strong>融资情况&lt;/strong>：这个实验室已获得 3200 万美元的种子轮融资，由著名风投机构 Andreessen Horowitz (a16z) 领投，多位业内知名人士参与投资，充足的资金支持使其能够大力推进模型的研发与优化等工作。主要还是因为它的背景实在太好了。&lt;/li>
-&lt;/ul>
-&lt;h2 id="flux-模型特点">Flux 模型特点
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>架构与参数&lt;/strong>：Flux 基于多模态和并行扩散 Transformer 块的混合架构，拥有 &lt;!-- raw HTML omitted -->120 亿参数&lt;!-- raw HTML omitted -->，是目前最大的开源文本到图像模型之一。这种架构和庞大的参数规模使其能够学习到更丰富的图像特征和语义信息，从而生成高质量的图像。&lt;/li>
-&lt;li>&lt;strong>性能优势&lt;/strong>：
-&lt;ul>
-&lt;li>&lt;strong>图像质量&lt;/strong>：在视觉质量、图像细节和输出多样性等方面达到了新高度，生成的图像更加逼真、细腻，细节丰富度高，风格多样，能与闭源的 Midjourney v6.1 模型不相上下，甚至在一些方面表现更优，如复杂场景生成、人物细节处理等。&lt;/li>
-&lt;li>&lt;strong>提示词遵循能力&lt;/strong>：对提示词的理解和遵循能力很强，能够准确地根据输入的文本描述生成符合要求的图像，包括对复杂指令、长文本描述以及特定场景和细节要求的准确呈现，减少了因提示词理解不准确而导致的图像与预期不符的问题。&lt;/li>
-&lt;li>&lt;strong>文字生成能力&lt;/strong>：在图像中生成文字的效果出色，可以处理重复字母等棘手情况，生成的文字内容准确、排版合理，这在一些需要在图像中呈现文字信息的场景中具有很大优势，如生成带有文字标识的产品图片、包含文字说明的场景图片等。&lt;/li>
-&lt;li>&lt;strong>手部细节处理&lt;/strong>：相较于之前的一些模型，Flux 在手部细节生成上有了显著改进，减少了手指等部位的畸形或错误，使生成的人物图像更加自然、真实。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>不同版本特点&lt;/strong>：&lt;br>
-有 3 个核心版本，Pro/dev/schnell
-&lt;ul>
-&lt;li>&lt;strong>FLUX (pro)&lt;/strong>：闭源模型，自家压箱底的货。具备最佳性能，包括最先进的提示跟随能力、视觉质量、图像细节和输出多样性，适用于专业用户和对图像质量要求极高的场景，可通过注册官方 API 申请访问权限，同时支持企业定制。&lt;/li>
-&lt;li>&lt;strong>FLUX (dev)&lt;/strong>：开源模型，不可商用，直接从 FLUX (pro) 蒸馏而来，具备相似的图像质量和提示词遵循能力，但更高效，适合开发者进行研究和实验等非商业用途的使用。&lt;/li>
-&lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
-&lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
-&lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
-&lt;ul>
-&lt;li>Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）&lt;/li>
-&lt;li>Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。&lt;/li>
-&lt;/ul>
-&lt;h1 id="clip">CLIP
-&lt;/h1>&lt;h2 id="概念">概念
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>CLIP 模型&lt;/strong>：CLIP 是 Contrastive Language-Image Pre-training 的缩写，由 OpenAI 在 2021 年 1 月 5 日发布，是一种将计算机视觉与自然语言处理相结合的神经网络模型。
-&lt;ul>
-&lt;li>它通过对 400,000,000 组（图像，文本）对数据进行预训练，从而能够在给定图像的情况下，根据自然语言指令预测出最相关的文本片段，展现出了类似 GPT-2 和 GPT-3 的 zero-shot 学习能力，即模型可以在未针对特定任务进行直接优化训练的情况下，对未曾见过的数据类别进行较好地预测&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>CLIP Vision&lt;/strong>：CLIP Vision 主要负责处理视觉信息，也就是对输入的图像数据进行特征提取和编码等操作，将图像转化为模型能够理解和处理的向量表示，以便与文本信息进行对比学习和关联。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>
-&lt;ul>
-&lt;li>例如，在图像生成领域，CLIP Vision 可以帮助模型理解图像的内容和特征，从而生成更符合语义描述的图像。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>CLIP Text&lt;/strong>：我们常看到的这个 CLIP Text 概念，主要是指作为参考文本来对图像进行调整的文本描述。&lt;/li>
-&lt;/ul>
-&lt;h2 id="应用">应用
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间帧.&lt;/li>
-&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，比如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
-&lt;li>&lt;strong>图像检索&lt;/strong>：基于 CLIP Vision 对图像特征的提取和与文本的关联能力，可以实现根据文本描述来检索相关的图像，或者根据图像来查找与之语义相关的文本信息，提高图像检索的准确性和效率。&lt;/li>
-&lt;li>&lt;strong>视觉问答系统&lt;/strong>：帮助系统理解图像中的视觉内容，结合对自然语言问题的理解，生成准确的文本答案，例如回答关于图像中物体的位置、颜色、数量等问题 。&lt;/li>
-&lt;/ul>
-&lt;h1 id="vae">VAE
-&lt;/h1>&lt;p>VAE 主要用于将图像数据压缩到一个潜在空间，然后再从这个潜在空间中生成新的图像，侧重于图像的生成和重建。&lt;/p>
-&lt;h2 id="latent-image">Latent Image
-&lt;/h2>&lt;p>经过某种变换或编码后隐藏在数据中的图像信息。例如，在使用变分自编码器（VAE）进行图像生成或处理时，图像数据会被压缩到一个潜在空间（latent space），这个潜在空间中的向量可以被看作是潜像的一种表示形式。这些潜像向量包含了图像的关键特征，如形状、颜色、纹理等信息，通过解码器可以将这些潜像向量转换回可见的图像。&lt;/p>
-&lt;h1 id="lora">Lora
-&lt;/h1>&lt;p>LoRA 是一种用于微调预训练模型的技术，通过在原始模型的基础上添加少量可训练的参数来实现对模型的微调。&lt;/p>
-&lt;hr>
-&lt;h1 id="footnotes">Footnotes
-&lt;/h1>&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>简单说就是，主要用于处理和理解图像信息，能够提取图像的特征表示，进而与文本特征进行对比和匹配等操作，以实现如根据文本描述生成相应图像、图像分类、图像检索等多种与图像和文本相关的任务&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/Diffusion on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/diffusion/</link><description>Recent content in AI/Diffusion on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 01 Dec 2024 11:29:47 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/ai/diffusion/index.xml" rel="self" type="application/rss+xml"/><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Sun, 01 Dec 2024 11:29:47 +0800</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
 &lt;h1 id="几种方案">几种方案
 &lt;/h1>&lt;h2 id="ip-adapter">IP-Adapter
 &lt;/h2>&lt;ul>
@@ -134,4 +60,78 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;h3 id="模型参数小">模型参数小
 &lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
 &lt;h1 id="方案选择">方案选择
-&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item></channel></rss>
+&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
+&lt;/h1>&lt;blockquote>
+&lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
+性能和效果可以与 Midjourney V6 媲美。&lt;br>
+Flux 一般通过 ComfyUI 来调用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="黑森林实验室与团队背景">黑森林实验室与团队背景
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>核心成员&lt;/strong>：黑森林实验室由 Stable Diffusion 的核心开发者 Robin Rombach 领衔创立，团队成员大多来自 Stability AI，如 Andreas Blattmann、Axel Sauer 等多位原 Stable Diffusion 项目的关键人物，他们在生成式模型开发领域经验丰富，为 Flux 的诞生奠定了坚实基础。大家可能听说过 Stability AI 团队内部不和，各种破事把公司折腾得够呛，所以由原班核心人马出来创业做的 Flux 受到很大的关注。&lt;/li>
+&lt;li>&lt;strong>融资情况&lt;/strong>：这个实验室已获得 3200 万美元的种子轮融资，由著名风投机构 Andreessen Horowitz (a16z) 领投，多位业内知名人士参与投资，充足的资金支持使其能够大力推进模型的研发与优化等工作。主要还是因为它的背景实在太好了。&lt;/li>
+&lt;/ul>
+&lt;h2 id="flux-模型特点">Flux 模型特点
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>架构与参数&lt;/strong>：Flux 基于多模态和并行扩散 Transformer 块的混合架构，拥有 &lt;!-- raw HTML omitted -->120 亿参数&lt;!-- raw HTML omitted -->，是目前最大的开源文本到图像模型之一。这种架构和庞大的参数规模使其能够学习到更丰富的图像特征和语义信息，从而生成高质量的图像。&lt;/li>
+&lt;li>&lt;strong>性能优势&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>图像质量&lt;/strong>：在视觉质量、图像细节和输出多样性等方面达到了新高度，生成的图像更加逼真、细腻，细节丰富度高，风格多样，能与闭源的 Midjourney v6.1 模型不相上下，甚至在一些方面表现更优，如复杂场景生成、人物细节处理等。&lt;/li>
+&lt;li>&lt;strong>提示词遵循能力&lt;/strong>：对提示词的理解和遵循能力很强，能够准确地根据输入的文本描述生成符合要求的图像，包括对复杂指令、长文本描述以及特定场景和细节要求的准确呈现，减少了因提示词理解不准确而导致的图像与预期不符的问题。&lt;/li>
+&lt;li>&lt;strong>文字生成能力&lt;/strong>：在图像中生成文字的效果出色，可以处理重复字母等棘手情况，生成的文字内容准确、排版合理，这在一些需要在图像中呈现文字信息的场景中具有很大优势，如生成带有文字标识的产品图片、包含文字说明的场景图片等。&lt;/li>
+&lt;li>&lt;strong>手部细节处理&lt;/strong>：相较于之前的一些模型，Flux 在手部细节生成上有了显著改进，减少了手指等部位的畸形或错误，使生成的人物图像更加自然、真实。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>不同版本特点&lt;/strong>：&lt;br>
+有 3 个核心版本，Pro/dev/schnell
+&lt;ul>
+&lt;li>&lt;strong>FLUX (pro)&lt;/strong>：闭源模型，自家压箱底的货。具备最佳性能，包括最先进的提示跟随能力、视觉质量、图像细节和输出多样性，适用于专业用户和对图像质量要求极高的场景，可通过注册官方 API 申请访问权限，同时支持企业定制。&lt;/li>
+&lt;li>&lt;strong>FLUX (dev)&lt;/strong>：开源模型，不可商用，直接从 FLUX (pro) 蒸馏而来，具备相似的图像质量和提示词遵循能力，但更高效，适合开发者进行研究和实验等非商业用途的使用。&lt;/li>
+&lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Sun, 24 Nov 2024 11:26:10 +0800</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
+&lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
+&lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
+&lt;ul>
+&lt;li>Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）&lt;/li>
+&lt;li>Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。&lt;/li>
+&lt;/ul>
+&lt;h1 id="clip">CLIP
+&lt;/h1>&lt;h2 id="概念">概念
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>CLIP 模型&lt;/strong>：CLIP 是 Contrastive Language-Image Pre-training 的缩写，由 OpenAI 在 2021 年 1 月 5 日发布，是一种将计算机视觉与自然语言处理相结合的神经网络模型。
+&lt;ul>
+&lt;li>它通过对 400,000,000 组（图像，文本）对数据进行预训练，从而能够在给定图像的情况下，根据自然语言指令预测出最相关的文本片段，展现出了类似 GPT-2 和 GPT-3 的 zero-shot 学习能力，即模型可以在未针对特定任务进行直接优化训练的情况下，对未曾见过的数据类别进行较好地预测&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLIP Vision&lt;/strong>：CLIP Vision 主要负责处理视觉信息，也就是对输入的图像数据进行特征提取和编码等操作，将图像转化为模型能够理解和处理的向量表示，以便与文本信息进行对比学习和关联。&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>
+&lt;ul>
+&lt;li>例如，在图像生成领域，CLIP Vision 可以帮助模型理解图像的内容和特征，从而生成更符合语义描述的图像。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLIP Text&lt;/strong>：我们常看到的这个 CLIP Text 概念，主要是指作为参考文本来对图像进行调整的文本描述。&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用">应用
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间帧.&lt;/li>
+&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，比如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
+&lt;li>&lt;strong>图像检索&lt;/strong>：基于 CLIP Vision 对图像特征的提取和与文本的关联能力，可以实现根据文本描述来检索相关的图像，或者根据图像来查找与之语义相关的文本信息，提高图像检索的准确性和效率。&lt;/li>
+&lt;li>&lt;strong>视觉问答系统&lt;/strong>：帮助系统理解图像中的视觉内容，结合对自然语言问题的理解，生成准确的文本答案，例如回答关于图像中物体的位置、颜色、数量等问题 。&lt;/li>
+&lt;/ul>
+&lt;h1 id="vae">VAE
+&lt;/h1>&lt;p>VAE 主要用于将图像数据压缩到一个潜在空间，然后再从这个潜在空间中生成新的图像，侧重于图像的生成和重建。&lt;/p>
+&lt;h2 id="latent-image">Latent Image
+&lt;/h2>&lt;p>经过某种变换或编码后隐藏在数据中的图像信息。例如，在使用变分自编码器（VAE）进行图像生成或处理时，图像数据会被压缩到一个潜在空间（latent space），这个潜在空间中的向量可以被看作是潜像的一种表示形式。这些潜像向量包含了图像的关键特征，如形状、颜色、纹理等信息，通过解码器可以将这些潜像向量转换回可见的图像。&lt;/p>
+&lt;h1 id="lora">Lora
+&lt;/h1>&lt;p>LoRA 是一种用于微调预训练模型的技术，通过在原始模型的基础上添加少量可训练的参数来实现对模型的微调。&lt;/p>
+&lt;hr>
+&lt;h1 id="footnotes">Footnotes
+&lt;/h1>&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>简单说就是，主要用于处理和理解图像信息，能够提取图像的特征表示，进而与文本特征进行对比和匹配等操作，以实现如根据文本描述生成相应图像、图像分类、图像检索等多种与图像和文本相关的任务&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>
