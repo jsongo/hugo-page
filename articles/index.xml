@@ -607,6 +607,105 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 &lt;/h1>&lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial" target="_blank" rel="noopener"
 >Word add-in tutorial - Office Add-ins | Microsoft Learn&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Fri, 06 Dec 2024 00:56:02 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
+&lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
+这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
+>村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
+&lt;h1 id="功能">功能
+&lt;/h1>&lt;h2 id="介绍">介绍
+&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
+loading="lazy"
+alt="图片来自 x|850"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
+>Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>官方文档：&lt;a class="link" href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener"
+>Introducing the Model Context Protocol - Anthropic&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用">使用
+&lt;/h2>&lt;ul>
+&lt;li>安装（以 Mac 来讲）
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install uv git sqlite3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>然后下载 Claude &lt;a class="link" href="https://claude.ai/download" target="_blank" rel="noopener"
+>桌面端&lt;/a>，&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>开启
+&lt;ul>
+&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
+>Quickstart - Model Context Protocol&lt;/a>&lt;/li>
+&lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcpServers&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;sqlite&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;uvx&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;mcp-server-sqlite&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--db-path&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/Users/&amp;lt;my-user-name&amp;gt;/claude.db&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="示例">示例
+&lt;/h2>&lt;p>官方给的例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create a new SQLite database&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sqlite3 ~/claude.db &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">CREATE TABLE products (
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> id INTEGER PRIMARY KEY,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> name TEXT,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> price REAL
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO products (name, price) VALUES
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Widget&amp;#39;, 19.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gadget&amp;#39;, 29.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gizmo&amp;#39;, 39.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Smart Watch&amp;#39;, 199.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Wireless Earbuds&amp;#39;, 89.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable Charger&amp;#39;, 24.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Bluetooth Speaker&amp;#39;, 79.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Phone Stand&amp;#39;, 15.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Laptop Sleeve&amp;#39;, 34.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mini Drone&amp;#39;, 299.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;LED Desk Lamp&amp;#39;, 45.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Keyboard&amp;#39;, 129.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mouse Pad&amp;#39;, 12.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;USB Hub&amp;#39;, 49.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Webcam&amp;#39;, 69.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Screen Protector&amp;#39;, 9.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Travel Adapter&amp;#39;, 27.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gaming Headset&amp;#39;, 159.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Fitness Tracker&amp;#39;, 119.99),
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable SSD&amp;#39;, 179.99);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建一个表，然后往里面写一些数据。&lt;/p>
+&lt;h2 id="运行">运行
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>uvx mcp-server-sqlite
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会用 &lt;a class="link" href="https://docs.astral.sh/uv/guides/tools/" target="_blank" rel="noopener"
+>uvx&lt;/a> 来运行 mcp 服务。&lt;br>
+Prompt Demo:&lt;br>
+&lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
+&lt;h1 id="原理">原理
+&lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
+loading="lazy"
+alt="|725"
+>&lt;br>
+MCP 是一个开放协议：&lt;/p>
+&lt;ul>
+&lt;li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。&lt;/li>
+&lt;li>另一方面 MCP 也类似 Prompt 模板一样，提供了&lt;strong>动态上下文构建&lt;/strong>的能力：
+&lt;ul>
+&lt;li>MCP 能够留空的方式，动态地构建上下文。&lt;/li>
+&lt;li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。&lt;/li>
+&lt;li>还可以根据用户的交互历史来调整上下文。&lt;br>
+它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Sun, 01 Dec 2024 11:29:47 +0800</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
 &lt;h1 id="几种方案">几种方案
 &lt;/h1>&lt;h2 id="ip-adapter">IP-Adapter
@@ -1201,103 +1300,4 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
-&lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
-这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
->村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
-&lt;h1 id="功能">功能
-&lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
-loading="lazy"
-alt="图片来自 x|850"
->&lt;/p>
-&lt;blockquote>
-&lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
->Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;ul>
-&lt;li>官方文档：&lt;a class="link" href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener"
->Introducing the Model Context Protocol - Anthropic&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="使用">使用
-&lt;/h2>&lt;ul>
-&lt;li>安装（以 Mac 来讲）
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install uv git sqlite3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>然后下载 Claude &lt;a class="link" href="https://claude.ai/download" target="_blank" rel="noopener"
->桌面端&lt;/a>，&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>开启
-&lt;ul>
-&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
->Quickstart - Model Context Protocol&lt;/a>&lt;/li>
-&lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;mcpServers&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;sqlite&amp;#34;&lt;/span>: {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;command&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;uvx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;mcp-server-sqlite&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;--db-path&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/Users/&amp;lt;my-user-name&amp;gt;/claude.db&amp;#34;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="示例">示例
-&lt;/h2>&lt;p>官方给的例子：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create a new SQLite database&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sqlite3 ~/claude.db &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">CREATE TABLE products (
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> id INTEGER PRIMARY KEY,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> name TEXT,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> price REAL
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">);
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO products (name, price) VALUES
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Widget&amp;#39;, 19.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gadget&amp;#39;, 29.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gizmo&amp;#39;, 39.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Smart Watch&amp;#39;, 199.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Wireless Earbuds&amp;#39;, 89.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable Charger&amp;#39;, 24.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Bluetooth Speaker&amp;#39;, 79.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Phone Stand&amp;#39;, 15.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Laptop Sleeve&amp;#39;, 34.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mini Drone&amp;#39;, 299.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;LED Desk Lamp&amp;#39;, 45.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Keyboard&amp;#39;, 129.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Mouse Pad&amp;#39;, 12.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;USB Hub&amp;#39;, 49.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Webcam&amp;#39;, 69.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Screen Protector&amp;#39;, 9.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Travel Adapter&amp;#39;, 27.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Gaming Headset&amp;#39;, 159.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Fitness Tracker&amp;#39;, 119.99),
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> (&amp;#39;Portable SSD&amp;#39;, 179.99);
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建一个表，然后往里面写一些数据。&lt;/p>
-&lt;h2 id="运行">运行
-&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>uvx mcp-server-sqlite
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会用 &lt;a class="link" href="https://docs.astral.sh/uv/guides/tools/" target="_blank" rel="noopener"
->uvx&lt;/a> 来运行 mcp 服务。&lt;br>
-Prompt Demo:&lt;br>
-&lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
-&lt;h1 id="原理">原理
-&lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
-loading="lazy"
-alt="|725"
->&lt;br>
-MCP 是一个开放协议：&lt;/p>
-&lt;ul>
-&lt;li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。&lt;/li>
-&lt;li>另一方面 MCP 也类似 Prompt 模板一样，提供了&lt;strong>动态上下文构建&lt;/strong>的能力：
-&lt;ul>
-&lt;li>MCP 能够留空的方式，动态地构建上下文。&lt;/li>
-&lt;li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。&lt;/li>
-&lt;li>还可以根据用户的交互历史来调整上下文。&lt;br>
-它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item></channel></rss>
