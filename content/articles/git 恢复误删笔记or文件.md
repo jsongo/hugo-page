@@ -35,14 +35,29 @@ git co c171a4c169470455fa8ac62fd8d4164ea677c8ec -- 2c579673c6b2f0793f2e423523cc6
 ```
 # 扩展
 ## 时间范围
-上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 `--util` 参数，用法跟 since 一样，这两个参数可以办公室一个范围，比如大前天的文件变更情况，可以用：
+上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 `--until` 参数，用法跟 since 一样，这两个参数可以配合使用来指定一个范围，比如查看大前天的文件变更情况，可以用：
 ```bash
 git log --since="3 days ago" --until="2 days ago" -- <filename>
 ```
-此外还有两个类似的参数：after（=since）、before（=until），记住一组就行。
+此外还有两个类似的参数：after（等同于since）、before（等同于until），记住一组就行。
 ## 时间写法
-上文涉及到：`midnight`、`3 days ago` 这两种，都是直接用英文表达的。做个汇总：
+上文提到了：`midnight`、`3 days ago` 这两种时间表达方式。这里做个汇总：
 - 相对日期：`--since="3 days ago"`
-- 绝对日期：`--since="2023-10-01"`
+- 绝对日期：`--since="2024-10-01"` 或具体到时间，如 `2024-10-01 12:00`
 - 时间戳（秒）：`--since=1633046400`
-这些应该
+- 自然语言时间，主要有：
+    - `yesterday`
+    - `today`
+    - `midnight`：今天的午夜
+    - `noon`：今天的中午
+    - `teatime`：今天的下午 4 点
+    - `last week`
+    - `last month`
+    - `last year`
+    - `last christmas`
+- 组合表达，非常强大，举几个例子：
+    - `3 days ago 14:00`
+    - `2 weeks ago midnight`
+    - `last friday`
+    - `last year december 31 23:59`
+    - `new year's eve 2022`
