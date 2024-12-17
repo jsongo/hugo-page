@@ -109,8 +109,7 @@ alt="|650"
 &lt;/ul>
 &lt;h2 id="添加一个实例">添加一个实例
 &lt;/h2>&lt;ul>
-&lt;li>打开：&lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers" target="_blank" rel="noopener"
->Microsoft Azure DB for MySQL Server&lt;/a>，点 &lt;code>Quick Create&lt;/code>。&lt;br>
+&lt;li>打开：[[https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers]]，点 &lt;code>Quick Create&lt;/code>。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
 loading="lazy"
 >&lt;/li>
@@ -134,8 +133,7 @@ loading="lazy"
 loading="lazy"
 >&lt;br>
 连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
-证书可以从这里下载：&lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate" target="_blank" rel="noopener"
->使用 TLS/SSL 加密的连接&lt;/a> ，或者直接用我下图中的 wget 命令即可。&lt;br>
+证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
 loading="lazy"
 >&lt;br>
@@ -368,8 +366,7 @@ alt="|650"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func init --python
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file" target="_blank" rel="noopener"
->&lt;em>local.settings.json&lt;/em>&lt;/a> 和 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json" target="_blank" rel="noopener"
+&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 [[https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file]] 和 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json" target="_blank" rel="noopener"
 >&lt;em>host.json&lt;/em>&lt;/a>。&lt;br>
 创建一个 api 入口：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -388,8 +385,7 @@ alt="|650"
 &lt;/ul>
 &lt;h1 id="部署">部署
 &lt;/h1>&lt;h2 id="平台创建应用">平台创建应用
-&lt;/h2>&lt;p>先打开 &lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp" target="_blank" rel="noopener"
->Microsoft Azure&lt;/a> 这个 portal 地址，创建一个 &lt;code>Function App&lt;/code> （或者中文叫“函数应用”）。&lt;br>
+&lt;/h2>&lt;p>先打开 [[https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp]] 这个 portal 地址，创建一个 &lt;code>Function App&lt;/code> （或者中文叫“函数应用”）。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp"
 width="575"
 loading="lazy"
@@ -887,8 +883,7 @@ alt="图片来自 x|850"
 &lt;/li>
 &lt;li>开启
 &lt;ul>
-&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
->Quickstart - Model Context Protocol&lt;/a>&lt;/li>
+&lt;li>如何启用具体可以参考：[[https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos]]&lt;/li>
 &lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
 &lt;/ul>
 &lt;/li>

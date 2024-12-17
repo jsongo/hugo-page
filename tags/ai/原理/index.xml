@@ -35,8 +35,7 @@ alt="图片来自 x|850"
 &lt;/li>
 &lt;li>开启
 &lt;ul>
-&lt;li>如何启用具体可以参考：&lt;a class="link" href="https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos" target="_blank" rel="noopener"
->Quickstart - Model Context Protocol&lt;/a>&lt;/li>
+&lt;li>如何启用具体可以参考：[[https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos]]&lt;/li>
 &lt;li>简单说，这个功能桌面端才有，Mac 上可以打开 &lt;code>~/Library/Application Support/Claude/claude_desktop_config.json&lt;/code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：&lt;/li>
 &lt;/ul>
 &lt;/li>
