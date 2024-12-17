@@ -25,8 +25,14 @@ jobs:
         with:
           hugo-version: "0.138.0"
           extended: true
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
       - name: build
         run: hugo --minify
+      - name: run prehandle script
+        run: python prehandle.py
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{github.ref == 'refs/heads/main'}}

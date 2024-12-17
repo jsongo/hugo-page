@@ -10,6 +10,7 @@ slug: azure-serverless-mysql
 description: 介绍了如何在 Azure Function 上使用 MySQL 数据库，包括申请免费额度、创建实例、连接和操作数据库的步骤。它还提供了在 Mac 上安装 MySQL 客户端的建议
 title: Azure Function + Mysql 入门
 draft: false
+date: Mon, Dec 16th, 2024 - 13:39:37
 ---
  > 在 Azure Function 上使用 mysql DB，具体可以参考：[Azure Database for MySQL bindings for Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&pivots=programming-language-python)
 # Mysql 申请
