@@ -309,7 +309,7 @@ alt="|725"
 &lt;p>具体可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
 >Develop Azure Functions locally using Core Tools | Microsoft Learn&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>另外，这链接里也有怎么用命令行来创建的方法。下文主要讲 vscode 插件。&lt;/li>
+&lt;li>另外，这链接里也有怎么用命令行来创建的方法。下文 vscode 插件和 CLI 都会涉及。&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;h1 id="vscode-插件">Vscode 插件
@@ -353,9 +353,9 @@ alt="|850"
 &lt;/div>&lt;p>本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 &lt;code>Development&lt;/code> 了，如果你修改代码，它会触发服务的重启，非常方便。&lt;br>
 它同时生成一个链接可以直接点击，它会触发函数执行：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
-width="525"
+width="650"
 loading="lazy"
-alt="|525"
+alt="|650"
 >&lt;/p>
 &lt;h1 id="创建">创建
 &lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。&lt;br>
@@ -398,9 +398,9 @@ alt="|575"
 &lt;h2 id="plugin">Plugin
 &lt;/h2>&lt;p>正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp"
-width="650"
+width="500"
 loading="lazy"
-alt="|650"
+alt="|500"
 >&lt;br>
 如果不成功，可以用下文 CLI 的方法来登录。&lt;br>
 选择 Deploy to Function App，直接进行部署。&lt;br>
@@ -482,11 +482,13 @@ loading="lazy"
 alt="|725"
 >&lt;br>
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：&lt;br>
-&lt;img src="https://www.jsongo.top/49412af97e5b5cc967dac50b8c5b558f.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp"
+width="775"
 loading="lazy"
+alt="|775"
 >&lt;/p>
 &lt;h1 id="其它三方插件-azurite">其它：三方插件 Azurite
-&lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite&lt;br>
+&lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
 width="550"
 loading="lazy"
