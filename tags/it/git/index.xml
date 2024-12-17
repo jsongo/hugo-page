@@ -52,7 +52,7 @@ alt="|725"
 &lt;/div>
 &lt;/div>&lt;h1 id="扩展">扩展
 &lt;/h1>&lt;h2 id="时间范围">时间范围
-&lt;/h2>&lt;p>上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 &lt;code>--util&lt;/code> 参数，用法跟 since 一样，这两个参数可以办公室一个范围，比如大前天的文件变更情况，可以用：&lt;/p>
+&lt;/h2>&lt;p>上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 &lt;code>--until&lt;/code> 参数，用法跟 since 一样，这两个参数可以配合使用来指定一个范围，比如查看大前天的文件变更情况，可以用：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -61,12 +61,33 @@ alt="|725"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git log --since&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;3 days ago&amp;#34;&lt;/span> --until&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;2 days ago&amp;#34;&lt;/span> -- &amp;lt;filename&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>此外还有两个类似的参数：after（=since）、before（=until），记住一组就行。&lt;/p>
+&lt;/div>&lt;p>此外还有两个类似的参数：after（等同于since）、before（等同于until），记住一组就行。&lt;/p>
 &lt;h2 id="时间写法">时间写法
-&lt;/h2>&lt;p>上文涉及到：&lt;code>midnight&lt;/code>、&lt;code>3 days ago&lt;/code> 这两种，都是直接用英文表达的。做个汇总：&lt;/p>
+&lt;/h2>&lt;p>上文提到了：&lt;code>midnight&lt;/code>、&lt;code>3 days ago&lt;/code> 这两种时间表达方式。这里做个汇总：&lt;/p>
 &lt;ul>
 &lt;li>相对日期：&lt;code>--since=&amp;quot;3 days ago&amp;quot;&lt;/code>&lt;/li>
-&lt;li>绝对日期：&lt;code>--since=&amp;quot;2023-10-01&amp;quot;&lt;/code>&lt;/li>
-&lt;li>时间戳（秒）：&lt;code>--since=1633046400&lt;/code>
-这些应该&lt;/li>
+&lt;li>绝对日期：&lt;code>--since=&amp;quot;2024-10-01&amp;quot;&lt;/code> 或具体到时间，如 &lt;code>2024-10-01 12:00&lt;/code>&lt;/li>
+&lt;li>时间戳（秒）：&lt;code>--since=1633046400&lt;/code>&lt;/li>
+&lt;li>自然语言时间，主要有：
+&lt;ul>
+&lt;li>&lt;code>yesterday&lt;/code>&lt;/li>
+&lt;li>&lt;code>today&lt;/code>&lt;/li>
+&lt;li>&lt;code>midnight&lt;/code>：今天的午夜&lt;/li>
+&lt;li>&lt;code>noon&lt;/code>：今天的中午&lt;/li>
+&lt;li>&lt;code>teatime&lt;/code>：今天的下午 4 点&lt;/li>
+&lt;li>&lt;code>last week&lt;/code>&lt;/li>
+&lt;li>&lt;code>last month&lt;/code>&lt;/li>
+&lt;li>&lt;code>last year&lt;/code>&lt;/li>
+&lt;li>&lt;code>last christmas&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>组合表达，非常强大，举几个例子：
+&lt;ul>
+&lt;li>&lt;code>3 days ago 14:00&lt;/code>&lt;/li>
+&lt;li>&lt;code>2 weeks ago midnight&lt;/code>&lt;/li>
+&lt;li>&lt;code>last friday&lt;/code>&lt;/li>
+&lt;li>&lt;code>last year december 31 23:59&lt;/code>&lt;/li>
+&lt;li>&lt;code>new year's eve 2022&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item></channel></rss>
