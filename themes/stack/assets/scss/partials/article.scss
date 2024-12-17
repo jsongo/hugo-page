@@ -8,7 +8,7 @@
 
     @include respond(md) {
         gap: 2%;
-        row-gap: 10px;
+        row-gap: 15px;
     }
 
     article {
@@ -20,7 +20,10 @@
         overflow: hidden;
 
         transition: box-shadow 0.3s ease;
-        flex-basis: 49%;
+        @include respond(xl) {
+            flex-basis: 49%;
+        }
+        flex-basis: 100%;
 
         &:hover {
             box-shadow: var(--shadow-l2);
@@ -68,6 +71,12 @@
     color: var(--card-text-color-main);
     font-size: 2.2rem;
 
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
     @include respond(xl) {
         font-size: 2.4rem;
     }
@@ -90,6 +99,11 @@
     // @include respond(xl) {
     //     font-size: 2rem;
     // }
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .article-title-wrapper {
