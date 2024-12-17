@@ -5,14 +5,16 @@ tags:
   - IT/折腾/cloudflare
 created_at: Sun, Dec 15th, 2024 - 16:03:07
 banner_icon: 📂
-banner: https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg
+banner: "https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg"
 description: 通过 cloudflare 提供的免费软件和服务，搭建一条免费的 Tunnel 穿透内网，并指定自定义域名来访问你的内网服务，关键还没有网速限制
 title: 免费的花生壳 - cloudflared
 slug: build-a-cloudflared-tunnel
 draft: false
 date: 2024-12-15T16:03:07+08:00
 ---
-一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。  
+> [!NOTE] 花生壳  
+> 一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。
+
 其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：[hub.docker.com/r/cloudflare/cloudflared](https://hub.docker.com/r/cloudflare/cloudflared) 里面也有一些简单的指引。
 # 简单使用
 一条命令就可以搞定：
