@@ -2,7 +2,7 @@
 &lt;/h1>&lt;p>借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
 loading="lazy"
-alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5|500"
+alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5"
 >&lt;/p>
 &lt;blockquote>
 &lt;p>Office Add-ins，中文 “加载项”。&lt;br>
@@ -56,26 +56,21 @@ loading="lazy"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 2、Excel/Word/PPT 中作为侧边窗格可以单独进行交互。&lt;/p>
 &lt;ul>
 &lt;li>这种交互其中有两个操作点，一个是顶部，它也可以触发一个事件；另一个是侧边，本质上它是在侧边开一个类似 Webview 的容器，里面跑 Web 页面。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
 loading="lazy"
-alt="|500"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="开发">开发
@@ -107,7 +102,8 @@ alt="|500"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yo office
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
+&lt;/div>&lt;p>
+&lt;img src="https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
 loading="lazy"
 alt="091737356a84529f6186ece9c4b25f10_MD5"
 >&lt;br>

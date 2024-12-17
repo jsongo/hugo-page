@@ -7,7 +7,6 @@
 &lt;/h2>&lt;p>免费用户其实还是有不少额度可以使用：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
 loading="lazy"
-alt="|650"
 >&lt;br>
 详细可以阅读：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account" target="_blank" rel="noopener"
 >Try Out With an Azure Free Account - Azure Database for MySQL - Flexible Server | Microsoft Learn&lt;/a>&lt;/p>
@@ -89,7 +88,6 @@ loading="lazy"
 >Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp"
 loading="lazy"
-alt="|875"
 >&lt;br>
 接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。&lt;br>
 注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。&lt;/p>
@@ -100,17 +98,14 @@ alt="|875"
 &lt;/h2>&lt;p>在下图中的菜单里找到创建的地方，选 Cloudflared。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
 loading="lazy"
-alt="|875"
 >&lt;br>
 自己取一个名字（不跟别人重复就行）&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
 loading="lazy"
-alt="|900"
 >&lt;br>
 下一步，取得 token：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
 loading="lazy"
-alt="|925"
 >&lt;br>
 如上图，划线处就是你的 token，先记下来，下面用。&lt;/p>
 &lt;h2 id="启动接入">启动、接入
@@ -157,36 +152,30 @@ alt="|925"
 创建完之后，在同一个界面里可以看到已经有一个设备连接上来了：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
 loading="lazy"
-alt="|725"
 >&lt;br>
 再下一步，public hostnames 里添加一个你转到 cloudflare 来解析的域名，加一个子域名。同时 Service 填写你内网的某个服务的地址，如你的 nginx 网关等。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
 loading="lazy"
-alt="|875"
 >&lt;br>
 再下一步就回到了列表页，可以看到你的 tunnel 已经在跑了：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/f39e1282f64410a6862142f136b7108b.webp"
 loading="lazy"
-alt="|850"
 >&lt;br>
 回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
 loading="lazy"
-alt="|875"
 >&lt;br>
 &lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
 >DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
 &lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
 loading="lazy"
-alt="|750"
 >&lt;/p>
 &lt;h2 id="优化网络连接">优化网络连接
 &lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
 loading="lazy"
-alt="|725"
 >&lt;br>
 调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
@@ -216,23 +205,19 @@ alt="|725"
 &lt;/h2>&lt;p>在 vscode 中安装插件：Azure Functions&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp"
 loading="lazy"
-alt="|425"
 >&lt;br>
 切到这个插件去点击添加一个函数，一步步往下都有说明，比较简单。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/ea7349816d01aa7f064eebb26475e767.webp"
 loading="lazy"
-alt="|300"
 >&lt;br>
 我选了 HTTP 触发器的模板，最后给我生成了这个文件：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp"
 loading="lazy"
-alt="|500"
 >&lt;/p>
 &lt;h2 id="调试运行">调试运行
 &lt;/h2>&lt;p>简单的运行，可以用插件面板上，下半部分中的 Project 展开，里面有个调试相关的操作（它可点击）。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp"
 loading="lazy"
-alt="|850"
 >&lt;br>
 它会先做一些安装，然后启动 function，IDE 进入 debug 模式。这时主要运行的命令是：&lt;code>func host start&lt;/code>，直接在命令行里运行这个命令也可以启动本地调试运行。但如果你想查询代码中打的日志，一定要记得加上 &amp;ndash;verbose 的参数，所以正确的使用姿势是：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -247,7 +232,6 @@ alt="|850"
 它同时生成一个链接可以直接点击，它会触发函数执行：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
 loading="lazy"
-alt="|525"
 >&lt;/p>
 &lt;h1 id="创建">创建
 &lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。&lt;br>
@@ -284,24 +268,20 @@ alt="|525"
 >Microsoft Azure&lt;/a> 这个 portal 地址，创建一个 &lt;code>Function App&lt;/code> （或者中文叫“函数应用”）。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp"
 loading="lazy"
-alt="|575"
 >&lt;/p>
 &lt;h2 id="plugin">Plugin
 &lt;/h2>&lt;p>正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp"
 loading="lazy"
-alt="|650"
 >&lt;br>
 如果不成功，可以用下文 CLI 的方法来登录。&lt;br>
 选择 Deploy to Function App，直接进行部署。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/bda580eaff46be66e6353ae23f839da6.webp"
 loading="lazy"
-alt="|700"
 >&lt;br>
 我在使用的时候，经常遇到网络问题，因为某些你懂的原因，所以挺难的，得给 vscode 设置 Proxy (具体就不介绍了)&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp"
 loading="lazy"
-alt="|700"
 >&lt;/p>
 &lt;h2 id="cli-发布">CLI 发布
 &lt;/h2>&lt;h3 id="登录">登录
@@ -317,12 +297,10 @@ alt="|700"
 &lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
 loading="lazy"
-alt="|750"
 >&lt;br>
 命令行也会有一堆打印，有如下关键信息就说明已经登录成功了。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp"
 loading="lazy"
-alt="|900"
 >&lt;/p>
 &lt;h3 id="发布操作">发布操作
 &lt;/h3>&lt;p>当然我们也可以选择用 CLI 来做发布：&lt;/p>
@@ -339,28 +317,23 @@ alt="|900"
 这里的 &lt;code>project_name&lt;/code> 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
 loading="lazy"
-alt="|775"
 >&lt;br>
 另外还有一点要注意的是，本地的 python 环境需要跟平台上的一致，避免本地跑的好好的、部署上去就缺一些模块：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d4c8cfd171f834123918d1a99265533f.webp"
 loading="lazy"
-alt="|675"
 >&lt;br>
 部署完会生成一个地址可供访问：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp"
 loading="lazy"
-alt="|800"
 >&lt;br>
 部署的过程是会比较慢，我们从平台的部署日志中可以看到它部署完后，会等待 1 分钟：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp"
 loading="lazy"
-alt="|750"
 >&lt;br>
 在线上运行后，可以访问试试。&lt;br>
 线上日志可以在这里看到：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
 loading="lazy"
-alt="|725"
 >&lt;br>
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：&lt;br>
 &lt;img src="https://www.jsongo.top/49412af97e5b5cc967dac50b8c5b558f.webp"
@@ -370,23 +343,19 @@ loading="lazy"
 &lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
 loading="lazy"
-alt="|550"
 >&lt;br>
 修改下 &lt;code>local.settings.json&lt;/code> 的配置，把 &lt;code>AzureWebJobsStorage&lt;/code> 设置成 &lt;code>&amp;quot;UseDevelopmentStorage=true&amp;quot;&lt;/code>。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp"
 loading="lazy"
-alt="|550"
 >&lt;br>
 打开命令面板，运行 Azurite start 来启动服务&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp"
 loading="lazy"
-alt="|475"
 >&lt;br>
 这时它们的启动非常快，一闪而过，没关系，它已经在跑了。&lt;br>
 比较烦的时，运行时，会在当前目录下生成一些文件：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp"
 loading="lazy"
-alt="|450"
 >&lt;/p>
 &lt;ul>
 &lt;li>&lt;em>blobstorage&lt;/em> 和 &lt;em>queuestorage&lt;/em>
@@ -542,7 +511,7 @@ EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，
 &lt;/h1>&lt;p>借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
 loading="lazy"
-alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5|500"
+alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5"
 >&lt;/p>
 &lt;blockquote>
 &lt;p>Office Add-ins，中文 “加载项”。&lt;br>
@@ -596,26 +565,21 @@ loading="lazy"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 2、Excel/Word/PPT 中作为侧边窗格可以单独进行交互。&lt;/p>
 &lt;ul>
 &lt;li>这种交互其中有两个操作点，一个是顶部，它也可以触发一个事件；另一个是侧边，本质上它是在侧边开一个类似 Webview 的容器，里面跑 Web 页面。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
 loading="lazy"
-alt="|500"
 >&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
 loading="lazy"
-alt="|500"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="开发">开发
@@ -647,7 +611,8 @@ alt="|500"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yo office
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
+&lt;/div>&lt;p>
+&lt;img src="https://cdn.jsongo.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
 loading="lazy"
 alt="091737356a84529f6186ece9c4b25f10_MD5"
 >&lt;br>
@@ -725,9 +690,10 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 >村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
 &lt;h1 id="功能">功能
 &lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
+&lt;/h2>&lt;p>
+&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
 loading="lazy"
-alt="图片来自 x|850"
+alt="图片来自 x"
 >&lt;/p>
 &lt;blockquote>
 &lt;p>参考：&lt;a class="link" href="https://x.com/nicekate8888/status/1861323082969030978" target="_blank" rel="noopener"
@@ -869,7 +835,6 @@ Prompt Demo:&lt;br>
 &lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
 loading="lazy"
-alt="|725"
 >&lt;br>
 MCP 是一个开放协议：&lt;/p>
 &lt;ul>
@@ -1108,7 +1073,6 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 Stable Diffusion 的发展历程如下：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
 loading="lazy"
-alt="|900"
 >&lt;/p>
 &lt;h2 id="技术简介">技术简介
 &lt;/h2>&lt;p>Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。&lt;br>
@@ -1118,9 +1082,9 @@ alt="|900"
 &lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
 &lt;/ul>
 &lt;h1 id="生图过程">生图过程
-&lt;/h1>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
+&lt;/h1>&lt;p>
+&lt;img src="https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
 loading="lazy"
-alt="|700"
 >&lt;/p>
 &lt;h2 id="模型-checkpoint跟采样的关系">模型 （Checkpoint）跟采样的关系
 &lt;/h2>&lt;p>Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。&lt;/p>
@@ -1178,7 +1142,7 @@ loading="lazy"
 &lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
 loading="lazy"
-alt="736deaffc1c02497df089d14539fba5d_MD5|700"
+alt="736deaffc1c02497df089d14539fba5d_MD5"
 >&lt;/li>
 &lt;/ul>
 &lt;h2 id="体验">体验
@@ -1204,12 +1168,10 @@ alt="736deaffc1c02497df089d14539fba5d_MD5|700"
 UNet 的模型一般都比较大：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
 loading="lazy"
-alt="|475"
 >&lt;br>
 LoRA 则小很多&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
 loading="lazy"
-alt="|475"
 >&lt;/li>
 &lt;/ul>
 &lt;h2 id="使用">使用
@@ -1217,13 +1179,11 @@ alt="|475"
 ComfyUI 中的使用非常简单：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
 loading="lazy"
-alt="|675"
 >&lt;br>
 如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
 >SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
 loading="lazy"
-alt="|700"
 >&lt;/p></description></item><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
 &lt;/h1>&lt;p>大多数看起来有所利益的事情，肯定有成本，而且有风险。风险本质上也是一种成本。&lt;br>
 用成本 + 风险的思维来看问题，不要只想着好处。成本和风险往往是在巨大的利益面前，特别容易被忽视的东西。&lt;br>
