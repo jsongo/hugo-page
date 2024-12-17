@@ -4,8 +4,10 @@ tags:
 title: Claude MCP 体验
 description: MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。
 slug: claude-mcp-101
-banner: "https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg"
+banner: https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg
 draft: false
+created_at: Fri, Dec 6th, 2024 - 00:56:02
+date: 2024-12-06T00:56:02+08:00
 ---
 # 概念
 MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。  
