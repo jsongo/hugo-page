@@ -30,13 +30,13 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>结果：&lt;br>
-&lt;img src="https://www.jsongo.top/b8d263ccb0344bba6e6b225c9df8460f.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/95c7302d5fa881834bb45c88c8115cb2.webp"
 width="725"
 loading="lazy"
 alt="|725"
 >&lt;br>
 可以看到，当时把这个文件给删掉了。再往上看，可以找到第一条 commit，这就是它创建的那个提交，还能看到是什么时候提交的：&lt;br>
-&lt;img src="https://www.jsongo.top/a02930b42d4fe71307622f71ec9c3e6c.webp"
+&lt;img src="https://cdn.jsongo.top/2024/12/861fa74e3155d6e84b9e6ffba287e05e.webp"
 width="725"
 loading="lazy"
 alt="|725"
@@ -52,7 +52,7 @@ alt="|725"
 &lt;/div>
 &lt;/div>&lt;h1 id="扩展">扩展
 &lt;/h1>&lt;h2 id="时间范围">时间范围
-&lt;/h2>&lt;p>上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 &lt;code>--until&lt;/code> 参数，用法跟 since 一样，这两个参数可以配合使用来指定一个范围，比如查看大前天的文件变更情况，可以用：&lt;/p>
+&lt;/h2>&lt;p>上文讲 git log，它其实有很多指定时间范围的参数，刚刚用了 since midnight (非常语义化、好理解)，也可以指定要几天前。另外还有一个 &lt;code>--util&lt;/code> 参数，用法跟 since 一样，这两个参数可以办公室一个范围，比如大前天的文件变更情况，可以用：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -61,9 +61,9 @@ alt="|725"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git log --since&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;3 days ago&amp;#34;&lt;/span> --until&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;2 days ago&amp;#34;&lt;/span> -- &amp;lt;filename&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>此外还有两个类似的参数：after（等同于since）、before（等同于until），记住一组就行。&lt;/p>
+&lt;/div>&lt;p>此外还有两个类似的参数：after（=since）、before（=until），记住一组就行。&lt;/p>
 &lt;h2 id="时间写法">时间写法
-&lt;/h2>&lt;p>上文提到了：&lt;code>midnight&lt;/code>、&lt;code>3 days ago&lt;/code> 这两种时间表达方式。这里做个汇总：&lt;/p>
+&lt;/h2>&lt;p>上文涉及到：&lt;code>midnight&lt;/code>、&lt;code>3 days ago&lt;/code> 这两种，都是直接用英文表达的。做个汇总：&lt;/p>
 &lt;ul>
 &lt;li>相对日期：&lt;code>--since=&amp;quot;3 days ago&amp;quot;&lt;/code>&lt;/li>
 &lt;li>绝对日期：&lt;code>--since=&amp;quot;2024-10-01&amp;quot;&lt;/code> 或具体到时间，如 &lt;code>2024-10-01 12:00&lt;/code>&lt;/li>
@@ -81,7 +81,7 @@ alt="|725"
 &lt;li>&lt;code>last christmas&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>组合表达，非常强大，举几个例子：
+&lt;li>组件表达，非常强大，举几个例子：
 &lt;ul>
 &lt;li>&lt;code>3 days ago 14:00&lt;/code>&lt;/li>
 &lt;li>&lt;code>2 weeks ago midnight&lt;/code>&lt;/li>
@@ -1191,7 +1191,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;/li>
 &lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Sun, 24 Nov 2024 11:26:10 +0800</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
 &lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
-&lt;/h1>&lt;p>开源模型开放出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说哪个 model 开源了。&lt;/p>
+&lt;/h1>&lt;p>开源模型发布出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说某个 model 开源了。&lt;/p>
 &lt;ul>
 &lt;li>Model 是一个比较抽象的概念，它包括模型的架构（例如神经网络中的层数、每层神经元数量、连接方式等）和训练目标（例如是进行分类任务、生成任务还是回归任务）&lt;/li>
 &lt;li>Checkpoint 是在模型训练过程中定期保存的模型参数快照，与 Model 密切相关。Checkpoint 包含了 Model 的架构定义、参数值、优化器状态以及训练过程的元数据等，是对 Model 在特定训练阶段状态的完整记录。&lt;/li>
@@ -1213,8 +1213,8 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;/ul>
 &lt;h2 id="应用">应用
 &lt;/h2>&lt;ul>
-&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间帧.&lt;/li>
-&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，比如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
+&lt;li>&lt;strong>图像生成&lt;/strong>：如在 Paints-Undo 项目中，CLIP Vision 作为模型架构的一部分，与其他组件共同作用，通过对输入图像的处理和分析，为生成模拟人类绘画过程的动画提供视觉信息基础，帮助模型理解图像的内容和结构，从而更准确地生成绘画过程中的各个中间状态。&lt;/li>
+&lt;li>&lt;strong>图像分类与标注&lt;/strong>：可以根据图像的视觉特征，结合预训练时学习到的图像与文本的关联，对未见过的图像进行分类或自动生成相应的文本标注，例如判断一张图片是风景照、人物照还是动物照，并给出相应的文字描述。&lt;/li>
 &lt;li>&lt;strong>图像检索&lt;/strong>：基于 CLIP Vision 对图像特征的提取和与文本的关联能力，可以实现根据文本描述来检索相关的图像，或者根据图像来查找与之语义相关的文本信息，提高图像检索的准确性和效率。&lt;/li>
 &lt;li>&lt;strong>视觉问答系统&lt;/strong>：帮助系统理解图像中的视觉内容，结合对自然语言问题的理解，生成准确的文本答案，例如回答关于图像中物体的位置、颜色、数量等问题 。&lt;/li>
 &lt;/ul>
