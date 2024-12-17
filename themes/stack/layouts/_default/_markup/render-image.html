@@ -5,6 +5,15 @@
 {{- $Height := 0 -}}
 {{- $Srcset := "" -}}
 
+{{/* 从 alt 中提取宽度信息 */}}
+<!-- {{- $altParts := split $alt "|" -}}
+{{- $lastPart := index $altParts (sub (len $altParts) 1) -}}
+{{- $customWidth := 0 -}}
+{{- if findRE "^\\d+$" $lastPart -}}
+    {{- $customWidth = int $lastPart -}}
+    {{- $alt = delimit (first (sub (len $altParts) 1) $altParts) "|" -}}
+{{- end -}} -->
+
 {{/* SVG and external images won't work with gallery layout, because their width and height attributes are unknown */}}
 {{- $galleryImage := false -}}
 
@@ -13,6 +22,9 @@
 	{{- $Permalink = $image.RelPermalink -}}
 
 	{{- if $notSVG -}}
+		{{- if gt $customWidth 0 -}}
+			{{- $image = $image.Resize (printf "%dx" $customWidth) -}}
+		{{- end -}}
 		{{- $Width = $image.Width -}}
 		{{- $Height = $image.Height -}}
 		{{- $galleryImage = true -}}
