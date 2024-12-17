@@ -17,47 +17,87 @@
 </a><a href=/tags/area/%E6%80%9D%E8%80%83/ class=font_size_1>Area/思考
 </a><a href=/tags/clippings/ class=font_size_1>Clippings</a></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/articles/claude-mcp-101/><img src=https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg loading=lazy alt="Featured image of post Claude MCP 体验"></a></div><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/articles/claude-mcp-101/>Claude MCP 体验</a></h2><h3 class=article-subtitle>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。</h3></div><footer class=article-tags><div><svg class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg>
 <a href=/tags/AI/%e5%8e%9f%e7%90%86>AI/原理</a></div></footer><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
-<time class=article-time--published>Fri, Dec 06, 2024</time></div></footer></div></header><section class=article-content><h1 id=概念>概念</h1><p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。<br>这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“<a class=link href=https://x.com/eviljer/status/1861333739730804848 target=_blank rel=noopener>村里通网了 - Claude MCP 开启数据连接和操作的新宇宙</a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。</p><h1 id=功能>功能</h1><h2 id=介绍>介绍</h2><p><img src=https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp loading=lazy alt="图片来自 x|850"></p><blockquote><p>参考：<a class=link href=https://x.com/nicekate8888/status/1861323082969030978 target=_blank rel=noopener>Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测</a></p></blockquote><ul><li>官方文档：<a class=link href=https://www.anthropic.com/news/model-context-protocol target=_blank rel=noopener>Introducing the Model Context Protocol - Anthropic</a></li></ul><h2 id=使用>使用</h2><ul><li>安装（以 Mac 来讲）<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>brew install uv git sqlite3
-</span></span></code></pre></div><ul><li>然后下载 Claude <a class=link href=https://claude.ai/download target=_blank rel=noopener>桌面端</a>，</li></ul></li><li>开启<ul><li>如何启用具体可以参考：<a class=link href=https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos target=_blank rel=noopener>Quickstart - Model Context Protocol</a></li><li>简单说，这个功能桌面端才有，Mac 上可以打开 <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;mcpServers&#34;</span>: {
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;sqlite&#34;</span>: {
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;command&#34;</span>: <span style=color:#e6db74>&#34;uvx&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;args&#34;</span>: [<span style=color:#e6db74>&#34;mcp-server-sqlite&#34;</span>, <span style=color:#e6db74>&#34;--db-path&#34;</span>, <span style=color:#e6db74>&#34;/Users/&lt;my-user-name&gt;/claude.db&#34;</span>]
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h2 id=示例>示例</h2><p>官方给的例子：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Create a new SQLite database</span>
-</span></span><span style=display:flex><span>sqlite3 ~/claude.db <span style=color:#e6db74>&lt;&lt;EOF
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>CREATE TABLE products (
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  id INTEGER PRIMARY KEY,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  name TEXT,
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  price REAL
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>);
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>INSERT INTO products (name, price) VALUES
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Widget&#39;, 19.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Gadget&#39;, 29.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Gizmo&#39;, 39.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Smart Watch&#39;, 199.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Wireless Earbuds&#39;, 89.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Portable Charger&#39;, 24.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Bluetooth Speaker&#39;, 79.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Phone Stand&#39;, 15.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Laptop Sleeve&#39;, 34.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Mini Drone&#39;, 299.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;LED Desk Lamp&#39;, 45.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Keyboard&#39;, 129.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Mouse Pad&#39;, 12.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;USB Hub&#39;, 49.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Webcam&#39;, 69.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Screen Protector&#39;, 9.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Travel Adapter&#39;, 27.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Gaming Headset&#39;, 159.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Fitness Tracker&#39;, 119.99),
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  (&#39;Portable SSD&#39;, 179.99);
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>EOF</span>
-</span></span></code></pre></div><p>创建一个表，然后往里面写一些数据。</p><h2 id=运行>运行</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>uvx mcp-server-sqlite
-</span></span></code></pre></div><p>它会用 <a class=link href=https://docs.astral.sh/uv/guides/tools/ target=_blank rel=noopener>uvx</a> 来运行 mcp 服务。<br>Prompt Demo:<br><code>Can you connect to my SQLite database and tell me what products are available, and their prices?</code></p><h1 id=原理>原理</h1><p>其实就是加了一个 MCP server 作为本地代理，架构如下：<br><img src=https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp loading=lazy alt=|725><br>MCP 是一个开放协议：</p><ul><li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。</li><li>另一方面 MCP 也类似 Prompt 模板一样，提供了<strong>动态上下文构建</strong>的能力：<ul><li>MCP 能够留空的方式，动态地构建上下文。</li><li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。</li><li>还可以根据用户的交互历史来调整上下文。<br>它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。</li></ul></li></ul></section><footer class=article-footer><section class=article-tags><a href=/tags/ai/%E5%8E%9F%E7%90%86/>AI/原理</a></section></footer></article><script src=https://giscus.app/client.js data-repo=jsongo/hugo-page data-repo-id=R_kgDONQf4yA data-category=Announcements data-category-id=DIC_kwDONQf4yM4CkfAr data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"preferred_color_scheme":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
+<time class=article-time--published>Fri, Dec 06, 2024</time></div></footer></div></header><section class=article-content><h1 id=概念>概念</h1><p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。<br>这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“<a class=link href=https://x.com/eviljer/status/1861333739730804848 target=_blank rel=noopener>村里通网了 - Claude MCP 开启数据连接和操作的新宇宙</a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。</p><h1 id=功能>功能</h1><h2 id=介绍>介绍</h2><p><img src=https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp loading=lazy alt="图片来自 x|850"></p><blockquote><p>参考：<a class=link href=https://x.com/nicekate8888/status/1861323082969030978 target=_blank rel=noopener>Claude秒变Cursor！MCP让AI直接编辑本地文件 | Anthropic MCP实测</a></p></blockquote><ul><li>官方文档：<a class=link href=https://www.anthropic.com/news/model-context-protocol target=_blank rel=noopener>Introducing the Model Context Protocol - Anthropic</a></li></ul><h2 id=使用>使用</h2><ul><li>安装（以 Mac 来讲）<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install uv git sqlite3
+</span></span></code></pre></td></tr></table></div></div><ul><li>然后下载 Claude <a class=link href=https://claude.ai/download target=_blank rel=noopener>桌面端</a>，</li></ul></li><li>开启<ul><li>如何启用具体可以参考：<a class=link href=https://modelcontextprotocol.io/quickstart#installing-prerequisites-macos target=_blank rel=noopener>Quickstart - Model Context Protocol</a></li><li>简单说，这个功能桌面端才有，Mac 上可以打开 <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> 编辑下这个 JSON 文件，然后重启下 Claude 客户端就自动启用了。往 JSON 文件里写内容：</li></ul></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;mcpServers&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;sqlite&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;command&#34;</span><span class=p>:</span> <span class=s2>&#34;uvx&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&#34;args&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;mcp-server-sqlite&#34;</span><span class=p>,</span> <span class=s2>&#34;--db-path&#34;</span><span class=p>,</span> <span class=s2>&#34;/Users/&lt;my-user-name&gt;/claude.db&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=示例>示例</h2><p>官方给的例子：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Create a new SQLite database</span>
+</span></span><span class=line><span class=cl>sqlite3 ~/claude.db <span class=s>&lt;&lt;EOF
+</span></span></span><span class=line><span class=cl><span class=s>CREATE TABLE products (
+</span></span></span><span class=line><span class=cl><span class=s>  id INTEGER PRIMARY KEY,
+</span></span></span><span class=line><span class=cl><span class=s>  name TEXT,
+</span></span></span><span class=line><span class=cl><span class=s>  price REAL
+</span></span></span><span class=line><span class=cl><span class=s>);
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s>INSERT INTO products (name, price) VALUES
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Widget&#39;, 19.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Gadget&#39;, 29.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Gizmo&#39;, 39.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Smart Watch&#39;, 199.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Wireless Earbuds&#39;, 89.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Portable Charger&#39;, 24.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Bluetooth Speaker&#39;, 79.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Phone Stand&#39;, 15.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Laptop Sleeve&#39;, 34.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Mini Drone&#39;, 299.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;LED Desk Lamp&#39;, 45.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Keyboard&#39;, 129.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Mouse Pad&#39;, 12.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;USB Hub&#39;, 49.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Webcam&#39;, 69.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Screen Protector&#39;, 9.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Travel Adapter&#39;, 27.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Gaming Headset&#39;, 159.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Fitness Tracker&#39;, 119.99),
+</span></span></span><span class=line><span class=cl><span class=s>  (&#39;Portable SSD&#39;, 179.99);
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
+</span></span></code></pre></td></tr></table></div></div><p>创建一个表，然后往里面写一些数据。</p><h2 id=运行>运行</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>uvx mcp-server-sqlite
+</span></span></code></pre></td></tr></table></div></div><p>它会用 <a class=link href=https://docs.astral.sh/uv/guides/tools/ target=_blank rel=noopener>uvx</a> 来运行 mcp 服务。<br>Prompt Demo:<br><code>Can you connect to my SQLite database and tell me what products are available, and their prices?</code></p><h1 id=原理>原理</h1><p>其实就是加了一个 MCP server 作为本地代理，架构如下：<br><img src=https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp loading=lazy alt=|725><br>MCP 是一个开放协议：</p><ul><li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。</li><li>另一方面 MCP 也类似 Prompt 模板一样，提供了<strong>动态上下文构建</strong>的能力：<ul><li>MCP 能够留空的方式，动态地构建上下文。</li><li>例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。</li><li>还可以根据用户的交互历史来调整上下文。<br>它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。</li></ul></li></ul></section><footer class=article-footer><section class=article-tags><a href=/tags/ai/%E5%8E%9F%E7%90%86/>AI/原理</a></section></footer></article><script src=https://giscus.app/client.js data-repo=jsongo/hugo-page data-repo-id=R_kgDONQf4yA data-category=Announcements data-category-id=DIC_kwDONQf4yM4CkfAr data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"preferred_color_scheme":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
 2024 Ethan 的思考札记</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.29.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>

@@ -49,16 +49,32 @@ loading="lazy"
 需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
 &lt;h2 id="操作">操作
 &lt;/h2>&lt;p>刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> xxx;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">xxx&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
 &lt;h2 id="mac-上连接">Mac 上连接
 &lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
 >Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap azure/functions
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install azure-cli
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install azure-functions-core-tools@4
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew tap azure/functions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew install azure-cli
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew install azure-functions-core-tools@4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
 &lt;p>具体可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
 >Develop Azure Functions locally using Core Tools | Microsoft Learn&lt;/a>&lt;/p>
 &lt;ul>
@@ -91,8 +107,15 @@ loading="lazy"
 alt="|850"
 >&lt;br>
 它会先做一些安装，然后启动 function，IDE 进入 debug 模式。这时主要运行的命令是：&lt;code>func host start&lt;/code>，直接在命令行里运行这个命令也可以启动本地调试运行。但如果你想查询代码中打的日志，一定要记得加上 &amp;ndash;verbose 的参数，所以正确的使用姿势是：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>func host start --verbose
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 &lt;code>Development&lt;/code> 了，如果你修改代码，它会触发服务的重启，非常方便。&lt;br>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func host start --verbose
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 &lt;code>Development&lt;/code> 了，如果你修改代码，它会触发服务的重启，非常方便。&lt;br>
 它同时生成一个链接可以直接点击，它会触发函数执行：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
 loading="lazy"
@@ -101,13 +124,27 @@ alt="|525"
 &lt;h1 id="创建">创建
 &lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。&lt;br>
 先初始化目录：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>func init --python
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file" target="_blank" rel="noopener"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func init --python
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file" target="_blank" rel="noopener"
 >&lt;em>local.settings.json&lt;/em>&lt;/a> 和 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json" target="_blank" rel="noopener"
 >&lt;em>host.json&lt;/em>&lt;/a>。&lt;br>
 创建一个 api 入口：&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-base" data-lang="base">func new --name combine_videos --template &amp;#34;HTTP trigger&amp;#34; --authlevel &amp;#34;function&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>Authlevel 有三个值：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="k">func&lt;/span> &lt;span class="n">new&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="n">combine_videos&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">template&lt;/span> &lt;span class="s2">&amp;#34;HTTP trigger&amp;#34;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">authlevel&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Authlevel 有三个值：&lt;/p>
 &lt;ul>
 &lt;li>Anonymous 即任何人都可以访问，不需要带什么认证，相当于公开了。&lt;/li>
 &lt;li>Function 函数级别的认证，创建的每个函数都得在 URL 上带一个 token 进行认证，参数是 &lt;code>?code=&amp;lt;token&amp;gt;&lt;/code>。&lt;/li>
@@ -141,8 +178,15 @@ alt="|700"
 &lt;h2 id="cli-发布">CLI 发布
 &lt;/h2>&lt;h3 id="登录">登录
 &lt;/h3>&lt;p>使用前也一样需要先登录 (上面的说明都是在本地开发)：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>az login
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
 loading="lazy"
 alt="|750"
@@ -154,8 +198,15 @@ alt="|900"
 >&lt;/p>
 &lt;h3 id="发布操作">发布操作
 &lt;/h3>&lt;p>当然我们也可以选择用 CLI 来做发布：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>func azure functionapp publish &amp;lt;project_name&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体细节可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?toc=/azure/developer/python/toc.json&amp;amp;bc=/azure/developer/python/breadcrumb/toc.json&amp;amp;tabs=macos,bash,azure-cli,browser" target="_blank" rel="noopener"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func azure functionapp publish &amp;lt;project_name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>具体细节可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?toc=/azure/developer/python/toc.json&amp;amp;bc=/azure/developer/python/breadcrumb/toc.json&amp;amp;tabs=macos,bash,azure-cli,browser" target="_blank" rel="noopener"
 >Create a Python function from the command line - Azure Functions | Microsoft Learn&lt;/a>&lt;br>
 这里的 &lt;code>project_name&lt;/code> 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
