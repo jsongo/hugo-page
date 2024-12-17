@@ -27,7 +27,11 @@ def convert_date_format(date_str):
 def process_public_folder():
     """处理当前目录中的 .md 文件"""
     # 获取当前目录下所有的 .md 文件
-    md_files = [f for f in os.listdir('.') if f.endswith('.md')]
+    md_files = []
+    for root, _, files in os.walk('.'):
+        for file in files:
+            if file.endswith('.md'):
+                md_files.append(os.path.join(root, file))
     
     for md_file in md_files:
         with open(md_file, 'r', encoding='utf-8') as f:
