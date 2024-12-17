@@ -7,7 +7,7 @@ params:
     mainSections:
         - articles
     sort:
-        by: date
+        by: created_at
         order: desc
     featuredImageField: banner
     rssFullContent: true
