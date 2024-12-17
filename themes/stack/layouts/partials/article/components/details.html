@@ -23,6 +23,18 @@
         {{ end }}
     </div>
 
+    <!-- 展示 tags -->
+    {{ if .Params.tags }}
+    <footer class="article-tags">
+        <div>
+            {{ partial "helper/icon" "tag" }}
+            {{ range .Params.tags }}
+                <a href="/tags/{{ . }}">{{ . }}</a>
+            {{ end }}
+        </div>
+    </footer>
+    {{ end }}
+
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
     {{ $showDate := not .Date.IsZero }}
     {{ $showFooter := or $showDate $showReadingTime }}
