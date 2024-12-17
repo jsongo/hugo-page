@@ -85,6 +85,7 @@ main.main {
 
     @include respond(md) {
         padding-top: var(--main-top-padding);
+        min-width: 850px;
     }
 }
 
