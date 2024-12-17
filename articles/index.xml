@@ -60,8 +60,11 @@ loading="lazy"
 &lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
 &lt;h2 id="mac-上连接">Mac 上连接
 &lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
->Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;p>一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;br>
-其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
+>Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;blockquote>
+&lt;p>[!NOTE] 花生壳&lt;br>
+一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;/p>
+&lt;/blockquote>
+&lt;p>其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
 >hub.docker.com/r/cloudflare/cloudflared&lt;/a> 里面也有一些简单的指引。&lt;/p>
 &lt;h1 id="简单使用">简单使用
 &lt;/h1>&lt;p>一条命令就可以搞定：&lt;/p>
