@@ -6,6 +6,9 @@ module:
 params:
     mainSections:
         - articles
+    sort:
+        by: date
+        order: desc
     featuredImageField: banner
     rssFullContent: true
     favicon: https://cdn.jsongo.top/mc/favicon.jpg
