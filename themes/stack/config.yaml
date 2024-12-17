@@ -176,12 +176,12 @@ menu:
           params:
             icon: user
             newTab: true
-    # social:
-    #     - identifier: github
-    #       name: GitHub
-    #       url: https://github.com/jsongo
-    #       params:
-    #           icon: brand-github
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/jsongo
+          params:
+              icon: brand-github
 related:
     includeNewer: true
     threshold: 60
