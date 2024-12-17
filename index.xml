@@ -1300,4 +1300,15 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item></channel></rss>
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">links&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">GitHub&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">website&lt;/span>: &lt;span style="color:#ae81ff">https://github.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">TypeScript&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">website&lt;/span>: &lt;span style="color:#ae81ff">https://www.typescriptlang.org&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">ts-logo-128.jpg&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item></channel></rss>
