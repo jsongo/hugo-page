@@ -89,10 +89,7 @@ Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服�
 &lt;h1 id="mysql-申请">Mysql 申请
 &lt;/h1>&lt;h2 id="免费额度">免费额度
 &lt;/h2>&lt;p>免费用户其实还是有不少额度可以使用：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
-loading="lazy"
-alt="|650"
->&lt;br>
+![[assets/local_image_plus/acdddffa0496142ff1dba0f121fcda0b_MD5.webp]]&lt;br>
 详细可以阅读：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account" target="_blank" rel="noopener"
 >Try Out With an Azure Free Account - Azure Database for MySQL - Flexible Server | Microsoft Learn&lt;/a>&lt;/p>
 &lt;ul>
@@ -102,34 +99,22 @@ alt="|650"
 &lt;/h2>&lt;ul>
 &lt;li>打开：&lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers" target="_blank" rel="noopener"
 >Microsoft Azure DB for MySQL Server&lt;/a>，点 &lt;code>Quick Create&lt;/code>。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
-loading="lazy"
->&lt;/li>
+![[assets/local_image_plus/185374999979aeaf7eaacafc2559f70c_MD5.webp]]&lt;/li>
 &lt;li>简单填写下信息就行：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp"
-loading="lazy"
->&lt;/li>
+![[assets/local_image_plus/dc7a6a57c5ef6e7c33eb062b9a839ab4_MD5.webp]]&lt;/li>
 &lt;li>下一步、创建，等几分钟就创建成功了：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/aab8b78c940e753bc5de50a461d49053.webp"
-loading="lazy"
->&lt;/li>
+![[assets/local_image_plus/779be6077b6429b20afea645db94c1a2_MD5.webp]]&lt;/li>
 &lt;/ul>
 &lt;h1 id="简单使用">简单使用
 &lt;/h1>&lt;h2 id="手动连接">手动连接
 &lt;/h2>&lt;p>在本地默认是连接不上的， azure 为了安全，对访问做了限制，可以通过 zero trust 网络来接入，当然也可以简单的设置下网络、放行你的 ip：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/da949ffb37dbb360bb9e563577f2adf8.webp"
-loading="lazy"
->&lt;br>
+![[assets/local_image_plus/5f2df5f0bd7a44947570d6d03b97326d_MD5.webp]]&lt;br>
 不过其实还有更简单的方式，直接在页面上打开连接：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp"
-loading="lazy"
->&lt;br>
+![[assets/local_image_plus/237f33fd380550fedcc2c7b8032e3a3c_MD5.webp]]&lt;br>
 连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
 证书可以从这里下载：&lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate" target="_blank" rel="noopener"
 >使用 TLS/SSL 加密的连接&lt;/a> ，或者直接用我下图中的 wget 命令即可。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
-loading="lazy"
->&lt;br>
+![[assets/local_image_plus/5ca50dca941f0a04009836a53523f0bc_MD5.webp]]&lt;br>
 需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
 &lt;h2 id="操作">操作
 &lt;/h2>&lt;p>刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：&lt;/p>
