@@ -61,14 +61,14 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
     --card-border-radius: 10px;
 
-    --card-padding: 20px;
+    --card-padding: 15px;
 
     @include respond(md) {
-        --card-padding: 25px;
+        --card-padding: 20px;
     }
 
     @include respond(xl) {
-        --card-padding: 30px;
+        --card-padding: 25px;
     }
 
     --small-card-padding: 25px 20px;
