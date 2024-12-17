@@ -5,7 +5,7 @@ tags:
   - IT/折腾/azure
 created_at: Mon, Dec 16th, 2024 - 13:39:37
 banner_icon: 🦀
-banner: https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg
+banner: "https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg"
 slug: azure-serverless-mysql
 description: 介绍了如何在 Azure Function 上使用 MySQL 数据库，包括申请免费额度、创建实例、连接和操作数据库的步骤。它还提供了在 Mac 上安装 MySQL 客户端的建议
 title: Azure Function + Mysql 入门
