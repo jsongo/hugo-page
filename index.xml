@@ -82,7 +82,62 @@ Raycast 和 Alfred 确实存在很多相似之处，但 Raycast 对第三方服�
 &lt;hr>
 &lt;blockquote>
 &lt;p>原文：https://sspai.com/post/63521&lt;/p>
-&lt;/blockquote></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+&lt;/blockquote></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.jsongo.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
+&lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
+>Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="mysql-申请">Mysql 申请
+&lt;/h1>&lt;h2 id="免费额度">免费额度
+&lt;/h2>&lt;p>免费用户其实还是有不少额度可以使用：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
+loading="lazy"
+alt="|650"
+>&lt;br>
+详细可以阅读：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account" target="_blank" rel="noopener"
+>Try Out With an Azure Free Account - Azure Database for MySQL - Flexible Server | Microsoft Learn&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>简单说，可以支持 B1MS 实例一直在线上跑，有 32G 的存储空间。B1MS 有 1~2 个 CPU 微核&lt;/li>
+&lt;/ul>
+&lt;h2 id="添加一个实例">添加一个实例
+&lt;/h2>&lt;ul>
+&lt;li>打开：&lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers" target="_blank" rel="noopener"
+>Microsoft Azure DB for MySQL Server&lt;/a>，点 &lt;code>Quick Create&lt;/code>。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
+loading="lazy"
+>&lt;/li>
+&lt;li>简单填写下信息就行：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp"
+loading="lazy"
+>&lt;/li>
+&lt;li>下一步、创建，等几分钟就创建成功了：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/aab8b78c940e753bc5de50a461d49053.webp"
+loading="lazy"
+>&lt;/li>
+&lt;/ul>
+&lt;h1 id="简单使用">简单使用
+&lt;/h1>&lt;h2 id="手动连接">手动连接
+&lt;/h2>&lt;p>在本地默认是连接不上的， azure 为了安全，对访问做了限制，可以通过 zero trust 网络来接入，当然也可以简单的设置下网络、放行你的 ip：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/da949ffb37dbb360bb9e563577f2adf8.webp"
+loading="lazy"
+>&lt;br>
+不过其实还有更简单的方式，直接在页面上打开连接：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp"
+loading="lazy"
+>&lt;br>
+连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
+证书可以从这里下载：&lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate" target="_blank" rel="noopener"
+>使用 TLS/SSL 加密的连接&lt;/a> ，或者直接用我下图中的 wget 命令即可。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
+loading="lazy"
+>&lt;br>
+需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
+&lt;h2 id="操作">操作
+&lt;/h2>&lt;p>刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> xxx;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
+&lt;h2 id="mac-上连接">Mac 上连接
+&lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
+>Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap azure/functions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install azure-cli
