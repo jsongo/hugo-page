@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/折腾/Cloudflare on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/cloudflare/</link><description>Recent content in IT/折腾/Cloudflare on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Dec 2024 16:03:07 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;div class="td-max-width-on-larger-screens details admonition quote">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/折腾/Cloudflare on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/cloudflare/</link><description>Recent content in IT/折腾/Cloudflare on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Dec 2024 16:03:07 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;div class="admonition quote">
 &lt;div class="details-summary admonition-title">
 &lt;i class='icon fas fa-quote-right fa-fw'>&lt;/i>
 花生壳&lt;br
@@ -8,7 +8,7 @@
 &lt;p>一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;/div>&lt;p>其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
+&lt;/div>&lt;/div>&lt;p>其实 cloudflare 本身就提供了一个免费的 cloudflared 的 tunnel 工具，直接下载运行就行。如果用 Docker 的话可以用这个镜像：&lt;a class="link" href="https://hub.docker.com/r/cloudflare/cloudflared" target="_blank" rel="noopener"
 >hub.docker.com/r/cloudflare/cloudflared&lt;/a> 里面也有一些简单的指引。&lt;/p>
 &lt;h1 id="简单使用">简单使用
 &lt;/h1>&lt;p>一条命令就可以搞定：&lt;/p>
