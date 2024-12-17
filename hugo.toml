@@ -7,3 +7,11 @@ theme = 'stack'
   [markup.tableOfContents]
     startLevel = 1
     endLevel = 5
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4

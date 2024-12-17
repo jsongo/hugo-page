@@ -193,10 +193,6 @@ related:
         - name: categories
           weight: 200
 markup:
-    tableOfContents:
-        startLevel: 1
-        endLevel: 4
-        ordered: false
     highlight:
         noClasses: false
         codeFences: true
