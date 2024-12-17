@@ -26,7 +26,9 @@
 &lt;/h2>&lt;p>到 &lt;a class="link" href="https://dash.teams.cloudflare.com/%e2%81%a0" target="_blank" rel="noopener"
 >Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp"
+width="675"
 loading="lazy"
+alt="|675"
 >&lt;br>
 接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。&lt;br>
 注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。&lt;/p>
@@ -36,15 +38,21 @@ loading="lazy"
 &lt;h2 id="创建-tunnel">创建 Tunnel
 &lt;/h2>&lt;p>在下图中的菜单里找到创建的地方，选 Cloudflared。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
+width="875"
 loading="lazy"
+alt="|875"
 >&lt;br>
 自己取一个名字（不跟别人重复就行）&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
+width="900"
 loading="lazy"
+alt="|900"
 >&lt;br>
 下一步，取得 token：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
+width="925"
 loading="lazy"
+alt="|925"
 >&lt;br>
 如上图，划线处就是你的 token，先记下来，下面用。&lt;/p>
 &lt;h2 id="启动接入">启动、接入
@@ -90,30 +98,42 @@ loading="lazy"
 如果你家里有个服务器或 NAS，其实 docker 是比较合适的，它可以一直在线跑。&lt;br>
 创建完之后，在同一个界面里可以看到已经有一个设备连接上来了：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
+width="725"
 loading="lazy"
+alt="|725"
 >&lt;br>
 再下一步，public hostnames 里添加一个你转到 cloudflare 来解析的域名，加一个子域名。同时 Service 填写你内网的某个服务的地址，如你的 nginx 网关等。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
+width="875"
 loading="lazy"
+alt="|875"
 >&lt;br>
 再下一步就回到了列表页，可以看到你的 tunnel 已经在跑了：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/f39e1282f64410a6862142f136b7108b.webp"
+width="850"
 loading="lazy"
+alt="|850"
 >&lt;br>
 回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
+width="875"
 loading="lazy"
+alt="|875"
 >&lt;br>
 &lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
 >DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。&lt;/p>
 &lt;p>现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
+width="750"
 loading="lazy"
+alt="|750"
 >&lt;/p>
 &lt;h2 id="优化网络连接">优化网络连接
 &lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
+width="725"
 loading="lazy"
+alt="|725"
 >&lt;br>
 调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item></channel></rss>
