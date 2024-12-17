@@ -15,3 +15,5 @@ theme = 'stack'
     lineNos = true
     lineNumbersInTable = true
     tabWidth = 4
+[markup.goldmark.parser.attribute]
+    block = true
