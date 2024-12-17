@@ -37,25 +37,48 @@ def process_public_folder():
         in_frontmatter = False
         frontmatter_count = 0
         modified_lines = []
+        frontmatter_lines = []  # 用于临时存储 frontmatter 内容
+        has_date = False
+        converted_date = None
+        
+        # 第一次遍历：收集 frontmatter 信息
+        for line in lines:
+            if line.strip() == '---':
+                frontmatter_count += 1
+                if frontmatter_count == 1:
+                    in_frontmatter = True
+                elif frontmatter_count == 2:
+                    break  # 如果已经遍历完 frontmatter，直接退出
+                continue
+                
+            if in_frontmatter:
+                if line.startswith('date:'):
+                    has_date = True
+                    break  # 找到 date: 字段后直接退出
+                elif line.startswith('created_at:'):
+                    date_str = line.replace('created_at:', '').strip()
+                    converted_date = convert_date_format(date_str)
+        
+        # 重置变量，开始第二次遍历
+        in_frontmatter = False
+        frontmatter_count = 0
         date_added = False
         
+        # 第二次遍历：生成新文件内容
         for line in lines:
             modified_lines.append(line)
             
-            # 检查是否在 frontmatter 区域内
             if line.strip() == '---':
                 frontmatter_count += 1
-                in_frontmatter = frontmatter_count == 1
+                if frontmatter_count == 1:
+                    in_frontmatter = True
+                elif frontmatter_count == 2:
+                    in_frontmatter = False
+                    # 如果遍历完 frontmatter 还没有 date 字段，在这里添加
+                    if not has_date and converted_date and not date_added:
+                        modified_lines.insert(-1, f'date: {converted_date}\n')
+                        date_added = True
                 continue
-            
-            # 在 frontmatter 中查找 created_at
-            if in_frontmatter and frontmatter_count == 1 and line.startswith('created_at:'):
-                # 提取并转换日期
-                date_str = line.replace('created_at:', '').strip()
-                converted_date = convert_date_format(date_str)
-                # 在下一行添加转换后的日期
-                modified_lines.append(f'date: {converted_date}\n')
-                date_added = True
         
         # 只有在实际进行了修改时才写入文件
         if date_added:

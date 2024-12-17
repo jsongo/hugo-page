@@ -10,6 +10,7 @@ draft: false
 slug: diffusion-101
 title: 初识 Diffusion（概念）
 description: Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
+date: 2024-11-24T11:26:10+08:00
 ---
 Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
 # Model & Checkpoint

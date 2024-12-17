@@ -10,6 +10,7 @@ slug: avoid-aws-charges
 title: 踩坑：如何避免被 aws 悄悄地收费
 description: 最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时在另一个区域开了一个 cloud9。
 draft: false
+date: 2024-12-13T15:59:05+08:00
 ---
 最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
 	![[assets/local_image_plus/a0ca56c580cb92b784f7a891d694a46c_MD5.webp]]

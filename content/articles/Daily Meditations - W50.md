@@ -9,6 +9,7 @@ banner: "https://cdn.jsongo.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg"
 description: 日常的一些思考收集，自己会时不时的回顾下，分享出来也希望能给大家一些启发
 title: Daily Meditations - W50
 slug: meditations-w50
+date: 2024-12-09T13:34:29+08:00
 ---
 # 职业的本质是什么？
 <mark style="background: #FFB86CA6;">通过帮别人解决问题来获利。</mark>  

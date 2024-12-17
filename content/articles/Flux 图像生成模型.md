@@ -10,6 +10,7 @@ description: Flux 是多模态和并行扩散 Transformer 块的混合架构，�
 title: Flux 图像生成模型
 slug: flux-101
 draft: false
+date: 2024-11-24T23:31:34+08:00
 ---
 # Flux 基础
 >  Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。  

@@ -10,6 +10,7 @@ title: Stable Diffusion 生图技术（一）
 slug: stable-diffusion-gen-image-1
 description: Stable Diffusion 是一种先进的生成式人工智能技术，是目前比较流行的一种用于生成高质量的图像的技术之一。它在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片
 draft: false
+date: 2024-11-19T16:36:27+08:00
 ---
 # 概述
 ## 背景

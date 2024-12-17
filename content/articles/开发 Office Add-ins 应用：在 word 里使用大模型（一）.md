@@ -10,6 +10,7 @@ title: 开发 Office Add-ins 应用（一）：在 word 里使用大模型
 slug: office-add-ins-1
 draft: false
 description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Office 应用程序（如 Word、Excel、PowerPoint 等）功能的小程序，能增强 Office 应用程序的能力，能与 Office 文档中的内容进行交互。从技术栈来说，它是基于 Web 技术
+date: 2024-12-06T13:08:16+08:00
 ---
 # 介绍
 借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。  

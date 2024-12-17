@@ -10,6 +10,7 @@ slug: azure-serverless
 title: azure serverless 使用
 description: azure serverless 支持 python、node 等多种语言，本地 CLI 和 VsCode 插件可以很方便辅助开发者进行开发、调试以及部署。本文主要介绍 azure serverless 的入门操作。
 draft: false
+date: 2024-12-14T01:33:06+08:00
 ---
 # 基础工具
 Mac 上直接装：
