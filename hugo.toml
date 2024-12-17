@@ -2,3 +2,8 @@ baseURL = 'https://www.jsongo.top/'
 languageCode = 'zh-cn'
 title = 'Ethan 的思考札记'
 theme = 'stack'
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 5

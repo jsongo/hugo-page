@@ -196,7 +196,7 @@ markup:
     tableOfContents:
         startLevel: 1
         endLevel: 4
-        ordered: true
+        ordered: false
     highlight:
         noClasses: false
         codeFences: true
