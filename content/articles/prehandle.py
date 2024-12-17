@@ -56,7 +56,6 @@ def process_public_folder():
                 # 在下一行添加转换后的日期
                 modified_lines.append(f'date: {converted_date}\n')
                 date_added = True
-                break
         
         # 只有在实际进行了修改时才写入文件
         if date_added:
@@ -66,9 +65,9 @@ def process_public_folder():
 
 if __name__ == "__main__":
     # 测试日期转换
-    test_date = "Mon, Dec 16th, 2024 - 13:39:37"
-    converted = convert_date_format(test_date)
-    print(f"Original: {test_date}")
-    print(f"Converted: {converted}")
+    # test_date = "Mon, Dec 16th, 2024 - 13:39:37"
+    # converted = convert_date_format(test_date)
+    # print(f"Original: {test_date}")
+    # print(f"Converted: {converted}")
     
-    # process_public_folder() 
+    process_public_folder() 
