@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/折腾/Azure on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/</link><description>Recent content in IT/折腾/Azure on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 16 Dec 2024 13:39:37 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/折腾/Azure on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/</link><description>Recent content in IT/折腾/Azure on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 18 Dec 2024 00:42:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/%E6%8A%98%E8%85%BE/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Function Triggers</title><link>https://www.jsongo.top/articles/azure-function-triggers/</link><pubDate>Wed, 18 Dec 2024 00:42:33 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-triggers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg" alt="Featured image of post Azure Function Triggers" />&lt;h1 id="触发器各类">触发器各类
+&lt;/h1>&lt;p>Azure Function 有多种模板，我们在创建 Function 时，一般会用 &lt;code>--template&lt;/code> 参数要指定用哪个模板。详细的可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings" target="_blank" rel="noopener"
+>Triggers and bindings in Azure Functions | Microsoft Learn&lt;/a> 或中文版 &lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
+>Azure Functions 中的触发器和绑定 | Microsoft Learn&lt;/a>。&lt;br>
+以下是一些常见的：&lt;/p>
+&lt;h2 id="基于事件触发的模板">基于事件触发的模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Azure Blob Storage Trigger&lt;/strong>：当 Azure Blob 存储中的 Blob 被创建、更新或删除时触发函数。例如，可以在有新文件上传到指定 Blob 容器时，自动触发函数进行数据处理或文件转换等操作。&lt;/li>
+&lt;li>&lt;strong>Azure Event Hubs Trigger&lt;/strong>：用于接收来自 Azure Event Hubs 的事件流消息，可实现对实时数据的处理。例如，在物联网场景中，接收设备发送的大量实时数据进行分析和处理。&lt;/li>
+&lt;li>&lt;strong>Azure Service Bus Trigger&lt;/strong>：可以响应来自 Azure Service Bus 队列或主题的消息，支持批量接收消息。适用于处理异步消息传递场景，如订单处理、消息通知等。&lt;/li>
+&lt;/ul>
+&lt;h2 id="基于数据存储的模板">基于数据存储的模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Azure Cosmos DB Trigger&lt;/strong>：使用 Azure Cosmos DB 的变更 feed 来监听分区中的插入和更新操作，当有数据发生变化时触发函数，可用于实时数据同步等场景。&lt;/li>
+&lt;li>&lt;strong>Azure SQL Database Trigger&lt;/strong>：当 Azure SQL 数据库中的表发生数据插入、更新或删除操作时触发函数，方便进行数据的关联操作和业务逻辑处理。&lt;/li>
+&lt;/ul>
+&lt;h2 id="基于定时任务的模板">基于定时任务的模板
+&lt;/h2>&lt;p>除了 Timer Trigger 外，还有一些定时任务相关的模板或扩展，如支持按照特定时间间隔或 cron 表达式来定期执行函数，可用于定时数据备份、报表生成等任务 。&lt;/p>
+&lt;h2 id="基于-http-请求的模板">基于 HTTP 请求的模板
+&lt;/h2>&lt;p>除了常见的 HTTP Trigger 外，还有一些针对特定 HTTP 场景的模板或扩展，如支持接收和处理来自 Webhook 的 HTTP 请求，可用于与第三方系统进行集成，接收外部系统推送的数据或事件。&lt;/p>
+&lt;h2 id="其他模板">其他模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>PowerShell Trigger&lt;/strong>：允许使用 PowerShell 脚本编写函数逻辑，方便系统管理员或熟悉 PowerShell 的开发人员进行自动化脚本编写和任务调度。&lt;/li>
+&lt;li>&lt;strong>Python Trigger&lt;/strong>：使用 Python 语言编写函数逻辑，适用于数据科学、机器学习等场景，可方便地调用 Python 库进行数据处理和分析。&lt;/li>
+&lt;/ul>
+&lt;h1 id="实践">实践
+&lt;/h1>&lt;h2 id="timer-trigger">Timer Trigger
+&lt;/h2>&lt;p>Http trigger 在 &lt;a class="link" href="azure%20serverless.md" >azure serverless&lt;/a> 中介绍过了。这里再讲一下 Timer Trigger，在做定时任务时非常有用，而且计费也只是按函数的执行时间来计，比较划算。&lt;br>
+详细使用可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-bindings-timer?tabs=python-v2,isolated-process,nodejs-v4&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
+>Azure Functions 的计时器触发器 | Microsoft Learn&lt;/a> 。&lt;br>
+跟创建普通的 Azure Function 一样，还是用 CLI 的 new 命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func new --name xxx --template &lt;span class="s2">&amp;#34;timer trigger&amp;#34;&lt;/span> --authlevel &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会在你的 &lt;code>function_app.py&lt;/code> 里创建一个新的 function：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@app.timer_trigger&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">schedule&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;0 */10 * * * *&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">arg_name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;timer&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">run_on_startup&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">use_monitor&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">my_polling&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timer&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">func&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">TimerRequest&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="kc">None&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">timer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">past_due&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logging&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;The timer is past due!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logging&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Python timer trigger function executed.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>@app.timer_trigger 里的几个参数：&lt;/p>
+&lt;ul>
+&lt;li>schedule：语法跟 cronjob 的配置一样，参考：&lt;a class="link" href="Cron%20%e8%a1%a8%e8%be%be%e5%bc%8f.md" >Cron 表达式&lt;/a>。&lt;/li>
+&lt;li>arg_name：表示计时器对象的变量的名称，没啥特别含义，就是随便定个名字能用就行。&lt;/li>
+&lt;li>run_on_startup：部署完、或重新启用时，它自动触发一次。&lt;/li>
+&lt;li>use_monitor：是否被 monotor 记录，如果间隔大于 1 分钟，建议设置为 true。&lt;br>
+其中， &lt;code>func.TimerRequest&lt;/code> 这个参数，其实就只有 &lt;code>past_due&lt;/code> 这个 boolean 类型的属性。&lt;br>
+&lt;code>past_due&lt;/code> 用于判断当前定时器触发的任务是否已经逾期：&lt;/li>
+&lt;li>当定时任务由于某些原因（例如系统负载高、资源暂时不可用等）未能在预定的时间点执行，后面才被触发时，&lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>True&lt;/code>。&lt;/li>
+&lt;li>如果定时任务在预定时间内正常执行，那么 &lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>False&lt;/code>&lt;br>
+现在 &lt;code>my_polling&lt;/code> 函数里，我们可以添加一些对其它 Azure Function 的调用，由此来处理其它任务的定时执行。这样由两个触发器配合来完成特定任务。当然把逻辑全与在 Timer Trigger 里也不是不行，只不过解耦开之后，Http Trigger 还能被单独使用。&lt;/li>
+&lt;/ul></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
 &lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
 >Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
 &lt;/blockquote>
