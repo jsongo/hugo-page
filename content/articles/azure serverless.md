@@ -99,7 +99,7 @@ func azure functionapp publish <project_name>
 	![|775](https://cdn.jsongo.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp)
 
 # 重要插件 Azurite
-安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。  
+安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL，它帮你开了一个代理，可以直接把本地调试时写的数据同步到线上。  
 	![|550](https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp)  
 如果没有它，本地如果运行定时任务就是出异常：  
 	![](https://cdn.jsongo.top/2024/12/bb208c03b576515896aa151e5a12fa6c.webp)  
