@@ -35,7 +35,10 @@ date: 2024-12-16T13:39:37+08:00
 	![](https://cdn.jsongo.top/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp)  
 	连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。  
 	证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。  
-	![](https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp)  
+	![|725](https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp) 
+```bash
+wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+```
 需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。
 ## 操作
 刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：

@@ -52,7 +52,7 @@ def my_polling(timer: func.TimerRequest) -> None:
     logging.info("Python timer trigger function executed.")
 ```
 @app.timer_trigger 里的几个参数：
-- schedule：语法跟 cronjob 的配置一样，参考：[Cron 表达式](Cron%20表达式.md)。
+- schedule：语法跟 cronjob 的配置一样，参考：[Cron 表达式](https://www.jsongo.top/articles/cron-syntax/)。
 - arg_name：表示计时器对象的变量的名称，没啥特别含义，就是随便定个名字能用就行。
 - run_on_startup：部署完、或重新启用时，它自动触发一次。
 - use_monitor：是否被 monotor 记录，如果间隔大于 1 分钟，建议设置为 true。  
