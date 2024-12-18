@@ -66,7 +66,8 @@
 &lt;/div>
 &lt;/div>&lt;p>@app.timer_trigger 里的几个参数：&lt;/p>
 &lt;ul>
-&lt;li>schedule：语法跟 cronjob 的配置一样，参考：&lt;a class="link" href="Cron%20%e8%a1%a8%e8%be%be%e5%bc%8f.md" >Cron 表达式&lt;/a>。&lt;/li>
+&lt;li>schedule：语法跟 cronjob 的配置一样，参考：&lt;a class="link" href="https://www.jsongo.top/articles/cron-syntax/" target="_blank" rel="noopener"
+>Cron 表达式&lt;/a>。&lt;/li>
 &lt;li>arg_name：表示计时器对象的变量的名称，没啥特别含义，就是随便定个名字能用就行。&lt;/li>
 &lt;li>run_on_startup：部署完、或重新启用时，它自动触发一次。&lt;/li>
 &lt;li>use_monitor：是否被 monotor 记录，如果间隔大于 1 分钟，建议设置为 true。&lt;br>
@@ -120,9 +121,19 @@ loading="lazy"
 连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
 证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
+width="725"
 loading="lazy"
->&lt;br>
-需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
+alt="|725"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
 &lt;h2 id="操作">操作
 &lt;/h2>&lt;p>刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
