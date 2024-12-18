@@ -664,7 +664,7 @@ loading="lazy"
 alt="|775"
 >&lt;/p>
 &lt;h1 id="重要插件-azurite">重要插件 Azurite
-&lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。&lt;br>
+&lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL，它帮你开了一个代理，可以直接把本地调试时写的数据同步到线上。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
 width="550"
 loading="lazy"
