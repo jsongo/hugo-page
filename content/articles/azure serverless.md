@@ -98,9 +98,11 @@ func azure functionapp publish <project_name>
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：  
 	![|775](https://cdn.jsongo.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp)
 
-# 其它：三方插件 Azurite
+# 重要插件 Azurite
 安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。  
 	![|550](https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp)  
+如果没有它，本地如果运行定时任务就是出异常：  
+	![](https://cdn.jsongo.top/2024/12/bb208c03b576515896aa151e5a12fa6c.webp)  
 修改下 `local.settings.json` 的配置，把 `AzureWebJobsStorage` 设置成 `"UseDevelopmentStorage=true"`。  
 	![|550](https://cdn.jsongo.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp)  
 打开命令面板，运行 Azurite start 来启动服务  
