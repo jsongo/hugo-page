@@ -663,12 +663,16 @@ width="775"
 loading="lazy"
 alt="|775"
 >&lt;/p>
-&lt;h1 id="其它三方插件-azurite">其它：三方插件 Azurite
+&lt;h1 id="重要插件-azurite">重要插件 Azurite
 &lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL 或为避免脏数据时，用它就比较方便。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
 width="550"
 loading="lazy"
 alt="|550"
+>&lt;br>
+如果没有它，本地如果运行定时任务就是出异常：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2024/12/bb208c03b576515896aa151e5a12fa6c.webp"
+loading="lazy"
 >&lt;br>
 修改下 &lt;code>local.settings.json&lt;/code> 的配置，把 &lt;code>AzureWebJobsStorage&lt;/code> 设置成 &lt;code>&amp;quot;UseDevelopmentStorage=true&amp;quot;&lt;/code>。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp"
