@@ -923,15 +923,24 @@ alt="|450"
 其实不一定要到了助人者或专家再开始发声，从探索时就可以开始，动手去慢慢打磨、创造一个产品，然后跟着它一起成长。同时也把这个成长的过程分享出来，让初学者都能从中受益。&lt;br>
 这个世界其实初学者（求助者）远远多于其它阶段的人。这就是一个金字塔，越塔尖的人越专业、而大部分人都是在中等以下。所以市场及需求最大的往往都是上面说的“探索家”和“求助者”。&lt;/li>
 &lt;/ul></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
-![[assets/local_image_plus/a0ca56c580cb92b784f7a891d694a46c_MD5.webp]]
+&lt;img src="https://cdn.jsongo.top/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
+loading="lazy"
+alt="a0ca56c580cb92b784f7a891d694a46c_MD5"
+>
 EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，内部建立的容器集群。Tax 这个就不用说了，10%的税
 刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
 &lt;ul>
 &lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
-![[assets/local_image_plus/dc4d2f7b2f6541fdf855791c014cd6bc_MD5.webp]]
+&lt;img src="https://cdn.jsongo.top/2024/12/5f2935beac626250341b78204dba3aaa.webp"
+loading="lazy"
+alt="dc4d2f7b2f6541fdf855791c014cd6bc_MD5"
+>
 看起来很正常，也没有实例在跑&lt;/li>
 &lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
-![[assets/local_image_plus/07fe0255dd659d8be840fad26fa1025a_MD5.webp]]
+&lt;img src="https://cdn.jsongo.top/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
+loading="lazy"
+alt="07fe0255dd659d8be840fad26fa1025a_MD5"
+>
 &lt;a class="link" href="https://us-east-1.console.aws.amazon.com/ec2globalview/home" target="_blank" rel="noopener"
 >这里找 global 使用中的实例&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Daily Meditations - W50</title><link>https://www.jsongo.top/articles/meditations-w50/</link><pubDate>Mon, 09 Dec 2024 13:34:29 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w50/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Daily Meditations - W50" />&lt;h1 id="职业的本质是什么">职业的本质是什么？
