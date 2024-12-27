@@ -2,7 +2,7 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - area/life/knowledge
+  - study/knowledge
 created_at: Wed, Dec 25, 2024 - 01:06:18
 date: 2024-12-25T01:06:18.666+08:00
 banner_icon: 🦙
