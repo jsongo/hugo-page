@@ -83,6 +83,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	![|750](https://cdn.jsongo.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp)
 
 # 使用镜像
+## 创建函数
 创建一个 Function，但要选高级计划或应用服务才行。  
 	![|825](https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp)  
 	![|600](https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
@@ -119,3 +120,4 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 - [Working with Azure Functions in containers \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&pivots=container-apps#creating-containerized-function-apps)
 - [Create Azure Functions in a local Linux container \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-container-registry?tabs=acr,bash&pivots=programming-language-python#build-the-container-image-and-verify-locally)
 - [Azure Container Registry roles and permissions - Azure Container Registry \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli)
+- [使用自定义云容器在 Azure Functions 中增强云安全性](https://zone.huoxian.cn/d/2594-azure-functions)
