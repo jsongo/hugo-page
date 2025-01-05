@@ -109,11 +109,21 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
 	![|800](https://cdn.jsongo.top/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp)  
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。    
-	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)
+	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)  
 费用是按需支付的，跟之前的两种方式不太一样：  
 	![|500](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
 	而且单个机子的配置选项也足够灵活，如图。  
 	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
+# 应用开发和部署
+如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单：
+```bash
+func azure functionapp publish xxx
+```
+不过现在我们是把代码打包到容器里，所以没法再使用这种方式去部署。现在需要改成 azure CLI 提供的 build 命令，其实在上文中提过了，只不过要稍加修改。
+```bash
+az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
+```
+它会重新构建并
 # 其它
 ## 关于 Premium Plan 和 Dedicated Plan
 这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。
