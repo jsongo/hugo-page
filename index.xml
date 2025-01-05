@@ -353,7 +353,19 @@ alt="|275"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>它会重新构建并 push 到远程 acr。接下来，我们再运行下之前的更新命令即可：&lt;/p>
+&lt;/div>&lt;p>它推到远程去构建，并也 push 到远程 acr。&lt;br>
+多次使用下来，其实我发现直接使用 docker 命令在本地构建会快很多，因为有缓存，所以我把面上的命令改成了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker build -t jsongo.azurecr.io/azure-video:latest .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker push jsongo.azurecr.io/azure-video:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>构建完成后，接下来，我们再运行下之前的更新命令即可：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
