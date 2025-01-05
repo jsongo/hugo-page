@@ -138,7 +138,8 @@ loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h1 id="使用镜像">使用镜像
-&lt;/h1>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
+&lt;/h1>&lt;h2 id="创建函数">创建函数
+&lt;/h2>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp"
 width="825"
 loading="lazy"
@@ -214,6 +215,8 @@ alt="|850"
 >Create Azure Functions in a local Linux container | Microsoft Learn&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli" target="_blank" rel="noopener"
 >Azure Container Registry roles and permissions - Azure Container Registry | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zone.huoxian.cn/d/2594-azure-functions" target="_blank" rel="noopener"
+>使用自定义云容器在 Azure Functions 中增强云安全性&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Azure Function Triggers</title><link>https://www.jsongo.top/articles/azure-function-triggers/</link><pubDate>Wed, 18 Dec 2024 00:42:33 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-triggers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg" alt="Featured image of post Azure Function Triggers" />&lt;h1 id="触发器各类">触发器各类
 &lt;/h1>&lt;p>Azure Function 有多种模板，我们在创建 Function 时，一般会用 &lt;code>--template&lt;/code> 参数要指定用哪个模板。详细的可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings" target="_blank" rel="noopener"
 >Triggers and bindings in Azure Functions | Microsoft Learn&lt;/a> 或中文版 &lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"

@@ -138,7 +138,8 @@ loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h1 id="使用镜像">使用镜像
-&lt;/h1>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
+&lt;/h1>&lt;h2 id="创建函数">创建函数
+&lt;/h2>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp"
 width="825"
 loading="lazy"
@@ -214,6 +215,8 @@ alt="|850"
 >Create Azure Functions in a local Linux container | Microsoft Learn&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli" target="_blank" rel="noopener"
 >Azure Container Registry roles and permissions - Azure Container Registry | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zone.huoxian.cn/d/2594-azure-functions" target="_blank" rel="noopener"
+>使用自定义云容器在 Azure Functions 中增强云安全性&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Daily Meditations - W52</title><link>https://www.jsongo.top/articles/meditations-w52/</link><pubDate>Wed, 25 Dec 2024 23:25:18 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w52/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b2412e8fae47001461d7b73f3127e2d.jpg" alt="Featured image of post Daily Meditations - W52" />&lt;blockquote>
 &lt;p>这两周都在看吴军的新书《脉络》，从书中我读出他有点凯文凯利的一面。一些比较大的命题，他能举重若轻地用一两句简单的总结，表达出一些一针见血的见解。让人感悟深刻。&lt;/p>
 &lt;/blockquote>
