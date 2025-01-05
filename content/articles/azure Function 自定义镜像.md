@@ -50,7 +50,8 @@ RUN apt-get update && \
 ```bash
 az acr login --name jsongo
 ```
-如果你的 `az` 命令之前登录过，这里直接就成功了。接下去你就可以构建镜像，并把它推到你的这个域上了。
+如果你的 `az` 命令之前登录过，这里直接就成功了。记住后面再遇到 docker 操作提示登录的问题，直接运行上面这个命令即可。  
+接下去你就可以构建镜像，并把它推到你的这个域上了。
 
 ## 构建
 首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。  
@@ -68,12 +69,12 @@ docker run --rm -e WEBSITES_INCLUDE_CLOUD_CERTS=true -p 8080:80 --name test-azur
 ```
 当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。
 
-## 用 azure CLI 更新镜像
+## 用 Azure CLI 更新镜像
 Azure 也提供了相应的指令用于更新你的镜像。
 ```bash
 az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
 ```
-这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。
+这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。  
 	![|750](fd448e8706225766a6d6f778f9f4a967.webp)
 
 ## 推到 Azure 平台上
@@ -91,9 +92,10 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	![|750](https://cdn.jsongo.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp)
 
 # 使用镜像
+下面介绍两种使用镜像的方式，分别对应下图中的两个红框。  
+	![|800](91e83063b4be9b1220ada0b39d119876.webp)
 ## 创建函数应用
-创建一个 Function，但要选高级计划或应用服务才行。  
-	![|825](https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp)  
+创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。  
 	![|600](https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
 	一步步往下直到创建完成。  
 	![](https://cdn.jsongo.top/2025/01/db86acc839e4545ce6e255d56a6bc911.webp)  
@@ -102,14 +104,14 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 至于哪些计划可以支持自定义容器部署可以参考这里：[Azure Functions scale and hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)。  
 	![|725](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
 ## 创建函数环境
-其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。
-同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。
-	![|800](6e426651148ef076621b1023b560e629.webp)
-接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。
-	![|800](79a7aa575854e69faeee00b2bb0fc715.webp)
-费用是按需支付的，跟之前的两种方式不太一样：
-	![|500](d3fd823dfcf0ce5e21431eed55b7b8e3.webp)
-	而且单个机子的配置选项也足够灵活，如图。
+其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。  
+同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
+	![|800](6e426651148ef076621b1023b560e629.webp)  
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。  
+	![|800](a9017305a1d5d7f638ac9a3e1527348b.webp)  
+费用是按需支付的，跟之前的两种方式不太一样：  
+	![|500](d3fd823dfcf0ce5e21431eed55b7b8e3.webp)  
+	而且单个机子的配置选项也足够灵活，如图。  
 	![|275](4c3b44cb3d461ad19f826b60e9af1406.webp)
 # 其它
 ## 关于 Premium Plan 和 Dedicated Plan
@@ -132,9 +134,9 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	小时视角：  
 	![|850](https://cdn.jsongo.top/2025/01/bcac629924bd882bed230aa3781131f6.webp)  
 	月视角：  
-	![|800](https://cdn.jsongo.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp)
-补：后来在函数的设置里，看到了比较实际的价格。
-	![|800](https://cdn.jsongo.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp)
+	![|800](https://cdn.jsongo.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp)  
+补：后来在函数的设置里，看到了比较实际的价格。  
+	![|800](https://cdn.jsongo.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp)  
 	这个看起来比较切合实际，1 小时不到 2 块。
 # 参考
 - [Working with Azure Functions in containers \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&pivots=container-apps#creating-containerized-function-apps)
