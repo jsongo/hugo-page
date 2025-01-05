@@ -25,27 +25,27 @@ Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法
 
 # 展开介绍
 更全面的总结对比下。
-1. **Flex Consumption plan**
+1. **Flex Consumption plan** - 弹性消耗
     - [Azure Functions Flex Consumption plan hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-plan)
     - **缩放方式**：基于每函数的事件驱动缩放，除特定触发器外，不同函数触发器类型可在独立实例上缩放，如 HTTP、Blob 存储（Event Grid）、Durable Functions 分别成组共享实例缩放，提供更确定的缩放方式。
     - **资源与限制**：无容器支持；支持指定预配置实例减少冷启动；支持虚拟网络；函数执行超时默认 30 分钟，最大无限制；每实例内存等资源限制因配置而异，受区域总内存使用限制；每函数应用实例数受内存限制。
     - **适用场景与计费**：适合需要快速水平缩放、有虚拟网络需求、按使用量付费且希望减少冷启动的场景；计费基于函数执行次数、执行时实例内存及预配置实例成本。
-2. **Premium plan**
+2. **Premium plan** - 函数高级计划
     - [Azure Functions Premium plan \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal)
     - **缩放方式**：基于事件驱动自动缩放，使用预热工作进程，根据函数触发事件数量增加主机实例，在空闲后能无延迟运行应用。
     - **资源与限制**：支持 Linux 容器；运行在更强大实例上；函数执行超时默认 30 分钟，最大无限制；Windows 最多 100 个实例，Linux 部分地区可达 20 - 100 个实例；提供更多 CPU 和内存选项。
     - **适用场景与计费**：适用于函数应用持续或近乎持续运行、需要更多实例控制、在同一计划部署多个应用且有事件驱动缩放需求、执行次数多但消费计划费用高、代码执行时间长、需虚拟网络连接或自定义 Linux 镜像的场景；计费基于所需和预热实例的核心秒数及内存使用。
-3. **Dedicated plan**
+3. **Dedicated plan** - 应用服务
     - [Azure Functions Dedicated hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/dedicated-plan)
     - **缩放方式**：支持手动或自动缩放。
     - **资源与限制**：支持 Linux 容器；可在 App Service 计划内以常规费率运行函数；提供完全可预测计费和手动缩放；能访问更大计算规模选项；在 App Service Environment（ASE）中提供完全计算隔离和安全网络访问；内存使用和扩展能力高；函数执行超时默认 30 分钟，最大无限制；实例数一般 10 - 30 个，ASE 中可达 100 个。
     - **适用场景与计费**：适合有现有未充分利用虚拟机、需要完全可预测计费、在同一计划运行多个 Web 和函数应用、需要大计算规模或 ASE 提供的安全网络访问的长运行场景；按 App Service 计划常规费率计费，ASE 有固定月费和按 vCPU 计费。
-4. **Container Apps**
+4. **Container Apps** - 容器应用环境
 	- [Azure Container Apps hosting of Azure Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-container-apps-hosting)
 	- **缩放方式**：具有自动缩放功能，能够根据应用程序的负载自动调整资源分配，可依据传入请求数量或工作负载增减容器实例数量。
 	- **资源与限制**：支持 Linux 容器，运行环境可靠，资源限制依配置和定价层而定。
 	- **适用场景与计费**：适合快速部署和运行容器化应用，特别是微服务架构应用，计费基于容器实例数量、运行时间和占用资源等使用情况。
-5. **Consumption plan**
+5. **Consumption plan** - (按)消耗
     - [Azure Functions Consumption plan hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan)
     - **缩放方式**：基于事件驱动自动缩放，根据传入触发事件数量添加或删除函数主机实例。
     - **资源与限制**：无容器支持；是默认的无服务器托管计划；函数执行超时默认 5 分钟，最大 10 分钟；每实例内存等资源有限；Windows 最多 200 个实例，Linux 最多 100 个实例；有每小时 500 个实例的缩放限制。
