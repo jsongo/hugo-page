@@ -6,7 +6,7 @@ tags:
 created_at: Sun, Jan 5, 2025 - 11:25:49
 date: 2025-01-05T11:25:49.289+08:00
 banner_icon: 👨🏼‍🍳
-banner: https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg
+banner: "https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg"
 slug: azure-function-custom-containers
 title: azure Function 自定义镜像
 description: 主要介绍了如何在 Azure Functions 中使用自定义 Docker 镜像，包括创建和配置 Dockerfile，以及将镜像推送到 Azure 容器注册表（ACR）。此外，还讨论了在 Azure 平台上使用这些镜像的步骤和相关的计划选择。
@@ -103,6 +103,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	![|750](https://cdn.jsongo.top/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp)  
 至于哪些计划可以支持自定义容器部署可以参考这里：[Azure Functions scale and hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)。  
 	![|725](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
+
 ## 创建函数环境
 其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。  
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
