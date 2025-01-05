@@ -90,7 +90,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	![|750](https://cdn.jsongo.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp)
 
 # 使用镜像
-## 创建函数
+## 创建函数应用
 创建一个 Function，但要选高级计划或应用服务才行。  
 	![|825](https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp)  
 	![|600](https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
