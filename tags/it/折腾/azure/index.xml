@@ -329,7 +329,7 @@ alt="|800"
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。 &lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp"
 loading="lazy"
->
+>&lt;br>
 费用是按需支付的，跟之前的两种方式不太一样：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp"
 width="500"
@@ -342,6 +342,26 @@ width="275"
 loading="lazy"
 alt="|275"
 >&lt;/p>
+&lt;h1 id="应用开发和部署">应用开发和部署
+&lt;/h1>&lt;p>如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func azure functionapp publish xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>不过现在我们是把代码打包到容器里，所以没法再使用这种方式去部署。现在需要改成 azure CLI 提供的 build 命令，其实在上文中提过了，只不过要稍加修改。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会重新构建并&lt;/p>
 &lt;h1 id="其它">其它
 &lt;/h1>&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
 &lt;/h2>&lt;p>这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。&lt;/p>
