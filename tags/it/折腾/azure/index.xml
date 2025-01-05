@@ -100,7 +100,7 @@
 &lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合快速部署和运行容器化应用，特别是微服务架构应用，计费基于容器实例数量、运行时间和占用资源等使用情况。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>Consumption plan&lt;/strong> - (按)消耗
+&lt;li>&lt;strong>Consumption plan&lt;/strong> - (按) 消耗
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan" target="_blank" rel="noopener"
 >Azure Functions Consumption plan hosting | Microsoft Learn&lt;/a>&lt;/li>
@@ -114,20 +114,24 @@
 &lt;/h1>&lt;p>5 种函数托管方式在价格上的差别不小。&lt;/p>
 &lt;h2 id="flex-consumption-plan">Flex Consumption Plan
 &lt;/h2>&lt;p>它是基于每函数事件驱动缩放的，有些触发器类型还分组共享实例缩放。&lt;br>
-计费就看函数执行次数、执行时实例内存，还有预配置实例的成本。要是你配置的预配置实例少，低流量的时候费用就低；可要是高流量，需要大量实例了，那随着实例增多，费用自然也跟着涨，具体花多少钱，得看实际用了多少实例、多少内存，还有执行次数这些情况。&lt;/p>
+计费就看函数执行次数、执行时实例内存，还有预配置实例的成本。要是你配置的预配置实例少，低流量的时候费用就低；可要是高流量，需要大量实例了，那随着实例增多，费用自然也跟着涨，具体花多少钱，得看实际用了多少实例、多少内存，还有执行次数这些情况。&lt;br>
+不支持自定义容器。&lt;/p>
 &lt;h2 id="premium-plan">Premium Plan
-&lt;/h2>&lt;p>它是基于事件驱动自动缩放，还有预热工作进程。计费是根据所需和预热实例的核心秒数以及内存使用情况来的。这个计划适合函数应用持续或者近乎持续运行、执行次数又多的情况。虽说基础费用比 Consumption plan 高些，但要是你的应用使用率高，或者有一些特殊需求，用它反而能把总体成本控制得更好，需要自己做好提前的计划。&lt;/p>
+&lt;/h2>&lt;p>它是基于事件驱动自动缩放，还有预热工作进程。计费是根据所需和预热实例的核心秒数以及内存使用情况来的。这个计划&lt;strong>适合函数应用持续或者近乎持续运行、执行次数又多的情况&lt;/strong>。虽说基础费用比 Consumption plan 高些，但要是你的应用使用率高，或者有一些特殊需求，用它反而能把总体成本控制得更好，需要自己做好提前的计划。&lt;br>
+支持自定义容器。&lt;/p>
 &lt;h2 id="dedicated-plan">Dedicated Plan
-&lt;/h2>&lt;p>它支持手动或自动缩放，计费是按 App Service 计划常规费率来的，要是在 App Service Environment（ASE）里，还有固定月费和按 vCPU 计费。要是你手头有现有没充分利用的虚拟机，或者需要完全可预测的计费，又或者想在同一个计划里运行多个 Web 和函数应用，选它就挺合适。不过要注意，它前期投入成本相对高些。&lt;/p>
+&lt;/h2>&lt;p>它支持手动或自动缩放，计费是按 App Service 计划常规费率来的，要是在 App Service Environment（ASE）里，还有固定月费和按 vCPU 计费。&lt;strong>要是你手头有现有没充分利用的虚拟机&lt;/strong>，或者需要完全可预测的计费，又或者想在同一个计划里运行多个 Web 和函数应用，选它就挺合适。不过要注意，它前期投入成本相对高些。&lt;/p>
 &lt;h2 id="container-apps">Container Apps
-&lt;/h2>&lt;p>它是根据容器实例数量、运行时间，还有占用的资源，像 CPU、内存这些来计费的。比如说，你运行一个小型 Linux 容器实例，配置 1 vCPU 和 2GB 内存，跑 1 个小时，费用可能在几美分到几十美分不等，具体得看你在哪个区域，还有那个区域的资源单价是多少。&lt;/p>
+&lt;/h2>&lt;p>它是根据容器实例数量、运行时间，还有占用的资源，像 CPU、内存这些来计费的。比如说，你运行一个小型 Linux 容器实例，配置 1 vCPU 和 2GB 内存，跑 1 个小时，费用可能在几美分到几十美分不等，具体得看你在哪个区域，还有那个区域的资源单价是多少。&lt;br>
+支持自定义容器。&lt;/p>
 &lt;h2 id="consumption-plan">Consumption Plan
 &lt;/h2>&lt;p>这可是个完全无服务器托管的选项，简单来讲，只有函数运行的时候才会产生费用。它是怎么计费的呢？主要看函数的执行数量、执行时间，还有占用的内存。&lt;br>
 举个例子，要是在美国西部区域，有个内存消耗为 512MB 的函数，这个月执行了 3,000,000 次，每次执行就持续 1 秒。咱们来算算账，内存资源消耗费用大概是这样算：&lt;br>
 &lt;code>{（3百万秒 * 512GB/1,024） - 0.4百万GB - 秒} * 0.000016美元/GB - 秒 = 17.6美元&lt;/code>&lt;br>
 函数执行次数费用如下：&lt;br>
 &lt;code>（3百万次执行 – 1百万次执行） * 0.20美元 = 0.4美元&lt;/code>&lt;br>
-把这两项一加，总费用就是 17.6 美元 + 0.4 美元 = 18 美元。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
+把这两项一加，总费用就是 17.6 美元 + 0.4 美元 = 18 美元。&lt;br>
+不支持自定义容器。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
 >microsoft/azure-functions-base&lt;/a> 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。&lt;/p>
 &lt;h1 id="创建自己的镜像">创建自己的镜像
 &lt;/h1>&lt;h2 id="创建-dockerfile">创建 Dockerfile
@@ -314,7 +318,7 @@ width="725"
 loading="lazy"
 alt="|725"
 >&lt;/p>
-&lt;h2 id="创建函数环境">创建函数环境
+&lt;h2 id="创建函数容器环境container-apps">创建函数容器环境（Container Apps）
 &lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。&lt;br>
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。&lt;br>
 &lt;img src="https://www.jsongo.top/6e426651148ef076621b1023b560e629.webp"
