@@ -67,6 +67,7 @@ docker build --tag jsongo/azure-video:0.1.0 .
 docker run --rm -e WEBSITES_INCLUDE_CLOUD_CERTS=true -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
 ```
 当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。
+
 ## 用 azure CLI 更新镜像
 Azure 也提供了相应的指令用于更新你的镜像。
 ```bash
@@ -99,8 +100,15 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 接下去就可以打开 azure 函数首页，去看刚部署的函数。  
 	![|750](https://cdn.jsongo.top/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp)  
 至于哪些计划可以支持自定义容器部署可以参考这里：[Azure Functions scale and hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)。  
-	![|750](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
+	![|725](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
+## 创建函数环境
+其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。
+同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。
+	![|800](6e426651148ef076621b1023b560e629.webp)
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。
+	![|800](79a7aa575854e69faeee00b2bb0fc715.webp)
 
+# 其它
 ## 关于 Premium Plan 和 Dedicated Plan
 这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。
 ### Premium Plan
