@@ -75,7 +75,8 @@ alt="|675"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr login --name jsongo
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>如果你的 &lt;code>az&lt;/code> 命令之前登录过，这里直接就成功了。接下去你就可以构建镜像，并把它推到你的这个域上了。&lt;/p>
+&lt;/div>&lt;p>如果你的 &lt;code>az&lt;/code> 命令之前登录过，这里直接就成功了。记住后面再遇到 docker 操作提示登录的问题，直接运行上面这个命令即可。&lt;br>
+接下去你就可以构建镜像，并把它推到你的这个域上了。&lt;/p>
 &lt;h2 id="构建">构建
 &lt;/h2>&lt;p>首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。&lt;br>
 接下去在本地构建上面创建的镜像。&lt;/p>
@@ -109,7 +110,7 @@ alt="|700"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。&lt;/p>
-&lt;h2 id="用-azure-cli-更新镜像">用 azure CLI 更新镜像
+&lt;h2 id="用-azure-cli-更新镜像">用 Azure CLI 更新镜像
 &lt;/h2>&lt;p>Azure 也提供了相应的指令用于更新你的镜像。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -119,7 +120,7 @@ alt="|700"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。
+&lt;/div>&lt;p>这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。&lt;br>
 &lt;img src="https://www.jsongo.top/fd448e8706225766a6d6f778f9f4a967.webp"
 width="750"
 loading="lazy"
@@ -154,13 +155,14 @@ loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h1 id="使用镜像">使用镜像
-&lt;/h1>&lt;h2 id="创建函数应用">创建函数应用
-&lt;/h2>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
-&lt;img src="https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp"
-width="825"
+&lt;/h1>&lt;p>下面介绍两种使用镜像的方式，分别对应下图中的两个红框。&lt;br>
+&lt;img src="https://www.jsongo.top/91e83063b4be9b1220ada0b39d119876.webp"
+width="800"
 loading="lazy"
-alt="|825"
->&lt;br>
+alt="|800"
+>&lt;/p>
+&lt;h2 id="创建函数应用">创建函数应用
+&lt;/h2>&lt;p>创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp"
 width="600"
 loading="lazy"
@@ -184,26 +186,26 @@ loading="lazy"
 alt="|725"
 >&lt;/p>
 &lt;h2 id="创建函数环境">创建函数环境
-&lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。
-同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。
+&lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。&lt;br>
+同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。&lt;br>
 &lt;img src="https://www.jsongo.top/6e426651148ef076621b1023b560e629.webp"
 width="800"
 loading="lazy"
 alt="|800"
->
-接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。
-&lt;img src="https://www.jsongo.top/79a7aa575854e69faeee00b2bb0fc715.webp"
+>&lt;br>
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。&lt;br>
+&lt;img src="https://www.jsongo.top/a9017305a1d5d7f638ac9a3e1527348b.webp"
 width="800"
 loading="lazy"
 alt="|800"
->
-费用是按需支付的，跟之前的两种方式不太一样：
+>&lt;br>
+费用是按需支付的，跟之前的两种方式不太一样：&lt;br>
 &lt;img src="https://www.jsongo.top/d3fd823dfcf0ce5e21431eed55b7b8e3.webp"
 width="500"
 loading="lazy"
 alt="|500"
->
-而且单个机子的配置选项也足够灵活，如图。
+>&lt;br>
+而且单个机子的配置选项也足够灵活，如图。&lt;br>
 &lt;img src="https://www.jsongo.top/4c3b44cb3d461ad19f826b60e9af1406.webp"
 width="275"
 loading="lazy"
@@ -251,13 +253,13 @@ alt="|850"
 width="800"
 loading="lazy"
 alt="|800"
->
-补：后来在函数的设置里，看到了比较实际的价格。
+>&lt;br>
+补：后来在函数的设置里，看到了比较实际的价格。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp"
 width="800"
 loading="lazy"
 alt="|800"
->
+>&lt;br>
 这个看起来比较切合实际，1 小时不到 2 块。&lt;/li>
 &lt;/ul>
 &lt;h1 id="参考">参考
