@@ -179,11 +179,26 @@ alt="|750"
 至于哪些计划可以支持自定义容器部署可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale" target="_blank" rel="noopener"
 >Azure Functions scale and hosting | Microsoft Learn&lt;/a>。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp"
-width="750"
+width="725"
 loading="lazy"
-alt="|750"
+alt="|725"
 >&lt;/p>
-&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
+&lt;h2 id="创建函数环境">创建函数环境
+&lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。
+同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。
+&lt;img src="https://www.jsongo.top/6e426651148ef076621b1023b560e629.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。
+&lt;img src="https://www.jsongo.top/79a7aa575854e69faeee00b2bb0fc715.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;/p>
+&lt;h1 id="其它">其它
+&lt;/h1>&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
 &lt;/h2>&lt;p>这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。&lt;/p>
 &lt;h3 id="premium-plan">Premium Plan
 &lt;/h3>&lt;ul>
