@@ -1,4 +1,220 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Dec 2024 23:25:18 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Daily Meditations - W52</title><link>https://www.jsongo.top/articles/meditations-w52/</link><pubDate>Wed, 25 Dec 2024 23:25:18 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w52/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b2412e8fae47001461d7b73f3127e2d.jpg" alt="Featured image of post Daily Meditations - W52" />&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 05 Jan 2025 11:25:49 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
+>microsoft/azure-functions-base&lt;/a> 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。&lt;/p>
+&lt;h1 id="创建自己的镜像">创建自己的镜像
+&lt;/h1>&lt;h2 id="创建-dockerfile">创建 Dockerfile
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func init --docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会初始化一个 Dockerfile 等文件，如果你只需要 Dockerfile 可以把参数改成 &lt;code>--docker-only&lt;/code>。&lt;br>
+生成的 Dockerfile 里面有如下基础的配置：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># To enable ssh &amp;amp; remote debugging on app service change the base image to the one below&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="c"># FROM mcr.microsoft.com/azure-functions/python:4-python3.12-appservice&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="s"> mcr.microsoft.com/azure-functions/python:4-python3.12&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">ENV&lt;/span> &lt;span class="nv">AzureWebJobsScriptRoot&lt;/span>&lt;span class="o">=&lt;/span>/home/site/wwwroot &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="nv">AzureFunctionsJobHost__Logging__Console__IsEnabled&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">COPY&lt;/span> requirements.txt /&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> pip install -r /requirements.txt&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">COPY&lt;/span> . /home/site/wwwroot&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这些不要改动。不过可以在上面添加你自己的东西，比如我在做视频相关的处理，所以我需要一个 ffmpeg 库安装上去，所以我添加了如下的代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 安装 ffmpeg&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> apt-get update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> apt-get install -y ffmpeg &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> apt-get clean &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> rm -rf /var/lib/apt/lists/*&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="注册">注册
+&lt;/h2>&lt;p>在 &lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
+>Azure Container Registry&lt;/a>（容器注册表）这里注册一个你自己的命令空间。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/463f2950bea861c9729cb23cdc5a6478.webp"
+width="675"
+loading="lazy"
+alt="|675"
+>&lt;br>
+创建完你就有一个自己的专属 Azure 镜像的域，如我这里的是 &lt;code>jsongo.azurecr.io&lt;/code>。&lt;br>
+在 CLI 中登录：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr login --name jsongo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果你的 &lt;code>az&lt;/code> 命令之前登录过，这里直接就成功了。接下去你就可以构建镜像，并把它推到你的这个域上了。&lt;/p>
+&lt;h2 id="构建">构建
+&lt;/h2>&lt;p>首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。&lt;br>
+接下去在本地构建上面创建的镜像。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker build --tag jsongo/azure-video:0.1.0 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如下示例。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;br>
+比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+构建完，试着把它运行起来看看：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker run --rm -e &lt;span class="nv">WEBSITES_INCLUDE_CLOUD_CERTS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span> -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。&lt;/p>
+&lt;h2 id="推到-azure-平台上">推到 Azure 平台上
+&lt;/h2>&lt;p>先打个 tag，刚构建时，默认是用的 dockerhub 的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker tag jsongo/azure-video:0.1.0 jsongo.azurecr.io/azure-video:0.1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中 &lt;code>jsongo.azurecr.io&lt;/code> 就是我们上面创建的域，它标识了一个 Docker Registry 的地址（默认是 &lt;code>docker.io&lt;/code>）。&lt;br>
+接下去运行 docker push 的时候，就可以找到 azure 的 Registry。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker push jsongo.azurecr.io/azure-video:0.1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后就是等了。我这个镜像 2G+，着实是要等好一会儿。&lt;br>
+Push 完，打开你的 &lt;a class="link" href="https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
+>容器注册表页面&lt;/a>，在这里就可以看到你刚推送上去的镜像了。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h1 id="使用镜像">使用镜像
+&lt;/h1>&lt;p>创建一个 Function，但要选高级计划或应用服务才行。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/97e0c4a5f43cd4dcb940b3b125e1fbbf.webp"
+width="825"
+loading="lazy"
+alt="|825"
+>&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp"
+width="600"
+loading="lazy"
+alt="|600"
+>&lt;br>
+一步步往下直到创建完成。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/db86acc839e4545ce6e255d56a6bc911.webp"
+loading="lazy"
+>&lt;br>
+接下去就可以打开 azure 函数首页，去看刚部署的函数。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;br>
+至于哪些计划可以支持自定义容器部署可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale" target="_blank" rel="noopener"
+>Azure Functions scale and hosting | Microsoft Learn&lt;/a>。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
+&lt;/h2>&lt;p>这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。&lt;/p>
+&lt;h3 id="premium-plan">Premium Plan
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>计算资源&lt;/strong>：通常指高性能的虚拟机或计算实例等。以虚拟机为例，不同规格的虚拟机收费不同，一般每小时的费用在 0.5 美元到几美元不等，如 DS 系列虚拟机可能比普通系列的虚拟机费用要高，高性能的虚拟机每小时费用可能要 0.834 美元甚至更高。&lt;/li>
+&lt;li>&lt;strong>存储资源&lt;/strong>：如果是 Premium Storage，收费标准通常按磁盘的最大容量阶梯收费，而不是用多少算多少，且其读写操作也可能会有额外的收费，如每 10 万个存储事务为 3 元，不过每月一般会提供 100 亿次免费的事务 13。&lt;/li>
+&lt;li>&lt;strong>网络资源&lt;/strong>：对于使用流量较大的公网 IP，每月费用可能在 1.2 美元及以上，负载均衡器每小时也会有一定的费用，如标准负载均衡器每小时的费用是 0.016 美元左右。&lt;/li>
+&lt;/ul>
+&lt;h3 id="dedicated-plan">Dedicated Plan
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>计算资源&lt;/strong>：如 Dedicated Host，一般会根据主机的配置和租用时长收费，一台配置中等的 Dedicated Host 每月费用可能在 1000 美元到 3000 美元左右。&lt;/li>
+&lt;li>&lt;strong>存储资源&lt;/strong>：若使用专用的存储设备或特定的存储方案，收费也会因存储容量、性能要求等因素而异，通常专用存储的费用相对较高，每 GB 每月的费用可能在 0.2 美元到 0.5 美元之间，具体取决于存储类型和性能等级。&lt;/li>
+&lt;li>&lt;strong>网络资源&lt;/strong>：如果需要专用的网络设备或带宽保证，费用也会相应增加，专用网络带宽每 Mbps 每月的费用可能在 10 美元到 50 美元左右。&lt;/li>
+&lt;/ul>
+&lt;h3 id="选择">选择
+&lt;/h3>&lt;p>可以根据需求来选择：&lt;/p>
+&lt;ul>
+&lt;li>如果对计算性能要求极高，但对资源的独占性要求不是特别高，Premium plan 可能更合适，因为它可以提供高性能的计算资源，同时成本相对较低。&lt;/li>
+&lt;li>如果对安全性、合规性以及资源的独占性有严格要求，需要完全隔离的计算和存储环境，那么 Dedicated plan 可能是更好的选择，尽管费用相对较高，但能满足特定的业务需求。&lt;br>
+实在不好选择，直接就选 Premium plan，比较经济些，一般也用不到比较太高级的配置。它目前有以下三个配置可以选：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp"
+width="450"
+loading="lazy"
+alt="|450"
+>&lt;br>
+不过价格上… 是有点高些，具体可以看这里：&lt;a class="link" href="https://azure.microsoft.com/zh-cn/pricing/details/functions/" target="_blank" rel="noopener"
+>定价 - Functions | Microsoft Azure&lt;/a>。&lt;br>
+小时视角：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/bcac629924bd882bed230aa3781131f6.webp"
+width="850"
+loading="lazy"
+alt="|850"
+>&lt;br>
+月视角：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp"
+width="850"
+loading="lazy"
+alt="|850"
+>&lt;/li>
+&lt;/ul>
+&lt;h1 id="参考">参考
+&lt;/h1>&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&amp;amp;pivots=container-apps#creating-containerized-function-apps" target="_blank" rel="noopener"
+>Working with Azure Functions in containers | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-container-registry?tabs=acr,bash&amp;amp;pivots=programming-language-python#build-the-container-image-and-verify-locally" target="_blank" rel="noopener"
+>Create Azure Functions in a local Linux container | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli" target="_blank" rel="noopener"
+>Azure Container Registry roles and permissions - Azure Container Registry | Microsoft Learn&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Daily Meditations - W52</title><link>https://www.jsongo.top/articles/meditations-w52/</link><pubDate>Wed, 25 Dec 2024 23:25:18 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w52/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b2412e8fae47001461d7b73f3127e2d.jpg" alt="Featured image of post Daily Meditations - W52" />&lt;blockquote>
 &lt;p>这两周都在看吴军的新书《脉络》，从书中我读出他有点凯文凯利的一面。一些比较大的命题，他能举重若轻地用一两句简单的总结，表达出一些一针见血的见解。让人感悟深刻。&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="整个社会的视角">整个社会的视角
