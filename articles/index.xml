@@ -196,6 +196,18 @@ alt="|800"
 width="800"
 loading="lazy"
 alt="|800"
+>
+费用是按需支付的，跟之前的两种方式不太一样：
+&lt;img src="https://www.jsongo.top/d3fd823dfcf0ce5e21431eed55b7b8e3.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>
+而且单个机子的配置选项也足够灵活，如图。
+&lt;img src="https://www.jsongo.top/4c3b44cb3d461ad19f826b60e9af1406.webp"
+width="275"
+loading="lazy"
+alt="|275"
 >&lt;/p>
 &lt;h1 id="其它">其它
 &lt;/h1>&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
@@ -208,8 +220,11 @@ alt="|800"
 &lt;/ul>
 &lt;h3 id="dedicated-plan">Dedicated Plan
 &lt;/h3>&lt;ul>
-&lt;li>&lt;strong>计算资源&lt;/strong>：如 Dedicated Host，一般会根据主机的配置和租用时长收费，一台配置中等的 Dedicated Host 每月费用可能在 1000 美元到 3000 美元左右。&lt;/li>
+&lt;li>&lt;strong>计算资源&lt;/strong>：如 Dedicated Host，一般会根据主机的配置和租用时长收费，一台配置中等的 Dedicated Host 每月费用可能在 1000 美元到 3000 美元左右。
+&lt;ul>
 &lt;li>&lt;strong>存储资源&lt;/strong>：若使用专用的存储设备或特定的存储方案，收费也会因存储容量、性能要求等因素而异，通常专用存储的费用相对较高，每 GB 每月的费用可能在 0.2 美元到 0.5 美元之间，具体取决于存储类型和性能等级。&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;strong>网络资源&lt;/strong>：如果需要专用的网络设备或带宽保证，费用也会相应增加，专用网络带宽每 Mbps 每月的费用可能在 10 美元到 50 美元左右。&lt;/li>
 &lt;/ul>
 &lt;h3 id="选择">选择
