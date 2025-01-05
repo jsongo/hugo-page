@@ -116,7 +116,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	月视角：  
 	![|800](https://cdn.jsongo.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp)
 补：后来在函数的设置里，看到了比较实际的价格。
-	![|800](79481a0c437d526a7a1cc2b9bd2e10f5.webp)
+	![|800](https://cdn.jsongo.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp)
 	这个看起来比较切合实际，1 小时不到 2 块。
 # 参考
 - [Working with Azure Functions in containers \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&pivots=container-apps#creating-containerized-function-apps)
