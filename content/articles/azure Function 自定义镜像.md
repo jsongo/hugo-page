@@ -75,7 +75,7 @@ Azure 也提供了相应的指令用于更新你的镜像。
 az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
 ```
 这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。  
-	![|750](fd448e8706225766a6d6f778f9f4a967.webp)
+	![|750](https://cdn.jsongo.top/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp)
 
 ## 推到 Azure 平台上
 先打个 tag，刚构建时，默认是用的 dockerhub 的。
@@ -93,7 +93,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 
 # 使用镜像
 下面介绍两种使用镜像的方式，分别对应下图中的两个红框。  
-	![|800](91e83063b4be9b1220ada0b39d119876.webp)
+	![|800](https://cdn.jsongo.top/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp)
 ## 创建函数应用
 创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。  
 	![|600](https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
@@ -107,14 +107,13 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 ## 创建函数容器环境（Container Apps）
 其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。  
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
-	![|800](6e426651148ef076621b1023b560e629.webp)  
-接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。  
-	![|800](a9017305a1d5d7f638ac9a3e1527348b.webp)  
-	![](dc25ba5f7392919625b20cdf419bc111.webp)
+	![|800](https://cdn.jsongo.top/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp)  
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。    
+	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)
 费用是按需支付的，跟之前的两种方式不太一样：  
-	![|500](d3fd823dfcf0ce5e21431eed55b7b8e3.webp)  
+	![|500](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
 	而且单个机子的配置选项也足够灵活，如图。  
-	![|275](4c3b44cb3d461ad19f826b60e9af1406.webp)
+	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
 # 其它
 ## 关于 Premium Plan 和 Dedicated Plan
 这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。
