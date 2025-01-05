@@ -120,7 +120,13 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 ```bash
 az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
 ```
-它会重新构建并 push 到远程 acr。接下来，我们再运行下之前的更新命令即可：
+它推到远程去构建，并也 push 到远程 acr。  
+多次使用下来，其实我发现直接使用 docker 命令在本地构建会快很多，因为有缓存，所以我把面上的命令改成了：
+```bash
+docker build -t jsongo.azurecr.io/azure-video:latest .
+docker push jsongo.azurecr.io/azure-video:latest
+```
+构建完成后，接下来，我们再运行下之前的更新命令即可：
 ```bash
 func azure functionapp publish video-handler
 ```
