@@ -67,6 +67,13 @@ docker build --tag jsongo/azure-video:0.1.0 .
 docker run --rm -e WEBSITES_INCLUDE_CLOUD_CERTS=true -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
 ```
 当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。
+## 用 azure CLI 更新镜像
+Azure 也提供了相应的指令用于更新你的镜像。
+```bash
+az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
+```
+这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。
+	![|750](fd448e8706225766a6d6f778f9f4a967.webp)
 
 ## 推到 Azure 平台上
 先打个 tag，刚构建时，默认是用的 dockerhub 的。
