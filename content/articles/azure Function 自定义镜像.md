@@ -115,15 +115,16 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 	而且单个机子的配置选项也足够灵活，如图。  
 	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
 # 应用开发和部署
-如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单：
-```bash
-func azure functionapp publish xxx
-```
+如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单，即 `func azure functionapp publish xxx` 就行。  
 不过现在我们是把代码打包到容器里，所以没法再使用这种方式去部署。现在需要改成 azure CLI 提供的 build 命令，其实在上文中提过了，只不过要稍加修改。
 ```bash
 az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
 ```
-它会重新构建并
+它会重新构建并 push 到远程 acr。接下来，我们再运行下之前的更新命令即可：
+```bash
+func azure functionapp publish video-handler
+```
+
 # 其它
 ## 关于 Premium Plan 和 Dedicated Plan
 这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。
