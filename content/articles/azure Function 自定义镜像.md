@@ -104,7 +104,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 至于哪些计划可以支持自定义容器部署可以参考这里：[Azure Functions scale and hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)。  
 	![|725](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
 
-## 创建函数环境
+## 创建函数容器环境（Container Apps）
 其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。  
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
 	![|800](6e426651148ef076621b1023b560e629.webp)  
