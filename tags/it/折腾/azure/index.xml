@@ -64,7 +64,7 @@
 &lt;h1 id="展开介绍">展开介绍
 &lt;/h1>&lt;p>更全面的总结对比下。&lt;/p>
 &lt;ol>
-&lt;li>&lt;strong>Flex Consumption plan&lt;/strong>
+&lt;li>&lt;strong>Flex Consumption plan&lt;/strong> - 弹性消耗
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-plan" target="_blank" rel="noopener"
 >Azure Functions Flex Consumption plan hosting | Microsoft Learn&lt;/a>&lt;/li>
@@ -73,7 +73,7 @@
 &lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合需要快速水平缩放、有虚拟网络需求、按使用量付费且希望减少冷启动的场景；计费基于函数执行次数、执行时实例内存及预配置实例成本。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>Premium plan&lt;/strong>
+&lt;li>&lt;strong>Premium plan&lt;/strong> - 函数高级计划
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal" target="_blank" rel="noopener"
 >Azure Functions Premium plan | Microsoft Learn&lt;/a>&lt;/li>
@@ -82,7 +82,7 @@
 &lt;li>&lt;strong>适用场景与计费&lt;/strong>：适用于函数应用持续或近乎持续运行、需要更多实例控制、在同一计划部署多个应用且有事件驱动缩放需求、执行次数多但消费计划费用高、代码执行时间长、需虚拟网络连接或自定义 Linux 镜像的场景；计费基于所需和预热实例的核心秒数及内存使用。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>Dedicated plan&lt;/strong>
+&lt;li>&lt;strong>Dedicated plan&lt;/strong> - 应用服务
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/dedicated-plan" target="_blank" rel="noopener"
 >Azure Functions Dedicated hosting | Microsoft Learn&lt;/a>&lt;/li>
@@ -91,7 +91,7 @@
 &lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合有现有未充分利用虚拟机、需要完全可预测计费、在同一计划运行多个 Web 和函数应用、需要大计算规模或 ASE 提供的安全网络访问的长运行场景；按 App Service 计划常规费率计费，ASE 有固定月费和按 vCPU 计费。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>Container Apps&lt;/strong>
+&lt;li>&lt;strong>Container Apps&lt;/strong> - 容器应用环境
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-container-apps-hosting" target="_blank" rel="noopener"
 >Azure Container Apps hosting of Azure Functions | Microsoft Learn&lt;/a>&lt;/li>
@@ -100,7 +100,7 @@
 &lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合快速部署和运行容器化应用，特别是微服务架构应用，计费基于容器实例数量、运行时间和占用资源等使用情况。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>Consumption plan&lt;/strong>
+&lt;li>&lt;strong>Consumption plan&lt;/strong> - (按)消耗
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan" target="_blank" rel="noopener"
 >Azure Functions Consumption plan hosting | Microsoft Learn&lt;/a>&lt;/li>
