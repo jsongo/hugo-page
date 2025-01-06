@@ -131,7 +131,735 @@
 函数执行次数费用如下：&lt;br>
 &lt;code>（3百万次执行 – 1百万次执行） * 0.20美元 = 0.4美元&lt;/code>&lt;br>
 把这两项一加，总费用就是 17.6 美元 + 0.4 美元 = 18 美元。&lt;br>
-不支持自定义容器。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
+不支持自定义容器。&lt;/p></description></item><item><title>网络请求 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-http-sse/</link><pubDate>Sun, 05 Jan 2025 16:24:30 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-http-sse/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 网络请求 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;blockquote>
+&lt;p>示例中用的是 Kotlin (KMP) &lt;code>2.x&lt;/code> ，Ktor &lt;code>3.x&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="网络请求">网络请求
+&lt;/h1>&lt;h2 id="基础的请求方法">基础的请求方法
+&lt;/h2>&lt;p>用 ktor 提供的 &lt;code>HttpClient&lt;/code> 来创建一个发请求的 handler，实例化之后，我们包一个通用的 request，定义一个通用的返回类型。&lt;br>
+官方文档中给了不少 &lt;a class="link" href="https://ktor.io/docs/client-requests.html" target="_blank" rel="noopener"
+>示例&lt;/a>，相对比较简单，如：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.request.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.statement.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">HttpResponse&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">client&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;https://ktor.io/&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Configure request parameters exposed by HttpRequestBuilder
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="封装序列化等逻辑">封装序列化等逻辑
+&lt;/h2>&lt;p>不过这只能做一些相对简单场景的请求处理，如果要做 json 解析或 payload 序列化的话，还得引入 ContentNegotiation 、serializer 等，如果还需要 token 认证的话，还得加 header，下面我们一步步封装一个比较通用的请求类。&lt;br>
+代码如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;span class="lnt">82
+&lt;/span>&lt;span class="lnt">83
+&lt;/span>&lt;span class="lnt">84
+&lt;/span>&lt;span class="lnt">85
+&lt;/span>&lt;span class="lnt">86
+&lt;/span>&lt;span class="lnt">87
+&lt;/span>&lt;span class="lnt">88
+&lt;/span>&lt;span class="lnt">89
+&lt;/span>&lt;span class="lnt">90
+&lt;/span>&lt;span class="lnt">91
+&lt;/span>&lt;span class="lnt">92
+&lt;/span>&lt;span class="lnt">93
+&lt;/span>&lt;span class="lnt">94
+&lt;/span>&lt;span class="lnt">95
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.plugins.contentnegotiation.ContentNegotiation&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.plugins.logging.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.request.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.request.forms.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.statement.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.http.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.serialization.kotlinx.json.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.Json&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.JsonObject&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.serializer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">const&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">BASE&lt;/span>&lt;span class="n">_URL&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;https://api.xxx.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">open&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">MyHttpClient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">private&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">baseURL&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">BASE_URL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">private&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">token&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">jsonUtil&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">Json&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">prettyPrint&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">isLenient&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ignoreUnknownKeys&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">encodeDefaults&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">explicitNulls&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">coerceInputValues&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">client&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">HttpClient&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">install&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ContentNegotiation&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">install&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Logging&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logger&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">Logger&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DEFAULT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">level&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">LogLevel&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">INFO&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sanitizeHeader&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">header&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nc">HttpHeaders&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Authorization&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">request&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">method&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">HttpMethod&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">token&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">body&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">HttpResponse&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">queryString&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">params&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">params&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">isNotEmpty&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">entries&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">joinToString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;&amp;amp;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${it.key}&lt;/span>&lt;span class="s2">=&lt;/span>&lt;span class="si">${it.value}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">fullPath&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">contains&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;?&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2">&amp;amp;&lt;/span>&lt;span class="si">$queryString&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">queryString&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">isNotEmpty&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2">?&lt;/span>&lt;span class="si">$queryString&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">url&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">baseURL&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="n">BASE_URL&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="n">fullPath&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Request URL: &lt;/span>&lt;span class="si">$url&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">client&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">url&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">method&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">method&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">headers&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">actualToken&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">token&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="k">this&lt;/span>&lt;span class="nd">@MyHttpClient&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">token&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">actualToken&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpHeaders&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Authorization&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Bearer &lt;/span>&lt;span class="si">${it}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">headers&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">forEach&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">method&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Get&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">body&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">when&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">body&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">MultiPartFormDataContent&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">contentType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">ContentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">MultiPart&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">FormData&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">setBody&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">body&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">contentType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">ContentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">Text&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Plain&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">setBody&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">body&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">JsonObject&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">contentType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">ContentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">Application&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Json&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">setBody&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">encodeToString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">JsonObject&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="n">body&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">contentType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">ContentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">Application&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Json&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">setBody&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">body&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">status&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="nc">HttpStatusCode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">OK&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Error response: &lt;/span>&lt;span class="si">${response.status}&lt;/span>&lt;span class="s2"> - &lt;/span>&lt;span class="si">${response.bodyAsText()}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Exception&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Request failed: &lt;/span>&lt;span class="si">${e.message}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">e&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>jsonUtil 用于统一 json 的序列化和反序列化，这是 Kotlin 等语言里比较特殊的地方，不过也挺好用，可以对“序列化”这个操作做统一的设置，ignoreUnknownKeys 设置为 true，来避免 response 里遇到一些不认识的字段时出错。习惯了动态语言的同学可能不觉得这是个问题，但强类型语言，json 的序列化还是挺讲究的。&lt;/li>
+&lt;li>token 可以在创建类实例的时候传入，也可以在调用具体请求方法的时候传入，灵活些。&lt;/li>
+&lt;li>RequestOptions 用于带入额外的请求头，因为有些接口可能会有特殊的 header 需求。另外为了方便支持 URL 中有多个参数的场景，也可以让用户传入 params，我们把它拼接到 URL 后面。&lt;br>
+上方的代码里还有很多细节，不一一讲了，可以自己查文档。&lt;/li>
+&lt;/ul>
+&lt;h2 id="进一步封装简洁的方法">进一步封装简洁的方法
+&lt;/h2>&lt;p>接着我们常用的其实还是 post 或 get 等，request 本身的参数还是比较多的。所以在 request 方法下方，再添加下更具体的请求方法：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">inline&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="k">reified&lt;/span> &lt;span class="nc">T&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nf">get&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">opts&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">options&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">params&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">params&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">params&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">params&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">headers&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">headers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="n">options&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Get&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">opts&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">responseText&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">bodyAsText&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// println(&amp;#34;[HTTP] Raw Response: $responseText&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">decodeFromString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">&amp;gt;(),&lt;/span> &lt;span class="n">responseText&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">inline&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="k">reified&lt;/span> &lt;span class="nc">T&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nf">post&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Posting to &lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2"> with payload &lt;/span>&lt;span class="si">$payload&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Post&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">responseText&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">bodyAsText&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// println(&amp;#34;[HTTP] Raw Response: $responseText&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">decodeFromString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">&amp;gt;(),&lt;/span> &lt;span class="n">responseText&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">inline&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="k">reified&lt;/span> &lt;span class="nc">T&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nf">put&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Putting to &lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2"> with payload &lt;/span>&lt;span class="si">$payload&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Put&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">responseText&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">bodyAsText&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">decodeFromString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">&amp;gt;(),&lt;/span> &lt;span class="n">responseText&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">inline&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="k">reified&lt;/span> &lt;span class="nc">T&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nf">delete&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">T&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] Deleting from &lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2"> with payload &lt;/span>&lt;span class="si">$payload&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Delete&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">responseText&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">bodyAsText&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonUtil&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">decodeFromString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">T&lt;/span>&lt;span class="p">&amp;gt;(),&lt;/span> &lt;span class="n">responseText&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>用泛型来让用户定义想返回什么类型的结果。&lt;/li>
+&lt;li>用 jsonUtil.decodeFromString 来对结果做反序列化处理。&lt;/li>
+&lt;/ul>
+&lt;h1 id="支持-sse">支持 SSE
+&lt;/h1>&lt;p>在 AI 流行的时代，SSE (Server Sent Event) 成了标配。在前端 JS 等场景中，有 axios 等库做了封装，使用起来很方便，在 Kotlin 里要实现还是得费些工夫。&lt;/p>
+&lt;h2 id="实现">实现
+&lt;/h2>&lt;p>幸运的是，Ktor 3.0 在 2024 年底发布的时候，原生支持 SSE 了。&lt;/p>
+&lt;ul>
+&lt;li>Server 端：&lt;a class="link" href="https://ktor.io/docs/server-server-sent-events.html" target="_blank" rel="noopener"
+>Server-Sent Events | Ktor Documentation&lt;/a>&lt;/li>
+&lt;li>Client 端：&lt;a class="link" href="https://ktor.io/docs/client-server-sent-events.html" target="_blank" rel="noopener"
+>Server-Sent Events | Ktor Documentation&lt;/a>&lt;br>
+KMP Client 端接入现在变得很简单，也不需要什么特殊依赖：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;br>
+扩展上文中的代码，添加一个 sse 方法：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl"> &lt;span class="k">fun&lt;/span> &lt;span class="nf">sse&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">body&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">Flow&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">ServerSentEvent&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">flow&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] SSE posting to &lt;/span>&lt;span class="si">$path&lt;/span>&lt;span class="s2"> with payload &lt;/span>&lt;span class="si">$body&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">client&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">sse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">baseURL&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">method&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Post&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">token&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Authorization&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;Bearer &lt;/span>&lt;span class="si">$it&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Accept&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;text/event-stream&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Cache-Control&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;no-cache&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Connection&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;keep-alive&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">headers&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">forEach&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">header&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">contentType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">ContentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">Application&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Json&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">body&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">setBody&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">it&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">var&lt;/span> &lt;span class="py">shouldContinue&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">var&lt;/span> &lt;span class="py">eventCount&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">maxEvents&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="m">500&lt;/span> &lt;span class="c1">// 最大事件数限制
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">shouldContinue&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">eventCount&lt;/span> &lt;span class="p">&amp;lt;&lt;/span> &lt;span class="n">maxEvents&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">incoming&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">collect&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!is&lt;/span>&lt;span class="n">Active&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] SSE connection is no longer active&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shouldContinue&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>&lt;span class="nd">@collect&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">eventCount&lt;/span>&lt;span class="o">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] SSE event (&lt;/span>&lt;span class="si">$eventCount&lt;/span>&lt;span class="s2">/&lt;/span>&lt;span class="si">$maxEvents&lt;/span>&lt;span class="s2">): &lt;/span>&lt;span class="si">$event&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">eventType&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">event&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">event&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">fromValue&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">it&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 如果 event.event 是 EventType.ERROR，则打印 msg 然后结束
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">eventType&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">ERROR&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shouldContinue&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>&lt;span class="nd">@collect&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">event&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">eventType&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DONE&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">eventType&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">WORKFLOW_DONE&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shouldContinue&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>&lt;span class="nd">@collect&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Exception&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] SSE connection error: &lt;/span>&lt;span class="si">${e.message}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">shouldContinue&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">e&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">eventCount&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="n">maxEvents&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;[HTTP] SSE reached maximum event limit (&lt;/span>&lt;span class="si">$maxEvents&lt;/span>&lt;span class="s2">)&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">Exception&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;SSE reached maximum event limit&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这里要多引入几个包：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.plugins.sse.sse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.sse.ServerSentEvent&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.flow.Flow&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.flow.flow&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.isActive&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这个实现看起来有点复杂。几个关键点：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>client.sse&lt;/code> 是官方提供的、做 SSE 请求的方法，直接就可以使用。&lt;/li>
+&lt;li>&lt;code>header(&amp;quot;Accept&amp;quot;, &amp;quot;text/event-stream&amp;quot;)&lt;/code> 添加一个 Accept header 指定为 &lt;code>text/event-stream&lt;/code>。&lt;/li>
+&lt;li>maxEvents 设置一个最大的事件数，以免 while 在边缘的情况下进入无限的死循环。&lt;/li>
+&lt;li>shouldContinue 用于控制 while 是否继续，逻辑里当发现结束标志的时候，把 shouldContinue 设置成 false。&lt;/li>
+&lt;li>Flow，下面专门讲解。&lt;/li>
+&lt;/ul>
+&lt;h2 id="kotlin-flow">Kotlin Flow
+&lt;/h2>&lt;h3 id="whats-flow">What&amp;rsquo;s Flow
+&lt;/h3>&lt;p>这是属于语言基础的问题，不过多展开。简单说就是在 Kotlin 中，&lt;code>Flow&lt;/code> 是一种用于处理异步数据流的类型安全的 API。它可以用于处理像网络请求返回的数据、数据库查询结果等一系列按顺序产生的数据。&lt;code>Flow&lt;/code> 是 &amp;ldquo;&lt;strong>冷流&lt;/strong>&amp;quot;（Cold Stream），这意味着它只有在被收集（&lt;code>collect&lt;/code>）的时候才会开始执行。&lt;br>
+SSE 的场景不正好就是“按顺序生成数据”嘛，所以自然就跟 Flow 结合了。在 JS、Python 里可能会自然的联想到 generator（&lt;code>yield&lt;/code>），写起来很简单，如 JS 里用 for await 来消费就行。&lt;/p>
+&lt;h3 id="incoming">Incoming
+&lt;/h3>&lt;p>代码中的 incoming 是 &lt;code>client.sse&lt;/code> 引入的、表示 SSE 事件流数据的一个内置变量，它本身就是一个 Flow，直接拿来用即可。这是源码中的定义：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * A Server-sent events session.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">public&lt;/span> &lt;span class="k">interface&lt;/span> &lt;span class="nc">SSESession&lt;/span> &lt;span class="p">:&lt;/span> &lt;span class="n">CoroutineScope&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * An incoming server-sent events flow.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">public&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">incoming&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Flow&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">ServerSentEvent&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>incoming 怎么来的： &lt;code>client.sse&lt;/code> 是由 &lt;code>serverSentEvents&lt;/code> 方法生成的，它返回一个 &lt;code>ClientSSESession&lt;/code>，而 &lt;code>ClientSSESession&lt;/code> 继承了 &lt;code>SSESession&lt;/code>，所以 incoming 一直传到了 &lt;code>client.sse&lt;/code> 的 scope 里。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>当调用 &lt;code>incoming.collect&lt;/code> 时，它会触发这个 &lt;code>Flow&lt;/code> 开始工作，并且会将 &lt;code>Flow&lt;/code> 发射出的每个数据项传递给 &lt;code>collect&lt;/code> 函数内部定义的操作进行处理。Collect 参数是一个 lambda 表达式，参数就是一个 ServerSentEvent，定义如下图，遵守 SSE 的数据流协议，比较标准，没什么好说的。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;/li>
+&lt;li>EventType 是我们自己定义的，根据业务来定制的，开发者可以自己命令（跟服务端接口对齐好就行），大概的定义可以参考这个实现：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * Event types for all events (chat, workflow, etc.)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Serializable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">enum&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">val&lt;/span> &lt;span class="py">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Chat events
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">CONVERSATION_CHAT_CREATED&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;conversation.chat.created&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">CONVERSATION_CHAT_IN_PROGRESS&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;conversation.chat.in_progress&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">CONVERSATION_CHAT_COMPLETED&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;conversation.chat.completed&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">CONVERSATION_CHAT_FAILED&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;conversation.chat.failed&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Common events
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">DONE&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;done&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ERROR&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;error&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">companion&lt;/span> &lt;span class="k">object&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">fun&lt;/span> &lt;span class="nf">fromValue&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">value&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="n">EventType&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">entries&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">find&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="k">it&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="k">value&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="k">value&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中 DONE 表示这个流已经结束了，字符串“done”是后端定的，换成其它标识也行，但不管怎么说得有这么一个结束标识，要不然就会一直卡在那等。&lt;/p>
+&lt;h3 id="协程">协程
+&lt;/h3>&lt;p>Flow 的 &lt;code>collect&lt;/code> 函数本身其实不是用于启动协程的。&lt;br>
+它是一个挂起函数，有点类似其它语言中的 &lt;code>yield&lt;/code>。挂起就意味着它必须在协程的上下文中被调用（要不然主线程就被阻塞了）。&lt;br>
+协程是一种轻量级的线程，可以暂停和恢复，用于处理异步操作。运行一个协程有几种方式，介绍两种：&lt;br>
+1、runBlocking&lt;/p>
+&lt;ul>
+&lt;li>我们可以在 &lt;code>runBlocking&lt;/code> 协程构建器的上下文中可以调用 &lt;code>collect&lt;/code>。&lt;code>runBlocking&lt;/code> 是一个顶层协程启动器，它会阻塞当前线程，直到其内部的协程（包括调用 &lt;code>collect&lt;/code> 的操作）完成，所以使用时，我们可以用它来包一下，让 Flow 在里面被消费。
+&lt;ul>
+&lt;li>不过 &lt;code>runBlocking&lt;/code> 是一个顶层协程启动器，会阻塞当前线程，直到其内部的协程（包括所有子协程）执行完成。这意味着在 &lt;code>runBlocking&lt;/code> 内部的代码执行完之前，外部的代码（如果有的话）是无法继续执行的。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>示例：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">fun&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Before runBlocking&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">runBlocking&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delay&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Inside runBlocking&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;After runBlocking&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&lt;code>Before runBlocking&lt;/code> 会先打印，然后 &lt;code>runBlocking&lt;/code> 内部的协程开始执行，由于 &lt;code>delay&lt;/code> 操作暂停了协程 1 秒钟，在这期间当前线程被阻塞。当协程内部的代码执行完后，才会打印 &lt;code>After runBlocking&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>2、 CoroutineScope&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>CoroutineScope&lt;/code> 本身并不阻塞线程。它主要是用于定义协程的作用域，确定了协程的生命周期和上下文。协程在 &lt;code>CoroutineScope&lt;/code> 内启动后，&lt;code>CoroutineScope&lt;/code> 可以继续执行其他操作，不会等待协程完成。&lt;/li>
+&lt;li>改下上面的例子：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">fun&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">runBlocking&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Before CoroutineScope&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">scope&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">CoroutineScope&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">Dispatchers&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Default&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">scope&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">launch&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">delay&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">1000&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Inside launched coroutine&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;After CoroutineScope&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这次 &lt;code>Before CoroutineScope&lt;/code> 和 &lt;code>After CoroutineScope&lt;/code> 会先打印，然后才是 &lt;code>Inside launched coroutine&lt;/code>。&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>&lt;code>collect&lt;/code> 的一些特点和注意事项&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;strong>顺序处理&lt;/strong>：&lt;code>collect&lt;/code> 会按照 &lt;code>Flow&lt;/code> 发射数据的顺序来处理数据。如果 &lt;code>Flow&lt;/code> 发射的数据有先后顺序，&lt;code>collect&lt;/code> 也会按照这个顺序依次处理每个数据项。&lt;/li>
+&lt;li>&lt;strong>挂起函数&lt;/strong>：&lt;code>collect&lt;/code> 是一个挂起函数，这意味着它要在协程（Coroutine）内部被调用，并且可以暂停协程的执行，直到 &lt;code>Flow&lt;/code> 有新的数据需要处理或者 &lt;code>Flow&lt;/code> 完成。而 &lt;code>runBlocking&lt;/code> 是一个用于在主函数中启动协程的函数，它会阻塞当前线程，直到所有协程完成。&lt;/li>
+&lt;li>&lt;strong>异常处理&lt;/strong>：如果 &lt;code>Flow&lt;/code> 在发射数据过程中出现异常，&lt;code>collect&lt;/code> 函数可以通过合适的异常处理机制来捕获和处理这些异常。例如，可以在 &lt;code>collect&lt;/code> 函数内部使用 &lt;code>try - catch&lt;/code> 块来处理可能出现的异常。&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用-sse">使用 SSE
+&lt;/h2>&lt;p>使用上肯定是直接用 collect 只不过如果要不阻塞当前的主线程，可以用上文介绍的 CoroutineScope。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.flow.Flow&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.coroutines.flow.collect&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">startEventFlowProcessing&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">apiUrl&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">eventFlow&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">client&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">sse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">apiUrl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="o">?:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 使用 launch 开启一个新的协程来执行收集操作
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">CoroutineScope&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">Dispatchers&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Default&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="n">launch&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">eventFlow&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">collect&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">event&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">chatData&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">sseEvent2ChatData&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">event&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">emit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">chatData&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// If event is &amp;#34;[DONE]&amp;#34;, end
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">chatData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">event&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="nc">EventType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DONE&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;SSE DONE.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>&lt;span class="nd">@collect&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>要阻塞，就换成 runBlocking。这里就不再补充代码示例了。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
 >microsoft/azure-functions-base&lt;/a> 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。&lt;/p>
 &lt;h1 id="创建自己的镜像">创建自己的镜像
 &lt;/h1>&lt;h2 id="创建-dockerfile">创建 Dockerfile

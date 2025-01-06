@@ -1,0 +1,596 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><meta name=description content="在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。"><title>网络请求 - 用 Kotlin(KMP) 做跨端原生开发</title>
+<link rel=canonical href=https://www.jsongo.top/articles/kmp-http-sse/><link rel=stylesheet href=/scss/style.min.b4cd21f325cfc998a0d460813276c3ae35b324142278563c2c80066f5d320e0c.css><script src=https://res.wx.qq.com/open/js/jweixin-1.6.0.js></script><script>wx.ready(function(){wx.updateAppMessageShareData({title:"网络请求 - 用 Kotlin(KMP) 做跨端原生开发",desc:"在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。",link:"https://www.jsongo.top/articles/kmp-http-sse/",imgUrl:"https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg",success:function(){}})})</script><meta property='og:title' content="网络请求 - 用 Kotlin(KMP) 做跨端原生开发"><meta property='og:description' content="在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。"><meta property='og:url' content='https://www.jsongo.top/articles/kmp-http-sse/'><meta property='og:site_name' content='Ethan 的思考札记'><meta property='og:type' content='article'><meta property='article:section' content='Articles'><meta property='article:tag' content='IT/app'><meta property='article:published_time' content='2025-01-05T16:24:30+08:00'><meta property='article:modified_time' content='2025-01-05T16:24:30+08:00'><meta property='og:image' content='https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg'><meta name=twitter:title content="网络请求 - 用 Kotlin(KMP) 做跨端原生开发"><meta name=twitter:description content="在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg'><link rel="shortcut icon" href=https://cdn.jsongo.top/mc/favicon.jpg></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu7049013329120086875.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>Ethan 的思考札记</a></h1><h2 class=site-description>Keeping Grit!</h2></div></header><ol class=menu id=main-menu><li><a href=/page/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/page/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/page/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li><a href=/about target=_blank><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About Me</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ul><li><a href=#网络请求>网络请求</a><ul><li><a href=#基础的请求方法>基础的请求方法</a></li><li><a href=#封装序列化等逻辑>封装序列化等逻辑</a></li><li><a href=#进一步封装简洁的方法>进一步封装简洁的方法</a></li></ul></li><li><a href=#支持-sse>支持 SSE</a><ul><li><a href=#实现>实现</a></li><li><a href=#kotlin-flow>Kotlin Flow</a><ul><li><a href=#whats-flow>What&rsquo;s Flow</a></li><li><a href=#incoming>Incoming</a></li><li><a href=#协程>协程</a></li></ul></li><li><a href=#使用-sse>使用 SSE</a></li></ul></li></ul></nav></div></section><section class="widget tagCloud"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg></div><h2 class="widget-title section-title">Tags</h2><div class=tagCloud-tags><a href=/tags/it/%E6%8A%98%E8%85%BE/azure/ class=font_size_5>IT/折腾/Azure
+</a><a href=/tags/ai/diffusion/ class=font_size_3>AI/Diffusion
+</a><a href=/tags/area/thinking/ class=font_size_3>Area/Thinking
+</a><a href=/tags/ai/%E5%B7%A5%E5%85%B7/cursor/ class=font_size_2>AI/工具/Cursor
+</a><a href=/tags/it/app/ class=font_size_2>IT/App
+</a><a href=/tags/%E8%BE%93%E5%85%A5/%E4%B9%A6/ class=font_size_2>输入/书
+</a><a href=/tags/ai/%E5%8E%9F%E7%90%86/ class=font_size_1>AI/原理
+</a><a href=/tags/ai/%E5%B7%A5%E5%85%B7/cursor/ class=font_size_1>AI/工具/Cursor
+</a><a href=/tags/area/life/2024/ class=font_size_1>Area/Life/2024
+</a><a href=/tags/area/life/weekly/ class=font_size_1>Area/Life/Weekly</a></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/articles/kmp-http-sse/><img src=https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg loading=lazy alt="Featured image of post 网络请求 - 用 Kotlin(KMP) 做跨端原生开发"></a></div><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/articles/kmp-http-sse/>网络请求 - 用 Kotlin(KMP) 做跨端原生开发</a></h2><h3 class=article-subtitle>在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。</h3></div><footer class=article-tags><div><svg class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 3l9 9a1.5 1.5.0 010 2l-6 6a1.5 1.5.0 01-2 0L3 11V7a4 4 0 014-4h4"/><circle cx="9" cy="9" r="2"/></svg>
+<a href=/tags/IT/app>IT/app</a></div></footer><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sun, Jan 05, 2025</time></div></footer></div></header><section class=article-content><blockquote><p>示例中用的是 Kotlin (KMP) <code>2.x</code> ，Ktor <code>3.x</code></p></blockquote><h1 id=网络请求>网络请求</h1><h2 id=基础的请求方法>基础的请求方法</h2><p>用 ktor 提供的 <code>HttpClient</code> 来创建一个发请求的 handler，实例化之后，我们包一个通用的 request，定义一个通用的返回类型。<br>官方文档中给了不少 <a class=link href=https://ktor.io/docs/client-requests.html target=_blank rel=noopener>示例</a>，相对比较简单，如：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.request.*</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.statement.*</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>val</span> <span class=py>response</span><span class=p>:</span> <span class=n>HttpResponse</span> <span class=p>=</span> <span class=n>client</span><span class=p>.</span><span class=n>request</span><span class=p>(</span><span class=s2>&#34;https://ktor.io/&#34;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Configure request parameters exposed by HttpRequestBuilder
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=封装序列化等逻辑>封装序列化等逻辑</h2><p>不过这只能做一些相对简单场景的请求处理，如果要做 json 解析或 payload 序列化的话，还得引入 ContentNegotiation 、serializer 等，如果还需要 token 认证的话，还得加 header，下面我们一步步封装一个比较通用的请求类。<br>代码如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span><span class=lnt>90
+</span><span class=lnt>91
+</span><span class=lnt>92
+</span><span class=lnt>93
+</span><span class=lnt>94
+</span><span class=lnt>95
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.plugins.contentnegotiation.ContentNegotiation</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.plugins.logging.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.request.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.request.forms.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.statement.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.http.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.serialization.kotlinx.json.*</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.serialization.json.Json</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.serialization.json.JsonObject</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.serialization.serializer</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=k>const</span> <span class=k>val</span> <span class=py>BASE</span><span class=n>_URL</span> <span class=p>=</span> <span class=s2>&#34;https://api.xxx.com&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>open</span> <span class=k>class</span> <span class=nc>MyHttpClient</span><span class=p>(</span><span class=k>private</span> <span class=k>val</span> <span class=py>baseURL</span><span class=p>:</span> <span class=n>String</span><span class=p>?</span> <span class=p>=</span> <span class=n>BASE_URL</span><span class=p>,</span> <span class=k>private</span> <span class=k>val</span> <span class=py>token</span><span class=p>:</span> <span class=n>String</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>    <span class=k>val</span> <span class=py>jsonUtil</span> <span class=p>=</span> <span class=n>Json</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>prettyPrint</span> <span class=p>=</span> <span class=k>true</span>  
+</span></span><span class=line><span class=cl>        <span class=n>isLenient</span> <span class=p>=</span> <span class=k>true</span>  
+</span></span><span class=line><span class=cl>        <span class=n>ignoreUnknownKeys</span> <span class=p>=</span> <span class=k>true</span>  
+</span></span><span class=line><span class=cl>        <span class=n>encodeDefaults</span> <span class=p>=</span> <span class=k>true</span>  
+</span></span><span class=line><span class=cl>        <span class=n>explicitNulls</span> <span class=p>=</span> <span class=k>false</span>  
+</span></span><span class=line><span class=cl>        <span class=n>coerceInputValues</span> <span class=p>=</span> <span class=k>true</span>  
+</span></span><span class=line><span class=cl>    <span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=k>private</span> <span class=k>val</span> <span class=py>client</span> <span class=p>=</span> <span class=n>HttpClient</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>install</span><span class=p>(</span><span class=n>ContentNegotiation</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>json</span><span class=p>(</span><span class=n>jsonUtil</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>        <span class=n>install</span><span class=p>(</span><span class=n>Logging</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>logger</span> <span class=p>=</span> <span class=nc>Logger</span><span class=p>.</span><span class=n>DEFAULT</span>  
+</span></span><span class=line><span class=cl>            <span class=n>level</span> <span class=p>=</span> <span class=nc>LogLevel</span><span class=p>.</span><span class=n>INFO</span>  
+</span></span><span class=line><span class=cl>            <span class=n>sanitizeHeader</span> <span class=p>{</span> <span class=n>header</span> <span class=o>-&gt;</span> <span class=n>header</span> <span class=o>==</span> <span class=nc>HttpHeaders</span><span class=p>.</span><span class=n>Authorization</span> <span class=p>}</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span> 
+</span></span><span class=line><span class=cl>    <span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=k>suspend</span> <span class=k>fun</span> <span class=nf>request</span><span class=p>(</span>  
+</span></span><span class=line><span class=cl>        <span class=n>method</span><span class=p>:</span> <span class=n>HttpMethod</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>        <span class=n>token</span><span class=p>:</span> <span class=n>String</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>        <span class=n>body</span><span class=p>:</span> <span class=n>Any</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>  
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>  
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>HttpResponse</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>queryString</span> <span class=p>=</span> <span class=n>options</span><span class=o>?.</span><span class=n>params</span><span class=o>?.</span><span class=n>let</span> <span class=p>{</span> <span class=n>params</span> <span class=o>-&gt;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>params</span><span class=p>.</span><span class=n>isNotEmpty</span><span class=p>())</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>params</span><span class=p>.</span><span class=n>entries</span><span class=p>.</span><span class=n>joinToString</span><span class=p>(</span><span class=s2>&#34;&amp;&#34;</span><span class=p>)</span> <span class=p>{</span> <span class=s2>&#34;</span><span class=si>${it.key}</span><span class=s2>=</span><span class=si>${it.value}</span><span class=s2>&#34;</span> <span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=s2>&#34;&#34;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=o>?:</span> <span class=s2>&#34;&#34;</span>  
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>fullPath</span> <span class=p>=</span> <span class=k>if</span> <span class=p>(</span><span class=n>path</span><span class=p>.</span><span class=n>contains</span><span class=p>(</span><span class=s2>&#34;?&#34;</span><span class=p>))</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=s2>&#34;</span><span class=si>$path</span><span class=s2>&amp;</span><span class=si>$queryString</span><span class=s2>&#34;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>queryString</span><span class=p>.</span><span class=n>isNotEmpty</span><span class=p>())</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=s2>&#34;</span><span class=si>$path</span><span class=s2>?</span><span class=si>$queryString</span><span class=s2>&#34;</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>else</span> <span class=n>path</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>url</span> <span class=p>=</span> <span class=p>(</span><span class=n>baseURL</span> <span class=o>?:</span> <span class=n>BASE_URL</span><span class=p>)</span> <span class=p>+</span> <span class=n>fullPath</span>  
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Request URL: </span><span class=si>$url</span><span class=s2>&#34;</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>try</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=k>val</span> <span class=py>response</span> <span class=p>=</span> <span class=n>client</span><span class=p>.</span><span class=n>request</span><span class=p>(</span><span class=n>url</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                <span class=k>this</span><span class=p>.</span><span class=n>method</span> <span class=p>=</span> <span class=n>method</span>  
+</span></span><span class=line><span class=cl>                <span class=n>headers</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                    <span class=k>val</span> <span class=py>actualToken</span> <span class=p>=</span> <span class=n>token</span> <span class=o>?:</span> <span class=k>this</span><span class=nd>@MyHttpClient</span><span class=p>.</span><span class=n>token</span>  
+</span></span><span class=line><span class=cl>                    <span class=n>actualToken</span><span class=o>?.</span><span class=n>let</span> <span class=p>{</span> <span class=n>append</span><span class=p>(</span><span class=nc>HttpHeaders</span><span class=p>.</span><span class=n>Authorization</span><span class=p>,</span> <span class=s2>&#34;Bearer </span><span class=si>${it}</span><span class=s2>&#34;</span><span class=p>)</span> <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                    <span class=n>options</span><span class=o>?.</span><span class=n>headers</span><span class=o>?.</span><span class=n>forEach</span> <span class=p>{</span> <span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=k>value</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n>append</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=k>value</span><span class=p>)</span> <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                <span class=p>}</span>                
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=p>(</span><span class=n>method</span> <span class=o>!=</span> <span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Get</span> <span class=o>&amp;&amp;</span> <span class=n>body</span> <span class=o>!=</span> <span class=k>null</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                    <span class=k>when</span> <span class=p>(</span><span class=n>body</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                        <span class=k>is</span> <span class=n>MultiPartFormDataContent</span> <span class=o>-&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>contentType</span><span class=p>(</span><span class=nc>ContentType</span><span class=p>.</span><span class=nc>MultiPart</span><span class=p>.</span><span class=n>FormData</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>setBody</span><span class=p>(</span><span class=n>body</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                        <span class=k>is</span> <span class=n>String</span> <span class=o>-&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>contentType</span><span class=p>(</span><span class=nc>ContentType</span><span class=p>.</span><span class=nc>Text</span><span class=p>.</span><span class=n>Plain</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>setBody</span><span class=p>(</span><span class=n>body</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                        <span class=k>is</span> <span class=n>JsonObject</span> <span class=o>-&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>contentType</span><span class=p>(</span><span class=nc>ContentType</span><span class=p>.</span><span class=nc>Application</span><span class=p>.</span><span class=n>Json</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>setBody</span><span class=p>(</span><span class=n>jsonUtil</span><span class=p>.</span><span class=n>encodeToString</span><span class=p>(</span><span class=nc>JsonObject</span><span class=p>.</span><span class=n>serializer</span><span class=p>(),</span> <span class=n>body</span><span class=p>))</span>  
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                        <span class=k>else</span> <span class=o>-&gt;</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>contentType</span><span class=p>(</span><span class=nc>ContentType</span><span class=p>.</span><span class=nc>Application</span><span class=p>.</span><span class=n>Json</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                            <span class=n>setBody</span><span class=p>(</span><span class=n>body</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                    <span class=p>}</span>  
+</span></span><span class=line><span class=cl>                <span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>response</span><span class=p>.</span><span class=n>status</span> <span class=o>!=</span> <span class=nc>HttpStatusCode</span><span class=p>.</span><span class=n>OK</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Error response: </span><span class=si>${response.status}</span><span class=s2> - </span><span class=si>${response.bodyAsText()}</span><span class=s2>&#34;</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>            <span class=p>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>response</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>:</span> <span class=n>Exception</span><span class=p>)</span> <span class=p>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Request failed: </span><span class=si>${e.message}</span><span class=s2>&#34;</span><span class=p>)</span>  
+</span></span><span class=line><span class=cl>            <span class=k>throw</span> <span class=n>e</span>  
+</span></span><span class=line><span class=cl>        <span class=p>}</span>  
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>jsonUtil 用于统一 json 的序列化和反序列化，这是 Kotlin 等语言里比较特殊的地方，不过也挺好用，可以对“序列化”这个操作做统一的设置，ignoreUnknownKeys 设置为 true，来避免 response 里遇到一些不认识的字段时出错。习惯了动态语言的同学可能不觉得这是个问题，但强类型语言，json 的序列化还是挺讲究的。</li><li>token 可以在创建类实例的时候传入，也可以在调用具体请求方法的时候传入，灵活些。</li><li>RequestOptions 用于带入额外的请求头，因为有些接口可能会有特殊的 header 需求。另外为了方便支持 URL 中有多个参数的场景，也可以让用户传入 params，我们把它拼接到 URL 后面。<br>上方的代码里还有很多细节，不一一讲了，可以自己查文档。</li></ul><h2 id=进一步封装简洁的方法>进一步封装简洁的方法</h2><p>接着我们常用的其实还是 post 或 get 等，request 本身的参数还是比较多的。所以在 request 方法下方，再添加下更具体的请求方法：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl>    <span class=k>suspend</span> <span class=k>inline</span> <span class=k>fun</span> <span class=p>&lt;</span><span class=k>reified</span> <span class=nc>T</span><span class=p>&gt;</span> <span class=nf>get</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>T</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>opts</span> <span class=p>=</span> <span class=k>if</span> <span class=p>(</span><span class=n>options</span><span class=o>?.</span><span class=n>params</span> <span class=o>!=</span> <span class=k>null</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>RequestOptions</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>                <span class=n>params</span> <span class=p>=</span> <span class=n>options</span><span class=p>.</span><span class=n>params</span> <span class=p>+</span> <span class=n>options</span><span class=p>.</span><span class=n>params</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>headers</span> <span class=p>=</span> <span class=n>options</span><span class=p>.</span><span class=n>headers</span>
+</span></span><span class=line><span class=cl>            <span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>else</span> <span class=n>options</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>response</span> <span class=p>=</span> <span class=n>request</span><span class=p>(</span><span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Get</span><span class=p>,</span> <span class=n>path</span><span class=p>,</span> <span class=k>null</span><span class=p>,</span> <span class=n>options</span> <span class=p>=</span> <span class=n>opts</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>responseText</span> <span class=p>=</span> <span class=n>response</span><span class=p>.</span><span class=n>bodyAsText</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// println(&#34;[HTTP] Raw Response: $responseText&#34;)
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=n>jsonUtil</span><span class=p>.</span><span class=n>decodeFromString</span><span class=p>(</span><span class=n>serializer</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(),</span> <span class=n>responseText</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>suspend</span> <span class=k>inline</span> <span class=k>fun</span> <span class=p>&lt;</span><span class=k>reified</span> <span class=nc>T</span><span class=p>&gt;</span> <span class=nf>post</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>payload</span><span class=p>:</span> <span class=n>Any</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>T</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Posting to </span><span class=si>$path</span><span class=s2> with payload </span><span class=si>$payload</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>response</span> <span class=p>=</span> <span class=n>request</span><span class=p>(</span><span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Post</span><span class=p>,</span> <span class=n>path</span><span class=p>,</span> <span class=k>null</span><span class=p>,</span> <span class=n>payload</span><span class=p>,</span> <span class=n>options</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>responseText</span> <span class=p>=</span> <span class=n>response</span><span class=p>.</span><span class=n>bodyAsText</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// println(&#34;[HTTP] Raw Response: $responseText&#34;)
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>return</span> <span class=n>jsonUtil</span><span class=p>.</span><span class=n>decodeFromString</span><span class=p>(</span><span class=n>serializer</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(),</span> <span class=n>responseText</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>suspend</span> <span class=k>inline</span> <span class=k>fun</span> <span class=p>&lt;</span><span class=k>reified</span> <span class=nc>T</span><span class=p>&gt;</span> <span class=nf>put</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>payload</span><span class=p>:</span> <span class=n>Any</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>T</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Putting to </span><span class=si>$path</span><span class=s2> with payload </span><span class=si>$payload</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>response</span> <span class=p>=</span> <span class=n>request</span><span class=p>(</span><span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Put</span><span class=p>,</span> <span class=n>path</span><span class=p>,</span> <span class=k>null</span><span class=p>,</span> <span class=n>payload</span><span class=p>,</span> <span class=n>options</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>responseText</span> <span class=p>=</span> <span class=n>response</span><span class=p>.</span><span class=n>bodyAsText</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>jsonUtil</span><span class=p>.</span><span class=n>decodeFromString</span><span class=p>(</span><span class=n>serializer</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(),</span> <span class=n>responseText</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>suspend</span> <span class=k>inline</span> <span class=k>fun</span> <span class=p>&lt;</span><span class=k>reified</span> <span class=nc>T</span><span class=p>&gt;</span> <span class=nf>delete</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>payload</span><span class=p>:</span> <span class=n>Any</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>T</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] Deleting from </span><span class=si>$path</span><span class=s2> with payload </span><span class=si>$payload</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>response</span> <span class=p>=</span> <span class=n>request</span><span class=p>(</span><span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Delete</span><span class=p>,</span> <span class=n>path</span><span class=p>,</span> <span class=k>null</span><span class=p>,</span> <span class=n>payload</span><span class=p>,</span> <span class=n>options</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>val</span> <span class=py>responseText</span> <span class=p>=</span> <span class=n>response</span><span class=p>.</span><span class=n>bodyAsText</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>jsonUtil</span><span class=p>.</span><span class=n>decodeFromString</span><span class=p>(</span><span class=n>serializer</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;(),</span> <span class=n>responseText</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>用泛型来让用户定义想返回什么类型的结果。</li><li>用 jsonUtil.decodeFromString 来对结果做反序列化处理。</li></ul><h1 id=支持-sse>支持 SSE</h1><p>在 AI 流行的时代，SSE (Server Sent Event) 成了标配。在前端 JS 等场景中，有 axios 等库做了封装，使用起来很方便，在 Kotlin 里要实现还是得费些工夫。</p><h2 id=实现>实现</h2><p>幸运的是，Ktor 3.0 在 2024 年底发布的时候，原生支持 SSE 了。</p><ul><li>Server 端：<a class=link href=https://ktor.io/docs/server-server-sent-events.html target=_blank rel=noopener>Server-Sent Events | Ktor Documentation</a></li><li>Client 端：<a class=link href=https://ktor.io/docs/client-server-sent-events.html target=_blank rel=noopener>Server-Sent Events | Ktor Documentation</a><br>KMP Client 端接入现在变得很简单，也不需要什么特殊依赖：<br><img src=https://cdn.jsongo.top/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp width=500 loading=lazy alt=|500><br>扩展上文中的代码，添加一个 sse 方法：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl>    <span class=k>fun</span> <span class=nf>sse</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>path</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>body</span><span class=p>:</span> <span class=n>Any</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span>
+</span></span><span class=line><span class=cl>    <span class=p>):</span> <span class=n>Flow</span><span class=p>&lt;</span><span class=n>ServerSentEvent</span><span class=p>&gt;</span> <span class=p>=</span> <span class=n>flow</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] SSE posting to </span><span class=si>$path</span><span class=s2> with payload </span><span class=si>$body</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>client</span><span class=p>.</span><span class=n>sse</span><span class=p>(</span><span class=n>baseURL</span> <span class=p>+</span> <span class=n>path</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>method</span> <span class=p>=</span> <span class=nc>HttpMethod</span><span class=p>.</span><span class=n>Post</span>
+</span></span><span class=line><span class=cl>            <span class=n>token</span><span class=o>?.</span><span class=n>let</span> <span class=p>{</span> 
+</span></span><span class=line><span class=cl>                <span class=n>header</span><span class=p>(</span><span class=s2>&#34;Authorization&#34;</span><span class=p>,</span> <span class=s2>&#34;Bearer </span><span class=si>$it</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=n>header</span><span class=p>(</span><span class=s2>&#34;Accept&#34;</span><span class=p>,</span> <span class=s2>&#34;text/event-stream&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>header</span><span class=p>(</span><span class=s2>&#34;Cache-Control&#34;</span><span class=p>,</span> <span class=s2>&#34;no-cache&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>header</span><span class=p>(</span><span class=s2>&#34;Connection&#34;</span><span class=p>,</span> <span class=s2>&#34;keep-alive&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>options</span><span class=o>?.</span><span class=n>headers</span><span class=o>?.</span><span class=n>forEach</span> <span class=p>{</span> <span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=k>value</span><span class=p>)</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=n>header</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=k>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=n>contentType</span><span class=p>(</span><span class=nc>ContentType</span><span class=p>.</span><span class=nc>Application</span><span class=p>.</span><span class=n>Json</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>body</span><span class=o>?.</span><span class=n>let</span> <span class=p>{</span> 
+</span></span><span class=line><span class=cl>                <span class=n>setBody</span><span class=p>(</span><span class=k>it</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>})</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>var</span> <span class=py>shouldContinue</span> <span class=p>=</span> <span class=k>true</span>
+</span></span><span class=line><span class=cl>            <span class=k>var</span> <span class=py>eventCount</span> <span class=p>=</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl>            <span class=k>val</span> <span class=py>maxEvents</span> <span class=p>=</span> <span class=m>500</span> <span class=c1>// 最大事件数限制
+</span></span></span><span class=line><span class=cl><span class=c1></span>            
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=p>(</span><span class=n>shouldContinue</span> <span class=o>&amp;&amp;</span> <span class=n>eventCount</span> <span class=p>&lt;</span> <span class=n>maxEvents</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>incoming</span><span class=p>.</span><span class=n>collect</span> <span class=p>{</span> <span class=n>event</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>                        <span class=k>if</span> <span class=p>(</span><span class=o>!is</span><span class=n>Active</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                            <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] SSE connection is no longer active&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                            <span class=n>shouldContinue</span> <span class=p>=</span> <span class=k>false</span>
+</span></span><span class=line><span class=cl>                            <span class=k>return</span><span class=nd>@collect</span>
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>
+</span></span><span class=line><span class=cl>                        
+</span></span><span class=line><span class=cl>                        <span class=n>eventCount</span><span class=o>++</span>
+</span></span><span class=line><span class=cl>                        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] SSE event (</span><span class=si>$eventCount</span><span class=s2>/</span><span class=si>$maxEvents</span><span class=s2>): </span><span class=si>$event</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                        <span class=k>val</span> <span class=py>eventType</span> <span class=p>=</span> <span class=n>event</span><span class=p>.</span><span class=n>event</span><span class=o>?.</span><span class=n>let</span> <span class=p>{</span> <span class=nc>EventType</span><span class=p>.</span><span class=n>fromValue</span><span class=p>(</span><span class=k>it</span><span class=p>)</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>                        <span class=c1>// 如果 event.event 是 EventType.ERROR，则打印 msg 然后结束
+</span></span></span><span class=line><span class=cl><span class=c1></span>                        <span class=k>if</span> <span class=p>(</span><span class=n>eventType</span> <span class=o>==</span> <span class=nc>EventType</span><span class=p>.</span><span class=n>ERROR</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                            <span class=n>shouldContinue</span> <span class=p>=</span> <span class=k>false</span>
+</span></span><span class=line><span class=cl>                            <span class=k>return</span><span class=nd>@collect</span>
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>
+</span></span><span class=line><span class=cl>                        <span class=n>emit</span><span class=p>(</span><span class=n>event</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                        <span class=k>if</span> <span class=p>(</span><span class=n>eventType</span> <span class=o>==</span> <span class=nc>EventType</span><span class=p>.</span><span class=n>DONE</span> <span class=o>||</span> <span class=n>eventType</span> <span class=o>==</span> <span class=nc>EventType</span><span class=p>.</span><span class=n>WORKFLOW_DONE</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                            <span class=n>shouldContinue</span> <span class=p>=</span> <span class=k>false</span>
+</span></span><span class=line><span class=cl>                            <span class=k>return</span><span class=nd>@collect</span>
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>
+</span></span><span class=line><span class=cl>                    <span class=p>}</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=n>e</span><span class=p>:</span> <span class=n>Exception</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] SSE connection error: </span><span class=si>${e.message}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                    <span class=n>shouldContinue</span> <span class=p>=</span> <span class=k>false</span>
+</span></span><span class=line><span class=cl>                    <span class=k>throw</span> <span class=n>e</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=n>eventCount</span> <span class=o>&gt;=</span> <span class=n>maxEvents</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>println</span><span class=p>(</span><span class=s2>&#34;[HTTP] SSE reached maximum event limit (</span><span class=si>$maxEvents</span><span class=s2>)&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=k>throw</span> <span class=n>Exception</span><span class=p>(</span><span class=s2>&#34;SSE reached maximum event limit&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>这里要多引入几个包：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.client.plugins.sse.sse</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>io.ktor.sse.ServerSentEvent</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.flow.Flow</span>  
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.flow.flow</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.isActive</span>
+</span></span></code></pre></td></tr></table></div></div><p>这个实现看起来有点复杂。几个关键点：</p><ul><li><code>client.sse</code> 是官方提供的、做 SSE 请求的方法，直接就可以使用。</li><li><code>header("Accept", "text/event-stream")</code> 添加一个 Accept header 指定为 <code>text/event-stream</code>。</li><li>maxEvents 设置一个最大的事件数，以免 while 在边缘的情况下进入无限的死循环。</li><li>shouldContinue 用于控制 while 是否继续，逻辑里当发现结束标志的时候，把 shouldContinue 设置成 false。</li><li>Flow，下面专门讲解。</li></ul><h2 id=kotlin-flow>Kotlin Flow</h2><h3 id=whats-flow>What&rsquo;s Flow</h3><p>这是属于语言基础的问题，不过多展开。简单说就是在 Kotlin 中，<code>Flow</code> 是一种用于处理异步数据流的类型安全的 API。它可以用于处理像网络请求返回的数据、数据库查询结果等一系列按顺序产生的数据。<code>Flow</code> 是 &ldquo;<strong>冷流</strong>"（Cold Stream），这意味着它只有在被收集（<code>collect</code>）的时候才会开始执行。<br>SSE 的场景不正好就是“按顺序生成数据”嘛，所以自然就跟 Flow 结合了。在 JS、Python 里可能会自然的联想到 generator（<code>yield</code>），写起来很简单，如 JS 里用 for await 来消费就行。</p><h3 id=incoming>Incoming</h3><p>代码中的 incoming 是 <code>client.sse</code> 引入的、表示 SSE 事件流数据的一个内置变量，它本身就是一个 Flow，直接拿来用即可。这是源码中的定义：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * A Server-sent events session.
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=k>public</span> <span class=k>interface</span> <span class=nc>SSESession</span> <span class=p>:</span> <span class=n>CoroutineScope</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>     * An incoming server-sent events flow.
+</span></span></span><span class=line><span class=cl><span class=cm>     */</span>
+</span></span><span class=line><span class=cl>    <span class=k>public</span> <span class=k>val</span> <span class=py>incoming</span><span class=p>:</span> <span class=n>Flow</span><span class=p>&lt;</span><span class=n>ServerSentEvent</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>incoming 怎么来的： <code>client.sse</code> 是由 <code>serverSentEvents</code> 方法生成的，它返回一个 <code>ClientSSESession</code>，而 <code>ClientSSESession</code> 继承了 <code>SSESession</code>，所以 incoming 一直传到了 <code>client.sse</code> 的 scope 里。</p></blockquote><ul><li>当调用 <code>incoming.collect</code> 时，它会触发这个 <code>Flow</code> 开始工作，并且会将 <code>Flow</code> 发射出的每个数据项传递给 <code>collect</code> 函数内部定义的操作进行处理。Collect 参数是一个 lambda 表达式，参数就是一个 ServerSentEvent，定义如下图，遵守 SSE 的数据流协议，比较标准，没什么好说的。<br><img src=https://cdn.jsongo.top/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp width=500 loading=lazy alt=|500></li><li>EventType 是我们自己定义的，根据业务来定制的，开发者可以自己命令（跟服务端接口对齐好就行），大概的定义可以参考这个实现：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * Event types for all events (chat, workflow, etc.)
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=nd>@Serializable</span>
+</span></span><span class=line><span class=cl><span class=k>enum</span> <span class=k>class</span> <span class=nc>EventType</span><span class=p>(</span><span class=k>val</span> <span class=py>value</span><span class=p>:</span> <span class=n>String</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Chat events
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>CONVERSATION_CHAT_CREATED</span><span class=p>(</span><span class=s2>&#34;conversation.chat.created&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>CONVERSATION_CHAT_IN_PROGRESS</span><span class=p>(</span><span class=s2>&#34;conversation.chat.in_progress&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>CONVERSATION_CHAT_COMPLETED</span><span class=p>(</span><span class=s2>&#34;conversation.chat.completed&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>CONVERSATION_CHAT_FAILED</span><span class=p>(</span><span class=s2>&#34;conversation.chat.failed&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// Common events
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>DONE</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=n>ERROR</span><span class=p>(</span><span class=s2>&#34;error&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>companion</span> <span class=k>object</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>fun</span> <span class=nf>fromValue</span><span class=p>(</span><span class=k>value</span><span class=p>:</span> <span class=n>String</span><span class=p>):</span> <span class=n>EventType</span><span class=p>?</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>entries</span><span class=p>.</span><span class=n>find</span> <span class=p>{</span> <span class=k>it</span><span class=p>.</span><span class=k>value</span> <span class=o>==</span> <span class=k>value</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>其中 DONE 表示这个流已经结束了，字符串“done”是后端定的，换成其它标识也行，但不管怎么说得有这么一个结束标识，要不然就会一直卡在那等。</p><h3 id=协程>协程</h3><p>Flow 的 <code>collect</code> 函数本身其实不是用于启动协程的。<br>它是一个挂起函数，有点类似其它语言中的 <code>yield</code>。挂起就意味着它必须在协程的上下文中被调用（要不然主线程就被阻塞了）。<br>协程是一种轻量级的线程，可以暂停和恢复，用于处理异步操作。运行一个协程有几种方式，介绍两种：<br>1、runBlocking</p><ul><li>我们可以在 <code>runBlocking</code> 协程构建器的上下文中可以调用 <code>collect</code>。<code>runBlocking</code> 是一个顶层协程启动器，它会阻塞当前线程，直到其内部的协程（包括调用 <code>collect</code> 的操作）完成，所以使用时，我们可以用它来包一下，让 Flow 在里面被消费。<ul><li>不过 <code>runBlocking</code> 是一个顶层协程启动器，会阻塞当前线程，直到其内部的协程（包括所有子协程）执行完成。这意味着在 <code>runBlocking</code> 内部的代码执行完之前，外部的代码（如果有的话）是无法继续执行的。</li></ul></li><li>示例：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>fun</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Before runBlocking&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>runBlocking</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>delay</span><span class=p>(</span><span class=m>1000</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Inside runBlocking&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;After runBlocking&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>Before runBlocking</code> 会先打印，然后 <code>runBlocking</code> 内部的协程开始执行，由于 <code>delay</code> 操作暂停了协程 1 秒钟，在这期间当前线程被阻塞。当协程内部的代码执行完后，才会打印 <code>After runBlocking</code></li></ul><p>2、 CoroutineScope</p><ul><li><code>CoroutineScope</code> 本身并不阻塞线程。它主要是用于定义协程的作用域，确定了协程的生命周期和上下文。协程在 <code>CoroutineScope</code> 内启动后，<code>CoroutineScope</code> 可以继续执行其他操作，不会等待协程完成。</li><li>改下上面的例子：</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>fun</span> <span class=nf>main</span><span class=p>()</span> <span class=p>=</span> <span class=n>runBlocking</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Before CoroutineScope&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>val</span> <span class=py>scope</span> <span class=p>=</span> <span class=n>CoroutineScope</span><span class=p>(</span><span class=nc>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>scope</span><span class=p>.</span><span class=n>launch</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>delay</span><span class=p>(</span><span class=m>1000</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>println</span><span class=p>(</span><span class=s2>&#34;Inside launched coroutine&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=n>println</span><span class=p>(</span><span class=s2>&#34;After CoroutineScope&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>这次 <code>Before CoroutineScope</code> 和 <code>After CoroutineScope</code> 会先打印，然后才是 <code>Inside launched coroutine</code>。</p><blockquote><p><strong><code>collect</code> 的一些特点和注意事项</strong></p></blockquote><ul><li><strong>顺序处理</strong>：<code>collect</code> 会按照 <code>Flow</code> 发射数据的顺序来处理数据。如果 <code>Flow</code> 发射的数据有先后顺序，<code>collect</code> 也会按照这个顺序依次处理每个数据项。</li><li><strong>挂起函数</strong>：<code>collect</code> 是一个挂起函数，这意味着它要在协程（Coroutine）内部被调用，并且可以暂停协程的执行，直到 <code>Flow</code> 有新的数据需要处理或者 <code>Flow</code> 完成。而 <code>runBlocking</code> 是一个用于在主函数中启动协程的函数，它会阻塞当前线程，直到所有协程完成。</li><li><strong>异常处理</strong>：如果 <code>Flow</code> 在发射数据过程中出现异常，<code>collect</code> 函数可以通过合适的异常处理机制来捕获和处理这些异常。例如，可以在 <code>collect</code> 函数内部使用 <code>try - catch</code> 块来处理可能出现的异常。</li></ul><h2 id=使用-sse>使用 SSE</h2><p>使用上肯定是直接用 collect 只不过如果要不阻塞当前的主线程，可以用上文介绍的 CoroutineScope。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-kotlin data-lang=kotlin><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.*</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.flow.Flow</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=nn>kotlinx.coroutines.flow.collect</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>suspend</span> <span class=k>fun</span> <span class=nf>startEventFlowProcessing</span><span class=p>(</span><span class=n>apiUrl</span><span class=p>:</span> <span class=n>String</span><span class=p>,</span> <span class=n>payload</span><span class=p>:</span> <span class=n>Any</span><span class=p>,</span> <span class=n>options</span><span class=p>:</span> <span class=n>RequestOptions</span><span class=p>?</span> <span class=p>=</span> <span class=k>null</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>val</span> <span class=py>eventFlow</span> <span class=p>=</span> <span class=n>client</span><span class=p>.</span><span class=n>sse</span><span class=p>(</span><span class=n>apiUrl</span><span class=p>,</span> <span class=n>payload</span><span class=p>,</span> <span class=n>options</span><span class=o>?:</span> <span class=n>RequestOptions</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 使用 launch 开启一个新的协程来执行收集操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>CoroutineScope</span><span class=p>(</span><span class=nc>Dispatchers</span><span class=p>.</span><span class=n>Default</span><span class=p>).</span><span class=n>launch</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>eventFlow</span><span class=p>.</span><span class=n>collect</span> <span class=p>{</span> <span class=n>event</span> <span class=o>-&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=k>val</span> <span class=py>chatData</span> <span class=p>=</span> <span class=n>sseEvent2ChatData</span><span class=p>(</span><span class=n>event</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>emit</span><span class=p>(</span><span class=n>chatData</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// If event is &#34;[DONE]&#34;, end
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=k>if</span> <span class=p>(</span><span class=n>chatData</span><span class=p>.</span><span class=n>event</span> <span class=o>==</span> <span class=nc>EventType</span><span class=p>.</span><span class=n>DONE</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>println</span><span class=p>(</span><span class=s2>&#34;SSE DONE.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span><span class=nd>@collect</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>要阻塞，就换成 runBlocking。这里就不再补充代码示例了。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/it/app/>IT/App</a></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>Last updated on Sun, Jan 05, 2025 16:24 +0800</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/articles/kmp-101/><div class=article-image><img src=https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png loading=lazy data-key=kmp-101 data-hash=https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png></div><div class=article-details><h2 class=article-title>入门 - 用 Kotlin(KMP) 做跨端原生开发</h2></div></a></article></div></div></aside><script src=https://giscus.app/client.js data-repo=jsongo/hugo-page data-repo-id=R_kgDONQf4yA data-category=Announcements data-category-id=DIC_kwDONQf4yM4CkfAr data-mapping=title data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"preferred_color_scheme":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
+2024 -
+2025 Ethan 的思考札记</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.29.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
