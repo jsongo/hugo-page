@@ -1,4 +1,498 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 05 Jan 2025 20:51:24 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Functions 的5种托管方式</title><link>https://www.jsongo.top/articles/azure-functions-hostings/</link><pubDate>Sun, 05 Jan 2025 20:51:24 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-functions-hostings/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post Azure Functions 的5种托管方式" />&lt;p>Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 06 Jan 2025 22:21:06 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>用 kotlin 实现 JWT 认证</title><link>https://www.jsongo.top/articles/kotlin-jwt/</link><pubDate>Mon, 06 Jan 2025 22:21:06 +0800</pubDate><guid>https://www.jsongo.top/articles/kotlin-jwt/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/3f4ffe39bbfde173de3bf6ee638fda5b.jpg" alt="Featured image of post 用 kotlin 实现 JWT 认证" />&lt;h1 id="概述">概述
+&lt;/h1>&lt;h2 id="环境">环境
+&lt;/h2>&lt;p>Android 环境上，内置（或拉取）私钥证书后，&lt;strong>向服务端请求交换 JWT token，获取 OAuth token&lt;/strong>。&lt;/p>
+&lt;h2 id="场景">场景
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>企业内部应用集成&lt;/strong>：在企业级的 Android 应用中，当应用需要与企业内部的多个服务（如企业资源规划系统 ERP、客户关系管理系统 CRM 等）进行深度集成时，可能会内置私钥证书。这些服务通常都有严格的身份验证要求，应用需要通过私钥证书向认证服务器请求交换 JWT（JSON Web Token）令牌，进而获取 OAuth（Open Authorization）令牌来访问受保护的资源。例如，企业内部的移动办公应用，员工需要使用该应用访问企业内部的文档管理系统和工作流系统，应用就会通过这种方式获取访问权限。&lt;/li>
+&lt;li>&lt;strong>金融服务应用&lt;/strong>：在银行或者金融机构的移动应用中，为了确保用户资金交易等敏感操作的安全性，应用可能会预先安装经过严格安全认证的私钥证书。在用户登录或者进行特定高风险操作（如转账、理财购买等）时，应用通过内置的私钥证书向服务端请求交换 JWT 令牌，然后获取 OAuth 令牌，以此来验证用户身份并且授权后续的操作。这种方式可以确保只有合法的、经过认证的应用才能与服务端进行安全的交互。&lt;/li>
+&lt;/ul>
+&lt;h1 id="代码实现">代码实现
+&lt;/h1>&lt;h2 id="实现核心逻辑-getjwttoken">实现核心逻辑 getJWTToken
+&lt;/h2>&lt;p>这里拿 &lt;a class="link" href="https://www.coze.com/docs/developer_guides/oauth_jwt" target="_blank" rel="noopener"
+>Coze 的 JWT 接口&lt;/a> 来写例子，这个意义可能不大（Coze 的 JWT 私钥不太建议放到 App 中），主要是为了演示接口的调用，让代码可以跑通。&lt;br>
+下面是完整代码（可以直接 copy 运行）。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;span class="lnt">126
+&lt;/span>&lt;span class="lnt">127
+&lt;/span>&lt;span class="lnt">128
+&lt;/span>&lt;span class="lnt">129
+&lt;/span>&lt;span class="lnt">130
+&lt;/span>&lt;span class="lnt">131
+&lt;/span>&lt;span class="lnt">132
+&lt;/span>&lt;span class="lnt">133
+&lt;/span>&lt;span class="lnt">134
+&lt;/span>&lt;span class="lnt">135
+&lt;/span>&lt;span class="lnt">136
+&lt;/span>&lt;span class="lnt">137
+&lt;/span>&lt;span class="lnt">138
+&lt;/span>&lt;span class="lnt">139
+&lt;/span>&lt;span class="lnt">140
+&lt;/span>&lt;span class="lnt">141
+&lt;/span>&lt;span class="lnt">142
+&lt;/span>&lt;span class="lnt">143
+&lt;/span>&lt;span class="lnt">144
+&lt;/span>&lt;span class="lnt">145
+&lt;/span>&lt;span class="lnt">146
+&lt;/span>&lt;span class="lnt">147
+&lt;/span>&lt;span class="lnt">148
+&lt;/span>&lt;span class="lnt">149
+&lt;/span>&lt;span class="lnt">150
+&lt;/span>&lt;span class="lnt">151
+&lt;/span>&lt;span class="lnt">152
+&lt;/span>&lt;span class="lnt">153
+&lt;/span>&lt;span class="lnt">154
+&lt;/span>&lt;span class="lnt">155
+&lt;/span>&lt;span class="lnt">156
+&lt;/span>&lt;span class="lnt">157
+&lt;/span>&lt;span class="lnt">158
+&lt;/span>&lt;span class="lnt">159
+&lt;/span>&lt;span class="lnt">160
+&lt;/span>&lt;span class="lnt">161
+&lt;/span>&lt;span class="lnt">162
+&lt;/span>&lt;span class="lnt">163
+&lt;/span>&lt;span class="lnt">164
+&lt;/span>&lt;span class="lnt">165
+&lt;/span>&lt;span class="lnt">166
+&lt;/span>&lt;span class="lnt">167
+&lt;/span>&lt;span class="lnt">168
+&lt;/span>&lt;span class="lnt">169
+&lt;/span>&lt;span class="lnt">170
+&lt;/span>&lt;span class="lnt">171
+&lt;/span>&lt;span class="lnt">172
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.datetime.Clock&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.client.statement.bodyAsText&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">io.ktor.http.HttpMethod&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.Json&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.JsonObject&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.buildJsonObject&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.json.put&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.serializer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">com.auth0.jwt.JWT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">com.auth0.jwt.algorithms.Algorithm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.SerialName&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.serialization.Serializable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">java.security.KeyFactory&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">java.security.interfaces.RSAPrivateKey&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">java.security.spec.PKCS8EncodedKeySpec&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">java.util.Base64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">object&lt;/span> &lt;span class="nc">JWTService&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">getJWTToken&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">config&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">JWTTokenConfig&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">JWTToken&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Trim private key and validate format
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">trimmedPrivateKey&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">privateKey&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">trim&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">keyFormat&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">when&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">trimmedPrivateKey&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">contains&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;BEGIN RSA PRIVATE KEY&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="s2">&amp;#34;RSA&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">trimmedPrivateKey&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">contains&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;BEGIN PRIVATE KEY&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="s2">&amp;#34;PKCS8&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">keyFormat&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">Exception&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;Invalid private key format. Expected PEM format (RSA or PKCS8)&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 准备JWT payload
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">now&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">Clock&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="n">epochSeconds&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">jwtPayload&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">buildJsonObject&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;iss&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">appId&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;aud&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">aud&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;iat&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">now&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;exp&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">now&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="m">3600&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// 1小时
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;jti&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">now&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="m">16&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">sessionName&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;session_name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">sessionName&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 将JsonObject转换为Map
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">jwtPayloadMap&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">jwtPayload&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toMap&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 使用JWT provider签名获取token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">token&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">sign&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">jwtPayloadMap&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">privateKey&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">trimmedPrivateKey&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">algorithm&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">algorithm&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="s2">&amp;#34;RS256&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">keyid&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">keyId&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 交换JWT token获取OAuth token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">tokenConfig&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">buildMap&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;token&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">token&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">baseURL&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;baseURL&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">it&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;durationSeconds&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">durationSeconds&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="m">900&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">scope&lt;/span>&lt;span class="o">?.&lt;/span>&lt;span class="n">let&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;scope&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">it&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">doGetJWTToken&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tokenConfig&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">doGetJWTToken&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">config&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">&amp;gt;,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">options&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">RequestOptions&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">JWTToken&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">api&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">APIClient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;token&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">baseURL&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;baseURL&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">as&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">payload&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">buildJsonObject&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;grant_type&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;urn:ietf:params:oauth:grant-type:jwt-bearer&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;duration_seconds&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;durationSeconds&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">as&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="n">Int&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="m">900&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="n">toInt&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;scope&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;scope&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;scope&amp;#34;&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="n">toString&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">jsonPayload&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">Json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">encodeToString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">JsonObject&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">response&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">api&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nc">HttpMethod&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Post&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;/api/permission/oauth2/token&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;token&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">payload&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">options&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nc">Json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">decodeFromString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serializer&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">JWTToken&lt;/span>&lt;span class="p">&amp;gt;(),&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">bodyAsText&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 对 json 里的内容做下处理，方便未来扩展
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">private&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">JsonObject&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toMap&lt;/span>&lt;span class="p">():&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">entries&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">associate&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">key&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="k">when&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">element&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">kotlinx&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">serialization&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">JsonPrimitive&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">when&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">isString&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toLongOrNull&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toLong&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toDoubleOrNull&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="k">null&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toDouble&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;true&amp;#34;&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;false&amp;#34;&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="k">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">content&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">element&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">toString&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">sign&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Map&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Any&lt;/span>&lt;span class="p">&amp;gt;,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">privateKey&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">algorithm&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">keyid&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">):&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">cleanKey&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">privateKey&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;-----BEGIN PRIVATE KEY-----&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;-----END PRIVATE KEY-----&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;-----BEGIN RSA PRIVATE KEY-----&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;-----END RSA PRIVATE KEY-----&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">trim&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;JWT sign - 私钥清理完成&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">keyBytes&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">Base64&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getDecoder&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cleanKey&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1">// requires API level 26
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;JWT sign - 私钥解码完成，&lt;/span>&lt;span class="si">${keyBytes}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">keySpec&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">PKCS8EncodedKeySpec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">keyBytes&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">keyFactory&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">KeyFactory&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getInstance&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;RSA&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">privateKeyObj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">keyFactory&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">generatePrivate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">keySpec&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">RSAPrivateKey&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">alg&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">Algorithm&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">RSA256&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">privateKeyObj&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;JWT sign - 私钥引用创建完成，&lt;/span>&lt;span class="si">${alg}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nc">JWT&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">create&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">withKeyId&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">keyid&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">apply&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">payload&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">forEach&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">when&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">withClaim&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">Int&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">withClaim&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">Long&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">withClaim&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">Double&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">withClaim&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">is&lt;/span> &lt;span class="n">Boolean&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="n">withClaim&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">sign&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">alg&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Serializable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">data&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">JWTToken&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@SerialName&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;access_token&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">accessToken&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@SerialName&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;token_type&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">tokenType&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@SerialName&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;expires_in&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">expiresIn&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Long&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Serializable&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">data&lt;/span> &lt;span class="k">class&lt;/span> &lt;span class="nc">JWTTokenConfig&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">appId&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">privateKey&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">aud&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;api.coze.com&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">// 这里可以换成自己的 AUD
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">algorithm&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;RS256&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">keyId&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">sessionName&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">baseURL&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">durationSeconds&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Int&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="m">900&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">scope&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="tokenmanager-让-token-能复用">TokenManager 让 Token 能复用
+&lt;/h2>&lt;p>另外还可以再实现一个 TokenManager 来做一个单例，管理最终 Token 的获取。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="k">import&lt;/span> &lt;span class="nn">kotlinx.datetime.Clock&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">object&lt;/span> &lt;span class="nc">TokenManager&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">var&lt;/span> &lt;span class="py">_token&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">String&lt;/span>&lt;span class="p">?&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">var&lt;/span> &lt;span class="py">tokenExpireTime&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Long&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">getTokenAsync&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">forceRefresh&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Boolean&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="k">false&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="n">String&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">now&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">Clock&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nc">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="n">epochSeconds&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 如果token不存在或已过期（提前30秒认为过期），重新获取
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">_token&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="k">null&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">now&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="n">tokenExpireTime&lt;/span> &lt;span class="p">-&lt;/span> &lt;span class="m">30&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="n">forceRefresh&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="err">(&lt;/span>&lt;span class="py">token&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">expireIn&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">generateToken&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_token&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">token&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 根据返回的过期时间设置
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">tokenExpireTime&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">now&lt;/span> &lt;span class="p">+&lt;/span> &lt;span class="n">expireIn&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">_token&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="k">throw&lt;/span> &lt;span class="n">IllegalStateException&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Token not available&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">suspend&lt;/span> &lt;span class="k">fun&lt;/span> &lt;span class="nf">generateToken&lt;/span>&lt;span class="p">():&lt;/span> &lt;span class="n">Pair&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Long&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">config&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">JWTTokenConfig&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">appId&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">GetApiConfig&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">APP_ID&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">aud&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">GetApiConfig&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">AUD&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">keyId&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">GetApiConfig&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">KEY_ID&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">privateKey&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">GetApiConfig&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">PRIVATE_KEY&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">trimIndent&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">lines&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">joinToString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">trim&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">jwtRsp&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nc">JWTService&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">getJWTToken&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">val&lt;/span> &lt;span class="py">token&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">jwtRsp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">accessToken&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">isEmpty&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">IllegalStateException&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Received empty access token from server&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 返回token和过期时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="n">Pair&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">token&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">jwtRsp&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">expiresIn&lt;/span> &lt;span class="o">?:&lt;/span> &lt;span class="m">900L&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Exception&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Token generation failed: &lt;/span>&lt;span class="si">${e.message}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">throw&lt;/span> &lt;span class="n">IllegalStateException&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Failed to generate token: &lt;/span>&lt;span class="si">${e.message}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">private&lt;/span> &lt;span class="k">object&lt;/span> &lt;span class="nc">GetApiConfig&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">const&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">APP&lt;/span>&lt;span class="n">_ID&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;xxx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">const&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">AUD&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;api.coze.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">const&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">KEY&lt;/span>&lt;span class="n">_ID&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;xxx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">const&lt;/span> &lt;span class="k">val&lt;/span> &lt;span class="py">PRIVATE&lt;/span>&lt;span class="n">_KEY&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">-----BEGIN PRIVATE KEY-----
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">xxx
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">-----END PRIVATE KEY-----
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="安全">安全
+&lt;/h1>&lt;h2 id="安全问题分析">安全问题分析
+&lt;/h2>&lt;p>把私钥内置到 App 中是有一些安全问题的，这里做些分析。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>私钥证书存储安全风险&lt;/strong>：如果 Android 设备被恶意攻击者获取了 root 权限，或者应用本身存在安全漏洞（如代码注入、反编译漏洞等），存储在设备上的私钥证书可能会被窃取。一旦私钥证书泄露，攻击者就有可能伪装成合法的应用向服务端请求令牌，从而获取未经授权的访问权限。&lt;/li>
+&lt;li>&lt;strong>传输过程安全风险&lt;/strong>：在向服务端请求交换令牌的过程中，如果通信没有采用足够的加密措施（如 TLS/SSL 协议未正确配置或者被中间人攻击绕过），那么私钥证书和令牌相关的信息可能会在传输过程中被窃取。例如，攻击者通过在公共 WiFi 环境中进行中间人攻击，拦截并篡改请求和响应信息。&lt;/li>
+&lt;li>&lt;strong>JWT 和 OAuth 令牌滥用风险&lt;/strong>：即使令牌的获取过程是安全的，但是如果令牌的有效期过长或者没有正确的权限管理机制，被窃取的令牌可能会被滥用。例如，JWT 令牌没有设置合适的过期时间，或者 OAuth 令牌的权限范围没有得到精细的控制，攻击者获取令牌后可能会在有效期内持续访问受保护的资源。&lt;/li>
+&lt;/ul>
+&lt;h2 id="安全建议">安全建议
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>安全存储私钥证书&lt;/strong>：使用 Android 系统提供的安全存储机制，如 KeyStore 系统。它可以将私钥证书存储在一个受硬件保护的区域（如果设备支持），并且通过密码学手段对访问进行限制。同时，对应用进行加固，防止反编译和代码注入等攻击方式。&lt;/li>
+&lt;li>&lt;strong>确保传输安全&lt;/strong>：在与服务端的通信过程中，强制使用 TLS/SSL 协议，并进行严格的证书验证。可以采用双向认证的方式，即服务端和客户端（Android 应用）互相验证对方的证书，确保通信双方的身份真实可靠。&lt;/li>
+&lt;li>&lt;strong>令牌管理优化&lt;/strong>：合理设置 JWT 和 OAuth 令牌的有效期，对于高风险操作可以采用短有效期的令牌，并要求用户频繁重新认证。同时，对 OAuth 令牌的权限进行精细的划分，确保每个令牌只能访问其授权范围内的资源。例如，对于只需要读取用户基本信息的操作和需要修改用户密码的操作，分别使用不同权限范围的令牌。&lt;/li>
+&lt;/ul></description></item><item><title>Azure Functions 的5种托管方式</title><link>https://www.jsongo.top/articles/azure-functions-hostings/</link><pubDate>Sun, 05 Jan 2025 20:51:24 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-functions-hostings/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post Azure Functions 的5种托管方式" />&lt;p>Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。&lt;br>
 下文对 Flex Consumption plan、Premium plan、Dedicated plan、Container Apps 和 Consumption plan 这 5 种方式进行下对比。&lt;/p>
 &lt;h1 id="直观表格对比">直观表格对比
 &lt;/h1>&lt;table>
