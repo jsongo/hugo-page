@@ -42,7 +42,8 @@ Cursor 刚出的 agent 比之前简单的 Chat 强不少。之前的 Chat 它记
 ![](https://cdn.jsongo.top/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp)
 ## **1、先把相应的目录结构建好**
 因为不同的语言，代码组织的习惯和方式都不太一样。要做的第二件事，是先把代码结构先想清楚，然后发给 AI 问下比较合理的结构是什么样。  
-![011aee5c56b4b53497b5d789c0fbeffb_MD5|500](https://cdn.jsongo.top/2025/01/0469fa103c6ebb26a2747e1491292465.webp) ![4ed11244d635908bdf3aaffee68c1db6_MD5|400](https://cdn.jsongo.top/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp) ![56695bc97506c77d525a8b7a30786162_MD5|400](https://cdn.jsongo.top/2025/01/71d3277a1c9450424f1175f05714cbd9.webp)  
+![011aee5c56b4b53497b5d789c0fbeffb_MD5|500](https://cdn.jsongo.top/2025/01/0469fa103c6ebb26a2747e1491292465.webp)  
+![4ed11244d635908bdf3aaffee68c1db6_MD5|400](https://cdn.jsongo.top/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp) ![56695bc97506c77d525a8b7a30786162_MD5|250](https://cdn.jsongo.top/2025/01/71d3277a1c9450424f1175f05714cbd9.webp)  
 ![3562669265f694cc8e5a37537570e387_MD5|600](https://cdn.jsongo.top/2025/01/34125f9d5d186efc995f3f421e8ea716.webp)  
 最后我调整了下，改成上文最后那张图。
 ## **2、实现第一个 Demo**
