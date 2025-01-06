@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/App on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/app/</link><description>Recent content in IT/App on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 27 Dec 2024 11:31:09 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/app/index.xml" rel="self" type="application/rss+xml"/><item><title>入门 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-101/</link><pubDate>Fri, 27 Dec 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png" alt="Featured image of post 入门 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;p>Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应用开发的首选语言，并且它通过相关跨平台框架（如 Kotlin Multiplatform Platform - KMP）发展出了跨端开发的能力。&lt;/p>
+&lt;blockquote>
+&lt;p>示例中用的是 Kotlin (KMP) &lt;code>2.x&lt;/code> ，Ktor &lt;code>3.x&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="概述">概述
+&lt;/h1>&lt;h2 id="跨端">跨端
+&lt;/h2>&lt;p>用 KMP 来做跨端的好处是，它能静态编译成原生的 Android、iOS 代码，如果单独作为工程使用，性能上原生会更好；如果是作为组件供原生开发的客户端使用，也能共享代码逻辑。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>代码共享优势&lt;/strong>：Kotlin 在跨端开发中，主要优势在于能够共享业务逻辑代码。例如，在开发一个同时有 Android 和 iOS 版本的应用时，应用中关于数据处理（如数据加密、数据验证等）、网络请求（如 API 调用、数据解析）等业务逻辑部分的 Kotlin 代码可以在两个平台间共享，这大大减少了开发工作量。&lt;/li>
+&lt;li>&lt;strong>支持多平台类型&lt;/strong>：除了 Android 和 iOS，Kotlin 还可以用于后端开发（如使用 Kotlin 与 Spring Boot 结合开发服务器端应用），这样就有可能构建从后端到移动端完整的跨平台应用生态系统。&lt;/li>
+&lt;/ul>
+&lt;h2 id="原理">原理
+&lt;/h2>&lt;p>在 KMM 框架里，Kotlin 代码会被编译为不同平台的目标代码。&lt;/p>
+&lt;ul>
+&lt;li>对于 Android，Kotlin 代码可以直接编译为字节码在 Android 设备上运行（就像它在传统 Android 开发中的方式一样）。&lt;/li>
+&lt;li>对于 iOS，Kotlin 代码通过中间表示（Intermediate Representation，IR）与 iOS 原生开发环境进行交互。这个中间表示是一种抽象的代码形式，它可以与 iOS 的 Swift 或 Objective-C 代码进行互操作。&lt;br>
+除了 Android，本质上，Kolit 是通过编译成能&lt;strong>与其它语言互操作的中间代码来实现的&lt;/strong>。它跟 Flutter 类的框架有比较明显的区别，Flutter 最终是通过 Dart 虚拟机来抹平底层的差异，而 KMP 则是顺应各端的语言环境，编译成它们更友好的中间语言来做集成。&lt;br>
+为了更好的理解，我再进一步讲下：在 iOS 应用中使用 KMP（借助 Kotlin/Native）开发的场景中，Kotlin 代码会被编译为机器码，这个过程是通过 Kotlin/Native 编译器完成的。编译后的代码会生成一个类似 XCFramework 的库文件，它可以被&lt;strong>链接&lt;/strong>到 iOS 应用中。这个库文件在 iOS 应用运行时并没有一个像 Flutter 那样的单独的 “runtime” 概念。所以性能上会比 Flutter 类的框架好很多。&lt;br>
+从性能上看，由于 Kotlin/Native 编译后的代码直接与 iOS 原生代码集成，性能方面基本就是原生代码的性能。没有额外的运行时解释层，使得代码执行效率较高。&lt;br>
+在资源占用方面，因为不需要加载一个单独的运行时环境，相对来说对设备资源（如内存、CPU 等）的占用会少些。&lt;/li>
+&lt;/ul>
+&lt;h2 id="更多资料">更多资料
+&lt;/h2>&lt;p>官网提供了比较详细的指引，可以参考这里： &lt;a class="link" href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html#examine-the-project-structure" target="_blank" rel="noopener"
+>Create your first cross-platform app | Kotlin Multiplatform Development Documentation&lt;/a>。&lt;br>
+本文简单地介绍它在跨端开发上体验。&lt;/p>
+&lt;blockquote>
+&lt;p>背景：尝试 KMP 框架，主要是因为在做一个 SDK 的客户端版本时，需要开发 iOS 和 Android 版本，大概看了下当前的趋势和性能、认可度等方面，综合判断选择了这个框架。&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="跑起第一个-kmp-应用">跑起第一个 KMP 应用
+&lt;/h1>&lt;p>官方指定用 Android Studio，可以从这里 &lt;a class="link" href="https://developer.android.com/studio" target="_blank" rel="noopener"
+>下载 Android Studio 和应用工具 &lt;/a>。默认是内置了 Gradle 来做编译，包含跨端的代码编译。&lt;/p>
+&lt;h2 id="生成项目及初始代码介绍">生成项目及初始代码介绍
+&lt;/h2>&lt;p>官方给了一个工具用于生成初始化的项目代码：https://kmp.jetbrains.com/，在这上面配置下应用相关的信息即可。一般只需要 Android 和 iOS 两个端即可：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/076751605e49d1210f34130cb80ed50e.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;br>
+下载到本地，然后用 Android Studio 导入。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/40711a8957ede4718b786f891b2ffe9d.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+代码主要包含 3 个部分：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Shared&lt;/strong>，共享的部分。它是跨端的逻辑代码存放的地方，主要有 &lt;code>androidMain&lt;/code> 、&lt;code>commonMain&lt;/code> 和 &lt;code>iosMain&lt;/code>，最终编译成 Android Library 和 iOS framework 供两端集成。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/90a4b3199a161461a2964e7e36b47089.webp"
+loading="lazy"
+>&lt;/li>
+&lt;li>&lt;strong>ComposeApp&lt;/strong>，是一个完整的 Kotlin 模块，它可以通过 Gradle 直接编译成 Android 应用，它里面也包含了 Shared module，Android 应用编译时可以引用这部分共用的模块。&lt;/li>
+&lt;li>&lt;strong>IosApp&lt;/strong>，则是一个 Xcode 项目，用于编译成 iOS 应用。&lt;/li>
+&lt;/ul>
+&lt;h2 id="写一个-shared-modulecommonmain">写一个 Shared module（CommonMain）
+&lt;/h2>&lt;p>依赖是写 KMP 应用会遇到的第一个比较麻烦的问题，不过大都能从 &lt;a class="link" href="https://ktor.io/docs/welcome.html" target="_blank" rel="noopener"
+>这个文档&lt;/a> 中找到，可能需要点耐心。&lt;br>
+写到 CommonMain/ 目录里的代码，如果包含了平台专有的 API，IDE 会给 Warning 提醒，交互比较友好。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/6556d2995f4234f406c6bb50c4131d0b.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+把 import 部分改成 &lt;code>kotlin.random.Random&lt;/code> 就没报错了（Random 类写法去掉括号）。&lt;br>
+接下去点击图中 Top bar 里的运行按钮就可以跑起来了，它会出现 Android 一虚拟机，在上面运行你的代码。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/345f016c58696f3658be24fd2a43d104.webp"
+width="300"
+loading="lazy"
+alt="|300"
+>&lt;/p>
+&lt;h2 id="自定义">自定义
+&lt;/h2>&lt;p>跑通了基础的流程，我们接下去的工作就简单了，创建一个 kt 文件，写好逻辑即可。&lt;br>
+比如我想写一个通用的 HTTP 请求的模块，需要先安装一些依赖，具体可以参考 &lt;a class="link" href="https://ktor.io/docs/client-dependencies.html#repositories" target="_blank" rel="noopener"
+>这里&lt;/a>。打开 &lt;code>composeApp/build.gradle.kts&lt;/code>，添加下几个依赖：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/798b355d1da19bded2025aff5dbafa7e.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;/p>
+&lt;h3 id="依赖分析">依赖分析
+&lt;/h3>&lt;p>1、plugins&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="n">plugins&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">alias&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">plugins&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">kotlinMultiplatform&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">alias&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">plugins&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">androidApplication&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">alias&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">plugins&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">composeMultiplatform&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">alias&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">plugins&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">composeCompiler&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// my plugins
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">kotlin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;plugin.serialization&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">version&lt;/span> &lt;span class="s2">&amp;#34;2.0.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完之后，点击 Sync Now，让它安装依赖。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/8994d10bce0c602a2960336c04975a04.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;br>
+怎么处理不同环境的差异，可以参考这里：&lt;a class="link" href="https://medium.com/@uwaisalqadri/manage-project-environment-in-kotlin-multiplatform-mobile-528847c3bfc5" target="_blank" rel="noopener"
+># Manage Project Environment in Kotlin Multiplatform Mobile&lt;/a>&lt;/p>
+&lt;h2 id="ios">IOS
+&lt;/h2>&lt;p>要跑在 iOS 上还需要一些跨端的配置。&lt;/p>
+&lt;h3 id="kotlin-共用模块编译">Kotlin 共用模块编译
+&lt;/h3>&lt;p>我们在 composeApp 里面写了不少跨端用的代码，在 &lt;code>iosApp/&lt;/code> 这个目录下是没有相关东西的，需要有一个编译的过程，把这些代码编译成 Xcode 能识别并处理的 iOS 代码（swift）。&lt;br>
+有两种方法来配置编译脚本，具体可以参考这里：&lt;a class="link" href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html#connect-the-framework-to-your-ios-project" target="_blank" rel="noopener"
+>Make your Android application work on iOS&lt;/a> ，下面简单讲解下：&lt;br>
+1、一是手动&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/720c1908479bfd532143a11319c339a4.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/p>
+&lt;ul>
+&lt;li>双击项目名，然后进入 &lt;code>Build Phases&lt;/code> Tab，点加号，添加一个 &lt;code>Run Script&lt;/code>，添加：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$SRCROOT&lt;/span>&lt;span class="s2">/..&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./gradlew :composeApp:embedAndSignAppleFrameworkForXcode
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>然后把顺序拖到上面这里：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/ea53970b00a8070dd98d9afc061f4187.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/li>
+&lt;li>不过，JDK 11 从 11.0.3 开始商用收费，如果在内部业务使用也要购买许可证：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/0a8e90a2af180b831f72a183de9c9203.webp"
+width="600"
+loading="lazy"
+alt="|600"
+>&lt;br>
+所以还是得用 OpenJDK，我试了下，是兼容的。安装可以看这里：[[JDK 怎么安装]]。&lt;/li>
+&lt;li>另外也要设置下 sandboxing&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/df8e47732e837d1448d5c38676d61d8c.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+2、用插件&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/cf83f28ecdf0cd79fa2428b7fe2fe7c5.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/li>
+&lt;li>安装完之后，其它就自动帮你设置了一个 Build Script 在上文提到的 &lt;code>Build Phases&lt;/code> 里：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/888bf5edebab276ef39aad2b4333d580.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>
+&lt;ul>
+&lt;li>这里选择的那两行是我加的，因为运行时它找不到 JDK，如果你也遇到这个问题也可以这么解决。&lt;br>
+配置好后，可以点击 Xcode 右上角的编译按钮触发一次编译，我第一次试，编译了近 2 分钟：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/7c99ac5c4b0ae67a218530c73582ac60.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="使用公共模块">使用公共模块
+&lt;/h3>&lt;p>很简单，把 &lt;code>ComposeApp&lt;/code> 引入就行，这样里面我们写的方法就都可以用了。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/c4ab964094083a97810d18b06dc0508e.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/p>
+&lt;h1 id="参考">参考
+&lt;/h1>&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-upgrade-app.html#create-api-requests" target="_blank" rel="noopener"
+>Share more logic between iOS and Android | Kotlin Multiplatform Development Documentation&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
