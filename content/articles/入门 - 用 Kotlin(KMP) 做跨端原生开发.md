@@ -5,7 +5,7 @@ tags:
   - IT/app
 created_at: Thu, Nov 28th, 2024 - 16:12:07
 banner_icon: ⚗️
-banner: https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png
+banner: "https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png"
 title: 入门 - 用 Kotlin(KMP) 做跨端原生开发
 description: 用 KMP 进行跨端原生开发的优势和基本原理，介绍了它在代码共享和多平台支持方面的优点，并讲解 Android 和 iOS 平台上运行和集成共享模块的具体步骤。
 slug: kmp-101
