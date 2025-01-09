@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 07 Jan 2025 10:49:18 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>《跑步治愈》让我爱上跑步</title><link>https://www.jsongo.top/articles/start-running/</link><pubDate>Tue, 07 Jan 2025 10:49:18 +0800</pubDate><guid>https://www.jsongo.top/articles/start-running/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/4e076eb4ff636b6bf9f74fb25b6536ac.jpg" alt="Featured image of post 《跑步治愈》让我爱上跑步" />&lt;h1 id="概述">概述
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 10 Jan 2025 00:35:01 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>让 google 索引你的网站</title><link>https://www.jsongo.top/articles/add-google-index/</link><pubDate>Fri, 10 Jan 2025 00:35:01 +0800</pubDate><guid>https://www.jsongo.top/articles/add-google-index/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/614e6ce3faae3eecaea68591b783ca2e.jpeg" alt="Featured image of post 让 google 索引你的网站" />&lt;h1 id="验证提交">验证&amp;amp;提交
+&lt;/h1>&lt;p>打开 &lt;a class="link" href="https://support.google.com/webmasters/answer/9012289?hl=zh-Hans" target="_blank" rel="noopener"
+>网址检查工具 - Search Console 帮助&lt;/a> 站点，在上面点击验证，如果你的网站放在 cloudflare 等比较有名的服务商那，这个验证过程会非常简单，比如我就只需要跳转到 cloudflare 上再点一个按钮即可。它会给你添加一个 TXT 记录，之后就认证成功了：&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/356a25a75d88549de43ada1856ef4da8.webp"
+width="450"
+loading="lazy"
+alt="|450"
+>&lt;br>
+进入 &lt;a class="link" href="https://search.google.com/search-console" target="_blank" rel="noopener"
+>Google Search Console&lt;/a> 后，可以看到你的网站还没被索引，需要等一天再来看下。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/b42233e8f3f1a1a50196872d8a1eae17.webp"
+width="675"
+loading="lazy"
+alt="|675"
+>&lt;br>
+由于已经验证了这个网站就是你的，之后就可以在这个 Console 上看到每天的搜索数据。&lt;/p>
+&lt;h1 id="sitemap">Sitemap
+&lt;/h1>&lt;p>如果你的站点有 sitemap 也尽量提交下。我的站点是用 hugo 实现的，加了 sitemap 插件，所以可以直接提供给它地址。提交后，Google 就会定期地从你的 sitemap 上更新内容。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/01/e4f46f3ab1b40f3cd68608eceb859b66.webp"
+width="775"
+loading="lazy"
+alt="|775"
+>&lt;/p></description></item><item><title>《跑步治愈》让我爱上跑步</title><link>https://www.jsongo.top/articles/start-running/</link><pubDate>Tue, 07 Jan 2025 10:49:18 +0800</pubDate><guid>https://www.jsongo.top/articles/start-running/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/4e076eb4ff636b6bf9f74fb25b6536ac.jpg" alt="Featured image of post 《跑步治愈》让我爱上跑步" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="从盲目跑步到科学跑步的转变">从盲目跑步到科学跑步的转变
 &lt;/h2>&lt;p>其实之前我或多或少都会去跑跑步，不过是断断续续的，大概几天跑一次。然而，跑到一定程度后，就很难再有大的突破了，一直也没怎么关注过数据，随性跑。我大概能跑个两三公里，跑得上气不接下气时，就走一会儿，然后接着再跑一段。顶多能跑到 5 公里，这对我来说已经算是极限了。这就是我之前的状态。&lt;br>
 以前跑步时，我不太关注心率。后来，在一位朋友的带动下，我开始留意心率等数据，结果发现我的心率总是比他们高很多。比如，我跑个三四公里，心率就会飙升到 180 以上，而他们只有 150 多，差距十分明显。不过当时，我并没有太把这个数据当回事。后来才知道，180 已经非常极限了，这种状态跑不了太久，而且也是对身体有些伤害，健康的跑步应该是在比较舒适的区间，消耗身上的脂肪和多余的糖分，多进行有氧运动，这能给人带来非常多的好处。这些我以前都不太懂。&lt;br>
