@@ -6,7 +6,7 @@ tags:
 created_at: Fri, Jan 10, 2025 - 00:35:01
 date: 2025-01-10T00:35:01.642+08:00
 banner_icon: 🧅
-banner: https://cdn.jsongo.top/banners/614e6ce3faae3eecaea68591b783ca2e.jpeg
+banner: "https://cdn.jsongo.top/banners/614e6ce3faae3eecaea68591b783ca2e.jpeg"
 slug: add-google-index
 title: 让 google 索引你的网站
 description: 在 Google 上验证和提交你的网站，让 Google 索引它，日后可以查看日常搜索数据。另外提交网站的 sitemap，以便 Google 定期更新你网站的内容
