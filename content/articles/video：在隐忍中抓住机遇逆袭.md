@@ -6,7 +6,7 @@ tags:
 created_at: Thu, Feb 27, 2025 - 23:16:31
 date: 2025-02-27T23:16:31.970+08:00
 banner_icon: 🐽
-banner: https://cdn.jsongo.top/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg
+banner: "https://cdn.jsongo.top/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg"
 slug: forbearance-seizing-opportunities-counterattack
 draft: false
 description: 在中美博弈中，中国通过隐忍和策略性应对，抓住了多次机遇实现逆袭的过程，分析了美国策略的转变及其背后的原因

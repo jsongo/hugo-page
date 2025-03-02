@@ -7,7 +7,7 @@ tags:
 created_at: Sun, Mar 2, 2025 - 10:57:18
 date: 2025-03-02T10:57:18.724+08:00
 banner_icon: 🐪
-banner: https://cdn.jsongo.top/banners/c41a06c6e8152c8747b756e140e47ead.jpeg
+banner: "https://cdn.jsongo.top/banners/c41a06c6e8152c8747b756e140e47ead.jpeg"
 title: video：教育风向 & 高效作业
 description: 在教育风向变化下的育儿建议和高效陪伴孩子写作业的方法，强调激发兴趣、强化方法、塑造能力和培养习惯的重要性
 slug: educational-methods-for-children
