@@ -18,6 +18,7 @@ Mac 上直接装：
 brew tap azure/functions
 brew install azure-cli
 brew install azure-functions-core-tools@4
+brew link --overwrite azure-functions-core-tools@4
 ```
 >  具体可以参考这里：[Develop Azure Functions locally using Core Tools \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&pivots=programming-language-csharp)
 >  - 另外，这链接里也有怎么用命令行来创建的方法。下文 vscode 插件和 CLI 都会涉及。
