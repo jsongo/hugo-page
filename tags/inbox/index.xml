@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inbox on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/inbox/</link><description>Recent content in Inbox on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Apr 2025 09:00:46 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/inbox/index.xml" rel="self" type="application/rss+xml"/><item><title>NAS 配置 cloudflare DDNS</title><link>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</link><pubDate>Thu, 03 Apr 2025 09:00:46 +0800</pubDate><guid>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg" alt="Featured image of post NAS 配置 cloudflare DDNS" />&lt;h1 id="what">What
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inbox on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/inbox/</link><description>Recent content in Inbox on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Apr 2025 10:03:56 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/inbox/index.xml" rel="self" type="application/rss+xml"/><item><title>阿里云盘添加到 alist</title><link>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</link><pubDate>Thu, 03 Apr 2025 10:03:56 +0800</pubDate><guid>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/86bf43bb5c48b399375633945e5f3f72.jpg" alt="Featured image of post 阿里云盘添加到 alist" />&lt;p>可以参考下面这个：&lt;br>
+&lt;a class="link" href="https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html" target="_blank" rel="noopener"
+>阿里云盘 Open | AList文档&lt;/a>&lt;br>
+一般填写下面这两个即可（上方就写个盘名）&lt;br>
+![[9e494f6eb39f1a4e62772b8d275d8940_MD5.webp]]&lt;/p>
+&lt;ul>
+&lt;li>根文件夹，可以在浏览器中打开相应的目录，copy 地址中的 id 即可&lt;/li>
+&lt;li>令牌可以从这里获取：https://alist.nn.ci/zh/tool/aliyundrive/request，安全的&lt;br>
+其它的都不用填，保存即可。添加完回到首页就可以看到。&lt;/li>
+&lt;/ul></description></item><item><title>NAS 配置 cloudflare DDNS</title><link>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</link><pubDate>Thu, 03 Apr 2025 09:00:46 +0800</pubDate><guid>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg" alt="Featured image of post NAS 配置 cloudflare DDNS" />&lt;h1 id="what">What
 &lt;/h1>&lt;p>给 NAS 设置 DDNS 域名主要有以下作用：&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>远程访问：&lt;/strong> 即使你的公网 IP 地址会变动，你也能通过固定的 DDNS 域名从外部网络访问你的 NAS。&lt;/li>
