@@ -18,17 +18,35 @@
 &lt;/ol>
 &lt;h1 id="how">How
 &lt;/h1>&lt;p>进入 cloudflare&lt;br>
-![[a0944299ff16236c1b3a62304422cf66_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/1fe20e900c45ea2bc98910cb3917c743.webp"
+loading="lazy"
+alt="a0944299ff16236c1b3a62304422cf66_MD5"
+>&lt;br>
 简单填写即可&lt;br>
-![[93a269c73086bc52f7b59e47df737b3b_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/980f013f949fa5a888bbc44a19dacc33.webp"
+loading="lazy"
+alt="93a269c73086bc52f7b59e47df737b3b_MD5"
+>&lt;br>
 最后在 NAS 上填写相关的 token 即可。我的是绿联的 NAS，在控制面板里搜索 DDNS 可以找到，在方式二中选新增。&lt;br>
-![[baa8f3432565de42a82a2b4a66ad3828_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/6646d4b4a9e4f8ea04abe7b016243290.webp"
+loading="lazy"
+alt="baa8f3432565de42a82a2b4a66ad3828_MD5"
+>&lt;br>
 然后配置。Cloudflare 没提供 accessKey ID，它不重要，填写自己的 Cloudflare 账号即可。DDNS 域名可以添加一个自己托管在 Cloudflare 上的域名，可以加一个三级域名，如 &lt;code>nas.xxx.com&lt;/code> 。&lt;br>
-![[99509d7becca7bec0aad41815695c700_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/6d50da9e050a94421a8790b945ec24d1.webp"
+loading="lazy"
+alt="99509d7becca7bec0aad41815695c700_MD5"
+>&lt;br>
 看下状态如果是否正常&lt;br>
-![[0c3856442d38469aa897889d253da33e_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/a87192cda2f1be909de1ba0ccee85d0d.webp"
+loading="lazy"
+alt="0c3856442d38469aa897889d253da33e_MD5"
+>&lt;br>
 高级设置里显示成功才可以&lt;br>
-![[c5a086c7aa28e96c5d3ba74fa0c89296_MD5.webp]]&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/cf84e22051bc347c5543b6252c3b3b4a.webp"
+loading="lazy"
+alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
+>&lt;br>
 我试过连接手机热点去访问，发现不太行。&lt;/p></description></item><item><title>一种高效的学习方法</title><link>https://www.jsongo.top/articles/efficient-learning-method/</link><pubDate>Mon, 24 Mar 2025 10:12:24 +0800</pubDate><guid>https://www.jsongo.top/articles/efficient-learning-method/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d4fca53294aaa0f19f01642fc7436c98.jpg" alt="Featured image of post 一种高效的学习方法" />&lt;p>来自这个视频：https://v.douyin.com/ywNN3t9_H80/&lt;/p>
 &lt;h1 id="概述">概述
 &lt;/h1>&lt;p>核心观点是通过特定方法，20 小时就能掌握一项技能并超过 80% 的人。&lt;br>
@@ -4657,7 +4675,125 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;h2 id="相关链接">相关链接
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title/><link>https://www.jsongo.top/articles/%E6%B8%85%E7%90%86-mac-%E7%94%B5%E8%84%91%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/%E6%B8%85%E7%90%86-mac-%E7%94%B5%E8%84%91%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post " />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
+&lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
+&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mv &lt;span class="s2">&amp;#34;/Users/bytedance/Library/Application Support/Code/logs&amp;#34;&lt;/span> ~/.Trash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>除了这个 logs 还有另外两个可能空间占用也比较大的目录：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>CachedData:&lt;/strong> 缓存数据，删除后 Cursor 可能需要重新下载/索引某些数据，导致启动或某些功能变慢。&lt;/li>
+&lt;li>&lt;strong>CachedExtensionVSIXs:&lt;/strong> 缓存的扩展程序安装包，删除后 Cursor 可能需要重新下载扩展，影响扩展功能。&lt;br>
+有需要也可以删，可能会稍微影响 cursor 下次打开时的性能，但问题不大。&lt;br>
+另外 Cursor 和 windsurf 等也一样。&lt;/li>
+&lt;/ul>
+&lt;h1 id="2清理-git">2、清理 Git
+&lt;/h1>&lt;p>有的 git 历史太多，可能有上 G 的内容。可以尝试让 git 自动清理下。&lt;br>
+第一步，先用 &lt;code>git reflog expire&lt;/code> 来过期旧的 reflog 条目。例如，过期超过一周的条目&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git reflog expire --expire&lt;span class="o">=&lt;/span>1.week.ago --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后清理未引用的对象，下面这条命令会删除不需要的对象，并压缩存储库（新 git 版本一般都会做，所以一般这步收益不大，反而因为磁盘不足，压到一半中断，增加了未删除的压缩文件）。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git gc --prune&lt;span class="o">=&lt;/span>1.week.ago
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进一步的，可以强制垃圾回收（这一步可能会特别慢）。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git gc --aggressive --prune&lt;span class="o">=&lt;/span>1.week.ago
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>我试了以上的命令，回收的有限，可能我本地已经有很好的压缩了。&lt;/p>
+&lt;h1 id="3处理-obsidian-中的图片等">3、处理 Obsidian 中的图片等
+&lt;/h1>&lt;p>如果也使用了 Obsidian 的话，里面可能有些资源会比较大，如你曾经贴过一个较大的视频或几兆的图片，这些都可以做下压缩。&lt;br>
+把所有的 png 图片找出来，比如根目录文件，先进入根目录，然后：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .png$ . &lt;span class="p">|&lt;/span> xargs ls -lh &lt;span class="p">|&lt;/span> awk &lt;span class="s1">&amp;#39;{print $5, $9}&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> sort -hr &lt;span class="p">|&lt;/span> more
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>ag&lt;/code> 是 the_silver_searcher 工具，mac 上没这个命令的话，可以自己安装一个。&lt;br>
+开始用的好好的，但后来发现有些文件名中带了空格，awk 中用 $9 打印出来的文件名不完整。后来改用 &lt;code>du -h&lt;/code> 来代替 &lt;code>ls -lh&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -0 -g .png$ . &lt;span class="p">|&lt;/span> xargs -0 du -h &lt;span class="p">|&lt;/span> sort -hr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>好使！&lt;/p>
+&lt;h1 id="docker">Docker
+&lt;/h1>&lt;p>清理未使用的镜像和：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker image prune -a -f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>清理停止的容器（确定都没用了再操作）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker container prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>当然更绝一点，连 build 的缓存都不要了（谨慎）&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker builder prune -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="磁盘">磁盘
+&lt;/h1>&lt;p>比较通用的方法是，从系统磁盘中查看哪个目录占用较大，一层层往下分析。&lt;br>
+&lt;img src="https://cdn.jsongo.top/2025/04/e2c574e7ab713206354294e0faac5ae1.webp"
+loading="lazy"
+alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
+>&lt;br>
+每一个都可以点进去看有哪些大文件（它按大小排序）。&lt;br>
+当然要更细的话，也可以用命令行，从上往下看某些目录里的占用情况：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">du -hsx ~/* &lt;span class="p">|&lt;/span> sort -rh &lt;span class="p">|&lt;/span> head -10
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsongo.top/2025/04/bba67c4fef0813913b1399566d099fc7.webp"
+loading="lazy"
+alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
+>&lt;br>
+然后找到大文件&lt;/p></description></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;h2 id="相关链接">相关链接
 &lt;/h2></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
 &lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
 &lt;/h2>&lt;ul>
