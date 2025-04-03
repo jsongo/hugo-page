@@ -90,4 +90,36 @@ alt="|725"
 &lt;li>&lt;code>new year's eve 2022&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul></description></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
+&lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
+&lt;/h2>&lt;ul>
+&lt;li>原理：&lt;code>git gc&lt;/code>（垃圾回收）命令用于清理 Git 仓库中不必要的文件和优化存储。默认情况下，&lt;code>git gc&lt;/code> 会自动运行，但你可以手动调整它的参数来更好地优化仓库。&lt;/li>
+&lt;li>步骤：可以通过增加 &lt;code>--prune = &amp;lt;date&amp;gt;&lt;/code> 参数来指定一个日期，删除在这个日期之前的所有未引用的对象。例如，要删除一年前的未引用对象，可以使用以下命令：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git gc --prune &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;1 year ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>注意事项：这个操作会清理 Git 仓库中的对象，可能会影响到一些历史版本的恢复等功能。所以在使用之前要确保仓库中的历史记录没有重要的未引用对象需要保留。&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用浅克隆--depth">使用浅克隆（&lt;code>--depth&lt;/code>）
+&lt;/h2>&lt;ul>
+&lt;li>原理：浅克隆是指只克隆仓库的一部分提交历史，而不是全部。对于一些只需要最新代码的场景，如持续集成环境或者临时开发环境，浅克隆可以大大减少克隆仓库的大小。&lt;/li>
+&lt;li>步骤：在克隆仓库时，使用 &lt;code>--depth&lt;/code> 参数来指定克隆的深度。例如，要克隆最近的 10 个提交，可以使用以下命令：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone --depth &lt;span class="m">10&lt;/span> &amp;lt;repository - url&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
 &lt;/ul></description></item></channel></rss>
