@@ -25,7 +25,10 @@ AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 202
 &lt;a class="link" href="https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html" target="_blank" rel="noopener"
 >阿里云盘 Open | AList文档&lt;/a>&lt;br>
 一般填写下面这两个即可（上方就写个盘名）&lt;br>
-![[9e494f6eb39f1a4e62772b8d275d8940_MD5.webp]]&lt;/p>
+&lt;img src="https://cdn.jsongo.top/2025/04/e4496ce3ccb9bf1448df4a5455d9f572.webp"
+loading="lazy"
+alt="9e494f6eb39f1a4e62772b8d275d8940_MD5|766x237"
+>&lt;/p>
 &lt;ul>
 &lt;li>根文件夹，可以在浏览器中打开相应的目录，copy 地址中的 id 即可&lt;/li>
 &lt;li>令牌可以从这里获取：https://alist.nn.ci/zh/tool/aliyundrive/request，安全的&lt;br>
@@ -4698,7 +4701,40 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title/><link>https://www.jsongo.top/articles/%E6%B8%85%E7%90%86-mac-%E7%94%B5%E8%84%91%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/%E6%B8%85%E7%90%86-mac-%E7%94%B5%E8%84%91%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post " />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;h2 id="相关链接">相关链接
+&lt;/h2></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
+&lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
+&lt;/h2>&lt;ul>
+&lt;li>原理：&lt;code>git gc&lt;/code>（垃圾回收）命令用于清理 Git 仓库中不必要的文件和优化存储。默认情况下，&lt;code>git gc&lt;/code> 会自动运行，但你可以手动调整它的参数来更好地优化仓库。&lt;/li>
+&lt;li>步骤：可以通过增加 &lt;code>--prune = &amp;lt;date&amp;gt;&lt;/code> 参数来指定一个日期，删除在这个日期之前的所有未引用的对象。例如，要删除一年前的未引用对象，可以使用以下命令：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git gc --prune &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;1 year ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>注意事项：这个操作会清理 Git 仓库中的对象，可能会影响到一些历史版本的恢复等功能。所以在使用之前要确保仓库中的历史记录没有重要的未引用对象需要保留。&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用浅克隆--depth">使用浅克隆（&lt;code>--depth&lt;/code>）
+&lt;/h2>&lt;ul>
+&lt;li>原理：浅克隆是指只克隆仓库的一部分提交历史，而不是全部。对于一些只需要最新代码的场景，如持续集成环境或者临时开发环境，浅克隆可以大大减少克隆仓库的大小。&lt;/li>
+&lt;li>步骤：在克隆仓库时，使用 &lt;code>--depth&lt;/code> 参数来指定克隆的深度。例如，要克隆最近的 10 个提交，可以使用以下命令：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone --depth &lt;span class="m">10&lt;/span> &amp;lt;repository - url&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
+&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
 首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
 &lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
@@ -4816,37 +4852,4 @@ alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
 loading="lazy"
 alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
 >&lt;br>
-然后找到大文件&lt;/p></description></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;h2 id="相关链接">相关链接
-&lt;/h2></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
-&lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
-&lt;/h2>&lt;ul>
-&lt;li>原理：&lt;code>git gc&lt;/code>（垃圾回收）命令用于清理 Git 仓库中不必要的文件和优化存储。默认情况下，&lt;code>git gc&lt;/code> 会自动运行，但你可以手动调整它的参数来更好地优化仓库。&lt;/li>
-&lt;li>步骤：可以通过增加 &lt;code>--prune = &amp;lt;date&amp;gt;&lt;/code> 参数来指定一个日期，删除在这个日期之前的所有未引用的对象。例如，要删除一年前的未引用对象，可以使用以下命令：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git gc --prune &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;1 year ago&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>注意事项：这个操作会清理 Git 仓库中的对象，可能会影响到一些历史版本的恢复等功能。所以在使用之前要确保仓库中的历史记录没有重要的未引用对象需要保留。&lt;/li>
-&lt;/ul>
-&lt;h2 id="使用浅克隆--depth">使用浅克隆（&lt;code>--depth&lt;/code>）
-&lt;/h2>&lt;ul>
-&lt;li>原理：浅克隆是指只克隆仓库的一部分提交历史，而不是全部。对于一些只需要最新代码的场景，如持续集成环境或者临时开发环境，浅克隆可以大大减少克隆仓库的大小。&lt;/li>
-&lt;li>步骤：在克隆仓库时，使用 &lt;code>--depth&lt;/code> 参数来指定克隆的深度。例如，要克隆最近的 10 个提交，可以使用以下命令：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone --depth &lt;span class="m">10&lt;/span> &amp;lt;repository - url&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
-&lt;/ul></description></item></channel></rss>
+然后找到大文件&lt;/p></description></item></channel></rss>
