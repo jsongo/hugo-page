@@ -5,11 +5,12 @@ tags:
   - study/工具/IT
 created_at: Thu, Nov 21st, 2024 - 18:21:19
 banner_icon: 🦖
-banner: "assets/banners/mmexport1731055048406.jpg"
+banner: "https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg"
 description: 介绍了 ag 工具的安装和使用方法，包括搜索文件名、常用参数等
 title: 强大的 search 工具 - ag
 slug: search-tool-ag-the-silver-searcher
 draft: false
+date: 2024-10-27T11:31:09.698+08:00
 ---
 # 安装
 ```bash

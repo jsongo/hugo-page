@@ -5,7 +5,7 @@ tags:
   - IT/折腾/mac
 created_at: Tue, Dec 10th, 2024 - 16:14:37
 banner_icon: 🚲
-banner: https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png
+banner: "https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png"
 title: 清理 mac 电脑磁盘空间
 description: 如何通过删除不必要的文件和优化存储来释放Mac电脑的磁盘空间
 slug: clean-mac-disk-space
