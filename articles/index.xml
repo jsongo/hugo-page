@@ -1,4 +1,971 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Apr 2025 01:16:54 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 13 Apr 2025 01:10:36 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian linter 自定义规则</title><link>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</link><pubDate>Sun, 13 Apr 2025 01:10:36 +0800</pubDate><guid>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9ce4b7fc6ab166efa82ba9c3b5423dd2.jpg" alt="Featured image of post Obsidian linter 自定义规则" />&lt;p>先看一个例子，我之前有很多复制过来的内容，会在 header 上添加粗体的样式，其实这些我不需要，因为 header 本身就有加粗的样式。问题格式如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">## Logging 的作用
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>要把 &lt;code>**&lt;/code> 给去掉。&lt;br>
+Linter 其实可以自己设置替换规则，如下图：&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744478055_4zpryr.webp"
+loading="lazy"
+>&lt;br>
+其中 &lt;code>^(#{1,6}.*?)\s+\*\*(.*?)\*\*\s*$&lt;/code> 匹配上面这种有问题的标题，然后替换成正常的（两个括号分析指定的 $1 $2）。&lt;br>
+如果不懂怎么配置，可以问 chatgpt，让它给你写正则就可以了。&lt;/p></description></item><item><title>upic 图床工具</title><link>https://www.jsongo.top/articles/upic-image-tool/</link><pubDate>Sat, 12 Apr 2025 16:59:03 +0800</pubDate><guid>https://www.jsongo.top/articles/upic-image-tool/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg" alt="Featured image of post upic 图床工具" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;p>从这里可以找到 upic &lt;a class="link" href="https://github.com/gee1k/uPic" target="_blank" rel="noopener"
+>GitHub - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool&amp;hellip;&lt;/a>&lt;br>
+如果通过 app store 来安装，它是收费，下载的版本可能不太一样。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475945_34Huac.webp"
+loading="lazy"
+alt="|408x325"
+>&lt;br>
+而如果通过上面 github 链接来安装，比如 mac 上，它可以通过 brew 来装&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install bigwig-club/brew/upic --cask
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="cloudflare-设置">Cloudflare 设置
+&lt;/h1>&lt;p>菜单上进入 R2，在首页的右侧可以看到下图中的 API tokens 管理的选项，点击进入。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475946_0TXAdx.webp"
+loading="lazy"
+>&lt;br>
+选 User API Token 就行，权限最小化。填写一些基础的选项：&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475947_LKC9Ly.webp"
+loading="lazy"
+>&lt;br>
+生成的各种 key 等记下来，后面用到。&lt;/p>
+&lt;h1 id="设置-upic">设置 Upic
+&lt;/h1>&lt;p>在 upic 设置添加图床时，要先 Amazon S3 (是的，cloudflare R2 也是选这个)。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475949_sqc9BT.webp"
+loading="lazy"
+alt="|276x395"
+>&lt;br>
+具体设置这里就不介绍了，它走的是简单 http put 方式，有些公司的安全软件会把它禁掉，大厂基本都是。
+所以还是想另外的办法去做上传。&lt;/p>
+&lt;blockquote>
+&lt;p>禁掉是有道理的，因为担心你把公司的资料外传。&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="cloudflare-worker-代理">Cloudflare Worker 代理
+&lt;/h1>&lt;p>为了避开限制，同时也让国内可以正常的做上传（无需魔法），这时 worker 就成了一个很好的选择。&lt;br>
+上传到 R2 的话，worker 里是有内置一些对象可以直接绑定的，使用非常方便，比如上传只需要这么一行代码就可以了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">upload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">MY_BUCKET&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">fileData&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其实 env.MY_BUCKET 即为全局注入的对象，它可以用于做上传，调用它的 put 方法就可以，非常简单。&lt;/p>
+&lt;h2 id="完整代码">完整代码
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">async&lt;/span> &lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">request&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">ctx&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 声明全局变量
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">jsonData&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理 CORS 预检请求
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">method&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s1">&amp;#39;OPTIONS&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">handleCORS&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">method&lt;/span> &lt;span class="o">!==&lt;/span> &lt;span class="s2">&amp;#34;POST&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Only POST allowed&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">405&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 从 Authorization 头部获取 Bearer token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">authHeader&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">headers&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Authorization&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">token&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">authHeader&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">startsWith&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Bearer &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">authHeader&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">substring&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 验证 token
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">token&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">token&lt;/span> &lt;span class="o">!==&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">AUTH_TOKEN&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Unauthorized&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">401&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">contentType&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">headers&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;content-type&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">fileData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">fileType&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">fileName&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理 JSON 格式的请求 (包含 base64 编码的文件数据)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">contentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">includes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;application/json&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">jsonData&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="k">typeof&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span> &lt;span class="o">!==&lt;/span> &lt;span class="s2">&amp;#34;string&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Invalid file data format&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">400&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">base64Data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 检查是否是 data URL 格式
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">startsWith&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;data:&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 解析 data URL
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">dataUrlParts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">match&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/^data:([^;]+);base64,(.+)$/&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">dataUrlParts&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Invalid data URL format&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">400&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileType&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">dataUrlParts&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// 例如 &amp;#34;image/png&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">base64Data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">dataUrlParts&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 直接使用文件内容，需要从请求或文件名推断类型
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">fileType&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">mimetype&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">type&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">contentType&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s2">&amp;#34;application/octet-stream&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Using MIME type: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">fileType&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 将 base64 转换为二进制数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">fileData&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Uint8Array&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">from&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">atob&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">base64Data&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nx">c&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">charCodeAt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`Invalid base64 encoding: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">message&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">400&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 从 MIME 类型生成文件名
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">extension&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">fileType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/&amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s1">&amp;#39;bin&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 使用提供的文件名或生成一个新的
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">fileName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">filename&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="sb">`&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nb">Date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">now&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">.&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">extension&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理 multipart/form-data 格式的请求
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">contentType&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">includes&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;multipart/form-data&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">form&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">formData&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">file&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">form&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;file&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// 文件字段名为 file
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">file&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="k">typeof&lt;/span> &lt;span class="nx">file&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;string&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;No file uploaded&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">400&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileData&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">stream&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileType&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">type&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileName&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Unsupported content type&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">status&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">400&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 使用自定义路径或默认路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">let&lt;/span> &lt;span class="nx">key&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">jsonData&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">path&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">key&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">jsonData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">path&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Using custom path: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">timestamp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">now&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">key&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sb">`uploads/&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">timestamp&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">-&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">fileName&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s1">&amp;#39;file&amp;#39;&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Using generated path: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Uploading to R2: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb"> (&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">fileType&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">)`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">upload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">MY_BUCKET&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">put&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">fileData&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">httpMetadata&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">contentType&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">fileType&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="s1">&amp;#39;application/octet-stream&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Upload successful`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">publicURL&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sb">`https://&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">PUBLIC_DOMAIN&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">/&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sb">`[Info] Public URL: &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nx">publicURL&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="sb">`&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 返回 JSON 对象
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">({&lt;/span> &lt;span class="nx">url&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">publicURL&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 处理 CORS 预检请求
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">handleCORS&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">Response&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headers&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;*&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Access-Control-Allow-Methods&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;POST, OPTIONS&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Access-Control-Allow-Headers&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;Content-Type, Authorization&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;Access-Control-Max-Age&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;86400&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置">配置
+&lt;/h2>&lt;p>有了这个之后，我们再绑一个域名上去，在 worker 的设置里直接加就行，这里就不展开。&lt;br>
+接着把这个域名用到 upic 的配置里&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475950_v3vq6M.webp"
+loading="lazy"
+alt="|734x540"
+>&lt;br>
+“其它字段” 里添加一下头部认证，和 body 的其它字段，用于存储的时候指定 key 等。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744475951_BpscpM.webp"
+loading="lazy"
+alt="|711x658"
+>&lt;br>
+这时就可以用 upic 去上传你的文件了。顺便说一句，upic 可以做截图上传、剪贴板上传，确实好方便。我设置了个快捷键，之后就直接用它来帮我快速做上传就行了。&lt;/p></description></item><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;h2 id="安装-gui">安装 GUI
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">然后从这里安装&lt;/span> &lt;span class="nx">UI&lt;/span>&lt;span class="err">：&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">GUI&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">SingBox&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="p">)](&lt;/span>&lt;span class="nx">https&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="c1">//github.com/GUI-for-Cores/GUI.for.SingBox)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="sb">```bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd GUI.for.SingBox/frontend
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm install
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm build
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd ..
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">wails build
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 &amp;quot; 应用程序 &amp;quot; 中就可以了。&lt;/p>
+&lt;h2 id="安装内核">安装内核
+&lt;/h2>&lt;p>到设置里，找到内核，点击更新，它会开始下载。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474649_Cy3pd0.webp"
+loading="lazy"
+>&lt;/p>
+&lt;h1 id="使用">使用
+&lt;/h1>&lt;p>打开后，如果要使用 clash 的那个订阅地址，得安装一个插件，要不然报错：&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474650_cV8faw.webp"
+loading="lazy"
+alt="|774x96"
+>
+很简单，在 GUI 上找到插件中心，从列表中安装。先更新列表，然后就可以看到“节点转换”了。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474651_GkAXv5.webp"
+loading="lazy"
+>&lt;br>
+后面再重新添加下 clash 的订阅地址就行了。&lt;/p>
+&lt;h2 id="启动内核">启动内核
+&lt;/h2>&lt;p>直接到首页点击启动内核就可以。&lt;br>
+在顶部菜单上可以先把节点，其它的都跟 clashx 差不多。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474652_qh9YSN.webp"
+loading="lazy"
+>&lt;/p>
+&lt;h1 id="速度">速度
+&lt;/h1>&lt;h2 id="对比">对比
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Sing-box 内部&lt;/strong>：
+&lt;ul>
+&lt;li>HTTP/SOCKS5 模式比 TUN 模式快 &lt;strong>1-5ms&lt;/strong>（延迟），吞吐量差距很小（2-5%）。&lt;/li>
+&lt;li>对于大多数用户，这点差异几乎感觉不到。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sing-box vs. ClashX&lt;/strong>：
+&lt;ul>
+&lt;li>Sing-box 比 ClashX 快 &lt;strong>2-5ms&lt;/strong>（延迟），吞吐量高 &lt;strong>10-20%&lt;/strong>。&lt;/li>
+&lt;li>如果你之前用 ClashX 感觉速度还可以，切换到 Sing-box 后应该会有明显提升，尤其是在下载大文件或使用高效协议时。&lt;/li>
+&lt;li>如果你使用的是低延迟服务器（比如 20ms），Sing-box 的优势更明显，下载速度可能从 80Mbps 提升到 90-95Mbps。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="tun-模型">Tun 模型
+&lt;/h2>&lt;p>先到插件中心找下 Tun 模式助手，它可以引导你怎么一步步安装 tun。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474653_IO5quG.webp"
+loading="lazy"
+alt="|0x0"
+>&lt;br>
+安装完之后，点击它，会让你运行一条命令，运行完之后再点击 tun 模型就会弹出提示，点允许就行。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474654_fQTGG6.webp"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="插件">插件
+&lt;/h2>&lt;p>Gemini 插件。需要做配置，不好找，后来发现是要右击这个卡片，找到配置才行。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474656_KBYY1j.webp"
+loading="lazy"
+>&lt;br>
+通用设置里，把托盘菜单的这个选项打开。&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474657_7WaCmo.webp"
+loading="lazy"
+>&lt;/p>
+&lt;h2 id="命令行">命令行
+&lt;/h2>&lt;p>Single-box 一般不干扰命令行，即使开启了 tun 模型，命令行也很可能没被代理。&lt;br>
+其实是有一个插件可以直接给你方法让命令行走代理：&lt;br>
+&lt;img src="https://cdn.jsongo.top/upic/1744474658_RLt7Ie.png"
+loading="lazy"
+alt="|650x286"
+>&lt;br>
+实际上，点运行时，只是让你复制一个 export https_proxy 和 http_proxy 的命令，很简单。&lt;br>
+你不装这插件，手动去运行下面这两行命令也可以的：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">http_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://127.0.0.1:20122&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">https_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://127.0.0.1:20122&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>20122 就是 single-box 在本地开的代理&lt;/p></description></item><item><title>2025 年人工智能指数报告</title><link>https://www.jsongo.top/articles/2025-ai-index-report-summary/</link><pubDate>Wed, 09 Apr 2025 13:22:12 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-ai-index-report-summary/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 2025 年人工智能指数报告" />&lt;p>本文源自：https://hai.stanford.edu/ai-index/2025-ai-index-report，对内容做的一些解读。&lt;br>
+《2025 年人工智能指数报告》（Stanford HAI AI Index 2025）这个报告，全面分析了全球人工智能（AI）的技术进步、经济影响、教育、政策以及社会影响等领域，提供了数据驱动的洞察。&lt;/p>
+&lt;h1 id="1-技术进步与性能提升">1. 技术进步与性能提升
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>模型性能快速提高&lt;/strong>：
+&lt;ul>
+&lt;li>AI 在多项高难度基准测试（如 MMMU、GPQA、SWE-bench）上的表现显著提升。例如，2024 年相较 2023 年，MMMU 得分提高 18.8 个百分点，GPQA 提高 48.9 个百分点，SWE-bench 提高 67.3 个百分点。&lt;/li>
+&lt;li>在图像分类、视觉推理和英语理解等任务中，AI 已普遍超越人类基准。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>模型差距缩小&lt;/strong>：
+&lt;ul>
+&lt;li>顶级模型与第 10 名模型的性能差距从 2023 年的 11.9% 缩小至 2024 年的 5.4%，前两名模型差距仅 0.7%，显示竞争加剧。&lt;/li>
+&lt;li>开源模型与闭源模型的性能差距从 8% 缩小至 1.7%，开源模型（如 Meta 的 Llama、中国的 DeepSeek）正在快速追赶。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>小型模型效率提升&lt;/strong>：
+&lt;ul>
+&lt;li>2022 年，达到 MMLU 基准 60% 以上的最小模型是 5400 亿参数的 PaLM；而 2024 年，微软的 Phi-3-mini 仅 38 亿参数即达标，参数规模减少 142 倍。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>AI 代理能力初显&lt;/strong>：
+&lt;ul>
+&lt;li>在 RE-Bench 基准测试中，AI 代理在短时任务（2 小时）中得分是人类专家的 4 倍，但在长时任务（32 小时）中仍落后于人类（人类得分是 AI 的 2 倍）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>生成能力突破&lt;/strong>：
+&lt;ul>
+&lt;li>AI 在高质量视频生成方面取得进展，部分代理型 AI 甚至在特定场景下超越人类表现。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="2-经济与产业影响">2. 经济与产业影响
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>创纪录的投资&lt;/strong>：
+&lt;ul>
+&lt;li>2024 年全球私人 AI 投资达到 1508 亿美元的历史新高，美国以 672 亿美元领先，中国为第二大投资地。&lt;/li>
+&lt;li>政府投资规模扩大：加拿大承诺 24 亿美元，中国推出 475 亿美元半导体基金，沙特阿拉伯的“超越计划”投资 1000 亿美元。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>成本显著下降&lt;/strong>：
+&lt;ul>
+&lt;li>查询 GPT-3.5 级别模型的成本从 2022 年 11 月的每百万 token 20 美元降至 2024 年 10 月的 0.07 美元（Gemini-1.5-Flash-8B），下降 280 倍。&lt;/li>
+&lt;li>硬件成本每年下降 30%，能源效率每年提升 40%，降低 AI 应用门槛。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>产业主导地位增强&lt;/strong>：
+&lt;ul>
+&lt;li>2024 年，近 90% 的显著 AI 模型来自产业（2023 年为 60%），学术界仍为高引用研究的首要来源。&lt;/li>
+&lt;li>模型规模快速增长：训练计算量每 5 个月翻倍，数据集每 8 个月翻倍，能耗每年翻倍。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>就业需求激增&lt;/strong>：
+&lt;ul>
+&lt;li>对机器学习技能的需求激增，调查显示越来越多的工人预计 AI 将改变其工作。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="3-科学与医学中的-ai">3. 科学与医学中的 AI
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>科学突破加速&lt;/strong>：
+&lt;ul>
+&lt;li>2024 年 AI 推动多项科学进展，如 Aviary（生物任务的 LLM 代理）和 FireSat（野火预测增强）。&lt;/li>
+&lt;li>蛋白质科学数据库显著扩展：2021 年以来 UniProt 增长 31%，PDB 增长 23%，AlphaFold 增长 585%。&lt;/li>
+&lt;li>两项诺贝尔奖授予 AI 相关突破：Google DeepMind 的 AlphaFold 获化学奖。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>医疗应用扩展&lt;/strong>：
+&lt;ul>
+&lt;li>截至 2024 年 8 月，FDA 批准的 AI 医疗设备达 950 个（2015 年仅 6 个，2023 年为 221 个）。&lt;/li>
+&lt;li>大型医疗基础模型涌现，如 Med-Gemini（多模态通用模型）、EchoCLIP（心脏病学）和 ChexAgent（放射学）。&lt;/li>
+&lt;li>OpenAI 的 o1 模型在 MedQA 基准上达到 96%，较 2023 年最佳成绩提升 5.8 个百分点。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>伦理研究增加&lt;/strong>：
+&lt;ul>
+&lt;li>2020-2024 年，医疗 AI 伦理出版物从 288 篇增至 1031 篇，增长近 4 倍。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="4-教育趋势">4. 教育趋势
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>CS 教育普及&lt;/strong>：
+&lt;ul>
+&lt;li>全球三分之二的国家已提供或计划提供 K-12 计算机科学教育，相较 2019 年翻倍，非洲和拉美进步最大。&lt;/li>
+&lt;li>但非洲许多地区因基础设施（如电力）不足，教育普及受限。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>AI 教育挑战&lt;/strong>：
+&lt;ul>
+&lt;li>美国 81% 的 CS 教师认为 AI 应纳入基础教育，但不到一半觉得自己有能力教授 AI。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>新工具使用&lt;/strong>：
+&lt;ul>
+&lt;li>ChatGPT 等 AI 工具在教师和学生中的应用增加，引发对教育影响的关注。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="5-政策与治理">5. 政策与治理
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>法规数量激增&lt;/strong>：
+&lt;ul>
+&lt;li>2024 年，美国联邦机构出台 59 项 AI 相关法规（2023 年为 25 项），涉及机构数量翻倍。&lt;/li>
+&lt;li>全球 75 个国家的立法中 AI 提及率较 2023 年增长 21.3%，自 2016 年以来增长 9 倍。&lt;/li>
+&lt;li>美国地方层面，2023 年 73.7% 的政策制定者支持 AI 监管（2022 年为 55.7%）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>优先级分化&lt;/strong>：
+&lt;ul>
+&lt;li>数据隐私（80.4%）、失业者再培训（76.2%）和 AI 部署规则（72.5%）获高支持率，但对执法面部识别禁令（34.2%）和普遍基本收入（24.6%）支持较低。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>地缘竞争加剧&lt;/strong>：
+&lt;ul>
+&lt;li>美国 2023 年产出 61 个重要 AI 模型，欧盟 21 个，中国 15 个；中国在 AI 论文和专利数量上领先，但质量未评估。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="6-社会影响与公众认知">6. 社会影响与公众认知
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>AI 融入日常生活&lt;/strong>：
+&lt;ul>
+&lt;li>从医疗到交通，AI 正从实验室走向现实生活，如 FDA 批准的医疗设备激增。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>信任与乐观分化&lt;/strong>：
+&lt;ul>
+&lt;li>全球 55% 的人认为 AI 产品和服务利大于弊（2022 年为 52%），中国（83%）、印尼（80%）最为乐观，而加拿大（40%）、美国（39%）较低。&lt;/li>
+&lt;li>66% 的人预计 AI 将在 3-5 年内显著影响生活，加拿大（+17%）和德国（+15%）增幅最大。&lt;/li>
+&lt;li>对 AI 公司保护数据的信心从 2023 年的 50% 降至 2024 年的 47%。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>AI 危害上升&lt;/strong>：
+&lt;ul>
+&lt;li>AI 事件数据库记录的 AI 相关事故 2024 年达 233 起，较 2023 年增长 56.4%，包括深度伪造和聊天机器人相关问题。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="7-全球竞争与地缘动态">7. 全球竞争与地缘动态
+&lt;/h1>&lt;ul>
+&lt;li>&lt;strong>中美差距缩小&lt;/strong>：
+&lt;ul>
+&lt;li>中美顶级模型性能差距缩至 0.3%，中国以 1/12 的投资规模追赶美国。&lt;/li>
+&lt;li>中国 2023 年机器人安装量超全球总和，AI 专利占全球 61%。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>新兴地区崛起&lt;/strong>：
+&lt;ul>
+&lt;li>中东、拉美和东南亚推出强模型，AI 技术全球化趋势增强。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>开源趋势&lt;/strong>：
+&lt;ul>
+&lt;li>DeepSeek 和 Mistral 等开源模型崛起，OpenAI 计划 2025 年夏季发布首个开源模型。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="总结与展望">总结与展望
+&lt;/h1>&lt;p>2025 年 AI 指数报告显示，AI 技术能力快速提升，成本下降使其更普惠，同时产业竞争加剧，模型差距缩小。中美在 AI 领域的博弈持续，但中国正迎头赶上。AI 在科学、医疗和日常生活中的应用日益广泛，但伴随伦理、安全和公平访问的挑战。政策制定者需平衡创新与监管，确保 AI 以人为本发展。&lt;br>
+这份 456 页的报告为政策制定者、研究人员和公众提供了全面的数据支持，是理解 AI 现状与未来的关键资源&lt;/p></description></item><item><title>Tracing 基础</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 基础" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
+&lt;h1 id="tracing-概念">Tracing 概念
+&lt;/h1>&lt;h2 id="-tracing-基础概念梳理">🔍 Tracing 基础概念梳理
+&lt;/h2>&lt;h3 id="-整体结构树形">🌲 整体结构（树形）
+&lt;/h3>&lt;ul>
+&lt;li>一个请求的完整追踪过程被称为一个 &lt;strong>Trace&lt;/strong>，可以用一个 trace_id 唯一标识。&lt;/li>
+&lt;li>一个 Trace 是由多个 &lt;strong>Span&lt;/strong> 组成的，&lt;strong>Span 形成一棵树结构&lt;/strong>。
+&lt;ul>
+&lt;li>根节点是最早创建的那个 Span（通常是入口请求，如前端或网关）。&lt;/li>
+&lt;li>子节点 Span 表示在处理过程中产生的后续调用（如微服务之间的调用、数据库访问等）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-核心概念一览">🧩 核心概念一览
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>概念&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>描述&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>Trace&lt;/strong>&lt;/td>
+&lt;td>表示一次完整的请求链，一般由一个唯一的 trace_id 标识。可以跨多个服务。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Span&lt;/strong>&lt;/td>
+&lt;td>Trace 中的一个操作单位，表示一次具体的调用或操作，有 span_id。可以嵌套形成父子关系。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Parent Span&lt;/strong>&lt;/td>
+&lt;td>一个 Span 可以有一个父 Span（用 parent_span_id 标识），用于构建调用树。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Child Span&lt;/strong>&lt;/td>
+&lt;td>父 Span 内部调用的子操作，属于同一个 trace_id，形成树形结构。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Baggage&lt;/strong>&lt;/td>
+&lt;td>是附着在 Trace 上的键值对，会随着 trace 传播给每个后续的 span，可用于传递业务上下文数据（如用户 ID、地域等）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Attributes / Tags&lt;/strong>&lt;/td>
+&lt;td>是附着在 Span 上的键值对，用于记录执行时的状态、参数信息等。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Events / Logs&lt;/strong>&lt;/td>
+&lt;td>是附着在 Span 上的时间序列事件，例如某个时刻报错、收到响应等。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="span">Span
+&lt;/h2>&lt;p>🧠 每个 Span 都包含什么？&lt;/p>
+&lt;ul>
+&lt;li>span_id：该 Span 的唯一标识&lt;/li>
+&lt;li>trace_id：所属的 Trace ID&lt;/li>
+&lt;li>parent_span_id：它的父节点 Span 的 ID（根 span 没有父 ID）&lt;/li>
+&lt;li>name：这个 span 的名称（如“调用用户服务”）&lt;/li>
+&lt;li>start_time / end_time：起止时间&lt;/li>
+&lt;li>attributes（也叫 tags）：键值对，描述上下文或运行参数&lt;/li>
+&lt;li>events（或 logs）：事件序列（如异常、返回值）&lt;/li>
+&lt;li>status：表示是否成功（比如 HTTP 500）&lt;/li>
+&lt;li>baggage（选）：附加在 trace 上传播的键值对（所有 span 可共享）&lt;br>
+但如果你每个小操作都创建一个 span，会导致：&lt;/li>
+&lt;li>数据太多，观察成本高&lt;/li>
+&lt;li>采样/存储开销大&lt;br>
+所以建议：&lt;/li>
+&lt;li>只给 &lt;strong>关键路径&lt;/strong>加 span，比如：IO 操作、外部调用、耗时步骤。&lt;/li>
+&lt;li>对短暂或无关紧要的内部操作（如计算、循环等）不需要单独创建 span。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-数据流示意树结构">🧬 数据流示意（树结构）
+&lt;/h3>&lt;p>&lt;strong>Span 是可以相互嵌套的&lt;/strong>，它天生就是为了表现“一个操作内部还包含其他子操作”这种结构。它之所以是树结构，就是因为服务调用本身、或某个操作本身，就常常是“嵌套”的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Trace (trace_id: abc123)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── Span A (root span, span_id: 1)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├── Span B (span_id: 2, parent: 1)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ├── Span D (span_id: 4, parent: 2)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ └── Span E (span_id: 5, parent: 2)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── Span C (span_id: 3, parent: 1)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="-耗时信息的采集">⏱ 耗时信息的采集
+&lt;/h3>&lt;p>每个 Span 都记录 start &amp;amp; end 时间，比如&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;span_id&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;abc123&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;start_time&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2025-04-13T10:00:00.123Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;end_time&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;2025-04-13T10:00:01.456Z&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;duration_ms&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1333&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>✅ 计算方式：duration = end_time - start_time（建议保留 ms 精度）&lt;/p>
+&lt;h2 id="-补充说明">✨ 补充说明
+&lt;/h2>&lt;ul>
+&lt;li>Span 使用
+&lt;ul>
+&lt;li>&lt;strong>Span != 服务&lt;/strong>，一个服务内可以产生多个 span，比如控制器、服务、DAO 等不同层级调用。&lt;/li>
+&lt;li>&lt;strong>Span 的嵌套并不完全等于服务调用&lt;/strong>，可以是方法内的子步骤。&lt;/li>
+&lt;li>&lt;strong>Baggage 不适合放太多数据&lt;/strong>，因为会被全链路传播，性能和隐私要注意。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="一些应用">一些应用
+&lt;/h1>&lt;h2 id="展示耗时信息前端可视化">展示耗时信息（前端可视化）
+&lt;/h2>&lt;h3 id="1-树形结构--耗时">1 、树形结构 + 耗时
+&lt;/h3>&lt;ul>
+&lt;li>展示结构 + 每一层的耗时：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">└── 用户请求（1000ms）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├── 认证服务（200ms）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├── 用户服务（600ms）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ ├── 数据库查询（400ms）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ └── 缓存写入（50ms）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── 日志服务（100ms）
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2-时间线图--甘特图推荐">2 、时间线图 / 甘特图（推荐）
+&lt;/h3>&lt;ul>
+&lt;li>横轴是时间，纵轴是调用树层级，像这样：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">时间轴: |----100ms----|----100ms----|----100ms----|…
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">用户请求: [------------------------------]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">用户服务: [---------------]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">数据库查询: [------]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">缓存写入: [--]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>可以一眼看出：
+&lt;ul>
+&lt;li>谁最耗时&lt;/li>
+&lt;li>哪些操作是串行的、哪些是并行的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="3判断性能瓶颈基于耗时">3、判断性能瓶颈（基于耗时）
+&lt;/h3>&lt;p>根据 trace 可以自动检测一些问题：&lt;/p>
+&lt;ul>
+&lt;li>某个 span 耗时超过阈值（如 200ms）&lt;/li>
+&lt;li>同一个服务下某些 span 总是很慢&lt;/li>
+&lt;li>多个 span 串行而不是并行执行（如 A → B → C）&lt;/li>
+&lt;/ul>
+&lt;h2 id="-补充说明-1">✨ 补充说明
+&lt;/h2>&lt;ul>
+&lt;li>统一时间来源
+&lt;ul>
+&lt;li>使用同一个时钟源（如 performance.now() 或 process.hrtime()，不要用 Date.now() 混用）&lt;/li>
+&lt;li>建议用 &lt;strong>高精度时间&lt;/strong>（纳秒或微秒），落库前可以转成毫秒或浮点秒数。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="tracing-与-logging-的关系">Tracing 与 Logging 的关系
+&lt;/h1>&lt;p>在软件开发中，&lt;strong>Tracing（追踪）&lt;/strong> 和 &lt;strong>Logging（日志记录）&lt;/strong> 是两种常用的技术，尽管它们的功能相似，但在应用场景和实现方式上有显著差异。&lt;br>
+一句话：Tracing 是用于“跨服务的调用链分析”，而 Logging 是用于“记录事件和调试信息”。&lt;/p>
+&lt;h2 id="tl-dr">TL; DR
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Tracing 和 Logging 是互补的技术&lt;/strong>：
+&lt;ul>
+&lt;li>Tracing 更适合实时监控和动态数据上报，而 Logging 则适合长期记录和调试。&lt;/li>
+&lt;li>它们可以结合使用：例如，在应用运行期间使用 Tracing 技术获取实时数据（如资源使用情况），然后通过 Logging 技术将错误信息记录下来。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>没有严格的包含关系&lt;/strong>：
+&lt;ul>
+&lt;li>它们各自服务于不同的场景和技术需求，但两者并不互相覆盖所有功能。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="核心能力对比">核心能力对比
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">&lt;strong>维度&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Logging&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Tracing&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">📍 关注点&lt;/td>
+&lt;td>记录本地事件（debug/info/error）&lt;/td>
+&lt;td>跨服务的请求链路与时序&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">🧩 粒度&lt;/td>
+&lt;td>每一行日志就是一条信息&lt;/td>
+&lt;td>每个 trace 是一个整体请求，包含多个 span&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">🔍 定位问题&lt;/td>
+&lt;td>看错误堆栈、日志内容&lt;/td>
+&lt;td>看请求链在哪个环节耗时多/出错&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">⏱ 时间维度&lt;/td>
+&lt;td>一条日志有个 timestamp&lt;/td>
+&lt;td>Trace 有 start/end + 每个 Span 有耗时&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">🌐 上下文&lt;/td>
+&lt;td>通常只看当前服务&lt;/td>
+&lt;td>可以跨多个服务传播 context（trace_id, baggage）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">📈 可视化&lt;/td>
+&lt;td>日志系统展示（Elasticsearch, Loki）&lt;/td>
+&lt;td>链路图、时间线（如 Jaeger, Zipkin）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">🧰 典型工具&lt;/td>
+&lt;td>Log4j、SLF4J、Winston、Loki&lt;/td>
+&lt;td>OpenTelemetry、Jaeger、SkyWalking&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="软件开发视角">软件开发视角
+&lt;/h2>&lt;h3 id="1-tracing-的作用">1. Tracing 的作用
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>追踪应用程序的行为&lt;/strong>：Tracing 主要用于跟踪应用程序的运行状态、资源使用情况（如 CPU、内存）、错误发生等。&lt;/li>
+&lt;li>&lt;strong>实时监控&lt;/strong>：常用于实时应用中，例如浏览器插件、云服务监控等。&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-logging-的作用">2. Logging 的作用
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>记录详细信息&lt;/strong>：Logging 是记录日志文件或直接发送到云服务的详细信息（如错误堆栈、调用链）。&lt;/li>
+&lt;li>&lt;strong>调试和分析&lt;/strong>：用于调试错误源，并提供详细的运行轨迹。&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-tracing-和-logging-的关系">3. Tracing 和 Logging 的关系
+&lt;/h3>&lt;ul>
+&lt;li>两者其实是可以相辅相成的。一个系统通常这样用：
+&lt;ul>
+&lt;li>Tracing → 提供“全局视角”：看到某个请求走了哪些服务、在哪一步慢了或失败了&lt;/li>
+&lt;li>Logging → 提供“局部细节”：具体方法内部执行了什么、变量值、堆栈、报错&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>举例说明下，比如 Tracing 信息如下：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">TraceID: abc123
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Span: [用户服务处理订单] 150ms
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── [调用库存服务] 90ms ❌ Timeout
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>Logging 里，有如下信息：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">[WARN]TraceID=abc123 无法连接库存数据库
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[ERROR] TraceID=abc123 查询失败，返回500
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>当看到 trace 知道问题出在“调用库存服务”，再用 trace_id 去日志里一搜，就能看到详细原因。&lt;/p>
+&lt;h2 id="替代性和建议">替代性和建议
+&lt;/h2>&lt;h3 id="-理论上可以把-tracing-当-log-用">✅ 理论上可以把 Tracing 当 Log 用
+&lt;/h3>&lt;blockquote>
+&lt;p>如 OpenTelemetry 就是一个记录很细的系统，可以当 log 用。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Tracing 的每个 span 可以附加 &lt;strong>事件（event）/ 日志（log）&lt;/strong>&lt;/li>
+&lt;li>可以做到类似 logger.info(…) 的功能&lt;/li>
+&lt;li>可以把 span.addEvent(&amp;quot; 准备开始数据库查询 &amp;ldquo;) 当作 log&lt;/li>
+&lt;/ul>
+&lt;h3 id="-但不建议只用-tracing-替代-logging">❌ 但不建议只用 Tracing 替代 Logging
+&lt;/h3>&lt;ul>
+&lt;li>Tracing 会采样（不是所有请求都记录）→ 有的错误日志你找不到&lt;/li>
+&lt;li>写日志的自由度高（结构、内容、格式），Tracing 更偏结构化&lt;/li>
+&lt;li>日志可以本地保存、不依赖全链路链路系统&lt;/li>
+&lt;li>Tracing 更适合宏观链路分析，不适合长期审计、安全排查等用途&lt;/li>
+&lt;/ul>
+&lt;h3 id="-推荐做法实际工程中">🧠 推荐做法（实际工程中）
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>级别&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>工具&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>用途&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>🔭 全局观&lt;/td>
+&lt;td>Tracing (OpenTelemetry)&lt;/td>
+&lt;td>分布式链路追踪，定位请求瓶颈&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>🛠 细节&lt;/td>
+&lt;td>Logging (Winston, Logback…)&lt;/td>
+&lt;td>开发调试、审计、错误定位&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>📊 聚合&lt;/td>
+&lt;td>Metrics (Prometheus…)&lt;/td>
+&lt;td>吞吐量、请求数、错误率等统计指标&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>在写日志时 &lt;strong>附带 trace_id&lt;/strong> 是非常推荐的做法（比如 MDC、trace context），这样就可以轻松做到 “trace 定位后，日志深入排查”。比如在 log 里统一打出：&lt;code>[INFO][trace_id=abc123]查询成功&lt;/code> 。&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>一个请求来了，你可以：&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>用 Trace 找到问题在哪个服务&lt;/li>
+&lt;li>用 Log 看服务内部报错细节&lt;/li>
+&lt;li>用 Metrics 看整体健康趋势&lt;/li>
+&lt;/ul></description></item><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
 >AI 2027&lt;/a> 这个网站对 AI 未来发展做了一些预言，很有趣，做了一些总结梳理。&lt;br>
 AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 2025 年到 2028 年人工智能（AI）快速发展的可能情景，预测 AI 将在这段时间内经历从初级自主代理到超人类智能的飞速发展。&lt;/p>
 &lt;h1 id="主要预测">主要预测
@@ -3448,7 +4415,10 @@ width="725"
 loading="lazy"
 alt="|725"
 >&lt;br>
-调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p>
+&lt;h2 id="heading">
+&lt;/h2>&lt;p>&lt;a class="link" href="https://cdn.jsongo.top/upic/1744470864_fTcwVf.png" target="_blank" rel="noopener"
+>https://cdn.jsongo.top/upic/1744470864_fTcwVf.png&lt;/a>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -4701,7 +5671,7 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
 &lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
 &lt;/h2>&lt;ul>
 &lt;li>原理：&lt;code>git gc&lt;/code>（垃圾回收）命令用于清理 Git 仓库中不必要的文件和优化存储。默认情况下，&lt;code>git gc&lt;/code> 会自动运行，但你可以手动调整它的参数来更好地优化仓库。&lt;/li>
@@ -4733,7 +5703,7 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
-&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
 首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
 &lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
@@ -4851,4 +5821,42 @@ alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
 loading="lazy"
 alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
 >&lt;br>
-然后找到大文件&lt;/p></description></item></channel></rss>
+然后找到大文件&lt;/p></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://www.jsongo.top/assets/banners/mmexport1731055048406.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install the_silver_searcher
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="使用">使用
+&lt;/h1>&lt;h2 id="只搜文件名">只搜文件名
+&lt;/h2>&lt;p>直接使用时，ag 会检索内容。需要添加 &lt;code>-g&lt;/code> 参考&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .mp4 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="正常使用">正常使用
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="常用参数">常用参数
+&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
+&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
+&lt;h3 id="打印前后">打印前后
+&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
+&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
+&lt;h3 id="只打文件名">只打文件名
+&lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
+&lt;h3 id="全词匹配">全词匹配
+&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p></description></item></channel></rss>
