@@ -6,7 +6,7 @@ tags:
 created_at: Sat, Apr 12, 2025 - 16:59:03
 date: 2025-04-12T16:59:03.470+08:00
 banner_icon: 🐭
-banner: https://cdn.jsongo.top/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg
+banner: "https://cdn.jsongo.top/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg"
 title: upic 图床工具
 slug: upic-image-tool
 description: 使用uPic工具和Cloudflare R2搭建图床，实现便捷的图片上传和管理
