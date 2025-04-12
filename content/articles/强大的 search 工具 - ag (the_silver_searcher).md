@@ -36,3 +36,9 @@ ag -i foo ./bar/
 `-l` 表示 files-with-matches，即匹配的文件列表
 ### 全词匹配
 `-w`
+## 应用
+把所有的 png 图片找出来，然后按大小排序：
+```bash
+ag -0 -g .png$ . | xargs -0 du -h | sort -hr
+```
+![[assets/local_image_plus/085e9ed0cac92342df818071b090c46f_MD5.png]]
