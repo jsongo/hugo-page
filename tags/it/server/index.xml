@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/Server on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/server/</link><description>Recent content in IT/Server on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Apr 2025 20:51:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/server/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracing 基础</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 基础" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT/Server on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/it/server/</link><description>Recent content in IT/Server on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Apr 2025 20:51:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/it/server/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracing 初步理解</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 初步理解" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
 &lt;h1 id="tracing-概念">Tracing 概念
 &lt;/h1>&lt;h2 id="-tracing-基础概念梳理">🔍 Tracing 基础概念梳理
 &lt;/h2>&lt;h3 id="-整体结构树形">🌲 整体结构（树形）
@@ -344,18 +344,10 @@
 &lt;td>Metrics (Prometheus…)&lt;/td>
 &lt;td>吞吐量、请求数、错误率等统计指标&lt;/td>
 &lt;/tr>
-&lt;tr>
-&lt;td>在写日志时 &lt;strong>附带 trace_id&lt;/strong> 是非常推荐的做法（比如 MDC、trace context），这样就可以轻松做到 “trace 定位后，日志深入排查”。比如在 log 里统一打出：&lt;code>[INFO][trace_id=abc123]查询成功&lt;/code> 。&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>一个请求来了，你可以：&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;p>在写日志时 &lt;strong>附带 trace_id&lt;/strong> 是非常推荐的做法（比如 MDC、trace context），这样就可以轻松做到 “trace 定位后，日志深入排查”。比如在 log 里统一打出：&lt;code>[INFO][trace_id=abc123]查询成功&lt;/code> 。&lt;br>
+一个请求来了，你可以：&lt;/p>
 &lt;ul>
 &lt;li>用 Trace 找到问题在哪个服务&lt;/li>
 &lt;li>用 Log 看服务内部报错细节&lt;/li>
