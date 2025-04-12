@@ -5695,7 +5695,45 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
-&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+&lt;/ul></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install the_silver_searcher
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="使用">使用
+&lt;/h1>&lt;h2 id="只搜文件名">只搜文件名
+&lt;/h2>&lt;p>直接使用时，ag 会检索内容。需要添加 &lt;code>-g&lt;/code> 参考&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .mp4 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="正常使用">正常使用
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="常用参数">常用参数
+&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
+&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
+&lt;h3 id="打印前后">打印前后
+&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
+&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
+&lt;h3 id="只打文件名">只打文件名
+&lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
+&lt;h3 id="全词匹配">全词匹配
+&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
 首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
 &lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
@@ -5814,42 +5852,4 @@ loading="lazy"
 alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
 >&lt;br>
 然后找到大文件&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;h2 id="相关链接">相关链接
-&lt;/h2></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://www.jsongo.top/assets/banners/mmexport1731055048406.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
-&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install the_silver_searcher
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h1 id="使用">使用
-&lt;/h1>&lt;h2 id="只搜文件名">只搜文件名
-&lt;/h2>&lt;p>直接使用时，ag 会检索内容。需要添加 &lt;code>-g&lt;/code> 参考&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .mp4 .
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="正常使用">正常使用
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="常用参数">常用参数
-&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
-&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
-&lt;h3 id="打印前后">打印前后
-&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
-&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
-&lt;h3 id="只打文件名">只打文件名
-&lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
-&lt;h3 id="全词匹配">全词匹配
-&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p></description></item></channel></rss>
+&lt;/h2></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item></channel></rss>
