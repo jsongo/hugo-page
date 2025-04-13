@@ -26,27 +26,23 @@ ag -g .mp4 .
 ```bash
 ag -i foo ./bar/
 ```
--i 用于忽略大小写
-
+>  -i 用于忽略大小写
 ```shell
 ag 'useEffect' --js
 ```
-只在 JS 文件中查 useEffect。
-
+>  只在 JS 文件中查 useEffect。
 ```shell
 ag --multiline '^def .+\n +"""'
 ```
-查 Python 函数定义后面紧跟 docstring 的情况。
-
+>  查 Python 函数定义后面紧跟 docstring 的情况。
 ```shell
 ag -l 'OldName' | xargs sed -i 's/OldName/NewName/g'
 ```
-查到文件中包含 OldName 的所有文件，批量做替换。
-
+>  查到文件中包含 OldName 的所有文件，批量做替换。
 ```shell
 ag -C 2 'class User'
 ```
-显示匹配行的上下两行，方便看上下文
+>  显示匹配行的上下两行，方便看上下文
 
 ## 常用参数
 ### -- Ignore
@@ -66,7 +62,7 @@ ag -C 2 'class User'
 ```bash
 ag -0 -g .png$ . | xargs -0 du -h | sort -hr
 ```
-![[assets/local_image_plus/085e9ed0cac92342df818071b090c46f_MD5.png]]
+![085e9ed0cac92342df818071b090c46f_MD5.webp|940x235](https://cdn.jsongo.top/upic/1744522541_8OSi1S.webp)
 ### `-0` 选项
 - 它主要是为了配合 xargs -0 使用，常用于将结果传递给它来支持空分隔符的命令
 - **功能**：指定输出的文件名以 **空字符（Null 字符）** 分隔，而不是默认的换行符。
