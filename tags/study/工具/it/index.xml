@@ -27,9 +27,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;blockquote>
-&lt;p>-i 用于忽略大小写&lt;/p>
-&lt;/blockquote>
+&lt;/div>&lt;p>-i 用于忽略大小写&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -38,9 +36,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag &lt;span class="s1">&amp;#39;useEffect&amp;#39;&lt;/span> --js
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;blockquote>
-&lt;p>只在 JS 文件中查 useEffect。&lt;/p>
-&lt;/blockquote>
+&lt;/div>&lt;p>只在 JS 文件中查 useEffect。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -49,9 +45,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag --multiline &lt;span class="s1">&amp;#39;^def .+\n +&amp;#34;&amp;#34;&amp;#34;&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;blockquote>
-&lt;p>查 Python 函数定义后面紧跟 docstring 的情况。&lt;/p>
-&lt;/blockquote>
+&lt;/div>&lt;p>查 Python 函数定义后面紧跟 docstring 的情况。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -60,9 +54,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -l &lt;span class="s1">&amp;#39;OldName&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> xargs sed -i &lt;span class="s1">&amp;#39;s/OldName/NewName/g&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;blockquote>
-&lt;p>查到文件中包含 OldName 的所有文件，批量做替换。&lt;/p>
-&lt;/blockquote>
+&lt;/div>&lt;p>查到文件中包含 OldName 的所有文件，批量做替换。&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -71,15 +63,14 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -C &lt;span class="m">2&lt;/span> &lt;span class="s1">&amp;#39;class User&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;blockquote>
-&lt;p>显示匹配行的上下两行，方便看上下文&lt;/p>
-&lt;/blockquote>
+&lt;/div>&lt;p>显示匹配行的上下两行，方便看上下文&lt;/p>
 &lt;h2 id="常用参数">常用参数
-&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
-&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
+&lt;/h2>&lt;h3 id="ignore">Ignore
+&lt;/h3>&lt;p>&lt;code>--ignore *pack*&lt;/code>&lt;/p>
 &lt;h3 id="打印前后">打印前后
-&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
-&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
+&lt;/h3>&lt;p>&lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
+&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;br>
+&lt;code>-c 3&lt;/code> 可以打印上下 3 行&lt;/p>
 &lt;h3 id="只打文件名">只打文件名
 &lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
 &lt;h3 id="全词匹配">全词匹配
