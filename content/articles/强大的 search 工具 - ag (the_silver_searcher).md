@@ -26,30 +26,31 @@ ag -g .mp4 .
 ```bash
 ag -i foo ./bar/
 ```
->  -i 用于忽略大小写
+-i 用于忽略大小写
 ```shell
 ag 'useEffect' --js
 ```
->  只在 JS 文件中查 useEffect。
+只在 JS 文件中查 useEffect。
 ```shell
 ag --multiline '^def .+\n +"""'
 ```
->  查 Python 函数定义后面紧跟 docstring 的情况。
+查 Python 函数定义后面紧跟 docstring 的情况。
 ```shell
 ag -l 'OldName' | xargs sed -i 's/OldName/NewName/g'
 ```
->  查到文件中包含 OldName 的所有文件，批量做替换。
+查到文件中包含 OldName 的所有文件，批量做替换。
 ```shell
 ag -C 2 'class User'
 ```
->  显示匹配行的上下两行，方便看上下文
+显示匹配行的上下两行，方便看上下文
 
 ## 常用参数
-### -- Ignore
-如 `--ignore *pack*`
+### Ignore
+`--ignore *pack*`
 ### 打印前后
-如 `-A 3` 可以打印搜索结果的 after 3 行。  
-`-B 3` 可以打印 before 的 3 行
+`-A 3` 可以打印搜索结果的 after 3 行。  
+`-B 3` 可以打印 before 的 3 行  
+`-c 3` 可以打印上下 3 行
 ### 只打文件名
 `-l` 表示 files-with-matches，即匹配的文件列表
 ### 全词匹配
