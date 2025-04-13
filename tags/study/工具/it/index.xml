@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study/工具/IT on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/</link><description>Recent content in Study/工具/IT on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 27 Oct 2024 11:31:09 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/index.xml" rel="self" type="application/rss+xml"/><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study/工具/IT on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/</link><description>Recent content in Study/工具/IT on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Feb 2025 11:31:09 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/index.xml" rel="self" type="application/rss+xml"/><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -27,7 +27,44 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="常用参数">常用参数
+&lt;/div>&lt;p>-i 用于忽略大小写&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag &lt;span class="s1">&amp;#39;useEffect&amp;#39;&lt;/span> --js
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>只在 JS 文件中查 useEffect。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag --multiline &lt;span class="s1">&amp;#39;^def .+\n +&amp;#34;&amp;#34;&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查 Python 函数定义后面紧跟 docstring 的情况。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -l &lt;span class="s1">&amp;#39;OldName&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> xargs sed -i &lt;span class="s1">&amp;#39;s/OldName/NewName/g&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查到文件中包含 OldName 的所有文件，批量做替换。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -C &lt;span class="m">2&lt;/span> &lt;span class="s1">&amp;#39;class User&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>显示匹配行的上下两行，方便看上下文&lt;/p>
+&lt;h2 id="常用参数">常用参数
 &lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
 &lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
 &lt;h3 id="打印前后">打印前后
@@ -36,4 +73,28 @@
 &lt;h3 id="只打文件名">只打文件名
 &lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
 &lt;h3 id="全词匹配">全词匹配
-&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p></description></item></channel></rss>
+&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p>
+&lt;h3 id="只输出匹配的部分">只输出匹配的部分
+&lt;/h3>&lt;p>&lt;code>-o&lt;/code> 用于只输出匹配部分，而不是整行。&lt;/p>
+&lt;h2 id="应用">应用
+&lt;/h2>&lt;p>把所有的 png 图片找出来，然后按大小排序：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -0 -g .png$ . &lt;span class="p">|&lt;/span> xargs -0 du -h &lt;span class="p">|&lt;/span> sort -hr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>![[assets/local_image_plus/085e9ed0cac92342df818071b090c46f_MD5.png]]&lt;/p>
+&lt;h3 id="-0-选项">&lt;code>-0&lt;/code> 选项
+&lt;/h3>&lt;ul>
+&lt;li>它主要是为了配合 xargs -0 使用，常用于将结果传递给它来支持空分隔符的命令&lt;/li>
+&lt;li>&lt;strong>功能&lt;/strong>：指定输出的文件名以 &lt;strong>空字符（Null 字符）&lt;/strong> 分隔，而不是默认的换行符。&lt;/li>
+&lt;li>&lt;strong>用途&lt;/strong>：当文件名包含换行符或空格时，使用 &lt;code>-0&lt;/code> 可以避免解析错误。&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>这里为啥一定要 -0 呢？&lt;br>
+如果是在代码里找，一般都默认相关的文件名中没有空格、引号、换行等“麻烦字符”，这些不需要 -0 参数。&lt;br>
+但如果要搜的目录很不确定，这时要传给 xargs 就得两边加 -0 来确保准确无误。&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

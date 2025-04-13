@@ -1254,7 +1254,106 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 &lt;li>&lt;strong>上世纪 80 年代&lt;/strong>：日本经济发展迅猛，不仅收购美国地标性建筑，还在汽车产业上对美国造成巨大冲击，美国本土汽车巨头因日本低油耗汽车的竞争而面临困境。美国为维护自身经济利益，与日本签订《广场协议》，逼迫日元升值，并迫使日本开放金融市场，从而打压日本经济。这一时期，日本成为美国重点对付的对象，客观上为中国发展提供了相对宽松的外部环境 。&lt;/li>
 &lt;li>&lt;strong>上世纪 90 年代&lt;/strong>：苏联解体后，日本经济也被整垮，此时欧元诞生并对美元构成挑战。欧盟成立后 GDP 一度超过美国，欧元在诞生第一天起就旨在挑战美元地位。美国为限制欧元扩张，发动科索沃战争，同时也没忘记试探中国，如偷袭中国驻南斯拉夫大使馆。但美国的主要精力被欧元吸引，使得中国外贸得以继续发展 。&lt;/li>
 &lt;li>&lt;strong>21 世纪初&lt;/strong>：欧元的影响力不断扩大，美国为强化美元地位，支持中国加入 WTO，希望借助中国商品提升美元价值。同时，伊拉克萨达姆宣布用欧元结算原油，美国以此为由发动伊拉克战争，还通过金融手段做空希腊等国债券，引发欧债危机，成功打压欧元。这期间，美国的精力分散在应对欧元问题上，对中国的遏制相对放松，中国得以在这一时期进一步发展经济，提升综合国力。&lt;/li>
-&lt;/ol></description></item><item><title>巨变的时代，对个人发展的思考 - 2025</title><link>https://www.jsongo.top/articles/2025-self-development/</link><pubDate>Wed, 26 Feb 2025 08:47:05 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-self-development/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/a9e868ff852a3dcc1a962c1191714e8a.jpg" alt="Featured image of post 巨变的时代，对个人发展的思考 - 2025" />&lt;blockquote>
+&lt;/ol></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install the_silver_searcher
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="使用">使用
+&lt;/h1>&lt;h2 id="只搜文件名">只搜文件名
+&lt;/h2>&lt;p>直接使用时，ag 会检索内容。需要添加 &lt;code>-g&lt;/code> 参考&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .mp4 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="正常使用">正常使用
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>-i 用于忽略大小写&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag &lt;span class="s1">&amp;#39;useEffect&amp;#39;&lt;/span> --js
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>只在 JS 文件中查 useEffect。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag --multiline &lt;span class="s1">&amp;#39;^def .+\n +&amp;#34;&amp;#34;&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查 Python 函数定义后面紧跟 docstring 的情况。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -l &lt;span class="s1">&amp;#39;OldName&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> xargs sed -i &lt;span class="s1">&amp;#39;s/OldName/NewName/g&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查到文件中包含 OldName 的所有文件，批量做替换。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ag -C &lt;span class="m">2&lt;/span> &lt;span class="s1">&amp;#39;class User&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>显示匹配行的上下两行，方便看上下文&lt;/p>
+&lt;h2 id="常用参数">常用参数
+&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
+&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
+&lt;h3 id="打印前后">打印前后
+&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
+&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
+&lt;h3 id="只打文件名">只打文件名
+&lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
+&lt;h3 id="全词匹配">全词匹配
+&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p>
+&lt;h3 id="只输出匹配的部分">只输出匹配的部分
+&lt;/h3>&lt;p>&lt;code>-o&lt;/code> 用于只输出匹配部分，而不是整行。&lt;/p>
+&lt;h2 id="应用">应用
+&lt;/h2>&lt;p>把所有的 png 图片找出来，然后按大小排序：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -0 -g .png$ . &lt;span class="p">|&lt;/span> xargs -0 du -h &lt;span class="p">|&lt;/span> sort -hr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>![[assets/local_image_plus/085e9ed0cac92342df818071b090c46f_MD5.png]]&lt;/p>
+&lt;h3 id="-0-选项">&lt;code>-0&lt;/code> 选项
+&lt;/h3>&lt;ul>
+&lt;li>它主要是为了配合 xargs -0 使用，常用于将结果传递给它来支持空分隔符的命令&lt;/li>
+&lt;li>&lt;strong>功能&lt;/strong>：指定输出的文件名以 &lt;strong>空字符（Null 字符）&lt;/strong> 分隔，而不是默认的换行符。&lt;/li>
+&lt;li>&lt;strong>用途&lt;/strong>：当文件名包含换行符或空格时，使用 &lt;code>-0&lt;/code> 可以避免解析错误。&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>这里为啥一定要 -0 呢？&lt;br>
+如果是在代码里找，一般都默认相关的文件名中没有空格、引号、换行等“麻烦字符”，这些不需要 -0 参数。&lt;br>
+但如果要搜的目录很不确定，这时要传给 xargs 就得两边加 -0 来确保准确无误。&lt;/p>
+&lt;/blockquote></description></item><item><title>巨变的时代，对个人发展的思考 - 2025</title><link>https://www.jsongo.top/articles/2025-self-development/</link><pubDate>Wed, 26 Feb 2025 08:47:05 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-self-development/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/a9e868ff852a3dcc1a962c1191714e8a.jpg" alt="Featured image of post 巨变的时代，对个人发展的思考 - 2025" />&lt;blockquote>
 &lt;p>写了些思考，让 DeepSeek 优化了下，有点硬，但结构化挺好。&lt;/p>
 &lt;/blockquote>
 &lt;p>当我们将目光投向当代社会，会发现一个充满矛盾的现象：教育投入与职业回报的倒挂，标准化培养与个体特质的冲突，现实压力与理想追求的撕裂。这种割裂折射出工业化时代的教育范式，与数字化时代人才需求之间的深刻矛盾，也暴露出当代人在职业发展中的集体性焦虑。&lt;/p>
@@ -5695,45 +5794,7 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
-&lt;/ul></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
-&lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install the_silver_searcher
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h1 id="使用">使用
-&lt;/h1>&lt;h2 id="只搜文件名">只搜文件名
-&lt;/h2>&lt;p>直接使用时，ag 会检索内容。需要添加 &lt;code>-g&lt;/code> 参考&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -g .mp4 .
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="正常使用">正常使用
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -i foo ./bar/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="常用参数">常用参数
-&lt;/h2>&lt;h3 id="---ignore">&amp;ndash; Ignore
-&lt;/h3>&lt;p>如 &lt;code>--ignore *pack*&lt;/code>&lt;/p>
-&lt;h3 id="打印前后">打印前后
-&lt;/h3>&lt;p>如 &lt;code>-A 3&lt;/code> 可以打印搜索结果的 after 3 行。&lt;br>
-&lt;code>-B 3&lt;/code> 可以打印 before 的 3 行&lt;/p>
-&lt;h3 id="只打文件名">只打文件名
-&lt;/h3>&lt;p>&lt;code>-l&lt;/code> 表示 files-with-matches，即匹配的文件列表&lt;/p>
-&lt;h3 id="全词匹配">全词匹配
-&lt;/h3>&lt;p>&lt;code>-w&lt;/code>&lt;/p></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
 首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
 &lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
