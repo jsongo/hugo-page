@@ -16,6 +16,10 @@ date: 2025-02-27T11:31:09.698+08:00
 ```bash
 brew install the_silver_searcher
 ```
+如果是 ubuntu 的话，这么安装：
+```bash
+apt install silversearcher-ag
+```
 # 使用
 ## 只搜文件名
 直接使用时，ag 会检索内容。需要添加 `-g` 参考
