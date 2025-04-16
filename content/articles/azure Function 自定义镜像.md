@@ -111,7 +111,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。    
 	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)  
 费用是按需支付的，跟之前的两种方式不太一样：  
-	![|500](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
+	![|500|500x992](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
 	而且单个机子的配置选项也足够灵活，如图。  
 	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
 # 应用开发和部署
