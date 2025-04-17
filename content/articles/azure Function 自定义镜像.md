@@ -55,7 +55,11 @@ az acr login --name jsongo
 
 ## 构建
 首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。  
-接下去在本地构建上面创建的镜像。
+接下去可以在云端构建：
+```bash
+az acr build --registry jsongo/azure-video:0.1.0 .
+```
+或者在本地构建上面创建的镜像。
 ```bash
 docker build --tag jsongo/azure-video:0.1.0 .
 ```
