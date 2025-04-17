@@ -60,7 +60,7 @@ az acr login --name jsongo
 docker build --tag jsongo/azure-video:0.1.0 .
 ```
 如下示例。  
-	![|750](https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
+	![|750|750x319](https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
 比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。  
 	![|700](https://cdn.jsongo.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp)  
 构建完，试着把它运行起来看看：
