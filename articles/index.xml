@@ -3170,9 +3170,8 @@ alt="|675"
 &lt;/div>
 &lt;/div>&lt;p>如下示例。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp"
-width="750"
 loading="lazy"
-alt="|750"
+alt="|750|750x319"
 >&lt;br>
 比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp"
@@ -3279,9 +3278,8 @@ loading="lazy"
 >&lt;br>
 费用是按需支付的，跟之前的两种方式不太一样：&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp"
-width="500"
 loading="lazy"
-alt="|500"
+alt="|500|500x992"
 >&lt;br>
 而且单个机子的配置选项也足够灵活，如图。&lt;br>
 &lt;img src="https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp"
