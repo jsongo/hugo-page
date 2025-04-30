@@ -55,12 +55,16 @@ az acr login --name jsongo
 
 ## 构建
 首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。  
-接下去在本地构建上面创建的镜像。
+接下去可以在云端构建：
+```bash
+az acr build --registry jsongo.azurecr.io/azure-video:0.1.0 .
+```
+或者在本地构建上面创建的镜像。
 ```bash
 docker build --tag jsongo/azure-video:0.1.0 .
 ```
 如下示例。  
-	![|750](https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
+	![|750|750x319](https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
 比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。  
 	![|700](https://cdn.jsongo.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp)  
 构建完，试着把它运行起来看看：
@@ -68,6 +72,10 @@ docker build --tag jsongo/azure-video:0.1.0 .
 docker run --rm -e WEBSITES_INCLUDE_CLOUD_CERTS=true -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
 ```
 当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。
+### 查看构建出来的镜像
+```bash
+az acr repository list --name jsongo --output table
+```
 
 ## 用 Azure CLI 更新镜像
 Azure 也提供了相应的指令用于更新你的镜像。
@@ -111,7 +119,7 @@ Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/H
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。    
 	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)  
 费用是按需支付的，跟之前的两种方式不太一样：  
-	![|500](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
+	![|500|500x992](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
 	而且单个机子的配置选项也足够灵活，如图。  
 	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
 # 应用开发和部署

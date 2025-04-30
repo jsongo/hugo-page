@@ -75,3 +75,5 @@ services:
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：  
 	![|725](https://cdn.jsongo.top/2024/12/321e5240cb520e8f255d0afad7893609.webp)  
 	调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。
+## 
+https://cdn.jsongo.top/upic/1744470864_fTcwVf.png
