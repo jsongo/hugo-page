@@ -168,7 +168,7 @@ function handleCORS() {
 ## 配置
 有了这个之后，我们再绑一个域名上去，在 worker 的设置里直接加就行，这里就不展开。  
 接着把这个域名用到 upic 的配置里  
-![|734x540](https://cdn.jsongo.top/upic/1744475950_v3vq6M.webp)  
+![|0x0](https://cdn.jsongo.top/upic/1744475950_v3vq6M.webp)  
 “其它字段” 里添加一下头部认证，和 body 的其它字段，用于存储的时候指定 key 等。  
 ![|711x658](https://cdn.jsongo.top/upic/1744475951_BpscpM.webp)  
 这时就可以用 upic 去上传你的文件了。顺便说一句，upic 可以做截图上传、剪贴板上传，确实好方便。我设置了个快捷键，之后就直接用它来帮我快速做上传就行了。
