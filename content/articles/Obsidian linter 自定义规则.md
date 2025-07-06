@@ -6,7 +6,7 @@ tags:
 created_at: Sun, Apr 13, 2025 - 01:10:36
 date: 2025-04-13T01:10:36.694+08:00
 banner_icon: 📹
-banner: https://cdn.jsongo.top/banners/9ce4b7fc6ab166efa82ba9c3b5423dd2.jpg
+banner: "https://cdn.jsongo.top/banners/9ce4b7fc6ab166efa82ba9c3b5423dd2.jpg"
 title: Obsidian linter 自定义规则
 description: 如何在Obsidian中使用Linter插件自定义规则来自动化格式修正，例如去除不必要的加粗样式
 slug: obsidian-linter-custom-rules
