@@ -26,9 +26,8 @@
 &lt;/h2>&lt;p>到 &lt;a class="link" href="https://dash.teams.cloudflare.com/%e2%81%a0" target="_blank" rel="noopener"
 >Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
 &lt;img src="https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp"
-width="675"
 loading="lazy"
-alt="|675"
+alt="|675|675x550"
 >&lt;br>
 接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。&lt;br>
 注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。&lt;/p>
