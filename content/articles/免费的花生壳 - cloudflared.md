@@ -25,7 +25,7 @@ cloudflared tunnel --no-autoupdate --hello-world
 # 搭建个人 Tunnel 网络
 ## 注册一个 Tunnel
 到 [Cloudflare One](https://dash.teams.cloudflare.com/⁠) 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了  
-	![|675|675x550](https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp)  
+	![|675|0x0](https://cdn.jsongo.top/2024/12/420352862a7523747b97d596ff767b81.webp)  
 接下去它会让你绑定一个支付卡，即使选的是免费的。这是海外各类服务的常见操作，因为收费计划可能会变，而且你使用时也可能会超额，所以先让你把扣费的方式留好，以备后面需要的时候能扣到钱。  
 注册完后，下面我们来一步步创建一个 tunnel，其实过程也很简单。
 >  这些是一步步摸索出来的，没有参考其它外部的指引，所以可能会有更好的办法。希望有读者找到更好的方法时，能给我留个评论，感激不尽。
