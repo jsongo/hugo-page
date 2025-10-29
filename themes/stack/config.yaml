@@ -1,203 +1,203 @@
 module:
-    hugoVersion:
-        extended: true
-        min: "0.87.0"
+  hugoVersion:
+    extended: true
+    min: "0.87.0"
 
 params:
-    mainSections:
-        - articles
-    sort:
-        by: created_at
-        order: desc
-    featuredImageField: banner
-    rssFullContent: true
-    favicon: https://cdn.ethanlyn.com/mc/favicon.jpg
+  mainSections:
+    - articles
+  sort:
+    by: created_at
+    order: desc
+  featuredImageField: banner
+  rssFullContent: true
+  favicon: https://cdn.ethango.top/mc/favicon.jpg
 
-    footer:
-        since: 2024
-        customText: 
+  footer:
+    since: 2024
+    customText:
 
-    dateFormat:
-        published: Mon, Jan 02, 2006
-        lastUpdated: Mon, Jan 02, 2006 15:04 MST
+  dateFormat:
+    published: Mon, Jan 02, 2006
+    lastUpdated: Mon, Jan 02, 2006 15:04 MST
 
-    sidebar:
-        compact: false
-        emoji: 
-        subtitle: Keeping Grit!
-        avatar:
-            enabled: true
-            local: true
-            src: img/avatar.jpg
+  sidebar:
+    compact: false
+    emoji:
+    subtitle: Keeping Grit!
+    avatar:
+      enabled: true
+      local: true
+      src: img/avatar.jpg
 
-    article:
-        headingAnchor: false
-        math: false
-        toc: true
-        readingTime: false
-        license:
-            enabled: false
-            default: Licensed under CC BY-NC-SA 4.0
+  article:
+    headingAnchor: false
+    math: false
+    toc: true
+    readingTime: false
+    license:
+      enabled: false
+      default: Licensed under CC BY-NC-SA 4.0
 
-    comments:
-        enabled: true
-        provider: giscus
+  comments:
+    enabled: true
+    provider: giscus
 
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
+    disqusjs:
+      shortname:
+      apiUrl:
+      apiKey:
+      admin:
+      adminLabel:
 
-        utterances:
-            repo:
-            issueTerm: pathname
-            label:
+    utterances:
+      repo:
+      issueTerm: pathname
+      label:
 
-        beaudar:
-            repo:
-            issueTerm: pathname
-            label:
-            theme:        
+    beaudar:
+      repo:
+      issueTerm: pathname
+      label:
+      theme:
 
-        remark42:
-            host:
-            site:
-            locale:
+    remark42:
+      host:
+      site:
+      locale:
 
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
+    vssue:
+      platform:
+      owner:
+      repo:
+      clientId:
+      clientSecret:
+      autoCreateIssue: false
 
-        # Waline client configuration see: https://waline.js.org/en/reference/client/props.html
-        waline:
-            serverURL:
-            lang:
-            visitor:
-            avatar:
-            emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
-            requiredMeta:
-                - nick
-                - mail
-            locale:
-                admin: Admin
-                placeholder:
+    # Waline client configuration see: https://waline.js.org/en/reference/client/props.html
+    waline:
+      serverURL:
+      lang:
+      visitor:
+      avatar:
+      emoji:
+        - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+      requiredMeta:
+        - nick
+        - mail
+      locale:
+        admin: Admin
+        placeholder:
 
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
+    twikoo:
+      envId:
+      region:
+      path:
+      lang:
 
-        giscus:
-            repo: jsongo/hugo-page
-            repoID: R_kgDONQf4yA
-            category: Announcements
-            categoryID: DIC_kwDONQf4yM4CkfAr
-            mapping: title
-            strict: 0
-            lightTheme: preferred_color_scheme
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
-            inputPosition: top
-            lang: zh-CN
-            loading: lazy
+    giscus:
+      repo: jsongo/hugo-page
+      repoID: R_kgDONQf4yA
+      category: Announcements
+      categoryID: DIC_kwDONQf4yM4CkfAr
+      mapping: title
+      strict: 0
+      lightTheme: preferred_color_scheme
+      darkTheme:
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      lang: zh-CN
+      loading: lazy
 
-        gitalk:
-            owner:
-            admin:
-            repo:
-            clientID:
-            clientSecret:
+    gitalk:
+      owner:
+      admin:
+      repo:
+      clientID:
+      clientSecret:
 
-        cusdis:
-            host:
-            id:
+    cusdis:
+      host:
+      id:
 
-    widgets:
-        homepage:
-            - type: search
-            - type: archives
-              params:
-                  limit: 5
-            # - type: categories
-            #   params:
-            #       limit: 10
-            - type: tag-cloud
-              params:
-                  limit: 10
-        page:
-            - type: toc
-            - type: tag-cloud
-              params:
-                  limit: 10
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      # - type: categories
+      #   params:
+      #       limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+      - type: tag-cloud
+        params:
+          limit: 10
 
+  opengraph:
+    twitter:
+      # Your Twitter username
+      site:
+
+      # Available values: summary, summary_large_image
+      card: summary_large_image
+
+  defaultImage:
     opengraph:
-        twitter:
-            # Your Twitter username
-            site:
+      enabled: false
+      local: false
+      src:
 
-            # Available values: summary, summary_large_image
-            card: summary_large_image
+  colorScheme:
+    # Display toggle
+    toggle: true
 
-    defaultImage:
-        opengraph:
-            enabled: false
-            local: false
-            src:
+    # Available values: auto, light, dark
+    default: auto
 
-    colorScheme:
-        # Display toggle
-        toggle: true
-
-        # Available values: auto, light, dark
-        default: auto
-
-    imageProcessing:
-        cover:
-            enabled: true
-        content:
-            enabled: true
+  imageProcessing:
+    cover:
+      enabled: true
+    content:
+      enabled: true
 
 ### Custom menu
 menu:
-    main:
-        - identifier: about
-          name: About Me
-          url: /about
-          weight: 600
-          params:
-            icon: user
-            newTab: true
-    # social:
-    #     - identifier: github
-    #       name: GitHub
-    #       url: https://github.com/jsongo
-    #       params:
-    #           icon: brand-github
+  main:
+    - identifier: about
+      name: About Me
+      url: /about
+      weight: 600
+      params:
+        icon: user
+        newTab: true
+  # social:
+  #     - identifier: github
+  #       name: GitHub
+  #       url: https://github.com/jsongo
+  #       params:
+  #           icon: brand-github
 related:
-    includeNewer: true
-    threshold: 60
-    toLower: false
-    indices:
-        - name: tags
-          weight: 100
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
 
-        - name: categories
-          weight: 200
+    - name: categories
+      weight: 200
 markup:
-    highlight:
-        noClasses: false
-        codeFences: true
-        guessSyntax: true
-        lineNoStart: 1
-        lineNos: true
-        lineNumbersInTable: true
-        tabWidth: 4
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4
