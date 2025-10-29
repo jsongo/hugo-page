@@ -3,7 +3,7 @@ name: Deploy to Aliyun
 on:
   push:
     branches: [main]
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch: # 允许手动触发
 
 jobs:
   deploy:
@@ -34,7 +34,7 @@ jobs:
           port: ${{ secrets.ALIYUN_PORT }}
           script: |
             # 进入 docker 目录
-            cd /home/admin/docker/aliyun/hugo
+            cd /home/admin/docker/hugo
 
             # 清理旧的 public 目录
             rm -rf public
@@ -50,7 +50,7 @@ jobs:
           key: ${{ secrets.ALIYUN_SSH_KEY }}
           port: ${{ secrets.ALIYUN_PORT }}
           source: "public/*"
-          target: "/home/admin/docker/aliyun/hugo/"
+          target: "/home/admin/docker/hugo/"
           strip_components: 0
 
       - name: Rebuild and restart Docker container
@@ -61,7 +61,7 @@ jobs:
           key: ${{ secrets.ALIYUN_SSH_KEY }}
           port: ${{ secrets.ALIYUN_PORT }}
           script: |
-            cd /home/admin/docker/aliyun/hugo
+            cd /home/admin/docker/hugo
 
             # 重新构建镜像
             docker compose build --no-cache
