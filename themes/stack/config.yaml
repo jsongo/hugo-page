@@ -11,7 +11,7 @@ params:
         order: desc
     featuredImageField: banner
     rssFullContent: true
-    favicon: https://cdn.jsongo.top/mc/favicon.jpg
+    favicon: https://cdn.ethanlyn.com/mc/favicon.jpg
 
     footer:
         since: 2024

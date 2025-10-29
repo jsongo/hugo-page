@@ -2,10 +2,10 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - AI/工具
+  - AI/AI工具
 created_at: Tue, Nov 19th, 2024 - 16:36:27
 banner_icon: ⛈
-banner: "https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg"
+banner: "https://cdn.ethanlyn.com/banners/772c64fbb07e3cd46573602f922a7829.jpg"
 title: Stable Diffusion 生图技术（一）
 slug: stable-diffusion-gen-image-1
 description: Stable Diffusion 是一种先进的生成式人工智能技术，是目前比较流行的一种用于生成高质量的图像的技术之一。它在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片
@@ -16,7 +16,7 @@ date: 2024-11-19T16:36:27+08:00
 ## 背景
 Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。  
 Stable Diffusion 的发展历程如下：  
-![|900](https://cdn.jsongo.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp)
+![|900](https://cdn.ethanlyn.com/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp)
 ## 技术简介
 Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性，基于扩散模型架构来生成图片。  
 它的原理用白话说，比较简单：加噪和去噪（专业术语叫前向扩散和反向扩散）。加噪后的图片主要用于训练或作为初始输入（latent），然后训练一个模型去实现某些图像生成目标（去噪过程）。
@@ -24,14 +24,14 @@ Stable Diffusion 在模型架构中采用了 Transformer 架构的一些特性�
 - **反向扩散**：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。
 
 # 生图过程
-![|700](https://cdn.jsongo.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp)  
+![|700](https://cdn.ethanlyn.com/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp)  
 ## 模型 （Checkpoint）跟采样的关系
 Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优化器的状态等信息，而采样模型的参数是由 Checkpoint 所确定的，采样模型使用该 Checkpoint 中存储的权重和其他参数进行计算。不同的 Checkpoint 会导致采样模型在生成图像时表现出不同的性能和风格。例如，某些 Checkpoint 可能侧重于生成高分辨率的图像，而另一些可能更擅长生成具有特定艺术风格的图像。这是因为在训练过程中，不同的 Checkpoint 所对应的训练数据和训练目标可能有所不同，从而影响了采样模型的行为。
 ## CLIP Text Encode
 属于 Condition 节点，它用 CLIP 模型对文本 Prompt 进行编码，对模型生成的结果进行方向上的引导，其实可能理解为文本模型中的 embedding。
 ## 采样
 生图其实就是一个反向扩散的过程，从一个完全是噪声的图像开始，通过模型逐步去除噪声来生成图像。这个过程通过一个采样函数来实现，它基于模型预测的噪声来更新噪声图像。  
-	![](https://cdn.jsongo.top/2024/12/dd2433499e7a9229aa5bd816177c8988.webp)
+	![](https://cdn.ethanlyn.com/2024/12/dd2433499e7a9229aa5bd816177c8988.webp)
 - **Steps**，迭代生图，每次更新噪声图像，需要经过多个 Step 的迭代。随着 Step 反复执行，图像中的噪声逐渐减少，最终生成一个近似原始图像分布的图像。不过生成的图像质量可能会受到多种因素的影响，如模型的性能、采样方法、时间步数等。在实际应用中，可能需要对生成的图像进行后处理（如调整颜色、对比度等）来提高图像质量。
 - **seed**，种子值，用于初始化随机数生成器。相同的种子值在相同的模型和参数设置下会生成相同的图像，这有助于复现结果。
 - **control_after_generate**：这个参数可能与生成后的控制操作有关，例如对生成的图像进行随机化处理
@@ -60,7 +60,7 @@ Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优
  Stable Diffusion 的官方可用的模型，可以从 API 文档中看到： [Stability AI - Developer Platform](https://platform.stability.ai/pricing)。最新的是 SD 3.5（2024 年 11 月）。
 - 1 credit = $0.01
 - 这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。  
- ![736deaffc1c02497df089d14539fba5d_MD5|700](https://cdn.jsongo.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp)
+ ![736deaffc1c02497df089d14539fba5d_MD5|700](https://cdn.ethanlyn.com/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp)
 ## 体验
 [Free AI Image Generator - Turn Text to Image Online | Stable Diffusion Online](https://stabledifffusion.com/tools/ai-image-generator)
 
@@ -76,13 +76,13 @@ Checkpoint 包含了模型在特定训练阶段的所有权重、偏置以及优
 - **UNet**：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。
 - **LoRA**：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。  
 UNet 的模型一般都比较大：  
-![|475](https://cdn.jsongo.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)  
+![|475](https://cdn.ethanlyn.com/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp)  
 LoRA 则小很多  
-![|475](https://cdn.jsongo.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
+![|475](https://cdn.ethanlyn.com/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp)
 
 ## 使用
 它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。  
 ComfyUI 中的使用非常简单：  
-![|675](https://cdn.jsongo.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp)  
+![|675](https://cdn.ethanlyn.com/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp)  
 如果只是想玩玩，可以直接在 huggingface 上试试：[SDXL-Lightning spaces](https://huggingface.co/spaces/ByteDance/SDXL-Lightning) ，效果还是不错的：  
-![|700](https://cdn.jsongo.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp)
+![|700](https://cdn.ethanlyn.com/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp)

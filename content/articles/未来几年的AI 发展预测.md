@@ -6,7 +6,7 @@ tags:
 created_at: Tue, Apr 8, 2025 - 01:16:54
 date: 2025-04-08T01:16:54.310+08:00
 banner_icon: 🤺
-banner: https://cdn.jsongo.top/banners/999dce943c2746f423620acecd9ba75f.png
+banner: https://cdn.ethanlyn.com/banners/999dce943c2746f423620acecd9ba75f.png
 title: 未来几年的AI 发展预测
 description: 梳理从2025年到2028年AI技术的快速发展，预测AI将从自主代理进化到超人类智能，并对社会产生深远影响
 slug: ai-development-forecast

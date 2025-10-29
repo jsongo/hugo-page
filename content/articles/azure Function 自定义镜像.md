@@ -2,11 +2,11 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - IT/折腾/azure
+  - 互联网/折腾/azure
 created_at: Sun, Jan 5, 2025 - 11:25:49
 date: 2025-01-05T11:25:49.289+08:00
 banner_icon: 👨🏼‍🍳
-banner: "https://cdn.jsongo.top/banners/772c64fbb07e3cd46573602f922a7829.jpg"
+banner: "https://cdn.ethanlyn.com/banners/772c64fbb07e3cd46573602f922a7829.jpg"
 slug: azure-function-custom-containers
 title: azure Function 自定义镜像
 description: 主要介绍了如何在 Azure Functions 中使用自定义 Docker 镜像，包括创建和配置 Dockerfile，以及将镜像推送到 Azure 容器注册表（ACR）。此外，还讨论了在 Azure 平台上使用这些镜像的步骤和相关的计划选择。
@@ -44,7 +44,7 @@ RUN apt-get update && \
 
 ## 注册
 在 [Azure Container Registry](https://portal.azure.com/#browse/Microsoft.ContainerRegistry%2Fregistries)（容器注册表）这里注册一个你自己的命令空间。  
-	![|675](https://cdn.jsongo.top/2025/01/463f2950bea861c9729cb23cdc5a6478.webp)  
+	![|675](https://cdn.ethanlyn.com/2025/01/463f2950bea861c9729cb23cdc5a6478.webp)  
 创建完你就有一个自己的专属 Azure 镜像的域，如我这里的是 `jsongo.azurecr.io`。  
 在 CLI 中登录：
 ```bash
@@ -64,9 +64,9 @@ az acr build --registry jsongo.azurecr.io/azure-video:0.1.0 .
 docker build --tag jsongo/azure-video:0.1.0 .
 ```
 如下示例。  
-	![|750|750x319](https://cdn.jsongo.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
+	![|750|750x319](https://cdn.ethanlyn.com/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp)  
 比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。  
-	![|700](https://cdn.jsongo.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp)  
+	![|700](https://cdn.ethanlyn.com/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp)  
 构建完，试着把它运行起来看看：
 ```bash
 docker run --rm -e WEBSITES_INCLUDE_CLOUD_CERTS=true -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
@@ -83,7 +83,7 @@ Azure 也提供了相应的指令用于更新你的镜像。
 az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
 ```
 这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。  
-	![|750](https://cdn.jsongo.top/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp)
+	![|750](https://cdn.ethanlyn.com/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp)
 
 ## 推到 Azure 平台上
 先打个 tag，刚构建时，默认是用的 dockerhub 的。
@@ -97,31 +97,31 @@ docker push jsongo.azurecr.io/azure-video:0.1.0
 ```
 然后就是等了。我这个镜像 2G+，着实是要等好一会儿。  
 Push 完，打开你的 [容器注册表页面](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries)，在这里就可以看到你刚推送上去的镜像了。  
-	![|750](https://cdn.jsongo.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp)
+	![|750](https://cdn.ethanlyn.com/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp)
 
 # 使用镜像
 下面介绍两种使用镜像的方式，分别对应下图中的两个红框。  
-	![|800](https://cdn.jsongo.top/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp)
+	![|800](https://cdn.ethanlyn.com/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp)
 ## 创建函数应用
 创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。  
-	![|600](https://cdn.jsongo.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
+	![|600](https://cdn.ethanlyn.com/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp)  
 	一步步往下直到创建完成。  
-	![](https://cdn.jsongo.top/2025/01/db86acc839e4545ce6e255d56a6bc911.webp)  
+	![](https://cdn.ethanlyn.com/2025/01/db86acc839e4545ce6e255d56a6bc911.webp)  
 接下去就可以打开 azure 函数首页，去看刚部署的函数。  
-	![|750](https://cdn.jsongo.top/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp)  
+	![|750](https://cdn.ethanlyn.com/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp)  
 至于哪些计划可以支持自定义容器部署可以参考这里：[Azure Functions scale and hosting \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale)。  
-	![|725](https://cdn.jsongo.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
+	![|725](https://cdn.ethanlyn.com/2025/01/3ef8be06d615efb0daf5495e872d716e.webp)
 
 ## 创建函数容器环境（Container Apps）
 其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。  
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。  
-	![|800](https://cdn.jsongo.top/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp)  
+	![|800](https://cdn.ethanlyn.com/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp)  
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。    
-	![](https://cdn.jsongo.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)  
+	![](https://cdn.ethanlyn.com/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp)  
 费用是按需支付的，跟之前的两种方式不太一样：  
-	![|500|500x992](https://cdn.jsongo.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
+	![|500|500x992](https://cdn.ethanlyn.com/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp)  
 	而且单个机子的配置选项也足够灵活，如图。  
-	![|275](https://cdn.jsongo.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
+	![|275](https://cdn.ethanlyn.com/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp)
 # 应用开发和部署
 如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单，即 `func azure functionapp publish xxx` 就行。  
 不过现在我们是把代码打包到容器里，所以没法再使用这种方式去部署。现在需要改成 azure CLI 提供的 build 命令，其实在上文中提过了，只不过要稍加修改。
@@ -155,14 +155,14 @@ func azure functionapp publish video-handler
 - 如果对计算性能要求极高，但对资源的独占性要求不是特别高，Premium plan 可能更合适，因为它可以提供高性能的计算资源，同时成本相对较低。
 - 如果对安全性、合规性以及资源的独占性有严格要求，需要完全隔离的计算和存储环境，那么 Dedicated plan 可能是更好的选择，尽管费用相对较高，但能满足特定的业务需求。  
 实在不好选择，直接就选 Premium plan，比较经济些，一般也用不到比较太高级的配置。它目前有以下三个配置可以选：  
-	![|450](https://cdn.jsongo.top/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp)  
+	![|450](https://cdn.ethanlyn.com/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp)  
 不过价格上… 是有点高些，具体可以看这里：[定价 - Functions \| Microsoft Azure](https://azure.microsoft.com/zh-cn/pricing/details/functions/)。  
 	小时视角：  
-	![|850](https://cdn.jsongo.top/2025/01/bcac629924bd882bed230aa3781131f6.webp)  
+	![|850](https://cdn.ethanlyn.com/2025/01/bcac629924bd882bed230aa3781131f6.webp)  
 	月视角：  
-	![|800](https://cdn.jsongo.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp)  
+	![|800](https://cdn.ethanlyn.com/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp)  
 补：后来在函数的设置里，看到了比较实际的价格。  
-	![|800](https://cdn.jsongo.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp)  
+	![|800](https://cdn.ethanlyn.com/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp)  
 	这个看起来比较切合实际，1 小时不到 2 块。
 # 参考
 - [Working with Azure Functions in containers \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&pivots=container-apps#creating-containerized-function-apps)

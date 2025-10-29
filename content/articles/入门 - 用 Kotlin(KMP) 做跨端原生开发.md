@@ -2,10 +2,10 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - IT/app
+  - 互联网/app
 created_at: Thu, Nov 28th, 2024 - 16:12:07
 banner_icon: ⚗️
-banner: "https://cdn.jsongo.top/banners/24372eee204cc869cbb56c86a09a6b4c.png"
+banner: "https://cdn.ethanlyn.com/banners/24372eee204cc869cbb56c86a09a6b4c.png"
 title: 入门 - 用 Kotlin(KMP) 做跨端原生开发
 description: 用 KMP 进行跨端原生开发的优势和基本原理，介绍了它在代码共享和多平台支持方面的优点，并讲解 Android 和 iOS 平台上运行和集成共享模块的具体步骤。
 slug: kmp-101
@@ -35,27 +35,27 @@ Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应�
 官方指定用 Android Studio，可以从这里 [下载 Android Studio 和应用工具 ](https://developer.android.com/studio)。默认是内置了 Gradle 来做编译，包含跨端的代码编译。
 ## 生成项目及初始代码介绍
 官方给了一个工具用于生成初始化的项目代码：https://kmp.jetbrains.com/，在这上面配置下应用相关的信息即可。一般只需要 Android 和 iOS 两个端即可：  
-	![|500](https://cdn.jsongo.top/2025/01/076751605e49d1210f34130cb80ed50e.webp)  
+	![|500](https://cdn.ethanlyn.com/2025/01/076751605e49d1210f34130cb80ed50e.webp)  
 下载到本地，然后用 Android Studio 导入。  
-	![|700](https://cdn.jsongo.top/2025/01/40711a8957ede4718b786f891b2ffe9d.webp)  
+	![|700](https://cdn.ethanlyn.com/2025/01/40711a8957ede4718b786f891b2ffe9d.webp)  
 代码主要包含 3 个部分：
 - **Shared**，共享的部分。它是跨端的逻辑代码存放的地方，主要有 `androidMain` 、`commonMain` 和 `iosMain`，最终编译成 Android Library 和 iOS framework 供两端集成。  
-	![](https://cdn.jsongo.top/2025/01/90a4b3199a161461a2964e7e36b47089.webp)
+	![](https://cdn.ethanlyn.com/2025/01/90a4b3199a161461a2964e7e36b47089.webp)
 - **ComposeApp**，是一个完整的 Kotlin 模块，它可以通过 Gradle 直接编译成 Android 应用，它里面也包含了 Shared module，Android 应用编译时可以引用这部分共用的模块。
 - **IosApp**，则是一个 Xcode 项目，用于编译成 iOS 应用。  
 
 ## 写一个 Shared module（CommonMain）
 依赖是写 KMP 应用会遇到的第一个比较麻烦的问题，不过大都能从 [这个文档](https://ktor.io/docs/welcome.html) 中找到，可能需要点耐心。  
 写到 CommonMain/ 目录里的代码，如果包含了平台专有的 API，IDE 会给 Warning 提醒，交互比较友好。  
-	![|700](https://cdn.jsongo.top/2025/01/6556d2995f4234f406c6bb50c4131d0b.webp)  
+	![|700](https://cdn.ethanlyn.com/2025/01/6556d2995f4234f406c6bb50c4131d0b.webp)  
 把 import 部分改成 `kotlin.random.Random` 就没报错了（Random 类写法去掉括号）。  
 接下去点击图中 Top bar 里的运行按钮就可以跑起来了，它会出现 Android 一虚拟机，在上面运行你的代码。  
-	![|300](https://cdn.jsongo.top/2025/01/345f016c58696f3658be24fd2a43d104.webp)
+	![|300](https://cdn.ethanlyn.com/2025/01/345f016c58696f3658be24fd2a43d104.webp)
 
 ## 自定义
 跑通了基础的流程，我们接下去的工作就简单了，创建一个 kt 文件，写好逻辑即可。  
 比如我想写一个通用的 HTTP 请求的模块，需要先安装一些依赖，具体可以参考 [这里](https://ktor.io/docs/client-dependencies.html#repositories)。打开 `composeApp/build.gradle.kts`，添加下几个依赖：  
-	![|500](https://cdn.jsongo.top/2025/01/798b355d1da19bded2025aff5dbafa7e.webp)
+	![|500](https://cdn.ethanlyn.com/2025/01/798b355d1da19bded2025aff5dbafa7e.webp)
 ### 依赖分析
 1、plugins
 ```kotlin
@@ -70,7 +70,7 @@ plugins {
 ```
 
 安装完之后，点击 Sync Now，让它安装依赖。  
-	![|500](https://cdn.jsongo.top/2025/01/8994d10bce0c602a2960336c04975a04.webp)  
+	![|500](https://cdn.ethanlyn.com/2025/01/8994d10bce0c602a2960336c04975a04.webp)  
 怎么处理不同环境的差异，可以参考这里：[# Manage Project Environment in Kotlin Multiplatform Mobile](https://medium.com/@uwaisalqadri/manage-project-environment-in-kotlin-multiplatform-mobile-528847c3bfc5)
 
 ## IOS
@@ -79,29 +79,29 @@ plugins {
 我们在 composeApp 里面写了不少跨端用的代码，在 `iosApp/` 这个目录下是没有相关东西的，需要有一个编译的过程，把这些代码编译成 Xcode 能识别并处理的 iOS 代码（swift）。  
 有两种方法来配置编译脚本，具体可以参考这里：[Make your Android application work on iOS](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html#connect-the-framework-to-your-ios-project) ，下面简单讲解下：  
 1、一是手动  
-	![|700](https://cdn.jsongo.top/2025/01/720c1908479bfd532143a11319c339a4.webp)  
+	![|700](https://cdn.ethanlyn.com/2025/01/720c1908479bfd532143a11319c339a4.webp)  
 - 双击项目名，然后进入 `Build Phases` Tab，点加号，添加一个 `Run Script`，添加：
 ```bash
 cd "$SRCROOT/.."
 ./gradlew :composeApp:embedAndSignAppleFrameworkForXcode
 ```
 - 然后把顺序拖到上面这里：  
-	![|700](https://cdn.jsongo.top/2025/01/ea53970b00a8070dd98d9afc061f4187.webp)
+	![|700](https://cdn.ethanlyn.com/2025/01/ea53970b00a8070dd98d9afc061f4187.webp)
 - 不过，JDK 11 从 11.0.3 开始商用收费，如果在内部业务使用也要购买许可证：  
-	![|600](https://cdn.jsongo.top/2025/01/0a8e90a2af180b831f72a183de9c9203.webp)  
+	![|600](https://cdn.ethanlyn.com/2025/01/0a8e90a2af180b831f72a183de9c9203.webp)  
 	所以还是得用 OpenJDK，我试了下，是兼容的。安装可以看这里：[[JDK 怎么安装]]。
 - 另外也要设置下 sandboxing  
-	![|700](https://cdn.jsongo.top/2025/01/df8e47732e837d1448d5c38676d61d8c.webp)  
+	![|700](https://cdn.ethanlyn.com/2025/01/df8e47732e837d1448d5c38676d61d8c.webp)  
 2、用插件  
-	![|700](https://cdn.jsongo.top/2025/01/cf83f28ecdf0cd79fa2428b7fe2fe7c5.webp)
+	![|700](https://cdn.ethanlyn.com/2025/01/cf83f28ecdf0cd79fa2428b7fe2fe7c5.webp)
 - 安装完之后，其它就自动帮你设置了一个 Build Script 在上文提到的 `Build Phases` 里：  
-	![|700](https://cdn.jsongo.top/2025/01/888bf5edebab276ef39aad2b4333d580.webp)
+	![|700](https://cdn.ethanlyn.com/2025/01/888bf5edebab276ef39aad2b4333d580.webp)
 	- 这里选择的那两行是我加的，因为运行时它找不到 JDK，如果你也遇到这个问题也可以这么解决。  
 配置好后，可以点击 Xcode 右上角的编译按钮触发一次编译，我第一次试，编译了近 2 分钟：  
-	![|700](https://cdn.jsongo.top/2025/01/7c99ac5c4b0ae67a218530c73582ac60.webp)
+	![|700](https://cdn.ethanlyn.com/2025/01/7c99ac5c4b0ae67a218530c73582ac60.webp)
 ### 使用公共模块
 很简单，把 `ComposeApp` 引入就行，这样里面我们写的方法就都可以用了。  
-	![|700](https://cdn.jsongo.top/2025/01/c4ab964094083a97810d18b06dc0508e.webp)
+	![|700](https://cdn.ethanlyn.com/2025/01/c4ab964094083a97810d18b06dc0508e.webp)
 
 # 参考
 - [Share more logic between iOS and Android | Kotlin Multiplatform Development Documentation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-upgrade-app.html#create-api-requests)

@@ -2,11 +2,11 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - IT/折腾/azure
+  - 互联网/折腾/azure
 created_at: Wed, Dec 18, 2024 - 00:42:33
 date: 2024-12-18T00:42:33.881+08:00
 banner_icon: 👨🏼‍💻
-banner: "https://cdn.jsongo.top/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg"
+banner: "https://cdn.ethanlyn.com/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg"
 title: Azure Function Triggers
 slug: azure-function-triggers
 description: 介绍 Azure Function 的各种触发器类型，包括定时任务触发和 HTTP 请求触发等。文中详细描述了如何使用 Timer Trigger 来实现定时任务，并提供相关的代码示例和详解。

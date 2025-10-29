@@ -2,11 +2,11 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - IT/git
+  - 互联网/git
 created_at: Tue, Dec 17, 2024 - 23:34:22
 date: 2024-12-17T23:34:22.963+08:00
 banner_icon: 🤵🏼‍♂️
-banner: "https://cdn.jsongo.top/banners/6424b2c83ab269ea18c2240356db3b9d.jpg"
+banner: "https://cdn.ethanlyn.com/banners/6424b2c83ab269ea18c2240356db3b9d.jpg"
 slug: git-recover-notes
 title: git 恢复误删笔记or文件
 description: 如何使用 Git 恢复误删的笔记或文件。通过 Git 的版本管理功能，可以轻松找回即使是很久之前删除的文件。文章中提到使用 git log 和 git show 命令来查找和恢复特定文件的历史记录和更改内容。
@@ -26,9 +26,9 @@ git log --since=midnight -- 74a006c91c5150f0d9d9dd25d5c5ab34.webp
 git show 5b12e80a540539b0da2ac75cf4d5e7221f2b7342 -- 74a006c91c5150f0d9d9dd25d5c5ab34.webp
 ```
 结果：  
-	![|725](https://cdn.jsongo.top/2024/12/95c7302d5fa881834bb45c88c8115cb2.webp)  
+	![|725](https://cdn.ethanlyn.com/2024/12/95c7302d5fa881834bb45c88c8115cb2.webp)  
 可以看到，当时把这个文件给删掉了。再往上看，可以找到第一条 commit，这就是它创建的那个提交，还能看到是什么时候提交的：  
-	![|725](https://cdn.jsongo.top/2024/12/861fa74e3155d6e84b9e6ffba287e05e.webp)  
+	![|725](https://cdn.ethanlyn.com/2024/12/861fa74e3155d6e84b9e6ffba287e05e.webp)  
 最后就是恢复文件，直接用 `git checkout` 命令就行：
 ```bash
 git co c171a4c169470455fa8ac62fd8d4164ea677c8ec -- 2c579673c6b2f0793f2e423523cc6fe3.webp

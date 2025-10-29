@@ -2,11 +2,11 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - IT/server
+  - 互联网/server
 created_at: Wed, Dec 18, 2024 - 00:55:38
 date: 2024-12-18T00:55:38.424+08:00
 banner_icon: 🎽
-banner: "https://cdn.jsongo.top/banners/91668e623e452ebc624daa105d2f82c2.jpg"
+banner: "https://cdn.ethanlyn.com/banners/91668e623e452ebc624daa105d2f82c2.jpg"
 slug: cron-syntax
 title: Cron 表达式
 description: 介绍了 Cron 表达式的基本格式和含义，用于配置定时任务的执行时间。详细解释了每个字段的作用，并以 0 */5 * * * * 为例，说明该表达式表示每隔 5 分钟执行一次任务

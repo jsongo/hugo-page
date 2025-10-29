@@ -6,7 +6,7 @@ tags:
 created_at: Mon, Mar 24, 2025 - 10:12:24
 date: 2025-03-24T10:12:24.521+08:00
 banner_icon: 🎄
-banner: "https://cdn.jsongo.top/banners/d4fca53294aaa0f19f01642fc7436c98.jpg"
+banner: "https://cdn.ethanlyn.com/banners/d4fca53294aaa0f19f01642fc7436c98.jpg"
 title: 一种高效的学习方法
 slug: efficient-learning-method
 description: 一种高效的学习方法，通过明确目标、分解技能、学习理论、准备工具、排除干扰、腾出时间和反复练习等七个关键步骤，在20小时内掌握一项技能并超过80%的人
