@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/Azure on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/azure/</link><description>Recent content in 互联网/折腾/Azure on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 05 Jan 2025 20:51:24 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure Functions 的5种托管方式</title><link>https://www.jsongo.top/articles/azure-functions-hostings/</link><pubDate>Sun, 05 Jan 2025 20:51:24 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-functions-hostings/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post Azure Functions 的5种托管方式" />&lt;p>Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。&lt;br>
+下文对 Flex Consumption plan、Premium plan、Dedicated plan、Container Apps 和 Consumption plan 这 5 种方式进行下对比。&lt;/p>
+&lt;h1 id="直观表格对比">直观表格对比
+&lt;/h1>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>托管方式&lt;/th>
+&lt;th>缩放方式&lt;/th>
+&lt;th>容器支持&lt;/th>
+&lt;th>执行超时&lt;/th>
+&lt;th>实例数量限制&lt;/th>
+&lt;th>适用场景&lt;/th>
+&lt;th>计费方式&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Flex Consumption plan&lt;/td>
+&lt;td>基于每函数事件驱动缩放，部分触发器类型分组共享实例缩放&lt;/td>
+&lt;td>无&lt;/td>
+&lt;td>默认 30 分钟，最大无限制&lt;/td>
+&lt;td>受区域总内存使用限制，每函数应用实例数受内存限制&lt;/td>
+&lt;td>需快速水平缩放、有虚拟网络需求、按使用量付费且希望减少冷启动&lt;/td>
+&lt;td>基于函数执行次数、执行时实例内存及预配置实例成本&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Premium plan&lt;/td>
+&lt;td>基于事件驱动自动缩放，有预热工作进程&lt;/td>
+&lt;td>Linux&lt;/td>
+&lt;td>默认 30 分钟，最大无限制&lt;/td>
+&lt;td>Windows 最多 100 个，Linux 部分地区可达 20 - 100 个&lt;/td>
+&lt;td>函数应用持续或近乎持续运行、需更多实例控制、有事件驱动缩放需求、执行次数多但消费计划费用高、代码执行时间长、需虚拟网络连接或自定义 Linux 镜像&lt;/td>
+&lt;td>基于所需和预热实例的核心秒数及内存使用&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Dedicated plan&lt;/td>
+&lt;td>支持手动或自动缩放&lt;/td>
+&lt;td>Linux&lt;/td>
+&lt;td>默认 30 分钟，最大无限制&lt;/td>
+&lt;td>一般 10 - 30 个，ASE 中可达 100 个&lt;/td>
+&lt;td>有现有未充分利用虚拟机、需要完全可预测计费、在同一计划运行多个 Web 和函数应用、需要大计算规模或 ASE 提供的安全网络访问的长运行场景&lt;/td>
+&lt;td>按 App Service 计划常规费率计费，ASE 有固定月费和按 vCPU 计费&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Container Apps&lt;/td>
+&lt;td>根据应用负载自动调整资源分配&lt;/td>
+&lt;td>Linux&lt;/td>
+&lt;td>依具体配置和底层资源决定&lt;/td>
+&lt;td>根据自动缩放机制调整&lt;/td>
+&lt;td>适合快速部署和运行容器化应用，特别是微服务架构应用，适合容器应用迁移到云端&lt;/td>
+&lt;td>基于容器实例数量、运行时间、所占用资源（如 CPU、内存等）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Consumption plan&lt;/td>
+&lt;td>基于事件驱动自动缩放，依传入触发事件数量增减主机实例&lt;/td>
+&lt;td>无&lt;/td>
+&lt;td>默认 5 分钟，最大 10 分钟&lt;/td>
+&lt;td>Windows 最多 200 个，Linux 最多 100 个，每小时 500 个实例缩放限制&lt;/td>
+&lt;td>适合函数运行时付费、希望自动缩放且无复杂配置需求&lt;/td>
+&lt;td>函数运行时按执行次数、执行时间和内存使用计费&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="展开介绍">展开介绍
+&lt;/h1>&lt;p>更全面的总结对比下。&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Flex Consumption plan&lt;/strong> - 弹性消耗
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-plan" target="_blank" rel="noopener"
+>Azure Functions Flex Consumption plan hosting | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>缩放方式&lt;/strong>：基于每函数的事件驱动缩放，除特定触发器外，不同函数触发器类型可在独立实例上缩放，如 HTTP、Blob 存储（Event Grid）、Durable Functions 分别成组共享实例缩放，提供更确定的缩放方式。&lt;/li>
+&lt;li>&lt;strong>资源与限制&lt;/strong>：无容器支持；支持指定预配置实例减少冷启动；支持虚拟网络；函数执行超时默认 30 分钟，最大无限制；每实例内存等资源限制因配置而异，受区域总内存使用限制；每函数应用实例数受内存限制。&lt;/li>
+&lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合需要快速水平缩放、有虚拟网络需求、按使用量付费且希望减少冷启动的场景；计费基于函数执行次数、执行时实例内存及预配置实例成本。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Premium plan&lt;/strong> - 函数高级计划
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal" target="_blank" rel="noopener"
+>Azure Functions Premium plan | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>缩放方式&lt;/strong>：基于事件驱动自动缩放，使用预热工作进程，根据函数触发事件数量增加主机实例，在空闲后能无延迟运行应用。&lt;/li>
+&lt;li>&lt;strong>资源与限制&lt;/strong>：支持 Linux 容器；运行在更强大实例上；函数执行超时默认 30 分钟，最大无限制；Windows 最多 100 个实例，Linux 部分地区可达 20 - 100 个实例；提供更多 CPU 和内存选项。&lt;/li>
+&lt;li>&lt;strong>适用场景与计费&lt;/strong>：适用于函数应用持续或近乎持续运行、需要更多实例控制、在同一计划部署多个应用且有事件驱动缩放需求、执行次数多但消费计划费用高、代码执行时间长、需虚拟网络连接或自定义 Linux 镜像的场景；计费基于所需和预热实例的核心秒数及内存使用。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Dedicated plan&lt;/strong> - 应用服务
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/dedicated-plan" target="_blank" rel="noopener"
+>Azure Functions Dedicated hosting | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>缩放方式&lt;/strong>：支持手动或自动缩放。&lt;/li>
+&lt;li>&lt;strong>资源与限制&lt;/strong>：支持 Linux 容器；可在 App Service 计划内以常规费率运行函数；提供完全可预测计费和手动缩放；能访问更大计算规模选项；在 App Service Environment（ASE）中提供完全计算隔离和安全网络访问；内存使用和扩展能力高；函数执行超时默认 30 分钟，最大无限制；实例数一般 10 - 30 个，ASE 中可达 100 个。&lt;/li>
+&lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合有现有未充分利用虚拟机、需要完全可预测计费、在同一计划运行多个 Web 和函数应用、需要大计算规模或 ASE 提供的安全网络访问的长运行场景；按 App Service 计划常规费率计费，ASE 有固定月费和按 vCPU 计费。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Container Apps&lt;/strong> - 容器应用环境
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-container-apps-hosting" target="_blank" rel="noopener"
+>Azure Container Apps hosting of Azure Functions | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>缩放方式&lt;/strong>：具有自动缩放功能，能够根据应用程序的负载自动调整资源分配，可依据传入请求数量或工作负载增减容器实例数量。&lt;/li>
+&lt;li>&lt;strong>资源与限制&lt;/strong>：支持 Linux 容器，运行环境可靠，资源限制依配置和定价层而定。&lt;/li>
+&lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合快速部署和运行容器化应用，特别是微服务架构应用，计费基于容器实例数量、运行时间和占用资源等使用情况。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Consumption plan&lt;/strong> - (按) 消耗
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan" target="_blank" rel="noopener"
+>Azure Functions Consumption plan hosting | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>缩放方式&lt;/strong>：基于事件驱动自动缩放，根据传入触发事件数量添加或删除函数主机实例。&lt;/li>
+&lt;li>&lt;strong>资源与限制&lt;/strong>：无容器支持；是默认的无服务器托管计划；函数执行超时默认 5 分钟，最大 10 分钟；每实例内存等资源有限；Windows 最多 200 个实例，Linux 最多 100 个实例；有每小时 500 个实例的缩放限制。&lt;/li>
+&lt;li>&lt;strong>适用场景与计费&lt;/strong>：适合函数运行时付费、希望自动缩放且无复杂配置需求的场景；仅在函数运行时按执行次数、执行时间和内存使用计费。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="价格">价格
+&lt;/h1>&lt;p>5 种函数托管方式在价格上的差别不小。&lt;/p>
+&lt;h2 id="flex-consumption-plan">Flex Consumption Plan
+&lt;/h2>&lt;p>它是基于每函数事件驱动缩放的，有些触发器类型还分组共享实例缩放。&lt;br>
+计费就看函数执行次数、执行时实例内存，还有预配置实例的成本。要是你配置的预配置实例少，低流量的时候费用就低；可要是高流量，需要大量实例了，那随着实例增多，费用自然也跟着涨，具体花多少钱，得看实际用了多少实例、多少内存，还有执行次数这些情况。&lt;br>
+不支持自定义容器。&lt;/p>
+&lt;h2 id="premium-plan">Premium Plan
+&lt;/h2>&lt;p>它是基于事件驱动自动缩放，还有预热工作进程。计费是根据所需和预热实例的核心秒数以及内存使用情况来的。这个计划&lt;strong>适合函数应用持续或者近乎持续运行、执行次数又多的情况&lt;/strong>。虽说基础费用比 Consumption plan 高些，但要是你的应用使用率高，或者有一些特殊需求，用它反而能把总体成本控制得更好，需要自己做好提前的计划。&lt;br>
+支持自定义容器。&lt;/p>
+&lt;h2 id="dedicated-plan">Dedicated Plan
+&lt;/h2>&lt;p>它支持手动或自动缩放，计费是按 App Service 计划常规费率来的，要是在 App Service Environment（ASE）里，还有固定月费和按 vCPU 计费。&lt;strong>要是你手头有现有没充分利用的虚拟机&lt;/strong>，或者需要完全可预测的计费，又或者想在同一个计划里运行多个 Web 和函数应用，选它就挺合适。不过要注意，它前期投入成本相对高些。&lt;/p>
+&lt;h2 id="container-apps">Container Apps
+&lt;/h2>&lt;p>它是根据容器实例数量、运行时间，还有占用的资源，像 CPU、内存这些来计费的。比如说，你运行一个小型 Linux 容器实例，配置 1 vCPU 和 2GB 内存，跑 1 个小时，费用可能在几美分到几十美分不等，具体得看你在哪个区域，还有那个区域的资源单价是多少。&lt;br>
+支持自定义容器。&lt;/p>
+&lt;h2 id="consumption-plan">Consumption Plan
+&lt;/h2>&lt;p>这可是个完全无服务器托管的选项，简单来讲，只有函数运行的时候才会产生费用。它是怎么计费的呢？主要看函数的执行数量、执行时间，还有占用的内存。&lt;br>
+举个例子，要是在美国西部区域，有个内存消耗为 512MB 的函数，这个月执行了 3,000,000 次，每次执行就持续 1 秒。咱们来算算账，内存资源消耗费用大概是这样算：&lt;br>
+&lt;code>{（3百万秒 * 512GB/1,024） - 0.4百万GB - 秒} * 0.000016美元/GB - 秒 = 17.6美元&lt;/code>&lt;br>
+函数执行次数费用如下：&lt;br>
+&lt;code>（3百万次执行 – 1百万次执行） * 0.20美元 = 0.4美元&lt;/code>&lt;br>
+把这两项一加，总费用就是 17.6 美元 + 0.4 美元 = 18 美元。&lt;br>
+不支持自定义容器。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
+>microsoft/azure-functions-base&lt;/a> 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。&lt;/p>
+&lt;h1 id="创建自己的镜像">创建自己的镜像
+&lt;/h1>&lt;h2 id="创建-dockerfile">创建 Dockerfile
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func init --docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会初始化一个 Dockerfile 等文件，如果你只需要 Dockerfile 可以把参数改成 &lt;code>--docker-only&lt;/code>。&lt;br>
+生成的 Dockerfile 里面有如下基础的配置：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># To enable ssh &amp;amp; remote debugging on app service change the base image to the one below&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="c"># FROM mcr.microsoft.com/azure-functions/python:4-python3.12-appservice&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="s"> mcr.microsoft.com/azure-functions/python:4-python3.12&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">ENV&lt;/span> &lt;span class="nv">AzureWebJobsScriptRoot&lt;/span>&lt;span class="o">=&lt;/span>/home/site/wwwroot &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> &lt;span class="nv">AzureFunctionsJobHost__Logging__Console__IsEnabled&lt;/span>&lt;span class="o">=&lt;/span>true&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">COPY&lt;/span> requirements.txt /&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> pip install -r /requirements.txt&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">COPY&lt;/span> . /home/site/wwwroot&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这些不要改动。不过可以在上面添加你自己的东西，比如我在做视频相关的处理，所以我需要一个 ffmpeg 库安装上去，所以我添加了如下的代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Dockerfile" data-lang="Dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 安装 ffmpeg&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> apt-get update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> apt-get install -y ffmpeg &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> apt-get clean &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> rm -rf /var/lib/apt/lists/*&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="注册">注册
+&lt;/h2>&lt;p>在 &lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
+>Azure Container Registry&lt;/a>（容器注册表）这里注册一个你自己的命令空间。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/463f2950bea861c9729cb23cdc5a6478.webp"
+width="675"
+loading="lazy"
+alt="|675"
+>&lt;br>
+创建完你就有一个自己的专属 Azure 镜像的域，如我这里的是 &lt;code>jsongo.azurecr.io&lt;/code>。&lt;br>
+在 CLI 中登录：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr login --name jsongo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如果你的 &lt;code>az&lt;/code> 命令之前登录过，这里直接就成功了。记住后面再遇到 docker 操作提示登录的问题，直接运行上面这个命令即可。&lt;br>
+接下去你就可以构建镜像，并把它推到你的这个域上了。&lt;/p>
+&lt;h2 id="构建">构建
+&lt;/h2>&lt;p>首先你本地得有一个 Docker 软件安装并运行起来，可以到 Docker 官网上去下载，这个比较简单。当然如果你有一个线上的虚拟机，那就直接在上面处理也行，只不过还得在上面安装 azure 的 CLI。上一篇已经介绍过了、不再赘述。&lt;br>
+接下去可以在云端构建：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo.azurecr.io/azure-video:0.1.0 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>或者在本地构建上面创建的镜像。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker build --tag jsongo/azure-video:0.1.0 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>如下示例。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp"
+loading="lazy"
+alt="|750|750x319"
+>&lt;br>
+比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+构建完，试着把它运行起来看看：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker run --rm -e &lt;span class="nv">WEBSITES_INCLUDE_CLOUD_CERTS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span> -p 8080:80 --name test-azure-video -it jsongo.azurecr.io/azure-video
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>当然你的 auth level 要设置成 anonymous authorization 才可以直接访问，如果没问题它能正常跑起来。接下去在本地 curl 一下 8080 端口就可以看到有没有正确返回。&lt;/p>
+&lt;h3 id="查看构建出来的镜像">查看构建出来的镜像
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr repository list --name jsongo --output table
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="用-azure-cli-更新镜像">用 Azure CLI 更新镜像
+&lt;/h2>&lt;p>Azure 也提供了相应的指令用于更新你的镜像。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:0.2.0 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h2 id="推到-azure-平台上">推到 Azure 平台上
+&lt;/h2>&lt;p>先打个 tag，刚构建时，默认是用的 dockerhub 的。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker tag jsongo/azure-video:0.1.0 jsongo.azurecr.io/azure-video:0.1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中 &lt;code>jsongo.azurecr.io&lt;/code> 就是我们上面创建的域，它标识了一个 Docker Registry 的地址（默认是 &lt;code>docker.io&lt;/code>）。&lt;br>
+接下去运行 docker push 的时候，就可以找到 azure 的 Registry。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker push jsongo.azurecr.io/azure-video:0.1.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后就是等了。我这个镜像 2G+，着实是要等好一会儿。&lt;br>
+Push 完，打开你的 &lt;a class="link" href="https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
+>容器注册表页面&lt;/a>，在这里就可以看到你刚推送上去的镜像了。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;/p>
+&lt;h1 id="使用镜像">使用镜像
+&lt;/h1>&lt;p>下面介绍两种使用镜像的方式，分别对应下图中的两个红框。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;/p>
+&lt;h2 id="创建函数应用">创建函数应用
+&lt;/h2>&lt;p>创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp"
+width="600"
+loading="lazy"
+alt="|600"
+>&lt;br>
+一步步往下直到创建完成。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/db86acc839e4545ce6e255d56a6bc911.webp"
+loading="lazy"
+>&lt;br>
+接下去就可以打开 azure 函数首页，去看刚部署的函数。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;br>
+至于哪些计划可以支持自定义容器部署可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale" target="_blank" rel="noopener"
+>Azure Functions scale and hosting | Microsoft Learn&lt;/a>。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/3ef8be06d615efb0daf5495e872d716e.webp"
+width="725"
+loading="lazy"
+alt="|725"
+>&lt;/p>
+&lt;h2 id="创建函数容器环境container-apps">创建函数容器环境（Container Apps）
+&lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。&lt;br>
+同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;br>
+接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。 &lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp"
+loading="lazy"
+>&lt;br>
+费用是按需支付的，跟之前的两种方式不太一样：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp"
+loading="lazy"
+alt="|500|500x992"
+>&lt;br>
+而且单个机子的配置选项也足够灵活，如图。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp"
+width="275"
+loading="lazy"
+alt="|275"
+>&lt;/p>
+&lt;h1 id="应用开发和部署">应用开发和部署
+&lt;/h1>&lt;p>如果使用了第一种方式创建了函数应用，它的部署方式就有所变化。之前在 [[azure serverless]] 里做过一些简单的介绍，当时提到发布方式比较简单，即 &lt;code>func azure functionapp publish xxx&lt;/code> 就行。&lt;br>
+不过现在我们是把代码打包到容器里，所以没法再使用这种方式去部署。现在需要改成 azure CLI 提供的 build 命令，其实在上文中提过了，只不过要稍加修改。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az acr build --registry jsongo --image jsongo.azurecr.io/azure-video:latest .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它推到远程去构建，并也 push 到远程 acr。&lt;br>
+多次使用下来，其实我发现直接使用 docker 命令在本地构建会快很多，因为有缓存，所以我把面上的命令改成了：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker build -t jsongo.azurecr.io/azure-video:latest .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker push jsongo.azurecr.io/azure-video:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>构建完成后，接下来，我们再运行下之前的更新命令即可：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func azure functionapp publish video-handler
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="其它">其它
+&lt;/h1>&lt;h2 id="关于-premium-plan-和-dedicated-plan">关于 Premium Plan 和 Dedicated Plan
+&lt;/h2>&lt;p>这些 Plan 其实都涉及到了多种服务和资源，根据不同情况来选择。&lt;/p>
+&lt;h3 id="premium-plan">Premium Plan
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>计算资源&lt;/strong>：通常指高性能的虚拟机或计算实例等。以虚拟机为例，不同规格的虚拟机收费不同，一般每小时的费用在 0.5 美元到几美元不等，如 DS 系列虚拟机可能比普通系列的虚拟机费用要高，高性能的虚拟机每小时费用可能要 0.834 美元甚至更高。&lt;/li>
+&lt;li>&lt;strong>存储资源&lt;/strong>：如果是 Premium Storage，收费标准通常按磁盘的最大容量阶梯收费，而不是用多少算多少，且其读写操作也可能会有额外的收费，如每 10 万个存储事务为 3 元，不过每月一般会提供 100 亿次免费的事务 13。&lt;/li>
+&lt;li>&lt;strong>网络资源&lt;/strong>：对于使用流量较大的公网 IP，每月费用可能在 1.2 美元及以上，负载均衡器每小时也会有一定的费用，如标准负载均衡器每小时的费用是 0.016 美元左右。&lt;/li>
+&lt;/ul>
+&lt;h3 id="dedicated-plan">Dedicated Plan
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>计算资源&lt;/strong>：如 Dedicated Host，一般会根据主机的配置和租用时长收费，一台配置中等的 Dedicated Host 每月费用可能在 1000 美元到 3000 美元左右。
+&lt;ul>
+&lt;li>&lt;strong>存储资源&lt;/strong>：若使用专用的存储设备或特定的存储方案，收费也会因存储容量、性能要求等因素而异，通常专用存储的费用相对较高，每 GB 每月的费用可能在 0.2 美元到 0.5 美元之间，具体取决于存储类型和性能等级。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>网络资源&lt;/strong>：如果需要专用的网络设备或带宽保证，费用也会相应增加，专用网络带宽每 Mbps 每月的费用可能在 10 美元到 50 美元左右。&lt;/li>
+&lt;/ul>
+&lt;h3 id="选择">选择
+&lt;/h3>&lt;p>可以根据需求来选择：&lt;/p>
+&lt;ul>
+&lt;li>如果对计算性能要求极高，但对资源的独占性要求不是特别高，Premium plan 可能更合适，因为它可以提供高性能的计算资源，同时成本相对较低。&lt;/li>
+&lt;li>如果对安全性、合规性以及资源的独占性有严格要求，需要完全隔离的计算和存储环境，那么 Dedicated plan 可能是更好的选择，尽管费用相对较高，但能满足特定的业务需求。&lt;br>
+实在不好选择，直接就选 Premium plan，比较经济些，一般也用不到比较太高级的配置。它目前有以下三个配置可以选：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp"
+width="450"
+loading="lazy"
+alt="|450"
+>&lt;br>
+不过价格上… 是有点高些，具体可以看这里：&lt;a class="link" href="https://azure.microsoft.com/zh-cn/pricing/details/functions/" target="_blank" rel="noopener"
+>定价 - Functions | Microsoft Azure&lt;/a>。&lt;br>
+小时视角：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/bcac629924bd882bed230aa3781131f6.webp"
+width="850"
+loading="lazy"
+alt="|850"
+>&lt;br>
+月视角：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;br>
+补：后来在函数的设置里，看到了比较实际的价格。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;br>
+这个看起来比较切合实际，1 小时不到 2 块。&lt;/li>
+&lt;/ul>
+&lt;h1 id="参考">参考
+&lt;/h1>&lt;ul>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools,acr,azure-cli2,azure-cli&amp;amp;pivots=container-apps#creating-containerized-function-apps" target="_blank" rel="noopener"
+>Working with Azure Functions in containers | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-container-registry?tabs=acr,bash&amp;amp;pivots=programming-language-python#build-the-container-image-and-verify-locally" target="_blank" rel="noopener"
+>Create Azure Functions in a local Linux container | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles?tabs=azure-cli" target="_blank" rel="noopener"
+>Azure Container Registry roles and permissions - Azure Container Registry | Microsoft Learn&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://zone.huoxian.cn/d/2594-azure-functions" target="_blank" rel="noopener"
+>使用自定义云容器在 Azure Functions 中增强云安全性&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Azure Function Triggers</title><link>https://www.jsongo.top/articles/azure-function-triggers/</link><pubDate>Wed, 18 Dec 2024 00:42:33 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-triggers/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg" alt="Featured image of post Azure Function Triggers" />&lt;h1 id="触发器各类">触发器各类
+&lt;/h1>&lt;p>Azure Function 有多种模板，我们在创建 Function 时，一般会用 &lt;code>--template&lt;/code> 参数要指定用哪个模板。详细的可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings" target="_blank" rel="noopener"
+>Triggers and bindings in Azure Functions | Microsoft Learn&lt;/a> 或中文版 &lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
+>Azure Functions 中的触发器和绑定 | Microsoft Learn&lt;/a>。&lt;br>
+以下是一些常见的：&lt;/p>
+&lt;h2 id="基于事件触发的模板">基于事件触发的模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Azure Blob Storage Trigger&lt;/strong>：当 Azure Blob 存储中的 Blob 被创建、更新或删除时触发函数。例如，可以在有新文件上传到指定 Blob 容器时，自动触发函数进行数据处理或文件转换等操作。&lt;/li>
+&lt;li>&lt;strong>Azure Event Hubs Trigger&lt;/strong>：用于接收来自 Azure Event Hubs 的事件流消息，可实现对实时数据的处理。例如，在物联网场景中，接收设备发送的大量实时数据进行分析和处理。&lt;/li>
+&lt;li>&lt;strong>Azure Service Bus Trigger&lt;/strong>：可以响应来自 Azure Service Bus 队列或主题的消息，支持批量接收消息。适用于处理异步消息传递场景，如订单处理、消息通知等。&lt;/li>
+&lt;/ul>
+&lt;h2 id="基于数据存储的模板">基于数据存储的模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Azure Cosmos DB Trigger&lt;/strong>：使用 Azure Cosmos DB 的变更 feed 来监听分区中的插入和更新操作，当有数据发生变化时触发函数，可用于实时数据同步等场景。&lt;/li>
+&lt;li>&lt;strong>Azure SQL Database Trigger&lt;/strong>：当 Azure SQL 数据库中的表发生数据插入、更新或删除操作时触发函数，方便进行数据的关联操作和业务逻辑处理。&lt;/li>
+&lt;/ul>
+&lt;h2 id="基于定时任务的模板">基于定时任务的模板
+&lt;/h2>&lt;p>除了 Timer Trigger 外，还有一些定时任务相关的模板或扩展，如支持按照特定时间间隔或 cron 表达式来定期执行函数，可用于定时数据备份、报表生成等任务 。&lt;/p>
+&lt;h2 id="基于-http-请求的模板">基于 HTTP 请求的模板
+&lt;/h2>&lt;p>除了常见的 HTTP Trigger 外，还有一些针对特定 HTTP 场景的模板或扩展，如支持接收和处理来自 Webhook 的 HTTP 请求，可用于与第三方系统进行集成，接收外部系统推送的数据或事件。&lt;/p>
+&lt;h2 id="其他模板">其他模板
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>PowerShell Trigger&lt;/strong>：允许使用 PowerShell 脚本编写函数逻辑，方便系统管理员或熟悉 PowerShell 的开发人员进行自动化脚本编写和任务调度。&lt;/li>
+&lt;li>&lt;strong>Python Trigger&lt;/strong>：使用 Python 语言编写函数逻辑，适用于数据科学、机器学习等场景，可方便地调用 Python 库进行数据处理和分析。&lt;/li>
+&lt;/ul>
+&lt;h1 id="实践">实践
+&lt;/h1>&lt;h2 id="timer-trigger">Timer Trigger
+&lt;/h2>&lt;p>Http trigger 在 &lt;a class="link" href="azure%20serverless.md" >azure serverless&lt;/a> 中介绍过了。这里再讲一下 Timer Trigger，在做定时任务时非常有用，而且计费也只是按函数的执行时间来计，比较划算。&lt;br>
+详细使用可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-bindings-timer?tabs=python-v2,isolated-process,nodejs-v4&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
+>Azure Functions 的计时器触发器 | Microsoft Learn&lt;/a> 。&lt;br>
+跟创建普通的 Azure Function 一样，还是用 CLI 的 new 命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func new --name xxx --template &lt;span class="s2">&amp;#34;timer trigger&amp;#34;&lt;/span> --authlevel &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会在你的 &lt;code>function_app.py&lt;/code> 里创建一个新的 function：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@app.timer_trigger&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">schedule&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;0 */10 * * * *&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">arg_name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;timer&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">run_on_startup&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">use_monitor&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">my_polling&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">timer&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">func&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">TimerRequest&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&amp;gt;&lt;/span> &lt;span class="kc">None&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">timer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">past_due&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logging&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;The timer is past due!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logging&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Python timer trigger function executed.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>@app.timer_trigger 里的几个参数：&lt;/p>
+&lt;ul>
+&lt;li>schedule：语法跟 cronjob 的配置一样，参考：&lt;a class="link" href="https://www.jsongo.top/articles/cron-syntax/" target="_blank" rel="noopener"
+>Cron 表达式&lt;/a>。&lt;/li>
+&lt;li>arg_name：表示计时器对象的变量的名称，没啥特别含义，就是随便定个名字能用就行。&lt;/li>
+&lt;li>run_on_startup：部署完、或重新启用时，它自动触发一次。&lt;/li>
+&lt;li>use_monitor：是否被 monotor 记录，如果间隔大于 1 分钟，建议设置为 true。&lt;br>
+其中， &lt;code>func.TimerRequest&lt;/code> 这个参数，其实就只有 &lt;code>past_due&lt;/code> 这个 boolean 类型的属性。&lt;br>
+&lt;code>past_due&lt;/code> 用于判断当前定时器触发的任务是否已经逾期：&lt;/li>
+&lt;li>当定时任务由于某些原因（例如系统负载高、资源暂时不可用等）未能在预定的时间点执行，后面才被触发时，&lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>True&lt;/code>。&lt;/li>
+&lt;li>如果定时任务在预定时间内正常执行，那么 &lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>False&lt;/code>&lt;br>
+现在 &lt;code>my_polling&lt;/code> 函数里，我们可以添加一些对其它 Azure Function 的调用，由此来处理其它任务的定时执行。这样由两个触发器配合来完成特定任务。当然把逻辑全与在 Timer Trigger 里也不是不行，只不过解耦开之后，Http Trigger 还能被单独使用。&lt;/li>
+&lt;/ul></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
+&lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
+>Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="mysql-申请">Mysql 申请
+&lt;/h1>&lt;h2 id="免费额度">免费额度
+&lt;/h2>&lt;p>免费用户其实还是有不少额度可以使用：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
+width="650"
+loading="lazy"
+alt="|650"
+>&lt;br>
+详细可以阅读：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account" target="_blank" rel="noopener"
+>Try Out With an Azure Free Account - Azure Database for MySQL - Flexible Server | Microsoft Learn&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>简单说，可以支持 B1MS 实例一直在线上跑，有 32G 的存储空间。B1MS 有 1~2 个 CPU 微核&lt;/li>
+&lt;/ul>
+&lt;h2 id="添加一个实例">添加一个实例
+&lt;/h2>&lt;ul>
+&lt;li>打开：[[https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers]]，点 &lt;code>Quick Create&lt;/code>。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
+loading="lazy"
+>&lt;/li>
+&lt;li>简单填写下信息就行：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp"
+loading="lazy"
+>&lt;/li>
+&lt;li>下一步、创建，等几分钟就创建成功了：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/aab8b78c940e753bc5de50a461d49053.webp"
+loading="lazy"
+>&lt;/li>
+&lt;/ul>
+&lt;h1 id="简单使用">简单使用
+&lt;/h1>&lt;h2 id="手动连接">手动连接
+&lt;/h2>&lt;p>在本地默认是连接不上的， azure 为了安全，对访问做了限制，可以通过 zero trust 网络来接入，当然也可以简单的设置下网络、放行你的 ip：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/da949ffb37dbb360bb9e563577f2adf8.webp"
+loading="lazy"
+>&lt;br>
+不过其实还有更简单的方式，直接在页面上打开连接：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp"
+loading="lazy"
+>&lt;br>
+连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
+证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
+width="725"
+loading="lazy"
+alt="|725"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>需要注意的是，直接连接 Mysql 进行操作比较危险，可以应急用，不建议当成常规操作。&lt;/p>
+&lt;h2 id="操作">操作
+&lt;/h2>&lt;p>刚创建的 MySQL 服务里面是空的，得自己手动创建一个 database：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">xxx&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
+&lt;h2 id="mac-上连接">Mac 上连接
+&lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
+>Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+&lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew tap azure/functions
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew install azure-cli
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew install azure-functions-core-tools@4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brew link --overwrite azure-functions-core-tools@4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>具体可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos,isolated-process,node-v4,python-v2,http-trigger,container-apps&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
+>Develop Azure Functions locally using Core Tools | Microsoft Learn&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>另外，这链接里也有怎么用命令行来创建的方法。下文 vscode 插件和 CLI 都会涉及。&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h1 id="vscode-插件">Vscode 插件
+&lt;/h1>&lt;p>参考这个：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?toc=/azure/developer/python/toc.json&amp;amp;bc=/azure/developer/python/breadcrumb/toc.json" target="_blank" rel="noopener"
+>Create a Python function using Visual Studio Code - Azure Functions | Microsoft Learn&lt;/a>&lt;/p>
+&lt;h2 id="简介">简介
+&lt;/h2>&lt;p>在 vscode 中安装插件：Azure Functions&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp"
+width="425"
+loading="lazy"
+alt="|425"
+>&lt;br>
+切到这个插件去点击添加一个函数，一步步往下都有说明，比较简单。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/ea7349816d01aa7f064eebb26475e767.webp"
+width="300"
+loading="lazy"
+alt="|300"
+>&lt;br>
+我选了 HTTP 触发器的模板，最后给我生成了这个文件：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;/p>
+&lt;h2 id="调试运行">调试运行
+&lt;/h2>&lt;p>简单的运行，可以用插件面板上，下半部分中的 Project 展开，里面有个调试相关的操作（它可点击）。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp"
+width="850"
+loading="lazy"
+alt="|850"
+>&lt;br>
+它会先做一些安装，然后启动 function，IDE 进入 debug 模式。这时主要运行的命令是：&lt;code>func host start&lt;/code>，直接在命令行里运行这个命令也可以启动本地调试运行。但如果你想查询代码中打的日志，一定要记得加上 &amp;ndash;verbose 的参数，所以正确的使用姿势是：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func host start --verbose
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 &lt;code>Development&lt;/code> 了，如果你修改代码，它会触发服务的重启，非常方便。&lt;br>
+它同时生成一个链接可以直接点击，它会触发函数执行：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
+width="650"
+loading="lazy"
+alt="|650"
+>&lt;/p>
+&lt;h1 id="创建">创建
+&lt;/h1>&lt;p>用 IDE 插件进行 function 创建上面已经介绍过来了，比较简单，不过读者可能会遇到网络问题而没法往下尝试。这里再介绍下 CLI 的方式来创建。&lt;br>
+先初始化目录：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func init --python
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>它会生成一些基础的配置文件，包括 [[https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file]] 和 &lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json" target="_blank" rel="noopener"
+>&lt;em>host.json&lt;/em>&lt;/a>。&lt;br>
+创建一个 api 入口：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="k">func&lt;/span> &lt;span class="n">new&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="n">combine_videos&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">template&lt;/span> &lt;span class="s2">&amp;#34;HTTP trigger&amp;#34;&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">authlevel&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Authlevel 有三个值：&lt;/p>
+&lt;ul>
+&lt;li>Anonymous 即任何人都可以访问，不需要带什么认证，相当于公开了。&lt;/li>
+&lt;li>Function 函数级别的认证，创建的每个函数都得在 URL 上带一个 token 进行认证，参数是 &lt;code>?code=&amp;lt;token&amp;gt;&lt;/code>。&lt;/li>
+&lt;li>Admin，最高级别的认证，只有具有管理员权限的用户才能访问函数，适用于包含敏感操作或数据的函数，如修改系统关键配置、访问敏感的业务数据等。这种模式依赖于复杂的身份管理系统（如 AAD）。&lt;/li>
+&lt;/ul>
+&lt;h1 id="部署">部署
+&lt;/h1>&lt;h2 id="平台创建应用">平台创建应用
+&lt;/h2>&lt;p>先打开 [[https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp]] 这个 portal 地址，创建一个 &lt;code>Function App&lt;/code> （或者中文叫“函数应用”）。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp"
+width="575"
+loading="lazy"
+alt="|575"
+>&lt;/p>
+&lt;h2 id="plugin">Plugin
+&lt;/h2>&lt;p>正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp"
+width="500"
+loading="lazy"
+alt="|500"
+>&lt;br>
+如果不成功，可以用下文 CLI 的方法来登录。&lt;br>
+选择 Deploy to Function App，直接进行部署。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/bda580eaff46be66e6353ae23f839da6.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;br>
+我在使用的时候，经常遇到网络问题，因为某些你懂的原因，所以挺难的，得给 vscode 设置 Proxy (具体就不介绍了)&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp"
+width="700"
+loading="lazy"
+alt="|700"
+>&lt;/p>
+&lt;h2 id="cli-发布">CLI 发布
+&lt;/h2>&lt;h3 id="登录">登录
+&lt;/h3>&lt;p>使用前也一样需要先登录 (上面的说明都是在本地开发)：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">az login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;br>
+命令行也会有一堆打印，有如下关键信息就说明已经登录成功了。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp"
+width="900"
+loading="lazy"
+alt="|900"
+>&lt;/p>
+&lt;h3 id="发布操作">发布操作
+&lt;/h3>&lt;p>当然我们也可以选择用 CLI 来做发布：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">func azure functionapp publish &amp;lt;project_name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>具体细节可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?toc=/azure/developer/python/toc.json&amp;amp;bc=/azure/developer/python/breadcrumb/toc.json&amp;amp;tabs=macos,bash,azure-cli,browser" target="_blank" rel="noopener"
+>Create a Python function from the command line - Azure Functions | Microsoft Learn&lt;/a>&lt;br>
+这里的 &lt;code>project_name&lt;/code> 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
+width="775"
+loading="lazy"
+alt="|775"
+>&lt;br>
+另外还有一点要注意的是，本地的 python 环境需要跟平台上的一致，避免本地跑的好好的、部署上去就缺一些模块：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/d4c8cfd171f834123918d1a99265533f.webp"
+width="675"
+loading="lazy"
+alt="|675"
+>&lt;br>
+部署完会生成一个地址可供访问：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp"
+width="800"
+loading="lazy"
+alt="|800"
+>&lt;br>
+部署的过程是会比较慢，我们从平台的部署日志中可以看到它部署完后，会等待 1 分钟：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp"
+width="750"
+loading="lazy"
+alt="|750"
+>&lt;br>
+在线上运行后，可以访问试试。&lt;br>
+线上日志可以在这里看到：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
+width="725"
+loading="lazy"
+alt="|725"
+>&lt;br>
+不过经常连接不稳定，所以其实可以到另一个地方查看 ：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp"
+width="775"
+loading="lazy"
+alt="|775"
+>&lt;/p>
+&lt;h1 id="重要插件-azurite">重要插件 Azurite
+&lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL，它帮你开了一个代理，可以直接把本地调试时写的数据同步到线上。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
+width="550"
+loading="lazy"
+alt="|550"
+>&lt;br>
+如果没有它，本地如果运行定时任务就是出异常：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/bb208c03b576515896aa151e5a12fa6c.webp"
+loading="lazy"
+>&lt;br>
+修改下 &lt;code>local.settings.json&lt;/code> 的配置，把 &lt;code>AzureWebJobsStorage&lt;/code> 设置成 &lt;code>&amp;quot;UseDevelopmentStorage=true&amp;quot;&lt;/code>。&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp"
+width="550"
+loading="lazy"
+alt="|550"
+>&lt;br>
+打开命令面板，运行 Azurite start 来启动服务&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp"
+width="475"
+loading="lazy"
+alt="|475"
+>&lt;br>
+这时它们的启动非常快，一闪而过，没关系，它已经在跑了。&lt;br>
+比较烦的时，运行时，会在当前目录下生成一些文件：&lt;br>
+&lt;img src="https://cdn.ethanlyn.com/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp"
+width="450"
+loading="lazy"
+alt="|450"
+>&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>blobstorage&lt;/em> 和 &lt;em>queuestorage&lt;/em>
+&lt;ul>
+&lt;li>&lt;strong>作用&lt;/strong>：
+&lt;ul>
+&lt;li>这些文件夹通常用于存储本地开发时的 Azure Blob 存储和 Azure Queue 存储的模拟数据。当你在本地运行和测试 Azure Functions 时，这些文件夹可以帮助模拟真实的 Azure 存储环境。&lt;/li>
+&lt;li>例如，如果你有一个 Azure Function，它从 Blob 存储中读取数据或者向 Queue 存储中写入数据，在本地开发环境中，这些文件夹会存储相关的数据，以便函数能够正常运行和测试。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>使用场景&lt;/strong>：
+&lt;ul>
+&lt;li>在没有连接到真实 Azure 存储账户的情况下，本地开发和调试函数时需要用到。如果删除这些文件夹，可能会导致本地运行的函数在涉及到 Blob 或 Queue 操作时出现错误，因为它们找不到模拟的存储数据。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>以 &lt;em>azurite_db&lt;/em> 开头的.json 文件
+&lt;ul>
+&lt;li>&lt;strong>作用&lt;/strong>：
+&lt;ul>
+&lt;li>这些文件是 Azurite 数据库文件。Azurite 是一个本地的 Azure 存储模拟器，用于在本地模拟 Azure Blob、Queue 和 Table 存储服务。这些.json 文件存储了 Azurite 模拟存储服务的数据结构和数据内容。&lt;/li>
+&lt;li>例如，&lt;em>azurite_db_blob&lt;/em>.json 文件用于存储模拟的 Blob 存储数据结构和数据，&lt;em>azurite_db_queue&lt;/em>.json 文件用于存储模拟的 Queue 存储数据等。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/原理 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/%E5%8E%9F%E7%90%86/</link><description>Recent content in AI/原理 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 06 Dec 2024 00:56:02 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/ai/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Fri, 06 Dec 2024 00:56:02 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.jsongo.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/原理 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/%E5%8E%9F%E7%90%86/</link><description>Recent content in AI/原理 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 06 Dec 2024 00:56:02 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/ai/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Fri, 06 Dec 2024 00:56:02 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
 &lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
 这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
 >村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
 &lt;h1 id="功能">功能
 &lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://cdn.jsongo.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.ethanlyn.com/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
 width="850"
 loading="lazy"
 alt="图片来自 x|850"
@@ -146,7 +146,7 @@ Prompt Demo:&lt;br>
 &lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
 &lt;h1 id="原理">原理
 &lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
-&lt;img src="https://cdn.jsongo.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
+&lt;img src="https://cdn.ethanlyn.com/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
 width="725"
 loading="lazy"
 alt="|725"
