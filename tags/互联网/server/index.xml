@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/Server on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/server/</link><description>Recent content in 互联网/Server on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Apr 2025 20:51:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/server/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracing 初步理解</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 初步理解" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/Server on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/server/</link><description>Recent content in 互联网/Server on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Apr 2025 20:51:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/server/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracing 初步理解</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 初步理解" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
 &lt;h1 id="tracing-概念">Tracing 概念
 &lt;/h1>&lt;h2 id="-tracing-基础概念梳理">🔍 Tracing 基础概念梳理
 &lt;/h2>&lt;h3 id="-整体结构树形">🌲 整体结构（树形）
@@ -352,7 +352,7 @@
 &lt;li>用 Trace 找到问题在哪个服务&lt;/li>
 &lt;li>用 Log 看服务内部报错细节&lt;/li>
 &lt;li>用 Metrics 看整体健康趋势&lt;/li>
-&lt;/ul></description></item><item><title>Cron 表达式</title><link>https://www.jsongo.top/articles/cron-syntax/</link><pubDate>Wed, 18 Dec 2024 00:55:38 +0800</pubDate><guid>https://www.jsongo.top/articles/cron-syntax/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/91668e623e452ebc624daa105d2f82c2.jpg" alt="Featured image of post Cron 表达式" />&lt;p>平时工作中，可能会时不时碰到像 &lt;code>0 */5 * * * *&lt;/code> 这种 Cronjob 定时任务的配置，特别是运维和服务端的同学，经常会打交道。本文只是最基础的用法，后面有新内容再补充，仅作为自己学习、记录、备忘的文档沉淀下。&lt;/p>
+&lt;/ul></description></item><item><title>Cron 表达式</title><link>https://www.jsongo.top/articles/cron-syntax/</link><pubDate>Wed, 18 Dec 2024 00:55:38 +0800</pubDate><guid>https://www.jsongo.top/articles/cron-syntax/</guid><description>&lt;img src="https://cdn.ethango.top/banners/91668e623e452ebc624daa105d2f82c2.jpg" alt="Featured image of post Cron 表达式" />&lt;p>平时工作中，可能会时不时碰到像 &lt;code>0 */5 * * * *&lt;/code> 这种 Cronjob 定时任务的配置，特别是运维和服务端的同学，经常会打交道。本文只是最基础的用法，后面有新内容再补充，仅作为自己学习、记录、备忘的文档沉淀下。&lt;/p>
 &lt;h1 id="基础语法">基础语法
 &lt;/h1>&lt;h2 id="cron-表达式的基本格式和含义">Cron 表达式的基本格式和含义
 &lt;/h2>&lt;ul>
@@ -374,8 +374,7 @@
 &lt;/li>
 &lt;li>&lt;strong>月（*）&lt;/strong>：&lt;code>*&lt;/code> 表示每一个月，即任务在每一个月都有可能执行，具体日期由前面的日、时、分决定。&lt;/li>
 &lt;li>&lt;strong>周（*）&lt;/strong>：&lt;code>*&lt;/code> 表示每一个周，即任务在每一周都有可能执行，这个比较特殊，也可以省略而只需要前面 5 个也行。&lt;br>
-开头说的这个配置，含义是在每分钟的第 0 秒开始，并且每隔 5 分钟执行一次，每天每小时、每月都会按照这个间隔执行。简单说，就是 &lt;strong>5 分钟执行一次&lt;/strong>。&lt;/li>
-&lt;/ul>
+开头说的这个配置，含义是在每分钟的第 0 秒开始，并且每隔 5 分钟执行一次，每天每小时、每月都会按照这个间隔执行。简单说，就是 &lt;strong>5 分钟执行一次&lt;/strong>。
 &lt;div class="admonition summary">
 &lt;div class="details-summary admonition-title">
 &lt;i class='icon fas fa-pencil-alt fa-fw'>&lt;/i>
@@ -387,7 +386,9 @@
 另一个方法是，从后往前倒着看，比如只看前三个，它就是时间的表达，像 1:00:00&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;/div>&lt;h1 id="使用">使用
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h1 id="使用">使用
 &lt;/h1>&lt;p>下面举一些例子，尽量全地覆盖可能用到的场景：&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>每 5 秒执行一次&lt;/strong>

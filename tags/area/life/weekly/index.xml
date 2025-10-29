@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Area/Life/Weekly on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/area/life/weekly/</link><description>Recent content in Area/Life/Weekly on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 03 Nov 2024 13:35:12 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/area/life/weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.ethanlyn.com/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Area/Life/Weekly on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/area/life/weekly/</link><description>Recent content in Area/Life/Weekly on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 03 Nov 2024 13:35:12 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/area/life/weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.ethango.top/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
 &lt;/h1>&lt;p>大多数看起来有所利益的事情，肯定有成本，而且有风险。风险本质上也是一种成本。&lt;br>
 用成本 + 风险的思维来看问题，不要只想着好处。成本和风险往往是在巨大的利益面前，特别容易被忽视的东西。&lt;br>
 塔勒布在《非对称风险》中表达了一个观点，他反复提到在真实的世界里，一定要风险共担，如果有人不愿意承担风险，却要享受好处，这样的人是有问题的。&lt;/p>
 &lt;h2 id="企业最大的成本是老大的决策成本">企业最大的成本，是老大的决策成本
 &lt;/h2>&lt;p>如果动不动就来个调整，发现不对，马上再折腾几回，这损耗的是非常大的。决策成功率越低，企业就会被越来越快消磨掉。我们说大公司病，其实有一层逻辑是：公司小的时候，10 个决策中，有一两个正确的决策可能就能把营收和规模做上来；但当公司越来越大的时候，10 个决策中如果有一两个决策做错了，那都是在损耗。所以大公司病往往不是因为决策人变笨了，而是企业到了那个阶段，决策的成本变高了。&lt;br>
 看过一篇文章《&lt;a class="link" href="https://news.qq.com/rain/a/20241015A04JNI00" target="_blank" rel="noopener"
->只有10%的产品值得用AI再做一遍&lt;/a>》，标题就直接表明了作者的观点。文中提到了 AI 时代，各大厂争先恐后地攻城略地，但后来发现，做了很多产品功能都是徒劳，浪费了很多资源。比如：&lt;/p>
+>只有 10%的产品值得用 AI 再做一遍&lt;/a>》，标题就直接表明了作者的观点。文中提到了 AI 时代，各大厂争先恐后地攻城略地，但后来发现，做了很多产品功能都是徒劳，浪费了很多资源。比如：&lt;/p>
 &lt;ul>
-&lt;li>支小宝虽有创意但操作路径复杂且多数功能未发挥 AI 能力；&lt;/li>
-&lt;/ul>
+&lt;li>支小宝虽有创意但操作路径复杂且多数功能未发挥 AI 能力；
 &lt;blockquote>
-&lt;p>如果我用支小宝坐公交，我需要把 APP 打开，点开对话，再输入指令“我要坐公交”，等待 2-3s 加载出来，这个过程至少需要 5s 以上。&lt;br>
-实际上，用手机的 NFC 直接刷码上车，不需要打开任何 App 就完成了这个操作。&lt;/p>
+&lt;pre>&lt;code>如果我用支小宝坐公交，我需要把 APP 打开，点开对话，再输入指令“我要坐公交”，等待 2-3s 加载出来，这个过程至少需要 5s 以上。
+实际上，用手机的 NFC 直接刷码上车，不需要打开任何 App 就完成了这个操作。
+&lt;/code>&lt;/pre>
 &lt;/blockquote>
-&lt;ul>
+&lt;/li>
 &lt;li>淘宝问问、京东京言等电商 AI 助手功能空泛、多轮对话理解能力差且 AI 划重点功能无实际价值；&lt;/li>
 &lt;li>饿了么的 AI 评价总结功能上线又下线，因为既无价值还浪费费用；&lt;/li>
 &lt;li>携程问道生成的内容干巴巴且缺乏实用性。&lt;br>

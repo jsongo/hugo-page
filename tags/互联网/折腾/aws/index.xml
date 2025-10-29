@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/Aws on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/aws/</link><description>Recent content in 互联网/折腾/Aws on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 13 Dec 2024 15:59:05 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.ethanlyn.com/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
-&lt;img src="https://cdn.ethanlyn.com/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/Aws on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/aws/</link><description>Recent content in 互联网/折腾/Aws on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 13 Dec 2024 15:59:05 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.ethango.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
+&lt;img src="https://cdn.ethango.top/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
 loading="lazy"
 alt="a0ca56c580cb92b784f7a891d694a46c_MD5"
 >
@@ -7,13 +7,13 @@ EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，
 刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
 &lt;ul>
 &lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
-&lt;img src="https://cdn.ethanlyn.com/2024/12/5f2935beac626250341b78204dba3aaa.webp"
+&lt;img src="https://cdn.ethango.top/2024/12/5f2935beac626250341b78204dba3aaa.webp"
 loading="lazy"
 alt="dc4d2f7b2f6541fdf855791c014cd6bc_MD5"
 >
 看起来很正常，也没有实例在跑&lt;/li>
 &lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
-&lt;img src="https://cdn.ethanlyn.com/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
+&lt;img src="https://cdn.ethango.top/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
 loading="lazy"
 alt="07fe0255dd659d8be840fad26fa1025a_MD5"
 >
