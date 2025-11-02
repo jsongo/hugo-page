@@ -5,7 +5,7 @@ tags:
   - AI/Diffusion
 created_at: Sun, Nov 24th, 2024 - 11:26:10
 banner_icon: 🌹
-banner: "https://cdn.ethango.top/banners/96539755245eb88510f037ed2d24f60d.jpeg"
+banner: "https://cdn.lyb.pub/banners/96539755245eb88510f037ed2d24f60d.jpeg"
 draft: false
 slug: diffusion-101
 title: 初识 Diffusion（概念）

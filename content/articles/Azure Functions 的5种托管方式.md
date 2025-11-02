@@ -6,7 +6,7 @@ tags:
 created_at: Sun, Jan 5, 2025 - 20:51:24
 date: 2025-01-05T20:51:24.063+08:00
 banner_icon: 🐠
-banner: "https://cdn.ethango.top/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg"
+banner: "https://cdn.lyb.pub/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg"
 slug: azure-functions-hostings
 title: Azure Functions 的5种托管方式
 description: Azure Functions 的五种托管方式，包括 Flex Consumption、Premium、Dedicated、Container Apps 和 Consumption 计划，比较了它们在缩放方式、资源限制、适用场景和计费方式上的差异。

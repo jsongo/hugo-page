@@ -5,7 +5,7 @@ tags:
   - study/工具/IT
 created_at: Thu, Nov 21st, 2024 - 18:21:19
 banner_icon: 🦖
-banner: "https://cdn.ethango.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg"
+banner: "https://cdn.lyb.pub/banners/0b3d83738bddc53706e70a9dfd187061.jpg"
 description: 介绍了 ag 工具的安装和使用方法，包括搜索文件名、常用参数等
 title: 强大的 search 工具 - ag
 slug: search-tool-ag-the-silver-searcher
@@ -99,7 +99,7 @@ ag -C 2 'class User'
 ag -0 -g .png$ . | xargs -0 du -h | sort -hr
 ```
 
-![085e9ed0cac92342df818071b090c46f_MD5.webp|940x235](https://cdn.ethango.top/upic/1744522541_8OSi1S.webp)
+![085e9ed0cac92342df818071b090c46f_MD5.webp|940x235](https://cdn.lyb.pub/upic/1744522541_8OSi1S.webp)
 
 ### `-0` 选项
 

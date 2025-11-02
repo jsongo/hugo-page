@@ -6,7 +6,7 @@ tags:
 created_at: Sun, Apr 6, 2025 - 21:15:54
 date: 2025-04-06T21:15:54.890+08:00
 banner_icon: ⌚️
-banner: "https://cdn.ethango.top/banners/7b41109174b1be7954e2eaaa41f6050a.jpeg"
+banner: "https://cdn.lyb.pub/banners/7b41109174b1be7954e2eaaa41f6050a.jpeg"
 title: 解决 podman build 提示 no space 问题
 description: 使用 Podman 构建镜像时遇到的磁盘空间不足问题，并提供了清理和扩容的解决方案
 slug: podman-build-no-space-issue

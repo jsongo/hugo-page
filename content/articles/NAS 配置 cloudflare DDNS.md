@@ -6,7 +6,7 @@ tags:
 created_at: Thu, Apr 3, 2025 - 09:00:46
 date: 2025-04-03T09:00:46.149+08:00
 banner_icon: 🚑
-banner: "https://cdn.ethango.top/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg"
+banner: "https://cdn.lyb.pub/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg"
 title: NAS 配置 cloudflare DDNS
 description: 聊聊如何为 NAS 设置 Cloudflare 的 DDNS，以便实现远程访问、方便记忆和提供稳定的访问体验等功能
 slug: nas-config-cloudflare-ddns
@@ -26,16 +26,16 @@ draft: false
 # How
 
 进入 cloudflare  
- ![a0944299ff16236c1b3a62304422cf66_MD5](https://cdn.ethango.top/2025/04/1fe20e900c45ea2bc98910cb3917c743.webp)  
+ ![a0944299ff16236c1b3a62304422cf66_MD5](https://cdn.lyb.pub/2025/04/1fe20e900c45ea2bc98910cb3917c743.webp)  
 简单填写即可  
- ![93a269c73086bc52f7b59e47df737b3b_MD5](https://cdn.ethango.top/2025/04/980f013f949fa5a888bbc44a19dacc33.webp)  
+ ![93a269c73086bc52f7b59e47df737b3b_MD5](https://cdn.lyb.pub/2025/04/980f013f949fa5a888bbc44a19dacc33.webp)  
 最后在 NAS 上填写相关的 token 即可。我的是绿联的 NAS，在控制面板里搜索 DDNS 可以找到，在方式二中选新增。
 ![[assets/local_image_plus/a4c21f7f99866d178c6efc9cba4699d6_MD5.png]]
-![baa8f3432565de42a82a2b4a66ad3828_MD5](https://cdn.ethango.top/2025/04/6646d4b4a9e4f8ea04abe7b016243290.webp)  
+![baa8f3432565de42a82a2b4a66ad3828_MD5](https://cdn.lyb.pub/2025/04/6646d4b4a9e4f8ea04abe7b016243290.webp)  
 然后配置。Cloudflare 没提供 accessKey ID，它不重要，填写自己的 Cloudflare 账号即可。DDNS 域名可以添加一个自己托管在 Cloudflare 上的域名，可以加一个三级域名，如 `nas.xxx.com` 。  
- ![99509d7becca7bec0aad41815695c700_MD5](https://cdn.ethango.top/2025/04/6d50da9e050a94421a8790b945ec24d1.webp)  
+ ![99509d7becca7bec0aad41815695c700_MD5](https://cdn.lyb.pub/2025/04/6d50da9e050a94421a8790b945ec24d1.webp)  
 看下状态如果是否正常  
- ![0c3856442d38469aa897889d253da33e_MD5](https://cdn.ethango.top/2025/04/a87192cda2f1be909de1ba0ccee85d0d.webp)  
+ ![0c3856442d38469aa897889d253da33e_MD5](https://cdn.lyb.pub/2025/04/a87192cda2f1be909de1ba0ccee85d0d.webp)  
 高级设置里显示成功才可以  
- ![c5a086c7aa28e96c5d3ba74fa0c89296_MD5](https://cdn.ethango.top/2025/04/cf84e22051bc347c5543b6252c3b3b4a.webp)  
+ ![c5a086c7aa28e96c5d3ba74fa0c89296_MD5](https://cdn.lyb.pub/2025/04/cf84e22051bc347c5543b6252c3b3b4a.webp)  
 我试过连接手机热点去访问，发现不太行，这是因为我们没有公网 ip。

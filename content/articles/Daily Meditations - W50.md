@@ -5,7 +5,7 @@ tags:
   - area/thinking
 created_at: Mon, Dec 9th, 2024 - 13:34:29
 banner_icon: 🥢
-banner: "https://cdn.ethango.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg"
+banner: "https://cdn.lyb.pub/banners/99b74ba8e0135b5536a125e3596d5212.jpg"
 description: 日常的一些思考收集，自己会时不时的回顾下，分享出来也希望能给大家一些启发
 title: Daily Meditations - W50
 slug: meditations-w50

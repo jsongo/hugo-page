@@ -5,7 +5,7 @@ tags:
   - 互联网/折腾/mac
 created_at: Tue, Dec 10th, 2024 - 16:14:37
 banner_icon: 🚲
-banner: "https://cdn.ethango.top/banners/d8418fa48f2cc793c8f63aa13111635f.png"
+banner: "https://cdn.lyb.pub/banners/d8418fa48f2cc793c8f63aa13111635f.png"
 title: 清理 mac 电脑磁盘空间
 description: 如何通过删除不必要的文件和优化存储来释放Mac电脑的磁盘空间
 slug: clean-mac-disk-space
@@ -93,7 +93,7 @@ docker builder prune -a
 # 磁盘
 
 比较通用的方法是，从系统磁盘中查看哪个目录占用较大，一层层往下分析。  
-![8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888](https://cdn.ethango.top/2025/04/e2c574e7ab713206354294e0faac5ae1.webp)  
+![8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888](https://cdn.lyb.pub/2025/04/e2c574e7ab713206354294e0faac5ae1.webp)  
 每一个都可以点进去看有哪些大文件（它按大小排序）。  
 当然要更细的话，也可以用命令行，从上往下看某些目录里的占用情况：
 
@@ -101,5 +101,5 @@ docker builder prune -a
 du -hsx ~/* | sort -rh | head -10
 ```
 
-![c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202](https://cdn.ethango.top/2025/04/bba67c4fef0813913b1399566d099fc7.webp)  
+![c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202](https://cdn.lyb.pub/2025/04/bba67c4fef0813913b1399566d099fc7.webp)  
 然后找到大文件

@@ -6,7 +6,7 @@ tags:
 created_at: Thu, Feb 27, 2025 - 23:16:31
 date: 2025-02-27T23:16:31.970+08:00
 banner_icon: 🐽
-banner: "https://cdn.ethango.top/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg"
+banner: "https://cdn.lyb.pub/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg"
 slug: forbearance-seizing-opportunities-counterattack
 draft: false
 description: 在中美博弈中，中国通过隐忍和策略性应对，抓住了多次机遇实现逆袭的过程，分析了美国策略的转变及其背后的原因
@@ -14,7 +14,7 @@ title: video：在隐忍中抓住机遇逆袭
 ---
 
 后续会时不时地写一些不那么短的短视频的观后感，今天就先拿 `小智侃财经的作品` 的《[为什么放任东大崛起，老美却怂了](https://v.douyin.com/i5jK3E5H/)》来讲讲。  
-![ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp](https://cdn.ethango.top/upic/1750870686_cS5D5S.webp)  
+![ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp](https://cdn.lyb.pub/upic/1750870686_cS5D5S.webp)  
  该视频以《倚天屠龙记》的情节类比开头，讲中美博弈，分析了美国在中美博弈中的策略转变及背后原因，以及中国应对美国压力展现出的自信从容。分了三部分：
 
 1. **中美博弈现状**：美国对中国发起科技战、贸易战、金融战，中国凭借自身实力扛住压力，就像张无忌有九阳神功护体。当下中国对内提升市场经济活跃度，对外展现自信从容，如扩大免签国、延长免签时长、对部分国家实施单方面零关税、取消制造业外资限制等。

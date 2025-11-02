@@ -5,7 +5,7 @@ tags:
   - AI/Diffusion
 created_at: Sun, Nov 24th, 2024 - 23:31:34
 banner_icon: 🍈
-banner: "https://cdn.ethango.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg"
+banner: "https://cdn.lyb.pub/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg"
 description: Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像
 title: Flux 图像生成模型
 slug: flux-101

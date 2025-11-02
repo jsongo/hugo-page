@@ -6,7 +6,7 @@ tags:
 created_at: Mon, Jan 6, 2025 - 16:24:30
 date: 2025-01-05T16:24:30.751+08:00
 banner_icon: 🧙🏼‍♀️
-banner: "https://cdn.ethango.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg"
+banner: "https://cdn.lyb.pub/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg"
 title: 网络请求 - 用 Kotlin(KMP) 做跨端原生开发
 description: 在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。
 slug: kmp-http-sse
@@ -210,7 +210,7 @@ open class MyHttpClient(private val baseURL: String? = BASE_URL, private val tok
 - Server 端：[Server-Sent Events | Ktor Documentation](https://ktor.io/docs/server-server-sent-events.html)
 - Client 端：[Server-Sent Events | Ktor Documentation](https://ktor.io/docs/client-server-sent-events.html)  
   KMP Client 端接入现在变得很简单，也不需要什么特殊依赖：  
-   ![|500](https://cdn.ethango.top/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp)  
+   ![|500](https://cdn.lyb.pub/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp)  
   扩展上文中的代码，添加一个 sse 方法：
 
 ```kotlin
@@ -322,7 +322,7 @@ public interface SSESession : CoroutineScope {
 > incoming 怎么来的： `client.sse` 是由 `serverSentEvents` 方法生成的，它返回一个 `ClientSSESession`，而 `ClientSSESession` 继承了 `SSESession`，所以 incoming 一直传到了 `client.sse` 的 scope 里。
 
 - 当调用 `incoming.collect` 时，它会触发这个 `Flow` 开始工作，并且会将 `Flow` 发射出的每个数据项传递给 `collect` 函数内部定义的操作进行处理。Collect 参数是一个 lambda 表达式，参数就是一个 ServerSentEvent，定义如下图，遵守 SSE 的数据流协议，比较标准，没什么好说的。  
-  ![|500](https://cdn.ethango.top/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp)
+  ![|500](https://cdn.lyb.pub/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp)
 - EventType 是我们自己定义的，根据业务来定制的，开发者可以自己命令（跟服务端接口对齐好就行），大概的定义可以参考这个实现：
 
 ```kotlin

@@ -5,7 +5,7 @@ tags:
   - 互联网/折腾/azure
 created_at: Sat, Dec 14th, 2024 - 01:33:06
 banner_icon: 🚇
-banner: "https://cdn.ethango.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg"
+banner: "https://cdn.lyb.pub/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg"
 slug: azure-serverless
 title: azure serverless 使用
 description: azure serverless 支持 python、node 等多种语言，本地 CLI 和 VsCode 插件可以很方便辅助开发者进行开发、调试以及部署。本文主要介绍 azure serverless 的入门操作。
@@ -35,16 +35,16 @@ brew link --overwrite azure-functions-core-tools@4
 ## 简介
 
 在 vscode 中安装插件：Azure Functions  
- ![|425](https://cdn.ethango.top/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp)  
+ ![|425](https://cdn.lyb.pub/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp)  
 切到这个插件去点击添加一个函数，一步步往下都有说明，比较简单。  
- ![|300](https://cdn.ethango.top/2024/12/ea7349816d01aa7f064eebb26475e767.webp)  
+ ![|300](https://cdn.lyb.pub/2024/12/ea7349816d01aa7f064eebb26475e767.webp)  
 我选了 HTTP 触发器的模板，最后给我生成了这个文件：  
- ![|500](https://cdn.ethango.top/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp)
+ ![|500](https://cdn.lyb.pub/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp)
 
 ## 调试运行
 
 简单的运行，可以用插件面板上，下半部分中的 Project 展开，里面有个调试相关的操作（它可点击）。  
- ![|850](https://cdn.ethango.top/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp)  
+ ![|850](https://cdn.lyb.pub/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp)  
  它会先做一些安装，然后启动 function，IDE 进入 debug 模式。这时主要运行的命令是：`func host start`，直接在命令行里运行这个命令也可以启动本地调试运行。但如果你想查询代码中打的日志，一定要记得加上 --verbose 的参数，所以正确的使用姿势是：
 
 ```bash
@@ -53,7 +53,7 @@ func host start --verbose
 
 本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 `Development` 了，如果你修改代码，它会触发服务的重启，非常方便。  
 它同时生成一个链接可以直接点击，它会触发函数执行：  
- ![|650](https://cdn.ethango.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp)
+ ![|650](https://cdn.lyb.pub/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp)
 
 # 创建
 
@@ -82,17 +82,17 @@ Authlevel 有三个值：
 ## 平台创建应用
 
 先打开 [[https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp]] 这个 portal 地址，创建一个 `Function App` （或者中文叫“函数应用”）。  
- ![|575](https://cdn.ethango.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp)
+ ![|575](https://cdn.lyb.pub/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp)
 
 ## Plugin
 
 正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：  
- ![|500](https://cdn.ethango.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp)  
+ ![|500](https://cdn.lyb.pub/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp)  
  如果不成功，可以用下文 CLI 的方法来登录。  
 选择 Deploy to Function App，直接进行部署。  
- ![|700](https://cdn.ethango.top/2024/12/bda580eaff46be66e6353ae23f839da6.webp)  
+ ![|700](https://cdn.lyb.pub/2024/12/bda580eaff46be66e6353ae23f839da6.webp)  
 我在使用的时候，经常遇到网络问题，因为某些你懂的原因，所以挺难的，得给 vscode 设置 Proxy (具体就不介绍了)  
- ![|700](https://cdn.ethango.top/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp)
+ ![|700](https://cdn.lyb.pub/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp)
 
 ## CLI 发布
 
@@ -105,9 +105,9 @@ az login
 ```
 
 运行时，它会打开一个网页进行登录授权  
- ![|750](https://cdn.ethango.top/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp)  
+ ![|750](https://cdn.lyb.pub/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp)  
 命令行也会有一堆打印，有如下关键信息就说明已经登录成功了。  
- ![|900](https://cdn.ethango.top/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp)
+ ![|900](https://cdn.lyb.pub/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp)
 
 ### 发布操作
 
@@ -119,32 +119,32 @@ func azure functionapp publish <project_name>
 
 具体细节可以参考这里：[Create a Python function from the command line - Azure Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?toc=/azure/developer/python/toc.json&bc=/azure/developer/python/breadcrumb/toc.json&tabs=macos,bash,azure-cli,browser)  
 这里的 `project_name` 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。  
- ![|775](https://cdn.ethango.top/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp)  
+ ![|775](https://cdn.lyb.pub/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp)  
 另外还有一点要注意的是，本地的 python 环境需要跟平台上的一致，避免本地跑的好好的、部署上去就缺一些模块：  
- ![|675](https://cdn.ethango.top/2024/12/d4c8cfd171f834123918d1a99265533f.webp)  
+ ![|675](https://cdn.lyb.pub/2024/12/d4c8cfd171f834123918d1a99265533f.webp)  
  部署完会生成一个地址可供访问：  
- ![|800](https://cdn.ethango.top/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp)  
+ ![|800](https://cdn.lyb.pub/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp)  
 部署的过程是会比较慢，我们从平台的部署日志中可以看到它部署完后，会等待 1 分钟：  
- ![|750](https://cdn.ethango.top/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp)  
+ ![|750](https://cdn.lyb.pub/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp)  
 在线上运行后，可以访问试试。  
 线上日志可以在这里看到：  
- ![|725](https://cdn.ethango.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp)  
+ ![|725](https://cdn.lyb.pub/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp)  
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：  
- ![|775](https://cdn.ethango.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp)
+ ![|775](https://cdn.lyb.pub/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp)
 
 # 重要插件 Azurite
 
 安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL，它帮你开了一个代理，可以直接把本地调试时写的数据同步到线上。  
- ![|550](https://cdn.ethango.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp)  
+ ![|550](https://cdn.lyb.pub/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp)  
 如果没有它，本地如果运行定时任务就是出异常：  
- ![](https://cdn.ethango.top/2024/12/bb208c03b576515896aa151e5a12fa6c.webp)  
+ ![](https://cdn.lyb.pub/2024/12/bb208c03b576515896aa151e5a12fa6c.webp)  
 修改下 `local.settings.json` 的配置，把 `AzureWebJobsStorage` 设置成 `"UseDevelopmentStorage=true"`。  
- ![|550](https://cdn.ethango.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp)  
+ ![|550](https://cdn.lyb.pub/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp)  
 打开命令面板，运行 Azurite start 来启动服务  
- ![|475](https://cdn.ethango.top/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp)  
+ ![|475](https://cdn.lyb.pub/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp)  
  这时它们的启动非常快，一闪而过，没关系，它已经在跑了。  
  比较烦的时，运行时，会在当前目录下生成一些文件：  
- ![|450](https://cdn.ethango.top/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp)
+ ![|450](https://cdn.lyb.pub/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp)
 
 - *blobstorage*  和  *queuestorage*
   - **作用**：

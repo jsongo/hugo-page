@@ -6,7 +6,7 @@ tags:
 created_at: Tue, Apr 8, 2025 - 20:51:33
 date: 2025-04-08T20:51:33.101+08:00
 banner_icon: 👷🏼
-banner: https://cdn.ethango.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg
+banner: https://cdn.lyb.pub/banners/1089988f36245b8456d63b99a86d3d2b.jpg
 title: Tracing 初步理解
 description: 简单介绍 Tracing技术，它是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化和故障排查等领域。
 slug: tracing-101

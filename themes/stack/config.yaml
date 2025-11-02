@@ -11,7 +11,7 @@ params:
     order: desc
   featuredImageField: banner
   rssFullContent: true
-  favicon: https://cdn.ethango.top/mc/favicon.jpg
+  favicon: https://cdn.lyb.pub/mc/favicon.jpg
 
   footer:
     since: 2024
