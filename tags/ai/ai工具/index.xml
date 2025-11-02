@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/AI工具 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/ai%E5%B7%A5%E5%85%B7/</link><description>Recent content in AI/AI工具 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Dec 2024 21:16:20 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/ai/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Cursor 开发未知语言代码</title><link>https://www.jsongo.top/articles/coding-with-cursor/</link><pubDate>Wed, 25 Dec 2024 21:16:20 +0800</pubDate><guid>https://www.jsongo.top/articles/coding-with-cursor/</guid><description>&lt;img src="https://cdn.ethango.top/banners/a7f752e124242dcebca6f80af1173db0.jpeg" alt="Featured image of post 用 Cursor 开发未知语言代码" />&lt;h1 id="概述">概述
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI/AI工具 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/ai/ai%E5%B7%A5%E5%85%B7/</link><description>Recent content in AI/AI工具 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Dec 2024 21:16:20 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/ai/ai%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Cursor 开发未知语言代码</title><link>https://www.jsongo.top/articles/coding-with-cursor/</link><pubDate>Wed, 25 Dec 2024 21:16:20 +0800</pubDate><guid>https://www.jsongo.top/articles/coding-with-cursor/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/a7f752e124242dcebca6f80af1173db0.jpeg" alt="Featured image of post 用 Cursor 开发未知语言代码" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="一句话总结">一句话总结
 &lt;/h2>&lt;p>Cursor 对于研发来说，是一个非常有用的提效工具。一句话来总结 Cursor 就是：&lt;/p>
 &lt;div class="admonition tip">
@@ -14,7 +14,7 @@
 &lt;/div>&lt;p>开发 KMP 跨端框架的代码，开始时我不懂它的 Kotlin 语法；开发完之后，我依然还不懂怎么写 Kotlin，但不影响我实现相关的功能。&lt;/p>
 &lt;h2 id="感受">感受
 &lt;/h2>&lt;p>cursor 有点像 code review 的交互：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
 loading="lazy"
 alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
 >&lt;br>
@@ -34,33 +34,33 @@ alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
 &lt;li>Cursor Chat：帮助开发者理解代码片段、提供代码优化建议、协助查找代码错误或者回答关于特定编程语言和框架的一般性问题；&lt;/li>
 &lt;li>Cursor Agent：更全面，首先可以让 Agent 读取整个项目文件，快速掌握项目的主要功能和关键文件，也能同时操作多个文件，根据需要增删改，甚至还能对整个项目做分析，帮你优化项目结构等。&lt;br>
 下面例子中 大都基于 Composer 来实现的。下图是一个简单的例子：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4eda348bfcc4a6e8a603326467a6840f.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4eda348bfcc4a6e8a603326467a6840f.webp"
 width="500"
 loading="lazy"
 alt="1145cf430e1f015e5a552747f0f4a7c7_MD5|500"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="cursor-基于代码生成代码的基本步骤">Cursor 基于代码生成代码的基本步骤
-&lt;/h1>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp"
+&lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="1先把相应的目录结构建好">&lt;strong>1、先把相应的目录结构建好&lt;/strong>
 &lt;/h2>&lt;p>因为不同的语言，代码组织的习惯和方式都不太一样。要做的第二件事，是先把代码结构先想清楚，然后发给 AI 问下比较合理的结构是什么样。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/0469fa103c6ebb26a2747e1491292465.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/0469fa103c6ebb26a2747e1491292465.webp"
 width="500"
 loading="lazy"
 alt="011aee5c56b4b53497b5d789c0fbeffb_MD5|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp"
 width="400"
 loading="lazy"
 alt="4ed11244d635908bdf3aaffee68c1db6_MD5|400"
-> &lt;img src="https://cdn.ethango.top/2025/01/71d3277a1c9450424f1175f05714cbd9.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/71d3277a1c9450424f1175f05714cbd9.webp"
 width="250"
 loading="lazy"
 alt="56695bc97506c77d525a8b7a30786162_MD5|250"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/34125f9d5d186efc995f3f421e8ea716.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/34125f9d5d186efc995f3f421e8ea716.webp"
 width="600"
 loading="lazy"
 alt="3562669265f694cc8e5a37537570e387_MD5|600"
@@ -86,53 +86,53 @@ alt="3562669265f694cc8e5a37537570e387_MD5|600"
 背景：我把 Coze API SDK 代码从 JS 迁移到 Kotlin，里面有很多个模块。之前已经实现了 Chat 模块的 API，这次实现 Auth 模块。代码也是不少、而且有点分散。&lt;/p>
 &lt;h2 id="初步生成">初步生成
 &lt;/h2>&lt;p>找到主入口文件，这个例子中，是 &lt;code>auth.ts&lt;/code> ，我把它加入到 Context 里。另外我自己也创建了一个文件在特定的目录里，把它也加到 Context 里（Kotlin 的代码结构组织跟 JS 还是有比较大的区别，下面再讲），这个文件让 Cursor 创建也行，只不过我还得给他描述路径/位置，还不如直接点“+”就创建了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/1b108415bafc10678d91c7888802cb53.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/1b108415bafc10678d91c7888802cb53.webp"
 loading="lazy"
 alt="600b7d39aa5a96c84d23b1409c0e1eac_MD5|0"
 >&lt;br>
 其中 auth.ts 只是一个入口文件，它涉及到很多相关的类和函数等，定义在其它文件，所以我在 prompt 里告诉它要把相关的定义都搬过去。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/86f176619ca75c5a4777eac559dfdf55.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/86f176619ca75c5a4777eac559dfdf55.webp"
 loading="lazy"
 alt="414f29730ce41fba0d1bbc12407f4a87_MD5|0"
 >&lt;br>
 一下子写了 361 行，里面涉及到很多个方法都需要一个个验证，这个后面说。截图中可以看到，它还问我们要不要把一些相关的函数搬过来，让它继续。然后又给我搬了几百行过来，之后发现有一些依赖库缺失，所以问我是否要加到 gradle 配置里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/83a947616392ee8d6a6dffb361e7b387.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/83a947616392ee8d6a6dffb361e7b387.webp"
 width="600"
 loading="lazy"
 alt="571c38e14c2b4c8c21c66b5194d2c0a1_MD5|600"
 >&lt;/p>
 &lt;h2 id="解决小问题">解决小问题
 &lt;/h2>&lt;p>在上面这个地方就遇到了问题，它认为我其它文件里的逻辑可能没有用，直接大段大段地删除我原本的代码，如 Http.kt，&lt;code>auth.ts&lt;/code> 里用到了一个封装过的 HTTP 请求，所以在引入的时候，它找到我原来的 HTTP 请求的封装直接改了它。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/09954d7c01331cac66d6c52fd36252b6.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/09954d7c01331cac66d6c52fd36252b6.webp"
 width="800"
 loading="lazy"
 alt="205dc1e6d24d761c009260ac8cae8bb2_MD5|800"
 >&lt;br>
 这种事要能多盯着点、注意下可能的问题，及时补救，引导 Cursor 去修正。&lt;br>
 一些小问题，在采用它的代码时，稍微留意下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/3ae3a5bf297f7eda62ed740f33c619f4.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/3ae3a5bf297f7eda62ed740f33c619f4.webp"
 width="800"
 loading="lazy"
 alt="b240a1222ec78b5b5382fdbbf75ea0e2_MD5|800"
 >&lt;br>
 再比如这种写法一看就感觉有点问题：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/568a319a389daad0a61def5e22073059.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/568a319a389daad0a61def5e22073059.webp"
 width="800"
 loading="lazy"
 alt="1116262183daa190d5cb3cc88895d884_MD5|800"
 >&lt;br>
 追问下，它就会纠正过来了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/58c18e5e8bf2848a5561f5dd99d07c71.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/58c18e5e8bf2848a5561f5dd99d07c71.webp"
 width="800"
 loading="lazy"
 alt="74847ffb18466f90a2d6c6ee88d114ac_MD5|800"
 >&lt;br>
 另一个比较大块的问题是，它生成完可能是有一些包引入问题的，因为它只有局部信息，缺少全局的，会犯像重复定义这样的错。而且可能有一堆 import 问题等着你解决，比如下面这个例子：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/1ea57a695273330b3ed5dd5661554b66.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/1ea57a695273330b3ed5dd5661554b66.webp"
 width="700"
 loading="lazy"
 alt="49ec0378de615efc9371ecab36f0c033_MD5|700"
-> &lt;img src="https://cdn.ethango.top/2025/01/d69d33cc46da8ae71cff9d95535d1e7a.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/d69d33cc46da8ae71cff9d95535d1e7a.webp"
 width="700"
 loading="lazy"
 alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
@@ -148,23 +148,23 @@ alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
 这里难免就要去打印过程中的每个数据，比如加密的 Payload、几个 key、algorithm、timestamp 等，用 JS 也跑一个、&lt;strong>打印出来，做下对比&lt;/strong>，看哪个字段有问题。&lt;br>
 改完后，还是签名错误。参数对了，但还是不行，那就是算法问题，接下去核对了下 Base64 encode 的地方、RSA 算出的数据跟 JS 的跑出来是否一致。这里发现了问题，但没有头绪。&lt;br>
 这时，死马当活马医，让 cursor 再帮我检查一遍：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/85a79b192ec91ca09d2fa5c60f3a996e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/85a79b192ec91ca09d2fa5c60f3a996e.webp"
 width="800"
 loading="lazy"
 alt="037c1ba6aa4295b45bc15c1a7a930e5d_MD5|800"
-> &lt;img src="https://cdn.ethango.top/2025/01/307e4e2a0ab807513480c86855068e19.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/307e4e2a0ab807513480c86855068e19.webp"
 width="700"
 loading="lazy"
 alt="1512af0b52ab204e684d567bc9c2b510_MD5|700"
 >&lt;br>
 看起来似乎是喂给算法的数据格式有问题（虽然数据都是对的），Cursor 实现了一个 toMap 的方法对原来的代码做了个转化，但这次代码跑不起来，重新让它改了一版，这下居然拿到正确的返回了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4ae11c7b01875dd3c0fab873498c6b90.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4ae11c7b01875dd3c0fab873498c6b90.webp"
 width="700"
 loading="lazy"
 alt="ca3cf6410c6eafc5a7566ed550156a83_MD5|700"
 >&lt;br>
 返回解析失败，序列化的问题，不过是小问题，让它改完后，这次真的拿到了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/cd181081d32b5a238a808949013c280e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/cd181081d32b5a238a808949013c280e.webp"
 width="800"
 loading="lazy"
 alt="bace8e15ef5ddc1d884a2b7da0919947_MD5|800"
@@ -177,13 +177,13 @@ alt="bace8e15ef5ddc1d884a2b7da0919947_MD5|800"
 &lt;/h1>&lt;p>过程中发现，还有一些事情可以交给 Cursor，能解决的很好。&lt;/p>
 &lt;h2 id="1整理代码变得更整洁些">1、整理代码，变得更整洁些
 &lt;/h2>&lt;p>有一招简单的小技巧，可以让 Cursor 帮你整理下代码（至少看起来不像刚入门的人写的水平）：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/ed005e1d1081f932d31c31ae426b6f24.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/ed005e1d1081f932d31c31ae426b6f24.webp"
 width="700"
 loading="lazy"
 alt="3c5dbaed0244273f9faac47623a5c284_MD5|700"
 >&lt;br>
 以及：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/d72c40dd0185031bddc7b1ca07d1ecdf.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/d72c40dd0185031bddc7b1ca07d1ecdf.webp"
 width="700"
 loading="lazy"
 alt="64f0e1e71796b58da1d0939017c89c96_MD5|700"
@@ -199,51 +199,51 @@ Prompt:&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="2解决拼写问题">2、解决拼写问题
 &lt;/h2>&lt;p>比如这个 README，我们研发同学写的比较匆忙，有比较多的拼写或表达上的问题，https://github.com/coze-dev/coze-java/pull/3/files ，用 cursor 一键完成修改，重点是它能发现 README 里的示例代码中，用的字段名不正确的问题：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/a2a57432caf6934023aca6188eb999b2.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/a2a57432caf6934023aca6188eb999b2.webp"
 width="800"
 loading="lazy"
 alt="67eef2544216d5bc05746b5e1f26b2b5_MD5|800"
-> &lt;img src="https://cdn.ethango.top/2025/01/90d987a8fead9f2db45c1afd91824e58.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/90d987a8fead9f2db45c1afd91824e58.webp"
 width="700"
 loading="lazy"
 alt="09bbb3747c1a278eef3f672f204c3f79_MD5|700"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/55496ca31ffb05f169c550e905810115.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/55496ca31ffb05f169c550e905810115.webp"
 width="700"
 loading="lazy"
 alt="41011b38b591252aea92768c14e304c2_MD5|700"
 >&lt;/p>
 &lt;h2 id="3批量修改小问题">3、批量修改小问题
 &lt;/h2>&lt;p>遇到问题比较多的时候，直接截图，丢给 cursor，它会一个个帮你改。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/ae4af222ea296426b04ddd084b1ddfd0.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/ae4af222ea296426b04ddd084b1ddfd0.webp"
 width="500"
 loading="lazy"
 alt="f77a083c5ee957658f80d19e5582c6f1_MD5|500"
-> &lt;img src="https://cdn.ethango.top/2025/01/2b61dce38f2bd6f806ffc42af1da764b.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/2b61dce38f2bd6f806ffc42af1da764b.webp"
 width="500"
 loading="lazy"
 alt="4afb655c9393f474cadb8c0f6f4241b5_MD5|500"
 >&lt;br>
 还有一个技巧是，让它参考其它同类的代码来实现：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/406acbce7072a3e2cadf3a5c6ebe34da.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/406acbce7072a3e2cadf3a5c6ebe34da.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
 以及：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/8e6d7d1522cd199bba69fd23f96b799d.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/8e6d7d1522cd199bba69fd23f96b799d.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;/p>
 &lt;p>还有一次给我引入了 java 包，在 common 里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/3c13e95894243029f6d9878688fa5b47.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/3c13e95894243029f6d9878688fa5b47.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;br>
 不太合理，这时就要让他修正下，同时我也丢给它一个 KMP 官方给的参考，让它照着改，这总不会再弄错吧。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/a4a4c7a782729d0a708fbd710c1dd048.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/a4a4c7a782729d0a708fbd710c1dd048.webp"
 width="600"
 loading="lazy"
 alt="|600"
@@ -252,18 +252,18 @@ alt="|600"
 &lt;p>下面的例子，是我开发另一个 Coze 插件时遇到的，顺便都整合到这个文档里、不单独拆开了。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="4强有力的工具logging">4、强有力的工具：logging
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/efb2c1134ac77e7c50e5248f01c62265.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/efb2c1134ac77e7c50e5248f01c62265.webp"
 width="500"
 loading="lazy"
 alt="05b5da00f57db097cdb439b39e55cfdb_MD5|500"
 >&lt;br>
 我连续让它改了很多次（不下 10 次），它也换了好几种实现方法，都不行。后来我提示他是否需要再加一些打印来定位问题，然后他发现确实应该这样。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/53f82d55f491285c2ee9132dd69636db.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/53f82d55f491285c2ee9132dd69636db.webp"
 width="500"
 loading="lazy"
 alt="35c347109c19e7421b89c2ff4a705ed0_MD5|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/f18aa994a02b7255bed74408f76f80fc.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/f18aa994a02b7255bed74408f76f80fc.webp"
 width="500"
 loading="lazy"
 alt="accbaf51486af45cdbec970b93dbeb8e_MD5|500"
@@ -276,7 +276,7 @@ alt="accbaf51486af45cdbec970b93dbeb8e_MD5|500"
 &lt;/ul>
 &lt;h2 id="5思考并引导">5、思考并引导
 &lt;/h2>&lt;p>有的时候，Cursor 掉坑里去了，试了一二十次了，都不太行。后来我想到一个重要的信息，给他补充了下，结果不到 5 次就跑起来了，方向对了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/be8fdee4ad64d56b435aab0e2ceb9ac4.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/be8fdee4ad64d56b435aab0e2ceb9ac4.webp"
 width="500"
 loading="lazy"
 alt="9a7218f4b8ab4400b9a059cca2dfbea6_MD5|500"
@@ -285,7 +285,7 @@ alt="9a7218f4b8ab4400b9a059cca2dfbea6_MD5|500"
 &lt;p>这从里来看，Cursor 并不能让完全不懂代码的人来写出各种复杂的逻辑，甚至一些看似简单、但潜藏着很多细节的功能，他们也很难很难搞定。&lt;strong>所以广大程序员，暂时还能松一口气&lt;/strong>。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="6及时给反馈有时能有些惊喜">6、及时给反馈，有时能有些惊喜
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/964e3bd7d40baea9275703a22dba7fb4.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/964e3bd7d40baea9275703a22dba7fb4.webp"
 width="500"
 loading="lazy"
 alt="4c72cba33e74267f72c6e802ba14b6ff_MD5|500"
@@ -350,22 +350,22 @@ alt="4c72cba33e74267f72c6e802ba14b6ff_MD5|500"
 &lt;/div>&lt;p>原因主要是：iOS 系统默认信任一系列常见的证书颁发机构（CA）所颁发的证书，但如果服务器使用的是比较小众或者自签名的证书，iOS 设备可能不会自动信任它。上面把 &lt;code>NSExceptionAllowsInsecureHTTPSLoads&lt;/code> =&amp;gt; true，&lt;code>NSExceptionRequiresForwardSecrecy&lt;/code> =&amp;gt; false。&lt;/p>
 &lt;h2 id="语言框架带来的麻烦">语言框架带来的麻烦
 &lt;/h2>&lt;p>开发 KMP 比较麻烦的点是，它动不动就炸 💥💥💥：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/75eb7e325f7128c528fbfb128db05263.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/75eb7e325f7128c528fbfb128db05263.webp"
 width="800"
 loading="lazy"
 alt="bf7c2bde8023209700897ad92f5412cd_MD5|800"
 >&lt;br>
 Git diff 看不到任何区别，后来查了下，是环境上的包冲突，一不小心装了版本冲突的包就会出问题。版本的匹配关系还有人专门做了个表：https://github.com/realm/realm-kotlin#version-compatibility-matrix 但还是不全，真遇到了问题还是得多试，没啥技术含量。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/191bc2fd51984c29da43d5c355562e7b.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/191bc2fd51984c29da43d5c355562e7b.webp"
 width="500"
 loading="lazy"
 alt="e3c399703cd2afa57208ac3c424603f2_MD5|500"
 >&lt;br>
-上面这个异常，试了很久都没解决（可能是我对 Kotlin 环境不熟悉），后来干脆重建一个目录，把代码原样的 clone 过去，再重新用 Android Studio 加载、编译，居然就好了…… 不知道 Java 类语言的开发者，平时要花多少时间在环境和包依赖上，这些纯属无产出的事情。&lt;/p></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Tue, 19 Nov 2024 16:36:27 +0800</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.ethango.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
+上面这个异常，试了很久都没解决（可能是我对 Kotlin 环境不熟悉），后来干脆重建一个目录，把代码原样的 clone 过去，再重新用 Android Studio 加载、编译，居然就好了…… 不知道 Java 类语言的开发者，平时要花多少时间在环境和包依赖上，这些纯属无产出的事情。&lt;/p></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Tue, 19 Nov 2024 16:36:27 +0800</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="背景">背景
 &lt;/h2>&lt;p>Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。&lt;br>
 Stable Diffusion 的发展历程如下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
 width="900"
 loading="lazy"
 alt="|900"
@@ -378,7 +378,7 @@ alt="|900"
 &lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
 &lt;/ul>
 &lt;h1 id="生图过程">生图过程
-&lt;/h1>&lt;p>&lt;img src="https://cdn.ethango.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
+&lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -389,7 +389,7 @@ alt="|700"
 &lt;/h2>&lt;p>属于 Condition 节点，它用 CLIP 模型对文本 Prompt 进行编码，对模型生成的结果进行方向上的引导，其实可能理解为文本模型中的 embedding。&lt;/p>
 &lt;h2 id="采样">采样
 &lt;/h2>&lt;p>生图其实就是一个反向扩散的过程，从一个完全是噪声的图像开始，通过模型逐步去除噪声来生成图像。这个过程通过一个采样函数来实现，它基于模型预测的噪声来更新噪声图像。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
 loading="lazy"
 >&lt;/p>
 &lt;ul>
@@ -437,7 +437,7 @@ loading="lazy"
 &lt;ul>
 &lt;li>1 credit = $0.01&lt;/li>
 &lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
 width="700"
 loading="lazy"
 alt="736deaffc1c02497df089d14539fba5d_MD5|700"
@@ -464,13 +464,13 @@ alt="736deaffc1c02497df089d14539fba5d_MD5|700"
 &lt;li>&lt;strong>UNet&lt;/strong>：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。&lt;/li>
 &lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;br>
 UNet 的模型一般都比较大：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
 width="475"
 loading="lazy"
 alt="|475"
 >&lt;br>
 LoRA 则小很多&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
 width="475"
 loading="lazy"
 alt="|475"
@@ -479,14 +479,14 @@ alt="|475"
 &lt;h2 id="使用">使用
 &lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
 ComfyUI 中的使用非常简单：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
 width="675"
 loading="lazy"
 alt="|675"
 >&lt;br>
 如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
 >SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
 width="700"
 loading="lazy"
 alt="|700"

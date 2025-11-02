@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/图床 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E5%9B%BE%E5%BA%8A/</link><description>Recent content in 互联网/折腾/图床 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 12 Apr 2025 16:59:03 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>upic 图床工具</title><link>https://www.jsongo.top/articles/upic-image-tool/</link><pubDate>Sat, 12 Apr 2025 16:59:03 +0800</pubDate><guid>https://www.jsongo.top/articles/upic-image-tool/</guid><description>&lt;img src="https://cdn.ethango.top/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg" alt="Featured image of post upic 图床工具" />&lt;h1 id="安装">安装
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/图床 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E5%9B%BE%E5%BA%8A/</link><description>Recent content in 互联网/折腾/图床 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 12 Apr 2025 16:59:03 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>upic 图床工具</title><link>https://www.jsongo.top/articles/upic-image-tool/</link><pubDate>Sat, 12 Apr 2025 16:59:03 +0800</pubDate><guid>https://www.jsongo.top/articles/upic-image-tool/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg" alt="Featured image of post upic 图床工具" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;p>从这里可以找到 upic &lt;a class="link" href="https://github.com/gee1k/uPic" target="_blank" rel="noopener"
 >GitHub - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool&amp;hellip;&lt;/a>&lt;br>
 如果通过 app store 来安装，它是收费，下载的版本可能不太一样。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475945_34Huac.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475945_34Huac.webp"
 loading="lazy"
 alt="|408x325"
 >&lt;br>
@@ -17,17 +17,17 @@ alt="|408x325"
 &lt;/div>
 &lt;/div>&lt;h1 id="cloudflare-设置">Cloudflare 设置
 &lt;/h1>&lt;p>菜单上进入 R2，在首页的右侧可以看到下图中的 API tokens 管理的选项，点击进入。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475946_0TXAdx.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475946_0TXAdx.webp"
 loading="lazy"
 >&lt;br>
 选 User API Token 就行，权限最小化。填写一些基础的选项：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475947_LKC9Ly.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475947_LKC9Ly.webp"
 loading="lazy"
 >&lt;br>
 生成的各种 key 等记下来，后面用到。&lt;/p>
 &lt;h1 id="设置-upic">设置 Upic
 &lt;/h1>&lt;p>在 upic 设置添加图床时，要先 Amazon S3 (是的，cloudflare R2 也是选这个)。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475949_sqc9BT.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475949_sqc9BT.webp"
 loading="lazy"
 alt="|276x395"
 >&lt;br>
@@ -312,12 +312,12 @@ alt="|276x395"
 &lt;/div>&lt;h2 id="配置">配置
 &lt;/h2>&lt;p>有了这个之后，我们再绑一个域名上去，在 worker 的设置里直接加就行，这里就不展开。&lt;br>
 接着把这个域名用到 upic 的配置里&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475950_v3vq6M.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475950_v3vq6M.webp"
 loading="lazy"
 alt="|0x0"
 >&lt;br>
 “其它字段” 里添加一下头部认证，和 body 的其它字段，用于存储的时候指定 key 等。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475951_BpscpM.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475951_BpscpM.webp"
 loading="lazy"
 alt="|711x658"
 >&lt;br>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/魔法 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/</link><description>Recent content in 互联网/折腾/魔法 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 12 Apr 2025 13:12:08 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.ethango.top/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/魔法 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/</link><description>Recent content in 互联网/折腾/魔法 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 12 Apr 2025 13:12:08 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;h2 id="安装-gui">安装 GUI
 &lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -37,24 +37,24 @@
 &lt;/div>&lt;p>wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 &amp;quot; 应用程序 &amp;quot; 中就可以了。&lt;/p>
 &lt;h2 id="安装内核">安装内核
 &lt;/h2>&lt;p>到设置里，找到内核，点击更新，它会开始下载。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474649_Cy3pd0.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474649_Cy3pd0.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h1 id="使用">使用
 &lt;/h1>&lt;p>打开后，如果要使用 clash 的那个订阅地址，得安装一个插件，要不然报错：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474650_cV8faw.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474650_cV8faw.webp"
 loading="lazy"
 alt="|774x96"
 >
 很简单，在 GUI 上找到插件中心，从列表中安装。先更新列表，然后就可以看到“节点转换”了。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474651_GkAXv5.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474651_GkAXv5.webp"
 loading="lazy"
 >&lt;br>
 后面再重新添加下 clash 的订阅地址就行了。&lt;/p>
 &lt;h2 id="启动内核">启动内核
 &lt;/h2>&lt;p>直接到首页点击启动内核就可以。&lt;br>
 在顶部菜单上可以先把节点，其它的都跟 clashx 差不多。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474652_qh9YSN.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474652_qh9YSN.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h1 id="速度">速度
@@ -76,27 +76,27 @@ loading="lazy"
 &lt;/ul>
 &lt;h2 id="tun-模型">Tun 模型
 &lt;/h2>&lt;p>先到插件中心找下 Tun 模式助手，它可以引导你怎么一步步安装 tun。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474653_IO5quG.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474653_IO5quG.webp"
 loading="lazy"
 alt="|0x0"
 >&lt;br>
 安装完之后，点击它，会让你运行一条命令，运行完之后再点击 tun 模型就会弹出提示，点允许就行。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474654_fQTGG6.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474654_fQTGG6.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="插件">插件
 &lt;/h2>&lt;p>Gemini 插件。需要做配置，不好找，后来发现是要右击这个卡片，找到配置才行。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474656_KBYY1j.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474656_KBYY1j.webp"
 loading="lazy"
 >&lt;br>
 通用设置里，把托盘菜单的这个选项打开。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474657_7WaCmo.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474657_7WaCmo.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="命令行">命令行
 &lt;/h2>&lt;p>Single-box 一般不干扰命令行，即使开启了 tun 模型，命令行也很可能没被代理。&lt;br>
 其实是有一个插件可以直接给你方法让命令行走代理：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474658_RLt7Ie.png"
+&lt;img src="https://cdn.lyb.pub/upic/1744474658_RLt7Ie.png"
 loading="lazy"
 alt="|650x286"
 >&lt;br>

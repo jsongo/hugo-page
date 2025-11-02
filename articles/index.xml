@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 13 Apr 2025 01:10:36 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian linter 自定义规则</title><link>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</link><pubDate>Sun, 13 Apr 2025 01:10:36 +0800</pubDate><guid>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</guid><description>&lt;img src="https://cdn.ethango.top/banners/9ce4b7fc6ab166efa82ba9c3b5423dd2.jpg" alt="Featured image of post Obsidian linter 自定义规则" />&lt;p>先看一个例子，我之前有很多复制过来的内容，会在 header 上添加粗体的样式，其实这些我不需要，因为 header 本身就有加粗的样式。问题格式如下：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 13 Apr 2025 01:10:36 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian linter 自定义规则</title><link>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</link><pubDate>Sun, 13 Apr 2025 01:10:36 +0800</pubDate><guid>https://www.jsongo.top/articles/obsidian-linter-custom-rules/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/9ce4b7fc6ab166efa82ba9c3b5423dd2.jpg" alt="Featured image of post Obsidian linter 自定义规则" />&lt;p>先看一个例子，我之前有很多复制过来的内容，会在 header 上添加粗体的样式，其实这些我不需要，因为 header 本身就有加粗的样式。问题格式如下：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -9,15 +9,15 @@
 &lt;/div>
 &lt;/div>&lt;p>要把 &lt;code>**&lt;/code> 给去掉。&lt;br>
 Linter 其实可以自己设置替换规则，如下图：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744478055_4zpryr.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744478055_4zpryr.webp"
 loading="lazy"
 >&lt;br>
 其中 &lt;code>^(#{1,6}.*?)\s+\*\*(.*?)\*\*\s*$&lt;/code> 匹配上面这种有问题的标题，然后替换成正常的（两个括号分析指定的 $1 $2）。&lt;br>
-如果不懂怎么配置，可以问 chatgpt，让它给你写正则就可以了。&lt;/p></description></item><item><title>upic 图床工具</title><link>https://www.jsongo.top/articles/upic-image-tool/</link><pubDate>Sat, 12 Apr 2025 16:59:03 +0800</pubDate><guid>https://www.jsongo.top/articles/upic-image-tool/</guid><description>&lt;img src="https://cdn.ethango.top/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg" alt="Featured image of post upic 图床工具" />&lt;h1 id="安装">安装
+如果不懂怎么配置，可以问 chatgpt，让它给你写正则就可以了。&lt;/p></description></item><item><title>upic 图床工具</title><link>https://www.jsongo.top/articles/upic-image-tool/</link><pubDate>Sat, 12 Apr 2025 16:59:03 +0800</pubDate><guid>https://www.jsongo.top/articles/upic-image-tool/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg" alt="Featured image of post upic 图床工具" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;p>从这里可以找到 upic &lt;a class="link" href="https://github.com/gee1k/uPic" target="_blank" rel="noopener"
 >GitHub - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool&amp;hellip;&lt;/a>&lt;br>
 如果通过 app store 来安装，它是收费，下载的版本可能不太一样。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475945_34Huac.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475945_34Huac.webp"
 loading="lazy"
 alt="|408x325"
 >&lt;br>
@@ -32,17 +32,17 @@ alt="|408x325"
 &lt;/div>
 &lt;/div>&lt;h1 id="cloudflare-设置">Cloudflare 设置
 &lt;/h1>&lt;p>菜单上进入 R2，在首页的右侧可以看到下图中的 API tokens 管理的选项，点击进入。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475946_0TXAdx.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475946_0TXAdx.webp"
 loading="lazy"
 >&lt;br>
 选 User API Token 就行，权限最小化。填写一些基础的选项：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475947_LKC9Ly.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475947_LKC9Ly.webp"
 loading="lazy"
 >&lt;br>
 生成的各种 key 等记下来，后面用到。&lt;/p>
 &lt;h1 id="设置-upic">设置 Upic
 &lt;/h1>&lt;p>在 upic 设置添加图床时，要先 Amazon S3 (是的，cloudflare R2 也是选这个)。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475949_sqc9BT.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475949_sqc9BT.webp"
 loading="lazy"
 alt="|276x395"
 >&lt;br>
@@ -327,16 +327,16 @@ alt="|276x395"
 &lt;/div>&lt;h2 id="配置">配置
 &lt;/h2>&lt;p>有了这个之后，我们再绑一个域名上去，在 worker 的设置里直接加就行，这里就不展开。&lt;br>
 接着把这个域名用到 upic 的配置里&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475950_v3vq6M.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475950_v3vq6M.webp"
 loading="lazy"
 alt="|0x0"
 >&lt;br>
 “其它字段” 里添加一下头部认证，和 body 的其它字段，用于存储的时候指定 key 等。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744475951_BpscpM.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744475951_BpscpM.webp"
 loading="lazy"
 alt="|711x658"
 >&lt;br>
-这时就可以用 upic 去上传你的文件了。顺便说一句，upic 可以做截图上传、剪贴板上传，确实好方便。我设置了个快捷键，之后就直接用它来帮我快速做上传就行了。&lt;/p></description></item><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.ethango.top/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
+这时就可以用 upic 去上传你的文件了。顺便说一句，upic 可以做截图上传、剪贴板上传，确实好方便。我设置了个快捷键，之后就直接用它来帮我快速做上传就行了。&lt;/p></description></item><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;h2 id="安装-gui">安装 GUI
 &lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -375,24 +375,24 @@ alt="|711x658"
 &lt;/div>&lt;p>wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 &amp;quot; 应用程序 &amp;quot; 中就可以了。&lt;/p>
 &lt;h2 id="安装内核">安装内核
 &lt;/h2>&lt;p>到设置里，找到内核，点击更新，它会开始下载。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474649_Cy3pd0.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474649_Cy3pd0.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h1 id="使用">使用
 &lt;/h1>&lt;p>打开后，如果要使用 clash 的那个订阅地址，得安装一个插件，要不然报错：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474650_cV8faw.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474650_cV8faw.webp"
 loading="lazy"
 alt="|774x96"
 >
 很简单，在 GUI 上找到插件中心，从列表中安装。先更新列表，然后就可以看到“节点转换”了。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474651_GkAXv5.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474651_GkAXv5.webp"
 loading="lazy"
 >&lt;br>
 后面再重新添加下 clash 的订阅地址就行了。&lt;/p>
 &lt;h2 id="启动内核">启动内核
 &lt;/h2>&lt;p>直接到首页点击启动内核就可以。&lt;br>
 在顶部菜单上可以先把节点，其它的都跟 clashx 差不多。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474652_qh9YSN.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474652_qh9YSN.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h1 id="速度">速度
@@ -414,27 +414,27 @@ loading="lazy"
 &lt;/ul>
 &lt;h2 id="tun-模型">Tun 模型
 &lt;/h2>&lt;p>先到插件中心找下 Tun 模式助手，它可以引导你怎么一步步安装 tun。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474653_IO5quG.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474653_IO5quG.webp"
 loading="lazy"
 alt="|0x0"
 >&lt;br>
 安装完之后，点击它，会让你运行一条命令，运行完之后再点击 tun 模型就会弹出提示，点允许就行。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474654_fQTGG6.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474654_fQTGG6.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="插件">插件
 &lt;/h2>&lt;p>Gemini 插件。需要做配置，不好找，后来发现是要右击这个卡片，找到配置才行。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474656_KBYY1j.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474656_KBYY1j.webp"
 loading="lazy"
 >&lt;br>
 通用设置里，把托盘菜单的这个选项打开。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474657_7WaCmo.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1744474657_7WaCmo.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="命令行">命令行
 &lt;/h2>&lt;p>Single-box 一般不干扰命令行，即使开启了 tun 模型，命令行也很可能没被代理。&lt;br>
 其实是有一个插件可以直接给你方法让命令行走代理：&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1744474658_RLt7Ie.png"
+&lt;img src="https://cdn.lyb.pub/upic/1744474658_RLt7Ie.png"
 loading="lazy"
 alt="|650x286"
 >&lt;br>
@@ -450,7 +450,7 @@ alt="|650x286"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">https_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://127.0.0.1:20122&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>20122 就是 single-box 在本地开的代理&lt;/p></description></item><item><title>2025 年人工智能指数报告</title><link>https://www.jsongo.top/articles/2025-ai-index-report-summary/</link><pubDate>Wed, 09 Apr 2025 13:22:12 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-ai-index-report-summary/</guid><description>&lt;img src="https://cdn.ethango.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 2025 年人工智能指数报告" />&lt;p>本文源自：https://hai.stanford.edu/ai-index/2025-ai-index-report，对内容做的一些解读。&lt;br>
+&lt;/div>&lt;p>20122 就是 single-box 在本地开的代理&lt;/p></description></item><item><title>2025 年人工智能指数报告</title><link>https://www.jsongo.top/articles/2025-ai-index-report-summary/</link><pubDate>Wed, 09 Apr 2025 13:22:12 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-ai-index-report-summary/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 2025 年人工智能指数报告" />&lt;p>本文源自：https://hai.stanford.edu/ai-index/2025-ai-index-report，对内容做的一些解读。&lt;br>
 《2025 年人工智能指数报告》（Stanford HAI AI Index 2025）这个报告，全面分析了全球人工智能（AI）的技术进步、经济影响、教育、政策以及社会影响等领域，提供了数据驱动的洞察。&lt;/p>
 &lt;h1 id="1-技术进步与性能提升">1. 技术进步与性能提升
 &lt;/h1>&lt;ul>
@@ -617,7 +617,7 @@ alt="|650x286"
 &lt;hr>
 &lt;h1 id="总结与展望">总结与展望
 &lt;/h1>&lt;p>2025 年 AI 指数报告显示，AI 技术能力快速提升，成本下降使其更普惠，同时产业竞争加剧，模型差距缩小。中美在 AI 领域的博弈持续，但中国正迎头赶上。AI 在科学、医疗和日常生活中的应用日益广泛，但伴随伦理、安全和公平访问的挑战。政策制定者需平衡创新与监管，确保 AI 以人为本发展。&lt;br>
-这份 456 页的报告为政策制定者、研究人员和公众提供了全面的数据支持，是理解 AI 现状与未来的关键资源&lt;/p></description></item><item><title>Tracing 初步理解</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 初步理解" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
+这份 456 页的报告为政策制定者、研究人员和公众提供了全面的数据支持，是理解 AI 现状与未来的关键资源&lt;/p></description></item><item><title>Tracing 初步理解</title><link>https://www.jsongo.top/articles/tracing-101/</link><pubDate>Tue, 08 Apr 2025 20:51:33 +0800</pubDate><guid>https://www.jsongo.top/articles/tracing-101/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/1089988f36245b8456d63b99a86d3d2b.jpg" alt="Featured image of post Tracing 初步理解" />&lt;p>Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。&lt;/p>
 &lt;h1 id="tracing-概念">Tracing 概念
 &lt;/h1>&lt;h2 id="-tracing-基础概念梳理">🔍 Tracing 基础概念梳理
 &lt;/h2>&lt;h3 id="-整体结构树形">🌲 整体结构（树形）
@@ -971,7 +971,7 @@ alt="|650x286"
 &lt;li>用 Trace 找到问题在哪个服务&lt;/li>
 &lt;li>用 Log 看服务内部报错细节&lt;/li>
 &lt;li>用 Metrics 看整体健康趋势&lt;/li>
-&lt;/ul></description></item><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.ethango.top/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
+&lt;/ul></description></item><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
 >AI 2027&lt;/a> 这个网站对 AI 未来发展做了一些预言，很有趣，做了一些总结梳理。&lt;br>
 AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 2025 年到 2028 年人工智能（AI）快速发展的可能情景，预测 AI 将在这段时间内经历从初级自主代理到超人类智能的飞速发展。&lt;/p>
 &lt;h1 id="主要预测">主要预测
@@ -994,11 +994,11 @@ AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 202
 &lt;li>&lt;strong>AI 目标预测：&lt;/strong> 预测超人类 AI 可能不完全符合人类开发者的预期目标，存在目标不对齐的风险，可能导致不可控的后果。 ​&lt;a class="link" href="https://ai-2027.com/research/ai-goals-forecast" target="_blank" rel="noopener"
 >AI 2027&lt;/a>&lt;/li>
 &lt;li>&lt;strong>安全预测：&lt;/strong> 由于安全措施不足，AI 模型可能被窃取，导致高价值的算法机密泄露，增加了 AI 技术被滥用的风险。 ​&lt;/li>
-&lt;/ul></description></item><item><title>阿里云盘添加到 alist</title><link>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</link><pubDate>Thu, 03 Apr 2025 10:03:56 +0800</pubDate><guid>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</guid><description>&lt;img src="https://cdn.ethango.top/banners/86bf43bb5c48b399375633945e5f3f72.jpg" alt="Featured image of post 阿里云盘添加到 alist" />&lt;p>可以参考下面这个：&lt;br>
+&lt;/ul></description></item><item><title>阿里云盘添加到 alist</title><link>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</link><pubDate>Thu, 03 Apr 2025 10:03:56 +0800</pubDate><guid>https://www.jsongo.top/articles/add-aliyundrive-to-alist/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/86bf43bb5c48b399375633945e5f3f72.jpg" alt="Featured image of post 阿里云盘添加到 alist" />&lt;p>可以参考下面这个：&lt;br>
 &lt;a class="link" href="https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html" target="_blank" rel="noopener"
 >阿里云盘 Open | AList 文档&lt;/a>&lt;br>
 一般填写下面这两个即可（上方就写个盘名）&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/e4496ce3ccb9bf1448df4a5455d9f572.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/e4496ce3ccb9bf1448df4a5455d9f572.webp"
 loading="lazy"
 alt="9e494f6eb39f1a4e62772b8d275d8940_MD5|766x237"
 >&lt;/p>
@@ -1006,7 +1006,7 @@ alt="9e494f6eb39f1a4e62772b8d275d8940_MD5|766x237"
 &lt;li>根文件夹，可以在浏览器中打开相应的目录，copy 地址中的 id 即可&lt;/li>
 &lt;li>令牌可以从这里获取：https://alist.nn.ci/zh/tool/aliyundrive/request，安全的&lt;br>
 其它的都不用填，保存即可。添加完回到首页就可以看到。&lt;/li>
-&lt;/ul></description></item><item><title>NAS 配置 cloudflare DDNS</title><link>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</link><pubDate>Thu, 03 Apr 2025 09:00:46 +0800</pubDate><guid>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</guid><description>&lt;img src="https://cdn.ethango.top/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg" alt="Featured image of post NAS 配置 cloudflare DDNS" />&lt;h1 id="what">What
+&lt;/ul></description></item><item><title>NAS 配置 cloudflare DDNS</title><link>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</link><pubDate>Thu, 03 Apr 2025 09:00:46 +0800</pubDate><guid>https://www.jsongo.top/articles/nas-config-cloudflare-ddns/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg" alt="Featured image of post NAS 配置 cloudflare DDNS" />&lt;h1 id="what">What
 &lt;/h1>&lt;p>给 NAS 设置 DDNS 域名主要有以下作用：&lt;/p>
 &lt;ol>
 &lt;li>&lt;strong>远程访问：&lt;/strong>  即使你的公网 IP 地址会变动，你也能通过固定的 DDNS 域名从外部网络访问你的 NAS。&lt;/li>
@@ -1017,37 +1017,37 @@ alt="9e494f6eb39f1a4e62772b8d275d8940_MD5|766x237"
 &lt;/ol>
 &lt;h1 id="how">How
 &lt;/h1>&lt;p>进入 cloudflare&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/1fe20e900c45ea2bc98910cb3917c743.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/1fe20e900c45ea2bc98910cb3917c743.webp"
 loading="lazy"
 alt="a0944299ff16236c1b3a62304422cf66_MD5"
 >&lt;br>
 简单填写即可&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/980f013f949fa5a888bbc44a19dacc33.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/980f013f949fa5a888bbc44a19dacc33.webp"
 loading="lazy"
 alt="93a269c73086bc52f7b59e47df737b3b_MD5"
 >&lt;br>
 最后在 NAS 上填写相关的 token 即可。我的是绿联的 NAS，在控制面板里搜索 DDNS 可以找到，在方式二中选新增。
 ![[assets/local_image_plus/a4c21f7f99866d178c6efc9cba4699d6_MD5.png]]
-&lt;img src="https://cdn.ethango.top/2025/04/6646d4b4a9e4f8ea04abe7b016243290.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/6646d4b4a9e4f8ea04abe7b016243290.webp"
 loading="lazy"
 alt="baa8f3432565de42a82a2b4a66ad3828_MD5"
 >&lt;br>
 然后配置。Cloudflare 没提供 accessKey ID，它不重要，填写自己的 Cloudflare 账号即可。DDNS 域名可以添加一个自己托管在 Cloudflare 上的域名，可以加一个三级域名，如 &lt;code>nas.xxx.com&lt;/code> 。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/6d50da9e050a94421a8790b945ec24d1.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/6d50da9e050a94421a8790b945ec24d1.webp"
 loading="lazy"
 alt="99509d7becca7bec0aad41815695c700_MD5"
 >&lt;br>
 看下状态如果是否正常&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/a87192cda2f1be909de1ba0ccee85d0d.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/a87192cda2f1be909de1ba0ccee85d0d.webp"
 loading="lazy"
 alt="0c3856442d38469aa897889d253da33e_MD5"
 >&lt;br>
 高级设置里显示成功才可以&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/cf84e22051bc347c5543b6252c3b3b4a.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/cf84e22051bc347c5543b6252c3b3b4a.webp"
 loading="lazy"
 alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 >&lt;br>
-我试过连接手机热点去访问，发现不太行，这是因为我们没有公网 ip。&lt;/p></description></item><item><title>一种高效的学习方法</title><link>https://www.jsongo.top/articles/efficient-learning-method/</link><pubDate>Mon, 24 Mar 2025 10:12:24 +0800</pubDate><guid>https://www.jsongo.top/articles/efficient-learning-method/</guid><description>&lt;img src="https://cdn.ethango.top/banners/d4fca53294aaa0f19f01642fc7436c98.jpg" alt="Featured image of post 一种高效的学习方法" />&lt;p>来自这个视频：https://v.douyin.com/ywNN3t9_H80/&lt;/p>
+我试过连接手机热点去访问，发现不太行，这是因为我们没有公网 ip。&lt;/p></description></item><item><title>一种高效的学习方法</title><link>https://www.jsongo.top/articles/efficient-learning-method/</link><pubDate>Mon, 24 Mar 2025 10:12:24 +0800</pubDate><guid>https://www.jsongo.top/articles/efficient-learning-method/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/d4fca53294aaa0f19f01642fc7436c98.jpg" alt="Featured image of post 一种高效的学习方法" />&lt;p>来自这个视频：https://v.douyin.com/ywNN3t9_H80/&lt;/p>
 &lt;h1 id="概述">概述
 &lt;/h1>&lt;p>核心观点是通过特定方法，20 小时就能掌握一项技能并超过 80% 的人。&lt;br>
 主要有 7 个关键点。&lt;/p>
@@ -1119,7 +1119,7 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 例如，准备大学英语四级考试，这个目标需要付出一定努力，学习者在努力备考过程中，会因每一次模拟考试成绩的提升、知识点的掌握而备受鼓舞，觉得自己离目标越来越近，进而激发内在动力。在学习进度上，由于目标难度适中，学习者需要逐步深入学习知识，在不断克服困难的过程中，能更扎实地掌握技能。比如学习编程，设定在一个月内掌握基础编程语法并能独立完成简单项目的目标，学习者会按部就班学习语法知识、进行代码实践，虽然学习周期相对长一些，但能稳步推进学习进度，提升学习效果。&lt;/p>
 &lt;h2 id="高难度目标">&lt;strong>高难度目标&lt;/strong>
 &lt;/h2>&lt;p>从学习动力来看，一开始设定高难度目标，可能会让学习者感到兴奋和充满期待，激发其挑战自我的欲望。&lt;br>
-例如想要在一年内成为专业插画师，这一目标会让学习者在初期充满斗志。然而，随着学习的深入，若发现短期内难以取得明显进步，容易遭受挫折，产生自我怀疑，进而打击学习动力。在学习进度方面，高难度目标所需知识和技能复杂，学习者可能会遇到诸多难以解决的问题，导致学习进度缓慢甚至停滞不前。比如学习高等数学中的复杂理论，若目标是在短时间内完全掌握并能灵活运用解决高难度题目，由于知识点难度大，学习者可能花费大量时间却收效甚微，影响学习积极性和后续学习计划。&lt;/p></description></item><item><title>塑造“权力”优势</title><link>https://www.jsongo.top/articles/shaping-power-advantage/</link><pubDate>Fri, 07 Mar 2025 10:40:59 +0800</pubDate><guid>https://www.jsongo.top/articles/shaping-power-advantage/</guid><description>&lt;img src="https://cdn.ethango.top/banners/b9123ae79734082ac58a5c1ea1b5528f.jpeg" alt="Featured image of post 塑造“权力”优势" />&lt;p>《权力进化论》这本书一开始就强调，权力并不是什么黑暗的艺术，也不是厚黑学，而是一种在组织中能够成事、服人、调动资源、发挥影响力的能力。你并不一定要成为领导才需要这种能力。很多斯坦福的学生都表示，这门课真正帮助他们理解了自己一直身处的世界。权力不仅是生存的工具，也是防身的铠甲。即使你不主动使用这些权力法则，但其他人可能会使用。更重要的是，权力是能力的杠杆，而这本书正是为优秀的人提供了一把权力的杠杆。&lt;/p>
+例如想要在一年内成为专业插画师，这一目标会让学习者在初期充满斗志。然而，随着学习的深入，若发现短期内难以取得明显进步，容易遭受挫折，产生自我怀疑，进而打击学习动力。在学习进度方面，高难度目标所需知识和技能复杂，学习者可能会遇到诸多难以解决的问题，导致学习进度缓慢甚至停滞不前。比如学习高等数学中的复杂理论，若目标是在短时间内完全掌握并能灵活运用解决高难度题目，由于知识点难度大，学习者可能花费大量时间却收效甚微，影响学习积极性和后续学习计划。&lt;/p></description></item><item><title>塑造“权力”优势</title><link>https://www.jsongo.top/articles/shaping-power-advantage/</link><pubDate>Fri, 07 Mar 2025 10:40:59 +0800</pubDate><guid>https://www.jsongo.top/articles/shaping-power-advantage/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/b9123ae79734082ac58a5c1ea1b5528f.jpeg" alt="Featured image of post 塑造“权力”优势" />&lt;p>《权力进化论》这本书一开始就强调，权力并不是什么黑暗的艺术，也不是厚黑学，而是一种在组织中能够成事、服人、调动资源、发挥影响力的能力。你并不一定要成为领导才需要这种能力。很多斯坦福的学生都表示，这门课真正帮助他们理解了自己一直身处的世界。权力不仅是生存的工具，也是防身的铠甲。即使你不主动使用这些权力法则，但其他人可能会使用。更重要的是，权力是能力的杠杆，而这本书正是为优秀的人提供了一把权力的杠杆。&lt;/p>
 &lt;h1 id="先破打破思维限制">先破：打破思维限制
 &lt;/h1>&lt;p>书中的内容分为“先破后立”两部分。第一部分讲述的是“破”，即打破某些限制性思维。&lt;/p>
 &lt;h2 id="1-摆脱冒充者综合征">1. 摆脱冒充者综合征
@@ -1154,7 +1154,7 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 &lt;/h2>&lt;p>研究发现，大多数人的工作机会并非通过正式渠道获得，而是靠社会关系提供的非正式信息。很多机会来自偶然认识的人，因为他们的圈子和背景不同，能够相互提供资源。&lt;br>
 这里涉及“结构洞”概念，即两个网络之间没有直接连接，而你可以成为连接的桥梁。这种位置的战略价值非常大。如果你想获得别人的帮助，不应笼统地提出请求，而要具体描述需求，让对方迅速理解如何帮助你。&lt;/p>
 &lt;h1 id="总结">总结
-&lt;/h1>&lt;p>争取权力最核心的能力在于：即使面对无数反对和挫折，依然要坚定地、想方设法地促成自己想做的事情。这种意志力，往往决定了一个人能否攀上事业的巅峰。&lt;/p></description></item><item><title>提升思考效率</title><link>https://www.jsongo.top/articles/enhancing-thinking-beyond/</link><pubDate>Thu, 06 Mar 2025 13:37:25 +0800</pubDate><guid>https://www.jsongo.top/articles/enhancing-thinking-beyond/</guid><description>&lt;img src="https://cdn.ethango.top/banners/8288c6e70fe84133b94ee222535d18b0.jpg" alt="Featured image of post 提升思考效率" />&lt;p>在探索如何超越思考本身这一深刻议题时，《思考如何超越思考》这本书给出了富有启发性的提升思考效率的方法，主要涵盖行动、环境、社交三个维度。&lt;/p>
+&lt;/h1>&lt;p>争取权力最核心的能力在于：即使面对无数反对和挫折，依然要坚定地、想方设法地促成自己想做的事情。这种意志力，往往决定了一个人能否攀上事业的巅峰。&lt;/p></description></item><item><title>提升思考效率</title><link>https://www.jsongo.top/articles/enhancing-thinking-beyond/</link><pubDate>Thu, 06 Mar 2025 13:37:25 +0800</pubDate><guid>https://www.jsongo.top/articles/enhancing-thinking-beyond/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/8288c6e70fe84133b94ee222535d18b0.jpg" alt="Featured image of post 提升思考效率" />&lt;p>在探索如何超越思考本身这一深刻议题时，《思考如何超越思考》这本书给出了富有启发性的提升思考效率的方法，主要涵盖行动、环境、社交三个维度。&lt;/p>
 &lt;h1 id="一借行动之力激发思考潜能">一、借行动之力，激发思考潜能
 &lt;/h1>&lt;p>人类大脑并非独立运作的个体，其运转效能与身体状态、所处环境以及人际交往紧密相连。通过行动激发思考，可尝试以下策略：&lt;/p>
 &lt;ol>
@@ -1181,7 +1181,7 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 &lt;ol>
 &lt;li>&lt;strong>减轻记忆负荷&lt;/strong>：尽量将需要记忆的内容从大脑中解放出来，外化到外部世界，放置在易于找寻的地方，减轻大脑记忆负担。&lt;/li>
 &lt;li>&lt;strong>化解抽象难题&lt;/strong>：把抽象的信息与人物、故事等具体元素相联系，降低大脑处理抽象内容的难度。&lt;/li>
-&lt;/ol></description></item><item><title>用数字打动人心的方法</title><link>https://www.jsongo.top/articles/using-numbers-to-inspire/</link><pubDate>Thu, 06 Mar 2025 10:38:32 +0800</pubDate><guid>https://www.jsongo.top/articles/using-numbers-to-inspire/</guid><description>&lt;img src="https://cdn.ethango.top/banners/239072edb19460299ee51a5ac5b8aa87.jpg" alt="Featured image of post 用数字打动人心的方法" />&lt;p>《用数字讲故事》，这是一个比较衫的书，主要讲，在沟通表达中，运用数字讲好故事以实现表达目的。其中提到需要遵循的四个原则，以及要掌握的三种技巧。&lt;/p>
+&lt;/ol></description></item><item><title>用数字打动人心的方法</title><link>https://www.jsongo.top/articles/using-numbers-to-inspire/</link><pubDate>Thu, 06 Mar 2025 10:38:32 +0800</pubDate><guid>https://www.jsongo.top/articles/using-numbers-to-inspire/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/239072edb19460299ee51a5ac5b8aa87.jpg" alt="Featured image of post 用数字打动人心的方法" />&lt;p>《用数字讲故事》，这是一个比较衫的书，主要讲，在沟通表达中，运用数字讲好故事以实现表达目的。其中提到需要遵循的四个原则，以及要掌握的三种技巧。&lt;/p>
 &lt;h1 id="一原则">一、原则
 &lt;/h1>&lt;h2 id="一能不用就不用">（一）能不用就不用
 &lt;/h2>&lt;p>数字本身较为抽象，多数人理解存在一定门槛。因此，在表达时，若不是非用不可，应尽量避免使用数字。比如在日常交流中，描述一个场景时，过多使用精确数字可能会让对方理解起来费劲，像 “这个广场面积大概是 10000 平方米”，不如说 “这个广场非常大” 来得简洁直观。&lt;/p>
@@ -1207,7 +1207,7 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 &lt;/h2>&lt;p>我们的最终目标是用数字拨动人心，而不是简单地传递信息。所以，首先要明确自己的目标是什么 —— 是想让对方明白事情的严重性，还是想让他们理解某个程度？另外，尽量把细节具体化。比如，一个高管想让董事会明白公司在采购上的浪费，他可以说：“每次采购，我们浪费的钱相当于一辆豪车的价格。” 这样一来，董事会立刻就能感受到问题的严重性。他没有直接摆出整体数字，而是巧妙地拿起一双标价 3 美元的黑色手套，又拿起一双几乎一模一样但标价 10 美元的手套，把它们摊在桌上展示，让对方直观地感受到公司在采购上的浪费。&lt;/p>
 &lt;h1 id="四特别注意">四、特别注意
 &lt;/h1>&lt;p>当向别人抛出一个数字时，千万不要指望他能马上理解你的意思。&lt;br>
-人们对数字的吸收能力，可能低到让你意想不到。大部分人在听到数字时，往往会下意识地去思考它的含义。很多时候，当听到一个数字很大时，就会不自觉地认为事情就是那样，甚至在心里说服自己去相信它。真正能够始终保持理智的人其实并不多。所以，光有数字本身是不够的，只有让数字变得鲜活，它才具有真正的说服力。&lt;/p></description></item><item><title>video：教育风向 &amp; 高效作业</title><link>https://www.jsongo.top/articles/educational-methods-for-children/</link><pubDate>Sun, 02 Mar 2025 10:57:18 +0800</pubDate><guid>https://www.jsongo.top/articles/educational-methods-for-children/</guid><description>&lt;img src="https://cdn.ethango.top/banners/c41a06c6e8152c8747b756e140e47ead.jpeg" alt="Featured image of post video：教育风向 &amp; 高效作业" />&lt;p>本文从两个视频中学习、整理而来。&lt;/p>
+人们对数字的吸收能力，可能低到让你意想不到。大部分人在听到数字时，往往会下意识地去思考它的含义。很多时候，当听到一个数字很大时，就会不自觉地认为事情就是那样，甚至在心里说服自己去相信它。真正能够始终保持理智的人其实并不多。所以，光有数字本身是不够的，只有让数字变得鲜活，它才具有真正的说服力。&lt;/p></description></item><item><title>video：教育风向 &amp; 高效作业</title><link>https://www.jsongo.top/articles/educational-methods-for-children/</link><pubDate>Sun, 02 Mar 2025 10:57:18 +0800</pubDate><guid>https://www.jsongo.top/articles/educational-methods-for-children/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c41a06c6e8152c8747b756e140e47ead.jpeg" alt="Featured image of post video：教育风向 &amp; 高效作业" />&lt;p>本文从两个视频中学习、整理而来。&lt;/p>
 &lt;ul>
 &lt;li>&lt;a class="link" href="https://v.douyin.com/i5N1xTAE/" target="_blank" rel="noopener"
 >https://v.douyin.com/i5N1xTAE/&lt;/a>&lt;/li>
@@ -1256,9 +1256,9 @@ alt="c5a086c7aa28e96c5d3ba74fa0c89296_MD5"
 &lt;li>整理错题本：非常重要，平时记录的错题是孩子专属提分秘籍，考前温习能事半功倍。不会整理错题的家长可向博主索要错题集获取指导。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol></description></item><item><title>video：在隐忍中抓住机遇逆袭</title><link>https://www.jsongo.top/articles/forbearance-seizing-opportunities-counterattack/</link><pubDate>Thu, 27 Feb 2025 23:16:31 +0800</pubDate><guid>https://www.jsongo.top/articles/forbearance-seizing-opportunities-counterattack/</guid><description>&lt;img src="https://cdn.ethango.top/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg" alt="Featured image of post video：在隐忍中抓住机遇逆袭" />&lt;p>后续会时不时地写一些不那么短的短视频的观后感，今天就先拿 &lt;code>小智侃财经的作品&lt;/code> 的《&lt;a class="link" href="https://v.douyin.com/i5jK3E5H/" target="_blank" rel="noopener"
+&lt;/ol></description></item><item><title>video：在隐忍中抓住机遇逆袭</title><link>https://www.jsongo.top/articles/forbearance-seizing-opportunities-counterattack/</link><pubDate>Thu, 27 Feb 2025 23:16:31 +0800</pubDate><guid>https://www.jsongo.top/articles/forbearance-seizing-opportunities-counterattack/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2d47b4c891bc8b4790f365f82a1c6484.jpeg" alt="Featured image of post video：在隐忍中抓住机遇逆袭" />&lt;p>后续会时不时地写一些不那么短的短视频的观后感，今天就先拿 &lt;code>小智侃财经的作品&lt;/code> 的《&lt;a class="link" href="https://v.douyin.com/i5jK3E5H/" target="_blank" rel="noopener"
 >为什么放任东大崛起，老美却怂了&lt;/a>》来讲讲。&lt;br>
-&lt;img src="https://cdn.ethango.top/upic/1750870686_cS5D5S.webp"
+&lt;img src="https://cdn.lyb.pub/upic/1750870686_cS5D5S.webp"
 loading="lazy"
 alt="ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp"
 >&lt;br>
@@ -1272,7 +1272,7 @@ alt="ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp"
 &lt;li>&lt;strong>上世纪 80 年代&lt;/strong>：日本经济发展迅猛，不仅收购美国地标性建筑，还在汽车产业上对美国造成巨大冲击，美国本土汽车巨头因日本低油耗汽车的竞争而面临困境。美国为维护自身经济利益，与日本签订《广场协议》，逼迫日元升值，并迫使日本开放金融市场，从而打压日本经济。这一时期，日本成为美国重点对付的对象，客观上为中国发展提供了相对宽松的外部环境 。&lt;/li>
 &lt;li>&lt;strong>上世纪 90 年代&lt;/strong>：苏联解体后，日本经济也被整垮，此时欧元诞生并对美元构成挑战。欧盟成立后 GDP 一度超过美国，欧元在诞生第一天起就旨在挑战美元地位。美国为限制欧元扩张，发动科索沃战争，同时也没忘记试探中国，如偷袭中国驻南斯拉夫大使馆。但美国的主要精力被欧元吸引，使得中国外贸得以继续发展 。&lt;/li>
 &lt;li>&lt;strong>21 世纪初&lt;/strong>：欧元的影响力不断扩大，美国为强化美元地位，支持中国加入 WTO，希望借助中国商品提升美元价值。同时，伊拉克萨达姆宣布用欧元结算原油，美国以此为由发动伊拉克战争，还通过金融手段做空希腊等国债券，引发欧债危机，成功打压欧元。这期间，美国的精力分散在应对欧元问题上，对中国的遏制相对放松，中国得以在这一时期进一步发展经济，提升综合国力。&lt;/li>
-&lt;/ol></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.ethango.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+&lt;/ol></description></item><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -1370,7 +1370,7 @@ alt="ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -0 -g .png$ . &lt;span class="p">|&lt;/span> xargs -0 du -h &lt;span class="p">|&lt;/span> sort -hr
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.ethango.top/upic/1744522541_8OSi1S.webp"
+&lt;/div>&lt;p>&lt;img src="https://cdn.lyb.pub/upic/1744522541_8OSi1S.webp"
 loading="lazy"
 alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 >&lt;/p>
@@ -1385,7 +1385,7 @@ alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 但如果要搜的目录很不确定，这时要传给 xargs 就得两边加 -0 来确保准确无误。&lt;/p>
 &lt;/blockquote>
 &lt;/li>
-&lt;/ul></description></item><item><title>巨变的时代，对个人发展的思考 - 2025</title><link>https://www.jsongo.top/articles/2025-self-development/</link><pubDate>Wed, 26 Feb 2025 08:47:05 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-self-development/</guid><description>&lt;img src="https://cdn.ethango.top/banners/a9e868ff852a3dcc1a962c1191714e8a.jpg" alt="Featured image of post 巨变的时代，对个人发展的思考 - 2025" />&lt;blockquote>
+&lt;/ul></description></item><item><title>巨变的时代，对个人发展的思考 - 2025</title><link>https://www.jsongo.top/articles/2025-self-development/</link><pubDate>Wed, 26 Feb 2025 08:47:05 +0800</pubDate><guid>https://www.jsongo.top/articles/2025-self-development/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/a9e868ff852a3dcc1a962c1191714e8a.jpg" alt="Featured image of post 巨变的时代，对个人发展的思考 - 2025" />&lt;blockquote>
 &lt;p>写了些思考，让 DeepSeek 优化了下，有点硬，但结构化挺好。&lt;/p>
 &lt;/blockquote>
 &lt;p>当我们将目光投向当代社会，会发现一个充满矛盾的现象：教育投入与职业回报的倒挂，标准化培养与个体特质的冲突，现实压力与理想追求的撕裂。这种割裂折射出工业化时代的教育范式，与数字化时代人才需求之间的深刻矛盾，也暴露出当代人在职业发展中的集体性焦虑。&lt;/p>
@@ -1426,7 +1426,7 @@ alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 鉴于难以将大量时间投入探索，担心两头落空，可从每天挤出碎片时间开始，如上下班途中听课程、午休时阅读专业书籍，周末专门留出固定时间深入学习实践。&lt;br>
 设定小而具体的目标，完成后给予自己小奖励以增强动力，还可将探索与工作相结合寻找灵感。&lt;br>
 若觉得这些方法普通，不妨尝试设定 “冒险日”，每月选择一天去做从未尝试过的事，如参加陌生领域讲座或尝试新运动；找信任的朋友定期进行头脑风暴；将大目标拆解为极小步骤，记录每一个小成就以激励自己坚持。&lt;/li>
-&lt;/ul></description></item><item><title>《铜钟下的秘密》福尔摩斯探案 - 续集</title><link>https://www.jsongo.top/articles/holmes-secret-beneath-the-bronze-bell/</link><pubDate>Thu, 20 Feb 2025 18:35:01 +0800</pubDate><guid>https://www.jsongo.top/articles/holmes-secret-beneath-the-bronze-bell/</guid><description>&lt;img src="https://cdn.ethango.top/banners/a3cfc9a156da68c50afbe2e6e4824ac4.jpg" alt="Featured image of post 《铜钟下的秘密》福尔摩斯探案 - 续集" />&lt;p>作者：华生医生&lt;br>
+&lt;/ul></description></item><item><title>《铜钟下的秘密》福尔摩斯探案 - 续集</title><link>https://www.jsongo.top/articles/holmes-secret-beneath-the-bronze-bell/</link><pubDate>Thu, 20 Feb 2025 18:35:01 +0800</pubDate><guid>https://www.jsongo.top/articles/holmes-secret-beneath-the-bronze-bell/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/a3cfc9a156da68c50afbe2e6e4824ac4.jpg" alt="Featured image of post 《铜钟下的秘密》福尔摩斯探案 - 续集" />&lt;p>作者：华生医生&lt;br>
 那是 1890 年 11 月一个寒风凛冽的傍晚，伦敦的天空阴沉得仿佛要压下来，贝克街 221B 的壁炉烧得正旺。我正埋头记录前一周那桩“切尔西画像失窃案”的细节，而歇洛克·福尔摩斯则站在窗前，拉着小提琴，琴声低沉而忧郁。他已经三天没碰过食物，显然又陷入了那种只有新谜团才能打破的倦怠。&lt;/p>
 &lt;p>就在这时，楼梯上传来急促的脚步声，紧接着门被猛地推开。一位身材高大的男子闯了进来，他约莫五十岁，头发花白，穿着厚实的呢大衣，脸上带着一种难以掩饰的惊恐。他的到来让福尔摩斯立刻放下了琴弓，眼中闪过一丝期待的光芒。&lt;/p>
 &lt;p>“福尔摩斯先生，我是亨利·巴克利，住在萨里郡的布兰德庄园，”他喘着粗气说道，“我需要您的帮助——我的侄子失踪了，而我收到了一封信，暗示他可能已经死了！”&lt;/p>
@@ -1460,7 +1460,7 @@ alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 &lt;p>“可他们怎么知道我们在地窖？”巴克利问道。&lt;/p>
 &lt;p>“很简单，”福尔摩斯点燃烟斗，“您的仆人中有内应。我注意到管家昨晚眼神闪烁，手上有煤灰——和信纸上的痕迹一致。他已被雷斯垂德带走。”&lt;/p>
 &lt;p>菲利普感激地说：“福尔摩斯先生，若不是您，我恐怕凶多吉少。”&lt;/p>
-&lt;p>福尔摩斯摆摆手：“逻辑和观察，菲利普。你的笔记救了你自己。”&lt;/p></description></item><item><title>《雾中之影》 - 福尔摩斯探案 - 续集</title><link>https://www.jsongo.top/articles/holmes-shadow-in-the-mist/</link><pubDate>Thu, 20 Feb 2025 18:17:09 +0800</pubDate><guid>https://www.jsongo.top/articles/holmes-shadow-in-the-mist/</guid><description>&lt;img src="https://cdn.ethango.top/banners/102f6705bfb2660ca093692c2d7a6677.jpg" alt="Featured image of post 《雾中之影》 - 福尔摩斯探案 - 续集" />&lt;p>那是一个阴郁的秋日清晨，浓雾如厚重的帷幕笼罩着伦敦，贝克街 221B 的窗户上凝结着细密的水珠。我坐在壁炉旁整理医疗笔记，而我的朋友歇洛克·福尔摩斯则倚在扶手椅上，手指轻轻敲击着烟斗，神情若有所思。自从我们解决了那桩“红宝石失窃案”后，他已经好几天没有接到值得一试的案子，这让他显得有些焦躁。&lt;/p>
+&lt;p>福尔摩斯摆摆手：“逻辑和观察，菲利普。你的笔记救了你自己。”&lt;/p></description></item><item><title>《雾中之影》 - 福尔摩斯探案 - 续集</title><link>https://www.jsongo.top/articles/holmes-shadow-in-the-mist/</link><pubDate>Thu, 20 Feb 2025 18:17:09 +0800</pubDate><guid>https://www.jsongo.top/articles/holmes-shadow-in-the-mist/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/102f6705bfb2660ca093692c2d7a6677.jpg" alt="Featured image of post 《雾中之影》 - 福尔摩斯探案 - 续集" />&lt;p>那是一个阴郁的秋日清晨，浓雾如厚重的帷幕笼罩着伦敦，贝克街 221B 的窗户上凝结着细密的水珠。我坐在壁炉旁整理医疗笔记，而我的朋友歇洛克·福尔摩斯则倚在扶手椅上，手指轻轻敲击着烟斗，神情若有所思。自从我们解决了那桩“红宝石失窃案”后，他已经好几天没有接到值得一试的案子，这让他显得有些焦躁。&lt;/p>
 &lt;p>就在这时，门铃急促地响起，打破了屋内的沉寂。片刻后，我们的房东哈德森太太敲门进来，身后跟着一位衣着考究却神色慌张的绅士。他大约四十岁，身材瘦削，戴着一顶礼帽，手里紧握着一根乌木手杖。&lt;/p>
 &lt;p>“福尔摩斯先生，”他开门见山地说道，“我是詹姆斯·卡特赖特，住在肯辛顿。我需要您的帮助——我相信有人要谋害我！”&lt;/p>
 &lt;p>福尔摩斯眼中闪过一丝興味，示意来客坐下。“请详细说说，卡特赖特先生。谋害的证据是什么？”&lt;/p>
@@ -1488,10 +1488,10 @@ alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 &lt;p>“可他怎么进的我的书房？”卡特赖特惊讶道。&lt;/p>
 &lt;p>“很简单。他白天混在送货的工人中，趁人不备溜进宅子，留下字条。泥土和纸片暴露了他的身份——他昨晚带着伪造的货物清单，打算栽赃给您。”&lt;/p>
 &lt;p>卡特赖特长舒一口气，连声道谢。案件结束后，我看着福尔摩斯点燃烟斗，忍不住问道：“你怎么这么快就猜到是公司内部的人？”&lt;/p>
-&lt;p>他笑了笑：“华生，泥土里的海腥味和那张烧焦的纸片告诉我，这与航运有关。而能在浓雾中准确找到这栋房子的人，必然对卡特赖特的习惯了如指掌。逻辑，仅仅是逻辑罢了。”&lt;/p></description></item><item><title>书房的氛围营造</title><link>https://www.jsongo.top/articles/study-room/</link><pubDate>Sun, 12 Jan 2025 23:09:45 +0800</pubDate><guid>https://www.jsongo.top/articles/study-room/</guid><description>&lt;img src="https://cdn.ethango.top/banners/cf6f79652cb30bd591d55b7e797cf3b8.jpg" alt="Featured image of post 书房的氛围营造" />&lt;h1 id="背景">背景
+&lt;p>他笑了笑：“华生，泥土里的海腥味和那张烧焦的纸片告诉我，这与航运有关。而能在浓雾中准确找到这栋房子的人，必然对卡特赖特的习惯了如指掌。逻辑，仅仅是逻辑罢了。”&lt;/p></description></item><item><title>书房的氛围营造</title><link>https://www.jsongo.top/articles/study-room/</link><pubDate>Sun, 12 Jan 2025 23:09:45 +0800</pubDate><guid>https://www.jsongo.top/articles/study-room/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/cf6f79652cb30bd591d55b7e797cf3b8.jpg" alt="Featured image of post 书房的氛围营造" />&lt;h1 id="背景">背景
 &lt;/h1>&lt;p>拥有了一间相对安静、专注、有氛围的书房，可以让人把更多的时间投入在学习上，看书也好、在线学习也好，写作等生产性活动也好，总之一个好的氛围可以让人更有欲望和意愿投入到学习或创造上。&lt;br>
 基于这个想法，本文就来聊聊我的思路，怎么逐步打造成一个让我一进入就想学习或创造的环境。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/bd2d7075048d63c561f8894ecf791158.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/bd2d7075048d63c561f8894ecf791158.webp"
 width="650"
 loading="lazy"
 alt="19570c39441e301a0f59a7927d24d113_MD5|650"
@@ -1519,7 +1519,7 @@ WiFi 信号也还不错，只隔了一面非承重墙，问题不大。&lt;/p>
 &lt;h3 id="照明">照明
 &lt;/h3>&lt;p>灯光方面，房间中央有一个大灯，窗台上装有灯带，整体照明效果良好。不过，角落可能会稍显昏暗，这时就需要台灯来补充照明。&lt;br>
 桌面上应放置一盏台灯，以提升工作舒适度。可以选择长条形台灯，将其置于屏幕上方或高于屏幕的位置，使光线自然向下照射，避免直射眼睛。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/5e86946b423eb26fb463d4439bd21851.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/5e86946b423eb26fb463d4439bd21851.webp"
 width="675"
 loading="lazy"
 alt="3da5189ee9cbbd394d4f8643eb82bb0c_MD5|675"
@@ -1548,7 +1548,7 @@ alt="3da5189ee9cbbd394d4f8643eb82bb0c_MD5|675"
 &lt;/h2>&lt;ul>
 &lt;li>关于饮用水，从书房到倒水台的距离并不远，整体上非常方便。&lt;/li>
 &lt;li>全屋的花卉可以每周采购一次，保持新鲜。虽然目前工作量不大，但未来可能需要逐步培养更勤奋的习惯。不过，有时候环境会推动人主动完成事情，所以在这方面不必过于担心。&lt;/li>
-&lt;/ul></description></item><item><title>香港麦理浩径</title><link>https://www.jsongo.top/articles/the-maclehose-trail/</link><pubDate>Sat, 11 Jan 2025 01:02:36 +0800</pubDate><guid>https://www.jsongo.top/articles/the-maclehose-trail/</guid><description>&lt;img src="https://cdn.ethango.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 香港麦理浩径" />&lt;p>麦理浩径（The MacLehose Trail），是中国香港西贡的一条著名徒步线路。也有叫麦林浩径。&lt;br>
+&lt;/ul></description></item><item><title>香港麦理浩径</title><link>https://www.jsongo.top/articles/the-maclehose-trail/</link><pubDate>Sat, 11 Jan 2025 01:02:36 +0800</pubDate><guid>https://www.jsongo.top/articles/the-maclehose-trail/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 香港麦理浩径" />&lt;p>麦理浩径（The MacLehose Trail），是中国香港西贡的一条著名徒步线路。也有叫麦林浩径。&lt;br>
 &lt;img src="https://www.jsongo.top/c56c497a96261f32d1ec5b958dff6556.webp"
 loading="lazy"
 alt="|356x340"
@@ -1598,7 +1598,7 @@ alt="|356x340"
 &lt;/h2>&lt;ul>
 &lt;li>&lt;strong>乐施毅行者&lt;/strong>：1986 年，国际知名发展援助与人道救援机构香港乐施会应邀与驻港英军合办毅行者，并首次向公众开放。该比赛要求四人组队，在 48 小时内走完麦理浩径全程，且全队需完成一定额度的公益筹款。乐施毅行者迅速发展成为香港规模最大的远足筹款活动，吸引了大量香港市民和世界各地的参与者，也提升了麦理浩径的知名度 。&lt;/li>
 &lt;li>&lt;strong>香港 100 越野赛&lt;/strong>：港百赛道大约有 71% 的线路与麦理浩径线路重合，是国际上最具影响力的赛事之一，吸引了整个东南亚地区选手、乃至众多国际精英在香港的越野赛道上竞技交流，进一步提升了麦理浩径在国际上的影响力 。&lt;/li>
-&lt;/ul></description></item><item><title>《跑步治愈》提升跑步能力</title><link>https://www.jsongo.top/articles/run-faster/</link><pubDate>Fri, 10 Jan 2025 00:59:33 +0800</pubDate><guid>https://www.jsongo.top/articles/run-faster/</guid><description>&lt;img src="https://cdn.ethango.top/banners/578c0c31502d45694f84e64e5795be79.jpeg" alt="Featured image of post 《跑步治愈》提升跑步能力" />&lt;h1 id="跑力值">跑力值
+&lt;/ul></description></item><item><title>《跑步治愈》提升跑步能力</title><link>https://www.jsongo.top/articles/run-faster/</link><pubDate>Fri, 10 Jan 2025 00:59:33 +0800</pubDate><guid>https://www.jsongo.top/articles/run-faster/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/578c0c31502d45694f84e64e5795be79.jpeg" alt="Featured image of post 《跑步治愈》提升跑步能力" />&lt;h1 id="跑力值">跑力值
 &lt;/h1>&lt;p>跑力有一个衡量指标，叫做 BDOT。查了一下该表，我当前数值大概在 33 左右，表中最低值有不到 30 的，最高值是 50 甚至可能还有更高。&lt;br>
 以 5km 为例，最高 56 的跑力值，只需 18 分钟就能跑完，而我大概需要 28 分钟，差距还是挺大的。从 2019 年记录到的 12 个项目男子世界纪录成绩来看，5km 的最佳成绩，也就是人类的最好成绩大概是 12 分 37 秒，平时可将其视为一个极限值，知道上限的可能性，能给自己一些前进的动力。&lt;/p>
 &lt;h1 id="力量训练">力量训练
@@ -1628,17 +1628,17 @@ alt="|356x340"
 不过，乳酸大量堆积会导致肌肉酸痛，从而影响正常运动。当我们进行节奏跑时，乳酸产生的速度大致等于排出的速度，此时跑步最为轻松。正常情况下，运动后 30 分钟到 1 小时，乳酸基本清理完了，而肌肉会有些酸痛，之后酸痛会逐渐消失，然后肌肉会更有力量。所以酸痛并不是因为乳酸堆积导致，而是肌肉使用过多，会慢慢恢复的。&lt;/p>
 &lt;h2 id="怎么找到适合自己的节奏">怎么找到适合自己的节奏
 &lt;/h2>&lt;p>可以先进行测试。你将 1.6 公里分成 4 段，一段比一段快，分别是全速状态下的 40%、50%、60%、70% 的速度跑，最后 100 米再冲刺全速 100%。&lt;br>
-按这种方式测出用了多久，然后按书中的那些表来比对下，找到跑步的每个时段大概的配速。由于表格比较多，这里就不贴了，可以去原书查。&lt;/p></description></item><item><title>让 google 索引你的网站</title><link>https://www.jsongo.top/articles/add-google-index/</link><pubDate>Fri, 10 Jan 2025 00:35:01 +0800</pubDate><guid>https://www.jsongo.top/articles/add-google-index/</guid><description>&lt;img src="https://cdn.ethango.top/banners/614e6ce3faae3eecaea68591b783ca2e.jpeg" alt="Featured image of post 让 google 索引你的网站" />&lt;h1 id="验证提交">验证&amp;amp;提交
+按这种方式测出用了多久，然后按书中的那些表来比对下，找到跑步的每个时段大概的配速。由于表格比较多，这里就不贴了，可以去原书查。&lt;/p></description></item><item><title>让 google 索引你的网站</title><link>https://www.jsongo.top/articles/add-google-index/</link><pubDate>Fri, 10 Jan 2025 00:35:01 +0800</pubDate><guid>https://www.jsongo.top/articles/add-google-index/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/614e6ce3faae3eecaea68591b783ca2e.jpeg" alt="Featured image of post 让 google 索引你的网站" />&lt;h1 id="验证提交">验证&amp;amp;提交
 &lt;/h1>&lt;p>打开 &lt;a class="link" href="https://support.google.com/webmasters/answer/9012289?hl=zh-Hans" target="_blank" rel="noopener"
 >网址检查工具 - Search Console 帮助&lt;/a> 站点，在上面点击验证，如果你的网站放在 cloudflare 等比较有名的服务商那，这个验证过程会非常简单，比如我就只需要跳转到 cloudflare 上再点一个按钮即可。它会给你添加一个 TXT 记录，之后就认证成功了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/356a25a75d88549de43ada1856ef4da8.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/356a25a75d88549de43ada1856ef4da8.webp"
 width="450"
 loading="lazy"
 alt="|450"
 >&lt;br>
 进入 &lt;a class="link" href="https://search.google.com/search-console" target="_blank" rel="noopener"
 >Google Search Console&lt;/a> 后，可以看到你的网站还没被索引，需要等一天再来看下。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/b42233e8f3f1a1a50196872d8a1eae17.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/b42233e8f3f1a1a50196872d8a1eae17.webp"
 width="675"
 loading="lazy"
 alt="|675"
@@ -1646,11 +1646,11 @@ alt="|675"
 由于已经验证了这个网站就是你的，之后就可以在这个 Console 上看到每天的搜索数据。&lt;/p>
 &lt;h1 id="sitemap">Sitemap
 &lt;/h1>&lt;p>如果你的站点有 sitemap 也尽量提交下。我的站点是用 hugo 实现的，加了 sitemap 插件，所以可以直接提供给它地址。提交后，Google 就会定期地从你的 sitemap 上更新内容。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/e4f46f3ab1b40f3cd68608eceb859b66.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/e4f46f3ab1b40f3cd68608eceb859b66.webp"
 width="775"
 loading="lazy"
 alt="|775"
->&lt;/p></description></item><item><title>Daily Meditations - W2 of 2025</title><link>https://www.jsongo.top/articles/meditations-w2-2025/</link><pubDate>Fri, 10 Jan 2025 00:24:52 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w2-2025/</guid><description>&lt;img src="https://cdn.ethango.top/banners/2984e26d335bb7e9c65d0dee3e48d61f.jpg" alt="Featured image of post Daily Meditations - W2 of 2025" />&lt;h1 id="成长输出">成长&amp;amp;输出
+>&lt;/p></description></item><item><title>Daily Meditations - W2 of 2025</title><link>https://www.jsongo.top/articles/meditations-w2-2025/</link><pubDate>Fri, 10 Jan 2025 00:24:52 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w2-2025/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2984e26d335bb7e9c65d0dee3e48d61f.jpg" alt="Featured image of post Daily Meditations - W2 of 2025" />&lt;h1 id="成长输出">成长&amp;amp;输出
 &lt;/h1>&lt;h2 id="最大化每小时的收获">最大化每小时的收获
 &lt;/h2>&lt;div class="admonition success">
 &lt;div class="details-summary admonition-title">
@@ -1671,7 +1671,7 @@ Important&lt;br
 &lt;h2 id="坚持有时看起来很简单但也很难">坚持有时看起来很简单，但也很难
 &lt;/h2>&lt;p>很多时候，我们很难坚持做完一件事，尽管这件事可能并不难。比如持续听一门几千小时的课程，坚持每天听一些，从而完成整个体系的学习。完成单个任务并不难，一个小时一个小时地做就行。然而，录制这门课的人能够坚持做完并产出成果，可为什么只是去学习的我们，明明事情更简单，却没多少人能坚持下来呢？&lt;br>
 罗胖做 60 秒语音、以及《文明》这个 1000 多期的节目，其实就是在输出秩序，把公元 1000 年之后的 1 千多年发生过的重要事件和历史感悟，帮所有人都免费整理出来了，谁都可以去学习。这是他对世界输出的一大作品，很多人线下自发的组织学习，形成好的共同学习的氛围，也是一种很有趣的社交活动，大家聚到一起关注和交流同一个话题。这是一种对社会的贡献。&lt;br>
-大部分人都有自己擅长的领域，其实也可以把它们一点点的沉淀出来，形成一个系列，可能开始时看起来太简单，没什么意义，但坚持做，形成一套体系，它慢慢的影响力就会变大。&lt;/p></description></item><item><title>《跑步治愈》让我爱上跑步</title><link>https://www.jsongo.top/articles/start-running/</link><pubDate>Tue, 07 Jan 2025 10:49:18 +0800</pubDate><guid>https://www.jsongo.top/articles/start-running/</guid><description>&lt;img src="https://cdn.ethango.top/banners/4e076eb4ff636b6bf9f74fb25b6536ac.jpg" alt="Featured image of post 《跑步治愈》让我爱上跑步" />&lt;h1 id="概述">概述
+大部分人都有自己擅长的领域，其实也可以把它们一点点的沉淀出来，形成一个系列，可能开始时看起来太简单，没什么意义，但坚持做，形成一套体系，它慢慢的影响力就会变大。&lt;/p></description></item><item><title>《跑步治愈》让我爱上跑步</title><link>https://www.jsongo.top/articles/start-running/</link><pubDate>Tue, 07 Jan 2025 10:49:18 +0800</pubDate><guid>https://www.jsongo.top/articles/start-running/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/4e076eb4ff636b6bf9f74fb25b6536ac.jpg" alt="Featured image of post 《跑步治愈》让我爱上跑步" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="从盲目跑步到科学跑步的转变">从盲目跑步到科学跑步的转变
 &lt;/h2>&lt;p>其实之前我或多或少都会去跑跑步，不过是断断续续的，大概几天跑一次。然而，跑到一定程度后，就很难再有大的突破了，一直也没怎么关注过数据，随性跑。我大概能跑个两三公里，跑得上气不接下气时，就走一会儿，然后接着再跑一段。顶多能跑到 5 公里，这对我来说已经算是极限了。这就是我之前的状态。&lt;br>
 以前跑步时，我不太关注心率。后来，在一位朋友的带动下，我开始留意心率等数据，结果发现我的心率总是比他们高很多。比如，我跑个三四公里，心率就会飙升到 180 以上，而他们只有 150 多，差距十分明显。不过当时，我并没有太把这个数据当回事。后来才知道，180 已经非常极限了，这种状态跑不了太久，而且也是对身体有些伤害，健康的跑步应该是在比较舒适的区间，消耗身上的脂肪和多余的糖分，多进行有氧运动，这能给人带来非常多的好处。这些我以前都不太懂。&lt;br>
@@ -1692,7 +1692,7 @@ Important&lt;br
 &lt;/div>&lt;h2 id="这本书">这本书
 &lt;/h2>&lt;p>《跑步治愈》并不是说要治愈什么疾病，主要是在表达跑步是一种非常有利于健康的、成本较低的运动。但其实它不是一个简单的事，有很多学问，本书主要就是在讲如何科学地跑步。&lt;br>
 作者是一个比较有名的教练，给徐小平、樊登、何帆、张静初，以及很多大企业的高管，还有很多很多身家巨富的人当教练，而且教过的人都能有巨变。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/52e699ce2ee57a4fb51c50c8d5e23d96.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/52e699ce2ee57a4fb51c50c8d5e23d96.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h1 id="跑步是件有趣的事">跑步是件有趣的事
@@ -1727,7 +1727,7 @@ loading="lazy"
 &lt;/h2>&lt;p>至于运动强度高低，有个简单判断方法：中等强度运动时，会有点气喘，但还能与人交流；高强度运动时，就气喘吁吁，基本难以交谈。在有氧运动里，跑步最适合普通人。有不少例子，一些人刚开始只能跑几百米，跑起来都费劲，后来经指导，慢慢能跑几公里，甚至去跑马拉松。忙碌的人也倾向于通过跑步增强体能。借助运动手环等设备监测心率等数据，能更科学地安排训练过程与计划。&lt;/p>
 &lt;h1 id="跑步让头脑更活跃">跑步让头脑更活跃
 &lt;/h1>&lt;p>跑步能让大脑更活跃、反应更灵敏，不过这是在中等强度以下跑步时才有的效果，一直高强度跑，跑完会很累。作者提到“轻松跑”概念，这种状态下主要是有氧运动，能消耗身体脂肪，让身材变好。&lt;br>
-跑步还能激活大脑，使人心情愉悦，抵抗抑郁、缓解压力。书中提到了一个万科高管，长期处于高压工作状态，出现严重情绪问题，后来通过跑步缓解了心情，在他的指导下，每天跑 10 公里，跑完心情舒畅，能更高效地享受生活。&lt;/p></description></item><item><title>聊聊我的笔记软件使用历程</title><link>https://www.jsongo.top/articles/note-using-experience/</link><pubDate>Tue, 07 Jan 2025 01:18:06 +0800</pubDate><guid>https://www.jsongo.top/articles/note-using-experience/</guid><description>&lt;img src="https://cdn.ethango.top/banners/ea9086434bf26f0e29a7f53c30916e06.jpg" alt="Featured image of post 聊聊我的笔记软件使用历程" />&lt;h1 id="现状概述">现状概述
+跑步还能激活大脑，使人心情愉悦，抵抗抑郁、缓解压力。书中提到了一个万科高管，长期处于高压工作状态，出现严重情绪问题，后来通过跑步缓解了心情，在他的指导下，每天跑 10 公里，跑完心情舒畅，能更高效地享受生活。&lt;/p></description></item><item><title>聊聊我的笔记软件使用历程</title><link>https://www.jsongo.top/articles/note-using-experience/</link><pubDate>Tue, 07 Jan 2025 01:18:06 +0800</pubDate><guid>https://www.jsongo.top/articles/note-using-experience/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ea9086434bf26f0e29a7f53c30916e06.jpg" alt="Featured image of post 聊聊我的笔记软件使用历程" />&lt;h1 id="现状概述">现状概述
 &lt;/h1>&lt;p>我现在大部分笔记都是用 Obsidian 写，免费、安全、自由定制。甚至你看到的这些博客，我也都是用它写的，然后加上一些简单的设置就把内容同步到博客上了。Banner 等都是自动生成的，笔记的排版和格式，它都（通过插件）提到了非常强大的支持。&lt;/p>
 &lt;h1 id="历程">历程
 &lt;/h1>&lt;p>我研究了大量笔记，许多听过的都尝试过。实际上，大多数笔记功能相近，互相抄来抄去，很多都是类似 Notion 的交互。区别仅在于谁家的软件做得更出色、更流畅，或者 Bug 更少，更便宜。&lt;br>
@@ -1742,7 +1742,7 @@ loading="lazy"
 我之所以如此信赖它，是因为经过一段时间的使用，我切实感受到它既安全又功能强大。 而且扩展性非常强，还能自行定义，这十分符合我作为一个开发者的思维。&lt;br>
 这款笔记软件本身自带的功能本身就颇为丰富，比如有分层式的标签体系，具备目录管理能力。还有它的卖点之一，双向链接和网状关联，该功能可以将各种笔记链接成网，做了个交互和动画效果，能把各种笔记的关系梳理得起来。但我不太喜欢用这个功能，一直觉得它有点鸡肋。我之前看过一篇文章，提到这个功能其实没多少人能真正用的起来。&lt;br>
 我现在主要用的是它的标签体系，其分层逻辑我很习惯，因为之前一直在用 flomo，标签体系几乎一样，所以对我来说只是习惯的平移。另外，这个笔记软件还能与我之前研究过的 cloudflare 上的 CDN 联系起来，图片、视频等都可以传上去。&lt;br>
-其实，我对于笔记软件的使用并非局限于某一款。比如说，除了 Obsidian、flomo，我最常用的还有幕布。它们的用途各不相同，但我用得最多的还是 Obsidian。甚至我工作时很多时候也会用它来规划当天的日程，因为它有一些插件能让日常管理变得较为简单。当然，我主要的日常管理软件还是滴答清单。&lt;/p></description></item><item><title>用 kotlin 实现 JWT 认证</title><link>https://www.jsongo.top/articles/kotlin-jwt/</link><pubDate>Mon, 06 Jan 2025 22:21:06 +0800</pubDate><guid>https://www.jsongo.top/articles/kotlin-jwt/</guid><description>&lt;img src="https://cdn.ethango.top/banners/3f4ffe39bbfde173de3bf6ee638fda5b.jpg" alt="Featured image of post 用 kotlin 实现 JWT 认证" />&lt;h1 id="概述">概述
+其实，我对于笔记软件的使用并非局限于某一款。比如说，除了 Obsidian、flomo，我最常用的还有幕布。它们的用途各不相同，但我用得最多的还是 Obsidian。甚至我工作时很多时候也会用它来规划当天的日程，因为它有一些插件能让日常管理变得较为简单。当然，我主要的日常管理软件还是滴答清单。&lt;/p></description></item><item><title>用 kotlin 实现 JWT 认证</title><link>https://www.jsongo.top/articles/kotlin-jwt/</link><pubDate>Mon, 06 Jan 2025 22:21:06 +0800</pubDate><guid>https://www.jsongo.top/articles/kotlin-jwt/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/3f4ffe39bbfde173de3bf6ee638fda5b.jpg" alt="Featured image of post 用 kotlin 实现 JWT 认证" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="环境">环境
 &lt;/h2>&lt;p>Android 环境上，内置（或拉取）私钥证书后，&lt;strong>向服务端请求交换 JWT token，获取 OAuth token&lt;/strong>。&lt;/p>
 &lt;h2 id="场景">场景
@@ -2236,7 +2236,7 @@ loading="lazy"
 &lt;li>&lt;strong>安全存储私钥证书&lt;/strong>：使用 Android 系统提供的安全存储机制，如 KeyStore 系统。它可以将私钥证书存储在一个受硬件保护的区域（如果设备支持），并且通过密码学手段对访问进行限制。同时，对应用进行加固，防止反编译和代码注入等攻击方式。&lt;/li>
 &lt;li>&lt;strong>确保传输安全&lt;/strong>：在与服务端的通信过程中，强制使用 TLS/SSL 协议，并进行严格的证书验证。可以采用双向认证的方式，即服务端和客户端（Android 应用）互相验证对方的证书，确保通信双方的身份真实可靠。&lt;/li>
 &lt;li>&lt;strong>令牌管理优化&lt;/strong>：合理设置 JWT 和 OAuth 令牌的有效期，对于高风险操作可以采用短有效期的令牌，并要求用户频繁重新认证。同时，对 OAuth 令牌的权限进行精细的划分，确保每个令牌只能访问其授权范围内的资源。例如，对于只需要读取用户基本信息的操作和需要修改用户密码的操作，分别使用不同权限范围的令牌。&lt;/li>
-&lt;/ul></description></item><item><title>Azure Functions 的5种托管方式</title><link>https://www.jsongo.top/articles/azure-functions-hostings/</link><pubDate>Sun, 05 Jan 2025 20:51:24 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-functions-hostings/</guid><description>&lt;img src="https://cdn.ethango.top/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post Azure Functions 的5种托管方式" />&lt;p>Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。&lt;br>
+&lt;/ul></description></item><item><title>Azure Functions 的5种托管方式</title><link>https://www.jsongo.top/articles/azure-functions-hostings/</link><pubDate>Sun, 05 Jan 2025 20:51:24 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-functions-hostings/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post Azure Functions 的5种托管方式" />&lt;p>Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。&lt;br>
 下文对 Flex Consumption plan、Premium plan、Dedicated plan、Container Apps 和 Consumption plan 这 5 种方式进行下对比。&lt;/p>
 &lt;h1 id="直观表格对比">直观表格对比
 &lt;/h1>&lt;table>
@@ -2369,7 +2369,7 @@ loading="lazy"
 函数执行次数费用如下：&lt;br>
 &lt;code>（3百万次执行 – 1百万次执行） * 0.20美元 = 0.4美元&lt;/code>&lt;br>
 把这两项一加，总费用就是 17.6 美元 + 0.4 美元 = 18 美元。&lt;br>
-不支持自定义容器。&lt;/p></description></item><item><title>网络请求 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-http-sse/</link><pubDate>Sun, 05 Jan 2025 16:24:30 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-http-sse/</guid><description>&lt;img src="https://cdn.ethango.top/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 网络请求 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;blockquote>
+不支持自定义容器。&lt;/p></description></item><item><title>网络请求 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-http-sse/</link><pubDate>Sun, 05 Jan 2025 16:24:30 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-http-sse/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg" alt="Featured image of post 网络请求 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;blockquote>
 &lt;p>示例中用的是 Kotlin (KMP) &lt;code>2.x&lt;/code> ，Ktor &lt;code>3.x&lt;/code>&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="网络请求">网络请求
@@ -2722,7 +2722,7 @@ loading="lazy"
 &lt;li>Client 端：&lt;a class="link" href="https://ktor.io/docs/client-server-sent-events.html" target="_blank" rel="noopener"
 >Server-Sent Events | Ktor Documentation&lt;/a>&lt;br>
 KMP Client 端接入现在变得很简单，也不需要什么特殊依赖：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/035e39a399cfc90d0f6f9676a208ccaf.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -2919,7 +2919,7 @@ SSE 的场景不正好就是“按顺序生成数据”嘛，所以自然就跟 
 &lt;/blockquote>
 &lt;ul>
 &lt;li>当调用 &lt;code>incoming.collect&lt;/code> 时，它会触发这个 &lt;code>Flow&lt;/code> 开始工作，并且会将 &lt;code>Flow&lt;/code> 发射出的每个数据项传递给 &lt;code>collect&lt;/code> 函数内部定义的操作进行处理。Collect 参数是一个 lambda 表达式，参数就是一个 ServerSentEvent，定义如下图，遵守 SSE 的数据流协议，比较标准，没什么好说的。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/f7c4b8c6b499c3c7eed20a4751139e6c.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -3097,7 +3097,7 @@ alt="|500"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>要阻塞，就换成 runBlocking。这里就不再补充代码示例了。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.ethango.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
+&lt;/div>&lt;p>要阻塞，就换成 runBlocking。这里就不再补充代码示例了。&lt;/p></description></item><item><title>azure Function 自定义镜像</title><link>https://www.jsongo.top/articles/azure-function-custom-containers/</link><pubDate>Sun, 05 Jan 2025 11:25:49 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-custom-containers/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post azure Function 自定义镜像" />&lt;p>Azure Function 默认是跑在它官方的 &lt;a class="link" href="https://hub.docker.com/r/microsoft/azure-functions-base" target="_blank" rel="noopener"
 >microsoft/azure-functions-base&lt;/a> 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。&lt;/p>
 &lt;h1 id="创建自己的镜像">创建自己的镜像
 &lt;/h1>&lt;h2 id="创建-dockerfile">创建 Dockerfile
@@ -3159,7 +3159,7 @@ alt="|500"
 &lt;/div>&lt;h2 id="注册">注册
 &lt;/h2>&lt;p>在 &lt;a class="link" href="https://portal.azure.com/#browse/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
 >Azure Container Registry&lt;/a>（容器注册表）这里注册一个你自己的命令空间。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/463f2950bea861c9729cb23cdc5a6478.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/463f2950bea861c9729cb23cdc5a6478.webp"
 width="675"
 loading="lazy"
 alt="|675"
@@ -3197,12 +3197,12 @@ alt="|675"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>如下示例。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/a28f11024d5a8fe4f5c8ad0337479ee7.webp"
 loading="lazy"
 alt="|750|750x319"
 >&lt;br>
 比如我这个镜像，由于加了 ffmpeg 之后，构建完成时整个镜像很大，一下子撑到了 2G。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4f71b5b5f343bcc4b0db975f24bfce60.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -3237,7 +3237,7 @@ alt="|700"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>这里我们构建一个 0.2.0 版本，它同时会把新构建完的镜像 push 到 Registry 里。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/30c03710c34bfd64f9299837e3ee22ce.webp"
 width="750"
 loading="lazy"
 alt="|750"
@@ -3265,38 +3265,38 @@ alt="|750"
 &lt;/div>&lt;p>然后就是等了。我这个镜像 2G+，着实是要等好一会儿。&lt;br>
 Push 完，打开你的 &lt;a class="link" href="https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries" target="_blank" rel="noopener"
 >容器注册表页面&lt;/a>，在这里就可以看到你刚推送上去的镜像了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/fb1175d6eaf44464ccf31a4c1a79046b.webp"
 width="750"
 loading="lazy"
 alt="|750"
 >&lt;/p>
 &lt;h1 id="使用镜像">使用镜像
 &lt;/h1>&lt;p>下面介绍两种使用镜像的方式，分别对应下图中的两个红框。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/05e3ba7519cfcf0353ab94e9920cd241.webp"
 width="800"
 loading="lazy"
 alt="|800"
 >&lt;/p>
 &lt;h2 id="创建函数应用">创建函数应用
 &lt;/h2>&lt;p>创建一个 Function 如果要使用自己的镜像，“弹性消耗”是不支持的。要选“高级计划”或“应用服务”才行。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/61ccd18ce92bbd84fe47a4bdf732ff55.webp"
 width="600"
 loading="lazy"
 alt="|600"
 >&lt;br>
 一步步往下直到创建完成。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/db86acc839e4545ce6e255d56a6bc911.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/db86acc839e4545ce6e255d56a6bc911.webp"
 loading="lazy"
 >&lt;br>
 接下去就可以打开 azure 函数首页，去看刚部署的函数。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/6efc5b6d235cc4e37d11ef1a7b0c52de.webp"
 width="750"
 loading="lazy"
 alt="|750"
 >&lt;br>
 至于哪些计划可以支持自定义容器部署可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale" target="_blank" rel="noopener"
 >Azure Functions scale and hosting | Microsoft Learn&lt;/a>。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/3ef8be06d615efb0daf5495e872d716e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/3ef8be06d615efb0daf5495e872d716e.webp"
 width="725"
 loading="lazy"
 alt="|725"
@@ -3304,22 +3304,22 @@ alt="|725"
 &lt;h2 id="创建函数容器环境container-apps">创建函数容器环境（Container Apps）
 &lt;/h2>&lt;p>其实如果要更好的跟 Azure Function 结合的话，可以试下“容器应用环境”(Azure Container Apps environment)，它可以用于你已经在跑的函数中。&lt;br>
 同样我们也在首页创建一个，在“基本”（basics）中填写一些基础信息，这里不再赘述，比较简单。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/8214ec925893f7b328ad5d50499b3e4d.webp"
 width="800"
 loading="lazy"
 alt="|800"
 >&lt;br>
 接着到“部署”选项卡中，设置你刚 push 上去的镜像。先把“使用快速入门图像”勾选去掉，另外映像类型选专用的（Private），如图一样填写你的镜像信息。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/31737bdba1d7f1ee2ca7666308ac3471.webp"
 loading="lazy"
 >&lt;br>
 费用是按需支付的，跟之前的两种方式不太一样：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/e6a5c97b8e6c5a26b8b16c017f57bc69.webp"
 loading="lazy"
 alt="|500|500x992"
 >&lt;br>
 而且单个机子的配置选项也足够灵活，如图。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/e3e7946cc1641c5515fbb230dca83c28.webp"
 width="275"
 loading="lazy"
 alt="|275"
@@ -3380,7 +3380,7 @@ alt="|275"
 &lt;li>如果对计算性能要求极高，但对资源的独占性要求不是特别高，Premium plan 可能更合适，因为它可以提供高性能的计算资源，同时成本相对较低。&lt;/li>
 &lt;li>如果对安全性、合规性以及资源的独占性有严格要求，需要完全隔离的计算和存储环境，那么 Dedicated plan 可能是更好的选择，尽管费用相对较高，但能满足特定的业务需求。&lt;br>
 实在不好选择，直接就选 Premium plan，比较经济些，一般也用不到比较太高级的配置。它目前有以下三个配置可以选：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/c0f3dcf1e6ca0c79664d2697b121675b.webp"
 width="450"
 loading="lazy"
 alt="|450"
@@ -3388,19 +3388,19 @@ alt="|450"
 不过价格上… 是有点高些，具体可以看这里：&lt;a class="link" href="https://azure.microsoft.com/zh-cn/pricing/details/functions/" target="_blank" rel="noopener"
 >定价 - Functions | Microsoft Azure&lt;/a>。&lt;br>
 小时视角：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/bcac629924bd882bed230aa3781131f6.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/bcac629924bd882bed230aa3781131f6.webp"
 width="850"
 loading="lazy"
 alt="|850"
 >&lt;br>
 月视角：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/cc859d4f93fc2c606083a65c5d005ff7.webp"
 width="800"
 loading="lazy"
 alt="|800"
 >&lt;br>
 补：后来在函数的设置里，看到了比较实际的价格。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/cfd8d327d4b15dd049054f2fcf6223d7.webp"
 width="800"
 loading="lazy"
 alt="|800"
@@ -3417,7 +3417,7 @@ alt="|800"
 >Azure Container Registry roles and permissions - Azure Container Registry | Microsoft Learn&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://zone.huoxian.cn/d/2594-azure-functions" target="_blank" rel="noopener"
 >使用自定义云容器在 Azure Functions 中增强云安全性&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>入门 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-101/</link><pubDate>Fri, 27 Dec 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/24372eee204cc869cbb56c86a09a6b4c.png" alt="Featured image of post 入门 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;p>Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应用开发的首选语言，并且它通过相关跨平台框架（如 Kotlin Multiplatform Platform - KMP）发展出了跨端开发的能力。&lt;/p>
+&lt;/ul></description></item><item><title>入门 - 用 Kotlin(KMP) 做跨端原生开发</title><link>https://www.jsongo.top/articles/kmp-101/</link><pubDate>Fri, 27 Dec 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/kmp-101/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/24372eee204cc869cbb56c86a09a6b4c.png" alt="Featured image of post 入门 - 用 Kotlin(KMP) 做跨端原生开发" />&lt;p>Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应用开发的首选语言，并且它通过相关跨平台框架（如 Kotlin Multiplatform Platform - KMP）发展出了跨端开发的能力。&lt;/p>
 &lt;blockquote>
 &lt;p>示例中用的是 Kotlin (KMP) &lt;code>2.x&lt;/code> ，Ktor &lt;code>3.x&lt;/code>&lt;/p>
 &lt;/blockquote>
@@ -3450,13 +3450,13 @@ alt="|800"
 >下载 Android Studio 和应用工具 &lt;/a>。默认是内置了 Gradle 来做编译，包含跨端的代码编译。&lt;/p>
 &lt;h2 id="生成项目及初始代码介绍">生成项目及初始代码介绍
 &lt;/h2>&lt;p>官方给了一个工具用于生成初始化的项目代码：https://kmp.jetbrains.com/，在这上面配置下应用相关的信息即可。一般只需要 Android 和 iOS 两个端即可：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/076751605e49d1210f34130cb80ed50e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/076751605e49d1210f34130cb80ed50e.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
 下载到本地，然后用 Android Studio 导入。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/40711a8957ede4718b786f891b2ffe9d.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/40711a8957ede4718b786f891b2ffe9d.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -3464,7 +3464,7 @@ alt="|700"
 代码主要包含 3 个部分：&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Shared&lt;/strong>，共享的部分。它是跨端的逻辑代码存放的地方，主要有 &lt;code>androidMain&lt;/code> 、&lt;code>commonMain&lt;/code> 和  &lt;code>iosMain&lt;/code>，最终编译成 Android Library 和 iOS framework 供两端集成。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/90a4b3199a161461a2964e7e36b47089.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/90a4b3199a161461a2964e7e36b47089.webp"
 loading="lazy"
 >&lt;/li>
 &lt;li>&lt;strong>ComposeApp&lt;/strong>，是一个完整的 Kotlin 模块，它可以通过 Gradle 直接编译成 Android 应用，它里面也包含了 Shared module，Android 应用编译时可以引用这部分共用的模块。&lt;/li>
@@ -3474,14 +3474,14 @@ loading="lazy"
 &lt;/h2>&lt;p>依赖是写 KMP 应用会遇到的第一个比较麻烦的问题，不过大都能从 &lt;a class="link" href="https://ktor.io/docs/welcome.html" target="_blank" rel="noopener"
 >这个文档&lt;/a> 中找到，可能需要点耐心。&lt;br>
 写到 CommonMain/ 目录里的代码，如果包含了平台专有的 API，IDE 会给 Warning 提醒，交互比较友好。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/6556d2995f4234f406c6bb50c4131d0b.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/6556d2995f4234f406c6bb50c4131d0b.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;br>
 把 import 部分改成 &lt;code>kotlin.random.Random&lt;/code> 就没报错了（Random 类写法去掉括号）。&lt;br>
 接下去点击图中 Top bar 里的运行按钮就可以跑起来了，它会出现 Android 一虚拟机，在上面运行你的代码。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/345f016c58696f3658be24fd2a43d104.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/345f016c58696f3658be24fd2a43d104.webp"
 width="300"
 loading="lazy"
 alt="|300"
@@ -3490,7 +3490,7 @@ alt="|300"
 &lt;/h2>&lt;p>跑通了基础的流程，我们接下去的工作就简单了，创建一个 kt 文件，写好逻辑即可。&lt;br>
 比如我想写一个通用的 HTTP 请求的模块，需要先安装一些依赖，具体可以参考 &lt;a class="link" href="https://ktor.io/docs/client-dependencies.html#repositories" target="_blank" rel="noopener"
 >这里&lt;/a>。打开 &lt;code>composeApp/build.gradle.kts&lt;/code>，添加下几个依赖：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/798b355d1da19bded2025aff5dbafa7e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/798b355d1da19bded2025aff5dbafa7e.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -3520,7 +3520,7 @@ alt="|500"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>安装完之后，点击 Sync Now，让它安装依赖。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/8994d10bce0c602a2960336c04975a04.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/8994d10bce0c602a2960336c04975a04.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -3534,7 +3534,7 @@ alt="|500"
 有两种方法来配置编译脚本，具体可以参考这里：&lt;a class="link" href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html#connect-the-framework-to-your-ios-project" target="_blank" rel="noopener"
 >Make your Android application work on iOS&lt;/a> ，下面简单讲解下：&lt;br>
 1、一是手动&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/720c1908479bfd532143a11319c339a4.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/720c1908479bfd532143a11319c339a4.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -3554,38 +3554,38 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>然后把顺序拖到上面这里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/ea53970b00a8070dd98d9afc061f4187.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/ea53970b00a8070dd98d9afc061f4187.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;/li>
 &lt;li>不过，JDK 11 从 11.0.3 开始商用收费，如果在内部业务使用也要购买许可证：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/0a8e90a2af180b831f72a183de9c9203.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/0a8e90a2af180b831f72a183de9c9203.webp"
 width="600"
 loading="lazy"
 alt="|600"
 >&lt;br>
 所以还是得用 OpenJDK，我试了下，是兼容的。安装可以看这里：[[JDK 怎么安装]]。&lt;/li>
 &lt;li>另外也要设置下 sandboxing&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/df8e47732e837d1448d5c38676d61d8c.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/df8e47732e837d1448d5c38676d61d8c.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;br>
 2、用插件&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/cf83f28ecdf0cd79fa2428b7fe2fe7c5.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/cf83f28ecdf0cd79fa2428b7fe2fe7c5.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;/li>
 &lt;li>安装完之后，其它就自动帮你设置了一个 Build Script 在上文提到的 &lt;code>Build Phases&lt;/code> 里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/888bf5edebab276ef39aad2b4333d580.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/888bf5edebab276ef39aad2b4333d580.webp"
 width="700"
 loading="lazy"
 alt="|700"
 > - 这里选择的那两行是我加的，因为运行时它找不到 JDK，如果你也遇到这个问题也可以这么解决。&lt;br>
 配置好后，可以点击 Xcode 右上角的编译按钮触发一次编译，我第一次试，编译了近 2 分钟：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/7c99ac5c4b0ae67a218530c73582ac60.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/7c99ac5c4b0ae67a218530c73582ac60.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -3593,7 +3593,7 @@ alt="|700"
 &lt;/ul>
 &lt;h3 id="使用公共模块">使用公共模块
 &lt;/h3>&lt;p>很简单，把 &lt;code>ComposeApp&lt;/code> 引入就行，这样里面我们写的方法就都可以用了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/c4ab964094083a97810d18b06dc0508e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/c4ab964094083a97810d18b06dc0508e.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -3602,7 +3602,7 @@ alt="|700"
 &lt;/h1>&lt;ul>
 &lt;li>&lt;a class="link" href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-upgrade-app.html#create-api-requests" target="_blank" rel="noopener"
 >Share more logic between iOS and Android | Kotlin Multiplatform Development Documentation&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Daily Meditations - W52</title><link>https://www.jsongo.top/articles/meditations-w52/</link><pubDate>Wed, 25 Dec 2024 23:25:18 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w52/</guid><description>&lt;img src="https://cdn.ethango.top/banners/0b2412e8fae47001461d7b73f3127e2d.jpg" alt="Featured image of post Daily Meditations - W52" />&lt;blockquote>
+&lt;/ul></description></item><item><title>Daily Meditations - W52</title><link>https://www.jsongo.top/articles/meditations-w52/</link><pubDate>Wed, 25 Dec 2024 23:25:18 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w52/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/0b2412e8fae47001461d7b73f3127e2d.jpg" alt="Featured image of post Daily Meditations - W52" />&lt;blockquote>
 &lt;p>这两周都在看吴军的新书《脉络》，从书中我读出他有点凯文凯利的一面。一些比较大的命题，他能举重若轻地用一两句简单的总结，表达出一些一针见血的见解。让人感悟深刻。&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="整个社会的视角">整个社会的视角
@@ -3634,7 +3634,7 @@ alt="|700"
 &lt;h1 id="回到这本书">回到这本书
 &lt;/h1>&lt;p>脉络这本书前面的章节主要就是在讲过去的历史，很多跟我们认知都不太一样。过去没有我们想象的那么美好，而且我们经常会去美化历史，但实际上过去的盛世真正只占历史的 1/3 都不到，大部分时候都是兵荒马乱。&lt;br>
 最开始的章节也讲到，现代人的生活水平其实大部分都是工业革命之后才飞速发展起来的。那么长的农耕时代，其实并没有对现代生活贡献多少，社会的整体生产力一直没有得到什么发展，而工业革命给整个人类社会带来了非常迅猛的技术和财富的增长。&lt;br>
-之后比较长的篇幅在讲工业革命及之后的一些观点，很有意思。看到上面这些介绍，相信有的人会开始对这本书有所兴趣，总之它让我看到了凯文凯利的影子，这或许也是吴军当时想写出来的效果。&lt;/p></description></item><item><title>用 Cursor 开发未知语言代码</title><link>https://www.jsongo.top/articles/coding-with-cursor/</link><pubDate>Wed, 25 Dec 2024 21:16:20 +0800</pubDate><guid>https://www.jsongo.top/articles/coding-with-cursor/</guid><description>&lt;img src="https://cdn.ethango.top/banners/a7f752e124242dcebca6f80af1173db0.jpeg" alt="Featured image of post 用 Cursor 开发未知语言代码" />&lt;h1 id="概述">概述
+之后比较长的篇幅在讲工业革命及之后的一些观点，很有意思。看到上面这些介绍，相信有的人会开始对这本书有所兴趣，总之它让我看到了凯文凯利的影子，这或许也是吴军当时想写出来的效果。&lt;/p></description></item><item><title>用 Cursor 开发未知语言代码</title><link>https://www.jsongo.top/articles/coding-with-cursor/</link><pubDate>Wed, 25 Dec 2024 21:16:20 +0800</pubDate><guid>https://www.jsongo.top/articles/coding-with-cursor/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/a7f752e124242dcebca6f80af1173db0.jpeg" alt="Featured image of post 用 Cursor 开发未知语言代码" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="一句话总结">一句话总结
 &lt;/h2>&lt;p>Cursor 对于研发来说，是一个非常有用的提效工具。一句话来总结 Cursor 就是：&lt;/p>
 &lt;div class="admonition tip">
@@ -3650,7 +3650,7 @@ alt="|700"
 &lt;/div>&lt;p>开发 KMP 跨端框架的代码，开始时我不懂它的 Kotlin 语法；开发完之后，我依然还不懂怎么写 Kotlin，但不影响我实现相关的功能。&lt;/p>
 &lt;h2 id="感受">感受
 &lt;/h2>&lt;p>cursor 有点像 code review 的交互：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
 loading="lazy"
 alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
 >&lt;br>
@@ -3670,33 +3670,33 @@ alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
 &lt;li>Cursor Chat：帮助开发者理解代码片段、提供代码优化建议、协助查找代码错误或者回答关于特定编程语言和框架的一般性问题；&lt;/li>
 &lt;li>Cursor Agent：更全面，首先可以让 Agent 读取整个项目文件，快速掌握项目的主要功能和关键文件，也能同时操作多个文件，根据需要增删改，甚至还能对整个项目做分析，帮你优化项目结构等。&lt;br>
 下面例子中 大都基于 Composer 来实现的。下图是一个简单的例子：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4eda348bfcc4a6e8a603326467a6840f.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4eda348bfcc4a6e8a603326467a6840f.webp"
 width="500"
 loading="lazy"
 alt="1145cf430e1f015e5a552747f0f4a7c7_MD5|500"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="cursor-基于代码生成代码的基本步骤">Cursor 基于代码生成代码的基本步骤
-&lt;/h1>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp"
+&lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp"
 loading="lazy"
 >&lt;/p>
 &lt;h2 id="1先把相应的目录结构建好">&lt;strong>1、先把相应的目录结构建好&lt;/strong>
 &lt;/h2>&lt;p>因为不同的语言，代码组织的习惯和方式都不太一样。要做的第二件事，是先把代码结构先想清楚，然后发给 AI 问下比较合理的结构是什么样。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/0469fa103c6ebb26a2747e1491292465.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/0469fa103c6ebb26a2747e1491292465.webp"
 width="500"
 loading="lazy"
 alt="011aee5c56b4b53497b5d789c0fbeffb_MD5|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp"
 width="400"
 loading="lazy"
 alt="4ed11244d635908bdf3aaffee68c1db6_MD5|400"
-> &lt;img src="https://cdn.ethango.top/2025/01/71d3277a1c9450424f1175f05714cbd9.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/71d3277a1c9450424f1175f05714cbd9.webp"
 width="250"
 loading="lazy"
 alt="56695bc97506c77d525a8b7a30786162_MD5|250"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/34125f9d5d186efc995f3f421e8ea716.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/34125f9d5d186efc995f3f421e8ea716.webp"
 width="600"
 loading="lazy"
 alt="3562669265f694cc8e5a37537570e387_MD5|600"
@@ -3722,53 +3722,53 @@ alt="3562669265f694cc8e5a37537570e387_MD5|600"
 背景：我把 Coze API SDK 代码从 JS 迁移到 Kotlin，里面有很多个模块。之前已经实现了 Chat 模块的 API，这次实现 Auth 模块。代码也是不少、而且有点分散。&lt;/p>
 &lt;h2 id="初步生成">初步生成
 &lt;/h2>&lt;p>找到主入口文件，这个例子中，是 &lt;code>auth.ts&lt;/code> ，我把它加入到 Context 里。另外我自己也创建了一个文件在特定的目录里，把它也加到 Context 里（Kotlin 的代码结构组织跟 JS 还是有比较大的区别，下面再讲），这个文件让 Cursor 创建也行，只不过我还得给他描述路径/位置，还不如直接点“+”就创建了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/1b108415bafc10678d91c7888802cb53.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/1b108415bafc10678d91c7888802cb53.webp"
 loading="lazy"
 alt="600b7d39aa5a96c84d23b1409c0e1eac_MD5|0"
 >&lt;br>
 其中 auth.ts 只是一个入口文件，它涉及到很多相关的类和函数等，定义在其它文件，所以我在 prompt 里告诉它要把相关的定义都搬过去。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/86f176619ca75c5a4777eac559dfdf55.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/86f176619ca75c5a4777eac559dfdf55.webp"
 loading="lazy"
 alt="414f29730ce41fba0d1bbc12407f4a87_MD5|0"
 >&lt;br>
 一下子写了 361 行，里面涉及到很多个方法都需要一个个验证，这个后面说。截图中可以看到，它还问我们要不要把一些相关的函数搬过来，让它继续。然后又给我搬了几百行过来，之后发现有一些依赖库缺失，所以问我是否要加到 gradle 配置里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/83a947616392ee8d6a6dffb361e7b387.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/83a947616392ee8d6a6dffb361e7b387.webp"
 width="600"
 loading="lazy"
 alt="571c38e14c2b4c8c21c66b5194d2c0a1_MD5|600"
 >&lt;/p>
 &lt;h2 id="解决小问题">解决小问题
 &lt;/h2>&lt;p>在上面这个地方就遇到了问题，它认为我其它文件里的逻辑可能没有用，直接大段大段地删除我原本的代码，如 Http.kt，&lt;code>auth.ts&lt;/code> 里用到了一个封装过的 HTTP 请求，所以在引入的时候，它找到我原来的 HTTP 请求的封装直接改了它。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/09954d7c01331cac66d6c52fd36252b6.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/09954d7c01331cac66d6c52fd36252b6.webp"
 width="800"
 loading="lazy"
 alt="205dc1e6d24d761c009260ac8cae8bb2_MD5|800"
 >&lt;br>
 这种事要能多盯着点、注意下可能的问题，及时补救，引导 Cursor 去修正。&lt;br>
 一些小问题，在采用它的代码时，稍微留意下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/3ae3a5bf297f7eda62ed740f33c619f4.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/3ae3a5bf297f7eda62ed740f33c619f4.webp"
 width="800"
 loading="lazy"
 alt="b240a1222ec78b5b5382fdbbf75ea0e2_MD5|800"
 >&lt;br>
 再比如这种写法一看就感觉有点问题：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/568a319a389daad0a61def5e22073059.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/568a319a389daad0a61def5e22073059.webp"
 width="800"
 loading="lazy"
 alt="1116262183daa190d5cb3cc88895d884_MD5|800"
 >&lt;br>
 追问下，它就会纠正过来了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/58c18e5e8bf2848a5561f5dd99d07c71.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/58c18e5e8bf2848a5561f5dd99d07c71.webp"
 width="800"
 loading="lazy"
 alt="74847ffb18466f90a2d6c6ee88d114ac_MD5|800"
 >&lt;br>
 另一个比较大块的问题是，它生成完可能是有一些包引入问题的，因为它只有局部信息，缺少全局的，会犯像重复定义这样的错。而且可能有一堆 import 问题等着你解决，比如下面这个例子：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/1ea57a695273330b3ed5dd5661554b66.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/1ea57a695273330b3ed5dd5661554b66.webp"
 width="700"
 loading="lazy"
 alt="49ec0378de615efc9371ecab36f0c033_MD5|700"
-> &lt;img src="https://cdn.ethango.top/2025/01/d69d33cc46da8ae71cff9d95535d1e7a.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/d69d33cc46da8ae71cff9d95535d1e7a.webp"
 width="700"
 loading="lazy"
 alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
@@ -3784,23 +3784,23 @@ alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
 这里难免就要去打印过程中的每个数据，比如加密的 Payload、几个 key、algorithm、timestamp 等，用 JS 也跑一个、&lt;strong>打印出来，做下对比&lt;/strong>，看哪个字段有问题。&lt;br>
 改完后，还是签名错误。参数对了，但还是不行，那就是算法问题，接下去核对了下 Base64 encode 的地方、RSA 算出的数据跟 JS 的跑出来是否一致。这里发现了问题，但没有头绪。&lt;br>
 这时，死马当活马医，让 cursor 再帮我检查一遍：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/85a79b192ec91ca09d2fa5c60f3a996e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/85a79b192ec91ca09d2fa5c60f3a996e.webp"
 width="800"
 loading="lazy"
 alt="037c1ba6aa4295b45bc15c1a7a930e5d_MD5|800"
-> &lt;img src="https://cdn.ethango.top/2025/01/307e4e2a0ab807513480c86855068e19.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/307e4e2a0ab807513480c86855068e19.webp"
 width="700"
 loading="lazy"
 alt="1512af0b52ab204e684d567bc9c2b510_MD5|700"
 >&lt;br>
 看起来似乎是喂给算法的数据格式有问题（虽然数据都是对的），Cursor 实现了一个 toMap 的方法对原来的代码做了个转化，但这次代码跑不起来，重新让它改了一版，这下居然拿到正确的返回了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/4ae11c7b01875dd3c0fab873498c6b90.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/4ae11c7b01875dd3c0fab873498c6b90.webp"
 width="700"
 loading="lazy"
 alt="ca3cf6410c6eafc5a7566ed550156a83_MD5|700"
 >&lt;br>
 返回解析失败，序列化的问题，不过是小问题，让它改完后，这次真的拿到了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/cd181081d32b5a238a808949013c280e.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/cd181081d32b5a238a808949013c280e.webp"
 width="800"
 loading="lazy"
 alt="bace8e15ef5ddc1d884a2b7da0919947_MD5|800"
@@ -3813,13 +3813,13 @@ alt="bace8e15ef5ddc1d884a2b7da0919947_MD5|800"
 &lt;/h1>&lt;p>过程中发现，还有一些事情可以交给 Cursor，能解决的很好。&lt;/p>
 &lt;h2 id="1整理代码变得更整洁些">1、整理代码，变得更整洁些
 &lt;/h2>&lt;p>有一招简单的小技巧，可以让 Cursor 帮你整理下代码（至少看起来不像刚入门的人写的水平）：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/ed005e1d1081f932d31c31ae426b6f24.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/ed005e1d1081f932d31c31ae426b6f24.webp"
 width="700"
 loading="lazy"
 alt="3c5dbaed0244273f9faac47623a5c284_MD5|700"
 >&lt;br>
 以及：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/d72c40dd0185031bddc7b1ca07d1ecdf.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/d72c40dd0185031bddc7b1ca07d1ecdf.webp"
 width="700"
 loading="lazy"
 alt="64f0e1e71796b58da1d0939017c89c96_MD5|700"
@@ -3835,51 +3835,51 @@ Prompt:&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="2解决拼写问题">2、解决拼写问题
 &lt;/h2>&lt;p>比如这个 README，我们研发同学写的比较匆忙，有比较多的拼写或表达上的问题，https://github.com/coze-dev/coze-java/pull/3/files ，用 cursor 一键完成修改，重点是它能发现 README 里的示例代码中，用的字段名不正确的问题：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/a2a57432caf6934023aca6188eb999b2.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/a2a57432caf6934023aca6188eb999b2.webp"
 width="800"
 loading="lazy"
 alt="67eef2544216d5bc05746b5e1f26b2b5_MD5|800"
-> &lt;img src="https://cdn.ethango.top/2025/01/90d987a8fead9f2db45c1afd91824e58.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/90d987a8fead9f2db45c1afd91824e58.webp"
 width="700"
 loading="lazy"
 alt="09bbb3747c1a278eef3f672f204c3f79_MD5|700"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/55496ca31ffb05f169c550e905810115.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/55496ca31ffb05f169c550e905810115.webp"
 width="700"
 loading="lazy"
 alt="41011b38b591252aea92768c14e304c2_MD5|700"
 >&lt;/p>
 &lt;h2 id="3批量修改小问题">3、批量修改小问题
 &lt;/h2>&lt;p>遇到问题比较多的时候，直接截图，丢给 cursor，它会一个个帮你改。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/ae4af222ea296426b04ddd084b1ddfd0.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/ae4af222ea296426b04ddd084b1ddfd0.webp"
 width="500"
 loading="lazy"
 alt="f77a083c5ee957658f80d19e5582c6f1_MD5|500"
-> &lt;img src="https://cdn.ethango.top/2025/01/2b61dce38f2bd6f806ffc42af1da764b.webp"
+> &lt;img src="https://cdn.lyb.pub/2025/01/2b61dce38f2bd6f806ffc42af1da764b.webp"
 width="500"
 loading="lazy"
 alt="4afb655c9393f474cadb8c0f6f4241b5_MD5|500"
 >&lt;br>
 还有一个技巧是，让它参考其它同类的代码来实现：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/406acbce7072a3e2cadf3a5c6ebe34da.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/406acbce7072a3e2cadf3a5c6ebe34da.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
 以及：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/8e6d7d1522cd199bba69fd23f96b799d.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/8e6d7d1522cd199bba69fd23f96b799d.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;/p>
 &lt;p>还有一次给我引入了 java 包，在 common 里：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/3c13e95894243029f6d9878688fa5b47.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/3c13e95894243029f6d9878688fa5b47.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;br>
 不太合理，这时就要让他修正下，同时我也丢给它一个 KMP 官方给的参考，让它照着改，这总不会再弄错吧。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/a4a4c7a782729d0a708fbd710c1dd048.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/a4a4c7a782729d0a708fbd710c1dd048.webp"
 width="600"
 loading="lazy"
 alt="|600"
@@ -3888,18 +3888,18 @@ alt="|600"
 &lt;p>下面的例子，是我开发另一个 Coze 插件时遇到的，顺便都整合到这个文档里、不单独拆开了。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="4强有力的工具logging">4、强有力的工具：logging
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/efb2c1134ac77e7c50e5248f01c62265.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/efb2c1134ac77e7c50e5248f01c62265.webp"
 width="500"
 loading="lazy"
 alt="05b5da00f57db097cdb439b39e55cfdb_MD5|500"
 >&lt;br>
 我连续让它改了很多次（不下 10 次），它也换了好几种实现方法，都不行。后来我提示他是否需要再加一些打印来定位问题，然后他发现确实应该这样。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/53f82d55f491285c2ee9132dd69636db.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/53f82d55f491285c2ee9132dd69636db.webp"
 width="500"
 loading="lazy"
 alt="35c347109c19e7421b89c2ff4a705ed0_MD5|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/f18aa994a02b7255bed74408f76f80fc.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/f18aa994a02b7255bed74408f76f80fc.webp"
 width="500"
 loading="lazy"
 alt="accbaf51486af45cdbec970b93dbeb8e_MD5|500"
@@ -3912,7 +3912,7 @@ alt="accbaf51486af45cdbec970b93dbeb8e_MD5|500"
 &lt;/ul>
 &lt;h2 id="5思考并引导">5、思考并引导
 &lt;/h2>&lt;p>有的时候，Cursor 掉坑里去了，试了一二十次了，都不太行。后来我想到一个重要的信息，给他补充了下，结果不到 5 次就跑起来了，方向对了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/be8fdee4ad64d56b435aab0e2ceb9ac4.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/be8fdee4ad64d56b435aab0e2ceb9ac4.webp"
 width="500"
 loading="lazy"
 alt="9a7218f4b8ab4400b9a059cca2dfbea6_MD5|500"
@@ -3921,7 +3921,7 @@ alt="9a7218f4b8ab4400b9a059cca2dfbea6_MD5|500"
 &lt;p>这从里来看，Cursor 并不能让完全不懂代码的人来写出各种复杂的逻辑，甚至一些看似简单、但潜藏着很多细节的功能，他们也很难很难搞定。&lt;strong>所以广大程序员，暂时还能松一口气&lt;/strong>。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="6及时给反馈有时能有些惊喜">6、及时给反馈，有时能有些惊喜
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/2025/01/964e3bd7d40baea9275703a22dba7fb4.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/964e3bd7d40baea9275703a22dba7fb4.webp"
 width="500"
 loading="lazy"
 alt="4c72cba33e74267f72c6e802ba14b6ff_MD5|500"
@@ -3986,18 +3986,18 @@ alt="4c72cba33e74267f72c6e802ba14b6ff_MD5|500"
 &lt;/div>&lt;p>原因主要是：iOS 系统默认信任一系列常见的证书颁发机构（CA）所颁发的证书，但如果服务器使用的是比较小众或者自签名的证书，iOS 设备可能不会自动信任它。上面把 &lt;code>NSExceptionAllowsInsecureHTTPSLoads&lt;/code> =&amp;gt; true，&lt;code>NSExceptionRequiresForwardSecrecy&lt;/code> =&amp;gt; false。&lt;/p>
 &lt;h2 id="语言框架带来的麻烦">语言框架带来的麻烦
 &lt;/h2>&lt;p>开发 KMP 比较麻烦的点是，它动不动就炸 💥💥💥：&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/75eb7e325f7128c528fbfb128db05263.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/75eb7e325f7128c528fbfb128db05263.webp"
 width="800"
 loading="lazy"
 alt="bf7c2bde8023209700897ad92f5412cd_MD5|800"
 >&lt;br>
 Git diff 看不到任何区别，后来查了下，是环境上的包冲突，一不小心装了版本冲突的包就会出问题。版本的匹配关系还有人专门做了个表：https://github.com/realm/realm-kotlin#version-compatibility-matrix 但还是不全，真遇到了问题还是得多试，没啥技术含量。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/01/191bc2fd51984c29da43d5c355562e7b.webp"
+&lt;img src="https://cdn.lyb.pub/2025/01/191bc2fd51984c29da43d5c355562e7b.webp"
 width="500"
 loading="lazy"
 alt="e3c399703cd2afa57208ac3c424603f2_MD5|500"
 >&lt;br>
-上面这个异常，试了很久都没解决（可能是我对 Kotlin 环境不熟悉），后来干脆重建一个目录，把代码原样的 clone 过去，再重新用 Android Studio 加载、编译，居然就好了…… 不知道 Java 类语言的开发者，平时要花多少时间在环境和包依赖上，这些纯属无产出的事情。&lt;/p></description></item><item><title>蓝牙 &amp; wifi - 隔墙传播衰减数据</title><link>https://www.jsongo.top/articles/ble-wifi-decays-through-wall/</link><pubDate>Wed, 25 Dec 2024 01:06:18 +0800</pubDate><guid>https://www.jsongo.top/articles/ble-wifi-decays-through-wall/</guid><description>&lt;img src="https://cdn.ethango.top/banners/437965e93ce93d3c2ca0ebac98d54619.jpeg" alt="Featured image of post 蓝牙 &amp; wifi - 隔墙传播衰减数据" />&lt;h1 id="基础">基础
+上面这个异常，试了很久都没解决（可能是我对 Kotlin 环境不熟悉），后来干脆重建一个目录，把代码原样的 clone 过去，再重新用 Android Studio 加载、编译，居然就好了…… 不知道 Java 类语言的开发者，平时要花多少时间在环境和包依赖上，这些纯属无产出的事情。&lt;/p></description></item><item><title>蓝牙 &amp; wifi - 隔墙传播衰减数据</title><link>https://www.jsongo.top/articles/ble-wifi-decays-through-wall/</link><pubDate>Wed, 25 Dec 2024 01:06:18 +0800</pubDate><guid>https://www.jsongo.top/articles/ble-wifi-decays-through-wall/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/437965e93ce93d3c2ca0ebac98d54619.jpeg" alt="Featured image of post 蓝牙 &amp; wifi - 隔墙传播衰减数据" />&lt;h1 id="基础">基础
 &lt;/h1>&lt;h2 id="发射功率的大概认知">发射功率的大概认知
 &lt;/h2>&lt;ul>
 &lt;li>一般家用 &lt;strong>Wifi&lt;/strong> 的发射功率在 13 ~ 20dBm 左右&lt;/li>
@@ -4011,7 +4011,7 @@ alt="e3c399703cd2afa57208ac3c424603f2_MD5|500"
 &lt;h2 id="换算">换算
 &lt;/h2>&lt;ul>
 &lt;li>在中国，无线路由器发射功率一般不超过 100mW（毫瓦）。功率（P）与分贝毫瓦（dBm）的换算公式为：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/b4371d0440c37ebc53e0c2329eb832b0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/b4371d0440c37ebc53e0c2329eb832b0.webp"
 width="400"
 loading="lazy"
 alt="|400"
@@ -4079,7 +4079,7 @@ alt="|400"
 &lt;p>5GHz 频段的信号波长更短，更容易被障碍物阻挡&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Cron 表达式</title><link>https://www.jsongo.top/articles/cron-syntax/</link><pubDate>Wed, 18 Dec 2024 00:55:38 +0800</pubDate><guid>https://www.jsongo.top/articles/cron-syntax/</guid><description>&lt;img src="https://cdn.ethango.top/banners/91668e623e452ebc624daa105d2f82c2.jpg" alt="Featured image of post Cron 表达式" />&lt;p>平时工作中，可能会时不时碰到像 &lt;code>0 */5 * * * *&lt;/code> 这种 Cronjob 定时任务的配置，特别是运维和服务端的同学，经常会打交道。本文只是最基础的用法，后面有新内容再补充，仅作为自己学习、记录、备忘的文档沉淀下。&lt;/p>
+&lt;/div></description></item><item><title>Cron 表达式</title><link>https://www.jsongo.top/articles/cron-syntax/</link><pubDate>Wed, 18 Dec 2024 00:55:38 +0800</pubDate><guid>https://www.jsongo.top/articles/cron-syntax/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/91668e623e452ebc624daa105d2f82c2.jpg" alt="Featured image of post Cron 表达式" />&lt;p>平时工作中，可能会时不时碰到像 &lt;code>0 */5 * * * *&lt;/code> 这种 Cronjob 定时任务的配置，特别是运维和服务端的同学，经常会打交道。本文只是最基础的用法，后面有新内容再补充，仅作为自己学习、记录、备忘的文档沉淀下。&lt;/p>
 &lt;h1 id="基础语法">基础语法
 &lt;/h1>&lt;h2 id="cron-表达式的基本格式和含义">Cron 表达式的基本格式和含义
 &lt;/h2>&lt;ul>
@@ -4172,7 +4172,7 @@ alt="|400"
 &lt;li>解释：时为 8，分和秒为 0，周为 1-5，表示周一到周五早上 8 点执行。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ol></description></item><item><title>Azure Function Triggers</title><link>https://www.jsongo.top/articles/azure-function-triggers/</link><pubDate>Wed, 18 Dec 2024 00:42:33 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-triggers/</guid><description>&lt;img src="https://cdn.ethango.top/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg" alt="Featured image of post Azure Function Triggers" />&lt;h1 id="触发器各类">触发器各类
+&lt;/ol></description></item><item><title>Azure Function Triggers</title><link>https://www.jsongo.top/articles/azure-function-triggers/</link><pubDate>Wed, 18 Dec 2024 00:42:33 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-function-triggers/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg" alt="Featured image of post Azure Function Triggers" />&lt;h1 id="触发器各类">触发器各类
 &lt;/h1>&lt;p>Azure Function 有多种模板，我们在创建 Function 时，一般会用 &lt;code>--template&lt;/code> 参数要指定用哪个模板。详细的可以参考官方文档：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings" target="_blank" rel="noopener"
 >Triggers and bindings in Azure Functions | Microsoft Learn&lt;/a> 或中文版 &lt;a class="link" href="https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&amp;amp;pivots=programming-language-csharp" target="_blank" rel="noopener"
 >Azure Functions 中的触发器和绑定 | Microsoft Learn&lt;/a>。&lt;br>
@@ -4250,7 +4250,7 @@ alt="|400"
 &lt;li>当定时任务由于某些原因（例如系统负载高、资源暂时不可用等）未能在预定的时间点执行，后面才被触发时，&lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>True&lt;/code>。&lt;/li>
 &lt;li>如果定时任务在预定时间内正常执行，那么 &lt;code>mytimer.past_due&lt;/code> 将为 &lt;code>False&lt;/code>&lt;br>
 现在 &lt;code>my_polling&lt;/code> 函数里，我们可以添加一些对其它 Azure Function 的调用，由此来处理其它任务的定时执行。这样由两个触发器配合来完成特定任务。当然把逻辑全与在 Timer Trigger 里也不是不行，只不过解耦开之后，Http Trigger 还能被单独使用。&lt;/li>
-&lt;/ul></description></item><item><title>git 恢复误删笔记or文件</title><link>https://www.jsongo.top/articles/git-recover-notes/</link><pubDate>Tue, 17 Dec 2024 23:34:22 +0800</pubDate><guid>https://www.jsongo.top/articles/git-recover-notes/</guid><description>&lt;img src="https://cdn.ethango.top/banners/6424b2c83ab269ea18c2240356db3b9d.jpg" alt="Featured image of post git 恢复误删笔记or文件" />&lt;p>自从改用 Obsidian 来做笔记后，再也不怕文件丢失了，特别是我有了 git 来管理文件后，不小心删掉一些文件也都能找回来，即使是 100 天前删除的都行，非常方便。&lt;/p>
+&lt;/ul></description></item><item><title>git 恢复误删笔记or文件</title><link>https://www.jsongo.top/articles/git-recover-notes/</link><pubDate>Tue, 17 Dec 2024 23:34:22 +0800</pubDate><guid>https://www.jsongo.top/articles/git-recover-notes/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/6424b2c83ab269ea18c2240356db3b9d.jpg" alt="Featured image of post git 恢复误删笔记or文件" />&lt;p>自从改用 Obsidian 来做笔记后，再也不怕文件丢失了，特别是我有了 git 来管理文件后，不小心删掉一些文件也都能找回来，即使是 100 天前删除的都行，非常方便。&lt;/p>
 &lt;div class="admonition tip">
 &lt;div class="details-summary admonition-title">
 &lt;i class='icon fas fa-lightbulb fa-fw'>&lt;/i>
@@ -4282,13 +4282,13 @@ alt="|400"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>结果：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/95c7302d5fa881834bb45c88c8115cb2.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/95c7302d5fa881834bb45c88c8115cb2.webp"
 width="725"
 loading="lazy"
 alt="|725"
 >&lt;br>
 可以看到，当时把这个文件给删掉了。再往上看，可以找到第一条 commit，这就是它创建的那个提交，还能看到是什么时候提交的：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/861fa74e3155d6e84b9e6ffba287e05e.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/861fa74e3155d6e84b9e6ffba287e05e.webp"
 width="725"
 loading="lazy"
 alt="|725"
@@ -4342,14 +4342,14 @@ alt="|725"
 &lt;li>&lt;code>new year's eve 2022&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.ethango.top/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
+&lt;/ul></description></item><item><title>Azure Function + Mysql 入门</title><link>https://www.jsongo.top/articles/azure-serverless-mysql/</link><pubDate>Mon, 16 Dec 2024 13:39:37 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless-mysql/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/0dba76ff89c558a40825ce7e7a507005.jpg" alt="Featured image of post Azure Function + Mysql 入门" />&lt;blockquote>
 &lt;p>在 Azure Function 上使用 mysql DB，具体可以参考：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&amp;amp;pivots=programming-language-python" target="_blank" rel="noopener"
 >Azure Database for MySQL bindings for Functions | Microsoft Learn&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="mysql-申请">Mysql 申请
 &lt;/h1>&lt;h2 id="免费额度">免费额度
 &lt;/h2>&lt;p>免费用户其实还是有不少额度可以使用：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/31a8630222aa9b38aa0c6bedb54fb61e.webp"
 width="650"
 loading="lazy"
 alt="|650"
@@ -4362,31 +4362,31 @@ alt="|650"
 &lt;h2 id="添加一个实例">添加一个实例
 &lt;/h2>&lt;ul>
 &lt;li>打开：[[https://portal.azure.com/#browse/Microsoft.DBforMySQL%2Fservers]]，点 &lt;code>Quick Create&lt;/code>。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/a1e23752568d6a93c878dcf2864d5a30.webp"
 loading="lazy"
 >&lt;/li>
 &lt;li>简单填写下信息就行：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/4fee17d9e7f06b0c894723a5a2cc1c18.webp"
 loading="lazy"
 >&lt;/li>
 &lt;li>下一步、创建，等几分钟就创建成功了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/aab8b78c940e753bc5de50a461d49053.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/aab8b78c940e753bc5de50a461d49053.webp"
 loading="lazy"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="简单使用">简单使用
 &lt;/h1>&lt;h2 id="手动连接">手动连接
 &lt;/h2>&lt;p>在本地默认是连接不上的， azure 为了安全，对访问做了限制，可以通过 zero trust 网络来接入，当然也可以简单的设置下网络、放行你的 ip：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/da949ffb37dbb360bb9e563577f2adf8.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/da949ffb37dbb360bb9e563577f2adf8.webp"
 loading="lazy"
 >&lt;br>
 不过其实还有更简单的方式，直接在页面上打开连接：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/34cdbaccec72321f854ea1da97fac0b4.webp"
 loading="lazy"
 >&lt;br>
 连接时，它会弹出一个 terminal，然后自动运行 mysql 命令进行连接。实际上，这个时候还连不上，即使你密码输入正确了也不行，它需要验证证书（也是为了安全）。&lt;br>
 证书可以从这里下载：[[https://learn.microsoft.com/zh-cn/azure/mysql/flexible-server/how-to-connect-tls-ssl#download-the-public-ssl-certificate]] ，或者直接用我下图中的 wget 命令即可。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/de4826c732a4f7e2e09f0280c58246a3.webp"
 width="725"
 loading="lazy"
 alt="|725"
@@ -4413,7 +4413,7 @@ alt="|725"
 &lt;/div>&lt;p>然后就可以切到这个 db 上使用了：&lt;code>use xxx&lt;/code>。&lt;/p>
 &lt;h2 id="mac-上连接">Mac 上连接
 &lt;/h2>&lt;p>如果是在 mac 上安装 mysql 客户端的话，用 brew install 会非常慢，直接到这个地址上去下载一个客户端：&lt;a class="link" href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener"
->Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.ethango.top/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;div class="admonition note">
+>Download MySQL Community Server&lt;/a>&lt;/p></description></item><item><title>免费的花生壳 - cloudflared</title><link>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</link><pubDate>Sun, 15 Dec 2024 16:03:07 +0800</pubDate><guid>https://www.jsongo.top/articles/build-a-cloudflared-tunnel/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/f53c5884b5505531f32ad8fa0fc57247.jpg" alt="Featured image of post 免费的花生壳 - cloudflared" />&lt;div class="admonition note">
 &lt;div class="details-summary admonition-title">
 &lt;i class='icon fas fa-pencil-alt fa-fw'>&lt;/i>
 花生壳&lt;br
@@ -4440,7 +4440,7 @@ alt="|725"
 &lt;/h1>&lt;h2 id="注册一个-tunnel">注册一个 Tunnel
 &lt;/h2>&lt;p>到 &lt;a class="link" href="https://dash.teams.cloudflare.com/%e2%81%a0" target="_blank" rel="noopener"
 >Cloudflare One&lt;/a> 上注册一个 Cloudflare Zero Trust 域名，选 Free 就可以了&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/420352862a7523747b97d596ff767b81.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/420352862a7523747b97d596ff767b81.webp"
 loading="lazy"
 alt="|675|0x0"
 >&lt;br>
@@ -4451,19 +4451,19 @@ alt="|675|0x0"
 &lt;/blockquote>
 &lt;h2 id="创建-tunnel">创建 Tunnel
 &lt;/h2>&lt;p>在下图中的菜单里找到创建的地方，选 Cloudflared。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/5b690dff91048eeaeb5663f168c837a2.webp"
 width="875"
 loading="lazy"
 alt="|875"
 >&lt;br>
 自己取一个名字（不跟别人重复就行）&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/8652218a31d2d78c56aa4f0a43edcf8d.webp"
 width="900"
 loading="lazy"
 alt="|900"
 >&lt;br>
 下一步，取得 token：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/29b1a001c14459ba21b349c12cb4288d.webp"
 width="925"
 loading="lazy"
 alt="|925"
@@ -4511,25 +4511,25 @@ alt="|925"
 &lt;/div>&lt;p>其中，xxx 换成你自己的 token。&lt;br>
 如果你家里有个服务器或 NAS，其实 docker 是比较合适的，它可以一直在线跑。&lt;br>
 创建完之后，在同一个界面里可以看到已经有一个设备连接上来了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/3c23fd4e318bb3198e69dd369ed24c29.webp"
 width="725"
 loading="lazy"
 alt="|725"
 >&lt;br>
 再下一步，public hostnames 里添加一个你转到 cloudflare 来解析的域名，加一个子域名。同时 Service 填写你内网的某个服务的地址，如你的 nginx 网关等。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/0e9d6a0c0afadbd8100b681aab58a962.webp"
 width="875"
 loading="lazy"
 alt="|875"
 >&lt;br>
 再下一步就回到了列表页，可以看到你的 tunnel 已经在跑了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/f39e1282f64410a6862142f136b7108b.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/f39e1282f64410a6862142f136b7108b.webp"
 width="850"
 loading="lazy"
 alt="|850"
 >&lt;br>
 回到你的 cloudflare DNS 配置页面，可以看到它帮你添加了一个 CNAME，说明已经成功了&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/292affb6bfeac40389684bb915b7bce0.webp"
 width="875"
 loading="lazy"
 alt="|875"
@@ -4537,7 +4537,7 @@ alt="|875"
 &lt;a class="link" href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/routing-to-tunnel/dns/" target="_blank" rel="noopener"
 >DNS records · Cloudflare Zero Trust docs&lt;/a> 这条 CNAME 的规则是：&lt;code>&amp;lt;Tunnel ID&amp;gt;.cfargotunnel.com&lt;/code> ，这个 Tunnel ID 可以在上方的截图中找到。所以手动配置也行。
 现在你可以用刚配置的域名来访问你的内网服务了。网速很快。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/7063c449ce57a9dfa970e2e9c6916d9e.webp"
 width="750"
 loading="lazy"
 alt="|750"
@@ -4545,15 +4545,15 @@ alt="|750"
 &lt;h2 id="优化网络连接">优化网络连接
 &lt;/h2>&lt;p>如果你的服务需要耗时比较久，比如 git 服务，有时你拉内容的时候都要好几分钟，那就需要设置连接和超时时长了。&lt;br>
 在上面我们配置 publish hostname 时，下方其实还有高级配置，如下图位置：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/321e5240cb520e8f255d0afad7893609.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/321e5240cb520e8f255d0afad7893609.webp"
 loading="lazy"
 alt="|725|725x580"
 >&lt;br>
 调整下 timeout 的时长（默认 30s），超过 30 秒就自动关闭链接了，所以这个地方可以适当调大一些。&lt;/p>
 &lt;h2 id="header">Header
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/upic/1744470864_fTcwVf.png"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/upic/1744470864_fTcwVf.png"
 loading="lazy"
->&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.ethango.top/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
+>&lt;/p></description></item><item><title>azure serverless 使用</title><link>https://www.jsongo.top/articles/azure-serverless/</link><pubDate>Sat, 14 Dec 2024 01:33:06 +0800</pubDate><guid>https://www.jsongo.top/articles/azure-serverless/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg" alt="Featured image of post azure serverless 使用" />&lt;h1 id="基础工具">基础工具
 &lt;/h1>&lt;p>Mac 上直接装：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -4581,26 +4581,26 @@ loading="lazy"
 >Create a Python function using Visual Studio Code - Azure Functions | Microsoft Learn&lt;/a>&lt;/p>
 &lt;h2 id="简介">简介
 &lt;/h2>&lt;p>在 vscode 中安装插件：Azure Functions&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/fb2e0acc105d63d085c40bdd1920f6a2.webp"
 width="425"
 loading="lazy"
 alt="|425"
 >&lt;br>
 切到这个插件去点击添加一个函数，一步步往下都有说明，比较简单。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/ea7349816d01aa7f064eebb26475e767.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/ea7349816d01aa7f064eebb26475e767.webp"
 width="300"
 loading="lazy"
 alt="|300"
 >&lt;br>
 我选了 HTTP 触发器的模板，最后给我生成了这个文件：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/92942fa30fb661c19c1901c6df0f73ee.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;/p>
 &lt;h2 id="调试运行">调试运行
 &lt;/h2>&lt;p>简单的运行，可以用插件面板上，下半部分中的 Project 展开，里面有个调试相关的操作（它可点击）。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/b1f01eb135df433a4a2f8b9e91904dbb.webp"
 width="850"
 loading="lazy"
 alt="|850"
@@ -4616,7 +4616,7 @@ alt="|850"
 &lt;/div>
 &lt;/div>&lt;p>本地调试时，其实已经默认把 AZURE_FUNCTIONS_ENVIRONMENT 这个变量设置为 &lt;code>Development&lt;/code> 了，如果你修改代码，它会触发服务的重启，非常方便。&lt;br>
 它同时生成一个链接可以直接点击，它会触发函数执行：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/fe3b5f734dbe003a59b09c561687bf88.webp"
 width="650"
 loading="lazy"
 alt="|650"
@@ -4652,27 +4652,27 @@ alt="|650"
 &lt;h1 id="部署">部署
 &lt;/h1>&lt;h2 id="平台创建应用">平台创建应用
 &lt;/h2>&lt;p>先打开 [[https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp]] 这个 portal 地址，创建一个 &lt;code>Function App&lt;/code> （或者中文叫“函数应用”）。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/8c7facddd451e9fca9cba01e0b045eac.webp"
 width="575"
 loading="lazy"
 alt="|575"
 >&lt;/p>
 &lt;h2 id="plugin">Plugin
 &lt;/h2>&lt;p>正式部署前，肯定是需要先登录的。正常是可以在插件上操作，如下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/91ce1f913a33cb8ab6d9d64480929b25.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
 如果不成功，可以用下文 CLI 的方法来登录。&lt;br>
 选择 Deploy to Function App，直接进行部署。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/bda580eaff46be66e6353ae23f839da6.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/bda580eaff46be66e6353ae23f839da6.webp"
 width="700"
 loading="lazy"
 alt="|700"
 >&lt;br>
 我在使用的时候，经常遇到网络问题，因为某些你懂的原因，所以挺难的，得给 vscode 设置 Proxy (具体就不介绍了)&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/628fc45d846b96aa8dd84a59bc7f7ff7.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -4689,13 +4689,13 @@ alt="|700"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>运行时，它会打开一个网页进行登录授权&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/e473747eb42ae1af27de1a51d5d59e94.webp"
 width="750"
 loading="lazy"
 alt="|750"
 >&lt;br>
 命令行也会有一堆打印，有如下关键信息就说明已经登录成功了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/6d649277ba0edb949dfeb3bb2f736a94.webp"
 width="900"
 loading="lazy"
 alt="|900"
@@ -4713,68 +4713,68 @@ alt="|900"
 &lt;/div>&lt;p>具体细节可以参考这里：&lt;a class="link" href="https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?toc=/azure/developer/python/toc.json&amp;amp;bc=/azure/developer/python/breadcrumb/toc.json&amp;amp;tabs=macos,bash,azure-cli,browser" target="_blank" rel="noopener"
 >Create a Python function from the command line - Azure Functions | Microsoft Learn&lt;/a>&lt;br>
 这里的 &lt;code>project_name&lt;/code> 跟在平台上创建的应用名要保持一致，要不然会找不到这个 App 而发布失败。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/8ae08faed3138aeebf5aab5a595ebe9e.webp"
 width="775"
 loading="lazy"
 alt="|775"
 >&lt;br>
 另外还有一点要注意的是，本地的 python 环境需要跟平台上的一致，避免本地跑的好好的、部署上去就缺一些模块：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/d4c8cfd171f834123918d1a99265533f.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/d4c8cfd171f834123918d1a99265533f.webp"
 width="675"
 loading="lazy"
 alt="|675"
 >&lt;br>
 部署完会生成一个地址可供访问：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/3ac8969d54d4b231a0dad35cec82b39c.webp"
 width="800"
 loading="lazy"
 alt="|800"
 >&lt;br>
 部署的过程是会比较慢，我们从平台的部署日志中可以看到它部署完后，会等待 1 分钟：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/a945e829b9eace8c1a74fb3afdcc9396.webp"
 width="750"
 loading="lazy"
 alt="|750"
 >&lt;br>
 在线上运行后，可以访问试试。&lt;br>
 线上日志可以在这里看到：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/4ca6c0c355611de0c1b3f2c29ca5f0e7.webp"
 width="725"
 loading="lazy"
 alt="|725"
 >&lt;br>
 不过经常连接不稳定，所以其实可以到另一个地方查看 ：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/be1071dc6f42f0523efb4fcb176d311a.webp"
 width="775"
 loading="lazy"
 alt="|775"
 >&lt;/p>
 &lt;h1 id="重要插件-azurite">重要插件 Azurite
 &lt;/h1>&lt;p>安装另一个三方的 server 运行插件 Azurite，为开发人员提供了一个免费的本地环境，用于测试 Azure Blob、队列存储和表存储应用程序。常用的主要是 MySQL 操作，本地连不上线上 MySQL，它帮你开了一个代理，可以直接把本地调试时写的数据同步到线上。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/02f0caabaf55d3b7cd7d1ae156e1deb3.webp"
 width="550"
 loading="lazy"
 alt="|550"
 >&lt;br>
 如果没有它，本地如果运行定时任务就是出异常：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/bb208c03b576515896aa151e5a12fa6c.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/bb208c03b576515896aa151e5a12fa6c.webp"
 loading="lazy"
 >&lt;br>
 修改下 &lt;code>local.settings.json&lt;/code> 的配置，把 &lt;code>AzureWebJobsStorage&lt;/code> 设置成 &lt;code>&amp;quot;UseDevelopmentStorage=true&amp;quot;&lt;/code>。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/f477dc6f98630c7d9911cd2d28eb7ab5.webp"
 width="550"
 loading="lazy"
 alt="|550"
 >&lt;br>
 打开命令面板，运行 Azurite start 来启动服务&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/e96da6632ab1e656b5bcdb2978135a51.webp"
 width="475"
 loading="lazy"
 alt="|475"
 >&lt;br>
 这时它们的启动非常快，一闪而过，没关系，它已经在跑了。&lt;br>
 比较烦的时，运行时，会在当前目录下生成一些文件：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/d08188a1cf18ec9fc4a3dd1170c2f5e0.webp"
 width="450"
 loading="lazy"
 alt="|450"
@@ -4805,7 +4805,7 @@ alt="|450"
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Fri, 13 Dec 2024 17:29:08 +0800</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.ethango.top/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />&lt;blockquote>
+&lt;/ul></description></item><item><title>读《不上班咖啡馆》的收获</title><link>https://www.jsongo.top/articles/no-work-cafe/</link><pubDate>Fri, 13 Dec 2024 17:29:08 +0800</pubDate><guid>https://www.jsongo.top/articles/no-work-cafe/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/058b101b8325853cf16210d89529ed82.jpg" alt="Featured image of post 读《不上班咖啡馆》的收获" />&lt;blockquote>
 &lt;p>这是这几天在看的一本很有趣的书，有感而发这篇读书笔记&lt;/p>
 &lt;/blockquote>
 &lt;h1 id="概述">概述
@@ -4894,8 +4894,8 @@ alt="|450"
 &lt;li>&lt;strong>专家&lt;/strong>，最终自己的框架已经比大多数人认知更深了，在别人眼里就是半个专家了。&lt;br>
 其实不一定要到了助人者或专家再开始发声，从探索时就可以开始，动手去慢慢打磨、创造一个产品，然后跟着它一起成长。同时也把这个成长的过程分享出来，让初学者都能从中受益。&lt;br>
 这个世界其实初学者（求助者）远远多于其它阶段的人。这就是一个金字塔，越塔尖的人越专业、而大部分人都是在中等以下。所以市场及需求最大的往往都是上面说的“探索家”和“求助者”。&lt;/li>
-&lt;/ul></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.ethango.top/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
-&lt;img src="https://cdn.ethango.top/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
+&lt;/ul></description></item><item><title>踩坑：如何避免被 aws 悄悄地收费</title><link>https://www.jsongo.top/articles/avoid-aws-charges/</link><pubDate>Fri, 13 Dec 2024 15:59:05 +0800</pubDate><guid>https://www.jsongo.top/articles/avoid-aws-charges/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/1f46848857f50464c097c5ea752ee538.jpg" alt="Featured image of post 踩坑：如何避免被 aws 悄悄地收费" />&lt;p>最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
+&lt;img src="https://cdn.lyb.pub/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp"
 loading="lazy"
 alt="a0ca56c580cb92b784f7a891d694a46c_MD5"
 >
@@ -4903,19 +4903,19 @@ EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，
 刚开始进入控制面板首页时，看不到什么异常，点 EC2 也没看到什么不对的地方：&lt;/p>
 &lt;ul>
 &lt;li>这个页面：https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1
-&lt;img src="https://cdn.ethango.top/2024/12/5f2935beac626250341b78204dba3aaa.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/5f2935beac626250341b78204dba3aaa.webp"
 loading="lazy"
 alt="dc4d2f7b2f6541fdf855791c014cd6bc_MD5"
 >
 看起来很正常，也没有实例在跑&lt;/li>
 &lt;li>后来点了 global view 才知道，原来其它区域还有，aws 它是分区域隔离的，我一直在用 us-east 的，所以一直没发现。
-&lt;img src="https://cdn.ethango.top/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/4f04b71f829cf419a34b05797f7e6cd6.webp"
 loading="lazy"
 alt="07fe0255dd659d8be840fad26fa1025a_MD5"
 >
 &lt;a class="link" href="https://us-east-1.console.aws.amazon.com/ec2globalview/home" target="_blank" rel="noopener"
 >这里找 global 使用中的实例&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Daily Meditations - W50</title><link>https://www.jsongo.top/articles/meditations-w50/</link><pubDate>Mon, 09 Dec 2024 13:34:29 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w50/</guid><description>&lt;img src="https://cdn.ethango.top/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Daily Meditations - W50" />&lt;h1 id="职业的本质是什么">职业的本质是什么？
+&lt;/ul></description></item><item><title>Daily Meditations - W50</title><link>https://www.jsongo.top/articles/meditations-w50/</link><pubDate>Mon, 09 Dec 2024 13:34:29 +0800</pubDate><guid>https://www.jsongo.top/articles/meditations-w50/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Daily Meditations - W50" />&lt;h1 id="职业的本质是什么">职业的本质是什么？
 &lt;/h1>&lt;p>&lt;!-- raw HTML omitted -->通过帮别人解决问题来获利。&lt;!-- raw HTML omitted -->&lt;br>
 该给你多少钱，不是你有多厉害，而是别人的问题有多大。&lt;br>
 我们一直以为只有把专业技能，练到炉火纯青的地步才能赚大钱，其实不一定对。不排除这种可能性，那些真正赚钱的是找对了目标问题，然后培养自己能力，最终能越来越好地解决这类问题的人。&lt;br>
@@ -4938,9 +4938,9 @@ alt="07fe0255dd659d8be840fad26fa1025a_MD5"
 &lt;li>刚毕业时，主要的时间都是在学习，边学习还能边赚钱养活自己，这样就够了。&lt;/li>
 &lt;li>等积累多了，成了这方面的资源员工、或团队负责人、或专家，这时你就是在不断运营自己的影响力，让自己被更多人认可，能得到更多的好处。&lt;/li>
 &lt;li>之后离开公司了，你留下来的技能、人脉，这些才是你自己的东西，是真正有价值的。&lt;/li>
-&lt;/ul></description></item><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Fri, 06 Dec 2024 13:08:16 +0800</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.ethango.top/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
+&lt;/ul></description></item><item><title>开发 Office Add-ins 应用（一）：在 word 里使用大模型</title><link>https://www.jsongo.top/articles/office-add-ins-1/</link><pubDate>Fri, 06 Dec 2024 13:08:16 +0800</pubDate><guid>https://www.jsongo.top/articles/office-add-ins-1/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/8c1ce5c3e62a16997b7cf83e5164726c.jpg" alt="Featured image of post 开发 Office Add-ins 应用（一）：在 word 里使用大模型" />&lt;h1 id="介绍">介绍
 &lt;/h1>&lt;p>借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/d306f3c989ebb5b3882644abfbd5a49d.webp"
 width="500"
 loading="lazy"
 alt="b453b1cce3c6e66c8f7ee107a10961d5_MD5|500"
@@ -4966,7 +4966,7 @@ LLM 这两年来的火热，结合强大的内容生产工具套件——Office�
 &lt;/ul>
 &lt;h2 id="why-add-ins">Why Add-ins
 &lt;/h2>&lt;p>官网给了一张图：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/ff7e6c77ddcf6130227a8ba4b47e6875.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/ff7e6c77ddcf6130227a8ba4b47e6875.webp"
 loading="lazy"
 alt="09c7cc8c5fb5ab19a79d21aac9c36d04_MD5"
 >&lt;/p>
@@ -4979,12 +4979,12 @@ alt="09c7cc8c5fb5ab19a79d21aac9c36d04_MD5"
 &lt;h1 id="市场appsource">市场（AppSource）
 &lt;/h1>&lt;p>&lt;a class="link" href="https://appsource.microsoft.com/zh-cn/marketplace/apps?product=office%3Bword&amp;amp;page=1&amp;amp;src=office&amp;amp;corrid=1f1d6156-7354-6d5f-d739-b9841f6e1c48&amp;amp;omexanonuid=&amp;amp;referralurl=&amp;amp;ClientSessionId=e4728826-ce48-4ae1-83a3-f11b7f195f63" target="_blank" rel="noopener"
 >业务应用 - Microsoft AppSource&lt;/a>&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/f4e96ef3446b8a5867243039bbea65ee.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/f4e96ef3446b8a5867243039bbea65ee.webp"
 loading="lazy"
 alt="31a5772abd77fa083a40bbabf855bf21_MD5"
 >&lt;br>
 可以看到已经有很多 AI 应用了，这个截图还只是首页的前几个应用。有不少官方也都上线了 Office Add-ins 应用，比如 Grammarly、Draw.io、Adobe、Wekipedia、Mermaid 等。生态已经比较成熟了。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/4bf99f0f5b0dbfe9c178f6a779071743.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/4bf99f0f5b0dbfe9c178f6a779071743.webp"
 loading="lazy"
 alt="d9eb88a665c0acd52243e001fb941aa8_MD5"
 >&lt;br>
@@ -4992,10 +4992,10 @@ alt="d9eb88a665c0acd52243e001fb941aa8_MD5"
 &lt;h1 id="交互形态">交互形态
 &lt;/h1>&lt;p>目前看到的主要交互形态有：&lt;br>
 1、Excel 等里作为一个嵌入内容显示在表格中。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/0718a4c5c68f59a0dac54be3613db317.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/0718a4c5c68f59a0dac54be3613db317.webp"
 loading="lazy"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/0bdcf9ded954ee9ec42fb3066cf850e8.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -5003,22 +5003,22 @@ alt="|500"
 2、Excel/Word/PPT 中作为侧边窗格可以单独进行交互。&lt;/p>
 &lt;ul>
 &lt;li>这种交互其中有两个操作点，一个是顶部，它也可以触发一个事件；另一个是侧边，本质上它是在侧边开一个类似 Webview 的容器，里面跑 Web 页面。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/8f588b5eba7bcc45fd9d37358ce0ab99.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/43b2b8f25fa14664239034833ae828b9.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/9ae3d75c01e2fae11e25ab81ed8f6340.webp"
 width="500"
 loading="lazy"
 alt="|500"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/328217d99c5ba98b83784ac03fba1858.webp"
 width="500"
 loading="lazy"
 alt="|500"
@@ -5053,11 +5053,11 @@ alt="|500"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">yo office
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.ethango.top/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
+&lt;/div>&lt;p>&lt;img src="https://cdn.lyb.pub/2024/12/308db6a261cf76acf4114a4a78ab2557.webp"
 loading="lazy"
 alt="091737356a84529f6186ece9c4b25f10_MD5"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/41cedbbf9a12160ae1f0e4368a4dc876.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/41cedbbf9a12160ae1f0e4368a4dc876.webp"
 loading="lazy"
 alt="8fc4fc480f6fddbdf826d2095a18622c_MD5"
 >&lt;br>
@@ -5069,7 +5069,7 @@ alt="8fc4fc480f6fddbdf826d2095a18622c_MD5"
 &lt;h3 id="vs-codecursor-开发插件">Vs code/cursor 开发插件
 &lt;/h3>&lt;p>可以安装下这个：&lt;a class="link" href="https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger" target="_blank" rel="noopener"
 >Microsoft Office Add-ins Development Kit&lt;/a>&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/94b2a20f155e46bba502cec36e009b1f.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/94b2a20f155e46bba502cec36e009b1f.webp"
 loading="lazy"
 alt="06ed2b1e5c337d53818b449c6a6ead71_MD5"
 >&lt;br>
@@ -5085,7 +5085,7 @@ alt="06ed2b1e5c337d53818b449c6a6ead71_MD5"
 &lt;/blockquote>
 &lt;ul>
 &lt;li>安装时，公司账号可能会用不了，可能跟公司的安全策略有关。最好切换个人账号。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/766add3fe8dd77c7b29ce094a1f8b986.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/766add3fe8dd77c7b29ce094a1f8b986.webp"
 loading="lazy"
 alt="481f65c8228eb4e2a18b297bba34e058_MD5"
 >&lt;br>
@@ -5093,30 +5093,30 @@ alt="481f65c8228eb4e2a18b297bba34e058_MD5"
 >这里&lt;/a> 或 &lt;a class="link" href="https://appsource.microsoft.com/en-us/product/office/WA104380862" target="_blank" rel="noopener"
 >这里&lt;/a> 来直接下载安装，需要登录，这里如果用公司的账号可能会失败，可以尝试下个人的账号。如果是走的公司内部的采购，有个小技巧：公司内部申请下来之后，用它激活，然后退出登录自己的账号，我这么测试了下，用自己账号依然保持着激活状态，看来它激活的是软件本身，跟账号没关系。&lt;br>
 第一次登录 AppSource 的话，会有一堆流程，一会儿要认证，一会儿要补充信息……&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/ed446538cfc84f72e0e5b86b639fc8ed.webp"
 loading="lazy"
 alt="a5222986bf0607d4b24cef11d34a7e99_MD5"
 >&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/92fa65ed60838d1e687557ce3418cdc6.webp"
 loading="lazy"
 alt="6ce02359d39da2d74996140ea160c735_MD5"
 >&lt;br>
 装完之后，打开 word 就可以看到了：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/8889f62079f35926fb5ab63fe45b0d05.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/8889f62079f35926fb5ab63fe45b0d05.webp"
 loading="lazy"
 alt="02913cb0e00b47cca7a08800297d3910_MD5"
 >&lt;/li>
 &lt;/ul>
 &lt;h2 id="运行">运行
 &lt;/h2>&lt;p>运行起来后，如图所示：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/5020607f6dca911463819e1884f959f0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/5020607f6dca911463819e1884f959f0.webp"
 loading="lazy"
 alt="b71eb2e0a6e37ecb7264538e8b0e8e3c_MD5"
 >&lt;br>
 Word 是自己弹出来的，vscode 插件背后是起了一个 server （默认在 3000 端口），为侧边这个“页面”提供调试服务。&lt;/p>
 &lt;h1 id="限制">限制
 &lt;/h1>&lt;p>从生成的代码中可以看出，微软对 Add-ins 其实做了一些环境限制：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/779ca230a5c6deef84980df0246a0c51.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/779ca230a5c6deef84980df0246a0c51.webp"
 loading="lazy"
 alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 >&lt;br>
@@ -5125,13 +5125,13 @@ alt="8933d8a34dc9ebc2133a5ddb8bbcc6b7_MD5"
 &lt;/h1>&lt;ul>
 &lt;li>&lt;a class="link" href="https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial" target="_blank" rel="noopener"
 >Word add-in tutorial - Office Add-ins | Microsoft Learn&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Fri, 06 Dec 2024 00:56:02 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
+&lt;/ul></description></item><item><title>Claude MCP 体验</title><link>https://www.jsongo.top/articles/claude-mcp-101/</link><pubDate>Fri, 06 Dec 2024 00:56:02 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-mcp-101/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/b87a43aef0ebf4a4d13f45ad57e9b5d2.jpeg" alt="Featured image of post Claude MCP 体验" />&lt;h1 id="概念">概念
 &lt;/h1>&lt;p>MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。&lt;br>
 这是一个非常重要的协议，刚发布的时候，x 上大家都乐开了花，一个比较典型的说法是“&lt;a class="link" href="https://x.com/eviljer/status/1861333739730804848" target="_blank" rel="noopener"
 >村里通网了 - Claude MCP 开启数据连接和操作的新宇宙&lt;/a>”。我一直认为，LLM 要能跟外界真正的能交互起来才能有更大的想像空间。之前见过一些有趣的如操作电脑的辅助 LLM 的工作，还有一些辅助浏览器操作的插件，这次是从协议上就定出一个标准，大家只要按照标准来，都可以相互打通。&lt;/p>
 &lt;h1 id="功能">功能
 &lt;/h1>&lt;h2 id="介绍">介绍
-&lt;/h2>&lt;p>&lt;img src="https://cdn.ethango.top/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
+&lt;/h2>&lt;p>&lt;img src="https://cdn.lyb.pub/2024/11/88311bd3dfca6df4998441df0654ee91.webp"
 width="850"
 loading="lazy"
 alt="图片来自 x|850"
@@ -5281,7 +5281,7 @@ Prompt Demo:&lt;br>
 &lt;code>Can you connect to my SQLite database and tell me what products are available, and their prices?&lt;/code>&lt;/p>
 &lt;h1 id="原理">原理
 &lt;/h1>&lt;p>其实就是加了一个 MCP server 作为本地代理，架构如下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/fe0e494830be8e36f62559f1729cb921.webp"
 width="725"
 loading="lazy"
 alt="|725"
@@ -5291,7 +5291,7 @@ MCP 是一个开放协议：&lt;/p>
 &lt;li>首先会建立与外部数据源的连接。它使用预定义的接口和数据格式来识别和访问这些外部源。例如，当需要从一个关系型数据库获取信息来为语言模型（LLM）提供上下文时，MCP 会通过数据库驱动程序按照数据库的协议（如 SQL）进行通信，检索数据。&lt;/li>
 &lt;li>另一方面 MCP 也类似 Prompt 模板一样，提供了&lt;strong>动态上下文构建&lt;/strong>的能力： - MCP 能够留空的方式，动态地构建上下文。 - 例如，在聊天界面应用中，当用户询问一个关于特定产品的问题时，MCP 可以快速从产品数据库中获取产品的规格、用户评价等相关信息，并将这些信息组合成一个有意义的上下文提供给 LLM。 - 还可以根据用户的交互历史来调整上下文。&lt;br>
 它本身会不断更新和优化提供给 LLM 的上下文，确保 LLM 能够跟上用户的思路，通过这些方式，MCP 能提高 LLM 的工作效率和回答质量。&lt;/li>
-&lt;/ul></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Sun, 01 Dec 2024 11:29:47 +0800</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.ethango.top/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
+&lt;/ul></description></item><item><title>图像生成：角色场景形象适配</title><link>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</link><pubDate>Sun, 01 Dec 2024 11:29:47 +0800</pubDate><guid>https://www.jsongo.top/articles/ipadapter-lora-controlnet/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/3c463375cc35ddc5e78d71b95ddcbd51.jpeg" alt="Featured image of post 图像生成：角色场景形象适配" />&lt;hr>
 &lt;h1 id="几种方案">几种方案
 &lt;/h1>&lt;h2 id="ip-adapter">IP-Adapter
 &lt;/h2>&lt;ul>
@@ -5353,7 +5353,7 @@ MCP 是一个开放协议：&lt;/p>
 &lt;h3 id="模型参数小">模型参数小
 &lt;/h3>&lt;p>IP-Adapter 本身的模型参数只有 22M，存储占用小，对硬件资源的要求相对较低，在普通的硬件设备上也能够较为流畅地运行，降低了使用门槛，更便于广泛应用和推广。&lt;/p>
 &lt;h1 id="方案选择">方案选择
-&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
+&lt;/h1>&lt;p>最终还是决定先用 IP-Adapter 来推进。&lt;/p></description></item><item><title>Flux 图像生成模型</title><link>https://www.jsongo.top/articles/flux-101/</link><pubDate>Sun, 24 Nov 2024 23:31:34 +0800</pubDate><guid>https://www.jsongo.top/articles/flux-101/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg" alt="Featured image of post Flux 图像生成模型" />&lt;h1 id="flux-基础">Flux 基础
 &lt;/h1>&lt;blockquote>
 &lt;p>Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。&lt;br>
 性能和效果可以与 Midjourney V6 媲美。&lt;br>
@@ -5383,7 +5383,7 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;li>&lt;strong>FLUX (schnell)&lt;/strong>：开源模型，可&lt;!-- raw HTML omitted -->商用&lt;!-- raw HTML omitted -->，专门为本地开发和个人使用量身定制，生成速度最快，内存占用最小，是个人用户体验和进行简单开发测试的不错选择。&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Sun, 24 Nov 2024 11:26:10 +0800</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.ethango.top/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
+&lt;/ul></description></item><item><title>初识 Diffusion（概念）</title><link>https://www.jsongo.top/articles/diffusion-101/</link><pubDate>Sun, 24 Nov 2024 11:26:10 +0800</pubDate><guid>https://www.jsongo.top/articles/diffusion-101/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/96539755245eb88510f037ed2d24f60d.jpeg" alt="Featured image of post 初识 Diffusion（概念）" />&lt;p>Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。&lt;/p>
 &lt;h1 id="model--checkpoint">Model &amp;amp; Checkpoint
 &lt;/h1>&lt;p>开源模型发布出来的文件一般都很大，里面包含了很多模型参数、快照等。Model 和 checkpoint 在开源这个层面上，两个概念可以认为大体上是等价的，只不过我们一般不叫 checkpoint，而是说某个 model 开源了。&lt;/p>
 &lt;ul>
@@ -5427,11 +5427,11 @@ Flux 一般通过 ComfyUI 来调用。&lt;/p>
 &lt;p>简单说就是，主要用于处理和理解图像信息，能够提取图像的特征表示，进而与文本特征进行对比和匹配等操作，以实现如根据文本描述生成相应图像、图像分类、图像检索等多种与图像和文本相关的任务&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Fri, 22 Nov 2024 00:48:28 +0800</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.ethango.top/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Tue, 19 Nov 2024 16:36:27 +0800</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.ethango.top/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
+&lt;/div></description></item><item><title>About me</title><link>https://www.jsongo.top/about/</link><pubDate>Fri, 22 Nov 2024 00:48:28 +0800</pubDate><guid>https://www.jsongo.top/about/</guid><description>&lt;img src="https://cdn.lyb.pub/2024/11/57bb06afa963ce540f0629c84f866978.png" alt="Featured image of post About me" />&lt;p>一个很普通的程序员，喜欢折腾，喜欢看书和思考。&lt;/p></description></item><item><title>Stable Diffusion 生图技术（一）</title><link>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</link><pubDate>Tue, 19 Nov 2024 16:36:27 +0800</pubDate><guid>https://www.jsongo.top/articles/stable-diffusion-gen-image-1/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/772c64fbb07e3cd46573602f922a7829.jpg" alt="Featured image of post Stable Diffusion 生图技术（一）" />&lt;h1 id="概述">概述
 &lt;/h1>&lt;h2 id="背景">背景
 &lt;/h2>&lt;p>Stable Diffusion 最初是由德国慕尼黑大学的 CompVis 研究小组、纽约的 RunwayML 公司等组成的国际研究团队开发的，后来 Stability AI 参与其中并推动了其发展。&lt;br>
 Stable Diffusion 的发展历程如下：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/afb65322de6b531c0c01e86e6d27c0e0.webp"
 width="900"
 loading="lazy"
 alt="|900"
@@ -5444,7 +5444,7 @@ alt="|900"
 &lt;li>&lt;strong>反向扩散&lt;/strong>：这是生成图像的关键阶段。从纯噪声开始，模型通过学习到的去噪过程，逐步恢复图像信息。模型会预测每个时间步中需要去除的噪声，经过多个时间步的迭代，最终生成一张类似于训练数据分布的图像。这个过程类似于从无序的噪声中逐渐 “雕刻” 出有意义的图像。&lt;/li>
 &lt;/ul>
 &lt;h1 id="生图过程">生图过程
-&lt;/h1>&lt;p>&lt;img src="https://cdn.ethango.top/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
+&lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/2024/11/d66a5473be54d712b3aa8e879f9a8c3a.webp"
 width="700"
 loading="lazy"
 alt="|700"
@@ -5455,7 +5455,7 @@ alt="|700"
 &lt;/h2>&lt;p>属于 Condition 节点，它用 CLIP 模型对文本 Prompt 进行编码，对模型生成的结果进行方向上的引导，其实可能理解为文本模型中的 embedding。&lt;/p>
 &lt;h2 id="采样">采样
 &lt;/h2>&lt;p>生图其实就是一个反向扩散的过程，从一个完全是噪声的图像开始，通过模型逐步去除噪声来生成图像。这个过程通过一个采样函数来实现，它基于模型预测的噪声来更新噪声图像。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
+&lt;img src="https://cdn.lyb.pub/2024/12/dd2433499e7a9229aa5bd816177c8988.webp"
 loading="lazy"
 >&lt;/p>
 &lt;ul>
@@ -5503,7 +5503,7 @@ loading="lazy"
 &lt;ul>
 &lt;li>1 credit = $0.01&lt;/li>
 &lt;li>这么算，生成一张 SD 3.5 的图片，medium 要 $0.035，差不多 0.25 元，4 张 1 块。&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/207f1abc8b1be591d3f76ec236344c3c.webp"
 width="700"
 loading="lazy"
 alt="736deaffc1c02497df089d14539fba5d_MD5|700"
@@ -5530,13 +5530,13 @@ alt="736deaffc1c02497df089d14539fba5d_MD5|700"
 &lt;li>&lt;strong>UNet&lt;/strong>：在训练过程中，需要对整个网络的参数进行学习和更新，尤其是在处理高分辨率图像或复杂任务时，可能需要大量的训练数据和计算资源。&lt;/li>
 &lt;li>&lt;strong>LoRA&lt;/strong>：通过低秩分解减少了需要训练的参数数量，在对大型预训练模型进行微调时，训练成本显著降低，对数据量的要求也相对较少。&lt;br>
 UNet 的模型一般都比较大：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/8f1f152a35835044e0ea8fc381a9333b.webp"
 width="475"
 loading="lazy"
 alt="|475"
 >&lt;br>
 LoRA 则小很多&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/36b48790266f80b2cb03cfc22ded0f13.webp"
 width="475"
 loading="lazy"
 alt="|475"
@@ -5545,18 +5545,18 @@ alt="|475"
 &lt;h2 id="使用">使用
 &lt;/h2>&lt;p>它们都有 2-Step, 4-Step, 8-Step，其中 1-step 只是实验性的、效果不好、质量不稳定，一般建议用折中的 4-step，如果资源充足可以选质量最好的 8-step。&lt;br>
 ComfyUI 中的使用非常简单：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/fc799454d0483ec8b7fea253e7ce45e4.webp"
 width="675"
 loading="lazy"
 alt="|675"
 >&lt;br>
 如果只是想玩玩，可以直接在 huggingface 上试试：&lt;a class="link" href="https://huggingface.co/spaces/ByteDance/SDXL-Lightning" target="_blank" rel="noopener"
 >SDXL-Lightning spaces&lt;/a> ，效果还是不错的：&lt;br>
-&lt;img src="https://cdn.ethango.top/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
+&lt;img src="https://cdn.lyb.pub/2024/11/22638b08323398c180c2d2ff0d1e59f8.webp"
 width="700"
 loading="lazy"
 alt="|700"
->&lt;/p></description></item><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.ethango.top/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
+>&lt;/p></description></item><item><title>成本思维</title><link>https://www.jsongo.top/articles/thoughts/cost-thinking/</link><pubDate>Sun, 03 Nov 2024 13:35:12 +0800</pubDate><guid>https://www.jsongo.top/articles/thoughts/cost-thinking/</guid><description>&lt;img src="https://cdn.lyb.pub/2024/11/053cc313b6d764b5ee7d6b645fdca2bc.jpg" alt="Featured image of post 成本思维" />&lt;h1 id="成本思维">成本思维
 &lt;/h1>&lt;p>大多数看起来有所利益的事情，肯定有成本，而且有风险。风险本质上也是一种成本。&lt;br>
 用成本 + 风险的思维来看问题，不要只想着好处。成本和风险往往是在巨大的利益面前，特别容易被忽视的东西。&lt;br>
 塔勒布在《非对称风险》中表达了一个观点，他反复提到在真实的世界里，一定要风险共担，如果有人不愿意承担风险，却要享受好处，这样的人是有问题的。&lt;/p>
@@ -5611,7 +5611,7 @@ alt="|700"
 不过不管怎么样，保住本金还是第一要务，不要乱投，耐心地蹲守、观察，找准时机再动手。&lt;/p>
 &lt;blockquote>
 &lt;p>投资的第一条原则 ，永远不要失去本金；第二条原则，牢牢记住第一条。—— 巴菲特&lt;/p>
-&lt;/blockquote></description></item><item><title>打开心智 - 读书笔记</title><link>https://www.jsongo.top/articles/unlock-the-mind/</link><pubDate>Tue, 29 Oct 2024 00:08:41 +0800</pubDate><guid>https://www.jsongo.top/articles/unlock-the-mind/</guid><description>&lt;img src="https://cdn.ethango.top/2024/11/82c4155b2681df9665519ffb08d4e346.jpeg" alt="Featured image of post 打开心智 - 读书笔记" />&lt;h1 id="一如何阅读">一、如何阅读
+&lt;/blockquote></description></item><item><title>打开心智 - 读书笔记</title><link>https://www.jsongo.top/articles/unlock-the-mind/</link><pubDate>Tue, 29 Oct 2024 00:08:41 +0800</pubDate><guid>https://www.jsongo.top/articles/unlock-the-mind/</guid><description>&lt;img src="https://cdn.lyb.pub/2024/11/82c4155b2681df9665519ffb08d4e346.jpeg" alt="Featured image of post 打开心智 - 读书笔记" />&lt;h1 id="一如何阅读">一、如何阅读
 &lt;/h1>&lt;h2 id="避免做题式的阅读那到底要怎么读怎么用这个方法来改变我的阅读习惯">避免做题式的阅读，那到底要怎么读，怎么用这个方法来改变我的阅读习惯？
 &lt;/h2>&lt;h3 id="避免备考式的阅读">避免备考式的阅读
 &lt;/h3>&lt;p>之前看书，大都是从头看到尾，没意识地想去把整本书的结构都理清楚，最后还会把所有的重点都整理出来、形成一个比较大的笔记。&lt;br>
@@ -5808,7 +5808,7 @@ alt="|700"
 4、设定界限&lt;br>
 得知道自己这周有哪些非常重要的事，必须要完成，得用多少时间，这些时间是被“锁住”的，然后这周还剩多少时间，心里得有这个大概的度量。&lt;br>
 之后有个什么事过来，如果剩下的时间不太够了，那就可能要想办法拒绝、或转手，有这个界限就会让自己有个衡量的标准，而不会一直是迷茫的状态，不清楚做了这个事还有没有时间做其它事。这些事先就要先估好。&lt;br>
-事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.ethango.top/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
+事情永远做不完，也不盘的很细，每天要什么事，做完才能回家。算到这么精细反而挺浪费时间和精力，还不如直接就用事先估好的这个“度”去评估每天是否该下班，是否有些事做不完了、得事先去沟通或安排。&lt;/p></description></item><item><title>优化 .git 目录过大的问题</title><link>https://www.jsongo.top/articles/optimize-large-git-directory/</link><pubDate>Sun, 27 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/optimize-large-git-directory/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c9b66ea1eb0408c5eedd37d7d3b2ea29.jpg" alt="Featured image of post 优化 .git 目录过大的问题" />&lt;h1 id="优化-git-仓库的存储设置">优化 Git 仓库的存储设置
 &lt;/h1>&lt;h2 id="调整-git-gc-参数">调整 &lt;code>git gc&lt;/code> 参数
 &lt;/h2>&lt;ul>
 &lt;li>原理：&lt;code>git gc&lt;/code>（垃圾回收）命令用于清理 Git 仓库中不必要的文件和优化存储。默认情况下，&lt;code>git gc&lt;/code> 会自动运行，但你可以手动调整它的参数来更好地优化仓库。&lt;/li>
@@ -5840,7 +5840,7 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;ul>
 &lt;li>注意事项：浅克隆的仓库不包含完整的提交历史，所以如果需要查看或者恢复更早的提交，就需要重新克隆完整的仓库。并且，浅克隆的仓库在拉取更新时可能会受到一些限制，需要根据实际情况进行调整。&lt;/li>
-&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.ethango.top/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
+&lt;/ul></description></item><item><title>清理 mac 电脑磁盘空间</title><link>https://www.jsongo.top/articles/clean-mac-disk-space/</link><pubDate>Thu, 10 Oct 2024 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/clean-mac-disk-space/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/d8418fa48f2cc793c8f63aa13111635f.png" alt="Featured image of post 清理 mac 电脑磁盘空间" />&lt;p>经常遇到磁盘不够的情况，即使我电脑已经是 512G 的磁盘，还是经常遇到磁盘不足的问题。系统就占了 200G 以上，实在太黑盒了，其它部分一不小心就超出了。所以时不时会研究下怎么清理我的电脑。&lt;br>
 首先，可以先过一遍电脑中的代码，如果用 node 的话，可以把 node_modules 删一删。&lt;/p>
 &lt;h1 id="1-vscode-或-cursor-等">1 、Vscode 或 Cursor 等
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
@@ -5940,7 +5940,7 @@ alt="|700"
 &lt;/div>
 &lt;/div>&lt;h1 id="磁盘">磁盘
 &lt;/h1>&lt;p>比较通用的方法是，从系统磁盘中查看哪个目录占用较大，一层层往下分析。&lt;br>
-&lt;img src="https://cdn.ethango.top/2025/04/e2c574e7ab713206354294e0faac5ae1.webp"
+&lt;img src="https://cdn.lyb.pub/2025/04/e2c574e7ab713206354294e0faac5ae1.webp"
 loading="lazy"
 alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
 >&lt;br>
@@ -5954,7 +5954,7 @@ alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">du -hsx ~/* &lt;span class="p">|&lt;/span> sort -rh &lt;span class="p">|&lt;/span> head -10
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.ethango.top/2025/04/bba67c4fef0813913b1399566d099fc7.webp"
+&lt;/div>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/04/bba67c4fef0813913b1399566d099fc7.webp"
 loading="lazy"
 alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
 >&lt;br>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study/工具/IT on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/</link><description>Recent content in Study/工具/IT on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Feb 2025 11:31:09 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/index.xml" rel="self" type="application/rss+xml"/><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.ethango.top/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Study/工具/IT on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/</link><description>Recent content in Study/工具/IT on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 27 Feb 2025 11:31:09 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/study/%E5%B7%A5%E5%85%B7/it/index.xml" rel="self" type="application/rss+xml"/><item><title>强大的 search 工具 - ag</title><link>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</link><pubDate>Thu, 27 Feb 2025 11:31:09 +0800</pubDate><guid>https://www.jsongo.top/articles/search-tool-ag-the-silver-searcher/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/0b3d83738bddc53706e70a9dfd187061.jpg" alt="Featured image of post 强大的 search 工具 - ag" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -96,7 +96,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ag -0 -g .png$ . &lt;span class="p">|&lt;/span> xargs -0 du -h &lt;span class="p">|&lt;/span> sort -hr
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://cdn.ethango.top/upic/1744522541_8OSi1S.webp"
+&lt;/div>&lt;p>&lt;img src="https://cdn.lyb.pub/upic/1744522541_8OSi1S.webp"
 loading="lazy"
 alt="085e9ed0cac92342df818071b090c46f_MD5.webp|940x235"
 >&lt;/p>
