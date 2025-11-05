@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/折腾/魔法 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/</link><description>Recent content in 互联网/折腾/魔法 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 12 Apr 2025 13:12:08 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E6%8A%98%E8%85%BE/%E9%AD%94%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;h2 id="安装-gui">安装 GUI
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/h2>&lt;p>然后从这里安装 UI：
+&lt;a class="link" href="https://github.com/GUI-for-Cores/GUI.for.SingBox" target="_blank" rel="noopener"
+>GUI for SingBox (github.com)&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -13,26 +16,20 @@
 &lt;/span>&lt;span class="lnt"> 9
 &lt;/span>&lt;span class="lnt">10
 &lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">然后从这里安装&lt;/span> &lt;span class="nx">UI&lt;/span>&lt;span class="err">：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">GUI&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">SingBox&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="p">)](&lt;/span>&lt;span class="nx">https&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="c1">//github.com/GUI-for-Cores/GUI.for.SingBox)
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="sb">```bash
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd GUI.for.SingBox/frontend
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm install
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm build
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd ..
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">wails build
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> GUI.for.SingBox/frontend
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm install
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm build
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wails build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 &amp;quot; 应用程序 &amp;quot; 中就可以了。&lt;/p>
 &lt;h2 id="安装内核">安装内核

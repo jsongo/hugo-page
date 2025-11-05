@@ -584,7 +584,10 @@ alt="|711x658"
 >&lt;br>
 这时就可以用 upic 去上传你的文件了。顺便说一句，upic 可以做截图上传、剪贴板上传，确实好方便。我设置了个快捷键，之后就直接用它来帮我快速做上传就行了。&lt;/p></description></item><item><title>single box 魔法</title><link>https://www.jsongo.top/articles/single-box-magic/</link><pubDate>Sat, 12 Apr 2025 13:12:08 +0800</pubDate><guid>https://www.jsongo.top/articles/single-box-magic/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg" alt="Featured image of post single box 魔法" />&lt;h1 id="安装">安装
 &lt;/h1>&lt;h2 id="安装-gui">安装 GUI
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/h2>&lt;p>然后从这里安装 UI：
+&lt;a class="link" href="https://github.com/GUI-for-Cores/GUI.for.SingBox" target="_blank" rel="noopener"
+>GUI for SingBox (github.com)&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -597,26 +600,20 @@ alt="|711x658"
 &lt;/span>&lt;span class="lnt"> 9
 &lt;/span>&lt;span class="lnt">10
 &lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">然后从这里安装&lt;/span> &lt;span class="nx">UI&lt;/span>&lt;span class="err">：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">GUI&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">SingBox&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="p">)](&lt;/span>&lt;span class="nx">https&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="c1">//github.com/GUI-for-Cores/GUI.for.SingBox)
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="sb">```bash
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd GUI.for.SingBox/frontend
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm install
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">pnpm build
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">cd ..
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sb">wails build
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> GUI.for.SingBox/frontend
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm install
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pnpm build
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wails build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 &amp;quot; 应用程序 &amp;quot; 中就可以了。&lt;/p>
 &lt;h2 id="安装内核">安装内核
@@ -3890,15 +3887,17 @@ alt="|700"
 &lt;/div>&lt;/div>
 &lt;div class="details-content">
 &lt;div class="admonition-content">
-&lt;p>语言、语法不再重要，Cursor 可以把思路和逻辑很好的翻译成代码，但开发者的还是要设计好整个项目的研发框架和方案，然后指挥工具干活。&lt;/p>
+&lt;p>语言、语法不再重要，Cursor 可以把思路和逻辑很好的翻译成代码，但开发者的还是要设计好整个项目的研发框架和方案，然后指挥工具干活。&lt;br>
+开发 KMP 跨端框架的代码，开始时我不懂它的 Kotlin 语法；开发完之后，我依然还不懂怎么写 Kotlin，但不影响我实现相关的功能。&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;/div>&lt;p>开发 KMP 跨端框架的代码，开始时我不懂它的 Kotlin 语法；开发完之后，我依然还不懂怎么写 Kotlin，但不影响我实现相关的功能。&lt;/p>
-&lt;h2 id="感受">感受
-&lt;/h2>&lt;p>cursor 有点像 code review 的交互：&lt;br>
-&lt;img src="https://cdn.lyb.pub/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
+&lt;/div>&lt;h2 id="感受">感受
+&lt;/h2>&lt;blockquote>
+&lt;p>cursor 有点像 code review 的交互：&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/4673799a9001151d68a5ceb7f9de9d51.webp"
 loading="lazy"
-alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
+alt="001aadc69264ca248e71eeee340a33ff_MD5|0|700x316"
 >&lt;br>
 开发时的感受也确实像 Code Review，只不过多了一个“yes or no”的选择操作。认可这个修改点它旁边的 Accept 按钮，觉得不对，就 “Reject”。&lt;/p>
 &lt;h2 id="本文-case-说明">本文 Case 说明
@@ -3917,51 +3916,47 @@ alt="001aadc69264ca248e71eeee340a33ff_MD5|0"
 &lt;li>Cursor Agent：更全面，首先可以让 Agent 读取整个项目文件，快速掌握项目的主要功能和关键文件，也能同时操作多个文件，根据需要增删改，甚至还能对整个项目做分析，帮你优化项目结构等。&lt;br>
 下面例子中 大都基于 Composer 来实现的。下图是一个简单的例子：&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/4eda348bfcc4a6e8a603326467a6840f.webp"
-width="500"
 loading="lazy"
-alt="1145cf430e1f015e5a552747f0f4a7c7_MD5|500"
+alt="1145cf430e1f015e5a552747f0f4a7c7_MD5|500|500x503"
 >&lt;/li>
 &lt;/ul>
 &lt;h1 id="cursor-基于代码生成代码的基本步骤">Cursor 基于代码生成代码的基本步骤
 &lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/2025/01/c9e05dbfde43c7dbb0f8f24909166b6c.webp"
 loading="lazy"
+alt="|700x102"
 >&lt;/p>
-&lt;h2 id="1先把相应的目录结构建好">&lt;strong>1、先把相应的目录结构建好&lt;/strong>
+&lt;h2 id="1先把相应的目录结构建好">1、先把相应的目录结构建好
 &lt;/h2>&lt;p>因为不同的语言，代码组织的习惯和方式都不太一样。要做的第二件事，是先把代码结构先想清楚，然后发给 AI 问下比较合理的结构是什么样。&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/0469fa103c6ebb26a2747e1491292465.webp"
-width="500"
 loading="lazy"
-alt="011aee5c56b4b53497b5d789c0fbeffb_MD5|500"
+alt="011aee5c56b4b53497b5d789c0fbeffb_MD5|500|700x169"
 >&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/0f0fef12795483bddb7e3d4bf5ffa74e.webp"
-width="400"
 loading="lazy"
-alt="4ed11244d635908bdf3aaffee68c1db6_MD5|400"
+alt="4ed11244d635908bdf3aaffee68c1db6_MD5|400|0x0"
 > &lt;img src="https://cdn.lyb.pub/2025/01/71d3277a1c9450424f1175f05714cbd9.webp"
-width="250"
 loading="lazy"
-alt="56695bc97506c77d525a8b7a30786162_MD5|250"
+alt="56695bc97506c77d525a8b7a30786162_MD5|250|250x619"
 >&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/34125f9d5d186efc995f3f421e8ea716.webp"
-width="600"
 loading="lazy"
-alt="3562669265f694cc8e5a37537570e387_MD5|600"
+alt="3562669265f694cc8e5a37537570e387_MD5|600|600x525"
 >&lt;br>
 最后我调整了下，改成上文最后那张图。&lt;/p>
-&lt;h2 id="2实现第一个-demo">&lt;strong>2、实现第一个 Demo&lt;/strong>
+&lt;h2 id="2实现第一个-demo">2、实现第一个 Demo
 &lt;/h2>&lt;p>在我们的例子中，首先要解决的是不同语言里的请求方法不一样，先选一个最简单的请求来跑通流程。&lt;br>
 把 js 里的请求代码找出来，帮 cursor 圈出来（加到上下文里），然后让它实现一个 Kotlin 的请求。&lt;/p>
 &lt;blockquote>
 &lt;p>当时让 Cursor 改了好几版都不能用，主要问题还是在于 KMP 这东西比较新，3.0 又做了大改，引用的包得去做下排列组合。后来在官方文档里找到了 3.0 的正确姿势发请求，把它丢给 Cursor，这时它才写出了正确的请求。&lt;br>
 然后找到最基础的模块，比如本例中我选了 Chat 相关的接口，跑通非 Stream 模式比较简单，所以作为第一个接入。实现后，再研究了下 Kotlin 里怎么实现 SSE（这个 cursor 死活写不出正确的来），也跑通之后，一个模块算是比较完整了。&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="3把这套模块复制到其它模块中">&lt;strong>3、把这套模块复制到其它模块中&lt;/strong>
+&lt;h2 id="3把这套模块复制到其它模块中">3、把这套模块复制到其它模块中
 &lt;/h2>&lt;p>第二个模块选择了 &lt;strong>Auth&lt;/strong> &lt;strong>模块&lt;/strong>，用它来验证第一个模块用到的通用方法是否可迁移。&lt;br>
 首先是让 Cursor 把&lt;strong>请求模块的代码&lt;/strong>抽出来，做成一个通用的请求基类，其它模块继承它就行。把这个思路告诉 Cursor，让它改好后，进入下一步：把 JS 的 auth.ts 代码加入到 Context 中，在相应的目录下新建一个 Auth.kt 的 kotlin 模块，告诉 Cursor &lt;!-- raw HTML omitted -->把 auth 的逻辑从 ts 翻译成 kotlin&lt;!-- raw HTML omitted -->。&lt;br>
 写完后，再在 Demo 文件夹里创建一个 Auth 的 &lt;strong>Demo 文件&lt;/strong>，让 Cursor 仿照 Chat 的 Demo 把 Auth 里的方法都用起来、去生成一个 Auth Demo。这步也做完后，进入第四步。&lt;br>
 到 App 界面中去添加按钮，绑定 Demo，去触发它的方法，验证刚的代码是否可行。&lt;br>
 这一步是最费时间的，因为第一版基本都不行，到处有问题，需要不断的试、不断的 fix bug。好在这些操作也可以让 Cursor 来做。&lt;/p>
-&lt;h2 id="4都开发完之后发包写文档开源">&lt;strong>4、都开发完之后，发包、写文档、开源……&lt;/strong>
+&lt;h2 id="4都开发完之后发包写文档开源">4、都开发完之后，发包、写文档、开源……
 &lt;/h2>&lt;p>这个就不展开了，不是重点，不同语言也不一样，讲这个意义不大。&lt;/p>
 &lt;h1 id="完整例子">完整例子
 &lt;/h1>&lt;p>&lt;strong>让&lt;/strong> &lt;strong>Cursor&lt;/strong> &lt;strong>帮我写&lt;/strong> &lt;strong>Auth&lt;/strong> &lt;strong>模块的代码&lt;/strong>。&lt;br>
@@ -3970,7 +3965,7 @@ alt="3562669265f694cc8e5a37537570e387_MD5|600"
 &lt;/h2>&lt;p>找到主入口文件，这个例子中，是 &lt;code>auth.ts&lt;/code> ，我把它加入到 Context 里。另外我自己也创建了一个文件在特定的目录里，把它也加到 Context 里（Kotlin 的代码结构组织跟 JS 还是有比较大的区别，下面再讲），这个文件让 Cursor 创建也行，只不过我还得给他描述路径/位置，还不如直接点“+”就创建了。&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/1b108415bafc10678d91c7888802cb53.webp"
 loading="lazy"
-alt="600b7d39aa5a96c84d23b1409c0e1eac_MD5|0"
+alt="600b7d39aa5a96c84d23b1409c0e1eac_MD5|0|700x383"
 >&lt;br>
 其中 auth.ts 只是一个入口文件，它涉及到很多相关的类和函数等，定义在其它文件，所以我在 prompt 里告诉它要把相关的定义都搬过去。&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/86f176619ca75c5a4777eac559dfdf55.webp"
@@ -4018,8 +4013,8 @@ alt="49ec0378de615efc9371ecab36f0c033_MD5|700"
 width="700"
 loading="lazy"
 alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
->&lt;/p>
-&lt;p>&lt;strong>重复定义&lt;/strong>。&lt;br>
+>&lt;br>
+&lt;strong>重复定义&lt;/strong>。&lt;br>
 左边这个截图里的 RequestOptions，其实我已经在其它地方定义过了，但它又重新定义了一次，造成了多个地方冲突。这种情况也可以把问题描述给 Cursor 让它解决，但我看问题不大直接就手动合并了下这两个定义。&lt;br>
 右边的截图中，跨端涉及到 Android 的包安装，开发过 Java 的同学都知道，这个有点麻烦，得找到合适的包添加到 library 里才行。这个也只能手动去做，因为过程有点麻烦：&lt;/p>
 &lt;blockquote>
@@ -4031,9 +4026,8 @@ alt="aa7d0534cf5f6fc17177f5c45d157e25_MD5|700"
 改完后，还是签名错误。参数对了，但还是不行，那就是算法问题，接下去核对了下 Base64 encode 的地方、RSA 算出的数据跟 JS 的跑出来是否一致。这里发现了问题，但没有头绪。&lt;br>
 这时，死马当活马医，让 cursor 再帮我检查一遍：&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/85a79b192ec91ca09d2fa5c60f3a996e.webp"
-width="800"
 loading="lazy"
-alt="037c1ba6aa4295b45bc15c1a7a930e5d_MD5|800"
+alt="037c1ba6aa4295b45bc15c1a7a930e5d_MD5|800|800x175"
 > &lt;img src="https://cdn.lyb.pub/2025/01/307e4e2a0ab807513480c86855068e19.webp"
 width="700"
 loading="lazy"
@@ -4082,9 +4076,8 @@ Prompt:&lt;/p>
 &lt;/div>&lt;h2 id="2解决拼写问题">2、解决拼写问题
 &lt;/h2>&lt;p>比如这个 README，我们研发同学写的比较匆忙，有比较多的拼写或表达上的问题，https://github.com/coze-dev/coze-java/pull/3/files ，用 cursor 一键完成修改，重点是它能发现 README 里的示例代码中，用的字段名不正确的问题：&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/a2a57432caf6934023aca6188eb999b2.webp"
-width="800"
 loading="lazy"
-alt="67eef2544216d5bc05746b5e1f26b2b5_MD5|800"
+alt="67eef2544216d5bc05746b5e1f26b2b5_MD5|800|800x465"
 > &lt;img src="https://cdn.lyb.pub/2025/01/90d987a8fead9f2db45c1afd91824e58.webp"
 width="700"
 loading="lazy"
@@ -4117,8 +4110,8 @@ alt="|500"
 width="500"
 loading="lazy"
 alt="|500"
->&lt;/p>
-&lt;p>还有一次给我引入了 java 包，在 common 里：&lt;br>
+>&lt;br>
+还有一次给我引入了 java 包，在 common 里：&lt;br>
 &lt;img src="https://cdn.lyb.pub/2025/01/3c13e95894243029f6d9878688fa5b47.webp"
 width="700"
 loading="lazy"
