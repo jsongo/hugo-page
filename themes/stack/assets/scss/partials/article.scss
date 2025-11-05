@@ -20,9 +20,11 @@
         overflow: hidden;
 
         transition: box-shadow 0.3s ease;
+
         @include respond(xl) {
             flex-basis: 49%;
         }
+
         flex-basis: 100%;
 
         &:hover {
@@ -69,7 +71,7 @@
     font-weight: 600;
     margin: 0;
     color: var(--card-text-color-main);
-    font-size: 2.2rem;
+    font-size: 2.6rem;
 
     -webkit-line-clamp: 2;
     line-clamp: 2;
@@ -132,7 +134,7 @@
         color: var(--card-text-color-tertiary);
     }
 
-    & > div {
+    &>div {
         display: inline-flex;
         align-items: center;
         gap: 15px;
@@ -144,7 +146,7 @@
 }
 
 .article-translations {
-    & > div {
+    &>div {
         flex-wrap: wrap;
     }
 }
@@ -155,6 +157,7 @@
     gap: 10px;
     flex-wrap: wrap;
     vertical-align: middle;
+
     &>div * {
         vertical-align: middle;
     }
@@ -187,7 +190,7 @@
     }
 
     article {
-        & > a {
+        &>a {
             display: flex;
             align-items: center;
             padding: var(--small-card-padding);

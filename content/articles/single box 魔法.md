@@ -17,9 +17,8 @@ draft: false
 
 ## 安装 GUI
 
-````javascript
 然后从这里安装 UI：
-[GUI for SingBox (github.com)](https://github.com/GUI-for-Cores/GUI.for.SingBox)
+[GUI for SingBox (github.com)](https://github.com/GUI-for-Cores/GUI.for.SingBox) 
 ```bash
 git clone https://github.com/GUI-for-Cores/GUI.for.SingBox.git
 
@@ -32,7 +31,7 @@ pnpm build
 cd ..
 
 wails build
-````
+```
 
 wails 是 go 里用于构建桌面应用的一个框架，上面运行完之后，会在 build/bin 目录里放一个编译好的可运行文件，把它 copy 到 " 应用程序 " 中就可以了。
 

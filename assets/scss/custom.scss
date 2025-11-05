@@ -1,0 +1,485 @@
+/* 自定义样式 - 文章详情页美化 */
+
+/* ==================== 标题样式美化 ==================== */
+.article-content {
+
+    /* H1 标题 - 主标题 */
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        /* 确保居中 */
+        margin: 2rem auto 1rem;
+        max-width: 90%;
+        padding: 0.8rem 1.6rem;
+        text-align: center;
+        color: #e67e22;
+        /* 橙色文字 */
+        display: block;
+        position: relative;
+
+        /* 白色到浅灰渐变背景 */
+        background: linear-gradient(135deg,
+                #ffffff 0%,
+                #f0f0f0 100%);
+
+        /* 圆角边框 */
+        border-radius: 50px;
+        border: 2px solid rgba(230, 126, 34, 0.15);
+
+        /* 浮雕效果 - 橙色系 */
+        text-shadow: 2px 2px 0 #fff,
+            4px 4px 0 rgba(230, 126, 34, 0.2);
+
+        /* 柔和阴影 */
+        box-shadow:
+            0 4px 8px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+        /* 左侧星星装饰 */
+        &::before {
+            content: "⭐";
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+        }
+
+        /* 右侧星星装饰 */
+        &::after {
+            content: "⭐";
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+        }
+
+        @include respond(md) {
+            font-size: 2.2rem;
+            padding: 1rem 2rem;
+            max-width: 60%;
+
+            &::before,
+            &::after {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    /* H2 标题 - 二级标题 */
+    h2 {
+        font-size: 1.9rem;
+        font-weight: 600;
+        margin: 2rem 0 1.5rem;
+        padding: 1rem 2rem 1.3rem;
+        text-align: center;
+        color: #e74c3c;
+        /* 红色文字 */
+        position: relative;
+
+        /* 底部居中短横条 */
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2.5px;
+            background: linear-gradient(to right,
+                    transparent,
+                    #e74c3c,
+                    transparent);
+        }
+
+        @include respond(md) {
+            font-size: 2rem;
+
+            &::after {
+                width: 120px;
+            }
+        }
+    }
+
+    /* H3 标题 - 三级标题 */
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 1.8rem 0 1rem;
+        padding: 0.8rem 2rem 1.1rem;
+        text-align: center;
+        color: #f39c12;
+        /* 橙色文字 */
+        position: relative;
+
+        /* 底部居中短横条 */
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right,
+                    transparent,
+                    #f39c12,
+                    transparent);
+        }
+
+        @include respond(md) {
+            font-size: 1.9rem;
+
+            &::after {
+                width: 100px;
+            }
+        }
+    }
+
+    /* H4 标题 */
+    h4 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.8rem;
+        color: var(--card-text-color-secondary);
+
+        @include respond(md) {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* H5 & H6 标题 */
+    h5,
+    h6 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin: 1.2rem 0 0.6rem;
+        color: var(--card-text-color-secondary);
+    }
+
+    /* 去掉所有标题的左边框（覆盖主题默认样式） */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        border-inline-start: none !important;
+    }
+}
+
+/* ==================== 图片样式美化 ==================== */
+.article-content {
+    img {
+        max-height: 500px;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 2px solid var(--card-separator-color);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 1.5rem auto;
+        display: block;
+        cursor: zoom-in;
+        transition: all 0.3s ease;
+        object-fit: contain;
+
+        &:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+    }
+
+    /* 图片容器 */
+    p {
+        img {
+            margin: 1.5rem auto;
+        }
+    }
+
+    /* figure 标签中的图片 */
+    figure {
+        margin: 2rem 0;
+        text-align: center;
+
+        img {
+            margin: 0 auto;
+        }
+
+        figcaption {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+            color: var(--card-text-color-tertiary);
+            font-style: italic;
+        }
+    }
+}
+
+/* ==================== 图片放大查看功能 ==================== */
+/* 图片遮罩层 */
+.image-lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease;
+
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* 放大的图片 */
+.image-lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    animation: zoomIn 0.3s ease;
+}
+
+/* 关闭按钮 */
+.image-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10000;
+
+    &:hover {
+        color: #ccc;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==================== 暗黑模式优化 ==================== */
+[data-scheme="dark"] {
+    .article-content {
+        img {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        h1 {
+            color: #5dade2;
+            /* 暗黑模式下用更亮的蓝色 */
+            background: linear-gradient(135deg,
+                    rgba(93, 173, 226, 0.08) 0%,
+                    rgba(93, 173, 226, 0.04) 100%);
+            border-color: rgba(93, 173, 226, 0.25);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: none;
+            /* 移除浮雕效果 */
+        }
+
+        h2 {
+            color: #ec7063;
+            /* 暗黑模式下用更亮的红色 */
+
+            &::after {
+                background: linear-gradient(to right,
+                        transparent,
+                        #ec7063,
+                        transparent);
+            }
+        }
+
+        h3 {
+            color: #f8c471;
+            /* 暗黑模式下用更亮的橙色 */
+
+            &::after {
+                background: linear-gradient(to right,
+                        transparent,
+                        #f8c471,
+                        transparent);
+            }
+        }
+    }
+}
+
+/* ==================== 代码块优化 ==================== */
+.article-content {
+    pre {
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    code {
+        border-radius: 4px;
+        padding: 2px 6px;
+        font-size: 0.9em;
+    }
+}
+
+/* ==================== 代码高亮块样式优化 ==================== */
+.chroma {
+    margin: -20px;
+
+    /* 代码表格布局 */
+    .lntable {
+        display: table;
+        width: 100%;
+        border-spacing: 0;
+        margin: 0;
+        padding: 0;
+
+        /* tbody */
+        >tbody {
+            display: table-row-group;
+
+            /* 每一行 */
+            >tr {
+                display: table-row;
+
+                /* 行号列 */
+                >td:first-child {
+                    display: table-cell;
+                    background-color: rgba(127, 127, 127, 0.04);
+                    border-right: 1px solid rgba(127, 127, 127, 0.12);
+                    padding: 0;
+                    text-align: right;
+                    vertical-align: top;
+                    user-select: none;
+                    width: 1%;
+                    min-width: 4rem;
+                    white-space: nowrap;
+
+                    /* 行号容器的 pre */
+                    >pre {
+                        margin: 0;
+                        padding: 1rem 0.6rem;
+                        background: transparent;
+
+                        >code {
+                            background: transparent !important;
+                            padding: 0;
+                            display: block;
+
+                            /* 每个行号 */
+                            >.lnt {
+                                display: block;
+                                color: rgba(127, 127, 127, 0.5);
+                                line-height: 1.6;
+                            }
+                        }
+                    }
+                }
+
+                /* 代码内容列 */
+                >td:last-child {
+                    display: table-cell;
+                    padding: 0;
+                    vertical-align: top;
+                    width: 100%;
+
+                    >pre {
+                        margin: 0;
+                        padding: 1rem 1.2rem;
+                        background: transparent;
+                        overflow-x: auto;
+
+                        >code {
+                            background: transparent !important;
+                            padding: 0;
+                            display: block;
+
+                            /* 每一行代码 */
+                            >.line {
+                                display: block;
+                                line-height: 1.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* 整体代码块外层样式 */
+    >.lntable {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        background: var(--code-background-color);
+    }
+}
+
+/* 暗黑模式下的代码块优化 */
+[data-scheme="dark"] {
+    .chroma {
+        >.lntable {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .lntable>tbody>tr {
+
+            /* 行号列暗黑模式 */
+            >td:first-child {
+                background-color: rgba(0, 0, 0, 0.15);
+                border-right-color: rgba(255, 255, 255, 0.08);
+
+                >pre>code>.lnt {
+                    color: rgba(255, 255, 255, 0.35);
+                }
+            }
+        }
+    }
+}
+
+/* ==================== 引用块优化 ==================== */
+.article-content {
+    blockquote {
+        border-left: 4px solid var(--accent-color);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: var(--card-text-color-secondary);
+        background-color: var(--code-background-color);
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+
+        p {
+            margin: 0.5rem 0;
+        }
+    }
+}

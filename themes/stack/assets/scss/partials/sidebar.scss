@@ -72,6 +72,7 @@
     display: none;
     flex-direction: column;
     gap: var(--widget-separation);
+    min-width: 200px;
 
     &.sticky {
         top: 0;
@@ -118,9 +119,11 @@
             box-shadow: var(--shadow-l2);
         }
     }
+
     @include respond(md) {
         padding: 0;
         flex-direction: column;
+
         .site-avatar {
             width: var(--sidebar-avatar-size);
             height: var(--sidebar-avatar-size);

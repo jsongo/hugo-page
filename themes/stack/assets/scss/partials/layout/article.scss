@@ -15,11 +15,41 @@
 
         .article-header {
             .article-image {
+                position: relative;
+                max-height: 200px;
+                overflow: hidden;
+
+                /* 底部渐变遮罩 */
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 100px;
+                    background: linear-gradient(to bottom,
+                            rgba(255, 255, 255, 0),
+                            rgba(255, 255, 255, 0),
+                            rgba(255, 255, 255, 0.3),
+                            rgba(255, 255, 255, 0.6),
+                            var(--card-background));
+                    pointer-events: none;
+                }
+
+                @include respond(md) {
+                    max-height: 300px;
+                }
+
                 img {
-                    height: auto;
+                    height: 200px;
                     width: 100%;
-                    max-height: 40vh;
+                    max-height: none;
                     object-fit: cover;
+                    object-position: center center;
+
+                    @include respond(md) {
+                        height: 300px;
+                    }
                 }
             }
 
@@ -38,10 +68,11 @@
             }
 
             p {
-                br + img {
-                    margin-left: 3%;  // 图片的缩进距离
+                br+img {
+                    margin-left: 3%; // 图片的缩进距离
                 }
             }
+
             img {
                 max-width: 97%;
                 height: auto;
@@ -124,7 +155,7 @@
             }
         }
 
-        & > ul {
+        &>ul {
             padding: 0 1em;
         }
 
@@ -132,43 +163,46 @@
             margin: 15px 0 15px 20px;
             padding: 5px;
 
-            & > ol,
-            & > ul {
+            &>ol,
+            &>ul {
                 margin-top: 10px;
                 padding-left: 10px;
                 margin-bottom: -5px;
 
-                & > li:last-child {
+                &>li:last-child {
                     margin-bottom: 0;
                 }
             }
         }
-        li.active-class > a {
+
+        li.active-class>a {
             border-left: var(--heading-border-size) solid var(--accent-color);
             font-weight: bold;
         }
 
-        ul li.active-class > a {
+        ul li.active-class>a {
             display: block;
         }
 
         @function repeat($str, $n) {
             $result: "";
+
             @for $_ from 0 to $n {
                 $result: $result + $str;
             }
+
             @return $result;
         }
 
         // Support up to 6 levels of indentation for lists in ToCs
         @for $i from 0 to 5 {
-            & > ul #{repeat("> li > ul", $i)} > li.active-class > a {
+            &>ul #{repeat("> li > ul", $i)}>li.active-class>a {
                 $n: 25 + $i * 35;
                 margin-left: calc(-#{$n}px - 1em);
                 padding-left: calc(#{$n}px + 1em - var(--heading-border-size));
             }
 
-            & > ol #{repeat("> li > ol", $i)} > li.active-class > a {
+            &>ol #{repeat("> li > ol", $i)}>li.active-class>a {
                 $n: 9 + $i * 35;
                 margin-left: calc(-#{$n}px - 1em);
                 padding-left: calc(#{$n}px + 1em - var(--heading-border-size));
@@ -182,7 +216,7 @@
     overflow-x: auto;
     padding-bottom: 15px;
 
-    & > .flex {
+    &>.flex {
         float: left;
     }
 
@@ -194,7 +228,7 @@
         height: 150px;
 
         .article-title {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             margin: 0;
         }
 
@@ -213,7 +247,7 @@
     padding: 0 var(--card-padding);
     line-height: var(--article-line-height);
 
-    & > p {
+    &>p {
         margin: 1.5em 0;
     }
 
@@ -321,10 +355,12 @@
         line-height: 1.428571429;
         word-break: break-all;
         padding: var(--card-padding);
+
         //  keep Codeblocks LTR
         [dir="rtl"] & {
             direction: ltr;
         }
+
         code {
             color: unset;
             border: none;
@@ -343,10 +379,12 @@
                 opacity: 1;
             }
         }
+
         // keep Codeblocks LTR
         [dir="rtl"] & {
             direction: ltr;
         }
+
         pre {
             margin: initial;
             padding: 0;
@@ -411,8 +449,8 @@
         padding-bottom: 56.25%;
         overflow: hidden;
 
-        & > iframe,
-        & > video {
+        &>iframe,
+        &>video {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -449,7 +487,7 @@
     }
 
     /// Make long KaTeX equations scrollable in the x-axis
-    .katex-display > .katex {
+    .katex-display>.katex {
         overflow-x: auto;
         overflow-y: hidden;
     }

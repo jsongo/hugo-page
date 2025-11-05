@@ -1,0 +1,5 @@
+<!-- 自定义 JavaScript -->
+{{ $imageLightbox := resources.Get "js/image-lightbox.js" }}
+{{ if $imageLightbox }}
+<script src="{{ $imageLightbox.RelPermalink }}" defer></script>
+{{ end }}
