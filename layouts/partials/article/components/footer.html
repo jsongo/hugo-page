@@ -1,0 +1,53 @@
+<footer class="article-footer">
+    {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
+    {{ $showDate := not .Date.IsZero }}
+    {{ $showFooter := or $showDate $showReadingTime }}
+    {{ $hasTags := .Params.tags }}
+
+    {{ if or $showFooter $hasTags }}
+    <div class="article-time-tags-wrapper">
+        {{ if $showFooter }}
+        <section class="article-time">
+            {{ if $showDate }}
+            <div>
+                {{ partial "helper/icon" "date" }}
+                <time class="article-time--published">
+                    {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+                </time>
+            </div>
+            {{ end }}
+
+            {{ if $showReadingTime }}
+            <div>
+                {{ partial "helper/icon" "clock" }}
+                <time class="article-time--reading">
+                    {{ T "article.readingTime" .ReadingTime }}
+                </time>
+            </div>
+            {{ end }}
+        </section>
+        {{ end }}
+
+        {{ if $hasTags }}
+        {{ partial "article/components/tags" . }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if and (.Site.Params.article.license.enabled) (not (eq .Params.license false)) }}
+    <section class="article-copyright">
+        {{ partial "helper/icon" "copyright" }}
+        <span>{{ default .Site.Params.article.license.default .Params.license | markdownify }}</span>
+    </section>
+    {{ end }}
+
+    {{- if ne .Lastmod .Date -}}
+    <section class="article-lastmod">
+        {{ partial "helper/icon" "clock" }}
+        <span>
+            {{ T "article.lastUpdatedOn" }} {{ .Lastmod | time.Format ( or .Site.Params.dateFormat.lastUpdated "Jan 02,
+            2006 15:04 MST" ) }}
+        </span>
+    </section>
+    {{- end -}}
+</footer>

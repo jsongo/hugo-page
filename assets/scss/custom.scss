@@ -17,23 +17,23 @@
         display: block;
         position: relative;
 
-        /* 白色到浅灰渐变背景 */
+        /* 暖色渐变背景 - 更柔和 */
         background: linear-gradient(135deg,
-                #ffffff 0%,
-                #f0f0f0 100%);
+                #fff5f0 0%,
+                #ffe8dc 100%);
 
         /* 圆角边框 */
         border-radius: 50px;
-        border: 2px solid rgba(230, 126, 34, 0.15);
+        border: 2px solid rgba(230, 126, 34, 0.2);
 
         /* 浮雕效果 - 橙色系 */
         text-shadow: 2px 2px 0 #fff,
-            4px 4px 0 rgba(230, 126, 34, 0.2);
+            4px 4px 0 rgba(230, 126, 34, 0.15);
 
         /* 柔和阴影 */
         box-shadow:
-            0 4px 8px rgba(0, 0, 0, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            0 3px 10px rgba(230, 126, 34, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
         /* 左侧星星装饰 */
         &::before {
@@ -56,7 +56,7 @@
         }
 
         @include respond(md) {
-            font-size: 2.2rem;
+            font-size: 2rem;
             padding: 1rem 2rem;
             max-width: 60%;
 
@@ -166,6 +166,11 @@
     h5,
     h6 {
         border-inline-start: none !important;
+    }
+
+    /* 列表样式优化 */
+    ul {
+        padding-inline-start: 20px;
     }
 }
 
@@ -287,6 +292,24 @@
     }
 }
 
+/* ==================== 标签和时间图标优化 ==================== */
+.article-tags,
+.article-details .article-tags,
+.article-footer .article-tags,
+footer.article-tags {
+    svg {
+        stroke-width: 1 !important;
+        width: 20px !important;
+    }
+
+    >div {
+        svg {
+            stroke-width: 1 !important;
+            width: 20px !important;
+        }
+    }
+}
+
 /* ==================== 暗黑模式优化 ==================== */
 [data-scheme="dark"] {
     .article-content {
@@ -333,6 +356,45 @@
                         #f8c471,
                         transparent);
             }
+        }
+    }
+
+    /* 标签样式优化 - 覆盖所有位置的标签 */
+    .article-tags,
+    .article-details .article-tags,
+    .article-footer .article-tags,
+    footer.article-tags {
+        svg {
+            color: rgba(255, 255, 255, 0.6) !important;
+            stroke-width: 1 !important;
+            width: 20px !important;
+        }
+
+        a {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.15) !important;
+                color: rgba(255, 255, 255, 0.95) !important;
+                border-color: rgba(255, 255, 255, 0.25) !important;
+            }
+        }
+
+        >div {
+            svg {
+                color: rgba(255, 255, 255, 0.6) !important;
+                stroke-width: 1 !important;
+                width: 20px !important;
+            }
+        }
+    }
+
+    .article-time {
+        svg {
+            color: rgba(255, 255, 255, 0.5) !important;
+            stroke-width: 1.5 !important;
         }
     }
 }
