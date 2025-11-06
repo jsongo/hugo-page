@@ -27,12 +27,18 @@
         const images = articleContent.querySelectorAll('img');
         
         images.forEach(img => {
-            // 跳过小图标和头像
-            if (img.width < 100 || img.closest('.article-meta')) {
+            // 跳过小图标和头像 - 使用 naturalWidth 而不是 width
+            if (img.closest('.article-meta')) {
                 return;
             }
             
+            // 添加点击事件
             img.addEventListener('click', function(e) {
+                // 检查图片是否已加载，且不是小图标
+                if (this.naturalWidth < 100) {
+                    return;
+                }
+                
                 e.preventDefault();
                 lightboxImg.src = this.src;
                 lightboxImg.alt = this.alt;
