@@ -69,7 +69,7 @@
 
     /* H2 标题 - 二级标题 */
     h2 {
-        font-size: 1.9rem;
+        font-size: 2rem;
         font-weight: 600;
         margin: 2rem 0 1.5rem;
         padding: 1rem 2rem 1.3rem;
@@ -94,7 +94,7 @@
         }
 
         @include respond(md) {
-            font-size: 2rem;
+            font-size: 2.2rem;
 
             &::after {
                 width: 120px;
