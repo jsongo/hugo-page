@@ -9,6 +9,7 @@ description: "近期，HuggingFace 发布的超过 200 页的超长技术博客�
 tags:
   - "clippings"
 draft: "false"
+banner: "https://cdn.lyb.pub/upic/1763020394_vBc3MT.png"
 slug: "huggingface-200-page-llm-training-guide"
 date: "2025-11-13T15:48:08+08:00"
 ---

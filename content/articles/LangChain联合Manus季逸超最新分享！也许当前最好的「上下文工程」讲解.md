@@ -12,9 +12,9 @@ draft: "false"
 slug: "langchain-manus-context-engineering-best-practices"
 ---
 原创 花不玩 [AI寒武纪](https://mp.weixin.qq.com/s/_LlK7hK7vjKYxKJQPn6t8w) *2025 年 10 月 15 日 21:28*  
-![[assets/local_image_plus/2482017b684748aa71ef5f41dd4ccd66_MD5.webp|图片]]  
+![assets/local_image_plus/2482017b684748aa71ef5f41dd4ccd66_MD5.webp|878x626](https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp)  
 前几天我写了一篇文章 [Agent下半场！比Prompt更重要的是「上下文工程」，Anthropic首次系统阐述](https://mp.weixin.qq.com/s?__biz=Mzg3MTkxMjYzOA==&mid=2247508202&idx=1&sn=3d589ef9b4cfe42520e9fe67812bc615&scene=21#wechat_redirect) 分享了 Anthropic 上下文工程最佳实践，这篇文章分享达到了 1109 次，感觉大家对 Context Engineering 还是很感兴趣的，今天这篇文章更深入和细节一些，LangChain 的创始工程师 Lance Martin 和 Manus 的联合创始人 Yichao "Peak" Ji（季逸超《麻省理工科技评论》评选的 2025 年 35 岁以下创新者之一） 深入探讨了上下文工程，分享了他们在生产环境中管理上下文窗口、优化性能和构建可扩展代理的实战策略  
-![[assets/local_image_plus/66c05f9644873da81f8b1e95209e5126_MD5.png]]
+![assets/local_image_plus/66c05f9644873da81f8b1e95209e5126_MD5.png](https://cdn.lyb.pub/upic/1763024645_dx3yNv.png)
 核心论点是，随着 AI Agents 执行日益复杂的长期任务，其上下文窗口会因大量的工具调用而急剧膨胀，导致性能下降。因此，有效的上下文工程，即通过 offloading（卸载）、reduction（精简）、retrieval（检索）、isolation（隔离）和 caching（缓存）等一系列技术，将“恰到好处的信息”填入上下文窗口，是构建高效、稳定和智能代理的决定性因素。最终结论强调，优秀的上下文工程不仅是技术组合，更是一种“少即是多”的哲学，即通过简化架构、信任模型，而非过度工程化，才能实现代理性能的最大飞跃
 强烈建议大家围观。
 
