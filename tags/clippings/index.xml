@@ -183,7 +183,7 @@ alt="assets/local_image_plus/f7a458795d9a2d9cfaaf68727b8b0533_MD5.png"
 以 SmolLM3 为例，根据模型规模 30 亿参数、训练 token 数：11 万亿、目标训练时间约 4 周等信息，代入 GPU 需求公式得出的结果约为 379 GPUs。&lt;br>
 这一计算结果指向了一个合理的范围：约 375–400 张 H100 GPU，而最后实际上是部署了 384 张 H100，这一规模既符合我们的并行化策略（parallelism strategy），也为训练中可能出现的节点故障、重启等意外情况预留了充足的缓冲空间，从而确保模型能在约 4 周时间内顺利完成训练。&lt;br>
 而这也再次证明基础设施对于模型训练的重要性，不要忽视它！&lt;/li>
-&lt;/ul></description></item><item><title>LangChain联合Manus季逸超最新分享！也许当前最好的「上下文工程」讲解</title><link>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</guid><description>&lt;p>原创 花不玩 &lt;a class="link" href="https://mp.weixin.qq.com/s/_LlK7hK7vjKYxKJQPn6t8w" target="_blank" rel="noopener"
+&lt;/ul></description></item><item><title>LangChain联合Manus季逸超最新分享！也许当前最好的「上下文工程」讲解</title><link>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</link><pubDate>Thu, 13 Nov 2025 13:18:16 +0800</pubDate><guid>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</guid><description>&lt;img src="https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp" alt="Featured image of post LangChain联合Manus季逸超最新分享！也许当前最好的「上下文工程」讲解" />&lt;p>原创 花不玩 &lt;a class="link" href="https://mp.weixin.qq.com/s/_LlK7hK7vjKYxKJQPn6t8w" target="_blank" rel="noopener"
 >AI寒武纪&lt;/a> &lt;em>2025 年 10 月 15 日 21:28&lt;/em>&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp"
 loading="lazy"
