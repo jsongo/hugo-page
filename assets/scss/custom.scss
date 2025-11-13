@@ -546,6 +546,36 @@ footer.article-tags {
     }
 }
 
+/* ==================== 浮动头像 ==================== */
+.floating-avatar {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    transition: all 0.3s ease;
+
+    a {
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .avatar-img {
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid var(--card-background);
+    }
+}
+
 /* ==================== 顶部导航样式 ==================== */
 .top-nav {
     position: sticky;
@@ -554,227 +584,160 @@ footer.article-tags {
     width: 100%;
     background: var(--card-background);
     border-bottom: 1px solid var(--card-separator-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     transition: all 0.3s ease;
+    height: 48px;
 
-    .top-nav-container {
-        max-width: 1280px;
-        margin: 0 auto;
+    .top-nav-tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 0;
+    }
+
+    .top-nav-tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
         padding: 0 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-    }
-
-    .top-nav-brand {
-        .site-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: var(--accent-color-darker);
-            }
-        }
-    }
-
-    .mobile-menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        z-index: 1001;
-
-        .hamburger-icon {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--body-text-color);
-            position: relative;
-            transition: all 0.3s ease;
-
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                width: 24px;
-                height: 2px;
-                background: var(--body-text-color);
-                transition: all 0.3s ease;
-            }
-
-            &::before {
-                top: -8px;
-            }
-
-            &::after {
-                bottom: -8px;
-            }
-        }
-
-        &.active .hamburger-icon {
-            background: transparent;
-
-            &::before {
-                top: 0;
-                transform: rotate(45deg);
-            }
-
-            &::after {
-                bottom: 0;
-                transform: rotate(-45deg);
-            }
-        }
-    }
-
-    .top-nav-menu {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .top-nav-item {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.6rem 1.2rem;
         color: var(--body-text-color);
         text-decoration: none;
-        border-radius: 8px;
         font-size: 1.5rem;
         font-weight: 500;
         transition: all 0.3s ease;
         position: relative;
-
-        svg {
-            width: 18px;
-            height: 18px;
-            stroke-width: 2;
-        }
+        border-bottom: 2px solid transparent;
 
         &:hover {
-            background: var(--card-separator-color);
             color: var(--accent-color);
+            background: rgba(0, 0, 0, 0.02);
         }
 
         &.active {
             color: var(--accent-color);
-            background: var(--accent-color-lighter);
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60%;
-                height: 2px;
-                background: var(--accent-color);
-            }
-        }
-    }
-
-    .top-nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-left: 1rem;
-
-        .dark-mode-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-
-            svg {
-                width: 20px;
-                height: 20px;
-            }
-
-            &:hover {
-                background: var(--card-separator-color);
-            }
+            border-bottom-color: var(--accent-color);
         }
     }
 }
 
-/* 移动端适配 */
+/* 移动端 - 底部菜单 */
 @media (max-width: 768px) {
+    .floating-avatar {
+        top: 0.8rem;
+        left: 0.8rem;
+
+        .avatar-img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
     .top-nav {
-        .top-nav-container {
-            padding: 0 1rem;
+        top: auto;
+        bottom: 0;
+        height: 56px;
+        border-top: 1px solid var(--card-separator-color);
+        border-bottom: none;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+
+        .top-nav-tabs {
+            gap: 0;
         }
 
-        .mobile-menu-toggle {
-            display: block;
-        }
-
-        .top-nav-menu {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background: var(--card-background);
-            flex-direction: column;
-            padding: 1rem;
-            gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-100%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+        .top-nav-tab {
+            flex: 1;
+            padding: 0 0.5rem;
+            font-size: 1.4rem;
+            border-bottom: none;
+            border-top: 2px solid transparent;
 
             &.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                border-top-color: var(--accent-color);
+                border-bottom-color: transparent;
+            }
+
+            span {
+                text-align: center;
             }
         }
+    }
 
-        .top-nav-item {
-            width: 100%;
-            justify-content: center;
-            padding: 1rem;
-
-            &.active::after {
-                display: none;
-            }
-        }
-
-        .top-nav-actions {
-            width: 100%;
-            justify-content: center;
-            margin-left: 0;
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--card-separator-color);
-        }
+    /* 底部菜单时,主容器底部留白 */
+    .container.main-container {
+        margin-bottom: 60px;
     }
 }
 
 /* 暗黑模式 */
 [data-scheme="dark"] {
+    .floating-avatar {
+        a {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+            &:hover {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .avatar-img {
+            border-color: var(--card-background);
+        }
+    }
+
     .top-nav {
         background: var(--card-background);
         border-bottom-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+        .top-nav-tab {
+            &:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .top-nav {
+            border-top-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.3);
+        }
     }
 }
 
-/* 调整主容器以适应顶部导航 */
+/* 调整主容器 */
 body {
     padding-top: 0;
 }
 
 .container.main-container {
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+
+/* 隐藏侧边栏的头像和标题 - 只使用浮动头像 */
+.sidebar.left-sidebar {
+    header {
+        .site-avatar {
+            display: none;
+        }
+
+        .site-meta {
+            display: none;
+        }
+    }
+}
+
+/* 隐藏侧边栏中重复的菜单项 - 只保留 Archives, Search, Links, About Me */
+.sidebar.left-sidebar {
+    .menu {
+        li {
+            &:has(a[href="/"]),
+            &:has(a[href="/tech-frontier/"]),
+            &:has(a[href="/clippings/"]) {
+                display: none;
+            }
+        }
+    }
 }

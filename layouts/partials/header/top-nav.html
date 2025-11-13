@@ -1,36 +1,36 @@
+{{/* 浮动头像 */}}
+<div class="floating-avatar">
+    {{ with .Site.Params.sidebar.avatar }}
+        {{ if (default true .enabled) }}
+            <a href="{{ $.Site.BaseURL | relLangURL }}">
+            {{ if not .local }}
+                <img src="{{ .src }}" class="avatar-img" loading="lazy" alt="Avatar">
+            {{ else }}
+                {{ $avatar := resources.Get (.src) }}
+                {{ if $avatar }}
+                    {{ $avatarResized := $avatar.Resize "80x" }}
+                    <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
+                        height="{{ $avatarResized.Height }}" class="avatar-img" loading="lazy" alt="Avatar">
+                {{ end }}
+            {{ end }}
+            </a>
+        {{ end }}
+    {{ end }}
+</div>
+
+{{/* 顶部导航 - 只显示三个主要 tab */}}
 <nav class="top-nav">
-    <div class="top-nav-container">
-        <div class="top-nav-brand">
-            <a href="{{ .Site.BaseURL | relLangURL }}" class="site-title">{{ .Site.Title }}</a>
-        </div>
-
-        <button class="mobile-menu-toggle" type="button" id="mobile-menu-toggle" aria-label="Toggle menu">
-            <span class="hamburger-icon"></span>
-        </button>
-
-        <div class="top-nav-menu" id="top-nav-menu">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
+    <div class="top-nav-tabs">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            {{/* 只显示前三个菜单项,过滤掉 About Me */}}
+            {{ if ne .Identifier "about" }}
                 {{ $active := or (eq $currentPage.RelPermalink .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
                 <a href='{{ .URL }}'
-                   class='top-nav-item {{ if $active }}active{{ end }}'
-                   {{ if eq .Params.newTab true }}target="_blank"{{ end }}>
-                    {{ $icon := default .Pre .Params.Icon }}
-                    {{ with $icon }}
-                        {{ partial "helper/icon" . }}
-                    {{ end }}
+                   class='top-nav-tab {{ if $active }}active{{ end }}'>
                     <span>{{- .Name -}}</span>
                 </a>
             {{ end }}
-
-            <div class="top-nav-actions">
-                {{ if (default false .Site.Params.colorScheme.toggle) }}
-                    <button id="top-dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                        {{ partial "helper/icon" "toggle-left" }}
-                        {{ partial "helper/icon" "toggle-right" }}
-                    </button>
-                {{ end }}
-            </div>
-        </div>
+        {{ end }}
     </div>
 </nav>
