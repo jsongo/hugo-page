@@ -723,9 +723,6 @@ body {
             display: none;
         }
 
-        .site-meta {
-            display: none;
-        }
     }
 }
 
@@ -733,6 +730,7 @@ body {
 .sidebar.left-sidebar {
     .menu {
         li {
+
             &:has(a[href="/"]),
             &:has(a[href="/tech-frontier/"]),
             &:has(a[href="/clippings/"]) {

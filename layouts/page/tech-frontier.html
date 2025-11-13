@@ -1,20 +1,38 @@
 {{ define "main" }}
-    {{ $tag := "互联网/前沿进展" }}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
-    {{ $taggedPages := where $filtered "Params.tags" "intersect" (slice $tag) }}
-    {{ $pag := .Paginate $taggedPages }}
+    {{/* 过滤带有 "互联网/前沿进展" 标签的文章 */}}
+    {{ $targetTag := "互联网/前沿进展" }}
+    {{ $taggedPages := slice }}
 
-    <section class="article-list">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/default" . }}
+    {{ range .Site.RegularPages }}
+        {{ if and (in .Site.Params.mainSections .Type) (ne .Params.hidden true) }}
+            {{ if .Params.tags }}
+                {{ if in .Params.tags $targetTag }}
+                    {{ $taggedPages = $taggedPages | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $paginator := .Paginate $taggedPages }}
+
+    <section class="article-list--compact">
+        {{ if gt (len $paginator.Pages) 0 }}
+            {{ range $paginator.Pages }}
+                {{ partial "article-list/compact" . }}
+            {{ end }}
+        {{ else }}
+            <div class="no-articles" style="text-align: center; padding: 4rem 2rem; color: var(--card-text-color-tertiary);">
+                <p>暂无相关文章</p>
+            </div>
         {{ end }}
     </section>
 
     {{- partial "pagination.html" . -}}
     {{- partial "footer/footer" . -}}
 {{ end }}
+
+{{/* 不显示左侧边栏 */}}
+{{ define "left-sidebar" }}{{ end }}
 
 {{ define "right-sidebar" }}
     {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
