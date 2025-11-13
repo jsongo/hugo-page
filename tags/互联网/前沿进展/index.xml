@@ -1,4 +1,191 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 08:04:35 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损</title><link>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</link><pubDate>Thu, 13 Nov 2025 08:04:35 +0800</pubDate><guid>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/4aba62fae07d2a5d9ff82cd60dc24b62.jpeg" alt="Featured image of post 谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 08:04:37 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损</title><link>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</link><pubDate>Thu, 13 Nov 2025 08:04:37 +0800</pubDate><guid>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2c267fcf37e879762d0700bf61330d79.jpg" alt="Featured image of post 谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>近期，人工智能领域正以前所未有的速度向前推进，从移动设备的边缘计算到云端服务的深度融合，AI技术正在重塑我们的数字生活体验。谷歌通过&amp;quot;私有AI计算&amp;quot;技术优化Pixel 10的AI响应速度，同时在Google Photos中为iOS用户带来革命性的文字描述修图功能。医疗AI领域也迎来突破，研究人员成功开发出能够预测2型糖尿病患者NT-proBNP水平升高风险的机器学习模型。这些进展不仅展示了AI技术的实用性，更体现了其向更个性化、更精准化方向发展的趋势。&lt;/p>
+&lt;hr>
+&lt;h2 id="移动ai体验的全面升级">移动AI体验的全面升级
+&lt;/h2>&lt;p>随着智能手机成为人们日常生活中不可或缺的工具，AI技术在移动设备上的应用正变得愈发成熟和智能。谷歌近期的一系列更新，从系统底层到应用层面，全方位提升了用户的AI体验。&lt;/p>
+&lt;h3 id="谷歌通过私有ai计算让pixel-10的ai功能更及时">谷歌通过“私有AI计算”让Pixel 10的AI功能更及时
+&lt;/h3>&lt;p>谷歌最新推出的私有AI计算技术代表了移动AI发展的新方向。这项技术巧妙地在设备本地处理与云端AI模型之间找到了平衡点，既保护了用户隐私，又确保了AI功能的及时响应。通过将部分计算任务在设备端预处理，再与云端模型协同工作，Magic Cue等AI功能的延迟显著降低。这种混合架构的设计思路，为未来移动AI的发展提供了重要参考——在不牺牲用户体验的前提下，确保数据安全和隐私保护。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992263-Google-Private-AI-Compute-cover.jpg"
+loading="lazy"
+alt="谷歌私有AI计算"
+>&lt;/p>
+&lt;h3 id="google-photos允许iphone用户通过描述进行ai修图">Google Photos允许iPhone用户通过描述进行AI修图
+&lt;/h3>&lt;p>谷歌向iOS用户推出的&amp;quot;Help Me Edit&amp;quot;功能，标志着图像编辑进入了自然语言交互的新时代。用户现在只需用简单的文字描述，如&amp;quot;让天空更蓝&amp;quot;或&amp;quot;移除背景中的路人&amp;quot;，AI就能理解并执行相应的编辑操作。这项技术背后是先进的自然语言处理和计算机视觉算法的深度融合，它降低了专业级图像编辑的技术门槛，使普通用户也能轻松实现复杂的修图效果。特别值得注意的是，谷歌选择在iOS平台上首发这一功能，体现了其跨平台生态的战略考量。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992264-Google-Photos-help-me-edit-iOS.jpg"
+loading="lazy"
+alt="Google Photos编辑功能"
+>&lt;/p>
+&lt;h3 id="谷歌pixel迎来更新新增地图省电模式ai照片混合及智能通知">谷歌Pixel迎来更新：新增地图省电模式、AI照片混合及智能通知
+&lt;/h3>&lt;p>谷歌为Pixel手机推出的系统更新，展示了AI技术在优化用户体验方面的多重应用。地图省电模式通过AI算法智能管理位置服务和显示亮度，在保证基本导航功能的同时，延长了多达4小时的电池续航。AI照片混合工具则允许用户将多张照片的最佳部分智能合成，创造出更完美的影像。而智能通知管理系统通过学习用户的使用习惯，自动筛选和优先处理重要通知，减少了信息过载的困扰。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992265-IMG_3163.jpg"
+loading="lazy"
+alt="Pixel更新"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2025/11/11/google-private-ai-compute-pixel/" target="_blank" rel="noopener"
+>谷歌通过“私有AI计算”让Pixel 10的AI功能更及时&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.theverge.com/news/818346/google-photos-ios-help-me-edit-update" target="_blank" rel="noopener"
+>Google Photos允许iPhone用户通过描述进行AI修图&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://techcrunch.com/2025/11/11/google-pixel-update-adds-battery-saving-maps-mode-ai-photo-remixing-and-smarter-notifications/" target="_blank" rel="noopener"
+>谷歌Pixel迎来更新：新增地图省电模式、AI照片混合及智能通知&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="ai对话与医疗预测的新突破">AI对话与医疗预测的新突破
+&lt;/h2>&lt;p>AI技术正在从单纯的工具向伙伴角色转变，在通讯和医疗等关键领域展现出巨大潜力。从WhatsApp中集成ChatGPT到医疗预测模型的开发，这些进展预示着AI将更深入地融入人类生活的核心场景。&lt;/p>
+&lt;h3 id="如何在whatsapp中免费与chatgpt对话限时">如何在WhatsApp中免费与ChatGPT对话（限时）
+&lt;/h3>&lt;p>Meta将ChatGPT集成到WhatsApp中的举措，标志着大型语言模型开始进入主流通讯平台。用户现在可以直接在熟悉的聊天界面中与AI助手对话，获取信息、解决问题或进行创意写作。这种无缝集成降低了AI技术的使用门槛，使更多用户能够体验到先进语言模型的强大能力。然而，免费服务的时限性也提示我们，企业仍在探索可持续的AI服务商业模式。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992265-gear-whatsapp-chatgpt-2237775692.jpg"
+loading="lazy"
+alt="WhatsApp ChatGPT"
+>&lt;/p>
+&lt;h3 id="研究人员开发并验证了一种基于机器学习的临床预测模型">研究人员开发并验证了一种基于机器学习的临床预测模型
+&lt;/h3>&lt;p>在医疗AI领域，一项新研究通过六个常规临床变量构建了可解释的机器学习模型，用于预测2型糖尿病患者的NT-proBNP水平升高风险。这一模型的独特之处在于其可解释性——医生能够理解模型的决策依据，而不像传统的&amp;quot;黑箱&amp;quot;模型那样难以信任。该研究经过了严格的外部验证，确保了模型在不同人群中的适用性，为AI在临床决策支持系统中的实际应用铺平了道路。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992266-og_logo.png"
+loading="lazy"
+alt="医疗AI研究"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.wired.com/story/talk-to-chatgpt-for-free-inside-whatsapp/" target="_blank" rel="noopener"
+>如何在WhatsApp中免费与ChatGPT对话（限时）&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.dovepress.com/development-and-external-validation-of-a-machine-learning-based-model--peer-reviewed-fulltext-article-DMSO" target="_blank" rel="noopener"
+>研究人员开发并验证了一种基于机器学习的临床预测模型&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>软件生态系统正经历着安全性与功能性的双重演进。微软通过月度补丁修复关键漏洞，苹果准备推出iOS 26.2的重大更新，而开源社区则就资金与责任问题展开重要讨论。这些发展不仅影响着用户体验，更关系到整个数字生态的健康发展。安全漏洞的及时修补、系统功能的持续优化，以及开源可持续性的探讨，共同构成了当前软件领域的主要议题。&lt;/p>
+&lt;hr>
+&lt;h2 id="系统安全与功能更新">系统安全与功能更新
+&lt;/h2>&lt;p>在数字化程度日益加深的今天，操作系统的安全性和功能性更新显得尤为重要。微软和苹果作为两大科技巨头，其系统更新策略直接影响着亿万用户的安全与体验。&lt;/p>
+&lt;h3 id="微软发布11月补丁修复一个被积极利用的零日漏洞和63个缺陷">微软发布11月补丁，修复一个被积极利用的零日漏洞和63个缺陷
+&lt;/h3>&lt;p>微软11月的&amp;quot;补丁星期二&amp;quot;共修复了63个安全漏洞，其中包括一个已被黑客积极利用的零日漏洞。这种及时响应体现了软件供应商在网络安全威胁面前的快速反应能力。零日漏洞的修复尤为关键，因为它意味着攻击者已经在实际利用这个漏洞发起攻击。企业用户和个人用户都应尽快安装这些补丁，以防止潜在的安全威胁。这种定期的安全更新机制，已成为现代软件生态中不可或缺的一环。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992267-patch_tuesday_microsoft.jpg"
+loading="lazy"
+alt="微软补丁"
+>&lt;/p>
+&lt;h3 id="ios-262将于下月发布带来8项新功能">iOS 26.2将于下月发布，带来8项新功能
+&lt;/h3>&lt;p>苹果iOS 26.2的更新预计将带来8项新功能，继续完善其移动操作系统的用户体验。虽然具体功能细节尚未完全披露，但根据测试版的情况来看，这次更新可能包括更智能的Siri交互、增强的隐私保护功能，以及进一步优化的电池管理系统。苹果通过这种渐进式的功能更新，不断保持其生态系统的活力和竞争力，同时也确保了系统的稳定性和兼容性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992267-iOS-26.2-Glass-Feature.jpg"
+loading="lazy"
+alt="iOS更新"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2025-patch-tuesday-fixes-1-zero-day-63-flaws/" target="_blank" rel="noopener"
+>微软发布11月补丁，修复一个被积极利用的零日漏洞和63个缺陷&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.macrumors.com/2025/11/11/ios-26-2-features/" target="_blank" rel="noopener"
+>iOS 26.2将于下月发布，带来8项新功能&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="开源生态与社交平台演进">开源生态与社交平台演进
+&lt;/h2>&lt;p>开源软件的可持续性和社交平台的内容生态建设，是当前互联网领域两个值得关注的重要议题。FFmpeg与谷歌的争议反映了开源项目维护的困境，而Threads的新功能则展示了社交平台寻求差异化的努力。&lt;/p>
+&lt;h3 id="著名开源项目ffmpeg向谷歌喊话要么资助我们要么别再提交bug报告">著名开源项目FFmpeg向谷歌喊话：要么资助我们，要么别再提交Bug报告
+&lt;/h3>&lt;p>FFmpeg开发者与谷歌之间的公开争议，揭示了开源软件生态中一个长期存在的问题：大型科技公司广泛使用开源软件创造价值，但对项目的贡献和支持却往往不成比例。FFmpeg作为多媒体处理领域的基础设施级项目，被无数商业产品所依赖，但其维护者却面临资金不足的困境。这一事件引发了关于开源可持续性的广泛讨论，可能会推动更多公司重新评估其对开源项目的责任和支持方式。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="FFmpeg争议"
+>&lt;/p>
+&lt;h3 id="threads推出新功能吸引播客创作者欲成为播客讨论的中心">Threads推出新功能吸引播客创作者，欲成为播客讨论的中心
+&lt;/h3>&lt;p>Meta旗下的Threads平台正通过针对播客创作者的新功能，寻求在竞争激烈的社交媒体市场中找到差异化定位。通过在个人简介中添加专用播客链接、在信息流中突出显示播客内容，Threads希望成为播客听众讨论和互动的中心。这一策略反映了社交平台向垂直领域深耕的趋势，也显示了音频内容在数字媒体生态中日益重要的地位。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992269-Threads_Podcasts.png"
+loading="lazy"
+alt="Threads播客功能"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://thenewstack.io/ffmpeg-to-google-fund-us-or-stop-sending-bugs/" target="_blank" rel="noopener"
+>著名开源项目FFmpeg向谷歌喊话：要么资助我们，要么别再提交Bug报告&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://techcrunch.com/2025/11/11/threads-targets-podcasters-with-new-features-aiming-to-become-the-place-fans-discuss-shows/" target="_blank" rel="noopener"
+>Threads推出新功能吸引播客创作者，欲成为播客讨论的中心&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>显示技术与计算硬件正在经历创新浪潮，从可折叠设备的大众化到MicroLED的商业化突破，硬件领域展现出强劲的发展势头。三星计划扩大可折叠手机的销售规模，MicroLED显示技术正式进入商业化阶段，而树莓派计算模块则为分布式计算爱好者提供了新的可能性。这些进展不仅推动了消费电子产品的升级，也为专业计算和DIY社区带来了新的机遇。&lt;/p>
+&lt;hr>
+&lt;h2 id="显示技术与移动设备创新">显示技术与移动设备创新
+&lt;/h2>&lt;p>显示技术作为人机交互的核心界面，其创新直接影响着用户的数字体验。从可折叠设备到下一代显示技术，硬件制造商正在探索多种提升视觉体验的路径。&lt;/p>
+&lt;h3 id="三星计划在2026年销售更多可折叠手机">三星计划在2026年销售更多可折叠手机
+&lt;/h3>&lt;p>三星计划在2026年将其可折叠手机销量提升10%，这一目标建立在前几代产品技术成熟和市场需求增长的基础上。可折叠手机经过多次迭代，在铰链耐用性、屏幕折痕和软件适配等方面都有了显著改善，正逐渐从新奇产品转向主流选择。三星作为可折叠市场的领导者，其销售目标的提升反映了公司对这一细分市场前景的乐观预期，也预示着可折叠技术可能在未来几年内进一步普及。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992269-Galaxy-Z-Flip-7-and-Fold-7-1200x675.jpg"
+loading="lazy"
+alt="三星可折叠手机"
+>&lt;/p>
+&lt;h3 id="全球microled显示市场报告2025年进入商业化时代">全球MicroLED显示市场报告：2025年进入商业化时代
+&lt;/h3>&lt;p>MicroLED显示技术在2025年正式进入商业化阶段，标志着显示技术发展的一个新里程碑。与OLED相比，MicroLED具有更高的亮度、更长的寿命和更低的功耗，同时避免了烧屏问题。多家公司已开始领导大批量生产，这意味着MicroLED技术正从实验室走向市场。虽然初期可能主要应用于高端电视和专业显示器，但随着生产成本的降低，未来有望逐步扩展到更多消费电子设备。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992269-908fb457-7f8e-4a08-9081-5565e3dfb3d7"
+loading="lazy"
+alt="MicroLED显示"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.sammobile.com/news/samsung-plans-sell-more-foldable-phones-2026/" target="_blank" rel="noopener"
+>三星计划在2026年销售更多可折叠手机&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.globenewswire.com/news-release/2025/11/12/3186040/0/en/The-Global-MicroLED-Displays-Market-Report-2026-Industry-Enters-Commercial-Era-in-2025-ENNOSTAR-HC-SemiTek-Sanan-Optoelectronics-and-AU-Optronics-Lead-High-Volume-Production.html" target="_blank" rel="noopener"
+>全球MicroLED显示市场报告：2025年进入商业化时代&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="计算硬件与接口技术">计算硬件与接口技术
+&lt;/h2>&lt;p>计算硬件的创新不仅发生在高端领域，也在普及型设备和外围设备中持续推进。从DIY计算集群到接口技术的正确使用，这些进展影响着从爱好者到普通用户的不同群体。&lt;/p>
+&lt;h3 id="用树莓派计算模块打造紧凑型计算集群">用树莓派计算模块打造紧凑型计算集群
+&lt;/h3>&lt;p>树莓派计算模块为分布式计算爱好者提供了搭建更紧凑集群系统的可能性。与标准树莓派相比，计算模块去除了不必要的接口，专注于核心计算功能，使得在有限空间内部署多个节点成为可能。这种紧凑型集群在教育、研究和原型开发中具有重要价值，允许用户以较低的成本体验并行计算和分布式系统的概念。开源社区围绕树莓派生态开发的工具和软件，进一步降低了构建和使用这类集群的技术门槛。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992270-picluster-main.png"
+loading="lazy"
+alt="树莓派集群"
+>&lt;/p>
+&lt;h3 id="技术科普请停止将usb集线器当作端口复制器使用">技术科普：请停止将USB集线器当作端口复制器使用
+&lt;/h3>&lt;p>USB集线器的电力与数据带宽限制是用户经常忽视的问题。许多用户错误地认为USB集线器可以完全替代电脑自带的接口，同时连接多个高功耗设备（如外接硬盘、摄像头等），导致设备工作不稳定或数据传输速度下降。这篇科普文章强调了了解USB技术规范的重要性，提醒用户应根据设备需求选择合适的集线器，并避免过度负载，这对于保证外设正常工作具有重要意义。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992272-satechi-multiport-adapter-8k-with-ethernet-v3-17-1.jpg"
+loading="lazy"
+alt="USB集线器"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://hackaday.com/2025/11/12/pi-compute-modules-make-for-compact-cluster/" target="_blank" rel="noopener"
+>用树莓派计算模块打造紧凑型计算集群&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.xda-developers.com/please-stop-treating-your-usb-hubs-port-replicators/" target="_blank" rel="noopener"
+>技术科普：请停止将USB集线器当作端口复制器使用&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="物理学">物理学
+&lt;/h1>&lt;p>物理学前沿研究正在量子计算和基础理论领域取得突破性进展。从量子计算关键技术&amp;quot;魔术态蒸馏&amp;quot;的理论突破，到时间晶体在量子内存中的应用潜力，这些研究为下一代计算技术奠定了理论基础。同时，关于量子引力的实验探索和微观热力学的研究，继续挑战和扩展着我们对物理世界基本规律的理解。这些进展不仅具有重要的理论价值，也为未来的技术应用开辟了新的可能性。&lt;/p>
+&lt;hr>
+&lt;h2 id="量子计算的关键突破">量子计算的关键突破
+&lt;/h2>&lt;p>量子计算作为下一代计算技术的代表，其发展依赖于多项关键技术的突破。近期在容错量子计算和量子内存方面的研究进展，为实用化量子计算机的实现带来了新的希望。&lt;/p>
+&lt;h3 id="量子计算关键技术魔术态蒸馏实现最优缩放">量子计算关键技术“魔术态蒸馏”实现最优缩放
+&lt;/h3>&lt;p>魔术态蒸馏是容错量子计算中的关键瓶颈技术，其效率直接影响量子计算机的实用化进程。研究人员证明，这一技术的理论最优缩放是可以在量子比特上实现的，这是一个重大突破。魔术态蒸馏使得量子计算机能够执行通用量子计算，而实现最优缩放意味着可以用更少的量子比特和更少的操作完成这一过程，大大提高了量子计算的可行性和效率。这一进展为构建大规模、容错的量子计算机扫除了一个重要障碍。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992272-researchers-achieve-op.jpg"
+loading="lazy"
+alt="魔术态蒸馏"
+>&lt;/p>
+&lt;h3 id="奇异的时间晶体有望用作量子计算机的内存">奇异的“时间晶体”有望用作量子计算机的内存
+&lt;/h3>&lt;p>时间晶体是一种奇特的物质相，能够在基态下保持持续振荡，打破了传统的时间平移对称性。新研究表明，基于磁振子的时间晶体可以与机械波相互作用而不被破坏，这一特性使其具备了成为量子计算机稳定内存的潜力。量子内存是量子网络和分布式量子计算的关键组件，而时间晶体的长期相干特性可能为解决量子信息存储的挑战提供新途径。这一发现连接了基础物理研究与实际应用，展示了奇异量子物态在信息技术中的潜在价值。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992273-Be4F2Uh6ZJd5FkLwovXFei-1600-80.png"
+loading="lazy"
+alt="时间晶体"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2025-11-optimal-scaling-magic-state-distillation.html" target="_blank" rel="noopener"
+>量子计算关键技术“魔术态蒸馏”实现最优缩放&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/technology/computing/exotic-time-crystals-could-be-used-as-memory-in-quantum-computers-promising-research-finds" target="_blank" rel="noopener"
+>奇异的“时间晶体”有望用作量子计算机的内存&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="基础物理学的探索与挑战">基础物理学的探索与挑战
+&lt;/h2>&lt;p>物理学的基本理论仍然面临诸多未解之谜，从量子引力到微观热力学，科学家们继续在极端条件下探索自然规律。&lt;/p>
+&lt;h3 id="量子引力存在吗一项新实验加深了谜团">量子引力存在吗？一项新实验加深了谜团
+&lt;/h3>&lt;p>量子引力理论试图统一广义相对论和量子力学，是当代物理学最大的挑战之一。最近一项旨在寻找量子引力证据的实验，结果却让这个谜题变得更加扑朔迷离。实验未能提供明确的证据支持某种量子引力理论，这意味着我们对于时空微观结构的理解仍然不完整。这一结果提示物理学家可能需要重新思考研究量子引力的方法，或者考虑更激进的理论可能性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992273-qnF2CSwUYWDkd3G4uWaFxf-1980-80.jpg"
+loading="lazy"
+alt="量子引力"
+>&lt;/p>
+&lt;h3 id="比太阳还热的微型发动机探索物理学极限">比太阳还热的微型发动机，探索物理学极限
+&lt;/h3>&lt;p>科学家创造的粒子大小微型发动机，其运行温度接近太阳核心，为研究热力学在微观极限下的规律提供了全新平台。在如此小的尺度和高能量条件下，传统热力学定律可能表现出异常行为，这有助于科学家探索物理学的边界。这类研究不仅深化了我们对热力学基本规律的理解，也可能为纳米级能量转换设备和量子热机的发展提供启示。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1762992274-bright-light.jpg"
+loading="lazy"
+alt="微型发动机"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>[量子引力存在吗？一项&lt;/li>
+&lt;/ul></description></item><item><title>谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损</title><link>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</link><pubDate>Thu, 13 Nov 2025 08:04:35 +0800</pubDate><guid>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/4aba62fae07d2a5d9ff82cd60dc24b62.jpeg" alt="Featured image of post 谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>近期，人工智能领域正以前所未有的速度向前推进，从移动设备的边缘计算到云端服务的深度融合，AI技术正在重塑我们的数字生活体验。谷歌通过&amp;quot;私有AI计算&amp;quot;技术优化Pixel 10的AI响应速度，同时在Google Photos中为iOS用户带来革命性的文字描述修图功能。医疗AI领域也迎来突破，研究人员成功开发出能够预测2型糖尿病患者NT-proBNP水平升高风险的机器学习模型。这些进展不仅展示了AI技术的实用性，更体现了其向更个性化、更精准化方向发展的趋势。&lt;/p>
 &lt;hr>
 &lt;h2 id="移动ai体验的全面升级">移动AI体验的全面升级
