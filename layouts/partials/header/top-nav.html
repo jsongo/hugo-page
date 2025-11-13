@@ -23,8 +23,8 @@
     <div class="top-nav-tabs">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-            {{/* 只显示前三个菜单项,过滤掉 About Me */}}
-            {{ if ne .Identifier "about" }}
+            {{/* 只显示首页、前沿进展和剪藏这三个菜单项 */}}
+            {{ if or (eq .Identifier "home") (or (eq .Identifier "tech-frontier") (eq .Identifier "clippings")) }}
                 {{ $active := or (eq $currentPage.RelPermalink .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
                 <a href='{{ .URL }}'
                    class='top-nav-tab {{ if $active }}active{{ end }}'>

@@ -2,6 +2,7 @@
 title: 剪藏
 menu:
   main:
+    identifier: clippings
     weight: -90
     params:
       icon: link

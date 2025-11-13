@@ -2,6 +2,7 @@
 title: 互联网/前沿进展
 menu:
   main:
+    identifier: tech-frontier
     weight: -100
     params:
       icon: infinity

@@ -5,11 +5,13 @@ author:
   - "[[花不玩]]"
 published:
 created: 2025-11-13
-description:
+description: "有效的上下文工程，即通过 offloading（卸载）、reduction（精简）、retrieval（检索）、isolation（隔离）和 caching（缓存）等一系列技术，将“恰到好处的信息”填入上下文窗口，是构建高效、稳定和智能代理的决定性因素。"
+banner: "https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp"
 tags:
   - "clippings"
 draft: "false"
 slug: "langchain-manus-context-engineering-best-practices"
+date: "2025-11-13T13:18:16+08:00"
 ---
 原创 花不玩 [AI寒武纪](https://mp.weixin.qq.com/s/_LlK7hK7vjKYxKJQPn6t8w) *2025 年 10 月 15 日 21:28*  
 ![assets/local_image_plus/2482017b684748aa71ef5f41dd4ccd66_MD5.webp|878x626](https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp)  
