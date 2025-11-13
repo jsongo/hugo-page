@@ -1,0 +1,36 @@
+<nav class="top-nav">
+    <div class="top-nav-container">
+        <div class="top-nav-brand">
+            <a href="{{ .Site.BaseURL | relLangURL }}" class="site-title">{{ .Site.Title }}</a>
+        </div>
+
+        <button class="mobile-menu-toggle" type="button" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-icon"></span>
+        </button>
+
+        <div class="top-nav-menu" id="top-nav-menu">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                {{ $active := or (eq $currentPage.RelPermalink .URL) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+                <a href='{{ .URL }}'
+                   class='top-nav-item {{ if $active }}active{{ end }}'
+                   {{ if eq .Params.newTab true }}target="_blank"{{ end }}>
+                    {{ $icon := default .Pre .Params.Icon }}
+                    {{ with $icon }}
+                        {{ partial "helper/icon" . }}
+                    {{ end }}
+                    <span>{{- .Name -}}</span>
+                </a>
+            {{ end }}
+
+            <div class="top-nav-actions">
+                {{ if (default false .Site.Params.colorScheme.toggle) }}
+                    <button id="top-dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                        {{ partial "helper/icon" "toggle-left" }}
+                        {{ partial "helper/icon" "toggle-right" }}
+                    </button>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</nav>

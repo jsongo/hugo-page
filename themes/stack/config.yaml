@@ -169,6 +169,12 @@ params:
 ### Custom menu
 menu:
   main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: -110
+      params:
+        icon: home
     - identifier: about
       name: About Me
       url: /about

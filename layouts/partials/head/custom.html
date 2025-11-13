@@ -3,3 +3,8 @@
 {{ if $imageLightbox }}
 <script src="{{ $imageLightbox.RelPermalink }}" defer></script>
 {{ end }}
+
+{{ $topNav := resources.Get "js/top-nav.js" }}
+{{ if $topNav }}
+<script src="{{ $topNav.RelPermalink }}" defer></script>
+{{ end }}
