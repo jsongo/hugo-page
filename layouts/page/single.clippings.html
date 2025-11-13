@@ -1,19 +1,24 @@
 {{ define "main" }}
-    {{/* 过滤带有 "互联网/前沿进展" 标签的文章 */}}
-    {{ $targetTag := "互联网/前沿进展" }}
+    {{/* 过滤带有 "clippings" 标签的文章 */}}
+    {{ $targetTag := "clippings" }}
     {{ $taggedPages := slice }}
 
-    {{ range .Site.RegularPages }}
-        {{ if and (in .Site.Params.mainSections .Type) (ne .Params.hidden true) }}
-            {{ if .Params.tags }}
-                {{ if in .Params.tags $targetTag }}
-                    {{ $taggedPages = $taggedPages | append . }}
+    {{ range $page := .Site.RegularPages }}
+        {{ if eq $page.Type "articles" }}
+            {{ if ne $page.Params.hidden true }}
+                {{ if $page.Params.tags }}
+                    {{ if in $page.Params.tags $targetTag }}
+                        {{ $taggedPages = $taggedPages | append $page }}
+                    {{ end }}
                 {{ end }}
             {{ end }}
         {{ end }}
     {{ end }}
 
     {{ $paginator := .Paginate $taggedPages }}
+
+    {{/* 调试信息 - 生产环境可以删除 */}}
+    <!-- 找到 {{ len $taggedPages }} 篇文章 -->
 
     <section class="article-list--compact">
         {{ if gt (len $paginator.Pages) 0 }}
