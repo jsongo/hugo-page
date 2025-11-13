@@ -1,4 +1,189 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 13:23:00 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Thu, 13 Nov 2025 13:23:00 +0800</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/9591764d61291613c9112d40000a5f6c.jpg" alt="Featured image of post Links" />&lt;h2 id="相关链接">相关链接
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 15:48:08 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心</title><link>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</link><pubDate>Thu, 13 Nov 2025 15:48:08 +0800</pubDate><guid>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</guid><description>&lt;img src="https://cdn.lyb.pub/upic/1763020394_vBc3MT.png" alt="Featured image of post HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心" />&lt;p>近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020394_vBc3MT.png"
+loading="lazy"
+alt="assets/local_image_plus/db4c3edc3efcaed5601e9f63f8500ce4_MD5.png|747x772"
+>&lt;br>
+博客的重点是 LLM 开发过程中「混乱的现实」。它坦诚地记录了哪些方法有效、哪些会失败，以及如何应对实际工程中遇到的陷阱。内容基于团队的实际项目经验，特别是他们近期使用 384 块 H100 GPU 训练 3B 参数模型 SmolLM3 的过程。&lt;br>
+博客中提供了深入的技术细节、代码片段和调试技巧，对于有兴趣亲自构建 LLM 的读者来说非常有指导意义。&lt;br>
+下面是对博客内容的概述，非常推荐感兴趣的读者阅读原文。&lt;/p>
+&lt;ul>
+&lt;li>博客地址：https://huggingface.co/spaces/HuggingFaceTB/smol-training-playbook &lt;a class="link" href="https://www.jiqizhixin.com/articles/javascript%3A;" target="_blank" rel="noopener"
+>#positional&lt;/a> -encodings&amp;ndash;long-context&lt;/li>
+&lt;/ul>
+&lt;h1 id="训练罗盘whywhathow">训练罗盘：Why→What→How
+&lt;/h1>&lt;p>&lt;img src="https://cdn.lyb.pub/upic/1763020956_iTehH8.png"
+loading="lazy"
+alt="assets/local_image_plus/0b631e71913c829cf38b68389b1b6cd2_MD5.png"
+>&lt;br>
+这一部分是在投入技术细节（如何训练）之前，提出了一个关键问题：「你是否真的需要训练这个模型」？&lt;br>
+鉴于（如 Qwen、Gemma、Llama 等）世界级开源模型层出不穷，大多数人可能并不需要从头开始训练自己的模型。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020685_dJ6QTt.png"
+loading="lazy"
+alt="assets/local_image_plus/eaa6b68bc50d02f4933cf4b3deef54e9_MD5.png|816x415"
+>&lt;/p>
+&lt;h1 id="why">Why
+&lt;/h1>&lt;p>文章列举了一些不应该训练模型的错误理由，例如：「我们有闲置算力」、「别人都在做」或「AI 是未来」。&lt;br>
+然后提供了一个流程图，帮助你思考是否真的训练一个自己的模型。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020701_RwRYKl.png"
+loading="lazy"
+alt="assets/local_image_plus/d4272669f417b7739db33579c0e87adf_MD5.png|838x923"
+>&lt;br>
+当你发现：现有模型不可用 —&amp;gt; 提示词工程无法解决 —&amp;gt; 微调无法解决，你就可以考虑从头开始训练了。&lt;br>
+定制化预训练通常适用于三个主要领域：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>研究：&lt;/strong> 你有一个明确的科学问题需要回答。例如，测试新的优化器、探索模型能力（如仅用强化学习）或测试新的数据集（如纯合成数据）。&lt;/li>
+&lt;li>&lt;strong>生产：&lt;/strong> 你的业务有无法被满足的特定需求。如 DNA、法律、金融等高度专业化的词汇或逻辑； 需要在特定硬件（如无人机、本地 FPGA）上运行，或有严格的延迟要求；处于受监管行业，需要对训练数据和模型行为有 100% 的控制和可追溯性。&lt;/li>
+&lt;li>&lt;strong>战略开源：&lt;/strong> 你发现并有能力填补当前开源生态系统中的一个特定空白。&lt;/li>
+&lt;/ul>
+&lt;h1 id="what">What
+&lt;/h1>&lt;p>一旦你明确了「Why」，就可以推导出「训练什么 (What)」。包括模型类型（密集型、MoE、混合型、某种新型）、模型大小、架构细节和数据混合。&lt;br>
+同时前面的领域目标决定了你的训练决策：例如，为设备端运行 —&amp;gt; 训练小型高效模型；需要多语言能力 —&amp;gt; 使用更大的 tokenizer 词汇表；超长上下文 —&amp;gt; 混合架构。&lt;br>
+这个决策过程分为两个阶段。 &lt;strong>规划&lt;/strong> ：将你的约束（来自「Why」）映射到具体的模型规格； &lt;strong>验证&lt;/strong> ：通过系统性的实验（消融实验）来测试你的选择。&lt;br>
+文章指出了成功 LLM 训练团队的两个关键特质：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>迭代速度：&lt;/strong> 训练 LLM 是一个「边训练边学」的过程。能够快速、频繁地（例如每季度而不是每年）迭代训练新模型的团队，会进步得更快。&lt;/li>
+&lt;li>&lt;strong>数据管理：&lt;/strong> 最优秀的团队是那些「痴迷于高质量数据」的团队，数据质量的影响远超架构选择。&lt;br>
+文章还建议，预训练团队一开始不需要很多人（2-3 人足矣），关键是配备足够的算力并保持快速迭代。&lt;/li>
+&lt;/ul>
+&lt;h1 id="每一个大型模型都始于一个小型消融">每一个大型模型都始于一个小型消融
+&lt;/h1>&lt;p>在开始训练 LLM 之前，需要做出一系列关键决策（架构、优化器、数据组合等）。人们常以为这些决策是靠深思熟虑得出的，但仅凭推理是不够的，因为 LLM 的行为常常反直觉。&lt;br>
+一个典型的例子是：使用看似「最高质量」的 arXiv 科学论文数据，反而可能会损害模型（尤其是小模型）的性能，因为它过于专业化，缺乏通用文本的多样性。&lt;br>
+既然纯粹的思考行不通，答案就是像经验主义者一样「运行大量实验」（即消融实验）。&lt;br>
+设置消融实验的完整流程：&lt;/p>
+&lt;h1 id="选择你的基线">选择你的基线
+&lt;/h1>&lt;p>不要从零开始，应该选择一个已被验证的、成熟的架构（如 Llama 3.1、Qwen3、Gemma3）作为起点，这样可以继承所有已知的优化和稳定性经验。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020463_RGNFVE.png"
+loading="lazy"
+alt="assets/local_image_plus/791c6ba0b0ab5483ea74fa1f16272368_MD5.png|838x511"
+>&lt;br>
+基线虽好，但并非为你量身定制，因此需要修改。然而，「任何架构上的改变都伴随着风险」。为此，必须遵守「去风险」的纪律，即：「除非你测试过它确实有帮助，否则不要改变任何东西。」&lt;br>
+修改的难点在于组件太多且相互作用。你不能测试所有组合。正确的方法是： &lt;strong>一次只测试一个有潜力的变更&lt;/strong> 。如果它有效，就将其整合，使其成为新的基线，然后再测试下一个变更。&lt;/p>
+&lt;h1 id="选择训练框架">选择训练框架
+&lt;/h1>&lt;p>这是一个关键的技术决策，需要在功能、稳定性和吞吐量之间权衡。&lt;br>
+文章对比了几个主流框架：&lt;/p>
+&lt;ul>
+&lt;li>Megatron-LM / DeepSpeed：功能强大，经过实战考验，但代码库庞大且复杂。&lt;/li>
+&lt;li>TorchTitan：更轻量级，易于上手和实验，但相对较新。&lt;/li>
+&lt;li>nanotron (作者自研)：提供了完全的灵活性，但需要大量投入来开发和测试。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020469_UHfZEN.png"
+loading="lazy"
+alt="assets/local_image_plus/f819c5f2cabbcb50d738552dbbe415f7_MD5.png|838x330"
+>&lt;/li>
+&lt;/ul>
+&lt;h1 id="设计消融实验">设计消融实验
+&lt;/h1>&lt;p>实验必须足够快（以便快速迭代）和足够可靠（结果能外推到最终模型），有两种主要方法：&lt;/p>
+&lt;ul>
+&lt;li>全尺寸模型，少量数据： 使用最终模型的尺寸（如 SmolLM3 使用 3B 模型），但在更少的 Token 上训练（如 100B 而非 11T）。&lt;/li>
+&lt;li>小型代理模型： 如果目标模型太大（如 1T 参数），则使用一个按比例缩小的代理模型（如 3B 模型）进行实验。&lt;br>
+接下来文章介绍了其基准消融设置（1B 的 Llama 模型，训练 45B Token），并展示了配置文件的关键部分（数据、模型、优化器等）。&lt;/li>
+&lt;/ul>
+&lt;h1 id="理解哪些有效评估">理解哪些有效：评估
+&lt;/h1>&lt;p>文章指出，评估实验结果时，只看训练损失 (Loss) 是不可靠的。例如，训练维基百科的 Loss 更低，但不代表模型能力更强；更换分词器也会导致 Loss 无法直接比较。因此，必须使用更细粒度的下游评估。&lt;br>
+一个可靠的评估任务应具备四个标准：单调性、低噪声、超随机性能和排名一致性。&lt;br>
+特别是在早期实验中，「完形填空（CF）」格式比「多项选择（MCF）」更优越，因为后者（如 MMLU）在模型训练的早期阶段表现接近随机，无法提供有效的早期信号。&lt;br>
+消融实验的真正价值不仅在于构建好模型，更在于它为未来的调试提供了信心：当主训练不可避免地出错时，系统性的实验结果能帮助团队快速定位问题。&lt;br>
+不过，这种价值的成本极其昂贵。以 SmolLM3 为例，消融和调试所消耗的 GPU 时间超过了主训练运行的一半。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020702_mNYIkk.png"
+loading="lazy"
+alt="assets/local_image_plus/9501460f026c2f40ea25f3a0105e0b2e_MD5.png|838x27"
+>&lt;/p>
+&lt;h1 id="模型架构设计">模型架构设计
+&lt;/h1>&lt;p>这部分内容详细阐述了设计和确定 LLM 架构的完整决策过程，从高层目标到具体的组件选择和超参数设置。&lt;br>
+文章以一个名为 SmolLM3 的 3B（30 亿参数）模型为例，系统性地展示了如何从零开始构建一个模型的「蓝图」。&lt;br>
+文章深入探讨了构成现代 Transformer 的核心架构选择并指出，当今的模型（如 Qwen3、Gemma3）共享 Transformer 基础，但通过组件改进（如 GQA、位置编码）来解决具体问题（如内存、稳定性）。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>注意力机制：&lt;/strong> 这是推理时的主要瓶颈，关键在于 KV 缓存。文章对比了 MHA（标准，高内存）、MQA（极端压缩，可能损失性能）和 GQA（分组查询）。消融实验证实，GQA 在性能上与 MHA 相当，但极大节省了 KV 缓存，是 SmolLM3 的最终选择。&lt;/li>
+&lt;li>&lt;strong>长上下文：&lt;/strong> 文章探讨了两种策略。首先是 &lt;strong>文档掩码&lt;/strong> ，在训练「打包」的数据时，它能防止模型关注到序列中不相关的其他文档，这被证实对长上下文扩展至关重要。其次是 &lt;strong>位置编码&lt;/strong> ，标准 RoPE 在长序列上外推能力有限。SmolLM3 采用了 NoPE（实为 RNoPE）的混合策略，即交替使用 RoPE 层（处理短上下文）和 NoPE 层（处理长距离检索），消融实验表明这种方法在不牺牲短上下文性能的同时，为长上下文打下了基础。&lt;/li>
+&lt;li>&lt;strong>嵌入共享：&lt;/strong> 对于 SmolLM3 这样的小模型，嵌入层占比较大。文章通过消融实验证明，将参数用于增加模型深度（更多层）比用于「解绑」输入和输出嵌入层更有效。因此，SmolLM3 采用了嵌入共享。&lt;/li>
+&lt;li>&lt;strong>稳定性：&lt;/strong> 为防止大规模训练崩溃，文章测试了 Z-loss、QK-norm 等技术。最终，SmolLM3 采用了 OLMo2 的技巧，即移除嵌入层的权重衰减，以提高稳定性。&lt;br>
+文章对比了密集型、MoE（混合专家）和 Hybrid（混合模型）三种架构。MoE 通过稀疏激活（只激活部分「专家」）来用更少的计算换取更大的容量，但内存占用极高。Hybrid（如 Mamba）则通过线性注意力或 SSM 来解决 Transformer 在长上下文上的计算瓶颈。SmolLM3 因其「端侧部署」的目标（内存受限）而坚持使用密集型架构。&lt;br>
+随后，文章转向了常被低估的 &lt;strong>Tokenizer&lt;/strong> 。选择分词器涉及词汇量大小（影响压缩率和嵌入矩阵大小）和算法（BPE 最常用）。&lt;br>
+文章引入了「Fertility」（每词平均 Token 数）和「连续词比例」作为评估指标。通过对比 Llama3、Gemma3、Qwen3 等，SmolLM3 最终选择了 Llama3 的 128k 词汇表，因为它在目标语言和模型大小之间取得了最佳平衡。&lt;br>
+接下来，文章探讨了决定训练过程的核心要素：优化器、学习率和批量大小。文章指出，直接借用其他模型的超参数虽然简单，但可能不是最优的，因为这些值是针对特定的架构、数据和约束条件优化的。&lt;br>
+最后回顾了关于模型规模（参数量 N）和数据量（Token 数 D）的经典权衡。&lt;/li>
+&lt;/ul>
+&lt;h1 id="数据管理艺术">数据管理艺术
+&lt;/h1>&lt;p>这部分内容详细阐述了「数据策展的艺术」，强调了在 LLM 训练中，数据是决定模型「学到什么」的关键因素，其重要性甚至超过了模型架构。&lt;br>
+模型架构决定了模型如何学习，而数据则决定了模型学习的内容。如果数据质量差或「混合比例」不当，再好的架构或超参数也无法挽救。&lt;br>
+文章指出，构建一个优秀的数据集并不仅仅是收集好数据，而是要设计一个 &lt;strong>训练混合&lt;/strong> 。&lt;br>
+例如，过分增加代码数据的比例（「上采样」）会隐式地减少其他数据的比例，可能损害模型的通用能力。&lt;br>
+此外，对于像 SmolLM3 这样需要 11T Token 的超长训练，如果只使用「最高质量」的数据，将导致严重的数据重复，这对模型性能有害。&lt;br>
+为了解决这些平衡性问题，现代 LLM 训练已经从「静态混合」（如 GPT-3）演变为多阶段训练（如 Llama3、SmolLM2）。这种方法在训练过程中动态地改变数据混合比例。&lt;br>
+其核心洞察是， &lt;strong>模型的最终行为深受其在训练末期看到的数据的影响&lt;/strong> 。因此，策略是：&lt;/p>
+&lt;ul>
+&lt;li>在训练早期，使用丰富、多样化但质量稍低的数据（如网页文本）。&lt;/li>
+&lt;li>在训练末期（特别是在学习率衰减的「退火阶段」），引入稀缺、高质量的数据（如专业数学和代码数据集），以最大化其影响力。&lt;br>
+何时改变混合比例通常由性能驱动的干预决定：例如，当发现模型的数学能力停滞不前时，就是引入更多高质量数学数据的信号。&lt;br>
+确定数据配方的过程依赖于系统的消融实验。与架构不同，数据混合的消融实验必须在目标模型规模（例如 3B）上运行，因为模型的容量会显著影响它吸收不同数据的效果。&lt;br>
+文章介绍了两种主要的实验方法：&lt;/li>
+&lt;li>&lt;strong>从零开始的消融&lt;/strong> ：使用目标模型（如 3B）进行短期训练（如 100B Token），以测试不同的初始混合比例。&lt;/li>
+&lt;li>&lt;strong>退火实验&lt;/strong> ：这是测试多阶段课程的关键。团队会从主训练中（例如在 7T Token 处）获取一个检查点，然后用新的数据混合（例如 40% 基线 + 60% 新数学数据）继续训练一小段时间（如 50B Token），以验证新数据在后期引入的有效性。&lt;br>
+作者提到，尽管存在 DoReMi 等自动优化方法，但在他们的实践中，仔细的手动消融实验仍然是 SOTA 模型（包括 SmolLM3）确定数据混合的最佳途径。&lt;br>
+文章最后以 SmolLM3 为例，展示了如何应用这些原则。&lt;/li>
+&lt;/ul>
+&lt;h1 id="堪比马拉松的长周期训练">堪比「马拉松」的长周期训练
+&lt;/h1>&lt;p>从前面来看，此时已经准备好了大部分的工作，经过验证的模型架构、最终确定的数据混合方案、调好的超参数，剩下的任务就是搭建好基础设施（这在最后讲解），然后「开始」训练。而训练是一个堪比「马拉松」的长周期过程，过程中可能会出现各种情况，所以要做好面对各种挑战的准备。&lt;br>
+而这部分主要讲的就是，训练前的「飞行前检查」、过程中那些不可避免的意外状况，以及如何保持系统稳定、不中断。&lt;br>
+文章以启动 SmolLM3 前执行的「起飞前检查」清单为例，展示了在开始训练前的准备工作，包括基础设施准备、评测系统准备、Checkpoint 与自动恢复机制、指标日志记录、训练配置复核等。&lt;br>
+尤其是在最后按下「训练」按钮之前的训练配置复核，一定要仔细检查训练配置文件、启动脚本、Slurm 提交命令等，以确保参数、路径、环境变量都正确无误。&lt;br>
+当然，即使做好了万全准备，在规模化训练过程中，也依然会遇到一些问题。比如在训练启动后的短短数小时内系统的吞吐率（throughput）骤然下滑、持续下滑，以及在引入新的 dataloader（数据加载器） 后，虽然吞吐率下降的问题不再出现，但损失曲线（loss curve）却明显变得更加噪声化，波动比以前大得多等等，各种问题随时都会出现，所以要做好及时应对各种问题的准备。&lt;br>
+另外，文章还指出，在现代 LLM 的预训练中，通常会采用多阶段训练策略（multi-stage training），每个阶段使用不同的数据混合比例，并在最后阶段进行上下文长度扩展。比如 Qwen3 就采用了通用阶段、推理阶段、长上下文阶段的三阶段训练方案。而 SmolLM3 采用了类似的理念，在训练过程中计划性地引入高质量数据集并扩展上下文长度，同时根据性能监控结果进行动态调整。&lt;/p>
+&lt;h1 id="超越基础模型2025-年的后训练阶段">超越基础模型——2025 年的后训练阶段
+&lt;/h1>&lt;p>这部分主要介绍了模型的后训练（Post-training）。以 SmolLM3 为例，在完成预训练（Pre-training）后就拥有了 SmolLM3 的原始能力（raw ability），但在 GPU 的温度还未降下之前，就进入了后训练（Post-training）阶段。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020708_tTL9CJ.png"
+loading="lazy"
+alt="assets/local_image_plus/21ef50bee6411684fb48d0b1e0ebfac0_MD5.png"
+>&lt;br>
+当然，在这一切开始之前，就像预训练阶段一样，你也要问自己三个问题：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>你是不是真的需要后训练？&lt;/strong> 如今许多开源权重模型在各种任务上已能媲美闭源模型，其中一些甚至可以在本地运行（通过量化与低计算配置）。如果你的目标只是一个通用助手，那么 Hugging Face Hub 上的现成模型可能已经足够好，没必要重新训练。&lt;/li>
+&lt;li>&lt;strong>你是否拥有高质量、领域特定的数据？&lt;/strong> 后训练的最大价值体现在特定任务或领域上。若通用模型在这些场景下表现欠佳，高质量的专用数据能让你定向优化输出效果。&lt;/li>
+&lt;li>&lt;strong>你能衡量成功的标准吗？&lt;/strong> 如果没有清晰的评估标准，你将无法判断后训练是否真的给你带来了改进。&lt;br>
+如果确定了要进行后训练，那么又出现一个问题，你想要后训练实现什么目标：一个严格执行指令、几乎不偏题的模型？一个多才多艺的助手，能灵活切换语气与角色？一个擅长数学、代码或推理任务的「思考引擎」？还是一个能多语言流畅交流的通用对话体？&lt;br>
+只有明确目标才能选择合适的技术路线。&lt;br>
+而一旦前面这几个问题答案都明确之后，接下来就要开始进行训练了，主要步骤包括：&lt;/li>
+&lt;li>&lt;strong>监督微调（SFT）&lt;/strong> ：注入核心任务能力；&lt;/li>
+&lt;li>&lt;strong>偏好优化（PO）&lt;/strong> ：直接从人类或 AI 偏好中学习；&lt;/li>
+&lt;li>&lt;strong>强化学习（RL）&lt;/strong> ：在监督数据之外提升模型的可靠性与推理深度；&lt;/li>
+&lt;li>&lt;strong>数据筛选与整理（Data Curation）&lt;/strong> ：平衡数据的多样性与质量；&lt;/li>
+&lt;li>&lt;strong>评估体系（Evaluation）&lt;/strong> ：持续跟踪进展并及早发现性能回退。&lt;br>
+文章以 SmolLM3 为例，回答了在进行后训练阶段需要回答的几大问题：&lt;br>
+SmolLM3 是一个优秀的基础模型，但要在发布前变得可用，必须经过后训练。同时，混合推理模型（如 Qwen3 系列）正快速兴起，但开源社区中缺乏公开可复现的训练配方。因此，SmolLM3 的后训练目标有两点：打造一个可实用的高质量模型；贡献一份完整开源的训练方案，让它能与 Qwen3 的 1.7B 和 4B 模型一同位列行业前沿。&lt;br>
+而在后训练的实战阶段时，需要做很多事情，比如选择后训练框架、工具等。不同的框架各自支持不同的算法类型、微调方法、可扩展能力等。&lt;br>
+文章总结了一些主要的框架在后训练各环节中的支持范围，涵盖从监督微调到偏好优化，再到强化学习等核心领域的能力对比。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020542_fnYMAB.png"
+loading="lazy"
+alt="assets/local_image_plus/65c1e55b46bd58e48bac89e76a70f2ad_MD5.png|838x586"
+>&lt;br>
+而在主要步骤阶段，文章解答了为何几乎所有的后训练流程都是以监督微调为起点，原因很简单：&lt;/li>
+&lt;li>&lt;strong>便宜&lt;/strong> ：相较于 RL，SFT 对算力要求低得多。你通常可以在较短时间内、用较少 GPU，获得显著性能提升——而无需「烧光硅片」。&lt;/li>
+&lt;li>&lt;strong>稳定&lt;/strong> ：不同于 RL 那种对奖励设计和超参数极度敏感的训练方式，SFT「开箱即用」——几乎不会崩。&lt;/li>
+&lt;li>&lt;strong>是最好的基线&lt;/strong> ：一个良好的 SFT 检查点（checkpoint）通常能提供你所需的大部分性能提升，并让后续如 DPO 或 RLHF 等方法的训练更加高效。&lt;/li>
+&lt;/ul>
+&lt;h1 id="基础设施被忽视的关键一环">基础设施：被忽视的关键一环
+&lt;/h1>&lt;p>这部分主要是将基础设施，因为大多数从事模型训练的人都非常关心模型架构和数据质量，而忽视了底层的基础设施，认为「租几块 GPU，撞上 Pytorch 就可以了」。然而并非如此，如果用一个比喻来形容，那就是 &lt;strong>「预训练是蛋糕坯，后训练是上面的糖霜和樱桃，而基础设施就是工业级烤箱」&lt;/strong> 。没有它，一切无从谈起。&lt;br>
+像在 &lt;strong>训练 SmolLM3 时，使用了 384 块 H100 GPU，持续了将近一个月，总共处理了 11 万亿个 token&lt;/strong> ，工程量之浩大，过程之繁琐。&lt;br>
+文章指出，对于基础设施，你首先需要知道的是，GPU 的构成、内存层级的工作方式、CPU 与 GPU 之间的通信方式、获取 GPU 时的注意事项，以及在投入长期训练任务前如何测试它们。&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020553_YTac5k.png"
+loading="lazy"
+alt="assets/local_image_plus/42eb61c8281f9295d806c50932a2de90_MD5.png|838x586"
+>&lt;/p>
+&lt;p>&lt;strong>CPU 与 GPU 之间的通信路径&lt;/strong>&lt;br>
+其中，需要注意的是，在大型模型训练中，拥有足够多且高速的 GPU 固然重要，但由于 LLM 训练通常持续数周甚至数月，持续追踪 GPU 的健康状态就成为了保持训练稳定性的关键。&lt;br>
+文章以 SmolLM3 的训练为例，列举了对 GPU 进行全面诊断的工具：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>GPU Fryer&lt;/strong> （内部工具）：一款 GPU 压力测试工具，用于检测是否存在热降频；显存错误；性能异常等潜在问题。&lt;/li>
+&lt;li>&lt;strong>NVIDIA DCGM&lt;/strong> （数据中心 GPU 管理器）：一款被广泛使用的 GPU 诊断与监控工具，能够执行深度检测，以验证 GPU 硬件、监控性能，并定位故障或功率异常的根本原因。诊断范围包括：计算单元完整性；PCIe 连接稳定性；内存完整性；热稳定性等。&lt;br>
+最后，关于训练模型到底要用多少块 GPU，文章指出决策的核心在于训练时间、成本与扩展效率之间权衡的过程。用一个公式来估算就是：&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763020560_lh3w8F.png"
+loading="lazy"
+alt="assets/local_image_plus/f7a458795d9a2d9cfaaf68727b8b0533_MD5.png"
+>&lt;br>
+其中，所需总 FLOPs，训练模型所需的计算量，取决于模型规模、训练 token 数量和架构设计；单 GPU 吞吐量，即每张 GPU 际每秒可执行的 FLOPs 数量；目标训练时长，就是你期望训练完成所需的时间。&lt;br>
+以 SmolLM3 为例，根据模型规模 30 亿参数、训练 token 数：11 万亿、目标训练时间约 4 周等信息，代入 GPU 需求公式得出的结果约为 379 GPUs。&lt;br>
+这一计算结果指向了一个合理的范围：约 375–400 张 H100 GPU，而最后实际上是部署了 384 张 H100，这一规模既符合我们的并行化策略（parallelism strategy），也为训练中可能出现的节点故障、重启等意外情况预留了充足的缓冲空间，从而确保模型能在约 4 周时间内顺利完成训练。&lt;br>
+而这也再次证明基础设施对于模型训练的重要性，不要忽视它！&lt;/li>
+&lt;/ul></description></item><item><title>Links</title><link>https://www.jsongo.top/page/links/</link><pubDate>Thu, 13 Nov 2025 13:23:00 +0800</pubDate><guid>https://www.jsongo.top/page/links/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/9591764d61291613c9112d40000a5f6c.jpg" alt="Featured image of post Links" />&lt;h2 id="相关链接">相关链接
 &lt;/h2></description></item><item><title>谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损</title><link>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</link><pubDate>Thu, 13 Nov 2025 08:04:35 +0800</pubDate><guid>https://www.jsongo.top/articles/google-pixel-private-ai-microsoft-zero-day-nasa-antenna-damaged-11.13/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/4aba62fae07d2a5d9ff82cd60dc24b62.jpeg" alt="Featured image of post 谷歌在Pixel上推出私有AI计算，让识图修图更智能；微软修复被利用的零日漏洞；NASA深空网络关键天线受损" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>近期，人工智能领域正以前所未有的速度向前推进，从移动设备的边缘计算到云端服务的深度融合，AI技术正在重塑我们的数字生活体验。谷歌通过&amp;quot;私有AI计算&amp;quot;技术优化Pixel 10的AI响应速度，同时在Google Photos中为iOS用户带来革命性的文字描述修图功能。医疗AI领域也迎来突破，研究人员成功开发出能够预测2型糖尿病患者NT-proBNP水平升高风险的机器学习模型。这些进展不仅展示了AI技术的实用性，更体现了其向更个性化、更精准化方向发展的趋势。&lt;/p>
 &lt;hr>
@@ -186,7 +371,7 @@ alt="微型发动机"
 &lt;p>原文链接：&lt;/p>
 &lt;ul>
 &lt;li>[量子引力存在吗？一项&lt;/li>
-&lt;/ul></description></item><item><title>互联网/前沿进展</title><link>https://www.jsongo.top/page/tech-frontier/</link><pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/tech-frontier/</guid><description/></item><item><title>剪藏</title><link>https://www.jsongo.top/page/clippings/</link><pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/clippings/</guid><description/></item><item><title>全球首款微波芯片问世，颠覆传统计算；苹果芯片M1到M5五年性能飞跃；SpaceX将挑战“疯狂”的星舰测试</title><link>https://www.jsongo.top/articles/microwave-chip-apple-silicon-spacex-starship-test-11.12/</link><pubDate>Wed, 12 Nov 2025 08:04:01 +0800</pubDate><guid>https://www.jsongo.top/articles/microwave-chip-apple-silicon-spacex-starship-test-11.12/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/b9123ae79734082ac58a5c1ea1b5528f.jpeg" alt="Featured image of post 全球首款微波芯片问世，颠覆传统计算；苹果芯片M1到M5五年性能飞跃；SpaceX将挑战“疯狂”的星舰测试" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/ul></description></item><item><title>全球首款微波芯片问世，颠覆传统计算；苹果芯片M1到M5五年性能飞跃；SpaceX将挑战“疯狂”的星舰测试</title><link>https://www.jsongo.top/articles/microwave-chip-apple-silicon-spacex-starship-test-11.12/</link><pubDate>Wed, 12 Nov 2025 08:04:01 +0800</pubDate><guid>https://www.jsongo.top/articles/microwave-chip-apple-silicon-spacex-starship-test-11.12/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/b9123ae79734082ac58a5c1ea1b5528f.jpeg" alt="Featured image of post 全球首款微波芯片问世，颠覆传统计算；苹果芯片M1到M5五年性能飞跃；SpaceX将挑战“疯狂”的星舰测试" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>近期，人工智能领域正以前所未有的速度发展，从消费级产品的深度集成到健康服务的创新应用，AI技术正在重塑我们的日常生活方式。这些进展不仅展示了AI技术的实用化趋势，更揭示了人工智能从实验室走向大众市场的清晰路径。本部分将重点分析AI在智能家居、健康服务、日常工具和系统优化等方面的最新突破。&lt;/p>
 &lt;h2 id="智能交互体验的全面升级">智能交互体验的全面升级
 &lt;/h2>&lt;p>随着大型语言模型的成熟，科技公司正致力于将这些先进的AI能力集成到日常设备中，创造更自然、更智能的用户交互体验。这一趋势在智能家居领域表现得尤为明显，语音交互正在从简单的指令执行向复杂的对话和理解演进。&lt;/p>
@@ -7170,4 +7355,145 @@ alt="8ee84296b354d8a922451b7d0e50e8a8_MD5|806x888"
 loading="lazy"
 alt="c63ab378d1ecb0a972305dfab65f9d0c_MD5|806x202"
 >&lt;br>
-然后找到大文件&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item></channel></rss>
+然后找到大文件&lt;/p></description></item><item><title>Archives</title><link>https://www.jsongo.top/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/archives/</guid><description/></item><item><title>LangChain联合Manus季逸超最新分享！也许当前最好的「上下文工程」讲解</title><link>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/articles/langchain-manus-context-engineering-best-practices/</guid><description>&lt;p>原创 花不玩 &lt;a class="link" href="https://mp.weixin.qq.com/s/_LlK7hK7vjKYxKJQPn6t8w" target="_blank" rel="noopener"
+>AI寒武纪&lt;/a> &lt;em>2025 年 10 月 15 日 21:28&lt;/em>&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763024638_8fSpoH.webp"
+loading="lazy"
+alt="assets/local_image_plus/2482017b684748aa71ef5f41dd4ccd66_MD5.webp|878x626"
+>&lt;br>
+前几天我写了一篇文章 &lt;a class="link" href="https://mp.weixin.qq.com/s?__biz=Mzg3MTkxMjYzOA==&amp;amp;mid=2247508202&amp;amp;idx=1&amp;amp;sn=3d589ef9b4cfe42520e9fe67812bc615&amp;amp;scene=21#wechat_redirect" target="_blank" rel="noopener"
+>Agent下半场！比Prompt更重要的是「上下文工程」，Anthropic首次系统阐述&lt;/a> 分享了 Anthropic 上下文工程最佳实践，这篇文章分享达到了 1109 次，感觉大家对 Context Engineering 还是很感兴趣的，今天这篇文章更深入和细节一些，LangChain 的创始工程师 Lance Martin 和 Manus 的联合创始人 Yichao &amp;ldquo;Peak&amp;rdquo; Ji（季逸超《麻省理工科技评论》评选的 2025 年 35 岁以下创新者之一） 深入探讨了上下文工程，分享了他们在生产环境中管理上下文窗口、优化性能和构建可扩展代理的实战策略&lt;br>
+&lt;img src="https://cdn.lyb.pub/upic/1763024645_dx3yNv.png"
+loading="lazy"
+alt="assets/local_image_plus/66c05f9644873da81f8b1e95209e5126_MD5.png"
+>
+核心论点是，随着 AI Agents 执行日益复杂的长期任务，其上下文窗口会因大量的工具调用而急剧膨胀，导致性能下降。因此，有效的上下文工程，即通过 offloading（卸载）、reduction（精简）、retrieval（检索）、isolation（隔离）和 caching（缓存）等一系列技术，将“恰到好处的信息”填入上下文窗口，是构建高效、稳定和智能代理的决定性因素。最终结论强调，优秀的上下文工程不仅是技术组合，更是一种“少即是多”的哲学，即通过简化架构、信任模型，而非过度工程化，才能实现代理性能的最大飞跃
+强烈建议大家围观。&lt;/p>
+&lt;hr>
+&lt;h1 id="上下文工程的兴起为何它对-ai-代理至关重要">上下文工程的兴起：为何它对 AI 代理至关重要
+&lt;/h1>&lt;p>在人工智能领域，我们见证了一个重要的范式转变。随着 ChatGPT 的问世，Prompt Engineering（提示工程）在 2022 年底应运而生，成为与聊天模型交互的核心学科。然而，进入 2023 年，一个新的、更为关键的领域——Context Engineering（上下文工程）开始崭露头角&lt;br>
+与简单的聊天机器人不同，AI Agents 的核心特征在于它们能够自主地、循环地调用一系列工具来完成复杂任务。这个过程带来了一个独特的挑战： &lt;strong>上下文的无界爆炸&lt;/strong>&lt;br>
+工作机制：一个 Agent 通常绑定了一个或多个工具。每当 Agent 调用一个工具，它会收到一个工具的观测结果，这个结果会作为一个新的消息被追加到对话历史中&lt;br>
+规模问题：根据 Manus 的实践经验，一个典型的任务可能需要大约 50 次工具调用。而 Anthropic 的研究也指出，生产环境中的代理可能会进行长达数百轮的对话&lt;br>
+性能悖论：这种工具的自由使用，导致了上下文信息的快速累积。然而，正如 Chroma 团队在一份关于“上下文腐烂 (context rot)”的报告中指出的，随着上下文长度的增加，模型的性能会显著下降&lt;br>
+这就形成了一个核心矛盾：Agents 的强大功能依赖于利用大量上下文信息，但模型的性能却会因为上下文过长而受损&lt;br>
+正是为了解决这个挑战，Context Engineering（上下文工程）的概念应运而生。Andrej Karpathy 将其精辟地定义为：一门将恰到好处的信息在下一步需要时填入上下文窗口的精妙艺术与科学。它的目标是抑制在 Agents 运行过程中因工具调用而产生的上下文爆炸，确保在任务的每一步，Agent 都能接收到做出正确决策所需的核心信息，不多也不少&lt;br>
+为了实现这一目标，行业内涌现出了一系列共通的主题和策略，构成了上下文工程的支柱：&lt;br>
+Context Offloading (上下文卸载)：将信息从核心的对话历史中移出，存放到外部系统（如文件系统），只在上下文中保留一个轻量级的引用&lt;br>
+Reducing Context (上下文精简)：通过总结或压缩来减少信息量，例如修剪旧的工具调用记录&lt;br>
+Retrieving Context (上下文检索)：在需要时，按需从外部系统将信息取回。实现方式包括基于索引的语义搜索，或更简单的基于文件系统的搜索工具（如 &lt;code>glob&lt;/code> 和 &lt;code>grep&lt;/code> ）&lt;br>
+Context Isolation (上下文隔离)：通过将任务分解给多个子代理（sub-agents），每个子代理拥有自己独立的、更小的上下文窗口，从而实现关注点分离和上下文管理&lt;br>
+Caching Context (上下文缓存)：对上下文信息进行缓存，以提高效率（这一点在 Manus 的实践中被特别提及）&lt;br>
+这些策略并非孤立存在，而是相互关联、协同工作，共同构成了现代 AI Agents 架构的基石&lt;/p>
+&lt;h1 id="战略抉择优先上下文工程而非过早模型专业化">战略抉择：优先上下文工程，而非过早模型专业化
+&lt;/h1>&lt;p>在深入探讨上下文工程的具体技术之前，一个更根本的问题值得思考：我们为什么需要它？尤其是在模型微调和后训练技术日益普及的今天。Manus 的联合创始人 Peak Ji 分享了他从多年实践中得出的深刻见解，认为 &lt;strong>上下文工程是应用层和模型层之间最清晰、最实用的边界&lt;/strong>&lt;br>
+在创办 Manus 之前，Peak 拥有超过十年的自然语言处理经验，他的上一个创业项目就是从零开始训练自己的语言模型。这段经历让他痛苦地认识到，过早地构建专用模型会带来巨大风险：&lt;br>
+扼杀创新速度：产品的迭代速度完全被模型的迭代速度所限制。一个训练加评估的周期可能需要一到两周，这对于需要快速验证产品市场契合度的初创公司是致命的&lt;br>
+优化目标错位：在产品方向尚未完全明朗时，团队可能会花费大量时间去提升一些对产品价值可能毫无意义的基准测试分数&lt;br>
+因此，初创公司应该尽可能长时间地依赖通用模型和上下文工程。然而，随着产品成熟和开源基础模型的崛起，另一个陷阱也随之出现：用自有数据微调一个强大的基础模型，使其在特定用例上表现出色&lt;br>
+Peak 指出这同样是危险的，因为强化学习通常需要固定一个行动空间，并围绕当前的产品行为设计奖励函数。但这在 AI 和 Agents 的早期阶段是极其脆弱的，因为底层技术可能一夜之间发生颠覆&lt;br>
+一个典型的例子**： &lt;code>MCP&lt;/code> 的发布，彻底改变了 Manus 的设计，使其从一个紧凑、静态的行动空间，转变为一个几乎无限可扩展的系统。如果你已经训练了自己的模型，你会知道这种开放域问题极难优化&lt;br>
+避免重复造轮子：虽然可以投入巨大努力进行后训练以确保模型的泛化能力，但这无异于在尝试成为一家语言模型公司，重复了基础模型公司已经完成的工作&lt;br>
+综上所述，Peak 的核心观点是： &lt;strong>要坚定地划清界限&lt;/strong> 。在当前阶段，上下文工程为应用开发者提供了一个强大的杠杆，可以在不触碰底层模型训练的情况下，极大地影响和提升 Agent 的性能。它允许应用层保持灵活性和快速迭代的能力，同时充分利用日益强大的通用模型。因此，与其过早地投入到模型专业化的深渊，不如精通上下文工程这门艺术&lt;/p>
+&lt;h1 id="上下文精简压缩与总结">上下文精简：压缩与总结
+&lt;/h1>&lt;p>上下文精简是上下文工程的核心技术之一，但它并非一个单一的操作。Manus 在实践中将其细分为两种截然不同但相辅相成的方法：Compaction (压缩) 和 Summarization (总结)，并建立了一套严谨的工作流程来协同使用它们&lt;/p>
+&lt;h2 id="压缩-compaction一种可逆的信息外化">压缩 (Compaction)：一种可逆的信息外化
+&lt;/h2>&lt;p>压缩的核心思想是一种可逆的信息缩减。它并非真正地“减少”信息，而是将信息的一部分外化（externalized）到上下文窗口之外的某个地方（如文件系统或外部状态），同时在上下文中保留足以重建完整信息的线索&lt;br>
+工作原理：在 Manus 中，每一次工具调用和其结果都有两种格式：完整格式和紧凑格式。紧凑版本会剥离掉所有可以从外部环境中重建的信息&lt;br>
+具体例子：假设一个工具的功能是向文件中写入内容，它可能包含两个字段： &lt;code>path&lt;/code> (路径) 和 &lt;code>content&lt;/code> (内容)。一旦这个工具执行成功，我们就可以确定该文件已经存在于环境中。因此，在紧凑格式中，可以安全地丢弃可能非常长的 &lt;code>content&lt;/code> 字段，只保留 &lt;code>path&lt;/code> 。如果 Agent 后续需要再次读取该文件，它可以通过 &lt;code>path&lt;/code> 轻松地检索到全部内容&lt;br>
+为何可逆性至关重要：Agents 的决策是链式的，基于之前的行动和观察。我们永远无法预知过去的哪个动作会在十步之后突然变得至关重要。可逆的压缩确保了没有任何信息被真正丢失，只是被暂时移出了即时上下文&lt;/p>
+&lt;h2 id="总结-summarization一种不可逆的谨慎精炼">总结 (Summarization)：一种不可逆的谨慎精炼
+&lt;/h2>&lt;p>当仅靠压缩已无法将上下文大小控制在阈值以下时，就需要动用更传统的总结方法。总结是不可逆的，意味着信息会有损失，因此必须非常谨慎地使用&lt;br>
+执行时机：总结是最后的手段，只有在多轮压缩后，上下文长度仍然接近性能“腐烂”的临界点时才会触发&lt;br>
+操作前的准备：在进行总结之前，一个最佳实践是先将上下文中的关键部分卸载到文件中。在更激进的情况下，甚至可以将整个待总结的上下文（pre-summary context）作为一个文本或日志文件转储到 file system 中。这样，即使总结丢失了细节，Agent 仍然有可能通过文件搜索（如 &lt;code>glob&lt;/code> 或 &lt;code>grep&lt;/code> ）来恢复原始信息&lt;br>
+总结的艺术：在 Q&amp;amp;A 环节中，Peak 补充了一个关键技巧来提升总结质量：不要使用自由格式的提示。相反，应该定义一个结构化的模式（schema）或表单，让模型去填充字段，例如“我修改了哪些文件”、“用户的目标是什么”、“我上次进行到哪一步”。这种结构化的输出比自由生成的文本更稳定、更可控，也更容易保证关键信息不被遗漏&lt;/p>
+&lt;h2 id="一套基于阈值的工作流程">一套基于阈值的工作流程
+&lt;/h2>&lt;p>为了让压缩和总结能够和谐共存，Manus 设计了一套基于多层上下文长度阈值的自动化流程：&lt;br>
+确定阈值：&lt;br>
+硬性限制 ：模型支持的最大上下文长度，例如 100 万 token&lt;br>
+预腐烂阈值：模型性能开始显著下降的实际阈值。这需要通过大量评估来确定，通常在 128K 到 200K token 之间。当模型开始出现重复、推理变慢、质量下降等“上下文腐烂”现象时，就接近这个阈值了&lt;br>
+触发压缩：当上下文大小接近“预腐烂阈值”时，系统会首先触发压缩操作。这个操作不是全局性的，而是有选择性的。例如，可以只压缩历史记录中最旧的 50% 的工具调用，同时保持最近的调用记录为完整格式。这样做的好处是，模型仍然可以看到新鲜的、完整的工具使用范例（few-shot examples），从而避免模仿紧凑格式输出不完整的指令&lt;br>
+评估增益并触发总结：压缩后，系统会检查获得了多少空闲的上下文空间。如果在多轮压缩后，每次的增益都变得微乎其微，这意味着上下文即使在紧凑形态下也已非常庞大。此时，系统才会触发总结操作&lt;br>
+执行总结：进行总结时，应使用未经压缩的完整版数据作为输入，以确保总结的质量。同时，与压缩类似，始终保留最后几次的工具调用和结果为完整细节，不进行总结。这能帮助模型清晰地知道它在哪个节点被打断，从而更平滑地继续任务，避免因总结导致的行为或风格突变&lt;br>
+通过这套精细的流程，Manus 在最大化信息保留和控制上下文成本之间取得了微妙的平衡&lt;/p>
+&lt;h1 id="管理-agent-复杂性上下文隔离的两种模式">管理 Agent 复杂性：上下文隔离的两种模式
+&lt;/h1>&lt;p>当任务变得异常复杂时，单一 Agent 的上下文管理压力会变得巨大。此时，将任务分解给多个子代理（sub-agents）的上下文隔离策略就显得尤为重要。Cognition AI 在他们的博客中曾警示过多代理设置的风险，因为在它们之间同步信息可能成为一场噩梦。然而，这并非一个新问题，它与计算机科学早期多进程/多线程协调的挑战异曲同工&lt;br>
+Peak Ji 借鉴了 Go 语言社区的一句名言来阐释解决这个问题的两种核心模式： Do not communicate by sharing memory; instead, share memory by communicating. (不要通过共享内存来通信；相反，通过通信来共享内存。)&lt;br>
+将这里的“内存 (memory)”类比为 AI Agents 的“上下文 (context)”，我们可以得到两种截然不同的多代理协作模式：&lt;/p>
+&lt;h2 id="模式一通过通信-by-communicating">模式一：通过通信 (By Communicating)
+&lt;/h2>&lt;p>这是最经典、最直观的子代理设置。它适用于那些可以被清晰地分解和委派的任务。&lt;br>
+工作流程：&lt;br>
+主代理（main agent）将一个任务封装成一个清晰、自包含的指令，就像一个函数调用&lt;br>
+这个指令被发送给一个子代理&lt;br>
+子代理的上下文窗口是干净的，几乎只包含来自主代理的这条指令。它在自己独立的上下文中完成任务&lt;br>
+子代理将最终结果返回给主代理&lt;br>
+适用场景：当任务指令简短明确，且主代理只关心最终产出，不关心实现过程时，这种模式是最佳选择&lt;br>
+例子：在一个代码库中搜索特定的代码片段。主代理只需要告诉子代理“找到包含函数 &lt;code>xyz&lt;/code> 的文件”，它不关心子代理是用了 &lt;code>grep&lt;/code> 还是其他方法，只需要最终的文件路径和代码内容。Claude Code 的 &lt;code>task&lt;/code> 工具就是这种模式的典型应用&lt;br>
+优点：简单、隔离性好、上下文开销小&lt;/p>
+&lt;h2 id="模式二通过共享上下文-by-sharing-context">模式二：通过共享上下文 (By Sharing Context)
+&lt;/h2>&lt;p>与前一种模式相反，这种模式适用于那些子任务严重依赖整体历史背景的复杂场景。&lt;br>
+工作流程：&lt;br>
+子代理能够看到主代理完整的、之前的全部上下文历史，包括所有的工具使用记录和观察结果&lt;br>
+但是，这个子代理拥有自己独特的系统提示和行动空间 。它是在共享的背景知识上，以一个新的“身份”或“能力集”来执行任务&lt;br>
+适用场景：当任务的最终产出质量取决于对大量中间过程和发现的理解时，共享上下文是更高效的选择&lt;br>
+例子：进行一项深度研究（deep research）并撰写报告。最终的报告质量依赖于所有中间的搜索、笔记和分析。如果使用“通信”模式，主代理需要将所有这些中间产物打包成文件，再让子代理去读取和理解，这会浪费大量的延迟和 token。而共享上下文模式则让子代理直接拥有完整的历史视图&lt;br>
+&lt;strong>成本与权衡&lt;/strong> ：这种模式的成本更高&lt;br>
+预填充成本：每个子代理都需要处理一个非常大的输入上下文，这会消耗更多的输入 token&lt;br>
+KV 缓存失效：由于每个子代理的系统提示和行动空间都不同，无法复用之前的 KV 缓存，这意味着每次切换到子代理都需要支付全额的计算成本&lt;br>
+在 Q&amp;amp;A 环节，Peak 进一步阐述了 Manus 如何在实践中实现这两种模式，尤其是 agent 间的通信：&lt;br>
+共享沙箱作为媒介：Manus 的每个会话都运行在一个独立的虚拟机沙箱中。主代理和子代理可以共享同一个沙箱。因此，信息传递可以通过共享文件系统来完成，主代理只需传递文件路径即可&lt;br>
+Schema 作为合约：为了解决子代理输出格式不统一的问题，Manus 采用了一种“合约”机制。当主代理要启动一个或多个子代理时，它会首先定义一个输出模式 (output schema)。子代理则有一个特殊的工具叫做 &lt;code>submit_result&lt;/code> ，通过约束解码技术，确保子代理提交回主代理的结果严格符合主代理预先定义的模式。这就像一个 MapReduce 操作，最终会生成一个格式规整的“电子表格”&lt;br>
+通过这两种模式的灵活运用，可以在保持任务隔离性的同时，高效地处理不同依赖度的复杂协作任务。&lt;/p>
+&lt;h1 id="超越数据通过分层行动空间卸载工具">超越数据：通过分层行动空间卸载工具
+&lt;/h1>&lt;p>上下文卸载（Context Offloading）通常被理解为将工作数据（如文件内容、搜索结果）移出上下文窗口。然而，随着 Agent 系统变得越来越复杂，尤其是在集成了像 &lt;code>MCP&lt;/code> 这样的可扩展工具系统后，一个新问题浮现了： &lt;strong>工具本身也成为了上下文的主要消耗者&lt;/strong>&lt;br>
+当上下文中存在过多的工具定义时，会导致“上下文混淆 (context confusion)”，模型可能会调用错误的工具，甚至是根本不存在的工具。一个常见的解决方案是根据当前任务动态地对工具描述进行 RAG（检索增强生成），按需加载工具。但这种方法存在两个弊端：&lt;br>
+破坏 KV 缓存：工具定义通常位于上下文的开头。每次更换工具集，都意味着 KV 缓存失效，增加了计算成本&lt;br>
+误导模型：即使某个工具被移除了，模型在历史记录中仍然能看到对该工具的过往调用。这可能会误导模型去调用一个当前无效的工具或使用错误的参数&lt;br>
+为了解决这个问题，Manus 创新性地设计了一种 &lt;strong>分层的行动空间 (Layered Action Space)&lt;/strong> 。这种架构将 Agent 的能力分解为三个抽象层次，从模型的视角看，所有操作最终都归结为少数几个核心函数调用，从而实现了极高的稳定性和可扩展性&lt;/p>
+&lt;h2 id="第一层函数调用-function-calling">第一层：函数调用 (Function Calling)
+&lt;/h2>&lt;p>这是最底层、最核心的一层，也是与模型直接交互的接口。&lt;br>
+特点：&lt;br>
+原子性与固定性：只包含一小组（在 Manus 中约 10-20 个）固定的、原子性的函数。例如：读写文件 (&lt;code>read/write file&lt;/code>)、执行 Shell 命令 (&lt;code>execute shell command&lt;/code>)、搜索文件和互联网 (&lt;code>search&lt;/code>)，以及一些浏览器操作&lt;br>
+模式安全：得益于约束解码，函数调用的格式和参数是严格受控的&lt;br>
+缓存友好：由于这个函数列表是固定的，KV 缓存可以被长期保持和复用&lt;br>
+作用：这些原子函数边界清晰，并且可以组合起来完成更复杂的工作流。它们是所有上层能力的基础&lt;/p>
+&lt;h2 id="第二层沙箱工具集-sandbox-utilities">第二层：沙箱工具集 (Sandbox Utilities)
+&lt;/h2>&lt;p>这一层将大量的功能从函数调用层卸载到了 Agent 所在的虚拟机沙箱环境中。&lt;br>
+特点：&lt;br>
+预装命令行工具：Manus 在其定制的 Linux 系统中预装了大量为 Agent 开发的命令行工具。例如，格式转换器、语音识别工具，甚至一个特殊的 &lt;code>MCP CLI&lt;/code> （用于调用 MCP 功能的命令行接口）&lt;br>
+通过 Shell 调用：Agent 不是通过新的函数来使用这些工具，而是通过第一层的 &lt;code>execute_shell_command&lt;/code> 函数来运行它们&lt;br>
+优势：&lt;br>
+无限扩展：可以在不修改模型函数调用空间（action space）的情况下，不断增加新的能力&lt;br>
+符合模型心智：对于熟悉 Linux 的模型来说，通过 &lt;code>ls /usr/bin&lt;/code> 发现新工具，或者通过 &lt;code>tool_name --help&lt;/code> 查看用法，是一种非常自然的行为&lt;br>
+处理大数据：这些命令行工具可以处理非常大的输出，它们可以将结果写入文件，或进行分页返回，Agent 可以使用 &lt;code>grep&lt;/code>, &lt;code>cat&lt;/code>, &lt;code>less&lt;/code> 等标准 Linux 工具来处理这些结果&lt;/p>
+&lt;h2 id="第三层软件包与-api-packages--apis">第三层：软件包与 API (Packages &amp;amp; APIs)
+&lt;/h2>&lt;p>这是最高层的抽象，Agent 通过编写和执行代码来与外部世界进行更复杂的交互。&lt;br>
+特点：&lt;br>
+编写脚本：Agent 可以编写 Python 脚本来调用预授权的第三方 API 或自定义的软件包。例如，使用一个 3D 设计库进行建模，或调用一个金融 API 获取市场数据&lt;br>
+通过文件和 Shell 执行：Agent 使用第一层的 &lt;code>write_file&lt;/code> 函数创建脚本，然后使用 &lt;code>execute_shell_command&lt;/code> 函数来运行它&lt;br>
+优势：&lt;br>
+处理内存密集型计算：非常适合需要大量计算但又不需要将所有中间数据都塞入模型上下文的任务。例如，分析一只股票一整年的价格数据，脚本可以在运行时内存中完成计算，只将最终的总结（如平均值、波动率）返回给模型&lt;br>
+高组合性：代码和 API 本身具有极强的组合性，可以在一个步骤内完成一系列复杂的操作，这与 &lt;code>CodeAct&lt;/code> 等研究论文的思想不谋而合&lt;br>
+通过这个三层架构，Manus 巧妙地解决了工具过载的问题。从模型的角度来看，无论它是在使用一个沙箱工具，还是在调用一个复杂的 API，最终都只是在调用那几个固定的、底层的原子函数。这使得接口保持了极度的 &lt;strong>简洁、缓存友好和正交性&lt;/strong> ，为构建一个既强大又稳定的通用 Agent 奠定了基础&lt;/p>
+&lt;h1 id="统领全局的设计哲学与一线实战">统领全局的设计哲学与一线实战
+&lt;/h1>&lt;p>在分享了所有精妙的技术细节之后，Peak Ji 提出了一个或许是本次分享中最重要的观点，它看似与之前所说的背道而驰： &lt;strong>请避免上下文过度工程化 (context over-engineering)&lt;/strong> 。&lt;br>
+他回顾了 Manus 发布以来的发展历程，发现那些带来最大性能飞跃的时刻，并非来自增加了更花哨的上下文管理层或更聪明的检索技巧，而是来自简化——来自移除不必要的技巧，并给予模型多一点信任。每一次简化架构，系统都会变得更快、更稳定、也更智能&lt;br>
+这引出了一条核心的设计哲学： &lt;strong>上下文工程的目标是让模型的工作变得更简单，而不是更复杂。构建得更少，理解得更多 (Build less, understand more)&lt;/strong> 。&lt;br>
+在最后的 Q&amp;amp;A 环节，这一哲学思想通过一系列具体的实践经验得到了进一步的印证，这些来自一线的智慧为构建高效 Agents 提供了宝贵的参考：&lt;br>
+关于评测：&lt;br>
+用户反馈是黄金标准：对 Manus 而言，最重要的评测指标是每次会话结束后用户给出的 1-5 星评分&lt;br>
+内部自动化测试为辅：他们创建了自有数据集，包含可验证结果的执行型任务，弥补了现有公开基准测试大多为只读任务的不足&lt;br>
+人类评估不可或缺：对于网站生成、数据可视化这类难以用自动化指标衡量的、涉及“品味”的任务，必须依赖大量的人类实习生进行主观评估。公开的学术基准（如 &lt;code>GAIA&lt;/code> ）可能与真实用户需求严重脱节&lt;br>
+关于模型选择与架构设计：&lt;br>
+优先选择旗舰模型：尽管开源模型看似成本更低，但对于输入远长于输出的 Agent 任务，KV 缓存至关重要。旗舰模型提供商拥有更成熟的分布式 KV 缓存基础设施，在规模化部署时可能反而更具成本效益&lt;br>
+利用模型差异进行路由：不同的顶尖模型各有千秋（例如 Claude 擅长编码，Gemini 擅长多模态）。应用层的优势在于无需绑定单一模型，可以进行任务级甚至步骤级的智能路由&lt;br>
+测试架构的“未来兼容性”：一个好的 Agent 架构，应该在从一个较弱模型切换到一个较强模型时，性能有显著提升。这种测试可以作为架构是否“未来兼容”的早期信号&lt;br>
+关于 Agent 设计：&lt;br>
+避免角色拟人化：不要强行将人类的组织架构（如设计师、程序员、经理）套用在 Agent 设计上。这种分工是人类上下文限制的产物&lt;br>
+采用功能性划分：Manus 的多代理系统并非按角色划分，而是按功能。只有少数几个核心 Agent，如一个通用的“执行者 (Executor)”、一个“规划者 (Planner)”和一个“知识管理器 (Knowledge Manager)”，以最大限度地降低通信复杂性&lt;br>
+从 &lt;code>todo.md&lt;/code> 到规划者 Agent：早期的 Agent 普遍使用 &lt;code>todo.md&lt;/code> 文件进行任务规划，但这会浪费大量 token 在文件的反复读写更新上。更优的模式是将其升级为一个独立的规划者 Agent，使用“Agent as Tool”的范式进行交互&lt;br>
+关于强化学习 (RL) 与工具调用：&lt;br>
+谨慎对待 RL：对于一个需要支持开放、可扩展行动空间（如 &lt;code>MCP&lt;/code> ）的通用 Agent，进行 RL 的难度极高。这相当于在自己构建一个基础模型。目前阶段，将这项工作交给模型公司，而应用层专注于上下文工程是更明智的选择&lt;br>
+总而言之，成功的上下文工程是一场在多个潜在冲突目标（如信息保真度、成本、延迟、可扩展性）之间寻求完美平衡的艺术。它要求开发者不仅要掌握精湛的技术，更要拥有一种化繁为简、信任模型的深刻洞察力&lt;br>
+参考：&lt;br>
+Context Engineering for AI Agents with LangChain and Manus&lt;/p></description></item><item><title>Search</title><link>https://www.jsongo.top/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.jsongo.top/page/search/</guid><description/></item></channel></rss>
