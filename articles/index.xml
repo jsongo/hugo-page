@@ -1,4 +1,201 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 15:48:08 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心</title><link>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</link><pubDate>Thu, 13 Nov 2025 15:48:08 +0800</pubDate><guid>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</guid><description>&lt;img src="https://cdn.lyb.pub/upic/1763020394_vBc3MT.png" alt="Featured image of post HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心" />&lt;p>近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 14 Nov 2025 08:04:33 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenAI 发布更具个性的 GPT-5.1，AI教父引用破百万；太阳风暴致火箭停飞，大疆发布新款无人机</title><link>https://www.jsongo.top/articles/openai-gpt-5-1-bengio-citations-solar-flare-dji-drone-11.14/</link><pubDate>Fri, 14 Nov 2025 08:04:33 +0800</pubDate><guid>https://www.jsongo.top/articles/openai-gpt-5-1-bengio-citations-solar-flare-dji-drone-11.14/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/e708af26052e469f51030e39e026082a.jpg" alt="Featured image of post OpenAI 发布更具个性的 GPT-5.1，AI教父引用破百万；太阳风暴致火箭停飞，大疆发布新款无人机" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>近期，人工智能领域迎来了多项激动人心的突破，从底层模型能力的跃升到实际应用的深化，AI 正以前所未有的速度融入并重塑我们的日常生活与工作方式。OpenAI 发布了更具“人性化”特质的 GPT-5.1 模型，标志着生成式 AI 在交互体验上迈出了关键一步。同时，学术界的里程碑事件——Yoshua Bengio 成为首位谷歌学术引用量破百万的学者——彰显了 AI 研究的深厚积累与全球影响力。在消费端，AI 正通过智能手机和智能眼镜等设备，以前沿功能的形式为用户带来切实的便利。&lt;/p>
+&lt;h2 id="ai-模型能力的深化与人格化探索">AI 模型能力的深化与人格化探索
+&lt;/h2>&lt;p>人工智能的核心——大语言模型，正朝着更智能、更贴近人类交流习惯的方向进化。最新的模型不仅在知识处理和逻辑推理上有所增强，更开始关注与用户互动时的“温度”和风格。&lt;/p>
+&lt;h3 id="openai-发布全新-gpt-51-模型提供更多人格选项">OpenAI 发布全新 GPT-5.1 模型，提供更多“人格”选项
+&lt;/h3>&lt;p>OpenAI 推出的 GPT-5.1 模型，其最引人注目的特性并非单纯的性能提升，而是引入了多样化的“人格预设”。用户现在可以根据具体场景，选择让 AI 以“专业”、“友好”、“古怪”或“高效”等不同风格进行对话。这一设计旨在解决通用 AI 模型有时显得过于机械或中立的问题，通过赋予 AI 一个可调节的“性格”，使其在客服、创意写作、教育陪伴等不同场景下能提供更具沉浸感和舒适度的交互体验。这背后是模型在理解人类情感细微差别和语境适应性上的显著进步。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078659-Personality-Presets.png"
+loading="lazy"
+alt="GPT-5.1 Personality Presets"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.theverge.com/news/802653/openai-gpt-5-1-upgrade-personality-presets" target="_blank" rel="noopener"
+>OpenAI 发布全新 GPT-5.1 模型，提供更多“人格”选项&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="ai教父-yoshua-bengio-成为首位谷歌学术引用量破百万的学者">“AI教父” Yoshua Bengio 成为首位谷歌学术引用量破百万的学者
+&lt;/h3>&lt;p>在 AI 基础理论研究领域，图灵奖得主 Yoshua Bengio 达到了一个前所未有的学术影响力高峰——其谷歌学术引用次数突破一百万次。这一里程碑不仅是对 Bengio 本人在深度学习，尤其是神经网络和表征学习方面开创性贡献的肯定，更是整个人工智能领域从学术边缘走向科技主流的强力证明。如此庞大的引用量，意味着他的研究成果已成为全球无数后续研究不可或缺的理论基石，持续推动着 AI 技术的前沿边界。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078660-d41586-025-03681-6_51692650.jpg"
+loading="lazy"
+alt="Yoshua Bengio"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.nature.com/articles/d41586-025-03681-6" target="_blank" rel="noopener"
+>“AI教父” Yoshua Bengio 成为首位谷歌学术引用量破百万的学者&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="ai-在消费电子设备中的无缝集成">AI 在消费电子设备中的无缝集成
+&lt;/h2>&lt;p>人工智能不再局限于云端或专业软件，它正以前所未有的深度集成到我们日常使用的硬件设备中，致力于解决信息过载和提升交互自然度等实际问题。&lt;/p>
+&lt;h3 id="pixel-手机迎来-ai-通知摘要功能">Pixel 手机迎来 AI 通知摘要功能
+&lt;/h3>&lt;p>谷歌为其 Pixel 9 和 10 系列手机推出的 AI 通知摘要功能，是应对现代人“通知疲劳”的巧妙方案。该功能利用设备端或云端的 AI 模型，智能地分析、归并和提炼锁屏界面上繁杂的各类通知，最终为用户呈现一个简洁、突出重点信息的摘要。这不仅能帮助用户快速抓住核心信息，节省大量浏览和筛选时间，也代表了 AI 在个性化信息管理方面迈出的重要一步，让手机变得更“懂”用户。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078662-Pixel-AI-Notification-Summaries-cover.jpg"
+loading="lazy"
+alt="Pixel AI Notification Summaries"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2025/11/12/pixel-ai-notification-summaries/" target="_blank" rel="noopener"
+>Pixel 手机迎来 AI 通知摘要功能&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="体验-even-realities-g2外观与感觉终于正常的智能眼镜">体验 Even Realities G2：外观与感觉终于正常的智能眼镜
+&lt;/h3>&lt;p>在智能穿戴设备领域，Even Realities 的 G2 智能眼镜实现了一次关键的突破。它成功地将复杂的 AI 助手、显示和传感技术融入到一副外观与普通眼镜几乎无异的框架中。这意味着用户可以获得信息提示、语音助手、实时翻译等 AI 驱动功能，而无需承受笨重外形带来的社交尴尬或物理不适。这种“全天候可佩戴”的设计理念，是 AI 从“有用工具”转变为“无形伴侣”的关键，为增强现实（AR）的普及铺平了道路。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078662-ER-FI.jpg"
+loading="lazy"
+alt="Even Realities G2"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2025/11/12/hands-on-smart-glasses-that-finally-look-feel-normal-even-realities-g2/" target="_blank" rel="noopener"
+>体验 Even Realities G2：外观与感觉终于正常的智能眼镜&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件生态演进">互联网与软件生态演进
+&lt;/h1>&lt;p>互联网与软件服务正在变得更加集成化和实体化，数字身份与物理世界的边界日益模糊。苹果公司将数字身份证引入机场安检，标志着数字钱包从支付工具向官方身份凭证的跨越。与此同时，微软对已停止支持的 Windows 10 发布紧急修复，反映了在技术快速迭代的背景下，维护庞大旧系统用户安全与体验的现实挑战。&lt;/p>
+&lt;h2 id="数字身份与物理世界的无缝对接">数字身份与物理世界的无缝对接
+&lt;/h2>&lt;p>数字化的进程正从虚拟信息延伸到对实体身份证明的替代，旨在提升效率和安全性。&lt;/p>
+&lt;h3 id="苹果在美国机场推出基于护照的数字身份证">苹果在美国机场推出基于护照的数字身份证
+&lt;/h3>&lt;p>苹果公司与美国运输安全管理局（TSA）的合作，使数字身份证从概念走向现实。用户可以将经过验证的美国护照信息存入苹果钱包，在参与计划的机场安检点时，只需使用 iPhone 或 Apple Watch 进行轻触或扫描，即可完成身份验证，无需出示实体护照。这一举措不仅极大简化了登机流程，减少了接触点，其背后依赖的加密技术和安全元件也确保了个人身份信息的高度安全，为未来的无纸化出行树立了标杆。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078665-1762973111197.jpeg"
+loading="lazy"
+alt="Apple Digital ID"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.axios.com/2025/11/12/apple-digital-id-tsa-airport-security" target="_blank" rel="noopener"
+>苹果在美国机场推出基于护照的数字身份证&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="软件生命周期与用户支持的平衡">软件生命周期与用户支持的平衡
+&lt;/h2>&lt;p>在推动新技术的同时，如何妥善处理旧有技术的遗留问题，是科技巨头必须面对的课题。&lt;/p>
+&lt;h3 id="微软为停止支持的-windows-10-系统紧急发布修复程序">微软为停止支持的 Windows 10 系统紧急发布修复程序
+&lt;/h3>&lt;p>尽管 Windows 10 已于2025年10月正式结束主流支持，进入需要付费的扩展安全更新（ESU）阶段，但微软近期仍为该系统发布了一个紧急修复程序。这一行动表明，面对全球仍有数以亿计用户和企业的现实，微软无法对影响付费ESU用户的关键问题坐视不管。它体现了软件公司在追求创新与维护庞大用户基础稳定性之间所做的艰难平衡，也提醒所有用户，及时升级至受支持的系统是保障安全的最佳策略。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078665-shutterstock_wizard.jpg"
+loading="lazy"
+alt="Microsoft Fix"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.theregister.com/2025/11/12/microsoft_esu_wizard_fix/" target="_blank" rel="noopener"
+>微软为停止支持的 Windows 10 系统紧急发布修复程序&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体创新浪潮">硬件与半导体创新浪潮
+&lt;/h1>&lt;p>硬件领域正经历着从消费级无人机到个人电脑架构的多元化创新。大疆通过集成激光雷达等技术，大幅降低了无人机的使用门槛；Framework 则继续挑战电子消费品“一次性”的魔咒，推动可升级笔记本的愿景。然而，地缘政治因素也为硬件产品的全球流通蒙上了阴影。&lt;/p>
+&lt;h2 id="消费级无人机的智能化与安全进阶">消费级无人机的智能化与安全进阶
+&lt;/h2>&lt;p>无人机技术正朝着更智能、更安全、更易用的方向发展，使其从专业工具变为大众消费品。&lt;/p>
+&lt;h3 id="大疆发布-neo-2-无人机新增屏幕和激光雷达飞行更安全智能">大疆发布 Neo 2 无人机：新增屏幕和激光雷达，飞行更安全智能
+&lt;/h3>&lt;p>大疆 Neo 2 的发布，是消费级无人机领域的一次重要迭代。其核心升级在于引入了激光雷达（LiDAR）实现的&lt;strong>全方位避障&lt;/strong>系统。这意味着无人机可以实时感知各个方向的障碍物并自动规避，极大地降低了飞行撞击风险，让新手用户也能充满信心地进行拍摄。此外，内置的屏幕消除了对手机应用的绝对依赖，手势控制和掌上起降则进一步简化了操作流程，结合更快的飞行速度和更长的续航，Neo 2 重新定义了“随行跟拍无人机”的标准。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078666-The-DJI-Neo-2-Adds-LiDAR-Faster-Flight-and-a-Bigger-Battery.jpg"
+loading="lazy"
+alt="DJI Neo 2"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://petapixel.com/2025/11/13/the-dji-neo-2-adds-a-screen-lidar-faster-flight-and-a-bigger-battery/" target="_blank" rel="noopener"
+>大疆发布 Neo 2 无人机：新增屏幕和激光雷达，飞行更安全智能&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="受美国禁令影响大疆新款-neo-2-无人机或将无法在美国上市">受美国禁令影响，大疆新款 Neo 2 无人机或将无法在美国上市
+&lt;/h3>&lt;p>然而，技术创新无法完全避开政治现实。就在 Neo 2 发布之际，其在美国市场的未来却因可能于12月生效的禁令而变得岌岌可危。这一潜在的禁令反映了持续的地缘政治紧张局势对科技产业和消费者选择的直接影响。对于美国的无人机爱好者、内容创作者和行业用户而言，他们可能将面临无法体验到最新技术成果的局面，同时也迫使大疆等公司需要更加注重美国之外的其他全球市场。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078666-djis-neo-2-drone-wont-land-in-the-us-as-december-ban-looms_6tby.1200.jpg"
+loading="lazy"
+alt="DJI Neo 2 US Ban"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://au.pcmag.com/drones/114180/djis-neo-2-drone-wont-land-in-the-us-as-december-ban-looms" target="_blank" rel="noopener"
+>受美国禁令影响，大疆新款 Neo 2 无人机或将无法在美国上市&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="个人计算设备的模块化革命">个人计算设备的模块化革命
+&lt;/h2>&lt;p>在设备趋同化严重的今天，一些公司正致力于通过模块化设计，赋予用户维修和升级的权利，延长设备生命周期。&lt;/p>
+&lt;h3 id="framework-laptop-16-评测可升级笔记本显卡的又一次新尝试">Framework Laptop 16 评测：可升级笔记本显卡的又一次新尝试
+&lt;/h3>&lt;p>Framework Laptop 16 延续了该品牌标志性的模块化理念，并在此次迭代中重点改进了&lt;strong>可升级独立显卡模块&lt;/strong>。与传统的焊接在主板上的GPU不同，Framework 通过自定义的连接器接口，让用户在未来能够像台式机一样更换性能更强的显卡模块。这种设计不仅挑战了笔记本电脑“性能固化”的传统，也直接回应了电子废弃物问题，为追求长期使用和性能可持续性的用户提供了一个强有力的选择。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078669-IMG_1624-1152x648.jpeg"
+loading="lazy"
+alt="Framework Laptop 16"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://arstechnica.com/gadgets/2025/11/review-new-framework-laptop-16-takes-a-fresh-stab-at-the-upgradeable-laptop-gpu/" target="_blank" rel="noopener"
+>Framework Laptop 16 评测：可升级笔记本显卡的又一次新尝试&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="移动设备与沉浸式体验的形态探索">移动设备与沉浸式体验的形态探索
+&lt;/h2>&lt;p>从折叠屏到 VR，硬件形态的创新仍在继续，旨在提供更便携或更沉浸的体验。&lt;/p>
+&lt;h3 id="三星下一代-galaxy-z-flip8-折叠屏手机将更轻薄">三星下一代 Galaxy Z Flip8 折叠屏手机将更轻薄
+&lt;/h3>&lt;p>根据最新传闻，三星计划在明年的 Galaxy Z Flip8 上进一步优化其设计，目标是打造出更薄、更轻的机身。这对于翻盖式折叠屏手机而言至关重要，因为便携性和精致的握持感是其核心吸引力之一。持续的减重和瘦身努力，表明折叠屏技术正逐渐走向成熟，从解决“有无问题”过渡到优化“体验问题”，以期吸引更广泛的主流用户。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078669-gsmarena_000.jpg"
+loading="lazy"
+alt="Samsung Z Flip8"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.gsmarena.com/samsung_galaxy_z_flip8_to_be_thinner_and_lighter-news-70263.php" target="_blank" rel="noopener"
+>三星下一代 Galaxy Z Flip8 折叠屏手机将更轻薄&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="valve-发布新款-vr-头显-steam-frame将支持安卓游戏">Valve 发布新款 VR 头显 Steam Frame，将支持安卓游戏
+&lt;/h3>&lt;p>Valve 的新款 VR 头显 Steam Frame 带来了一个出人意料的特性：支持运行安卓游戏。这一策略旨在通过引入海量且成熟的安卓游戏生态，来弥补原生高质量 VR 内容相对不足的现状，降低用户的入门门槛和娱乐成本。它模糊了移动游戏与沉浸式VR体验的界限，可能为 VR 头显找到一条新的普及路径，同时也对头显的处理器性能和兼容性提出了更高要求。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078669-Screenshot-2025-11-12-at-18.22.01.png"
+loading="lazy"
+alt="Steam Frame VR"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.gamesindustry.biz/steams-new-vr-headset-steam-frame-will-support-android-games" target="_blank" rel="noopener"
+>Valve 发布新款 VR 头显 Steam Frame，将支持安卓游戏&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="市场反响与设计哲学的碰撞">市场反响与设计哲学的碰撞
+&lt;/h2>&lt;p>并非所有硬件创新都能获得市场的掌声，有时设计理念与消费者期望之间会产生巨大落差。&lt;/p>
+&lt;h3 id="230美元买一只剪坏的袜子苹果新款-iphone-pocket-配件遭网友嘲讽">“230美元买一只剪坏的袜子”——苹果新款 iPhone Pocket 配件遭网友嘲讽
+&lt;/h3>&lt;p>苹果推出的 iPhone Pocket 配件，因其独特的外观设计和高达230美元的定价，在社交媒体上引发了广泛的调侃和批评。许多网友认为其造型酷似“被剪坏的袜子”，难以理解其设计美学与实用价值。这一事件凸显了即便是苹果这样的工业设计标杆，其过于前卫或实验性的产品也可能面临严峻的市场接受度考验，证明了在功能、形态和价格之间取得平衡始终是消费电子产品的核心挑战。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078670-ca13b720-bfde-11f0-bbea-2df62eb90585.jpg"
+loading="lazy"
+alt="iPhone Pocket"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.bbc.com/news/articles/cn97ndgpnq7o" target="_blank" rel="noopener"
+>“230美元买一只剪坏的袜子”——苹果新款 iPhone Pocket 配件遭网友嘲讽&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天探索新篇章">航空航天探索新篇章
+&lt;/h1>&lt;p>从近地轨道到宇宙深空，航空航天领域捷报频传，同时也面临着来自宇宙环境的挑战。太阳活动进入了活跃期，其释放的强大能量直接影响了人类的航天计划。而在探索方面，詹姆斯·韦伯太空望远镜等尖端设备正带领我们窥见宇宙的婴儿期，揭示恒星与星系的诞生之谜。&lt;/p>
+&lt;h2 id="太阳活动对人类航天任务的影响">太阳活动对人类航天任务的影响
+&lt;/h2>&lt;p>作为离我们最近的恒星，太阳的喜怒无常直接关系着人类太空活动的安全。&lt;/p>
+&lt;h3 id="太阳爆发2025年最强耀斑导致贝索斯的新格伦火箭发射推迟">太阳爆发2025年最强耀斑，导致贝索斯的新格伦火箭发射推迟
+&lt;/h3>&lt;p>近日，太阳爆发了本年度迄今为止最强烈的一次耀斑，释放出大量的高能辐射和带电粒子流。这次事件导致的&lt;strong>地磁暴&lt;/strong>和增强的&lt;strong>辐射环境&lt;/strong>，迫使 NASA 出于安全考虑，推迟了蓝色起源公司新型重型运载火箭“新格伦”的发射。这一事件生动地展示了“空间天气”对现代科技社会的切实影响。强烈的太阳活动可能干扰卫星运行、破坏航天器电子设备，并对宇航员健康构成威胁，因此航天任务的发射窗口必须将这些“天象”纳入关键考量因素。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078671-Oct_2_M7pt3_Flare_171-304-131_Crop-1152x648-1762966677.jpg"
+loading="lazy"
+alt="Solar Flare"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://arstechnica.com/space/2025/11/an-explosion-92-million-miles-away-just-grounded-jeff-bezos-new-glenn-rocket/" target="_blank" rel="noopener"
+>太阳爆发2025年最强耀斑，导致贝索斯的新格伦火箭发射推迟&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="窥探宇宙的黎明与恒星的生老病死">窥探宇宙的黎明与恒星的生老病死
+&lt;/h2>&lt;p>借助强大的新一代观测工具，天文学家正在回溯时间，寻找宇宙中最古老的天体，并细致入微地研究恒星的演化过程。&lt;/p>
+&lt;h3 id="韦伯望远镜可能发现了宇宙的第一代恒星">韦伯望远镜可能发现了宇宙的第一代恒星
+&lt;/h3>&lt;p>詹姆斯·韦伯太空望远镜的观测数据带来了一个足以改写天文学教科书的潜在发现：它可能首次探测到了宇宙中的&lt;strong>第一代恒星&lt;/strong>，即“第三星族星”。理论认为，这些恒星由宇宙最初形成的纯氢和氦构成，质量巨大、寿命短暂，但它们的核聚变过程产生了宇宙中第一批重元素，为后续星系和行星的形成播下了种子。如果这一发现被证实，它将为我们理解宇宙从黑暗走向光明的“黎明时代”提供最直接的证据。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078671-D7xsbebnmDG87gbExH4mZ8-1200-80.jpg"
+loading="lazy"
+alt="James Webb Space Telescope"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/space/cosmology/james-webb-telescope-may-have-found-the-universes-first-generation-of-stars" target="_blank" rel="noopener"
+>韦伯望远镜可能发现了宇宙的第一代恒星&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="科学家首次完整观测到超新星冲击波穿过垂死恒星的过程">科学家首次完整观测到超新星冲击波穿过垂死恒星的过程
+&lt;/h3>&lt;p>在一项里程碑式的观测中，天文学家首次完整地捕捉到了一颗大质量恒星在生命终点发生超新星爆发时，其产生的&lt;strong>冲击波&lt;/strong>从恒星内部向外传播并最终冲破星体的全过程。这一现象如同为恒星的死亡过程拍摄了一部高速纪录片，提供了验证超新星爆发理论模型的关键数据。观测这些冲击波的速度、能量和与恒星物质相互作用的方式，能帮助我们更精确地理解重元素（如金、银）在宇宙中的合成与散布机制。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763078672-EoTkj7xeNHzXYV4gGYRisD-1920-80.jpg"
+loading="lazy"
+alt="Supernova Shockwave"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.space.com/astronomy/scientists-watch-supernova-shockwave-shoot-through-a-dying-star-for-1st-time" target="_blank" rel="noopener"
+>科学家首次完整观测到超新星冲击波穿过垂死恒星的过程&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="heading">
+&lt;/h2></description></item><item><title>HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心</title><link>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</link><pubDate>Thu, 13 Nov 2025 15:48:08 +0800</pubDate><guid>https://www.jsongo.top/articles/huggingface-200-page-llm-training-guide/</guid><description>&lt;img src="https://cdn.lyb.pub/upic/1763020394_vBc3MT.png" alt="Featured image of post HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心" />&lt;p>近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1763020394_vBc3MT.png"
 loading="lazy"
 alt="assets/local_image_plus/db4c3edc3efcaed5601e9f63f8500ce4_MD5.png|747x772"
