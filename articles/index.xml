@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 16 Nov 2025 08:03:55 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>今日科技看点：中国AI自学物理，科学家复活猛犸象RNA，成功模拟宇宙大爆炸</title><link>https://www.jsongo.top/articles/ai-learns-physics-mammoth-rna-big-bang-simulation-11.16/</link><pubDate>Sun, 16 Nov 2025 08:03:55 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-learns-physics-mammoth-rna-big-bang-simulation-11.16/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/f00b4e40df7e8c0441f3398f54abc6d5.jpg" alt="Featured image of post 今日科技看点：中国AI自学物理，科学家复活猛犸象RNA，成功模拟宇宙大爆炸" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 17 Nov 2025 08:04:10 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>谷歌将发布 Gemini 3 Pro 驱动的新AI；物理学界发现“时间晶体”，揭示物质新秩序</title><link>https://www.jsongo.top/articles/google-gemini-3-pro-and-time-crystal-discovery-11.17/</link><pubDate>Mon, 17 Nov 2025 08:04:10 +0800</pubDate><guid>https://www.jsongo.top/articles/google-gemini-3-pro-and-time-crystal-discovery-11.17/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/e7d59b99eec6ca3618f5c4cfcd4d24fb.jpeg" alt="Featured image of post 谷歌将发布 Gemini 3 Pro 驱动的新AI；物理学界发现“时间晶体”，揭示物质新秩序" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>近期人工智能领域迎来了一系列突破性进展，从大模型的持续迭代到AI应用在商业和个人场景的深度渗透，无不彰显着这一技术的澎湃动力。谷歌、OpenAI、Meta等科技巨头继续引领创新浪潮，发布了更强大的基础模型和更智能的AI助手，同时AI在企业端的采纳率也呈现出爆发式增长。这些发展不仅预示着技术本身的成熟，更将对未来的工作方式和社会结构产生深远影响。&lt;/p>
+&lt;hr>
+&lt;h2 id="大模型与应用生态的协同进化">大模型与应用生态的协同进化
+&lt;/h2>&lt;p>人工智能领域的竞争正从单一模型能力转向生态系统建设，各大厂商都在通过硬件、软件和服务的协同创新来巩固市场地位。&lt;/p>
+&lt;h3 id="谷歌下周将发布由-gemini-3-pro-驱动的-nano-banana-pro">谷歌下周将发布由 Gemini 3 Pro 驱动的 Nano Banana Pro
+&lt;/h3>&lt;p>谷歌即将发布的Nano Banana Pro标志着其在AI硬件领域的又一重要布局。这款设备由最新的Gemini 3 Pro模型驱动，特别强调了图像生成能力的突破性提升。从技术路径来看，这延续了谷歌将大模型能力下沉到边缘设备的战略方向，旨在为用户提供更低延迟、更高隐私保护的AI体验。设备名称中的&amp;quot;Banana&amp;quot;可能暗示着其形态或配色上的创新，而&amp;quot;Pro&amp;quot;后缀则表明这一定位高端的专业级产品。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337842-Robot-Google-Vids-11-15-2025_09_22_AM.jpg"
+loading="lazy"
+alt="谷歌AI设备"
+>&lt;/p>
+&lt;h3 id="安卓版-gemini-应用迎来主页重新设计和黑色主题">安卓版 Gemini 应用迎来主页重新设计和黑色主题
+&lt;/h3>&lt;p>谷歌对安卓版Gemini应用进行的界面革新反映了AI助手从工具向伙伴的角色转变。新的主页设计更加简洁直观，降低了用户的学习成本，而黑色深色主题的加入不仅满足了用户的审美偏好，也有助于在夜间使用时减少视觉疲劳。&amp;ldquo;我的内容&amp;quot;标签页的引入使得用户能够更有效地管理个人资料和设置，这体现了谷歌在个性化AI体验方面的持续投入。&lt;/p>
+&lt;h3 id="谷歌-notebooklm-获重大更新新增深度研究-ai-功能">谷歌 NotebookLM 获重大更新，新增&amp;quot;深度研究&amp;rdquo; AI 功能
+&lt;/h3>&lt;p>NotebookLM的&amp;quot;深度研究&amp;quot;功能代表了AI在研究辅助领域的重大进步。这一功能能够同时分析和整合来自多个文档来源的信息，并自动生成思维导图、测验卡片等结构化学习工具，极大地提升了知识工作者和研究人员的效率。从技术实现角度看，这要求模型具备强大的多文档理解、信息抽取和知识重组能力，显示出谷歌在专业垂直领域AI应用的深度布局。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.testingcatalog.com/google-to-release-nano-banana-pro-powered-by-gemini-3-pro-next-week/" target="_blank" rel="noopener"
+>谷歌下周将发布由 Gemini 3 Pro 驱动的 Nano Banana Pro&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2025/11/14/gemini-android-homepage-redesign/" target="_blank" rel="noopener"
+>安卓版 Gemini 应用迎来主页重新设计和黑色主题&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.geeky-gadgets.com/google-notebooklm-deep-research/" target="_blank" rel="noopener"
+>谷歌 NotebookLM 获重大更新，新增&amp;quot;深度研究&amp;quot; AI 功能&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="ai商业化的加速与伦理挑战">AI商业化的加速与伦理挑战
+&lt;/h2>&lt;p>随着AI技术的成熟，其在企业端的应用正从试点阶段转向规模化部署，同时引发的就业影响和用户隐私担忧也日益凸显。&lt;/p>
+&lt;h3 id="chatgpt-企业客户突破百万ai-将加速替代部分工作岗位">ChatGPT 企业客户突破百万，AI 将加速替代部分工作岗位
+&lt;/h3>&lt;p>OpenAI宣布ChatGPT企业版客户数量突破100万大关，这一里程碑式成就反映了AI在商业领域的快速普及。从行业分布来看，金融、教育、客服等知识密集型行业成为AI应用的主力军。与此同时，多项调查显示，超过60%的企业计划在明年使用AI替代部分人力，主要集中在重复性高、创造性要求低的文书和处理类岗位。这一趋势既带来了效率提升的机遇，也引发了关于就业结构转型的深刻讨论。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337843-0x0.jpg"
+loading="lazy"
+alt="ChatGPT企业应用"
+>&lt;/p>
+&lt;h3 id="meta-开设-ai-眼镜快闪店以促进销售">Meta 开设 AI 眼镜快闪店以促进销售
+&lt;/h3>&lt;p>Meta在纽约、洛杉矶和拉斯维加斯开设的快闪店采用了&amp;quot;体验式营销&amp;quot;的创新策略，通过提供咖啡和试戴体验来降低消费者对AI硬件的心理门槛。这种将线上热度转化为线下实际销量的做法，反映了科技公司在AI硬件推广上正面临用户接受度的挑战。内置AI功能的雷朋智能眼镜作为Meta布局元宇宙生态的重要入口，其销售表现将直接影响公司未来在混合现实领域的战略推进。&lt;/p>
+&lt;h3 id="社区热议没人想要火狐浏览器里加入ai功能">社区热议：没人想要火狐浏览器里加入AI功能
+&lt;/h3>&lt;p>Mozilla计划在Firefox浏览器中集成AI功能的消息在Hacker News社区引发了强烈反对，这一现象揭示了用户对AI技术过度侵入日常工具的担忧。反对者主要担心这会增加浏览器的复杂性和资源占用，同时带来隐私风险。这种&amp;quot;AI反弹&amp;quot;情绪反映了部分用户群体对技术发展方向的审慎态度，他们更希望浏览器保持简洁高效的核心功能，而非盲目追随AI集成的行业趋势。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337844-social"
+loading="lazy"
+alt="Meta AI眼镜"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.forbes.com/sites/quickerbettertech/2025/11/16/small-business-technology-roundup-free-tools-for-google-docs-chatgpt-surpasses-1-million-customers-ai-replacing-workers-next-year/" target="_blank" rel="noopener"
+>ChatGPT 企业客户突破百万，AI 将加速替代部分工作岗位&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.wsj.com/tech/ai/meta-store-new-york-city-599ee48c" target="_blank" rel="noopener"
+>Meta 开设 AI 眼镜快闪店以促进销售&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://news.ycombinator.com/item?id%5c%5cu003d45926779" target="_blank" rel="noopener"
+>社区热议：没人想要火狐浏览器里加入AI功能&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件生态变革">互联网与软件生态变革
+&lt;/h1>&lt;p>互联网与软件领域正在经历深刻的范式转变，从平台封闭走向互联互通，从高价专业工具走向普惠化服务。欧盟《数字市场法案》的强制要求正在打破各大科技平台之间的壁垒，推动着更加开放的互联网生态形成。同时，软件工具的平民化趋势使得专业级设计资源以前所未有的低价惠及更广泛的用户群体，而网络安全服务则在性能与信任之间寻求新的平衡点。&lt;/p>
+&lt;hr>
+&lt;h2 id="平台互联互通与软件普惠化">平台互联互通与软件普惠化
+&lt;/h2>&lt;p>数字世界的围墙正在被拆除，而专业软件的门槛也在显著降低，这为全球用户带来了更加开放和普惠的数字体验。&lt;/p>
+&lt;h3 id="whatsapp-新更新曝光或将支持跨平台聊天">WhatsApp 新更新曝光：或将支持跨平台聊天
+&lt;/h3>&lt;p>WhatsApp在欧洲测试的&amp;quot;第三方聊天&amp;quot;功能是响应欧盟《数字市场法案》要求的重要举措，这一变化可能彻底改变即时通讯行业的竞争格局。从技术实现角度看，跨平台互通需要解决不同协议之间的兼容性、消息加密标准统一以及用户体验一致性的多重挑战。如果成功实施，用户将能够在WhatsApp内直接接收来自Telegram、Signal等其他平台的消息，这既提升了通讯便利性，也可能削弱平台通过用户锁定效应建立的竞争优势。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337844-INDIA-ANTITRUST-META-PLATFORMS-0_1763290349664_1763290358533.JPG"
+loading="lazy"
+alt="WhatsApp跨平台聊天"
+>&lt;/p>
+&lt;h3 id="微软旗下一款设计工具正以55美元的价格促销">微软旗下一款设计工具正以55美元的价格促销
+&lt;/h3>&lt;p>微软将原价579.99美元的设计工具以55美元的超低折扣销售，这一激进定价策略反映了软件行业从授权销售向生态构建的转型。对于设计师和创意工作者而言，这种价格落差极大地降低了专业工具的使用门槛，可能吸引大量新用户进入微软的设计生态系统。从商业策略分析，这很可能是微软为了对抗Adobe等竞争对手而采取的用户获取手段，通过低价吸引用户后再通过云服务和其他增值服务实现盈利。&lt;/p>
+&lt;h3 id="nordvpn-2025年评测依然是市面上最好的vpn之一">NordVPN 2025年评测：依然是市面上最好的VPN之一
+&lt;/h3>&lt;p>WIRED对NordVPN的2025年度评测显示，尽管该服务历史上曾有过安全争议，但其通过持续的技术改进重新赢得了市场信任。评测特别强调了NordVPN在连接稳定性、服务器网络覆盖和高级安全功能方面的优势。在数字隐私日益受到关注的今天，VPN服务已从小众工具转变为大众必需品，而性能与信任的平衡成为用户选择的关键考量因素。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.livemint.com/technology/tech-news/whatsapps-new-update-could-finally-let-you-chat-across-platforms-heres-how-it-works-11763289525234.html" target="_blank" rel="noopener"
+>WhatsApp 新更新曝光：或将支持跨平台聊天&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.newscentermaine.com/article/syndication/smart-deals/stackcommerce/microsofts-57999-design-tool-is-now-only-55/608-2eb4b09d-7ce1-48eb-9fd9-df6fac4c1928" target="_blank" rel="noopener"
+>微软旗下一款设计工具正以55美元的价格促销&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.wired.com/review/nordvpn-review-2025/" target="_blank" rel="noopener"
+>NordVPN 2025年评测：依然是市面上最好的VPN之一&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体创新浪潮">硬件与半导体创新浪潮
+&lt;/h1>&lt;p>硬件与半导体领域正经历着从材料科学到产品形态的多维度创新，光子芯片、折叠屏技术和新一代处理器共同推动着计算设备的性能边界和形态变革。这些技术进步不仅为消费者带来了更强大的电子设备，也为整个数字经济的发展提供了坚实的物理基础。从量子计算到个人电子设备，硬件创新正在各个层面重塑我们的技术体验。&lt;/p>
+&lt;hr>
+&lt;h2 id="芯片技术与移动设备演进">芯片技术与移动设备演进
+&lt;/h2>&lt;p>半导体技术的突破和移动设备形态的创新正在相互促进，为下一代计算体验奠定基础。&lt;/p>
+&lt;h3 id="新型光子芯片能被动地将激光转换成多种颜色">新型光子芯片能被动地将激光转换成多种颜色
+&lt;/h3>&lt;p>研究人员开发的新型光子芯片实现了在无需外部能源的情况下将单一颜色激光转换为多种颜色，这一突破对光通信和量子计算领域具有重要意义。与传统电子芯片相比，光子芯片具有速度快、能耗低、抗干扰能力强等优势。这种被动转换机制特别适用于需要精确控制多波长光源的应用场景，如高密度光通信、量子密钥分发和精密光谱分析，有望在这些领域带来性能的阶跃式提升。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337846-with-passive-approach.jpg"
+loading="lazy"
+alt="光子芯片"
+>&lt;/p>
+&lt;h3 id="一加15原型机运行跑分软件时出现严重过热问题">一加15原型机运行跑分软件时出现严重过热问题
+&lt;/h3>&lt;p>一加15原型机在运行3DMark Wild Life Extreme测试时出现的严重过热问题，揭示了新一代骁龙8 Elite Gen 5处理器在功耗管理上的挑战。过热导致基准测试崩溃和部分功能失效，这不仅影响用户体验，也可能对设备寿命造成损害。这一事件凸显了智能手机行业在追求极致性能时面临的热管理瓶颈，厂商需要在芯片性能、散热设计和能耗效率之间找到更好的平衡点。&lt;/p>
+&lt;h3 id="三星三折叠屏手机-galaxy-z-trifold-在美国进入关键测试阶段">三星三折叠屏手机 Galaxy Z TriFold 在美国进入关键测试阶段
+&lt;/h3>&lt;p>三星Galaxy Z TriFold已在美国进入固件测试阶段，标志着三折叠屏手机即将从概念走向市场。这种新型态的设备有望进一步模糊手机、平板和笔记本电脑之间的界限，为用户提供更加灵活的多任务处理和内容消费体验。据传该设备可能在12月5日正式亮相，如果成功，将巩固三星在可折叠设备领域的领导地位，并可能引发其他厂商的跟进。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337847-Samsung-Galaxy-Z-TriFold-Foldable-DIsplay-Bezel-Size-1200x675.jpg"
+loading="lazy"
+alt="三星三折叠手机"
+>&lt;/p>
+&lt;h3 id="展望2026年各大厂商手机产品线苹果三星谷歌等">展望2026年各大厂商手机产品线：苹果、三星、谷歌等
+&lt;/h3>&lt;p>2026年智能手机市场的竞争格局将更加多元化，各大厂商都在酝酿重大创新。苹果预计将在折叠屏领域有所突破，三星则继续深耕可折叠设备的多形态演化，谷歌可能进一步加强AI与硬件的深度融合。影像系统的持续升级、AI功能的场景化拓展以及电池技术的改进将成为明年旗舰设备的共同特点，而差异化竞争将更多体现在软件体验和生态系统整合上。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2025-11-photonic-chips-passively-laser-multiple.html" target="_blank" rel="noopener"
+>新型光子芯片能被动地将激光转换成多种颜色&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://wccftech.com/oneplus-15-overheats-when-running-3dmark-wild-life-extreme-app-crashes/" target="_blank" rel="noopener"
+>一加15原型机运行跑分软件时出现严重过热问题&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sammobile.com/news/galaxy-z-trifold-usa-launch-firmware-testing/" target="_blank" rel="noopener"
+>三星三折叠屏手机 Galaxy Z TriFold 在美国进入关键测试阶段&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cnet.com/tech/mobile/comparing-the-2026-phone-lineups-from-apple-samsung-google-and-everyone-else/" target="_blank" rel="noopener"
+>展望2026年各大厂商手机产品线：苹果、三星、谷歌等&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="硬件实用指南与市场动态">硬件实用指南与市场动态
+&lt;/h2>&lt;p>除了前沿技术创新，硬件领域的实用知识和市场动态同样对消费者有着重要价值。&lt;/p>
+&lt;h3 id="apple-watch-series-10-在早期黑五促销中迎来史低价">Apple Watch Series 10 在早期黑五促销中迎来史低价
+&lt;/h3>&lt;p>Apple Watch Series 10在黑色星期五早期促销中出现的史低价反映了智能手表市场的竞争加剧和产品更新换代的压力。起售价从249美元开始，折扣高达150美元，这种激进定价有助于苹果在假日购物季抢占市场份额，同时为可能的新品发布清理库存。对于消费者而言，这提供了以更低成本体验苹果健康生态系统的机会。&lt;/p>
+&lt;h3 id="升级到-nvme-后旧的-sata-固态硬盘可以这样利用">升级到 NVMe 后，旧的 SATA 固态硬盘可以这样利用
+&lt;/h3>&lt;p>从SATA SSD升级到NVMe SSD后，旧硬盘的再利用是一个既经济又环保的选择。将其作为第二硬盘安装Linux或Windows测试版系统，不仅可以实现开发测试环境的隔离，还能保留原有系统作为备份。这种用法特别适合开发者、技术爱好者和学生群体，他们可以在不影响主系统稳定性的前提下尝试新技术和软件。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337847-pxl_20240731_074141986.jpg"
+loading="lazy"
+alt="SSD升级利用"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://9to5toys.com/2025/11/14/apple-watch-series-10-black-friday-deals-live/" target="_blank" rel="noopener"
+>Apple Watch Series 10 在早期黑五促销中迎来史低价&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.xda-developers.com/how-i-used-sata-ssd-after-replacing-with-nvme/" target="_blank" rel="noopener"
+>升级到 NVMe 后，旧的 SATA 固态硬盘可以这样利用&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="物理学突破与宇宙探索">物理学突破与宇宙探索
+&lt;/h1>&lt;p>物理学领域近期取得了多项令人振奋的突破，从挑战传统物质观念的时间晶体到违背现有物理定律的黑洞喷流，这些发现正在拓展人类对自然规律认知的边界。同时，地球科学和宇宙学的研究也取得了重要进展，不仅揭示了人类活动对地球的深远影响，还可能为解决困扰科学界多年的&amp;quot;哈勃张力&amp;quot;问题提供新的思路。&lt;/p>
+&lt;hr>
+&lt;h2 id="基础物理与宇宙学的新视野">基础物理与宇宙学的新视野
+&lt;/h2>&lt;p>从微观量子世界到宏观宇宙尺度，物理学研究正在多个前沿领域取得突破性进展。&lt;/p>
+&lt;h3 id="科学家发现一种可在有序与混沌间律动的时间晶体">科学家发现一种可在有序与混沌间律动的时间晶体
+&lt;/h3>&lt;p>科学家发现的新型时间晶体能够在有序和混沌状态之间有节奏地切换，这一发现对基础物理学具有重要意义。时间晶体是一种非平衡态物质，其原子结构在时间维度上呈现周期性变化，而新发现的这种在有序与混沌间切换的特性更是前所未见。这种独特行为不仅挑战了传统物理学对物质状态的理解，还可能为开发新型计时设备和量子信息处理器件提供理论基础。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337848-crystal-star.jpg"
+loading="lazy"
+alt="时间晶体"
+>&lt;/p>
+&lt;h3 id="黑洞喷流的异常加速现象似乎违反了物理学定律">黑洞喷流的异常加速现象似乎违反了物理学定律
+&lt;/h3>&lt;p>对黑洞喷流的最新观测显示，这些物质流的加速方式超出了现有物理定律的解释范围，让天文学家感到困惑。黑洞喷流是由吸积盘物质在强大磁场作用下沿旋转轴方向抛射形成的，通常可用相对论效应解释其高速运动。然而新发现的异常加速现象可能暗示着未知的物理机制，或许是暗能量、修改引力理论或其他新物理效应的体现，这一发现有望推动理论物理学的进一步发展。&lt;/p>
+&lt;h3 id="超新星标准烛光理论的瑕疵或能解决哈勃张力问题">超新星&amp;quot;标准烛光&amp;quot;理论的瑕疵或能解决哈勃张力问题
+&lt;/h3>&lt;p>物理学家提出，如果作为宇宙距离测量基准的Ia型超新星的亮度标准存在系统性误差，那么当前宇宙学中的&amp;quot;哈勃张力&amp;quot;难题或许可以得到解决。哈勃张力指的是通过早期宇宙遗迹（如宇宙微波背景辐射）和晚期宇宙观测（如超新星）测得的哈勃常数存在显著差异。这一新思路为调和宇宙学测量矛盾提供了新视角，可能避免对标准宇宙学模型进行剧烈修改。&lt;/p>
+&lt;h3 id="拉曼量子存储器性能接近完美实现重大技术突破">拉曼量子存储器性能接近完美，实现重大技术突破
+&lt;/h3>&lt;p>基于拉曼散射的量子存储器技术在效率和保真度上接近理论极限，这是量子技术领域的一个重要里程碑。高性能量子存储器是构建大规模量子网络和分布式量子计算系统的关键组件，能够实现量子信息的可靠存储和传输。这一突破将加速量子互联网的发展，为未来安全通信和分布式量子计算奠定坚实基础。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337849-raman-quantum-memory-r-1.jpg"
+loading="lazy"
+alt="量子存储器"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/scientists-discovered-a-time-crystal-that-reveals-a-new-way-to-order-time" target="_blank" rel="noopener"
+>科学家发现一种可在有序与混沌间律动的时间晶体&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.earth.com/news/black-hole-jets-are-breaking-the-laws-of-physics-leaving-astronomers-baffled/" target="_blank" rel="noopener"
+>黑洞喷流的异常加速现象似乎违反了物理学定律&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2025-11-supernova-standard-candle-wrong-hubble.html" target="_blank" rel="noopener"
+>超新星&amp;quot;标准烛光&amp;quot;理论的瑕疵或能解决哈勃张力问题&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2025-11-raman-quantum-memory-unity.html" target="_blank" rel="noopener"
+>拉曼量子存储器性能接近完美，实现重大技术突破&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="地球科学与空间探测">地球科学与空间探测
+&lt;/h2>&lt;p>人类对地球和宇宙的认知在不断深化，从地球自转轴的变化到月壤中的新发现，都展现了科学探索的无限魅力。&lt;/p>
+&lt;h3 id="人类活动导致地球在20年内倾斜了80厘米">人类活动导致地球在20年内倾斜了80厘米
+&lt;/h3>&lt;p>研究发现，由于地下水过度开采导致的质量重新分布，地球自转轴在不到二十年的时间里倾斜了约80厘米。这一变化虽然对日常生活影响微小，但凸显了人类活动对地球系统的全球性影响。地下水从地下抽取后最终汇入海洋，改变了地球的质量分布，进而影响自转，这种地球工程尺度的效应值得深入研究和持续监测。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1763337849-8830c62685b29c3633c455d4715faf64"
+loading="lazy"
+alt="地球倾斜"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.popularmechanics.com/science/environment/a69445743/why-earth-has-tilted-scientific-reason/" target="_blank" rel="noopener"
+>人类活动导致地球在20年内倾斜了80厘米&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="生物科技与医学进展">生物科技与医学进展
+&lt;/h1>&lt;p>生物科技领域近期涌现出多项重要发现，从遗传疾病机制的解析到演化起源的探索，&lt;/p></description></item><item><title>今日科技看点：中国AI自学物理，科学家复活猛犸象RNA，成功模拟宇宙大爆炸</title><link>https://www.jsongo.top/articles/ai-learns-physics-mammoth-rna-big-bang-simulation-11.16/</link><pubDate>Sun, 16 Nov 2025 08:03:55 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-learns-physics-mammoth-rna-big-bang-simulation-11.16/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/f00b4e40df7e8c0441f3398f54abc6d5.jpg" alt="Featured image of post 今日科技看点：中国AI自学物理，科学家复活猛犸象RNA，成功模拟宇宙大爆炸" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>近期，人工智能领域迎来了一系列突破性进展，从基础理论的自主发现到仿生导航系统的创新，再到应用功能的拓展和学术影响力的里程碑，无不彰显着AI技术的迅猛发展与深远潜力。这些进展不仅推动了技术本身的边界，更在科学发现、工程应用和社会交互等多个层面产生了深刻影响。中国的研究力量在其中扮演了重要角色，显示出全球AI生态的多元化趋势。未来，AI有望更深入地融入人类生活，成为驱动创新的核心引擎。&lt;/p>
 &lt;h2 id="ai在科学发现与自主导航中的突破">AI在科学发现与自主导航中的突破
 &lt;/h2>&lt;p>人工智能正从被动的工具转变为主动的发现者，尤其在基础科学和复杂环境导航方面展现出前所未有的能力。中国开发的AI-Newton模型无需预先输入物理知识，仅通过分析原始数据就独立推导出科学定律，这标志着AI在模拟人类科学推理方面迈出了关键一步。同时，受生物启发的导航系统让机器人摆脱了对GPS的依赖，提升了在未知环境中的适应性。这些进展不仅具有技术意义，更引发了关于AI能否替代部分人类智能劳动的哲学思考。&lt;/p>
