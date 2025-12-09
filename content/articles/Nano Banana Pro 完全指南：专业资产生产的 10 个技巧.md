@@ -91,7 +91,7 @@ Nano-Banana Pro 在渲染易读的、风格化的文本以及将复杂信息合�
 - 引言： 明确指定您希望在引号中显示的文本。  
 示例提示：> [earnings report](https://s206.q4cdn.com/479360582/files/doc_news/2025/Oct/29/attachments/2025q3-alphabet-earnings-release.pdf)  
 > 收益报告信息图（数据输入）： \[输入谷歌最新< div id=2>[收益报告](https://s206.q4cdn.com/479360582/files/doc_news/2025/Oct/29/attachments/2025q3-alphabet-earnings-release.pdf) \] " 生成一张简洁现代的信息图表，总结这份盈利报告中的关键财务要点。包含 ' 营收增长 ' 和 ' 净利润 ' 的图表，并用风格化的引言框突出 CEO 的关键引言。"  
-![278cb1e8091bf35e5560c79fe67e38e1_MD5.webp](https://cdn.lyb.pub/upic/1765285966_T2C5qf.webp)  
+![278cb1e8091bf35e5560c79fe67e38e1_MD5.webp|800](https://cdn.lyb.pub/upic/1765285966_T2C5qf.webp)  
 [Try it in AI Studio](https://aistudio.google.com/prompts/new_chat?prompt=Generate%20a%20clean%2C%20modern%20infographic%20summarizing%20the%20key%20financial%20highlights%20from%20this%20earnings%20report.%20Include%20charts%20for%20%27Revenue%20Growth%27%20and%20%27Net%20Income%27%2C%20and%20highlight%20the%20CEO%27s%20key%20quote%20in%20a%20stylized%20pull-quote%20box.&model=gemini-3-pro-image-preview)  
 (Note: Requires uploading a PDF)
 
@@ -100,11 +100,11 @@ Nano-Banana Pro 在渲染易读的、风格化的文本以及将复杂信息合�
 [在 AI Studio 中尝试](https://aistudio.google.com/prompts/new_chat?prompt=Make%20a%20retro%2C%201950s-style%20infographic%20about%20the%20history%20of%20the%20American%20diner.%20Include%20distinct%20sections%20for%20%27The%20Food%2C%27%20%27The%20Jukebox%2C%27%20and%20%27The%20Decor.%27%20Ensure%20all%20text%20is%20legible%20and%20stylized%20to%20match%20the%20period.&model=gemini-3-pro-image-preview)
 
 > 技术图纸： " 创建一个正交蓝图，描述该建筑在平面、立面和剖面上的情况。用技术建筑字体清晰标注 ' 北立面 ' 和 ' 主入口 '。格式为 16:9。"  
-  ![b15994b10439a8d33f280b47280f5c16_MD5.webp|600|992x554](https://cdn.lyb.pub/upic/1765285972_KhlygV.webp)  
+  ![b15994b10439a8d33f280b47280f5c16_MD5.webp|800](https://cdn.lyb.pub/upic/1765285972_KhlygV.webp)  
 [在 AI Studio 中尝试](https://aistudio.google.com/prompts/new_chat?prompt=Create%20an%20orthographic%20blueprint%20that%20describes%20this%20building%20in%20plan%2C%20elevation%2C%20and%20section.%20Label%20the%20%27North%20Elevation%27%20and%20%27Main%20Entrance%27%20clearly%20in%20technical%20architectural%20font.%20Format%2016%3A9.&model=gemini-3-pro-image-preview)
 
 > 白板总结（教育类）： " 以手绘白板图的形式，为大学讲座总结 'Transformer 神经网络架构 ' 的概念。使用不同颜色的标记区分编码器和解码器模块，并包含清晰的 ' 自注意力 ' 和 ' 前馈 ' 标签。"  
-  ![79b7660765a3ee84def3065a0e37e390_MD5.webp|600](https://cdn.lyb.pub/upic/1765285977_3nqb2p.webp)  
+  ![79b7660765a3ee84def3065a0e37e390_MD5.webp|600|600x328](https://cdn.lyb.pub/upic/1765285977_3nqb2p.webp)  
 [在 AI Studio 中尝试](https://aistudio.google.com/prompts/new_chat?prompt=Summarize%20the%20concept%20of%20%27Transformer%20Neural%20Network%20Architecture%27%20as%20a%20hand-drawn%20whiteboard%20diagram%20suitable%20for%20a%20university%20lecture.%20Use%20different%20colored%20markers%20for%20the%20Encoder%20and%20Decoder%20blocks%2C%20and%20include%20legible%20labels%20for%20%27Self-Attention%27%20and%20%27Feed%20Forward%27.&model=gemini-3-pro-image-preview)
 ---
 
@@ -158,7 +158,7 @@ Nano-Banana Pro 利用谷歌搜索根据实时数据、当前事件或事实验�
 (Note: Requires uploading an image)
 
 > 本地化（文本翻译 + 文化适配）： \[输入图片：伦敦公交车站广告\] " 将这个概念本地化到东京场景中，包括将标语翻译成日语。将背景改为夜晚繁忙的涩谷街头。"  
-  ![284fdf32b7b77b62838068612199a4fd_MD5.webp|600|992x1479](https://cdn.lyb.pub/upic/1765286021_J62dUb.webp)  
+  ![284fdf32b7b77b62838068612199a4fd_MD5.webp|800](https://cdn.lyb.pub/upic/1765286021_J62dUb.webp)  
 [Try it in AI Studio](https://aistudio.google.com/prompts/new_chat?prompt=Take%20this%20concept%20and%20localize%20it%20to%20a%20Tokyo%20setting%2C%20including%20translating%20the%20tagline%20into%20Japanese.%20Change%20the%20background%20to%20a%20bustling%20Shibuya%20street%20at%20night.&model=gemini-3-pro-image-preview)  
 (Note: Requires uploading an image)
 
