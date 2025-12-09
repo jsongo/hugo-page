@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Dec 2025 08:05:01 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>传苹果芯片主管将离职影响AI战略；SpaceX星链威胁哈勃望远镜；AI浏览器被指华而不实</title><link>https://www.jsongo.top/articles/apple-chip-chief-departs-spacex-threatens-hubble-ai-browsers-fail-12.08/</link><pubDate>Mon, 08 Dec 2025 08:05:01 +0800</pubDate><guid>https://www.jsongo.top/articles/apple-chip-chief-departs-spacex-threatens-hubble-ai-browsers-fail-12.08/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/768d386e073c5d504c0eb32ee33a08be.jpg" alt="Featured image of post 传苹果芯片主管将离职影响AI战略；SpaceX星链威胁哈勃望远镜；AI浏览器被指华而不实" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 09 Dec 2025 13:09:07 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude code 接入 Litellm</title><link>https://www.jsongo.top/articles/claude-code-using-litellm/</link><pubDate>Tue, 09 Dec 2025 13:09:07 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-code-using-litellm/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c147fef836f4a04d02982e06860316f6.jpg" alt="Featured image of post Claude code 接入 Litellm" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;p>先安装 claude code&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install -g @anthropic-ai/claude-code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装 Claude Code Router 代理:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install -g @musistudio/claude-code-router
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>启动代理：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">nohup ccr start &lt;span class="p">&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="配置代理">配置代理
+&lt;/h1>&lt;p>然后访问 http://localhost:3456/ui/ ，添加供应商，填写：&lt;/p>
+&lt;ul>
+&lt;li>API 完整地址：https://&amp;lt;你的域名&amp;gt;/v1/chat/completions（如果你自己部署）&lt;/li>
+&lt;li>模型分别添加下：&lt;code>gemini-2.5-pro&lt;/code> / &lt;code>gemini-2.5-flash&lt;/code> / &lt;code>gemini-3-pro-preview&lt;/code>&lt;br>
+保存后，界面右侧的路由都选 gemini-3-pro-preview。搞定好，点击右上角的保存并重启，这样 CCR 代理就准备好了。&lt;/li>
+&lt;/ul>
+&lt;h1 id="配置-claude-code-使用代理">配置 Claude Code 使用代理
+&lt;/h1>&lt;p>打开 &lt;code>~/.zshrc&lt;/code> 或 &lt;code>~/.bashrc&lt;/code>（看你系统有哪个就打开哪个），然后配置下环境变量：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_BASE_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://127.0.0.1:3456&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_AUTH_TOKEN&lt;/span>&lt;span class="o">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_MODEL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>之后应用下这个配置：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.zshrc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">// 或
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>现在就可以用了，在命令行里输入 &lt;code>claude&lt;/code> 就可以用了。&lt;/p></description></item><item><title>传苹果芯片主管将离职影响AI战略；SpaceX星链威胁哈勃望远镜；AI浏览器被指华而不实</title><link>https://www.jsongo.top/articles/apple-chip-chief-departs-spacex-threatens-hubble-ai-browsers-fail-12.08/</link><pubDate>Mon, 08 Dec 2025 08:05:01 +0800</pubDate><guid>https://www.jsongo.top/articles/apple-chip-chief-departs-spacex-threatens-hubble-ai-browsers-fail-12.08/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/768d386e073c5d504c0eb32ee33a08be.jpg" alt="Featured image of post 传苹果芯片主管将离职影响AI战略；SpaceX星链威胁哈勃望远镜；AI浏览器被指华而不实" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>近期，人工智能领域在技术应用、战略调整与安全反思等方面呈现出复杂而深刻的图景。一方面，巨头公司如苹果正经历内部动荡与战略重置，以期在激烈的AI竞赛中重新定位；另一方面，面向消费者的AI产品，如AI浏览器，其实际体验与宣传承诺之间存在巨大落差，引发了业界对技术成熟度与实用性的广泛讨论。同时，AI技术正以前所未有的速度渗透到包括小型企业在内的各行各业，带来效率提升的同时也伴生着新的挑战。&lt;/p>
 &lt;h2 id="巨头动荡与战略转向苹果的ai十字路口">巨头动荡与战略转向：苹果的AI十字路口
 &lt;/h2>&lt;p>苹果公司正站在一个关键的十字路口。近期关于其芯片主管可能离职的消息，与CEO蒂姆·库克推动的AI战略重置交织在一起，预示着这家科技巨头内部正经历一场深刻的变革。这不仅关乎领导层的稳定，更关系到苹果能否在生成式AI浪潮中找回硬件与软件深度融合的昔日荣光。&lt;/p>

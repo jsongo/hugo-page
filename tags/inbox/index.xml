@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inbox on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/inbox/</link><description>Recent content in Inbox on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 16:48:45 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/inbox/index.xml" rel="self" type="application/rss+xml"/><item><title>剪藏</title><link>https://www.jsongo.top/clippings/</link><pubDate>Thu, 13 Nov 2025 16:48:45 +0800</pubDate><guid>https://www.jsongo.top/clippings/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/204f8504ae1beefaa673d8122849235a.jpeg" alt="Featured image of post 剪藏" /></description></item><item><title>互联网/前沿进展</title><link>https://www.jsongo.top/tech-frontier/</link><pubDate>Thu, 13 Nov 2025 16:48:44 +0800</pubDate><guid>https://www.jsongo.top/tech-frontier/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2cc0c473383dfed921a887a82ea7bc8c.jpg" alt="Featured image of post 互联网/前沿进展" /></description></item><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Inbox on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/inbox/</link><description>Recent content in Inbox on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 09 Dec 2025 13:09:07 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/inbox/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude code 接入 Litellm</title><link>https://www.jsongo.top/articles/claude-code-using-litellm/</link><pubDate>Tue, 09 Dec 2025 13:09:07 +0800</pubDate><guid>https://www.jsongo.top/articles/claude-code-using-litellm/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/c147fef836f4a04d02982e06860316f6.jpg" alt="Featured image of post Claude code 接入 Litellm" />&lt;h1 id="安装">安装
+&lt;/h1>&lt;p>先安装 claude code&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install -g @anthropic-ai/claude-code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装 Claude Code Router 代理:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install -g @musistudio/claude-code-router
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>启动代理：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">nohup ccr start &lt;span class="p">&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="配置代理">配置代理
+&lt;/h1>&lt;p>然后访问 http://localhost:3456/ui/ ，添加供应商，填写：&lt;/p>
+&lt;ul>
+&lt;li>API 完整地址：https://&amp;lt;你的域名&amp;gt;/v1/chat/completions（如果你自己部署）&lt;/li>
+&lt;li>模型分别添加下：&lt;code>gemini-2.5-pro&lt;/code> / &lt;code>gemini-2.5-flash&lt;/code> / &lt;code>gemini-3-pro-preview&lt;/code>&lt;br>
+保存后，界面右侧的路由都选 gemini-3-pro-preview。搞定好，点击右上角的保存并重启，这样 CCR 代理就准备好了。&lt;/li>
+&lt;/ul>
+&lt;h1 id="配置-claude-code-使用代理">配置 Claude Code 使用代理
+&lt;/h1>&lt;p>打开 &lt;code>~/.zshrc&lt;/code> 或 &lt;code>~/.bashrc&lt;/code>（看你系统有哪个就打开哪个），然后配置下环境变量：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_BASE_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://127.0.0.1:3456&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_AUTH_TOKEN&lt;/span>&lt;span class="o">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">export&lt;/span> &lt;span class="n">ANTHROPIC_MODEL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>之后应用下这个配置：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.zshrc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">// 或
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> ~/.bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>现在就可以用了，在命令行里输入 &lt;code>claude&lt;/code> 就可以用了。&lt;/p></description></item><item><title>剪藏</title><link>https://www.jsongo.top/clippings/</link><pubDate>Thu, 13 Nov 2025 16:48:45 +0800</pubDate><guid>https://www.jsongo.top/clippings/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/204f8504ae1beefaa673d8122849235a.jpeg" alt="Featured image of post 剪藏" /></description></item><item><title>互联网/前沿进展</title><link>https://www.jsongo.top/tech-frontier/</link><pubDate>Thu, 13 Nov 2025 16:48:44 +0800</pubDate><guid>https://www.jsongo.top/tech-frontier/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/2cc0c473383dfed921a887a82ea7bc8c.jpg" alt="Featured image of post 互联网/前沿进展" /></description></item><item><title>未来几年的AI 发展预测</title><link>https://www.jsongo.top/articles/ai-development-forecast/</link><pubDate>Tue, 08 Apr 2025 01:16:54 +0800</pubDate><guid>https://www.jsongo.top/articles/ai-development-forecast/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/999dce943c2746f423620acecd9ba75f.png" alt="Featured image of post 未来几年的AI 发展预测" />&lt;p>&lt;a class="link" href="https://ai-2027.com/" target="_blank" rel="noopener"
 >AI 2027&lt;/a> 这个网站对 AI 未来发展做了一些预言，很有趣，做了一些总结梳理。&lt;br>
 AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 2025 年到 2028 年人工智能（AI）快速发展的可能情景，预测 AI 将在这段时间内经历从初级自主代理到超人类智能的飞速发展。&lt;/p>
 &lt;h1 id="主要预测">主要预测
