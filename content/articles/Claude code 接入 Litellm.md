@@ -2,7 +2,7 @@
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
 tags:
-  - inbox
+  - AI/AI工具/claude
 created_at: Tue, Dec 9th, 2025 - 13:09:07
 date: 2025-12-09T13:09:07.630+08:00
 banner_icon: 🦣
