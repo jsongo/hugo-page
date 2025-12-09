@@ -130,8 +130,9 @@
 &lt;p>收益报告信息图（数据输入）： [输入谷歌最新&amp;lt; div id=2&amp;gt;&lt;a class="link" href="https://s206.q4cdn.com/479360582/files/doc_news/2025/Oct/29/attachments/2025q3-alphabet-earnings-release.pdf" target="_blank" rel="noopener"
 >收益报告&lt;/a> ] &amp;quot; 生成一张简洁现代的信息图表，总结这份盈利报告中的关键财务要点。包含 &amp;rsquo; 营收增长 &amp;rsquo; 和 &amp;rsquo; 净利润 &amp;rsquo; 的图表，并用风格化的引言框突出 CEO 的关键引言。&amp;quot;&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1765285966_T2C5qf.webp"
+width="800"
 loading="lazy"
-alt="278cb1e8091bf35e5560c79fe67e38e1_MD5.webp"
+alt="278cb1e8091bf35e5560c79fe67e38e1_MD5.webp|800"
 >&lt;br>
 &lt;a class="link" href="https://aistudio.google.com/prompts/new_chat?prompt=Generate%20a%20clean%2C%20modern%20infographic%20summarizing%20the%20key%20financial%20highlights%20from%20this%20earnings%20report.%20Include%20charts%20for%20%27Revenue%20Growth%27%20and%20%27Net%20Income%27%2C%20and%20highlight%20the%20CEO%27s%20key%20quote%20in%20a%20stylized%20pull-quote%20box.&amp;amp;model=gemini-3-pro-image-preview" target="_blank" rel="noopener"
 >Try it in AI Studio&lt;/a>&lt;br>
@@ -150,8 +151,9 @@ alt="973a1a0948471078de4b6b4f75af7729_MD5.webp|600"
 &lt;blockquote>
 &lt;p>技术图纸： &amp;quot; 创建一个正交蓝图，描述该建筑在平面、立面和剖面上的情况。用技术建筑字体清晰标注 &amp;rsquo; 北立面 &amp;rsquo; 和 &amp;rsquo; 主入口 &amp;lsquo;。格式为 16:9。&amp;quot;&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1765285972_KhlygV.webp"
+width="800"
 loading="lazy"
-alt="b15994b10439a8d33f280b47280f5c16_MD5.webp|600|992x554"
+alt="b15994b10439a8d33f280b47280f5c16_MD5.webp|800"
 >&lt;br>
 &lt;a class="link" href="https://aistudio.google.com/prompts/new_chat?prompt=Create%20an%20orthographic%20blueprint%20that%20describes%20this%20building%20in%20plan%2C%20elevation%2C%20and%20section.%20Label%20the%20%27North%20Elevation%27%20and%20%27Main%20Entrance%27%20clearly%20in%20technical%20architectural%20font.%20Format%2016%3A9.&amp;amp;model=gemini-3-pro-image-preview" target="_blank" rel="noopener"
 >在 AI Studio 中尝试&lt;/a>&lt;/p>
@@ -159,9 +161,8 @@ alt="b15994b10439a8d33f280b47280f5c16_MD5.webp|600|992x554"
 &lt;blockquote>
 &lt;p>白板总结（教育类）： &amp;quot; 以手绘白板图的形式，为大学讲座总结 &amp;lsquo;Transformer 神经网络架构 &amp;rsquo; 的概念。使用不同颜色的标记区分编码器和解码器模块，并包含清晰的 &amp;rsquo; 自注意力 &amp;rsquo; 和 &amp;rsquo; 前馈 &amp;rsquo; 标签。&amp;quot;&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1765285977_3nqb2p.webp"
-width="600"
 loading="lazy"
-alt="79b7660765a3ee84def3065a0e37e390_MD5.webp|600"
+alt="79b7660765a3ee84def3065a0e37e390_MD5.webp|600|600x328"
 >&lt;br>
 &lt;a class="link" href="https://aistudio.google.com/prompts/new_chat?prompt=Summarize%20the%20concept%20of%20%27Transformer%20Neural%20Network%20Architecture%27%20as%20a%20hand-drawn%20whiteboard%20diagram%20suitable%20for%20a%20university%20lecture.%20Use%20different%20colored%20markers%20for%20the%20Encoder%20and%20Decoder%20blocks%2C%20and%20include%20legible%20labels%20for%20%27Self-Attention%27%20and%20%27Feed%20Forward%27.&amp;amp;model=gemini-3-pro-image-preview" target="_blank" rel="noopener"
 >在 AI Studio 中尝试&lt;/a>&lt;/p>
@@ -261,8 +262,9 @@ alt="61f2eac368b4497f0c1ca6a7f1352d41_MD5.webp|600"
 &lt;blockquote>
 &lt;p>本地化（文本翻译 + 文化适配）： [输入图片：伦敦公交车站广告] &amp;quot; 将这个概念本地化到东京场景中，包括将标语翻译成日语。将背景改为夜晚繁忙的涩谷街头。&amp;quot;&lt;br>
 &lt;img src="https://cdn.lyb.pub/upic/1765286021_J62dUb.webp"
+width="800"
 loading="lazy"
-alt="284fdf32b7b77b62838068612199a4fd_MD5.webp|600|992x1479"
+alt="284fdf32b7b77b62838068612199a4fd_MD5.webp|800"
 >&lt;br>
 &lt;a class="link" href="https://aistudio.google.com/prompts/new_chat?prompt=Take%20this%20concept%20and%20localize%20it%20to%20a%20Tokyo%20setting%2C%20including%20translating%20the%20tagline%20into%20Japanese.%20Change%20the%20background%20to%20a%20bustling%20Shibuya%20street%20at%20night.&amp;amp;model=gemini-3-pro-image-preview" target="_blank" rel="noopener"
 >Try it in AI Studio&lt;/a>&lt;br>
