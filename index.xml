@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 14 Jan 2026 08:01:41 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>量子纠缠速度首测、AI挑战视觉错觉与SpaceX系外行星探测启航</title><link>https://www.jsongo.top/articles/tech-news-ai-quantum-speed-and-space-exploration-20260113-01.14/</link><pubDate>Wed, 14 Jan 2026 08:01:41 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-ai-quantum-speed-and-space-exploration-20260113-01.14/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/827ebd1258b6cfc5ea9e28548e7791e8.jpeg" alt="Featured image of post 量子纠缠速度首测、AI挑战视觉错觉与SpaceX系外行星探测启航" />&lt;h1 id="人工智能与互联网">人工智能与互联网
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 15 Jan 2026 08:01:32 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude AI 全球宕机，ISS 首次医疗大撤离，英伟达 5090 价格起飞</title><link>https://www.jsongo.top/articles/tech-news-claude-outage-iss-medical-evacuation-2026-01-01.15/</link><pubDate>Thu, 15 Jan 2026 08:01:32 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-claude-outage-iss-medical-evacuation-2026-01-01.15/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/4f4dc1a3ee8de9f7feb2535493369348.jpeg" alt="Featured image of post Claude AI 全球宕机，ISS 首次医疗大撤离，英伟达 5090 价格起飞" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>人工智能领域近期呈现出复杂的发展态势。一方面，行业巨头在基础设施与服务稳定性上面临挑战，核心模型的意外宕机引发了开发者对云端AI依赖性的重新思考；另一方面，AI技术的战略价值正从单纯的软件效率提升演变为国家竞争力的“平衡器”。特别是在游戏开发等高人力成本行业，AI被视为中小规模国家抗衡中美人才红利的利器。&lt;/p>
+&lt;h2 id="模型稳定性与全球竞争格局的重塑">模型稳定性与全球竞争格局的重塑
+&lt;/h2>&lt;p>当前，AI已不再仅仅是实验室里的算法，而是成为了全球开发者手中的核心生产工具。当像 Claude 这样级别的模型出现故障时，其影响会波及全球数以万计的企业。与此同时，地缘政治与产业竞争也为 AI 注入了新的意义：它正在成为一种“算力杠杆”，帮助人少地狭的国家在数字经济中实现以少胜多。&lt;/p>
+&lt;h3 id="claude-ai-发生宕机sonnet-与-opus-模型出现大量错误">Claude AI 发生宕机：Sonnet 与 Opus 模型出现大量错误
+&lt;/h3>&lt;p>知名 AI 创新公司 Anthropic 旗下的主力模型 Claude 3.5 Sonnet 和 Claude 3 Opus 近期遭遇了严重的宕机事件。大量用户在社交媒体和开发者论坛报告称，在尝试调用 API 或通过网页端进行交互时，系统频繁返回错误信息或长时间无响应。Anthropic 官方随后确认了这一情况，承认模型表现出极高的错误率，并表示技术团队已进入紧急修复状态。这次事件再次引发了业界对“生成式 AI 作为基础设施”可靠性的广泛讨论，尤其是对于那些已经将业务流程深度接入 Claude 生态的企业而言，服务的停摆直接导致了生产力的短期中断。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435281-2oHsAFiP3SKDjPon8yDXqN-1920-80.jpg"
+loading="lazy"
+alt="Claude Outage"
+>&lt;/p>
+&lt;h3 id="游戏公司-ceoai-是小国与中美竞争的关键工具">游戏公司 CEO：AI 是小国与中美竞争的关键工具
+&lt;/h3>&lt;p>针对全球 AI 竞争态势，韩国知名游戏开发商 Shift Up（作品包括《剑星》、《胜利女神：妮姬》）的 CEO 发表了独到见解。他指出，在传统内容开发模式下，韩国等国家在人力资源规模上很难与中国和美国抗衡。然而，AI 技术的成熟为小型团队提供了前所未有的生产力赋能。通过 AI 自动化生成美术资源、优化代码逻辑，甚至辅助剧本创作，小国开发者能够以更低的人力成本达成 3A 级的开发效率。他强调，AI 不是为了取代人类，而是作为一种“竞争平衡器”，让全球创意产业的门槛得以重塑。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435282-ss_2d4ad1a81618920416e7b68d02dc266ac898f144.1920x1080.jpg"
+loading="lazy"
+alt="AI Game Development"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.itpro.com/technology/artificial-intelligence/anthropic-claude-outage-opus-sonnet-down" target="_blank" rel="noopener"
+>Claude AI 发生宕机：Sonnet 与 Opus 模型出现大量错误&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.gamesindustry.biz/shift-up-ceo-claims-ai-is-essential-for-smaller-nations-competing-with-the-developmental-manpower-of-china-and-us" target="_blank" rel="noopener"
+>游戏公司 CEO：AI 是小国与中美竞争的关键工具&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件生态变革">互联网与软件生态变革
+&lt;/h1>&lt;p>互联网与软件领域近期迎来了一系列重要的策略转变与技术迭代。苹果公司通过整合资源，进一步强化了其在专业创意领域的订阅版图，但也伴随着部分老牌应用的落幕；微软则继续致力于优化 Windows 11 的核心体验，尝试通过更新解决用户长期诟病的文件管理器稳定性问题，并针对云同步带来的误区进行科普。&lt;/p>
+&lt;h2 id="软件服务的订阅化趋势与系统体验优化">软件服务的订阅化趋势与系统体验优化
+&lt;/h2>&lt;p>软件行业的商业模式正在向深度的生态闭环转化。苹果通过 Creator Studio 的整合，展示了其软硬件一体化的野心。而对于普通用户而言，系统底层逻辑的清晰度（如 OneDrive 同步）以及身份验证的安全性（如 Passkey 的普及）成为了数字生活体验的核心关注点。&lt;/p>
+&lt;h3 id="苹果整合创意应用推出-creator-studio-订阅pixelmator-ios-版停更">苹果整合创意应用：推出 Creator Studio 订阅，Pixelmator iOS 版停更
+&lt;/h3>&lt;p>苹果近期宣布了一项重大的创作生态调整：推出名为 “Creator Studio” 的统一订阅服务，该服务旨在将多款顶尖的创作类软件打包提供给专业用户。作为这一战略的一部分，苹果针对 iPad 平台发布了功能更为强大的 Pixelmator Pro，利用新款 iPad 强大的芯片性能提供桌面级修图体验。然而，这也意味着老牌的 iOS 版 Pixelmator 应用将正式停止功能更新。这一举动显示出苹果正试图通过更高级的订阅制模型，将移动端与专业端的内容生产流程进一步打通，尽管这让部分习惯买断制的老用户感到些许不适。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435283-pixelmator-ios-app-icon.jpg"
+loading="lazy"
+alt="Apple Creator Studio"
+>&lt;/p>
+&lt;h3 id="windows-11-新版更新修复文件管理器及多项核心-bug">Windows 11 新版更新：修复文件管理器及多项核心 Bug
+&lt;/h3>&lt;p>微软发布了代号为 KB5074109 的 Windows 11 更新，主要针对最新的 25H2 和 24H2 版本。本次更新的重点在于“修内功”，尤其是对长期困扰用户的文件管理器（File Explorer）进行了深度性能优化，修复了在某些场景下出现的假死和资源占用过高的问题。此外，系统内部的多项核心 Bug 也得到了清理，使得 25H2 构建版本向着更加稳定和高效的方向迈进。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435283-Windows-11-KB5074109-update.jpg"
+loading="lazy"
+alt="Windows 11 Update"
+>&lt;/p>
+&lt;h3 id="onedrive-删文件风波windows-11-用户担忧文件丢失实为同步误解">OneDrive 删文件风波：Windows 11 用户担忧文件丢失实为同步误解
+&lt;/h3>&lt;p>近期，不少 Windows 11 用户在社交媒体上发帖表示，自己的本地文件似乎被 OneDrive“自动删除”了。经过调查发现，这并非数据丢失事故，而是源于 OneDrive 复杂的同步逻辑。当用户开启“文件随选”功能时，本地文件会变成云端占位符以节省硬盘空间。由于微软在界面显示和同步通知上的逻辑不够直观，导致用户误以为文件已被抹除。微软对此进行了澄清，并建议用户在需要离线访问时手动选择“始终保留在此设备上”。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435284-RG4vunrQjstozVHZxSHF3m-2560-80.jpg"
+loading="lazy"
+alt="OneDrive Sync"
+>&lt;/p>
+&lt;h3 id="科普passkey-通行密钥如何运作以及它为何更安全">科普：Passkey 通行密钥如何运作以及它为何更安全
+&lt;/h3>&lt;p>随着网络钓鱼和暴力破解技术的升级，传统的“用户名+密码”组合已变得日益脆弱。Passkey（通行密钥）作为一种全新的身份验证标准，正受到主流互联网平台的全面支持。与传统密码不同，Passkey 基于公钥加密技术，密钥存储在用户的本地设备中，通过生物识别（指纹、面部识别）来解锁。这种方式从源头上杜绝了密码泄露的可能性，因为它根本不在服务器上存储密码，也不需要用户记忆复杂的字符组合。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435285-KNE_Passkeys_sitecard.png"
+loading="lazy"
+alt="Passkeys Guide"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2026/01/13/apple-confirms-pixelmator-for-ios-will-no-longer-receive-updates/" target="_blank" rel="noopener"
+>苹果整合创意应用：推出 Creator Studio 订阅&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.windowslatest.com/2026/01/13/windows-11-kb5074109-25h2-build-26200-7623-improvements-fixes-for-file-explorer-and-other-changes/" target="_blank" rel="noopener"
+>Windows 11 KB5074109 更新详情&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.windowscentral.com/software-apps/microsoft-isnt-deleting-your-windows-11-files-onedrive-sync-confusion" target="_blank" rel="noopener"
+>OneDrive 同步误解调查&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cbc.ca/kidsnews/post/watch-are-passkeys-safer-than-passwords-heres-how-they-work" target="_blank" rel="noopener"
+>Passkey 安全科普指南&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体产能优先与跨界创新">硬件与半导体：产能优先与跨界创新
+&lt;/h1>&lt;p>硬件市场近期展现出极端的两极分化。在图形卡市场，消费级入门产品与发烧级旗舰产品在供应和价格上形成了鲜明对比；而在消费电子与智能家居领域，CES 2026 展示了从传统的积木游戏到前沿的生物识别技术的跨界融合。&lt;/p>
+&lt;h2 id="从-gpu-市场波动到智能硬件的全面进化">从 GPU 市场波动到智能硬件的全面进化
+&lt;/h2>&lt;p>半导体产业链的优先级分配正在直接影响消费者的钱包。英伟达的市场策略调整预示着主流市场的供给压力，而三星与苹果的新品动向则预告了 2026 年的高端硬件竞赛。&lt;/p>
+&lt;h3 id="英伟达优先保障-rtx-5060-产能rtx-5090-售价突破-3500-美元">英伟达优先保障 RTX 5060 产能，RTX 5090 售价突破 3500 美元
+&lt;/h3>&lt;p>英伟达在 RTX 50 系列显卡的布局上采取了“抓大放小”的策略，但这个“大”指的是市场份额。最新消息显示，英伟达目前正全力优先保障主流级 RTX 5060 系列的芯片供应，以期快速占领甜品级显卡市场。然而，这一策略的副作用是导致旗舰产品 RTX 5090 的供需失衡进一步加剧。目前，在部分零售渠道，RTX 5090 的价格已经突破了惊人的 3500 美元（约合人民币 2.5 万元以上），成为了真正的“奢侈品级”电脑配件。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435285-NVIDIA-GeForce-RTX-50-GPUs.jpg"
+loading="lazy"
+alt="NVIDIA RTX 50 Series"
+>&lt;/p>
+&lt;h3 id="硬件爆料m5-版-macbook-pro-与三星-s26-ultra-蓄势待发">硬件爆料：M5 版 MacBook Pro 与三星 S26 Ultra 蓄势待发
+&lt;/h3>&lt;p>苹果与三星的开年对决已经拉开帷幕。供应链泄露的信息指向 1 月 28 日，苹果可能在当日通过官宣形式推出搭载全新 M5 芯片的高端 MacBook Pro。与此同时，三星的年度旗舰 Galaxy S26 Ultra 的发布日期也基本确定。有趣的是，由于上游零部件成本上涨，S26 Ultra 的定价策略可能会出现调整，这对于期待安卓机皇的用户来说是一个不小的信号。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435285-Where-do-you-stand-on-the-non-pro-MacBook-Pro-debate.jpg"
+loading="lazy"
+alt="New Hardware Leaks"
+>&lt;/p>
+&lt;h3 id="ces-科技秀乐高智能积木与支持静脉识别的智能门锁">CES 科技秀：乐高智能积木与支持静脉识别的智能门锁
+&lt;/h3>&lt;p>在 CES 2026 的展场上，乐高展示了其进军数字交互的野心，推出了全新的智能积木。通过配合 VR180 3D 视频，孩子们可以进入一个沉浸式的积木世界，让现实中的拼搭与虚拟空间的体验无缝衔接。而在智能家居领域，SwitchBot 推出了一款黑科技门锁，除了人脸识别外，还新增了对手部静脉的识别。由于静脉分布具有唯一性且难以伪造，这被认为是目前安全等级最高的民用生物识别技术之一。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435286-lego-smart-bricks-demo.jpg"
+loading="lazy"
+alt="CES 2026 Innovations"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://wccftech.com/nvidia-prioritizes-rtx-5060-gpus-over-rest-of-lineup-rtx-5090s-selling-above-3500-usd/" target="_blank" rel="noopener"
+>英伟达 RTX 50 系列产能布局与价格波动&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2026/01/14/apple-may-have-hinted-at-a-high-end-macbook-pro-launch-on-january-28/" target="_blank" rel="noopener"
+>M5 MacBook Pro 与 S26 Ultra 发布预告&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.theverge.com/tech/861322/lego-smart-brick-vr-180-3d-video-demo-ces-2026" target="_blank" rel="noopener"
+>CES 2026 乐高与 SwitchBot 新品动态&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天从地球大气到黑洞核心">航空航天：从地球大气到黑洞核心
+&lt;/h1>&lt;p>人类对空间的探索正进入一个异常忙碌的时期。国际空间站见证了史无前例的紧急医疗撤离，而科学家对月球与地球关系的重新审视，以及对遥远星系黑洞的深度窥探，正不断刷新我们对宇宙运作规律的认知。&lt;/p>
+&lt;h2 id="太空探索的现实挑战与宏大发现">太空探索的现实挑战与宏大发现
+&lt;/h2>&lt;p>从保障宇航员生命的突发任务，到旨在获取未来能源的商业采矿计划，人类在太空的活动已经从“单纯的科学研究”转向“生存与资源开发”并行的阶段。&lt;/p>
+&lt;h3 id="国际空间站首次医疗撤离spacex-飞船紧急接回患病宇航员">国际空间站首次医疗撤离：SpaceX 飞船紧急接回患病宇航员
+&lt;/h3>&lt;p>国际空间站（ISS）近期发生了一次前所未有的突发状况。一名隶属于 SpaceX Crew-11 任务的宇航员由于突发医疗紧急状况，且空间站现有的医疗设备无法提供长期治疗，地面控制中心决定执行 ISS 历史上首次全流程的医疗紧急撤离任务。SpaceX 的龙飞船紧急调整返回程序，力求在最短时间内将患病宇航员送回地球接受手术和康复治疗。这次行动不仅考验了商业航天的快速响应能力，也为未来长期深空旅行的医疗保障敲响了警钟。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435287-JkZn36tq8gbrcZgF77gcrb-720-80.jpg"
+loading="lazy"
+alt="ISS Evacuation"
+>&lt;/p>
+&lt;h3 id="天文奇观月球偷走地球大气韦伯揭秘黑洞核心">天文奇观：月球“偷走”地球大气，韦伯揭秘黑洞核心
+&lt;/h3>&lt;p>一项基于月球土壤样本的最新研究提出了令人震惊的观点：在过去的几十亿年里，由于月球长期穿过地球的地磁尾部，地球大气层中的氧气和氮气等元素被逐渐“偷”往月球表面并沉积在土壤中。这一发现揭示了两个天体之间复杂的大气交换机制。而在更遥远的深空，詹姆斯·韦伯空间望远镜再次展现了其惊人的解析力，捕捉到了圆规座星系中心特大质量黑洞的精细结构，为人类理解星系演化提供了关键数据。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435287-jpg-1920-1080cc-mhc-900dpi.jpg"
+loading="lazy"
+alt="Webb Black Hole"
+>&lt;/p>
+&lt;h3 id="月球采矿与太空生存挑战氦-3-探测与微重力风险">月球采矿与太空生存挑战：氦-3 探测与微重力风险
+&lt;/h3>&lt;p>随着能源危机的日益严峻，月球表面的氦-3 资源成为了商业巨头的焦点。Black Moon Energy 公司宣布将启动一系列机器人探测任务，旨在勘测月球南极的氦-3 储量，这被视为未来实现零污染受控核聚变的关键燃料。然而，在探索资源的同时，人类也面临着严峻的生理挑战。最新的研究指出，长期处于微重力环境会导致宇航员的大脑在颅内发生物理移位，且太空中的特殊辐射环境会诱发病毒对细菌的攻击行为变得诡异，增加了外层空间的防疫难度。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435288-shutterstock_1680980608.jpg"
+loading="lazy"
+alt="Lunar Mining"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.space.com/news/live/astronaut-medical-evacuation-on-iss-jan-13-2026" target="_blank" rel="noopener"
+>ISS 史上首次医疗紧急撤离&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.cnn.com/2026/01/13/science/moon-stealing-earth-atmosphere-magnetic-field" target="_blank" rel="noopener"
+>月球土壤中的地球大气证据&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.gasworld.com/story/black-moon-energy-unveils-robotic-helium-3-lunar-mission/2171178.article/" target="_blank" rel="noopener"
+>氦-3 月球采矿计划&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://gizmodo.com/scientists-watched-viruses-attack-bacteria-in-space-things-got-weird-2000709619" target="_blank" rel="noopener"
+>微重力环境下的健康风险研究&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="科学前沿重新定义地球与生物的历史">科学前沿：重新定义地球与生物的历史
+&lt;/h1>&lt;p>科学界最近在物质形态、古生物演化以及地球动力学方面取得了多项突破。这些发现不仅打破了我们对“常识”的理解（如冰的形态），也让我们对曾经统治地球的霸主以及地球本身的内部运动有了全新的认识。&lt;/p>
+&lt;h2 id="物质的新形态与地球内部的滴落">物质的新形态与地球内部的“滴落”
+&lt;/h2>&lt;p>从实验室里诞生的“超离子冰”，到土耳其地表下发生的壮观地质过程，科学前沿的研究正不断揭示自然界中那些隐秘而伟大的逻辑。&lt;/p>
+&lt;h3 id="物理突破发现水的新形态超离子冰流体齿轮问世">物理突破：发现水的新形态“超离子冰”，流体齿轮问世
+&lt;/h3>&lt;p>科学家在极端压力和温度条件下成功合成了一种名为“超离子冰”的物质。这种冰非常奇特，它能同时表现出固态（氧原子形成晶格）和液态（氢离子在晶格间自由移动）的特征。这一发现被认为可以完美解释天王星和海王星这类“冰巨星”为何拥有如此复杂的磁场。此外，纽约大学的研究团队通过仿生学设计，发明了一种无需齿轮轮齿的流体驱动传动装置，这可能颠覆未来精密机械的结构设计。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435290-neptune-ice-giant-scaled.jpg"
+loading="lazy"
+alt="Superionic Ice"
+>&lt;/p>
+&lt;h3 id="古生物新知霸王龙可活到-40-岁中国发现水晶恐龙蛋">古生物新知：霸王龙可活到 40 岁，中国发现“水晶恐龙蛋”
+&lt;/h3>&lt;p>古生物学界近期佳报频传。一项新的生长模型研究显示，霸王龙并非在青少年时期就停止发育，它们的成长期极长，甚至直到 40 岁仍在发育，“恐龙之王”的长寿与庞大超乎想象。而在中国，考古学家发现了一枚极为罕见的化石——“水晶恐龙蛋”。这枚恐龙蛋内部被美丽的石英晶体填满，而非传统的骨骼或沉积物，为研究化石形成过程中的矿物替代提供了绝佳样本。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435290-tyrannosaurus-rex-grew.jpg"
+loading="lazy"
+alt="T-Rex Research"
+>&lt;/p>
+&lt;h3 id="地球动态土耳其地壳发生滴落现象南极建立冰芯档案馆">地球动态：土耳其地壳发生“滴落”现象，南极建立冰芯档案馆
+&lt;/h3>&lt;p>地质学家利用高精度卫星和地震波数据确认，在土耳其科尼亚盆地下方，上地壳的一部分正在像浓稠的糖浆一样慢慢向地幔“滴落”。这种被称为“岩石圈滴落”的现象解释了为何该地区在没有明显板块碰撞的情况下会出现剧烈的地面起伏。与此同时，为了抢在冰川因气候变暖消融之前保留历史记忆，科学家在南极洲建立了首个国际冰芯档案馆，将数十万年前的大气样本永久保存。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1768435291-earth-crust_dripping-under-turkey_internal-diagram_1m.jpg"
+loading="lazy"
+alt="Earth Crust Dripping"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://studyfinds.org/scientists-discover-bizarre-water-both-solid-liquid/" target="_blank" rel="noopener"
+>超离子冰的发现及其科学意义&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2026-01-rex-grew-slowly-reveals-king.html" target="_blank" rel="noopener"
+>霸王龙生长速度与长寿秘诀&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.earth.com/news/earths-crust-is-dripping-into-mantle-under-turkey-konya-basin/" target="_blank" rel="noopener"
+>地壳滴落现象的科学验证&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>量子纠缠速度首测、AI挑战视觉错觉与SpaceX系外行星探测启航</title><link>https://www.jsongo.top/articles/tech-news-ai-quantum-speed-and-space-exploration-20260113-01.14/</link><pubDate>Wed, 14 Jan 2026 08:01:41 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-ai-quantum-speed-and-space-exploration-20260113-01.14/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/827ebd1258b6cfc5ea9e28548e7791e8.jpeg" alt="Featured image of post 量子纠缠速度首测、AI挑战视觉错觉与SpaceX系外行星探测启航" />&lt;h1 id="人工智能与互联网">人工智能与互联网
 &lt;/h1>&lt;p>人工智能正以前所未有的速度渗透进人类文明的每一个角落。从探究人类认知的本质——视觉错觉的产生机制，到在农业领域实现近乎完美的产量预测，AI 的应用广度与深度正不断刷新我们的认知边界。与此同时，社会也在进行着大胆的实验，试图探索人类意志与算法指令之间的决策边界。而在资本市场，科技巨头的每一步动作都牵动着全球经济的神经。&lt;/p>
 &lt;hr>
 &lt;h2 id="ai-模拟大脑机制与现实生活决策实验">AI 模拟大脑机制与现实生活决策实验
