@@ -1,4 +1,158 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Feb 2026 08:02:12 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务</title><link>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</link><pubDate>Mon, 09 Feb 2026 08:02:12 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务" />&lt;h1 id="互联网与软件">互联网与软件
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Feb 2026 08:02:13 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务</title><link>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</link><pubDate>Mon, 09 Feb 2026 08:02:13 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/da4373f57218cdb78ca941218a151490.jpeg" alt="Featured image of post Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务" />&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>在数字化浪潮的持续推动下，互联网与软件领域正经历着从“工具属性”向“智能系统”的深刻演变。本年度最显著的趋势之一是传统互联网服务的 AI 化重塑，尤其是地理信息系统正演变为物理世界的智能大脑；同时，通信协议的跨平台互通与系统生态的反思，也标志着软件行业在追求技术高度的同时，开始更加注重用户体验的边界与安全性。&lt;/p>
+&lt;h2 id="数字化地图的范式转移与物理世界操作系统的诞生">数字化地图的范式转移与物理世界操作系统的诞生
+&lt;/h2>&lt;p>这一部分重点关注 Google Maps 这一国民级应用在诞生 21 周年之际的跨越式进化。从最初简单的“平滑滚动地图”技术，到如今深度集成生成式 AI，它不再仅仅是一个导航工具，而是一个连接数字世界与物理现实的“操作系统”。&lt;/p>
+&lt;h3 id="google-maps-21周年从简单的数字化地图进化为ai驱动的物理世界操作系统">Google Maps 21周年：从简单的数字化地图进化为AI驱动的物理世界操作系统
+&lt;/h3>&lt;p>2026 年，Google Maps 迎来了其 21 岁的生日。回顾其发展历程，2005 年它以 Ajax 技术带来的“无缝平滑地图”震撼了当时的互联网。而今天，它已经完成了一场华丽的蜕变。通过集成多模态大模型，Google Maps 能够实时解析数千亿张街景图片和卫星遥感数据，为用户提供“浸入式视图”（Immersive View）和实时室内增强现实（AR）导航。&lt;/p>
+&lt;p>这种进化背后是巨大的商业价值。分析人士指出，当前的 Google Maps 已经成为了一个价值 110 亿美元的“物理世界操作系统”。它不仅能告诉你在哪里，还能告诉你那里“正在发生什么”，并预测人流交通状况。对于软件开发者而言，Google Maps API 的深度集成已经成为现代移动应用不可或缺的基础设施。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595320-google-maps-turns-21-from-slippy-maps-to-the-11b-os-of-the-physical-world-techjuice-217272-1.jpg"
+loading="lazy"
+alt="Google Maps 演变示意图"
+>&lt;/p>
+&lt;h2 id="移动通信协议的革新imessage-与-rcs-的历史性融合">移动通信协议的革新：iMessage 与 RCS 的历史性融合
+&lt;/h2>&lt;p>苹果公司在长期坚守闭环生态后，终于在通信领域迈出了开放的一步。通过引入 RCS（富通信服务）协议，iOS 用户与 Android 用户之间的沟通壁垒正在被瓦解，这不仅是协议的更新，更是全球移动安全标准的一次统一。&lt;/p>
+&lt;h3 id="苹果即将升级-imessage正式支持-rcs-协议与更强的加密功能">苹果即将升级 iMessage：正式支持 RCS 协议与更强的加密功能
+&lt;/h3>&lt;p>苹果确认将在即将发布的 iOS 26.4 更新中，为 iMessage 引入对 RCS 协议的端到端加密支持。这一转变意味着，当 iOS 用户与 Android 用户互发短消息时，将不再受限于过时的 SMS/MMS 技术。用户将能享受到更高清的照片视频传输、输入状态显示、已读回执以及更关键的——跨平台消息加密安全性。&lt;/p>
+&lt;p>虽然苹果依然保留了“蓝色气泡”作为品牌护城河，但 RCS 的引入极大地提升了全球数亿用户的日常通讯体验。这也被视为苹果应对全球监管压力与追求技术标准化的一种平衡选择。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595321-messages-app-icon-ios-26.jpg"
+loading="lazy"
+alt="iMessage 更新示意图"
+>&lt;/p>
+&lt;h2 id="操作系统易用性与生产力工具的深度思辨">操作系统易用性与生产力工具的深度思辨
+&lt;/h2>&lt;p>在技术圈内，Linux 系统始终是自由与定制的象征。然而，最新的行业观察开始反思“极客精神”与“生产力效率”之间的天然冲突，引发了开发者群体关于系统选择逻辑的广泛讨论。&lt;/p>
+&lt;h3 id="深度反思为什么重回-linux-系统可能是一个错误的决定">深度反思：为什么重回 Linux 系统可能是一个“错误”的决定？
+&lt;/h3>&lt;p>一位资深开发者在尝试重回 Ubuntu 系统后的经历引发了社区热议。文章指出，尽管现代 Linux 发行版在桌面化方面取得了长足进步，但作为生产力工具时，用户仍需花费大量时间解决驱动兼容性、软件依赖以及工作流中断等问题。&lt;/p>
+&lt;p>对于许多追求高效产出的开发者来说，操作系统不应成为研究的对象，而应是无感的背景。Linux 作为技术爱好的理想之地，与作为高压工作环境下的稳定工具之间，依然存在着难以调和的矛盾。这次反思让人们重新审视：最适合自己的系统，往往是那个能让你忘记它存在的系统。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595321-Screenshot-From-2026-01-15-13-38-29.png"
+loading="lazy"
+alt="Linux 系统体验图"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.techjuice.pk/google-maps-turns-21-from-slippy-maps-to-the-11b-os-of-the-physical-world-techjuice-217272-1.jpg" target="_blank" rel="noopener"
+>Google Maps 21周年：从简单的数字化地图进化为AI驱动的物理世界操作系统&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2026/02/07/apple-messages-app-upgrades-coming-soon-ios-26-4-rcs-texting/" target="_blank" rel="noopener"
+>苹果即将升级 iMessage：正式支持 RCS 协议与更强的加密功能&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.theverge.com/report/875077/linux-was-a-mistake" target="_blank" rel="noopener"
+>深度反思：为什么重回 Linux 系统可能是一个“错误”的决定？&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>硬件领域正朝着“极致性能”与“智能化配件”两个维度快速演进。苹果 M 系列芯片的持续迭代预示着个人电脑算力的新高峰，而充电器等传统配件通过加入屏幕与智能交互，正在开辟功能性配件的新赛道。&lt;/p>
+&lt;h2 id="macbook-家族的-m5-时代性能触控与性价比的博弈">MacBook 家族的 M5 时代：性能、触控与性价比的博弈
+&lt;/h2>&lt;p>苹果的自研芯片计划已经进入了 M5 周期。新款 MacBook 的传闻不仅聚焦于处理器制程的突破，更揭示了苹果在产品线策略上的重大转变，包括对入门市场的下探以及对触控交互的尝试。&lt;/p>
+&lt;h3 id="苹果-m5-macbook-传闻汇总更强大的芯片更廉价的入门机及触摸屏版将至">苹果 M5 MacBook 传闻汇总：更强大的芯片、更廉价的入门机及触摸屏版将至
+&lt;/h3>&lt;p>据多方供应链消息显示，搭载 M5 Pro 和 M5 Max 芯片的 MacBook Pro 将在近期亮相，采用更先进的封装技术以实现更低的功耗比。然而，更令市场关注的是苹果可能推出的 599 美元入门级 MacBook，这将是苹果多年来对 Windows 阵营廉价笔记本发起的最强力反击。&lt;/p>
+&lt;p>此外，长期以来被乔布斯否定、被库克观望的“触摸屏 MacBook”也传出了具体的时间表。配合 OLED 屏幕的升级，MacBook 可能会在保持生产力的同时，引入更直观的交互方式，进一步模糊 iPad 与 Mac 之间的界限。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595321-apple-macbook-pro-16-m4-pro-6519.jpg"
+loading="lazy"
+alt="M4 芯片新款 MacBook Pro 参考图"
+>&lt;/p>
+&lt;h2 id="充电配件的智能化革命不仅仅是能量传输">充电配件的智能化革命：不仅仅是能量传输
+&lt;/h2>&lt;p>随着移动设备充电需求的多元化，传统充电器正在通过集成显示屏和更紧凑的设计来提升附加值。这种演变反映了用户对设备状态实时掌控的强烈需求。&lt;/p>
+&lt;h3 id="anker-发布新款带屏充电器45w-功率与折叠插脚是核心卖点">Anker 发布新款带屏充电器：45W 功率与折叠插脚是核心卖点
+&lt;/h3>&lt;p>全球知名配件品牌 Anker 推出了新款 Nano 45W 充电器。该产品最显著的特点是集成了一块小型 LCD 屏幕，能够实时显示输出电压、功率以及剩余充电时间。&lt;/p>
+&lt;p>虽然部分评论认为在充电器上加装屏幕略显浮夸，但其小巧的体积和可折叠插脚设计，依然让它在氮化镓（GaN）充电器市场中脱颖而出。这种将功率可视化与极佳便携性结合的产品思路，正成为半导体配件行业的新风向标。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595323-anker_nano6.jpg"
+loading="lazy"
+alt="Anker 带屏充电器细节图"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.cnet.com/tech/computing/macbook-rumors-new-macbook-pros-prices-release-dates/" target="_blank" rel="noopener"
+>苹果 M5 MacBook 传闻汇总：更强大的芯片、更廉价的入门机及触摸屏版将至&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.theverge.com/tech/873655/anker-nano-charger-smart-display-45w-folding-prongs" target="_blank" rel="noopener"
+>Anker 发布新款带屏充电器：45W 功率与折叠插脚是核心卖点&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="物理学与前沿科学">物理学与前沿科学
+&lt;/h1>&lt;p>科学界在量子力学与宇宙学领域取得了突破性的进展。科学家不仅在微观尺度上操纵物质的极端状态，也在宏观尺度上通过顶级天文观测设备勾勒出宇宙的“隐形骨架”，这些发现正在重新定义我们对物质与时空的认知。&lt;/p>
+&lt;h2 id="量子态的魔术超流体与超固态的互转">量子态的魔术：超流体与超固态的互转
+&lt;/h2>&lt;p>量子物理学长期以来致力于研究物质在接近绝对零度时的奇异表现。最新的实验成果证明，物质可以在两种极端的量子态之间进行可逆转换，这为量子材料的设计提供了理论基础。&lt;/p>
+&lt;h3 id="量子边界突破科学家首次实现超流体与超固态的可逆转换理论验证">量子边界突破：科学家首次实现超流体与超固态的可逆转换理论验证
+&lt;/h3>&lt;p>物理学家利用准粒子激子，成功地在一个可控系统中实现了超流体（一种完全没有黏性、可以永恒流动的液体）与超固态（一种既具有晶体结构又具有超流体特征的奇异物质态）之间的双向切换。&lt;/p>
+&lt;p>这一发现不仅仅是实验室里的“魔术”，它验证了宏观量子相变的深刻理论。这意味着未来我们可能创造出能够根据环境需求改变自身物理属性的全新量子设备。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595324-Wz6isXbmhL6kDMmLDLrwBg-688-80.jpg"
+loading="lazy"
+alt="量子相变模拟图"
+>&lt;/p>
+&lt;h2 id="揭秘宇宙暗面暗物质地图的绘制">揭秘宇宙暗面：暗物质地图的绘制
+&lt;/h2>&lt;p>暗物质占据了宇宙物质质量的绝大部分，却无法被直接观测。通过引力透镜效应，人类终于能够“看”到这些隐形的支架如何支撑起整个星系团。&lt;/p>
+&lt;h3 id="宇宙的隐形支架詹姆斯韦伯望远镜发布最详尽暗物质地图">宇宙的“隐形支架”：詹姆斯·韦伯望远镜发布最详尽暗物质地图
+&lt;/h3>&lt;p>詹姆斯·韦伯太空望远镜（JWST）再次证明了其非凡的观测能力。通过捕捉遥远星系光线在经过大质量天体时的扭曲变形，天文学家反向推算出了暗物质的分布。&lt;/p>
+&lt;p>这张迄今为止最详细的暗物质地图清晰地显示了暗物质如何在宇宙尺度上形成庞大的网格结构，而可见的星系则像珍珠一样点缀在这些不可见的细丝之上。这一成果对于理解宇宙的起源与演化至关重要。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595324-teESBNqZ6Q4EGydNMYhAqe-2560-80.jpg"
+loading="lazy"
+alt="暗物质分布图"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/physics-mathematics/quantum-physics/physicists-push-quantum-boundaries-by-turning-a-superfluid-into-a-supersolid-and-back-for-the-first-time" target="_blank" rel="noopener"
+>量子边界突破：科学家首次实现超流体与超固态的可逆转换理论验证&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/physics-mathematics/dark-matter/invisible-scaffolding-of-the-universe-revealed-in-ambitious-new-james-webb-telescope-images" target="_blank" rel="noopener"
+>宇宙的“隐形支架”：詹姆斯·韦伯望远镜发布最详尽暗物质地图&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天">航空航天
+&lt;/h1>&lt;p>人类迈向深空的步伐正在加快，商业航天的成熟与科学探测的深入相辅相成。SpaceX 的发射节奏恢复标志着低地球轨道物流的常态化，而韦伯望远镜对远古星系的发现则在不断刷新宇宙黎明的定义。&lt;/p>
+&lt;h2 id="商业航天的复苏与基建调整">商业航天的复苏与基建调整
+&lt;/h2>&lt;p>在经历技术故障与监管审核后，商业航天的领头羊再次启航。为了迎接更大规模的深空探索（如星舰计划），现有的发射基础设施正在经历大规模的重组与升级。&lt;/p>
+&lt;h3 id="复飞许可已下达spacex-falcon-9-下周三将再次运送航天员前往空间站">复飞许可已下达！SpaceX Falcon 9 下周三将再次运送航天员前往空间站
+&lt;/h3>&lt;p>在完成对近期飞行异常的调查并获得美国联邦航空管理局（FAA）的许可后，SpaceX 的猎鹰 9 号（Falcon 9）火箭宣布复飞。下周三，它将执行备受瞩目的 Crew-12 任务，将新一批航天员送往国际空间站。这次复飞不仅证明了 Falcon 9 的可靠性，也缓解了 NASA 对空间站人员轮换的焦虑。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595324-eqepdosgSdhu7yhzmKZyZd-1920-80.jpg"
+loading="lazy"
+alt="猎鹰 9 号发射场准备图"
+>&lt;/p>
+&lt;h3 id="为了星舰让路spacex-调整发射场布局龙飞船任务将转移阵地">为了“星舰”让路：SpaceX 调整发射场布局，龙飞船任务将转移阵地
+&lt;/h3>&lt;p>为了给庞大的 Starship（星舰）项目腾出测试与发射空间，SpaceX 决定将其传统的载人龙飞船（Crew Dragon）发射任务从肯尼迪航天中心的 39A 发射台转移至其他工位。这一变动显示了 SpaceX 将战略重点全面向星舰倾斜的决心，也预示着人类进行月球及火星探索的基建设施正在进入“重型化”阶段。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="39A 发射台全景图"
+>&lt;/p>
+&lt;h2 id="追寻生命与宇宙的黎明">追寻生命与宇宙的黎明
+&lt;/h2>&lt;p>天文学界正在利用最顶尖的探测设备，试图回答两个终极问题：宇宙是从什么时候开始点亮的？除了地球，哪里还有生命的建筑构件？&lt;/p>
+&lt;h3 id="詹姆斯韦伯新发现捕获迄今最远星系并寻获生命起源物质线索">詹姆斯·韦伯新发现：捕获迄今最远星系，并寻获生命起源物质线索
+&lt;/h3>&lt;p>JWST 最近观测到了一个距今极为遥远的星系，其形成时间比现有的“宇宙黎明”模型预测的还要早。这一发现可能迫使天文学家重新修正宇宙大爆炸后的演化模型。&lt;/p>
+&lt;p>更令人兴奋的是，JWST 在邻近的一个星系云团中检测到了复杂有机分子的光谱信号。这些分子被视为生命起源的“前驱物质”，证明了构成生命的化学基础在宇宙中可能比我们想象的更为普遍。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595330-SCI_1_Full_1770461332481.jpg"
+loading="lazy"
+alt="遥远星系观测图像"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.space.com/space-exploration/launches-spacecraft/spacexs-next-astronaut-launch-for-nasa-is-officially-on-for-feb-11-as-faa-clears-falcon-9-rocket-to-fly-again" target="_blank" rel="noopener"
+>复飞许可已下达！SpaceX Falcon 9 下周三将再次运送航天员前往空间站&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.gadgets360.com/science/news/james-webb-telescope-finds-most-distant-galaxy-challenging-what-scientists-predicted-about-cosmic-dawn-10964573" target="_blank" rel="noopener"
+>詹姆斯·韦伯新发现：捕获迄今最远星系，并寻获生命起源物质线索&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://spaceflightnow.com/2026/02/06/spacex-shifts-away-from-dragon-launches-at-pad-39a-as-starship-looms/" target="_blank" rel="noopener"
+>为了“星舰”让路：SpaceX 调整发射场布局，龙飞船任务将转移阵地&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="生物与环境科技">生物与环境科技
+&lt;/h1>&lt;p>生物学领域的研究正在挑战我们对“意识”与“节律”的固有认知。通过观察非人类物种的行为，以及人类在极端环境下的生物反馈，我们正逐步揭开生命最核心的运行机理。&lt;/p>
+&lt;h2 id="动物行为的复杂性想象力的起源">动物行为的复杂性：想象力的起源
+&lt;/h2>&lt;p>长期以来，想象力被认为是人类特有的高级认知功能。然而，针对类人猿的最新研究正在模糊这条界限。&lt;/p>
+&lt;h3 id="生物学突破类人猿也会玩过家家实验暗示它们具备想象力">生物学突破：类人猿也会“玩过家家”？实验暗示它们具备想象力
+&lt;/h3>&lt;p>在一次精心设计的“虚拟茶话会”实验中，科学家观察到类人猿能够配合人类进行“倒茶”、“喝茶”等虚构动作。这种参与“虚构游戏”的能力暗示类人猿在脑海中能够构建不存在的场景。如果这一结论得到进一步证实，将意味着想象力并非人类演化史上的独家发明，而是灵长类动物共同的深层天赋。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595331-AP26036547415356-1024x768.jpg"
+loading="lazy"
+alt="类人猿实验观察图"
+>&lt;/p>
+&lt;h2 id="昼夜节律与环境的博弈">昼夜节律与环境的博弈
+&lt;/h2>&lt;p>人类的生物钟是如何在没有太阳光的情况下运作的？通过对极端环境实验的复盘，我们获得了关于生命节律的最直接证据。&lt;/p>
+&lt;h3 id="洞穴深处的秘密63-天黑暗生活如何揭示了人类的生物钟机制">洞穴深处的秘密：63 天黑暗生活如何揭示了人类的生物钟机制？
+&lt;/h3>&lt;p>一项回顾性研究重新评估了 60 年前的一场著名实验：一位科学家在完全黑暗的地下洞穴中孤独生活了 63 天。实验发现，在失去外部光照参照后，人类的生物钟并没有变得混乱，而是自发地维持在一个约为 25 小时的周期内。这一发现奠定了现代昼夜节律生物学的基础，对于解决现代人的睡眠障碍、航天员的太空生活安排具有不可磨灭的指导意义。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1770595331-he-spent-63-days-in-a-dark-cave-and-came-back-with-a-discovery-scaled.jpg"
+loading="lazy"
+alt="地下洞穴实验资料图"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.pbs.org/newshour/science/can-apes-play-pretend-scientists-use-an-imaginary-tea-party-to-find-out" target="_blank" rel="noopener"
+>生物学突破：类人猿也会“玩过家家”？实验暗示它们具备想象力&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://indiandefencereview.com/63-days-in-cave-sparked-breakthrough-in-circadian-biology/" target="_blank" rel="noopener"
+>洞穴深处的秘密：63 天黑暗生活如何揭示了人类的生物钟机制？&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务</title><link>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</link><pubDate>Mon, 09 Feb 2026 08:02:12 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-google-maps-21-anniversary-apple-m5-spacex-falcon-9-return-flight-20260208-02.09/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/99b74ba8e0135b5536a125e3596d5212.jpg" alt="Featured image of post Google Maps 迈向 AI 物理系统 21 周年，SpaceX 重获飞行许可准备执行载人航天任务" />&lt;h1 id="互联网与软件">互联网与软件
 &lt;/h1>&lt;p>在数字化浪潮的持续推动下，互联网与软件领域正经历着从“工具属性”向“智能系统”的深刻演变。本年度最显著的趋势之一是传统互联网服务的 AI 化重塑，尤其是地理信息系统正演变为物理世界的智能大脑；同时，通信协议的跨平台互通与系统生态的反思，也标志着软件行业在追求技术高度的同时，开始更加注重用户体验的边界与安全性。&lt;/p>
 &lt;h2 id="数字化地图的范式转移与物理世界操作系统的诞生">数字化地图的范式转移与物理世界操作系统的诞生
 &lt;/h2>&lt;p>这一部分重点关注 Google Maps 这一国民级应用在诞生 21 周年之际的跨越式进化。从最初简单的“平滑滚动地图”技术，到如今深度集成生成式 AI，它不再仅仅是一个导航工具，而是一个连接数字世界与物理现实的“操作系统”。&lt;/p>
