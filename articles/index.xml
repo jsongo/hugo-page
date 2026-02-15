@@ -1,4 +1,432 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Feb 2026 08:01:46 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统</title><link>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</link><pubDate>Sun, 15 Feb 2026 08:01:46 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/e09c563c17a6a29970aa7dcb67b30e5f.jpeg" alt="Featured image of post AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Ethan 的思考札记</title><link>https://www.jsongo.top/articles/</link><description>Recent content in Articles on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Feb 2026 08:01:49 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统</title><link>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</link><pubDate>Sun, 15 Feb 2026 08:01:49 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</guid><description>&lt;img src="https://cdn.lyb.pub/upic/1762950008_XDsCxu.png" alt="Featured image of post AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>人工智能领域近期迎来了多项突破性进展，涵盖了从底层模型推理能力的显著增强到应用层面的生产力革新。Google 通过 Gemini 系列产品的迭代，展现了其在复杂逻辑处理及多模态生成方面的领先地位；同时，学术界关于 AI 辅助科研的研究也引发了行业对于技术如何改变科学范式的深度思考。这些进展标志着 AI 正在从简单的生成式工具向具备高级逻辑和专业辅助能力的深度助手进化。&lt;/p>
+&lt;hr>
+&lt;h2 id="智能模型进化深度推理与多模态建模的新里程碑">智能模型进化：深度推理与多模态建模的新里程碑
+&lt;/h2>&lt;p>Google 近期发布的更新不仅强化了 AI 的“思考”深度，还通过三维建模和语音交互功能，极大地扩展了人工智能在专业创作和文档处理中的应用边界。&lt;/p>
+&lt;h3 id="google-发布-gemini-3-deep-think具备高级推理与-3d-建模能力">Google 发布 Gemini 3 &amp;lsquo;Deep Think&amp;rsquo;：具备高级推理与 3D 建模能力
+&lt;/h3>&lt;p>Google 官方正式推出了 Gemini 3 的“Deep Think”版本。这一版本不仅在逻辑推演和解决数学难题方面表现出色，最引人注目的是其新增的“Sketch-to-3D”功能。用户只需提供简单的平面草图，系统即可利用其先进的空间理解能力，实时生成比例精准、结构合理的 3D 模型。这一进步被认为将彻底改变建筑设计、游戏开发和工业制图的早期创作流程。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113696-Google-Gemini.jpg"
+loading="lazy"
+alt="Google Gemini 3"
+>&lt;/p>
+&lt;h3 id="google-docs-上线-gemini-语音摘要功能">Google Docs 上线 Gemini 语音摘要功能
+&lt;/h3>&lt;p>为了进一步提升办公效率，Google Docs 引入了由 Gemini 驱动的语音摘要工具。该功能能够自动提取长篇文档中的核心要点，并将其转化为自然流畅的音频摘要。对于需要利用通勤或其他碎片时间快速掌握报告精髓的专业人士来说，这提供了一种全新的、更具可访问性的信息获取方式。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-Google-Docs-audio-summaries-1-1.jpg"
+loading="lazy"
+alt="Google Docs Audio Summaries"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="科研范式变革ai-辅助撰写对学术资助的影响">科研范式变革：AI 辅助撰写对学术资助的影响
+&lt;/h2>&lt;p>人工智能正在进入学术界的核心地带。一项关于科研经费获批率的研究揭示了 AI 在优化科研提案方面的潜力，但同时也对学术多样性提出了警示。&lt;/p>
+&lt;h3 id="研究发现ai-辅助撰写申请书可显著提高科研经费获批率">研究发现：AI 辅助撰写申请书可显著提高科研经费获批率
+&lt;/h3>&lt;p>《Nature》杂志发表的一项研究指出，使用 AI 辅助撰写资助申请书的科研人员，其获得 NIH（美国国立卫生研究院）资助的几率有显著提升。AI 能够帮助科研人员更清晰地组织逻辑、优化语言表达。然而，研究人员也表达了担忧：过度依赖 AI 可能导致申请内容在逻辑结构和叙述方式上趋于“同质化”，减少了科研思想在纸面上的独特性表达。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-d41586-026-00369-3_52024168.jpg"
+loading="lazy"
+alt="Nature AI Research"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://eastleighvoice.co.ke/technology/293682/google-upgrades-gemini-3-deep-think-with-advanced-reasoning-sketch-to-3d-tools" target="_blank" rel="noopener"
+>Google 发布 Gemini 3 &amp;lsquo;Deep Think&amp;rsquo;：具备高级推理与 3D 建模能力&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/12/google-docs-audio-summaries/" target="_blank" rel="noopener"
+>Google Docs 上线 Gemini 语音摘要功能&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.nature.com/articles/d41586-026-00369-3" target="_blank" rel="noopener"
+>研究发现：AI 辅助撰写申请书可显著提高科研经费获批率&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>互联网生态与操作系统在近期迎来了多维度的体验优化。Android 系统开启了新一代的大版本测试，着重于底层性能与用户界面的重塑；主流应用如 Google 相册与 Steam 则通过交互设计调整和社区功能增强，力求提供更贴合用户需求的个性化服务。此外，网络安全工具的促销也反映了数字化时代用户对隐私保护的持续关注。&lt;/p>
+&lt;hr>
+&lt;h2 id="移动平台新动向android-17-的演进与界面重塑">移动平台新动向：Android 17 的演进与界面重塑
+&lt;/h2>&lt;p>Google 正在加速推进移动系统的迭代，Android 17 的面世以及 Google 相册的交互实验，预示着移动端 UI 将朝着更加轻量化和沉浸式的方向发展。&lt;/p>
+&lt;h3 id="android-17-首个-beta-版向-pixel-用户推送">Android 17 首个 Beta 版向 Pixel 用户推送
+&lt;/h3>&lt;p>Google 已经向 Pixel 系列设备用户推送了 Android 17 的首个 Beta 测试版。虽然详细的更新日志仍在解读中，但早期测试者反馈系统在动画流畅度及后台能效管理上有了长足进步。这标志着新一轮移动软件创新周期的开始。&lt;/p>
+&lt;h3 id="google-相册测试悬浮工具栏取代底部菜单栏设计">Google 相册测试悬浮工具栏，取代底部菜单栏设计
+&lt;/h3>&lt;p>为了最大化屏幕显示区域，Google 相册正在 iOS 端测试一种全新的悬浮工具栏设计。这一设计旨在取代传统的固定底部菜单，通过更加灵活的动态显示方式，减少界面元素对照片内容的干扰，进一步提升视觉沉浸感。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-Google-Photos-Album-View.jpg"
+loading="lazy"
+alt="Google Photos Floating Toolbar"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="体验细节优化从驾驶安全到社区互动">体验细节优化：从驾驶安全到社区互动
+&lt;/h2>&lt;p>软件开发者越来越关注“痛点”功能的修补。Google 修复了长期困扰驾驶者的自动模式问题，而 Steam 则让游戏评价变得更具参考价值。&lt;/p>
+&lt;h3 id="google-修复-android-驾驶模式下自动免打扰的长期顽疾">Google 修复 Android 驾驶模式下自动免打扰的长期顽疾
+&lt;/h3>&lt;p>此前，许多用户反馈 Android 驾驶模式会误触发免打扰（DND）设置，导致错过重要通知。Google 近期悄悄发布了补丁，修正了这一逻辑错误，确保用户在导航过程中能更精准地接收到信息提醒，提升了行车安全与便利性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113698-Android-16-driving-mode.jpg"
+loading="lazy"
+alt="Android Driving Mode"
+>&lt;/p>
+&lt;h3 id="steam-允许用户在游戏评价中附加硬件配置参数">Steam 允许用户在游戏评价中附加硬件配置参数
+&lt;/h3>&lt;p>为了提高游戏评价的参考价值，Steam 社区引入了一项关键更新：允许用户在发布评论时一键附带其 PC 硬件规格及实测帧率。这将帮助潜买家更好地预判游戏在类似配置下的运行表现，减少了因配置不适配导致的误购。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="Steam PC Specs"
+>&lt;/p>
+&lt;h3 id="超值交易adguard-推出-40-美元-vpn-与广告拦截捆绑包">超值交易：AdGuard 推出 40 美元 VPN 与广告拦截捆绑包
+&lt;/h3>&lt;p>在隐私保护日益受到重视的今天，AdGuard 推出了力度空前的促销。通过 40 美元的低价，用户可以获得 5 年的 VPN 服务及终身广告拦截许可，这一价格比原价降低了近 90%，旨在通过极高的性价比吸引更多用户建立个人安全防线。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113699-0592QXS6w5SFMEb5h9DasQT-1.fit_lim.size_1200x630.v1771015911.png"
+loading="lazy"
+alt="AdGuard Deal"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/13/android-17-beta-1-pixel/" target="_blank" rel="noopener"
+>Android 17 首个 Beta 版向 Pixel 用户推送&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/12/google-photos-floating-toolbar/" target="_blank" rel="noopener"
+>Google 相册测试悬浮工具栏，取代底部菜单栏设计&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/android-driving-mode-annoyance-fix-3640721/" target="_blank" rel="noopener"
+>Google 修复 Android 驾驶模式下自动免打扰的长期顽疾&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://videocardz.com/newz/steam-beta-lets-users-attach-pc-specs-to-game-reviews" target="_blank" rel="noopener"
+>Steam 允许用户在游戏评价中附加硬件配置参数&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcmag.com/deals/this-40-adguard-deal-combines-a-vpn-and-ad-blocker-for-long-term-privacy?test_uuid=04IpBmWGZleS0I0J3epvMrC&amp;amp;test_variant=A" target="_blank" rel="noopener"
+>AdGuard 推出 40 美元 VPN 与广告拦截捆绑包&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>硬件领域的创新正呈现出两极化的趋势：一方面是传统电子消费品如三星 Galaxy 系列的稳步迭代与形态探索；另一方面则是科研级硬件如 3D 打印技术和类脑芯片的跨越式突破。这些技术不仅提升了终端设备的性能，更在制造速度和机器人感知领域开辟了全新的可能性。&lt;/p>
+&lt;hr>
+&lt;h2 id="消费电子旗舰三星新机发布与形态探索">消费电子旗舰：三星新机发布与形态探索
+&lt;/h2>&lt;p>三星通过传统的旗舰更新与极具实验性质的折叠屏设计，继续巩固其在全球硬件市场中的风向标地位。&lt;/p>
+&lt;h3 id="三星官宣-unpacked-活动galaxy-s26-ultra-即将登场">三星官宣 Unpacked 活动：Galaxy S26 Ultra 即将登场
+&lt;/h3>&lt;p>三星官方确认了即将举行的 Unpacked 盛会。本次活动的焦点无疑是全新的旗舰机型 Galaxy S26 Ultra。据悉，该机将在传感器技术、影像算法以及处理性能上实现全面跨越。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113699-0x0.jpg"
+loading="lazy"
+alt="Samsung Unpacked"
+>&lt;/p>
+&lt;h3 id="三星宽屏版galaxy-z-fold-真机首度曝光">三星“宽屏版”Galaxy Z Fold 真机首度曝光
+&lt;/h3>&lt;p>除了 S 系列，三星在折叠屏领域的探索也未停止。泄露的 One UI 9 早期固件揭示了一款拥有更宽比例设计的 Galaxy Z Fold 变体，这一设计变化旨在改善外屏的使用手感并提升展开后的视野体验。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113702-Samsung-Galaxy-Z-Flip-7-vs-Flip-7-FE-vs-Fold-7.jpg"
+loading="lazy"
+alt="Wide Galaxy Z Fold"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="前沿硬件技术超越人类极限的感知与制造">前沿硬件技术：超越人类极限的感知与制造
+&lt;/h2>&lt;p>从不到一秒的 3D 打印到比人类反应更快的类脑芯片，硬件底层技术的革新正在挑战物理极限。&lt;/p>
+&lt;h3 id="中国科研团队实现毫米级物体-1-秒内-3d-打印完毕">中国科研团队实现毫米级物体 1 秒内 3D 打印完毕
+&lt;/h3>&lt;p>清华大学研究团队在 3D 打印领域取得了惊人突破。他们研发的超高速打印技术，能在不到一秒的时间内精准完成毫米级复杂物体的制造，这预示着未来微纳米级精密零件的高速规模化生产将成为可能。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113702-DISH.jpg"
+loading="lazy"
+alt="3D Print Breakthrough"
+>&lt;/p>
+&lt;h3 id="类脑视觉芯片问世机器人反应速度可达人类四倍">类脑视觉芯片问世：机器人反应速度可达人类四倍
+&lt;/h3>&lt;p>北京航空航天大学与北京理工大学的研究人员联合开发了一种灵感来源于神经科学的类脑芯片。该芯片使机器人对物体运动的感知和反应速度达到了人类平均水平的四倍，这对于高速飞行的无人机和自动驾驶系统具有里程碑意义。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113703-1392277_050545_updates.jpg"
+loading="lazy"
+alt="Neuroscience Chip"
+>&lt;/p>
+&lt;h3 id="favero-发布固件更新功率计脚踏续航瞬间翻倍">Favero 发布固件更新：功率计脚踏续航瞬间翻倍
+&lt;/h3>&lt;p>在可穿戴与专业运动器材领域，Favero 通过纯软件手段实现了硬件潜能的释放。最新的固件更新让 RS Pro 和 MX Pro 功率计脚踏的续航时间直接翻倍，展示了卓越的能效算法优化能力。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113703-PowerMeter2-2.jpg"
+loading="lazy"
+alt="Favero Power Meter"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.forbes.com/sites/davidphelan/2026/02/13/galaxy-s26-ultra-release-date-samsung-confirms-event-and-pre-order-perks/" target="_blank" rel="noopener"
+>三星官宣 Unpacked 活动：Galaxy S26 Ultra 即将登场&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.voxelmatters.com/chinese-team-3d-print-millimeter-scale-objects-in-under-one-second/" target="_blank" rel="noopener"
+>中国科研团队实现毫米级物体 1 秒内 3D 打印完毕&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.thenews.com.pk/latest/1392277-neuroscience-inspired-chip-lets-robots-see-motion-four-times-faster-than-humans" target="_blank" rel="noopener"
+>类脑视觉芯片问世：机器人反应速度可达人类四倍&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/wide-galaxy-fold-images-3640828/" target="_blank" rel="noopener"
+>三星“宽屏版”Galaxy Z Fold 真机首度曝光&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.dcrainmaker.com/2026/02/favero-doubles-power-meter-pedal-battery-life-via-firmware-update.html" target="_blank" rel="noopener"
+>Favero 发布固件更新：功率计脚踏续航瞬间翻倍&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天">航空航天
+&lt;/h1>&lt;p>浩瀚星空近期揭示了更多令人费解的奥秘。从挑战人类认知的系外行星系统，到关于土星环起源的碰撞学说，再到现代载人航天与深空探测的最新进展，天文学家与宇航机构正在不断刷新人类对宇宙演化历程的认知。&lt;/p>
+&lt;hr>
+&lt;h2 id="宇宙之谜颠覆理论的发现与起源探索">宇宙之谜：颠覆理论的发现与起源探索
+&lt;/h2>&lt;p>科学家在观测中发现了多处不符合现有模型的天文现象，这些“异常”正成为理论创新的突破口。&lt;/p>
+&lt;h3 id="颠覆教科书天文学家发现内外颠倒的奇异系外行星系统">颠覆教科书：天文学家发现“内外颠倒”的奇异系外行星系统
+&lt;/h3>&lt;p>天文学家在距离地球 116 光年外发现了一个“逻辑相反”的星系。在这个系统中，沉重的气态巨行星位于靠近恒星的内圈，而体积较小的岩石行星反而位于外围。这一发现彻底挑战了关于行星形成的现有理论，促使科学家重新思考星系早期的物质吸积与迁移规律。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113704-planets_wrong_order_header.jpg"
+loading="lazy"
+alt="Inside-Out Solar System"
+>&lt;/p>
+&lt;h3 id="科学家揭秘土星环起源源自一亿年前的卫星大碰撞">科学家揭秘土星环起源：源自一亿年前的卫星大碰撞
+&lt;/h3>&lt;p>土星环那令人着迷的壮观景象究竟从何而来？最新研究表明，这可能源自约 1 亿年前（当时恐龙仍统治地球）两颗卫星的一次灾难性碰撞。这些碎片在引力作用下逐渐扩散平铺，形成了我们今天看到的环状结构。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="Saturn&amp;rsquo;s Rings Origin"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="空间探索实录人类在星际中的脚步">空间探索实录：人类在星际中的脚步
+&lt;/h2>&lt;p>无论是长期的载人任务，还是对生命起源分子的寻觅，人类探索宇宙的深度都在不断增加。&lt;/p>
+&lt;h3 id="nasa-spacex-crew-12-成功升空">NASA SpaceX Crew-12 成功升空
+&lt;/h3>&lt;p>NASA 的 Crew-12 载人飞船成功发射，四名宇航员开启了前往国际空间站的旅程。这次任务选在情人节前后进行，不仅履行了科学实验的使命，也为空间站的日常运营带来了新的补给与研究活力。&lt;/p>
+&lt;h3 id="nasa-望远镜在彗星喷发物中发现生命基石有机分子">NASA 望远镜在彗星喷发物中发现“生命基石”有机分子
+&lt;/h3>&lt;p>SPHEREx 太空望远镜在 ATLAS 彗星喷射出的物质中检测到了复杂的有机大分子。这些分子被视为构成生命的基础单元，这一发现进一步支持了“地球生命养料可能由彗星带入”的假说。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113704-j2r6ojsHYbwYtFXiaGWRzD-1920-80.jpg"
+loading="lazy"
+alt="Comet Organic Molecules"
+>&lt;/p>
+&lt;h3 id="血月将至全月食即将闪耀北美与亚洲夜空">血月将至：全月食即将闪耀北美与亚洲夜空
+&lt;/h3>&lt;p>天文爱好者近期迎来福音，一场全月食即将在这两大洲的上空上演。届时，月球将进入地球的本影，呈现出迷人的古铜色或深红色“血月”奇观。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/discovery-of-an-inside-out-solar-system-puzzles-astronomers" target="_blank" rel="noopener"
+>天文学家发现“内外颠倒”的奇异系外行星系统&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.nasa.gov/news-release/nasas-spacex-crew-12-launches-to-international-space-station/" target="_blank" rel="noopener"
+>NASA SpaceX Crew-12 成功升空&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://gizmodo.com/saturns-rings-came-from-a-two-moon-collision-about-100-million-years-ago-study-says-2000721450" target="_blank" rel="noopener"
+>科学家揭秘土星环起源：源自一亿年前的卫星大碰撞&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/space/comets/nasa-telescope-spots-the-building-blocks-for-life-spewing-out-of-comet-3i-atlas" target="_blank" rel="noopener"
+>NASA 望远镜在彗星喷发物中发现“生命基石”有机分子功能&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.findarticles.com/lunar-eclipse-to-dazzle-north-america-and-asia/" target="_blank" rel="noopener"
+>血月将至：全月食即将闪耀北美与亚洲夜空&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="科学前沿">科学前沿
+&lt;/h1>&lt;p>基础科学的进步往往预示着未来技术的飞跃。本周，从宏观量子态的观测到生命起源最底层的生物机制，再到对宇宙最强力量——引力波的验证，每一项成果都在拓宽人类知识的边界。&lt;/p>
+&lt;hr>
+&lt;h2 id="物理与量子突破从时间晶体到引力波验证">物理与量子突破：从时间晶体到引力波验证
+&lt;/h2>&lt;p>物理学家们通过实验不断确证爱因斯坦的预言，并利用量子特性制造出过去只存在于科幻小说中的奇异物质。&lt;/p>
+&lt;h3 id="量子突破科学家研制出肉眼可见且能悬浮的时间晶体">量子突破：科学家研制出肉眼可见且能悬浮的“时间晶体”
+&lt;/h3>&lt;p>科学家们成功制造出了可以在宏观尺度下观察到的“时间晶体”。这种特殊物质不仅能够打破时间平移对称性，还能实现稳定的悬浮状态。这一突破标志着时间晶体正从深奥的理论研究阶段迈向潜在的实际应用，如量子计算中的精密计时。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="Time Crystal"
+>&lt;/p>
+&lt;h3 id="最强引力波信号再次证明爱因斯坦是对的">最强引力波信号再次证明爱因斯坦是对的
+&lt;/h3>&lt;p>引力波探测器捕捉到了一次史上最强的黑洞合并信号。通过对这一极远距离信号的详细分析，科学家发现黑洞合并的动态过程与广义相对论的预言高度吻合，爱因斯坦的宇宙蓝图再次经受住了最严苛的考验。&lt;/p>
+&lt;hr>
+&lt;h2 id="生命的奥秘从微观-rna-到远古始祖鸟">生命的奥秘：从微观 RNA 到远古始祖鸟
+&lt;/h2>&lt;p>生物学研究正通过更精密的探测手段，揭示生命在亿万年间如何萌芽与演化的细节。&lt;/p>
+&lt;h3 id="生命起源新发现极其微小的-rna-竟然能够自我复制">生命起源新发现：极其微小的 RNA 竟然能够自我复制
+&lt;/h3>&lt;p>研究人员发现，长度仅有 45 个碱基的极短 RNA 片段竟然拥有自我复制的能力。这一发现为“RNA 世界假说”提供了强有力的证据，即在复杂的生命系统出现之前，简单的分子序列已经具备了遗传和繁衍的基本特征。&lt;/p>
+&lt;h3 id="始祖鸟新研究揭秘史前第一鸟拥有从未被发现的奇异特征">始祖鸟新研究揭秘：史前“第一鸟”拥有从未被发现的奇异特征
+&lt;/h3>&lt;p>通过对始祖鸟化石的重新扫描与细微结构分析，古生物学家在其上腭发现了奇特的牙齿排列以及具备灵活性的舌骨结构。这些特征表明，这位蓝天开拓者的进食行为和解剖构造比此前认为的要复杂得多。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113705-QrZ2owtVfY6p2TpU5DBPqd-1600-80.png"
+loading="lazy"
+alt="Archaeopteryx Study"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://gizmodo.com/scientists-discover-time-crystals-you-can-hold-and-they-levitate-2000721148" target="_blank" rel="noopener"
+>量子突破：科学家研制出肉眼可见且能悬浮的“时间晶体”&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/physics-mathematics/record-breaking-gravitational-wave-puts-einsteins-relativity-to-its-toughest-test-yet-and-proves-him-right-again" target="_blank" rel="noopener"
+>最强引力波信号再次证明爱因斯坦是对的&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://arstechnica.com/science/2026/02/researchers-find-small-rnas-that-can-make-copies-of-themselves/" target="_blank" rel="noopener"
+>生命起源新发现：极其微小的 RNA 竟然能够自我复制&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/animals/dinosaurs/archaeopteryx-one-of-the-worlds-first-proto-birds-has-a-set-of-weird-never-before-seen-features-new-study-reveals" target="_blank" rel="noopener"
+>始祖鸟新研究揭秘：史前“第一鸟”拥有从未被发现的奇异特征&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统</title><link>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</link><pubDate>Sun, 15 Feb 2026 08:01:48 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/cab734bccd53ddc35b56c034ee8ba927.jpeg" alt="Featured image of post AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>人工智能领域近期迎来了多项突破性进展，涵盖了从底层模型推理能力的显著增强到应用层面的生产力革新。Google 通过 Gemini 系列产品的迭代，展现了其在复杂逻辑处理及多模态生成方面的领先地位；同时，学术界关于 AI 辅助科研的研究也引发了行业对于技术如何改变科学范式的深度思考。这些进展标志着 AI 正在从简单的生成式工具向具备高级逻辑和专业辅助能力的深度助手进化。&lt;/p>
+&lt;hr>
+&lt;h2 id="智能模型进化深度推理与多模态建模的新里程碑">智能模型进化：深度推理与多模态建模的新里程碑
+&lt;/h2>&lt;p>Google 近期发布的更新不仅强化了 AI 的“思考”深度，还通过三维建模和语音交互功能，极大地扩展了人工智能在专业创作和文档处理中的应用边界。&lt;/p>
+&lt;h3 id="google-发布-gemini-3-deep-think具备高级推理与-3d-建模能力">Google 发布 Gemini 3 &amp;lsquo;Deep Think&amp;rsquo;：具备高级推理与 3D 建模能力
+&lt;/h3>&lt;p>Google 官方正式推出了 Gemini 3 的“Deep Think”版本。这一版本不仅在逻辑推演和解决数学难题方面表现出色，最引人注目的是其新增的“Sketch-to-3D”功能。用户只需提供简单的平面草图，系统即可利用其先进的空间理解能力，实时生成比例精准、结构合理的 3D 模型。这一进步被认为将彻底改变建筑设计、游戏开发和工业制图的早期创作流程。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113696-Google-Gemini.jpg"
+loading="lazy"
+alt="Google Gemini 3"
+>&lt;/p>
+&lt;h3 id="google-docs-上线-gemini-语音摘要功能">Google Docs 上线 Gemini 语音摘要功能
+&lt;/h3>&lt;p>为了进一步提升办公效率，Google Docs 引入了由 Gemini 驱动的语音摘要工具。该功能能够自动提取长篇文档中的核心要点，并将其转化为自然流畅的音频摘要。对于需要利用通勤或其他碎片时间快速掌握报告精髓的专业人士来说，这提供了一种全新的、更具可访问性的信息获取方式。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-Google-Docs-audio-summaries-1-1.jpg"
+loading="lazy"
+alt="Google Docs Audio Summaries"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="科研范式变革ai-辅助撰写对学术资助的影响">科研范式变革：AI 辅助撰写对学术资助的影响
+&lt;/h2>&lt;p>人工智能正在进入学术界的核心地带。一项关于科研经费获批率的研究揭示了 AI 在优化科研提案方面的潜力，但同时也对学术多样性提出了警示。&lt;/p>
+&lt;h3 id="研究发现ai-辅助撰写申请书可显著提高科研经费获批率">研究发现：AI 辅助撰写申请书可显著提高科研经费获批率
+&lt;/h3>&lt;p>《Nature》杂志发表的一项研究指出，使用 AI 辅助撰写资助申请书的科研人员，其获得 NIH（美国国立卫生研究院）资助的几率有显著提升。AI 能够帮助科研人员更清晰地组织逻辑、优化语言表达。然而，研究人员也表达了担忧：过度依赖 AI 可能导致申请内容在逻辑结构和叙述方式上趋于“同质化”，减少了科研思想在纸面上的独特性表达。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-d41586-026-00369-3_52024168.jpg"
+loading="lazy"
+alt="Nature AI Research"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://eastleighvoice.co.ke/technology/293682/google-upgrades-gemini-3-deep-think-with-advanced-reasoning-sketch-to-3d-tools" target="_blank" rel="noopener"
+>Google 发布 Gemini 3 &amp;lsquo;Deep Think&amp;rsquo;：具备高级推理与 3D 建模能力&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/12/google-docs-audio-summaries/" target="_blank" rel="noopener"
+>Google Docs 上线 Gemini 语音摘要功能&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.nature.com/articles/d41586-026-00369-3" target="_blank" rel="noopener"
+>研究发现：AI 辅助撰写申请书可显著提高科研经费获批率&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>互联网生态与操作系统在近期迎来了多维度的体验优化。Android 系统开启了新一代的大版本测试，着重于底层性能与用户界面的重塑；主流应用如 Google 相册与 Steam 则通过交互设计调整和社区功能增强，力求提供更贴合用户需求的个性化服务。此外，网络安全工具的促销也反映了数字化时代用户对隐私保护的持续关注。&lt;/p>
+&lt;hr>
+&lt;h2 id="移动平台新动向android-17-的演进与界面重塑">移动平台新动向：Android 17 的演进与界面重塑
+&lt;/h2>&lt;p>Google 正在加速推进移动系统的迭代，Android 17 的面世以及 Google 相册的交互实验，预示着移动端 UI 将朝着更加轻量化和沉浸式的方向发展。&lt;/p>
+&lt;h3 id="android-17-首个-beta-版向-pixel-用户推送">Android 17 首个 Beta 版向 Pixel 用户推送
+&lt;/h3>&lt;p>Google 已经向 Pixel 系列设备用户推送了 Android 17 的首个 Beta 测试版。虽然详细的更新日志仍在解读中，但早期测试者反馈系统在动画流畅度及后台能效管理上有了长足进步。这标志着新一轮移动软件创新周期的开始。&lt;/p>
+&lt;h3 id="google-相册测试悬浮工具栏取代底部菜单栏设计">Google 相册测试悬浮工具栏，取代底部菜单栏设计
+&lt;/h3>&lt;p>为了最大化屏幕显示区域，Google 相册正在 iOS 端测试一种全新的悬浮工具栏设计。这一设计旨在取代传统的固定底部菜单，通过更加灵活的动态显示方式，减少界面元素对照片内容的干扰，进一步提升视觉沉浸感。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113697-Google-Photos-Album-View.jpg"
+loading="lazy"
+alt="Google Photos Floating Toolbar"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="体验细节优化从驾驶安全到社区互动">体验细节优化：从驾驶安全到社区互动
+&lt;/h2>&lt;p>软件开发者越来越关注“痛点”功能的修补。Google 修复了长期困扰驾驶者的自动模式问题，而 Steam 则让游戏评价变得更具参考价值。&lt;/p>
+&lt;h3 id="google-修复-android-驾驶模式下自动免打扰的长期顽疾">Google 修复 Android 驾驶模式下自动免打扰的长期顽疾
+&lt;/h3>&lt;p>此前，许多用户反馈 Android 驾驶模式会误触发免打扰（DND）设置，导致错过重要通知。Google 近期悄悄发布了补丁，修正了这一逻辑错误，确保用户在导航过程中能更精准地接收到信息提醒，提升了行车安全与便利性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113698-Android-16-driving-mode.jpg"
+loading="lazy"
+alt="Android Driving Mode"
+>&lt;/p>
+&lt;h3 id="steam-允许用户在游戏评价中附加硬件配置参数">Steam 允许用户在游戏评价中附加硬件配置参数
+&lt;/h3>&lt;p>为了提高游戏评价的参考价值，Steam 社区引入了一项关键更新：允许用户在发布评论时一键附带其 PC 硬件规格及实测帧率。这将帮助潜买家更好地预判游戏在类似配置下的运行表现，减少了因配置不适配导致的误购。&lt;/p>
+&lt;p>&lt;img src="https://cdn.videocardz.com/1/2026/02/STEAM-REVIEW-PC-SPECS.jpg"
+loading="lazy"
+alt="Steam PC Specs"
+>&lt;/p>
+&lt;h3 id="超值交易adguard-推出-40-美元-vpn-与广告拦截捆绑包">超值交易：AdGuard 推出 40 美元 VPN 与广告拦截捆绑包
+&lt;/h3>&lt;p>在隐私保护日益受到重视的今天，AdGuard 推出了力度空前的促销。通过 40 美元的低价，用户可以获得 5 年的 VPN 服务及终身广告拦截许可，这一价格比原价降低了近 90%，旨在通过极高的性价比吸引更多用户建立个人安全防线。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113699-0592QXS6w5SFMEb5h9DasQT-1.fit_lim.size_1200x630.v1771015911.png"
+loading="lazy"
+alt="AdGuard Deal"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/13/android-17-beta-1-pixel/" target="_blank" rel="noopener"
+>Android 17 首个 Beta 版向 Pixel 用户推送&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="http://9to5google.com/2026/02/12/google-photos-floating-toolbar/" target="_blank" rel="noopener"
+>Google 相册测试悬浮工具栏，取代底部菜单栏设计&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/android-driving-mode-annoyance-fix-3640721/" target="_blank" rel="noopener"
+>Google 修复 Android 驾驶模式下自动免打扰的长期顽疾&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://videocardz.com/newz/steam-beta-lets-users-attach-pc-specs-to-game-reviews" target="_blank" rel="noopener"
+>Steam 允许用户在游戏评价中附加硬件配置参数&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcmag.com/deals/this-40-adguard-deal-combines-a-vpn-and-ad-blocker-for-long-term-privacy?test_uuid=04IpBmWGZleS0I0J3epvMrC&amp;amp;test_variant=A" target="_blank" rel="noopener"
+>AdGuard 推出 40 美元 VPN 与广告拦截捆绑包&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>硬件领域的创新正呈现出两极化的趋势：一方面是传统电子消费品如三星 Galaxy 系列的稳步迭代与形态探索；另一方面则是科研级硬件如 3D 打印技术和类脑芯片的跨越式突破。这些技术不仅提升了终端设备的性能，更在制造速度和机器人感知领域开辟了全新的可能性。&lt;/p>
+&lt;hr>
+&lt;h2 id="消费电子旗舰三星新机发布与形态探索">消费电子旗舰：三星新机发布与形态探索
+&lt;/h2>&lt;p>三星通过传统的旗舰更新与极具实验性质的折叠屏设计，继续巩固其在全球硬件市场中的风向标地位。&lt;/p>
+&lt;h3 id="三星官宣-unpacked-活动galaxy-s26-ultra-即将登场">三星官宣 Unpacked 活动：Galaxy S26 Ultra 即将登场
+&lt;/h3>&lt;p>三星官方确认了即将举行的 Unpacked 盛会。本次活动的焦点无疑是全新的旗舰机型 Galaxy S26 Ultra。据悉，该机将在传感器技术、影像算法以及处理性能上实现全面跨越。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113699-0x0.jpg"
+loading="lazy"
+alt="Samsung Unpacked"
+>&lt;/p>
+&lt;h3 id="三星宽屏版galaxy-z-fold-真机首度曝光">三星“宽屏版”Galaxy Z Fold 真机首度曝光
+&lt;/h3>&lt;p>除了 S 系列，三星在折叠屏领域的探索也未停止。泄露的 One UI 9 早期固件揭示了一款拥有更宽比例设计的 Galaxy Z Fold 变体，这一设计变化旨在改善外屏的使用手感并提升展开后的视野体验。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113702-Samsung-Galaxy-Z-Flip-7-vs-Flip-7-FE-vs-Fold-7.jpg"
+loading="lazy"
+alt="Wide Galaxy Z Fold"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="前沿硬件技术超越人类极限的感知与制造">前沿硬件技术：超越人类极限的感知与制造
+&lt;/h2>&lt;p>从不到一秒的 3D 打印到比人类反应更快的类脑芯片，硬件底层技术的革新正在挑战物理极限。&lt;/p>
+&lt;h3 id="中国科研团队实现毫米级物体-1-秒内-3d-打印完毕">中国科研团队实现毫米级物体 1 秒内 3D 打印完毕
+&lt;/h3>&lt;p>清华大学研究团队在 3D 打印领域取得了惊人突破。他们研发的超高速打印技术，能在不到一秒的时间内精准完成毫米级复杂物体的制造，这预示着未来微纳米级精密零件的高速规模化生产将成为可能。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113702-DISH.jpg"
+loading="lazy"
+alt="3D Print Breakthrough"
+>&lt;/p>
+&lt;h3 id="类脑视觉芯片问世机器人反应速度可达人类四倍">类脑视觉芯片问世：机器人反应速度可达人类四倍
+&lt;/h3>&lt;p>北京航空航天大学与北京理工大学的研究人员联合开发了一种灵感来源于神经科学的类脑芯片。该芯片使机器人对物体运动的感知和反应速度达到了人类平均水平的四倍，这对于高速飞行的无人机和自动驾驶系统具有里程碑意义。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113703-1392277_050545_updates.jpg"
+loading="lazy"
+alt="Neuroscience Chip"
+>&lt;/p>
+&lt;h3 id="favero-发布固件更新功率计脚踏续航瞬间翻倍">Favero 发布固件更新：功率计脚踏续航瞬间翻倍
+&lt;/h3>&lt;p>在可穿戴与专业运动器材领域，Favero 通过纯软件手段实现了硬件潜能的释放。最新的固件更新让 RS Pro 和 MX Pro 功率计脚踏的续航时间直接翻倍，展示了卓越的能效算法优化能力。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113703-PowerMeter2-2.jpg"
+loading="lazy"
+alt="Favero Power Meter"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.forbes.com/sites/davidphelan/2026/02/13/galaxy-s26-ultra-release-date-samsung-confirms-event-and-pre-order-perks/" target="_blank" rel="noopener"
+>三星官宣 Unpacked 活动：Galaxy S26 Ultra 即将登场&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.voxelmatters.com/chinese-team-3d-print-millimeter-scale-objects-in-under-one-second/" target="_blank" rel="noopener"
+>中国科研团队实现毫米级物体 1 秒内 3D 打印完毕&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.thenews.com.pk/latest/1392277-neuroscience-inspired-chip-lets-robots-see-motion-four-times-faster-than-humans" target="_blank" rel="noopener"
+>类脑视觉芯片问世：机器人反应速度可达人类四倍&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/wide-galaxy-fold-images-3640828/" target="_blank" rel="noopener"
+>三星“宽屏版”Galaxy Z Fold 真机首度曝光&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.dcrainmaker.com/2026/02/favero-doubles-power-meter-pedal-battery-life-via-firmware-update.html" target="_blank" rel="noopener"
+>Favero 发布固件更新：功率计脚踏续航瞬间翻倍&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天">航空航天
+&lt;/h1>&lt;p>浩瀚星空近期揭示了更多令人费解的奥秘。从挑战人类认知的系外行星系统，到关于土星环起源的碰撞学说，再到现代载人航天与深空探测的最新进展，天文学家与宇航机构正在不断刷新人类对宇宙演化历程的认知。&lt;/p>
+&lt;hr>
+&lt;h2 id="宇宙之谜颠覆理论的发现与起源探索">宇宙之谜：颠覆理论的发现与起源探索
+&lt;/h2>&lt;p>科学家在观测中发现了多处不符合现有模型的天文现象，这些“异常”正成为理论创新的突破口。&lt;/p>
+&lt;h3 id="颠覆教科书天文学家发现内外颠倒的奇异系外行星系统">颠覆教科书：天文学家发现“内外颠倒”的奇异系外行星系统
+&lt;/h3>&lt;p>天文学家在距离地球 116 光年外发现了一个“逻辑相反”的星系。在这个系统中，沉重的气态巨行星位于靠近恒星的内圈，而体积较小的岩石行星反而位于外围。这一发现彻底挑战了关于行星形成的现有理论，促使科学家重新思考星系早期的物质吸积与迁移规律。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113704-planets_wrong_order_header.jpg"
+loading="lazy"
+alt="Inside-Out Solar System"
+>&lt;/p>
+&lt;h3 id="科学家揭秘土星环起源源自一亿年前的卫星大碰撞">科学家揭秘土星环起源：源自一亿年前的卫星大碰撞
+&lt;/h3>&lt;p>土星环那令人着迷的壮观景象究竟从何而来？最新研究表明，这可能源自约 1 亿年前（当时恐龙仍统治地球）两颗卫星的一次灾难性碰撞。这些碎片在引力作用下逐渐扩散平铺，形成了我们今天看到的环状结构。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="Saturn&amp;rsquo;s Rings Origin"
+>&lt;/p>
+&lt;hr>
+&lt;h2 id="空间探索实录人类在星际中的脚步">空间探索实录：人类在星际中的脚步
+&lt;/h2>&lt;p>无论是长期的载人任务，还是对生命起源分子的寻觅，人类探索宇宙的深度都在不断增加。&lt;/p>
+&lt;h3 id="nasa-spacex-crew-12-成功升空">NASA SpaceX Crew-12 成功升空
+&lt;/h3>&lt;p>NASA 的 Crew-12 载人飞船成功发射，四名宇航员开启了前往国际空间站的旅程。这次任务选在情人节前后进行，不仅履行了科学实验的使命，也为空间站的日常运营带来了新的补给与研究活力。&lt;/p>
+&lt;h3 id="nasa-望远镜在彗星喷发物中发现生命基石有机分子">NASA 望远镜在彗星喷发物中发现“生命基石”有机分子
+&lt;/h3>&lt;p>SPHEREx 太空望远镜在 ATLAS 彗星喷射出的物质中检测到了复杂的有机大分子。这些分子被视为构成生命的基础单元，这一发现进一步支持了“地球生命养料可能由彗星带入”的假说。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113704-j2r6ojsHYbwYtFXiaGWRzD-1920-80.jpg"
+loading="lazy"
+alt="Comet Organic Molecules"
+>&lt;/p>
+&lt;h3 id="血月将至全月食即将闪耀北美与亚洲夜空">血月将至：全月食即将闪耀北美与亚洲夜空
+&lt;/h3>&lt;p>天文爱好者近期迎来福音，一场全月食即将在这两大洲的上空上演。届时，月球将进入地球的本影，呈现出迷人的古铜色或深红色“血月”奇观。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/discovery-of-an-inside-out-solar-system-puzzles-astronomers" target="_blank" rel="noopener"
+>天文学家发现“内外颠倒”的奇异系外行星系统&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.nasa.gov/news-release/nasas-spacex-crew-12-launches-to-international-space-station/" target="_blank" rel="noopener"
+>NASA SpaceX Crew-12 成功升空&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://gizmodo.com/saturns-rings-came-from-a-two-moon-collision-about-100-million-years-ago-study-says-2000721450" target="_blank" rel="noopener"
+>科学家揭秘土星环起源：源自一亿年前的卫星大碰撞&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/space/comets/nasa-telescope-spots-the-building-blocks-for-life-spewing-out-of-comet-3i-atlas" target="_blank" rel="noopener"
+>NASA 望远镜在彗星喷发物中发现“生命基石”有机分子功能&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.findarticles.com/lunar-eclipse-to-dazzle-north-america-and-asia/" target="_blank" rel="noopener"
+>血月将至：全月食即将闪耀北美与亚洲夜空&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="科学前沿">科学前沿
+&lt;/h1>&lt;p>基础科学的进步往往预示着未来技术的飞跃。本周，从宏观量子态的观测到生命起源最底层的生物机制，再到对宇宙最强力量——引力波的验证，每一项成果都在拓宽人类知识的边界。&lt;/p>
+&lt;hr>
+&lt;h2 id="物理与量子突破从时间晶体到引力波验证">物理与量子突破：从时间晶体到引力波验证
+&lt;/h2>&lt;p>物理学家们通过实验不断确证爱因斯坦的预言，并利用量子特性制造出过去只存在于科幻小说中的奇异物质。&lt;/p>
+&lt;h3 id="量子突破科学家研制出肉眼可见且能悬浮的时间晶体">量子突破：科学家研制出肉眼可见且能悬浮的“时间晶体”
+&lt;/h3>&lt;p>科学家们成功制造出了可以在宏观尺度下观察到的“时间晶体”。这种特殊物质不仅能够打破时间平移对称性，还能实现稳定的悬浮状态。这一突破标志着时间晶体正从深奥的理论研究阶段迈向潜在的实际应用，如量子计算中的精密计时。&lt;/p>
+&lt;p>&lt;img src="https://www.jsongo.top/"
+loading="lazy"
+alt="Time Crystal"
+>&lt;/p>
+&lt;h3 id="最强引力波信号再次证明爱因斯坦是对的">最强引力波信号再次证明爱因斯坦是对的
+&lt;/h3>&lt;p>引力波探测器捕捉到了一次史上最强的黑洞合并信号。通过对这一极远距离信号的详细分析，科学家发现黑洞合并的动态过程与广义相对论的预言高度吻合，爱因斯坦的宇宙蓝图再次经受住了最严苛的考验。&lt;/p>
+&lt;hr>
+&lt;h2 id="生命的奥秘从微观-rna-到远古始祖鸟">生命的奥秘：从微观 RNA 到远古始祖鸟
+&lt;/h2>&lt;p>生物学研究正通过更精密的探测手段，揭示生命在亿万年间如何萌芽与演化的细节。&lt;/p>
+&lt;h3 id="生命起源新发现极其微小的-rna-竟然能够自我复制">生命起源新发现：极其微小的 RNA 竟然能够自我复制
+&lt;/h3>&lt;p>研究人员发现，长度仅有 45 个碱基的极短 RNA 片段竟然拥有自我复制的能力。这一发现为“RNA 世界假说”提供了强有力的证据，即在复杂的生命系统出现之前，简单的分子序列已经具备了遗传和繁衍的基本特征。&lt;/p>
+&lt;h3 id="始祖鸟新研究揭秘史前第一鸟拥有从未被发现的奇异特征">始祖鸟新研究揭秘：史前“第一鸟”拥有从未被发现的奇异特征
+&lt;/h3>&lt;p>通过对始祖鸟化石的重新扫描与细微结构分析，古生物学家在其上腭发现了奇特的牙齿排列以及具备灵活性的舌骨结构。这些特征表明，这位蓝天开拓者的进食行为和解剖构造比此前认为的要复杂得多。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771113705-QrZ2owtVfY6p2TpU5DBPqd-1600-80.png"
+loading="lazy"
+alt="Archaeopteryx Study"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://gizmodo.com/scientists-discover-time-crystals-you-can-hold-and-they-levitate-2000721148" target="_blank" rel="noopener"
+>量子突破：科学家研制出肉眼可见且能悬浮的“时间晶体”&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/physics-mathematics/record-breaking-gravitational-wave-puts-einsteins-relativity-to-its-toughest-test-yet-and-proves-him-right-again" target="_blank" rel="noopener"
+>最强引力波信号再次证明爱因斯坦是对的&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://arstechnica.com/science/2026/02/researchers-find-small-rnas-that-can-make-copies-of-themselves/" target="_blank" rel="noopener"
+>生命起源新发现：极其微小的 RNA 竟然能够自我复制&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/animals/dinosaurs/archaeopteryx-one-of-the-worlds-first-proto-birds-has-a-set-of-weird-never-before-seen-features-new-study-reveals" target="_blank" rel="noopener"
+>始祖鸟新研究揭秘：史前“第一鸟”拥有从未被发现的奇异特征&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统</title><link>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</link><pubDate>Sun, 15 Feb 2026 08:01:46 +0800</pubDate><guid>https://www.jsongo.top/articles/tech-news-gemini-3-android-17-inside-out-planetary-system-2026-02-14-02.15/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/e09c563c17a6a29970aa7dcb67b30e5f.jpeg" alt="Featured image of post AI 进化：Gemini 3 深思版登场；Android 17 测试版发布；天文学界发现颠覆认知的行星系统" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>人工智能领域近期迎来了多项突破性进展，涵盖了从底层模型推理能力的显著增强到应用层面的生产力革新。Google 通过 Gemini 系列产品的迭代，展现了其在复杂逻辑处理及多模态生成方面的领先地位；同时，学术界关于 AI 辅助科研的研究也引发了行业对于技术如何改变科学范式的深度思考。这些进展标志着 AI 正在从简单的生成式工具向具备高级逻辑和专业辅助能力的深度助手进化。&lt;/p>
 &lt;hr>
 &lt;h2 id="智能模型进化深度推理与多模态建模的新里程碑">智能模型进化：深度推理与多模态建模的新里程碑
