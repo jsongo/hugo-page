@@ -1,4 +1,176 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 21 Feb 2026 08:01:53 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>微软 Copilot 爆发隐私漏洞；三星 Bixby 集成 Perplexity 变身全能 AI；撒哈拉发现新型巨型棘龙化石</title><link>https://www.jsongo.top/articles/microsoft-copilot-privacy-breach-and-samsung-ai-upgrade-2026-02-20-02.21/</link><pubDate>Sat, 21 Feb 2026 08:01:53 +0800</pubDate><guid>https://www.jsongo.top/articles/microsoft-copilot-privacy-breach-and-samsung-ai-upgrade-2026-02-20-02.21/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/645b36ea1ba732e9ec83d0adc7e96be0.jpeg" alt="Featured image of post 微软 Copilot 爆发隐私漏洞；三星 Bixby 集成 Perplexity 变身全能 AI；撒哈拉发现新型巨型棘龙化石" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>互联网/前沿进展 on Ethan 的思考札记</title><link>https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/</link><description>Recent content in 互联网/前沿进展 on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Feb 2026 08:01:59 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/tags/%E4%BA%92%E8%81%94%E7%BD%91/%E5%89%8D%E6%B2%BF%E8%BF%9B%E5%B1%95/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划</title><link>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</link><pubDate>Sun, 22 Feb 2026 08:01:59 +0800</pubDate><guid>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/ff0bab531bb9185b764031bb06ea40b5.jpeg" alt="Featured image of post OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>人工智能领域正经历从“纯算法”向“软硬结合”以及“数据合规化”的深度转型。当前，行业领头羊 OpenAI 不再满足于云端对话框，开始大规模组建硬件团队，试图通过智能硬件设备将 AI 物理化，打入用户的家庭生活场景。与此同时，随着大模型训练数据的版权争议愈演愈烈，学术界也拿出了强有力的技术手段，通过“信息标记”技术精准识别 AI 对版权内容的非法抓取。这些进展标志着 AI 产业正在从野蛮生长向产品化、规范化迈进。&lt;/p>
+&lt;h2 id="openai-开启硬件元年从大模型走向智能实体">OpenAI 开启硬件元年：从大模型走向智能实体
+&lt;/h2>&lt;p>OpenAI 正在加速其在硬件领域的版图扩张。为了摆脱对智能手机等第三方设备的依赖，OpenAI 组建了规模庞大的专业团队，旨在打造原生集成大模型能力的硬件产品。这不仅是技术输出，更是其建立独立生态系统的关键一步。&lt;/p>
+&lt;h3 id="openai-计划推出-200-美元智能音箱ai-硬件团队初具规模">OpenAI 计划推出 200 美元智能音箱，AI 硬件团队初具规模
+&lt;/h3>&lt;p>据《The Information》最新披露，OpenAI 内部正在秘密研发一系列 AI 驱动的硬件设备，其中最受关注的是一款定价在 200 至 300 美元之间的智能音箱。为了支撑这一宏大计划，OpenAI 的硬件团队规模已迅速扩张至 200 人以上，成员不乏来自苹果、Meta 等科技巨头的顶尖硬件工程师。&lt;/p>
+&lt;p>这款音箱预计将搭载 OpenAI 最先进的多模态模型，能够实现极其自然、低延迟的语音交互。与传统的智能音箱（如早期版本的 Alexa 或 Google Home）不同，这款产品将具备更强的逻辑推理能力和上下文理解能力，旨在成为真正的家庭智能助理。这一动作预示着 OpenAI 正试图复刻苹果“软硬一体化”的成功路径，将 ChatGPT 的影响力从软件应用延伸至物理空间。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718502-9152ca35-1fd7-4c10-b12f-fe2b86729af4.png"
+loading="lazy"
+alt="OpenAI AI Devices"
+>&lt;/p>
+&lt;h2 id="ai-训练数据的数字水印破解版权黑盒">AI 训练数据的“数字水印”：破解版权黑盒
+&lt;/h2>&lt;p>随着生成式 AI 的普及，开发者是否非法使用了未授权的互联网数据进行训练成为了法律关注的焦点。由于大模型通常是黑盒状态，版权方很难证明自己的内容被“偷走”了。现在，科学家们提供了一种全新的技术方案。&lt;/p>
+&lt;h3 id="nature新工具可检测-ai-模型是否非法抓取训练数据">Nature：新工具可检测 AI 模型是否非法抓取训练数据
+&lt;/h3>&lt;p>发表在《自然》（Nature）杂志上的一项研究提出了一种名为“信息同位素”（Information Isotopes）的革命性框架。该技术通过在原始数据中植入极其微小、不可察觉的标记元素，就像给数据贴上了“放射性标签”。即使这些数据经过模型的高强度训练和转换，研究人员依然可以通过特定算法追踪到这些标记。&lt;/p>
+&lt;p>实验结果显示，该框架在检测黑盒 AI 模型是否违规使用了受版权保护的数据时，准确率高达 99%。这为创作者、新闻机构及版权所有者提供了法律维权的硬核技术支撑，有望终结 AI 领域长期存在的数据侵权“罗生门”，推动 AI 行业进入尊重知识产权的新时代。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718503-favicon-48x48-b52890008c.png"
+loading="lazy"
+alt="Nature AI Data Detection"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.theinformation.com/articles/inside-openai-team-developing-ai-devices" target="_blank" rel="noopener"
+>OpenAI 计划推出 200 美元智能音箱，AI 硬件团队初具规模&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.nature.com/articles/s41467-026-68862-x?error=cookies_not_supported&amp;amp;code=e3842344-ff77-4906-8553-c17d2b9c0683" target="_blank" rel="noopener"
+>Nature：新工具可检测 AI 模型是否非法抓取训练数据&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>互联网生态正在发生结构性的震荡。曾经执着于 VR 头显的 Meta 开始承认移动端才是社交的核心主战场，将元宇宙战略全面“降维”以争取更多用户。而在移动操作系统领域，Android 17 的提前现身展示了系统交互的未来方向。与此同时，网络安全领域也传来了警钟，新型钓鱼攻击正在攻破看似无坚不摧的多因子身份验证，提醒着数字世界的每个用户安全形势依然严峻。&lt;/p>
+&lt;h2 id="社交战略的大撤退与进化meta-拥抱移动端">社交战略的大撤退与进化：Meta 拥抱移动端
+&lt;/h2>&lt;p>Meta 的元宇宙梦想正在经历最现实的修整。在砸下数百亿美元后，Meta 意识到强制用户佩戴笨重的 VR 设备是普及元宇宙的最大阻碍，因此决定将重心重新放回用户最熟悉、装机量最大的移动端平台。&lt;/p>
+&lt;h3 id="meta-元宇宙战略大转弯horizon-worlds-重点全面转向移动端">Meta 元宇宙战略大转弯：Horizon Worlds 重点全面转向移动端
+&lt;/h3>&lt;p>Meta 近期宣布对其元宇宙旗舰平台 Horizon Worlds 进行战略调整。该平台将不再与 Quest VR 头显强绑定，而是将研发和运营重心全面转向 iOS 和 Android 移动端。这意味着 Horizon Worlds 正在从一个“虚拟现实应用”转型为一个“通用移动社交平台”，类似于更高画质、更强调社交性的移动游戏。&lt;/p>
+&lt;p>这一转变标志着马克·扎克伯格承认了目前 VR 硬件的渗透率尚不足以支撑起庞大的社交网络。通过降低进入门槛，Meta 希望通过智能手机庞大的基数来拯救日渐低迷的用户活跃度，让元宇宙先在 2D 屏幕上活下来。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718503-horizonworlds-copy.jpg"
+loading="lazy"
+alt="Meta Horizon Worlds Mobile"
+>&lt;/p>
+&lt;h2 id="操作系统与网络安全体验升级与防线危机">操作系统与网络安全：体验升级与防线危机
+&lt;/h2>&lt;p>软件领域的进步总是在提升便利性的同时带来新的风险。Android 17 的新特性预示了系统流畅度的下一次飞跃，但“Starkiller”攻击的出现则让企业级安全面临前所未有的考验。&lt;/p>
+&lt;h3 id="android-17-beta-1-上手新功能让人无法回归旧版本">Android 17 Beta 1 上手：新功能让人无法回归旧版本
+&lt;/h3>&lt;p>谷歌最近提前发布了 Android 17 Beta 1。虽然从版本号上看只是一次常规迭代，但抢先体验的开发者发现，其中包含的两项底层交互逻辑优化彻底改变了单手操作的流畅度。通过更深度的 AI 预测触控和重构的通知优先级管理，Android 17 被评价为“一旦使用就再也回不去”的版本。这种对细节的极致打磨，显示出 Android 在成熟期依然能通过微创新提升用户黏性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718504-android-17-logo-hero-pixel-10-pro-fold-1-watermark-scaled.jpg"
+loading="lazy"
+alt="Android 17 Beta"
+>&lt;/p>
+&lt;h3 id="警惕starkiller钓鱼服务可实时绕过多因子身份验证密码保护">警惕“Starkiller”钓鱼服务：可实时绕过多因子身份验证密码保护
+&lt;/h3>&lt;p>在安全领域，一款名为“Starkiller”的新型网络钓鱼工具包引起了社区的极大恐慌。不同于传统的伪造页面，“Starkiller”采用了一种“实时代理”技术。当用户在钓鱼页面输入信息时，该服务会实时向真实的银行或社交平台请求登录。&lt;/p>
+&lt;p>最致命的是，它能够同步拦截并转发多因子身份验证（MFA）验证码。这意味着即使你开启了短信验证或 App 令牌，黑客依然能顺着这条实时通道非法侵入你的账户。这种攻击方式极高地提升了钓鱼的隐蔽性和成功率。&lt;/p>
+&lt;p>&lt;img src="https://securityboulevard.com/wp-content/uploads/2018/01/TwitterLogo-002.jpg"
+loading="lazy"
+alt="Security Starkiller"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://techcrunch.com/2026/02/20/meta-metaverse-leaves-vr-horizon-worlds-mobile/" target="_blank" rel="noopener"
+>Meta 元宇宙战略大转弯：Horizon Worlds 重点全面转向移动端&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/android-17-beta-1-hands-on-3642520/" target="_blank" rel="noopener"
+>Android 17 Beta 1 上手：新功能让人无法回归旧版本&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://securityboulevard.com/2026/02/starkiller-phishing-service-proxies-real-login-pages-mfa/" target="_blank" rel="noopener"
+>警惕“Starkiller”钓鱼服务：可实时绕过多因子身份验证密码保护&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>半导体技术的突破正在从实验室走向生产线。哈佛大学的研究为光学芯片的微型化扫清了障碍，有望让未来的激光雷达和传感器变得只有指甲盖大小。而在消费电子市场，苹果公司的动态依然是风向标，无论是针对教育和入门市场的低价 MacBook，还是与豪车深度绑定的下一代 CarPlay，都预示着苹果正在全方位收割细分市场。&lt;/p>
+&lt;h2 id="苹果生态的延伸从入门桌面到智能座舱">苹果生态的延伸：从入门桌面到智能座舱
+&lt;/h2>&lt;p>苹果公司正准备通过一系列新品来巩固其市场统治力。通过代码挖掘发现的新品计划，以及对车载系统界面的彻底重写，展现了库克治下苹果极其精准的市场切割能力。&lt;/p>
+&lt;h3 id="macos-代码曝光-apple-三款新品低价-macbook-与新显示器在列">macOS 代码曝光 Apple 三款新品：低价 MacBook 与新显示器在列
+&lt;/h3>&lt;p>开发者在 macOS 26.3 的系统代码中发现了三款尚未发布的新设备标识。最引人注目的是一款疑似针对低价市场开发的 MacBook，这被认为是苹果对抗 Chromebook、争夺教育市场的杀手锏。此外，代码还暗示了两款全新的 Studio Display 显示器，预计将带来更高的刷新率和更精准的色彩表现，进一步满足专业创意人士的需求。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718508-Apple-Announces-Special-Event-in-New-York-Feature-1.jpg"
+loading="lazy"
+alt="Apple New Products"
+>&lt;/p>
+&lt;h3 id="carplay-迎来史诗级升级ios-264-揭示-apple-车载系统新布局">CarPlay 迎来史诗级升级：iOS 26.4 揭示 Apple 车载系统新布局
+&lt;/h3>&lt;p>根据 iOS 26.4 固件的最新信息，新一代 CarPlay 将不再仅仅是投影在屏幕上的应用，而是深度接管车辆的多屏仪表。苹果已与阿斯顿马丁等顶级豪华品牌达成深度合作，新界面能够实时读取车速、油耗、空调数据，并以苹果标志性的极简风格重绘仪表盘。这种深度集成的策略，让苹果在不造车的情况下，依然掌握了智能座舱的灵魂。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718509-carplay-ultra-ios-26-aston.jpg"
+loading="lazy"
+alt="New CarPlay"
+>&lt;/p>
+&lt;h2 id="半导体的前沿突破微型化的光子奇迹">半导体的前沿突破：微型化的光子奇迹
+&lt;/h2>&lt;p>半导体领域的技术迭代已进入到光子级别。通过新材料的运用，科学家们正在将原本占据一整个实验台的精密光学设备浓缩到芯片之上。&lt;/p>
+&lt;h3 id="半导体新突破哈佛研究人员开发出芯片级光子微梳装置供激光使用">半导体新突破：哈佛研究人员开发出芯片级光子微梳装置供激光使用
+&lt;/h3>&lt;p>哈佛大学的研究团队在铌酸锂（Lithium Niobate）材料的应用上取得了重大进展。他们成功在单个光子芯片上生成了高精密度的“微梳激光”（Microcomb）。这种装置能够将单一频率的激光转换为像梳子齿一样均匀分布的数千个频率点，是光学测距、原子钟和光通信的核心组件。这一突破意味着未来自动驾驶汽车的激光雷达（LiDAR）可以做得更小、更便宜且更精准。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718509-generating-micro-combs.jpg"
+loading="lazy"
+alt="Chip-scale Microcomb"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.macrumors.com/2026/02/20/macos-26-3-code-three-new-apple-products/" target="_blank" rel="noopener"
+>macOS 代码曝光 Apple 三款新品：低价 MacBook 与新显示器在列&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://phys.org/news/2026-02-chip-scale-microcomb-lithium-niobate.html" target="_blank" rel="noopener"
+>半导体新突破：哈佛研究人员开发出芯片级光子微梳装置供激光使用&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2026/02/20/carplay-just-got-a-big-upgrade-and-ios-26-4-delivers-even-more/" target="_blank" rel="noopener"
+>CarPlay 迎来史诗级升级：iOS 26.4 揭示 Apple 车载系统新布局&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天与天文">航空航天与天文
+&lt;/h1>&lt;p>人类探索宇宙的脚步从未如此紧密。从月球轨道的载人任务到银河系深处神秘黑洞集群的发现，航天技术和天文观测正在双向发力。SpaceX 的回收技术已经成熟到可以像日常快递一样频繁运作，而对星际“访客”的观测则让我们对生命起源的物质基础有了更深的理解。&lt;/p>
+&lt;h2 id="阿尔忒弥斯与猎鹰重返月球与廉价航天">阿尔忒弥斯与猎鹰：重返月球与廉价航天
+&lt;/h2>&lt;p>NASA 的载人绕月计划已经进入倒计时阶段，而 SpaceX 则作为强有力的支撑，通过不断的回收成功持续降低人类进入太空的成本。&lt;/p>
+&lt;h3 id="重返月球nasa-敲定-3-月-6-日发射阿尔忒弥斯-ii-号载人绕月任务">重返月球！NASA 敲定 3 月 6 日发射阿尔忒弥斯 II 号载人绕月任务
+&lt;/h3>&lt;p>NASA 正式宣布将于 3 月 6 日执行阿尔忒弥斯 II 号（Artemis II）任务。这将是时隔半个多世纪后，人类首次重返月球轨道。四名宇航员将乘坐猎户座飞船，在 10 天的任务中绕月飞行并返回地球。这一任务不仅是技术上的验证，更是人类重返月球表面并建立长期基地的关键里程碑。&lt;/p>
+&lt;p>&lt;img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813&amp;#43;0&amp;#43;0/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F00%2F81%2F665114ea4f10aaa332ce771caf68%2Fgettyimages-2256147371.jpg"
+loading="lazy"
+alt="Artemis II Launch"
+>&lt;/p>
+&lt;h3 id="spacex-成功在巴哈马第二次降落猎鹰-9-号火箭">SpaceX 成功在巴哈马第二次降落猎鹰 9 号火箭
+&lt;/h3>&lt;p>SpaceX 继续刷新着航天史。近日，猎鹰 9 号火箭再次成功在巴哈马群岛的海上回收平台着陆。这是该公司在该海域第二次实现精准回收。随着回收成功率的稳步提升，SpaceX 已经把“发火箭”变成了像跑班车一样高度标准化的工业流程，极大地摊薄了卫星互联网和深空探索的成本。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718514-K3PRgwuSPivgP2hvRg2htm-1920-80.jpg"
+loading="lazy"
+alt="SpaceX Landing"
+>&lt;/p>
+&lt;h2 id="宇宙深处的秘密黑洞蜂群与星际之水">宇宙深处的秘密：黑洞“蜂群”与星际之水
+&lt;/h2>&lt;p>天文学家们正在利用更先进的卫星数据，捕捉那些稍纵即逝或极其隐蔽的宇宙现象。这些发现挑战了我们对银河系动态规律的固有认知。&lt;/p>
+&lt;h3 id="银河系发现黑洞蜂群100-多个黑洞正成群结队移动">银河系发现黑洞“蜂群”：100 多个黑洞正成群结队移动
+&lt;/h3>&lt;p>来自盖亚（Gaia）卫星的最新高精度数据显示，一个由 100 多个恒星级黑洞组成的“蜂群”正在银河系内某处星团中共同游弋。这种黑洞密集聚集并协同移动的现象极其罕见，这一发现将有助于科学家理解黑洞的演化规律以及它们与星团动态平衡之间的关系。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718514-Artists-Impression-Black-Hole-Concentration-NGC6397.jpg"
+loading="lazy"
+alt="Black Hole Swarm"
+>&lt;/p>
+&lt;h3 id="罕见景象星际客体-3iatlas-在离开太阳系时喷发大量水资源">罕见景象：星际客体 3I/ATLAS 在离开太阳系时喷发大量水资源
+&lt;/h3>&lt;p>天文学界正在对 3I/ATLAS 这个来自太阳系外的天体进行紧急观测。观测发现，该天体在靠近太阳时表现得异常活跃，向宇宙空间喷射出大量的水蒸气和复杂的有机化合物。这进一步证实了星际天体可能是不同恒星系统之间传输“生命种子”的媒介。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718515-water-spraying-3i-atlas.jpg"
+loading="lazy"
+alt="3I/ATLAS Water"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.npr.org/2026/02/20/nx-s1-5720953/nasa-artemis-ii-moon-launch-date" target="_blank" rel="noopener"
+>NASA 敲定 3 月 6 日发射阿尔忒弥斯 II 号载人绕月任务&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.space.com/space-exploration/launches-spacecraft/watch-spacex-land-a-rocket-in-the-bahamas-for-the-2nd-time-ever-today" target="_blank" rel="noopener"
+>SpaceX 成功在巴哈马第二次降落猎鹰 9 号火箭&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/gaia-detected-an-entire-swarm-of-black-holes-traveling-through-the-milky-way" target="_blank" rel="noopener"
+>银河系发现黑洞“蜂群”：100 多个黑洞正成群结队移动&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://futurism.com/space/water-spraying-3i-atlas" target="_blank" rel="noopener"
+>星际客体 3I/ATLAS 在离开太阳系时喷发大量水资源&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="科学发现与综合">科学发现与综合
+&lt;/h1>&lt;p>基础科学的每一次跃迁都在重新定义我们的过去与未来。物理学家在量子领域发现的新物质形态可能彻底改变计算机的存储方式；而考古学家对史前工具和恐龙蛋的挖掘，则不断刷新着我们对地球生命演化精密度的认知。&lt;/p>
+&lt;h2 id="物理前沿与古生物奇迹时间与生命的律动">物理前沿与古生物奇迹：时间与生命的律动
+&lt;/h2>&lt;p>从量子物理的“滴答”声到 1.5 亿年前的恐龙呼吸，科学界正跨越极大的时空跨度，寻找宇宙和生命的运行逻辑。&lt;/p>
+&lt;h3 id="物理学新进展科学家发现能像时钟一样运行的时间晶体">物理学新进展：科学家发现能像时钟一样运行的“时间晶体”
+&lt;/h3>&lt;p>物理学家发现了一种新型的“时间晶体”（Time Crystal）。这种物质形态在最低能量状态下依然保持周期性运动，其内部结构的律动就像时钟一样精准。这种特性打破了传统物理学对热力学平衡的理解，被认为是构建下一代超长寿命量子存储器和高精度传感器的理想材料。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718517-b431a2b34ed9f2718ac2bd6180e0b236.jpg"
+loading="lazy"
+alt="Time Crystal"
+>&lt;/p>
+&lt;h3 id="跨越-15-亿年考古学家在悬崖中发现完好无损的侏罗纪恐龙蛋巢穴">跨越 1.5 亿年：考古学家在悬崖中发现完好无损的侏罗纪恐龙蛋巢穴
+&lt;/h3>&lt;p>在葡萄牙海岸线的一处受侵蚀悬崖中，考古学家意外发现了一个保存极为完整的恐龙蛋巢穴。这 10 枚恐龙蛋属于 1.5 亿年前的侏罗纪晚期捕食者，巢穴的排列结构清晰可见。这一发现为研究中生代大型肉食恐龙的繁育行为和蛋壳结构提供了珍贵的实体证据。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718517-A-Perfect-Jurassic-Nest-Emerges-From-a-Coastal-Cliff-scaled.jpg"
+loading="lazy"
+alt="Dinosaur Eggs"
+>&lt;/p>
+&lt;h2 id="远古人类的高级智慧毒箭与精密狩猎">远古人类的高级智慧：毒箭与精密狩猎
+&lt;/h2>&lt;p>我们对早期人类的看法可能过于保守。最新的研究表明，早在六万年前，我们的祖先就已经展现出了令人惊叹的化学知识和制造能力。&lt;/p>
+&lt;h3 id="考古新发现人类-6-万年前就已使用毒箭进行高级狩猎活动">考古新发现：人类 6 万年前就已使用毒箭进行高级狩猎活动
+&lt;/h3>&lt;p>最新的研究通过对古代箭镞上的有机残留物分析发现，早在 6 万年前，人类就已经学会提取植物毒素并将其涂抹在箭头上进行狩猎。这不仅意味着他们对自然界的化学属性有深刻了解，也标志着人类狩猎技术从单纯的物理力量对抗进化到了利用生物化学优势的精密阶段。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771718517-early-human-hunting_plant-poison_stone-age_1m.jpg"
+loading="lazy"
+alt="Early Human Hunting"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://minutemirror.com.pk/physicists-discover-time-crystal-that-ticks-like-a-clock-509694/" target="_blank" rel="noopener"
+>物理学新进展：科学家发现能像时钟一样运行的“时间晶体”&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://dailygalaxy.com/2026/02/150-million-year-old-dinosaur-eggs-found-portuguese-cliff/" target="_blank" rel="noopener"
+>考古学家在悬崖中发现完好无损的侏罗纪恐龙蛋巢穴&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.earth.com/news/early-humans-were-more-advanced-hunters-than-believed-plant-poison/" target="_blank" rel="noopener"
+>考古新发现：人类 6 万年前就已使用毒箭进行高级狩猎活动&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>微软 Copilot 爆发隐私漏洞；三星 Bixby 集成 Perplexity 变身全能 AI；撒哈拉发现新型巨型棘龙化石</title><link>https://www.jsongo.top/articles/microsoft-copilot-privacy-breach-and-samsung-ai-upgrade-2026-02-20-02.21/</link><pubDate>Sat, 21 Feb 2026 08:01:53 +0800</pubDate><guid>https://www.jsongo.top/articles/microsoft-copilot-privacy-breach-and-samsung-ai-upgrade-2026-02-20-02.21/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/645b36ea1ba732e9ec83d0adc7e96be0.jpeg" alt="Featured image of post 微软 Copilot 爆发隐私漏洞；三星 Bixby 集成 Perplexity 变身全能 AI；撒哈拉发现新型巨型棘龙化石" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>人工智能领域近期呈现出复杂的发展态势。一方面，AI 集成带来的隐私与安全漏洞成为科技巨头亟待解决的隐忧，微软 Copilot 的邮件泄露风险再次为企业级 AI 应用敲响了警钟；另一方面，AI 助手正朝着更加智能化、全能化的方向演进，三星通过集成 Perplexity 极大地提升了终端设备的交互体验。此外，AI 技术的泛滥也正在重塑消费者的注意力分配，传统数字娱乐产业面临前所未有的竞争压力。&lt;/p>
 &lt;h2 id="ai-技术的演进与安全挑战从系统漏洞风险到全能助理的进化">AI 技术的演进与安全挑战：从系统漏洞风险到全能助理的进化
 &lt;/h2>&lt;p>随着生成式 AI 深度嵌入生产力工具和移动设备，安全防护与功能创新的博弈日益激烈。微软的案例揭示了即便是在严密的内部系统中，AI 检索逻辑的微小瑕疵也可能导致机密信息外泄。与此同时，硬件厂商如三星正通过引入更强大的搜索与对话引擎，试图将 AI 助手从简单的语音命令工具转变为真正的个人智能管家。&lt;/p>
