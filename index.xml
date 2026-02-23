@@ -1,4 +1,200 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Feb 2026 08:02:02 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划</title><link>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</link><pubDate>Sun, 22 Feb 2026 08:02:02 +0800</pubDate><guid>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethan 的思考札记</title><link>https://www.jsongo.top/</link><description>Recent content on Ethan 的思考札记</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Feb 2026 08:02:06 +0800</lastBuildDate><atom:link href="https://www.jsongo.top/index.xml" rel="self" type="application/rss+xml"/><item><title>三星/苹果 AI 争霸加速，量子计算迎“圣杯”材料，火星定位技术获突破</title><link>https://www.jsongo.top/articles/samsung-apple-ai-tech-breakthrough-2026-02-22-02.23/</link><pubDate>Mon, 23 Feb 2026 08:02:06 +0800</pubDate><guid>https://www.jsongo.top/articles/samsung-apple-ai-tech-breakthrough-2026-02-22-02.23/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/fbfc2852d61fd1ed8f39cf637b3893f0.jpg" alt="Featured image of post 三星/苹果 AI 争霸加速，量子计算迎“圣杯”材料，火星定位技术获突破" />&lt;h1 id="科技前沿深度观察从系统级-ai-到宇宙深处的奥秘">科技前沿深度观察：从系统级 AI 到宇宙深处的奥秘
+&lt;/h1>&lt;p>在瞬息万变的技术浪潮中，我们正见证着人工智能从单一应用向系统级深层进化的跨越，同时互联网生态也在经历着从工具冗余到极简主义的范式转移。从微观的量子材料突破到宏观的宇宙暗物质发现，人类的认知边界正在以前所未有的速度扩张。本期深度概览将带您领略人工智能、互联网软件、硬件半导体以及天文航天等领域的最新核心进展。&lt;/p>
+&lt;hr>
+&lt;h1 id="人工智能前沿进展">人工智能前沿进展
+&lt;/h1>&lt;p>人工智能领域正迈入“全方位渗透”的新阶段。不仅在硬件终端上，AI 开始从单纯的 App 走向系统底层的深度集成，甚至在底层计算架构上，科学家们也在挑战传统电子计算机的能效极限。这一系列进展预示着，未来的 AI 将不仅更聪明，而且更无处不在，且更加绿色高效。&lt;/p>
+&lt;h2 id="终端设备智能化与计算架构的绿色革命">终端设备智能化与计算架构的绿色革命
+&lt;/h2>&lt;p>人工智能正在加速逃离云端机房，深度融入我们的口袋与佩戴饰品中。三星与 Perplexity 的联手标志着手机语音助手的代际更替，而苹果对 AI 眼镜的加速布局则剑指下一代人机交互入口。与此同时，实验室里的“热力学计算机”正为 AI 的高能耗难题提供全新的物理学解法。&lt;/p>
+&lt;h3 id="三星-galaxy-s26-将集成-perplexity-ai-系统级语音指令">三星 Galaxy S26 将集成 Perplexity AI 系统级语音指令
+&lt;/h3>&lt;p>三星电子计划在其下一代旗舰手机 Galaxy S26 系列中，通过深度集成 Perplexity AI 来重塑移动搜索体验。这一名为“Hey Plex”的系统级语音指令，将允许用户跳过传统的搜索引擎界面，直接通过自然语言获取经过 AI 实时聚合的高质量答案。与传统的语音助手不同，这种集成意味着 AI 能够更深层次地调用系统资源，提供更具上下文感知能力的辅助服务。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804916-1393237_045635_updates.jpg"
+loading="lazy"
+alt="Samsung AI 集成"
+>&lt;/p>
+&lt;h3 id="苹果加速开发-ai-智能眼镜等三款可穿戴设备">苹果加速开发 AI 智能眼镜等三款可穿戴设备
+&lt;/h3>&lt;p>苹果公司并未在 AI 硬件竞赛中沉寂，据最新供应链消息，苹果正在同步推进包括 AI 智能眼镜在内的三款可穿戴设备。这款眼镜的核心卖点在于将 AI 视觉识别与日常佩戴结合，利用摄像头采集环境信息，并通过内置的 AI 芯片实时反馈给用户。这被视为苹果继 Vision Pro 之后，在增强现实与人工智能结合领域的又一战略重心，旨在打造一款能够全天候佩戴的“智能配饰”。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804917-apple-glasses-light.jpg"
+loading="lazy"
+alt="Apple Smart Glasses"
+>&lt;/p>
+&lt;h3 id="新型热力学计算机生成图像能耗仅为传统-ai-的极小部分">新型“热力学计算机”生成图像能耗仅为传统 AI 的极小部分
+&lt;/h3>&lt;p>面对 AI 模型动辄惊人的电力消耗，研究人员提出了一种基于热力学原理的新型计算架构。这种计算机通过模拟自然界的热力学过程来执行神经网络的逻辑运算。实验证明，在生成图像等高负载任务中，其能效比当前基于硅芯片的传统计算模型高出数个数量级。这一突破可能为未来大规模 AI 集群的节能减排提供关键技术支撑。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804918-FguqFXD84ETbeTfLWsqaMQ-1920-80.jpg"
+loading="lazy"
+alt="Thermodynamic Computing"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.thenews.com.pk/latest/1393237-samsung-brings-perplexity-ai-to-galaxy-s26-with-hey-plex-voice-command" target="_blank" rel="noopener"
+>三星 Galaxy S26 将集成 Perplexity AI 系统级语音指令&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://9to5mac.com/2026/02/21/apple-ai-smart-glasses-rumors-sounding-more-exciting/" target="_blank" rel="noopener"
+>苹果加速开发 AI 智能眼镜等三款可穿戴设备&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/technology/computing/thermodynamic-computer-can-mimic-ai-neural-networks-using-orders-of-magnitude-less-energy-to-generate-images" target="_blank" rel="noopener"
+>新型“热力学计算机”生成图像能耗仅为传统 AI 的极小部分&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="互联网与软件">互联网与软件
+&lt;/h1>&lt;p>互联网软件行业正处于“减负”与“增效”的交汇点。一方面，主流操作系统和应用通过引入更智能的历史回顾和系统清理工具，力求解决信息过载与臃肿问题；另一方面，随着系统原生安全能力的增强，传统的第三方软件市场正面临前所未有的生存挑战。&lt;/p>
+&lt;h2 id="系统原生能力的崛起与应用体验的精致化">系统原生能力的崛起与应用体验的精致化
+&lt;/h2>&lt;p>从 Android 17 的底层交互革新到 WhatsApp 对社交体验的微调，软件厂商正致力于消除用户痛点。同时，由于操作系统在密码管理、图像处理等领域的持续发力，用户开始倾向于放弃第三方插件，转而拥抱更简洁、更安全的系统原生解决方案。&lt;/p>
+&lt;h3 id="whatsapp-更新新群成员可快速回顾历史消息内容">WhatsApp 更新：新群成员可快速回顾历史消息内容
+&lt;/h3>&lt;p>为了解决新入群用户“接不上话”的尴尬，WhatsApp 推出了一项人性化更新。新成员在加入群组后，被允许查看最近 25 至 100 条的历史消息。这一功能在确保端到端加密安全性的前提下，极大地提升了社交效率，帮助用户快速了解讨论背景，从而更顺畅地融入群组对话。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804918-whatsapp%20group.png"
+loading="lazy"
+alt="WhatsApp Group Updates"
+>&lt;/p>
+&lt;h3 id="免费清理-windows-11-预装全家桶与广告的实用工具建议">免费清理 Windows 11 预装全家桶与广告的实用工具建议
+&lt;/h3>&lt;p>Windows 11 的系统臃肿问题一直备受诟病。近日，一款免费开源工具在技术社区备受推崇，它能有效识别并一键剔除系统自带的推广软件、隐藏广告以及冗余的后台组件。这不仅释放了存储空间，更显著提升了低配电脑的系统响应速度，为追求极致纯净体验的用户提供了“救星”。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804920-how-to-remove-bloatware-windows-11-3.jpg"
+loading="lazy"
+alt="Windows 11 Bloatware Cleanup"
+>&lt;/p>
+&lt;h3 id="android-17-beta-1-抢先看两项核心功能改变使用习惯">Android 17 Beta 1 抢先看：两项核心功能改变使用习惯
+&lt;/h3>&lt;p>Android 17 的首个测试版已经面世，其中两项革新引起了广泛关注。虽然具体技术细节仍处于优化中，但早期用户反馈称，其改进后的多任务调度机制和全新的通知过滤逻辑极大提升了操作流程度。这种底层逻辑的优化让用户感受到了久违的“用了就回不去”的丝滑感。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804920-android-17-logo-hero-pixel-10-pro-fold-1-watermark-scaled.jpg"
+loading="lazy"
+alt="Android 17 Beta"
+>&lt;/p>
+&lt;h3 id="为什么现在的用户可能不再需要独立的密码管理器了">为什么现在的用户可能不再需要独立的密码管理器了？
+&lt;/h3>&lt;p>随着 Passkeys（通行密钥）的普及和各大手机/桌面系统自带密码保险箱的完善，第三方密码管理器的生存空间正被极速压缩。生物识别技术的无缝集成使得记住复杂密码成为过去式，用户发现系统原生的保护机制已经足够应对日常需求，且在跨设备同步上表现更优。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804920-l-intro-1771313773.jpg"
+loading="lazy"
+alt="Password Managers Future"
+>&lt;/p>
+&lt;h3 id="excel-高级技巧你可能不知道的图像处理黑科技">Excel 高级技巧：你可能不知道的图像处理黑科技
+&lt;/h3>&lt;p>即便是一款使用了几十年的生产力软件，Excel 依然能玩出新花样。IMAGE 函数的深度应用让原本呆板的表格具备了动态处理图像的能力。用户可以直接通过 URL 链接在单元格内嵌入并管理图片，这一“黑科技”为自动化报表和资产管理系统提供了极大的灵活性。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804921-computer-screen-showing-the-excel-image-function-at-work.jpg"
+loading="lazy"
+alt="Excel Image Function"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.thedailystar.net/tech-startup/news/whatsapp-makes-it-easier-catch-group-chats-4112096" target="_blank" rel="noopener"
+>WhatsApp 更新：新群成员可快速回顾历史消息内容&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.pcworld.com/article/3056694/strip-out-windows-11s-bloatware-ads-and-other-grossness-for-free.html" target="_blank" rel="noopener"
+>免费清理 Windows 11 预装全家桶与广告的实用工具建议&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidauthority.com/android-17-beta-1-hands-on-3642520/" target="_blank" rel="noopener"
+>Android 17 Beta 1 抢先看：两项核心功能改变使用习惯&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.bgr.com/2102887/why-no-one-needs-password-managers-anymore/" target="_blank" rel="noopener"
+>为什么现在的用户可能不再需要独立的密码管理器了？&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.makeuseofcontents.com/used-excel-for-over-a-decade-and-didnt-know-about-extremely-useful-trick/" target="_blank" rel="noopener"
+>Excel 高级技巧：你可能不知道的图像处理黑科技&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="硬件与半导体">硬件与半导体
+&lt;/h1>&lt;p>硬件世界正在经历一场“复古与未来”的奇妙交织。苹果的折叠屏计划终于有了实质性进展，而 Google 则试图通过新一代芯片证明其自研实力。有趣的是，在最尖端的半导体技术之外，年轻人正重新爱上诞生于二十年前的数字音频设备。&lt;/p>
+&lt;h2 id="屏显技术突破与自研芯片竞赛">屏显技术突破与自研芯片竞赛
+&lt;/h2>&lt;p>折叠屏技术的成熟正将苹果推向新的产品周期，而 Google 的 Tensor 芯片则面临着证明其性能与功耗平衡的关键时刻。同时，在企业级市场，针对超高功耗服务器的散热方案也达到了新的工艺巅峰。&lt;/p>
+&lt;h3 id="折叠屏-iphone-进度更新显示屏生产时间表已敲定">折叠屏 iPhone 进度更新：显示屏生产时间表已敲定
+&lt;/h3>&lt;p>长期以来，关于折叠屏 iPhone 的传闻不断。近日，随着显示屏供应商生产时间表的最终敲定，这款产品终于走出了实验室阶段。据悉，苹果对折痕控制和屏幕耐用性提出了极高要求，预计量产版本将在显示效果上带来突破。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804923-Foldable-iPhone-display-production-timetable-says-get-your-wallets-ready.jpg"
+loading="lazy"
+alt="Foldable iPhone Rumors"
+>&lt;/p>
+&lt;h3 id="pixel-10a-即将发布tensor-芯片性能表现成焦点">Pixel 10a 即将发布，Tensor 芯片性能表现成焦点
+&lt;/h3>&lt;p>Google 即将推出 Pixel 10a，其核心看点在于搭载的新一代自研 Tensor 芯片。这不仅是关于一款手机的发布，更是 Google 软硬一体化策略的期中考试。外界期待这款芯片能在 AI 运算速度与发热控制之间找到完美的平衡点。&lt;/p>
+&lt;h3 id="内部揭秘英特尔-3000w-紧凑型水冷服务器电源拆解">内部揭秘：英特尔 3000W 紧凑型水冷服务器电源拆解
+&lt;/h3>&lt;p>在高性能计算领域，供电与散热是永远的难题。近日，英特尔一款 3000W 紧凑型水冷电源被深度拆解，揭示了其在极小空间内实现超大功率输出的内部结构。这种先进的水冷设计预示着未来 AI 数据中心将向着更紧凑、更高效的方向演进。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804923-3000w_water-cooled_psu_opened_electrarc240_youtube.jpg"
+loading="lazy"
+alt="Intel PSU Teardown"
+>&lt;/p>
+&lt;h3 id="数字化时代的复古为什么年轻人又开始买-ipod-了">数字化时代的复古：为什么年轻人又开始买 iPod 了？
+&lt;/h3>&lt;p>在流媒体泛滥的今天，Z 世代群体中竟然掀起了一股“iPod 热”。这种对离线音乐播放器的追求，反映了年轻人对数字化疲劳的反抗和对物理触感的怀念。iPod 简洁的界面和纯粹的听歌体验，正成为一种独特的时尚符号。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.phonearena.com/news/foldable-iphone-display-production-timetable-says-get-your-wallets-ready_id178393" target="_blank" rel="noopener"
+>折叠屏 iPhone 进度更新&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.androidpolice.com/the-pixel-10a-will-finally-end-the-tensor-debate/" target="_blank" rel="noopener"
+>Pixel 10a 即将发布&lt;/a>&lt;/li>
+&lt;li>[英特尔 3000W 水冷电源拆解](&lt;a class="link" href="https://hackaday.com/2026/02/22/inside-a-compact-intel-3000" target="_blank" rel="noopener"
+>https://hackaday.com/2026/02/22/inside-a-compact-intel-3000&lt;/a> w-water-cooled-power-supply/)&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.axios.com/2026/02/21/ipods-music-genz-nostalgia" target="_blank" rel="noopener"
+>为什么年轻人又开始买 iPod 了？&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="物理学与天文">物理学与天文
+&lt;/h1>&lt;p>宇宙的深邃总能带给我们意想不到的惊喜。从能够改变计算未来的量子超导体，到哈勃望远镜拍摄到的恒星诞生瞬间，物理学与天文学正在共同勾勒出一幅跨越尺度的宏伟蓝图。&lt;/p>
+&lt;h2 id="量子计算的曙光与深空的视觉奇观">量子计算的曙光与深空的视觉奇观
+&lt;/h2>&lt;p>科学家们在寻找量子计算稳定性方面取得了里程碑式的进展，发现了能极大降低能耗的新型材料。而在宏观世界，哈勃与天文学家们联手，为我们揭示了那些隐藏在暗处、甚至“不可见”的星系秘密。&lt;/p>
+&lt;h3 id="量子计算圣杯科学家发现可极大降低能耗的新型超导体">量子计算“圣杯”？科学家发现可极大降低能耗的新型超导体
+&lt;/h3>&lt;p>一项关于“三重态超导体”的研究引发了科学界震动。这种材料能够在无电阻传输电流的同时保留电子自旋，这意味着量子位（qubits）可以变得更加稳定且低功耗。这被认为是通往实用化量子计算机的“圣杯”级发现。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804923-golden-quantum-computer-machine.webp"
+loading="lazy"
+alt="Quantum Computer"
+>&lt;/p>
+&lt;h3 id="哈勃捕捉到破壳而出的星云距离地球最近的蛋星云">哈勃捕捉到“破壳而出”的星云：距离地球最近的“蛋星云”
+&lt;/h3>&lt;p>哈勃望远镜近期发布了一张震撼人心的图像，捕捉到了一个正处于“孵化阶段”的原行星状星云。这个被称为“蛋星云”的天体展示了恒星生命末期向星云演化的动态过程，其丰富的细节为研究恒星演化提供了珍贵资料。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804924-pXEjwE9KDJ52gbhGRmgqyM-1920-80.jpg"
+loading="lazy"
+alt="Egg Nebula Hubble"
+>&lt;/p>
+&lt;h3 id="宇宙隐身者几乎全由暗物质组成的星系获得确认">宇宙隐身者：几乎全由暗物质组成的星系获得确认
+&lt;/h3>&lt;p>天文学家确认了一个极其诡异的星系，其质量几乎全部由暗物质构成，普通可见物质极少。这类“黑暗星系”在常规观测中近乎隐形，它们的发现不仅挑战了现有的星系形成理论，也为探测暗物质本质提供了天然的实验室。&lt;/p>
+&lt;h3 id="本周天文奇观罕见的六星连珠将现身夜空">本周天文奇观：罕见的六星连珠将现身夜空
+&lt;/h3>&lt;p>2月28日，天文爱好者将迎来一场视觉盛宴。土星、海王星、火星、金星、天王星和木星将在夜空中连成一线。这种“行星连珠”现象虽然在几何上是视觉巧合，但其罕见程度依然值得人们在特定的观测窗口抬头仰望。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.sciencedaily.com/releases/2026/02/260221000252.htm" target="_blank" rel="noopener"
+>量子计算新型超导体发现&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/space/astronomy/closest-baby-nebula-to-earth-hatches-in-strange-new-hubble-image-space-photo-of-the-week" target="_blank" rel="noopener"
+>哈勃捕捉“蛋星云”图像&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.wired.com/story/a-galaxy-composed-almost-entirely-of-dark-matter-has-been-confirmed/" target="_blank" rel="noopener"
+>暗物质星系获得确认&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.livescience.com/space/planets/rare-planetary-parade-will-return-to-the-evening-sky-this-week-but-youll-have-to-look-at-exactly-the-right-time" target="_blank" rel="noopener"
+>本周天文奇观：六星连珠&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="航空航天">航空航天
+&lt;/h1>&lt;p>人类探索外星世界的脚步从未停歇。火星上的漫游车变得越来越聪明，能够像人类一样通过“看图”来导航；而面对日益严重的太空碎片威胁，激光技术正从科幻走进现实。&lt;/p>
+&lt;h2 id="火星智能探测与近地空间安全">火星智能探测与近地空间安全
+&lt;/h2>&lt;p>NASA 的毅力号通过软件升级实现了定位能力的质变，而欧航局则在探索一种极具未来感的“激光扫帚”技术。尽管面临发射任务可能的推迟，但人类对星辰大海的探索逻辑正变得愈发缜密。&lt;/p>
+&lt;h3 id="nasa-毅力号火星车掌握自导航新技术">NASA 毅力号火星车掌握“自导航”新技术
+&lt;/h3>&lt;p>毅力号火星车最近解锁了一项新技能：实时自我定位。通过将机载相机拍摄的表面细节与火星轨道卫星的高精度地图进行实时比对，漫游车不再需要频繁等待地球指令，显著提升了在复杂地形下的探索效率。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804924-Mars-Global-Localization-pinpoints-Perseverances-location.jpg"
+loading="lazy"
+alt="Mars Rover Tech"
+>&lt;/p>
+&lt;h3 id="太空碎片清理新招欧航局将试用激光技术">太空碎片清理新招：欧航局将试用激光技术
+&lt;/h3>&lt;p>随着近地轨道卫星数量激增，太空碎片的威胁日益严重。欧洲航天局计划试验使用地面高能激光系统，通过激光产生的微弱推力，改变细小碎片的轨道，使其在大气层中烧毁，从而保护昂贵的通信卫星资产。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804925-ESA-logo.jpg"
+loading="lazy"
+alt="ESA Space Security"
+>&lt;/p>
+&lt;h3 id="受火箭故障影响nasa-载人绕月飞行任务或将推迟">受火箭故障影响，NASA 载人绕月飞行任务或将推迟
+&lt;/h3>&lt;p>阿耳忒弥斯计划的最新进展显示，由于运载火箭在地面测试中发现潜在技术隐患，原定的载人绕月飞行任务可能会面临数月的推迟。这再次提醒我们，载人深空探测是一项容错率极低的极限工程。&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.notebookcheck.net/NASA-s-new-tech-finally-lets-the-Perseverance-rover-track-its-location-in-real-time.1231762.0.html" target="_blank" rel="noopener"
+>NASA 毅力号自导航技术&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.notebookcheck.net/ESA-set-to-use-high-power-lasers-to-prevent-collisions-in-space.1231763.0.html" target="_blank" rel="noopener"
+>欧航局激光清理太空碎片&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.bbc.com/news/articles/c626v265zqlo" target="_blank" rel="noopener"
+>NASA 载人绕月任务推迟消息&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="其他科技与科学研究">其他科技与科学研究
+&lt;/h1>&lt;h2 id="医疗生物与考古的最新回响">医疗、生物与考古的最新回响
+&lt;/h2>&lt;p>在实验室中，新型噬菌体疗法正为深受皮肤病困扰的人群带来新希望；而在历史的深处，关于尼安德特人仪式感的发现则在重新定义我们对远古亲属的认知。&lt;/p>
+&lt;h3 id="治疗痤疮新希望新型噬菌体疗法临床试验取得显著成效">治疗痤疮新希望：新型噬菌体疗法临床试验取得显著成效
+&lt;/h3>&lt;p>《自然》杂志报道了一项突破性进展：科学家利用特定的“伪溶源性噬菌体”来精准打击导致痤疮的细菌。这种疗法相比抗生素最大的优势在于它不会引起耐药性，且能保护皮肤微生态的平衡。&lt;/p>
+&lt;h3 id="生命之坚韧科学家揭秘极强抗辐射生物的进化奥秘">生命之坚韧：科学家揭秘极强抗辐射生物的进化奥秘
+&lt;/h3>&lt;p>在切尔诺贝利等极端环境下，一种微小的生物展示了惊人的生存能力。研究发现，它们进化出了一套极其复杂的 DNA 快速修复机制，能够在遭受致死剂量辐射后迅速复原。这一研究可能为人类抗辐射损伤治疗提供新思路。&lt;/p>
+&lt;h3 id="远古迷踪尼安德特人为何在洞穴中秘密收集动物头骨">远古迷踪：尼安德特人为何在洞穴中秘密收集动物头骨？
+&lt;/h3>&lt;p>考古学家在西班牙的洞穴深处发现了大量整齐排列的有角动物头骨，这些头骨属于几万年前的尼安德特人。这一发现暗示，我们的这些古老亲属可能拥有比想象中更复杂的宗教仪式或象征性思维。&lt;/p>
+&lt;p>&lt;img src="https://cdn.lyb.pub/news/blog/1771804925-cave-skulls.jpg"
+loading="lazy"
+alt="Cave Archaeology"
+>&lt;/p>
+&lt;p>原文链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.nature.com/articles/s41598-026-40701-5" target="_blank" rel="noopener"
+>新型噬菌体疗法研究&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/this-extreme-radiation-resistant-organism-evolved-a-remarkable-ability" target="_blank" rel="noopener"
+>极强抗辐射生物研究&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.sciencealert.com/neanderthals-mysteriously-collected-horned-skulls-in-a-cave-but-why" target="_blank" rel="noopener"
+>尼安德特人洞穴头骨发现&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划</title><link>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</link><pubDate>Sun, 22 Feb 2026 08:02:02 +0800</pubDate><guid>https://www.jsongo.top/articles/openai-ai-speaker-meta-metaverse-mobile-nasa-artemis-ii-launch-02.22/</guid><description>&lt;img src="https://cdn.lyb.pub/banners/5d75a43553c8d4b677794dc7b70c2f7e.jpg" alt="Featured image of post OpenAI 进军硬件领域开发 AI 音箱，NASA 敲定 3 月载人绕月发射计划" />&lt;h1 id="人工智能前沿进展">人工智能前沿进展
 &lt;/h1>&lt;p>人工智能领域正经历从“纯算法”向“软硬结合”以及“数据合规化”的深度转型。当前，行业领头羊 OpenAI 不再满足于云端对话框，开始大规模组建硬件团队，试图通过智能硬件设备将 AI 物理化，打入用户的家庭生活场景。与此同时，随着大模型训练数据的版权争议愈演愈烈，学术界也拿出了强有力的技术手段，通过“信息标记”技术精准识别 AI 对版权内容的非法抓取。这些进展标志着 AI 产业正在从野蛮生长向产品化、规范化迈进。&lt;/p>
 &lt;h2 id="openai-开启硬件元年从大模型走向智能实体">OpenAI 开启硬件元年：从大模型走向智能实体
 &lt;/h2>&lt;p>OpenAI 正在加速其在硬件领域的版图扩张。为了摆脱对智能手机等第三方设备的依赖，OpenAI 组建了规模庞大的专业团队，旨在打造原生集成大模型能力的硬件产品。这不仅是技术输出，更是其建立独立生态系统的关键一步。&lt;/p>
