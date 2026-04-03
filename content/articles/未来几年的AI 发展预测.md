@@ -13,6 +13,8 @@ slug: ai-development-forecast
 draft: false
 ---
 
+
+
 [AI 2027](https://ai-2027.com/) 这个网站对 AI 未来发展做了一些预言，很有趣，做了一些总结梳理。  
 AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 2025 年到 2028 年人工智能（AI）快速发展的可能情景，预测 AI 将在这段时间内经历从初级自主代理到超人类智能的飞速发展。
 

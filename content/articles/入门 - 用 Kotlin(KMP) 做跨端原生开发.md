@@ -12,6 +12,8 @@ slug: kmp-101
 date: 2024-12-27 11:31:09.698000+08:00
 ---
 
+
+
 Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应用开发的首选语言，并且它通过相关跨平台框架（如 Kotlin Multiplatform Platform - KMP）发展出了跨端开发的能力。
 
 > 示例中用的是 Kotlin (KMP) `2.x` ，Ktor `3.x`

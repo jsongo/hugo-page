@@ -13,6 +13,8 @@ draft: false
 date: 2024-12-13 15:59:05+08:00
 ---
 
+
+
 最近被 aws 算计了好多钱，之前一直没在意。后来才知道，是当时开了一个 cloud9。
 ![a0ca56c580cb92b784f7a891d694a46c_MD5](https://cdn.lyb.pub/2024/12/8004e7b22145d8b77b7bcca05c34f06b.webp)
 EC2 一个月扣我 10 刀，Virtual Private Cloud 应该是 cloud9 启动后，内部建立的容器集群。Tax 这个就不用说了，10%的税

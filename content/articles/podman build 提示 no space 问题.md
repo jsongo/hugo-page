@@ -13,6 +13,8 @@ slug: podman-build-no-space-issue
 draft: true
 ---
 
+
+
 E: You don't have enough free space in /var/cache/apt/archives/  
 可以先运行 `podman info` 看一下，关注这两个字段 `graphRootAllocated` 和 `graphRootUsed`  
 ![[assets/local_image_plus/13bd04ff7fd166dcdf65a81967984add_MD5.png]]  

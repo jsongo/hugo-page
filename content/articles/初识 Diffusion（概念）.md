@@ -2,7 +2,7 @@
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
 tags:
-- AI/Diffusion
+- 领域/AI/Diffusion
 created_at: Sun, Nov 24th, 2024 - 11:26:10
 banner_icon: 🌹
 banner: https://cdn.lyb.pub/banners/96539755245eb88510f037ed2d24f60d.jpeg
@@ -12,6 +12,8 @@ title: 初识 Diffusion（概念）
 description: Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
 date: 2024-11-24 11:26:10+08:00
 ---
+
+
 
 Diffusion（扩散模型）是一类生成式模型，在机器学习和人工智能领域应用广泛，特别是在图像生成、语音合成等领域发挥了重要作用。
 

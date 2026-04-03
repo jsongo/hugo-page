@@ -14,6 +14,8 @@ description: 主要介绍了如何在 Azure Functions 中使用自定义 Docker 
 draft: false
 ---
 
+
+
 Azure Function 默认是跑在它官方的 [microsoft/azure-functions-base](https://hub.docker.com/r/microsoft/azure-functions-base) 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。
 
 # 创建自己的镜像

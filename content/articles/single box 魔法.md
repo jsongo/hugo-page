@@ -13,6 +13,8 @@ slug: single-box-magic
 draft: false
 ---
 
+
+
 # 安装
 ## 安装 GUI
 [GUI for SingBox (github.com)](https://github.com/GUI-for-Cores/GUI.for.SingBox)  

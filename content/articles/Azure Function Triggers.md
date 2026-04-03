@@ -14,6 +14,8 @@ description: 介绍 Azure Function 的各种触发器类型，包括定时任务
 draft: false
 ---
 
+
+
 # 触发器各类
 
 Azure Function 有多种模板，我们在创建 Function 时，一般会用 `--template` 参数要指定用哪个模板。详细的可以参考官方文档：[Triggers and bindings in Azure Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) 或中文版 [Azure Functions 中的触发器和绑定 \| Microsoft Learn](https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&pivots=programming-language-csharp)。  

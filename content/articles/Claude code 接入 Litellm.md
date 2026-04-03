@@ -2,7 +2,7 @@
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
 tags:
-- AI/AI工具/claude
+- 领域/AI/AI工具/claude
 created_at: Tue, Dec 9th, 2025 - 13:09:07
 date: 2025-12-09 13:09:07.630000+08:00
 banner_icon: 🦣
@@ -12,6 +12,8 @@ draft: false
 description: 如何安装和配置claude code 和 Claude Code Router，接入 Litellm 使用 Gemini 最新模型
 title: Claude code 接入 Litellm
 ---
+
+
 
 # 安装
 先安装 claude code

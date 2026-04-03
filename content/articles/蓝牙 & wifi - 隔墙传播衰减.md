@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags:
-- study/knowledge
+tags: []
 created_at: Wed, Dec 25, 2024 - 01:06:18
 date: 2024-12-25 01:06:18.666000+08:00
 banner_icon: 🦙
@@ -12,6 +11,8 @@ title: 蓝牙 & wifi - 隔墙传播衰减数据
 description: 蓝牙和WiFi信号在不同类型墙体（如混凝土墙、砖墙、木板墙和石膏板墙）中的传播衰减情况，这些墙体对信号强度和传输距离的影响各不同。
 draft: false
 ---
+
+
 
 # 基础
 

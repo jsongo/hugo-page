@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags:
-- study/工具/IT
+tags: []
 created_at: Thu, Nov 21st, 2024 - 18:21:19
 banner_icon: 🦖
 banner: https://cdn.lyb.pub/banners/0b3d83738bddc53706e70a9dfd187061.jpg
@@ -12,6 +11,8 @@ slug: search-tool-ag-the-silver-searcher
 draft: false
 date: 2025-02-27 11:31:09.698000+08:00
 ---
+
+
 
 # 安装
 

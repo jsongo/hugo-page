@@ -13,6 +13,8 @@ slug: tracing-101
 draft: false
 ---
 
+
+
 Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。
 
 # Tracing 概念

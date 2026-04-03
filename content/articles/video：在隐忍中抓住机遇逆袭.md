@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags:
-- study/short-video
+tags: []
 created_at: Thu, Feb 27, 2025 - 23:16:31
 date: 2025-02-27 23:16:31.970000+08:00
 banner_icon: 🐽
@@ -12,6 +11,8 @@ draft: false
 description: 在中美博弈中，中国通过隐忍和策略性应对，抓住了多次机遇实现逆袭的过程，分析了美国策略的转变及其背后的原因
 title: video：在隐忍中抓住机遇逆袭
 ---
+
+
 
 后续会时不时地写一些不那么短的短视频的观后感，今天就先拿 `小智侃财经的作品` 的《[为什么放任东大崛起，老美却怂了](https://v.douyin.com/i5jK3E5H/)》来讲讲。  
 ![ca3b886aefb28d6cb75276cd57c5af2b_MD5.webp](https://cdn.lyb.pub/upic/1750870686_cS5D5S.webp)  

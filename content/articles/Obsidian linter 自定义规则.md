@@ -13,6 +13,8 @@ slug: obsidian-linter-custom-rules
 draft: false
 ---
 
+
+
 先看一个例子，我之前有很多复制过来的内容，会在 header 上添加粗体的样式，其实这些我不需要，因为 header 本身就有加粗的样式。问题格式如下：
 
 ```text

@@ -14,6 +14,8 @@ description: Office Add-ins 可以理解为是一种可以扩展 Microsoft Offic
 date: 2024-12-06 13:08:16+08:00
 ---
 
+
+
 # 介绍
 
 借助 Office Add-ins 可以在 word 里使用大模型与用户输入的内容做交互。甚至可以尝试接入 RTC 让用户用嘴写作，动口不动手。  

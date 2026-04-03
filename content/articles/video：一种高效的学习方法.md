@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags:
-- study/short-video
+tags: []
 created_at: Mon, Mar 24, 2025 - 10:12:24
 date: 2025-03-24 10:12:24.521000+08:00
 banner_icon: 🎄
@@ -12,6 +11,8 @@ slug: efficient-learning-method
 description: 一种高效的学习方法，通过明确目标、分解技能、学习理论、准备工具、排除干扰、腾出时间和反复练习等七个关键步骤，在20小时内掌握一项技能并超过80%的人
 draft: false
 ---
+
+
 
 来自这个视频：https://v.douyin.com/ywNN3t9_H80/
 
