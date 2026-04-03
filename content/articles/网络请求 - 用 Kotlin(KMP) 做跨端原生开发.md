@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - 互联网/app
+tags: - 互联网/app
 created_at: Mon, Jan 6, 2025 - 16:24:30
 date: 2025-01-05T16:24:30.751+08:00
 banner_icon: 🧙🏼‍♀️
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/c1e2de3d85f49231f2290e3ec17b3940.jpg"
 title: 网络请求 - 用 Kotlin(KMP) 做跨端原生开发
 description: 在 KMP 中使用 Ktor 库进行网络请求，封装一个通用的 HTTP 请求类来处理 JSON 序列化、token 认证等常见需求。同时介绍 Ktor 3.0 的新特性来支持 Server-Sent Events (SSE)，并结合 Kotlin 的协程和 Flow 来处理异步数据流。
 slug: kmp-http-sse
-draft: false
----
+draft: false---
 > 示例中用的是 Kotlin (KMP) `2.x` ，Ktor `3.x`
 
 # 网络请求

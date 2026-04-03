@@ -5,13 +5,11 @@ author:
 published: 2024-03-17
 created: 2025-11-26
 description: "这两天刷推，看见不少推文实现了用 Cloudflare Worker 白嫖翻墙，我也鼓捣了试了一下，确实可以。"
-tags:
-  - "clippings"
+tags: - clippings
 draft: "true"
 slug: "cloudflare-worker-vless-free-proxy"
 date: "2025-11-26T14:59:00+08:00"
-banner: "https://hexoblog.r2.depp.wang/202406191718786599.jpg"
----
+banner: "https://hexoblog.r2.depp.wang/202406191718786599.jpg"---
 这两天刷推，看见不少推文实现了用 Cloudflare Worker 白嫖翻墙，我也鼓捣了试了一下，确实可以。  
 但正如这位推主 [所说](https://twitter.com/huhexian/status/1769318527369097411) ，折腾探索一下就行，还是得用机场。我折腾主要是想了解一下它的实现原理。至于如何折腾， 可以参考 [这个教程](https://github.com/cmliu/edgetunnel) ，文字 + 视频都有，还是比较简单。用其默认的 proxyIP 不能使用 GPT 等，我改了下 proxyIP，改为了 47.254.66.75，改后可以。
 # 原理

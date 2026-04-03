@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - study/knowledge
+tags: - study/knowledge
 created_at: Wed, Dec 25, 2024 - 01:06:18
 date: 2024-12-25T01:06:18.666+08:00
 banner_icon: 🦙
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/437965e93ce93d3c2ca0ebac98d54619.jpeg"
 slug: BLE-wifi-decays-through-wall
 title: 蓝牙 & wifi - 隔墙传播衰减数据
 description: 蓝牙和WiFi信号在不同类型墙体（如混凝土墙、砖墙、木板墙和石膏板墙）中的传播衰减情况，这些墙体对信号强度和传输距离的影响各不同。
-draft: false
----
+draft: false---
 # 基础
 
 ## 发射功率的大概认知

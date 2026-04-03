@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - 互联网/server
+tags: - 互联网/server
 created_at: Wed, Dec 18, 2024 - 00:55:38
 date: 2024-12-18T00:55:38.424+08:00
 banner_icon: 🎽
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/91668e623e452ebc624daa105d2f82c2.jpg"
 slug: cron-syntax
 title: Cron 表达式
 description: 介绍了 Cron 表达式的基本格式和含义，用于配置定时任务的执行时间。详细解释了每个字段的作用，并以 0 */5 * * * * 为例，说明该表达式表示每隔 5 分钟执行一次任务
-draft: false
----
+draft: false---
 平时工作中，可能会时不时碰到像 `0 */5 * * * *` 这种 Cronjob 定时任务的配置，特别是运维和服务端的同学，经常会打交道。本文只是最基础的用法，后面有新内容再补充，仅作为自己学习、记录、备忘的文档沉淀下。
 
 # 基础语法

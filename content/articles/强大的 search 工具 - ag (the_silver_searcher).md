@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - study/工具/IT
+tags: - study/工具/IT
 created_at: Thu, Nov 21st, 2024 - 18:21:19
 banner_icon: 🦖
 banner: "https://cdn.lyb.pub/banners/0b3d83738bddc53706e70a9dfd187061.jpg"
@@ -10,8 +9,7 @@ description: 介绍了 ag 工具的安装和使用方法，包括搜索文件名
 title: 强大的 search 工具 - ag
 slug: search-tool-ag-the-silver-searcher
 draft: false
-date: 2025-02-27T11:31:09.698+08:00
----
+date: 2025-02-27T11:31:09.698+08:00---
 # 安装
 
 ```bash

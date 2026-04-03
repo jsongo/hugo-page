@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - AI/AI工具/cursor
+tags: - AI/AI工具/cursor
 created_at: Wed, Dec 25, 2024 - 21:16:20
 date: 2024-12-25T21:16:20.480+08:00
 banner_icon: 🍏
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/a7f752e124242dcebca6f80af1173db0.jpeg"
 description: 使用 Cursor 工具在开发未知语言代码时的体验和步骤。Cursor 可以帮助开发者将思路和逻辑翻译成代码，即使不熟悉特定语言的语法，也能通过它实现功能。
 title: 用 Cursor 开发未知语言代码
 slug: coding-with-cursor
-draft: false
----
+draft: false---
 # 概述
 ## 一句话总结
 Cursor 对于研发来说，是一个非常有用的提效工具。一句话来总结 Cursor 就是：
@@ -51,7 +49,7 @@ Cursor 刚出的 agent 比之前简单的 Chat 强不少。之前的 Chat 它记
 > 然后找到最基础的模块，比如本例中我选了 Chat 相关的接口，跑通非 Stream 模式比较简单，所以作为第一个接入。实现后，再研究了下 Kotlin 里怎么实现 SSE（这个 cursor 死活写不出正确的来），也跑通之后，一个模块算是比较完整了。
 ## 3、把这套模块复制到其它模块中
 第二个模块选择了 **Auth** **模块**，用它来验证第一个模块用到的通用方法是否可迁移。  
-首先是让 Cursor 把**请求模块的代码**抽出来，做成一个通用的请求基类，其它模块继承它就行。把这个思路告诉 Cursor，让它改好后，进入下一步：把 JS 的 auth.ts 代码加入到 Context 中，在相应的目录下新建一个 Auth.kt 的 kotlin 模块，告诉 Cursor <mark style="background:#FFB86CA6;">把 auth 的逻辑从 ts 翻译成 kotlin</mark>。  
+首先是让 Cursor 把**请求模块的代码**抽出来，做成一个通用的请求基类，其它模块继承它就行。把这个思路告诉 Cursor，让它改好后，进入下一步：把 JS 的 auth.ts 代码加入到 Context 中，在相应的目录下新建一个 Auth.kt 的 kotlin 模块，告诉 Cursor <mark style="background:\#FFB86CA6;">把 auth 的逻辑从 ts 翻译成 kotlin</mark>。  
 写完后，再在 Demo 文件夹里创建一个 Auth 的 **Demo 文件**，让 Cursor 仿照 Chat 的 Demo 把 Auth 里的方法都用起来、去生成一个 Auth Demo。这步也做完后，进入第四步。  
 到 App 界面中去添加按钮，绑定 Demo，去触发它的方法，验证刚的代码是否可行。  
 这一步是最费时间的，因为第一版基本都不行，到处有问题，需要不断的试、不断的 fix bug。好在这些操作也可以让 Cursor 来做。

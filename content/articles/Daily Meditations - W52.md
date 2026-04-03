@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - area/thinking
+tags: - area/thinking
 created_at: Wed, Dec 25, 2024 - 23:25:18
 date: 2024-12-25T23:25:18.255+08:00
 banner_icon: 🖥
@@ -10,8 +9,7 @@ banner: https://cdn.lyb.pub/banners/0b2412e8fae47001461d7b73f3127e2d.jpg
 slug: meditations-w52
 description: 最近读书的一些思考：一部分是关于社会资源的有效利用和个人对社会的贡献，讨论适度舍弃不必要的物品可以提升资源利用率，并提到名人的贡献不一定总是正数。另外还探讨了长期主义的重要性，认为解决社会问题需要依靠盈利的商业模式，而不是短期的政治决策。
 title: Daily Meditations - W52
-draft: false
----
+draft: false---
 > 这两周都在看吴军的新书《脉络》，从书中我读出他有点凯文凯利的一面。一些比较大的命题，他能举重若轻地用一两句简单的总结，表达出一些一针见血的见解。让人感悟深刻。
 
 # 整个社会的视角

@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - 互联网/折腾/azure
+tags: - 互联网/折腾/azure
 created_at: Wed, Dec 18, 2024 - 00:42:33
 date: 2024-12-18T00:42:33.881+08:00
 banner_icon: 👨🏼‍💻
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/54ae9a6d9d56a2e58c20dc50f584fd39.jpg"
 title: Azure Function Triggers
 slug: azure-function-triggers
 description: 介绍 Azure Function 的各种触发器类型，包括定时任务触发和 HTTP 请求触发等。文中详细描述了如何使用 Timer Trigger 来实现定时任务，并提供相关的代码示例和详解。
-draft: false
----
+draft: false---
 # 触发器各类
 
 Azure Function 有多种模板，我们在创建 Function 时，一般会用 `--template` 参数要指定用哪个模板。详细的可以参考官方文档：[Triggers and bindings in Azure Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) 或中文版 [Azure Functions 中的触发器和绑定 \| Microsoft Learn](https://learn.microsoft.com/zh-cn/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process,node-v4,python-v2&pivots=programming-language-csharp)。  

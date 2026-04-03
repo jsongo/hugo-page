@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - 互联网/server/trace
+tags: - 互联网/server/trace
 created_at: Tue, Apr 8, 2025 - 20:51:33
 date: 2025-04-08T20:51:33.101+08:00
 banner_icon: 👷🏼
@@ -10,8 +9,7 @@ banner: https://cdn.lyb.pub/banners/1089988f36245b8456d63b99a86d3d2b.jpg
 title: Tracing 初步理解
 description: 简单介绍 Tracing技术，它是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化和故障排查等领域。
 slug: tracing-101
-draft: false
----
+draft: false---
 Tracing 是一种用于跟踪和记录系统运行状态、事件或资源使用情况的技术，广泛应用于软件开发、性能优化、故障排查等领域。以下是 tracing 中的一些关键概念、应用及跟 log 之间的关系。
 
 # Tracing 概念

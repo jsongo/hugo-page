@@ -3,8 +3,7 @@ name: Report a bug
 about: Use this template to report a bug.
 title: "bug: "
 labels: status:unconfirmed
-assignees: davidsneighbour
----
+assignees: davidsneighbour---
 <!---
 
 This issue tracker is **ONLY** used for reporting bugs. New features should be discussed on [our discussion forum](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/categories/3-ideas).

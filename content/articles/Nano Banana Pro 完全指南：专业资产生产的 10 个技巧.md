@@ -5,13 +5,11 @@ author:
 published: 2025-11-29
 created: 2025-12-09
 description:
-tags:
-  - "clippings"
+tags: - clippings
 draft: "false"
 slug: "google-ai-studio-thread"
 date: "2025-12-09T20:48:57+08:00"
-banner: "https://abs.twimg.com/rweb/ssr/default/v2/og/image.png"
----
+banner: "https://abs.twimg.com/rweb/ssr/default/v2/og/image.png"---
 # 总结
 0. 提示词的黄金法则：像创意总监一样沟通
 	- **编辑，而非重新生成：** 如果图像已接近要求，直接要求具体修改，而不是重新生成。

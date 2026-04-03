@@ -1,8 +1,7 @@
 ---
 updated_at: 2024-10-27T11:31:09.698+08:00
 edited_seconds: 220
-tags:
-  - 互联网/折腾/图床
+tags: - 互联网/折腾/图床
 created_at: Sat, Apr 12, 2025 - 16:59:03
 date: 2025-04-12T16:59:03.470+08:00
 banner_icon: 🐭
@@ -10,8 +9,7 @@ banner: "https://cdn.lyb.pub/banners/949a9178ccc501fe2ddb271fd63ba29b.jpeg"
 title: upic 图床工具
 slug: upic-image-tool
 description: 使用uPic工具和Cloudflare R2搭建图床，实现便捷的图片上传和管理
-draft: false
----
+draft: false---
 # 安装
 
 从这里可以找到 upic [GitHub - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool...](https://github.com/gee1k/uPic)  
