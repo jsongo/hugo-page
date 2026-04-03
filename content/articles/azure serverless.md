@@ -12,7 +12,6 @@ description: azure serverless 支持 python、node 等多种语言，本地 CLI 
 draft: false
 date: 2024-12-14T01:33:06+08:00
 ---
-
 # 基础工具
 
 Mac 上直接装：

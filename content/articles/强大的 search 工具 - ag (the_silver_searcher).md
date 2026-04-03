@@ -12,7 +12,6 @@ slug: search-tool-ag-the-silver-searcher
 draft: false
 date: 2025-02-27T11:31:09.698+08:00
 ---
-
 # 安装
 
 ```bash

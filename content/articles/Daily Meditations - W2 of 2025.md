@@ -12,7 +12,6 @@ title: Daily Meditations - W2 of 2025
 description: 清醒时最大化每小时的学习和成长的重要性，以及通过输出自己的想法和经验来为世界带来秩序和价值。
 draft: false
 ---
-
 # 成长&输出
 
 ## 最大化每小时的收获

@@ -12,7 +12,6 @@ title: Azure Function + Mysql 入门
 draft: false
 date: 2024-12-16T13:39:37+08:00
 ---
-
 > 在 Azure Function 上使用 mysql DB，具体可以参考：[Azure Database for MySQL bindings for Functions \| Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-mysql?tabs=isolated-process&pivots=programming-language-python)
 
 # Mysql 申请

@@ -12,7 +12,6 @@ slug: efficient-learning-method
 description: 一种高效的学习方法，通过明确目标、分解技能、学习理论、准备工具、排除干扰、腾出时间和反复练习等七个关键步骤，在20小时内掌握一项技能并超过80%的人
 draft: false
 ---
-
 来自这个视频：https://v.douyin.com/ywNN3t9_H80/
 
 # 概述

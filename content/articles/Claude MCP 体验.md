@@ -9,7 +9,6 @@ draft: false
 created_at: Fri, Dec 6th, 2024 - 00:56:02
 date: 2024-12-06T00:56:02+08:00
 ---
-
 # 概念
 
 MCP 即 Model Context Protocol，模型上下文协议，它能通过借助外部或历史信息，来更高效地构建信息更全面的上下文信息。  

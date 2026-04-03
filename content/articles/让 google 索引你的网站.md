@@ -12,7 +12,6 @@ title: 让 google 索引你的网站
 description: 在 Google 上验证和提交你的网站，让 Google 索引它，日后可以查看日常搜索数据。另外提交网站的 sitemap，以便 Google 定期更新你网站的内容
 draft: false
 ---
-
 # 验证&提交
 
 打开 [网址检查工具 - Search Console 帮助](https://support.google.com/webmasters/answer/9012289?hl=zh-Hans) 站点，在上面点击验证，如果你的网站放在 cloudflare 等比较有名的服务商那，这个验证过程会非常简单，比如我就只需要跳转到 cloudflare 上再点一个按钮即可。它会给你添加一个 TXT 记录，之后就认证成功了：  

@@ -12,7 +12,6 @@ title: Azure Functions 的5种托管方式
 description: Azure Functions 的五种托管方式，包括 Flex Consumption、Premium、Dedicated、Container Apps 和 Consumption 计划，比较了它们在缩放方式、资源限制、适用场景和计费方式上的差异。
 draft: false
 ---
-
 Azure 的 Functions 是一种 Serverless 基建，不过它提供了多种用法，计费方式和适用的场景也不太一样。  
 下文对 Flex Consumption plan、Premium plan、Dedicated plan、Container Apps 和 Consumption plan 这 5 种方式进行下对比。
 

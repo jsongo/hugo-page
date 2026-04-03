@@ -12,7 +12,6 @@ slug: upic-image-tool
 description: 使用uPic工具和Cloudflare R2搭建图床，实现便捷的图片上传和管理
 draft: false
 ---
-
 # 安装
 
 从这里可以找到 upic [GitHub - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool...](https://github.com/gee1k/uPic)  

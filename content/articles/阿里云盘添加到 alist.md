@@ -13,7 +13,6 @@ title: 阿里云盘添加到 alist
 draft: false
 banner-display: cover
 ---
-
 可以参考下面这个：  
 [阿里云盘 Open \| AList 文档](https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html)  
 一般填写下面这两个即可（上方就写个盘名）  

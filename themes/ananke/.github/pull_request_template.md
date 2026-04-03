@@ -1,7 +1,7 @@
 <!---
 
 Add the issue number that is discussed and fixed by this PR (In the form
-`Closes #123`). If this PR doesn't fix an issue, remove the line below. This will
+`Closes \#123`). If this PR doesn't fix an issue, remove the line below. This will
 also lead to us not treating this PR as an important one. It might be closed
 without a review.
 

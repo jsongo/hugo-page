@@ -5,7 +5,6 @@ title: "bug: "
 labels: status:unconfirmed
 assignees: davidsneighbour
 ---
-
 <!---
 
 This issue tracker is **ONLY** used for reporting bugs. New features should be discussed on [our discussion forum](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/categories/3-ideas).
