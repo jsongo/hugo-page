@@ -1,15 +1,19 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/git
+tags:
+- 互联网/git
 created_at: Tue, Dec 17, 2024 - 23:34:22
-date: 2024-12-17T23:34:22.963+08:00
+date: 2024-12-17 23:34:22.963000+08:00
 banner_icon: 🤵🏼‍♂️
-banner: "https://cdn.lyb.pub/banners/6424b2c83ab269ea18c2240356db3b9d.jpg"
+banner: https://cdn.lyb.pub/banners/6424b2c83ab269ea18c2240356db3b9d.jpg
 slug: git-recover-notes
 title: git 恢复误删笔记or文件
-description: 如何使用 Git 恢复误删的笔记或文件。通过 Git 的版本管理功能，可以轻松找回即使是很久之前删除的文件。文章中提到使用 git log 和 git show 命令来查找和恢复特定文件的历史记录和更改内容。
-draft: false---
+description: 如何使用 Git 恢复误删的笔记或文件。通过 Git 的版本管理功能，可以轻松找回即使是很久之前删除的文件。文章中提到使用 git log
+  和 git show 命令来查找和恢复特定文件的历史记录和更改内容。
+draft: false
+---
+
 自从改用 Obsidian 来做笔记后，再也不怕文件丢失了，特别是我有了 git 来管理文件后，不小心删掉一些文件也都能找回来，即使是 100 天前删除的都行，非常方便。
 
 > [!Tip] 为什么用 git 管理？同步软件不行吗  

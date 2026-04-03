@@ -1,16 +1,19 @@
 ---
-title: "HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心"
-source: "https://www.jiqizhixin.com/articles/2025-11-09-4"
+title: HuggingFace发布超200页「实战指南」，从决策到落地「手把手」教你训练大模型 ｜ 机器之心
+source: https://www.jiqizhixin.com/articles/2025-11-09-4
 author:
-  - "[[机器之心]]"
-published:
+- '[[机器之心]]'
+published: null
 created: 2025-11-13
-description: "近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。"
-tags: - clippings
-draft: "false"
-banner: "https://cdn.lyb.pub/upic/1763020394_vBc3MT.png"
-slug: "huggingface-200-page-llm-training-guide"
-date: "2025-11-13T15:48:08+08:00"---
+description: 近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。
+tags:
+- clippings
+draft: 'false'
+banner: https://cdn.lyb.pub/upic/1763020394_vBc3MT.png
+slug: huggingface-200-page-llm-training-guide
+date: '2025-11-13T15:48:08+08:00'
+---
+
 近期，HuggingFace 发布的超过 200 页的超长技术博客，系统性地分享训练先进 LLM 的端到端经验。  
 ![assets/local_image_plus/db4c3edc3efcaed5601e9f63f8500ce4_MD5.png|747x772](https://cdn.lyb.pub/upic/1763020394_vBc3MT.png)  
 博客的重点是 LLM 开发过程中「混乱的现实」。它坦诚地记录了哪些方法有效、哪些会失败，以及如何应对实际工程中遇到的陷阱。内容基于团队的实际项目经验，特别是他们近期使用 384 块 H100 GPU 训练 3B 参数模型 SmolLM3 的过程。  

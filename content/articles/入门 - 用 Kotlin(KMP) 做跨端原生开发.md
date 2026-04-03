@@ -1,14 +1,17 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/app
+tags:
+- 互联网/app
 created_at: Thu, Nov 28th, 2024 - 16:12:07
 banner_icon: ⚗️
-banner: "https://cdn.lyb.pub/banners/24372eee204cc869cbb56c86a09a6b4c.png"
+banner: https://cdn.lyb.pub/banners/24372eee204cc869cbb56c86a09a6b4c.png
 title: 入门 - 用 Kotlin(KMP) 做跨端原生开发
 description: 用 KMP 进行跨端原生开发的优势和基本原理，介绍了它在代码共享和多平台支持方面的优点，并讲解 Android 和 iOS 平台上运行和集成共享模块的具体步骤。
 slug: kmp-101
-date: 2024-12-27T11:31:09.698+08:00---
+date: 2024-12-27 11:31:09.698000+08:00
+---
+
 Kotlin 是由 JetBrains 开发的编程语言，Google 将其作为 Android 应用开发的首选语言，并且它通过相关跨平台框架（如 Kotlin Multiplatform Platform - KMP）发展出了跨端开发的能力。
 
 > 示例中用的是 Kotlin (KMP) `2.x` ，Ktor `3.x`

@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/NAS
+tags:
+- 互联网/NAS
 created_at: Thu, Apr 3, 2025 - 09:00:46
-date: 2025-04-03T09:00:46.149+08:00
+date: 2025-04-03 09:00:46.149000+08:00
 banner_icon: 🚑
-banner: "https://cdn.lyb.pub/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg"
+banner: https://cdn.lyb.pub/banners/2be650b5bf16dc6d9bb68a9ee7f1277a.jpeg
 title: NAS 配置 cloudflare DDNS
 description: 聊聊如何为 NAS 设置 Cloudflare 的 DDNS，以便实现远程访问、方便记忆和提供稳定的访问体验等功能
 slug: nas-config-cloudflare-ddns
-draft: false---
+draft: false
+---
+
 # What
 
 给 NAS 设置 DDNS 域名主要有以下作用：

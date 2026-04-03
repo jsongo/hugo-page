@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/折腾/cloudflare
+tags:
+- 互联网/折腾/cloudflare
 created_at: Sun, Dec 15th, 2024 - 16:03:07
 banner_icon: 📂
-banner: "https://cdn.lyb.pub/banners/f53c5884b5505531f32ad8fa0fc57247.jpg"
+banner: https://cdn.lyb.pub/banners/f53c5884b5505531f32ad8fa0fc57247.jpg
 description: 通过 cloudflare 提供的免费软件和服务，搭建一条免费的 Tunnel 穿透内网，并指定自定义域名来访问你的内网服务，关键还没有网速限制
 title: 免费的花生壳 - cloudflared
 slug: build-a-cloudflared-tunnel
 draft: false
-date: 2024-12-15T16:03:07+08:00---
+date: 2024-12-15 16:03:07+08:00
+---
+
 > [!note] 花生壳  
 > 一般我们习惯用花生壳来实现内网穿透，不过花生壳本身是要收钱的，它的域名也要收钱，流量也收一次钱，而且给了钱之后它的流量带宽也受到限制，正常是 1M 带宽下载速度只有 100 多 k，用起来很难受，加点带宽就要加不少钱。而且每个月还有总流量限制，经常用了半个月就不行了，非常痛苦。
 

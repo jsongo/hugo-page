@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - study/knowledge
+tags:
+- study/knowledge
 created_at: Wed, Dec 25, 2024 - 01:06:18
-date: 2024-12-25T01:06:18.666+08:00
+date: 2024-12-25 01:06:18.666000+08:00
 banner_icon: 🦙
-banner: "https://cdn.lyb.pub/banners/437965e93ce93d3c2ca0ebac98d54619.jpeg"
+banner: https://cdn.lyb.pub/banners/437965e93ce93d3c2ca0ebac98d54619.jpeg
 slug: BLE-wifi-decays-through-wall
 title: 蓝牙 & wifi - 隔墙传播衰减数据
 description: 蓝牙和WiFi信号在不同类型墙体（如混凝土墙、砖墙、木板墙和石膏板墙）中的传播衰减情况，这些墙体对信号强度和传输距离的影响各不同。
-draft: false---
+draft: false
+---
+
 # 基础
 
 ## 发射功率的大概认知
@@ -60,9 +63,7 @@ draft: false---
 
 # 其它
 
-对于 Wifi 来说，WiFi 协议会根据信号强度和质量自动调整传输速率。例如，在信号良好的情况下，可能达到理论上的高速传输速率，如 802.11ac 标准下的几百 Mbps 甚至更高。但当信号减弱后，传输速率可能会降低到几十 Mbps 甚至更低。
-
----
+对于 Wifi 来说，WiFi 协议会根据信号强度和质量自动调整传输速率。例如，在信号良好的情况下，可能达到理论上的高速传输速率，如 802.11ac 标准下的几百 Mbps 甚至更高。但当信号减弱后，传输速率可能会降低到几十 Mbps 甚至更低。---
 
 # Footnotes
 

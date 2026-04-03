@@ -1,15 +1,19 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/折腾/azure
+tags:
+- 互联网/折腾/azure
 created_at: Sat, Dec 14th, 2024 - 01:33:06
 banner_icon: 🚇
-banner: "https://cdn.lyb.pub/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg"
+banner: https://cdn.lyb.pub/banners/9f2713cc4890d8cf0449df9f4877fa26.jpg
 slug: azure-serverless
 title: azure serverless 使用
-description: azure serverless 支持 python、node 等多种语言，本地 CLI 和 VsCode 插件可以很方便辅助开发者进行开发、调试以及部署。本文主要介绍 azure serverless 的入门操作。
+description: azure serverless 支持 python、node 等多种语言，本地 CLI 和 VsCode 插件可以很方便辅助开发者进行开发、调试以及部署。本文主要介绍
+  azure serverless 的入门操作。
 draft: false
-date: 2024-12-14T01:33:06+08:00---
+date: 2024-12-14 01:33:06+08:00
+---
+
 # 基础工具
 
 Mac 上直接装：

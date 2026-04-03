@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/折腾/魔法
+tags:
+- 互联网/折腾/魔法
 created_at: Sat, Apr 12, 2025 - 13:12:08
-date: 2025-04-12T13:12:08.926+08:00
+date: 2025-04-12 13:12:08.926000+08:00
 banner_icon: 👰🏼‍♀️
-banner: "https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg"
+banner: https://cdn.lyb.pub/banners/ce4ad62a66d8ac4c4027f3e054d6009e.jpg
 title: single box 魔法
 description: 介绍下如何安装和使用 Sing-box 的 GUI 和内核，以及它与 ClashX 的速度对比等，介绍一些好用的插件
 slug: single-box-magic
-draft: false---
+draft: false
+---
+
 # 安装
 ## 安装 GUI
 [GUI for SingBox (github.com)](https://github.com/GUI-for-Cores/GUI.for.SingBox)  

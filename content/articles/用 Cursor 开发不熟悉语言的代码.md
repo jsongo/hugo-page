@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - AI/AI工具/cursor
+tags:
+- AI/AI工具/cursor
 created_at: Wed, Dec 25, 2024 - 21:16:20
-date: 2024-12-25T21:16:20.480+08:00
+date: 2024-12-25 21:16:20.480000+08:00
 banner_icon: 🍏
-banner: "https://cdn.lyb.pub/banners/a7f752e124242dcebca6f80af1173db0.jpeg"
+banner: https://cdn.lyb.pub/banners/a7f752e124242dcebca6f80af1173db0.jpeg
 description: 使用 Cursor 工具在开发未知语言代码时的体验和步骤。Cursor 可以帮助开发者将思路和逻辑翻译成代码，即使不熟悉特定语言的语法，也能通过它实现功能。
 title: 用 Cursor 开发未知语言代码
 slug: coding-with-cursor
-draft: false---
+draft: false
+---
+
 # 概述
 ## 一句话总结
 Cursor 对于研发来说，是一个非常有用的提效工具。一句话来总结 Cursor 就是：

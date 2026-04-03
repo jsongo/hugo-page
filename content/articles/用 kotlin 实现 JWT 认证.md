@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/app
+tags:
+- 互联网/app
 created_at: Mon, Jan 6, 2025 - 22:21:06
-date: 2025-01-06T22:21:06.393+08:00
+date: 2025-01-06 22:21:06.393000+08:00
 banner_icon: 🧑🏻‍🤝‍🧑🏻
 banner: https://cdn.lyb.pub/banners/3f4ffe39bbfde173de3bf6ee638fda5b.jpg
 slug: kotlin-jwt
 title: 用 kotlin 实现 JWT 认证
 description: 如何在 Kotlin 中实现 JWT 认证，如在 Android 应用中通过私钥证书与服务端交换 JWT 令牌来获取 OAuth 令牌。另外也分析下在应用中内置私钥的安全风险，并提供了一些安全建议
-draft: false---
+draft: false
+---
+
 # 概述
 
 ## 环境

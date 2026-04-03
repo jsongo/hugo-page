@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - area/thinking
+tags:
+- area/thinking
 created_at: Fri, Jan 10, 2025 - 00:24:52
-date: 2025-01-10T00:24:52.374+08:00
+date: 2025-01-10 00:24:52.374000+08:00
 banner_icon: 🛺
 banner: https://cdn.lyb.pub/banners/2984e26d335bb7e9c65d0dee3e48d61f.jpg
 slug: meditations-w2-2025
 title: Daily Meditations - W2 of 2025
 description: 清醒时最大化每小时的学习和成长的重要性，以及通过输出自己的想法和经验来为世界带来秩序和价值。
-draft: false---
+draft: false
+---
+
 # 成长&输出
 
 ## 最大化每小时的收获

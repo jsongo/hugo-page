@@ -1,15 +1,19 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - 互联网/折腾/azure
+tags:
+- 互联网/折腾/azure
 created_at: Sun, Jan 5, 2025 - 11:25:49
-date: 2025-01-05T11:25:49.289+08:00
+date: 2025-01-05 11:25:49.289000+08:00
 banner_icon: 👨🏼‍🍳
-banner: "https://cdn.lyb.pub/banners/772c64fbb07e3cd46573602f922a7829.jpg"
+banner: https://cdn.lyb.pub/banners/772c64fbb07e3cd46573602f922a7829.jpg
 slug: azure-function-custom-containers
 title: azure Function 自定义镜像
-description: 主要介绍了如何在 Azure Functions 中使用自定义 Docker 镜像，包括创建和配置 Dockerfile，以及将镜像推送到 Azure 容器注册表（ACR）。此外，还讨论了在 Azure 平台上使用这些镜像的步骤和相关的计划选择。
-draft: false---
+description: 主要介绍了如何在 Azure Functions 中使用自定义 Docker 镜像，包括创建和配置 Dockerfile，以及将镜像推送到
+  Azure 容器注册表（ACR）。此外，还讨论了在 Azure 平台上使用这些镜像的步骤和相关的计划选择。
+draft: false
+---
+
 Azure Function 默认是跑在它官方的 [microsoft/azure-functions-base](https://hub.docker.com/r/microsoft/azure-functions-base) 这个镜像上。当然你可以定义自己的镜像，Azure 开放了这个能力。本文主要介绍如何操作。
 
 # 创建自己的镜像

@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - inbox
+tags:
+- inbox
 created_at: Tue, Apr 8, 2025 - 01:16:54
-date: 2025-04-08T01:16:54.310+08:00
+date: 2025-04-08 01:16:54.310000+08:00
 banner_icon: 🤺
 banner: https://cdn.lyb.pub/banners/999dce943c2746f423620acecd9ba75f.png
 title: 未来几年的AI 发展预测
 description: 梳理从2025年到2028年AI技术的快速发展，预测AI将从自主代理进化到超人类智能，并对社会产生深远影响
 slug: ai-development-forecast
-draft: false---
+draft: false
+---
+
 [AI 2027](https://ai-2027.com/) 这个网站对 AI 未来发展做了一些预言，很有趣，做了一些总结梳理。  
 AI 2027 是由 AI Futures Project 发布的一个详细预测，描绘了从 2025 年到 2028 年人工智能（AI）快速发展的可能情景，预测 AI 将在这段时间内经历从初级自主代理到超人类智能的飞速发展。
 

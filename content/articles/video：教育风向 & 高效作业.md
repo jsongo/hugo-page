@@ -1,16 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - area/life/教育
-  - study/short-video
+tags:
+- area/life/教育 - study/short-video
 created_at: Sun, Mar 2, 2025 - 10:57:18
-date: 2025-03-02T10:57:18.724+08:00
+date: 2025-03-02 10:57:18.724000+08:00
 banner_icon: 🐪
-banner: "https://cdn.lyb.pub/banners/c41a06c6e8152c8747b756e140e47ead.jpeg"
+banner: https://cdn.lyb.pub/banners/c41a06c6e8152c8747b756e140e47ead.jpeg
 title: video：教育风向 & 高效作业
 description: 在教育风向变化下的育儿建议和高效陪伴孩子写作业的方法，强调激发兴趣、强化方法、塑造能力和培养习惯的重要性
 slug: educational-methods-for-children
-draft: false---
+draft: false
+---
+
 本文从两个视频中学习、整理而来。
 
 - [https://v.douyin.com/i5N1xTAE/](https://v.douyin.com/i5N1xTAE/)

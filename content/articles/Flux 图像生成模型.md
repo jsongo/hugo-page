@@ -1,15 +1,18 @@
 ---
-updated_at: 2024-10-27T11:31:09.698+08:00
+updated_at: 2024-10-27 11:31:09.698000+08:00
 edited_seconds: 220
-tags: - AI/Diffusion
+tags:
+- AI/Diffusion
 created_at: Sun, Nov 24th, 2024 - 23:31:34
 banner_icon: 🍈
-banner: "https://cdn.lyb.pub/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg"
+banner: https://cdn.lyb.pub/banners/2679aa8e01ac3a9721f4b6f4e919a651.jpg
 description: Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像
 title: Flux 图像生成模型
 slug: flux-101
 draft: false
-date: 2024-11-24T23:31:34+08:00---
+date: 2024-11-24 23:31:34+08:00
+---
+
 # Flux 基础
 
 > Flux 是多模态和并行扩散 Transformer 块的混合架构，拥有 120 亿参数，是目前最大的开源文本到图像模型之一，能够生成高质量、细节丰富且风格多样的图像。  
