@@ -7,11 +7,10 @@
 &lt;li>一个 Trace 是由多个 &lt;strong>Span&lt;/strong> 组成的，&lt;strong>Span 形成一棵树结构&lt;/strong>。
 &lt;ul>
 &lt;li>根节点是最早创建的那个 Span（通常是入口请求，如前端或网关）。&lt;/li>
-&lt;li>子节点 Span 表示在处理过程中产生的后续调用（如微服务之间的调用、数据库访问等）。&lt;/li>
+&lt;li>子节点 Span 表示在处理过程中产生的后续调用（如微服务之间的调用、数据库访问等）。&amp;mdash;&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;hr>
 &lt;h3 id="-核心概念一览">🧩 核心概念一览
 &lt;/h3>&lt;table>
 &lt;thead>
